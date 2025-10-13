@@ -199,14 +199,14 @@
                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Reference Conditions" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Reference Conditions" sap:VirtualizedContainerService.HintSize="604,1390.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:Comment sap:VirtualizedContainerService.HintSize="570,284" sap2010:WorkflowViewState.IdRef="Comment_11" Text="GET LIST OF CONDITIONS&#xA;&#xA;THE GUIDE I WROTE&#xA;&#xA;if one of the conditions matches then ok other wise not&#xA;&#xA;could be column in davids output datatable&#xA;&#xA;&#xA;DAVID OUTPUT DOES NOT INCLUDE THIS NEED TO RAISE QUESTION" />
-                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Condition" sap:VirtualizedContainerService.HintSize="570,1016.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[&quot;test&quot;.split({environment.NewLine},nothing)]">
+                                <ui:Comment sap:VirtualizedContainerService.HintSize="570,186.4" sap2010:WorkflowViewState.IdRef="Comment_11" Text="DAVID OUTPUT DOES NOT INCLUDE THIS NEED TO RAISE QUESTION&#xD;&#xA;&#xD;&#xA;3 column update output&#xD;&#xA;it needs to include the regulation check&#xD;&#xA;then what text to check&#xD;&#xA;then the text that needs checking" />
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Condition" sap:VirtualizedContainerService.HintSize="570,1025.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[&quot;test&quot;.split({environment.NewLine},nothing)]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="x:String">
                                       <ActivityAction.Argument>
@@ -275,6 +275,7 @@
                                     </ActivityAction>
                                   </ui:ForEach.Body>
                                 </ui:ForEach>
+                                <ui:Comment sap:VirtualizedContainerService.HintSize="570,118.8" sap2010:WorkflowViewState.IdRef="Comment_15" Text="1. Find regulation matched text&#xD;&#xA;&#xD;&#xA;2. find the relavent regukation text against phyto section 11 AD" />
                               </Sequence>
                               <FlowStep.Next>
                                 <FlowDecision x:Name="__ReferenceID5" Condition="[booReferenceConditions]" DisplayName="Ref Conditions" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
