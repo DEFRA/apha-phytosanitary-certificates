@@ -94,22 +94,26 @@
           }
         }
       },
-      "ClosedXML/0.95.4": {
+      "ClosedXML/0.100.3": {
         "type": "package",
         "dependencies": {
-          "DocumentFormat.OpenXml": "2.7.2",
-          "ExcelNumberFormat": "1.0.10",
+          "DocumentFormat.OpenXml": "2.16.0",
+          "ExcelNumberFormat": "1.1.0",
           "Microsoft.CSharp": "4.7.0",
-          "System.Drawing.Common": "4.5.0"
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "System.Buffers": "4.5.1",
+          "System.IO.Packaging": "6.0.0",
+          "System.Memory": "4.5.4",
+          "XLParser": "1.5.2"
         },
         "compile": {
           "lib/netstandard2.0/_._": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/ClosedXML.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         }
       },
@@ -142,7 +146,7 @@
           }
         }
       },
-      "DocumentFormat.OpenXml/2.12.1": {
+      "DocumentFormat.OpenXml/2.16.0": {
         "type": "package",
         "dependencies": {
           "System.IO.Packaging": "4.7.0"
@@ -210,6 +214,61 @@
           "lib/net6.0-windows7.0/DRACOE.Logging.64_Expressions_9923843.dll": {}
         }
       },
+      "DRACOE.Microsoft.Graph.64/1.0.46": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.Excel.Activities": "2.23.5",
+          "UiPath.System.Activities": "24.10.4",
+          "UiPath.WebAPI.Activities": "1.21.1"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_12583703.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19053174.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19877590.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_20769753.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_22533626.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_23346982.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25671656.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25789258.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_29361926.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_32246090.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39198737.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39358206.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40135900.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40326532.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40574458.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_41567761.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_42561941.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_43488964.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_47781801.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53291655.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53620587.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53876290.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_55688513.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56247200.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56503155.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_57178418.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_5761695.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_59101483.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_60964495.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_61629390.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_62320341.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6521047.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_65255139.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6657677.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "DRACOE.PopUps.64/1.0.9": {
         "type": "package",
         "dependencies": {
@@ -235,7 +294,7 @@
           "lib/net6.0-windows7.0/DRACOE.PopUps.64_Expressions_9276599.dll": {}
         }
       },
-      "ExcelNumberFormat/1.0.10": {
+      "ExcelNumberFormat/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
@@ -405,6 +464,23 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "related": ".deps.json;.pdb;.xml"
           }
+        }
+      },
+      "Irony.NetCore/1.0.11": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Irony.dll": {}
         }
       },
       "MailKit/4.7.1.1": {
@@ -1411,7 +1487,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.0": {
+      "Microsoft.NETCore.Targets/1.1.3": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1989,11 +2065,11 @@
           }
         }
       },
-      "NPOI/2.5.5": {
+      "NPOI/2.5.6": {
         "type": "package",
         "dependencies": {
           "Portable.BouncyCastle": "1.8.9",
-          "SharpZipLib": "1.3.2",
+          "SharpZipLib": "1.3.3",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "System.Drawing.Common": "4.5.0"
         },
@@ -2348,16 +2424,29 @@
           }
         }
       },
-      "SharpZipLib/1.3.3": {
+      "SharpZipLib/1.4.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/_._": {
+          "lib/net6.0/_._": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0-beta18": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -3739,11 +3828,11 @@
           }
         }
       },
-      "System.Runtime/4.3.0": {
+      "System.Runtime/4.3.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3"
         },
         "compile": {
           "ref/netstandard1.5/_._": {
@@ -4487,10 +4576,10 @@
           }
         }
       },
-      "System.Text.RegularExpressions/4.3.0": {
+      "System.Text.RegularExpressions/4.3.1": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.3.0"
+          "System.Runtime": "4.3.1"
         },
         "compile": {
           "ref/netcoreapp1.1/_._": {}
@@ -5027,18 +5116,23 @@
           "lib/net5.0/vcruntime140_1.dll": {}
         }
       },
-      "UiPath.Excel.Activities/2.22.3": {
+      "UiPath.Excel.Activities/2.23.5": {
         "type": "package",
         "dependencies": {
-          "ClosedXML": "0.95.4",
+          "ClosedXML": "0.100.3",
           "CsvHelper": "15.0.5",
-          "DocumentFormat.OpenXml": "2.12.1",
+          "DocumentFormat.OpenXml": "2.16.0",
           "Microsoft.VisualStudio.OLE.Interop": "16.7.30328.74",
-          "NPOI": "2.5.5",
-          "SharpZipLib": "1.3.3",
+          "NPOI": "2.5.6",
+          "SharpZipLib": "1.4.2",
+          "System.Drawing.Common": "6.0.0",
+          "System.Formats.Asn1": "6.0.1",
+          "System.Net.Http": "4.3.4",
           "System.Text.Encoding.CodePages": "6.0.0",
-          "UiPath.Platform": "23.10.0",
-          "UiPath.Telemetry.Client": "1.6.69"
+          "System.Text.RegularExpressions": "4.3.1",
+          "UiPath.CodedWorkflows": "24.10.0",
+          "UiPath.Platform": "24.10.3",
+          "UiPath.Telemetry.Client": "2.1.3"
         },
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -5047,10 +5141,18 @@
           "lib/net6.0-windows7.0/Microsoft.Office.Interop.Excel.dll": {},
           "lib/net6.0-windows7.0/Microsoft.Vbe.Interop.dll": {},
           "lib/net6.0-windows7.0/Office.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.API.dll": {
+            "related": ".xml"
+          },
           "lib/net6.0-windows7.0/UiPath.Excel.Activities.Design.dll": {},
           "lib/net6.0-windows7.0/UiPath.Excel.Activities.Package.dll": {},
-          "lib/net6.0-windows7.0/UiPath.Excel.Activities.dll": {},
-          "lib/net6.0-windows7.0/UiPath.Excel.dll": {}
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.ViewModels.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.dll": {
+            "related": ".API.xml"
+          },
+          "lib/net6.0-windows7.0/UiPath.Excel.dll": {
+            "related": ".Activities.API.xml"
+          }
         },
         "resource": {
           "lib/net6.0-windows7.0/de/UiPath.Excel.Activities.Design.resources.dll": {
@@ -6665,6 +6767,19 @@
       },
       "UiPath.WebView2.Runtime.x64/0.1.0": {
         "type": "package"
+      },
+      "XLParser/1.5.2": {
+        "type": "package",
+        "dependencies": {
+          "Irony.NetCore": "1.0.11",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/XLParser.dll": {}
+        }
       }
     },
     "net8.0-windows7.0/win-x64": {
@@ -6760,22 +6875,26 @@
           }
         }
       },
-      "ClosedXML/0.95.4": {
+      "ClosedXML/0.100.3": {
         "type": "package",
         "dependencies": {
-          "DocumentFormat.OpenXml": "2.7.2",
-          "ExcelNumberFormat": "1.0.10",
+          "DocumentFormat.OpenXml": "2.16.0",
+          "ExcelNumberFormat": "1.1.0",
           "Microsoft.CSharp": "4.7.0",
-          "System.Drawing.Common": "4.5.0"
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "System.Buffers": "4.5.1",
+          "System.IO.Packaging": "6.0.0",
+          "System.Memory": "4.5.4",
+          "XLParser": "1.5.2"
         },
         "compile": {
           "lib/netstandard2.0/_._": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/ClosedXML.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml"
           }
         }
       },
@@ -6808,7 +6927,7 @@
           }
         }
       },
-      "DocumentFormat.OpenXml/2.12.1": {
+      "DocumentFormat.OpenXml/2.16.0": {
         "type": "package",
         "dependencies": {
           "System.IO.Packaging": "4.7.0"
@@ -6876,6 +6995,61 @@
           "lib/net6.0-windows7.0/DRACOE.Logging.64_Expressions_9923843.dll": {}
         }
       },
+      "DRACOE.Microsoft.Graph.64/1.0.46": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.Excel.Activities": "2.23.5",
+          "UiPath.System.Activities": "24.10.4",
+          "UiPath.WebAPI.Activities": "1.21.1"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_12583703.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19053174.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19877590.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_20769753.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_22533626.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_23346982.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25671656.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25789258.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_29361926.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_32246090.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39198737.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39358206.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40135900.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40326532.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40574458.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_41567761.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_42561941.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_43488964.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_47781801.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53291655.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53620587.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53876290.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_55688513.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56247200.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56503155.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_57178418.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_5761695.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_59101483.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_60964495.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_61629390.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_62320341.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6521047.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_65255139.dll": {},
+          "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6657677.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "DRACOE.PopUps.64/1.0.9": {
         "type": "package",
         "dependencies": {
@@ -6901,7 +7075,7 @@
           "lib/net6.0-windows7.0/DRACOE.PopUps.64_Expressions_9276599.dll": {}
         }
       },
-      "ExcelNumberFormat/1.0.10": {
+      "ExcelNumberFormat/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
@@ -7071,6 +7245,23 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "related": ".deps.json;.pdb;.xml"
           }
+        }
+      },
+      "Irony.NetCore/1.0.11": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Irony.dll": {}
         }
       },
       "MailKit/4.7.1.1": {
@@ -8032,7 +8223,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.0": {
+      "Microsoft.NETCore.Targets/1.1.3": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -8540,11 +8731,11 @@
           }
         }
       },
-      "NPOI/2.5.5": {
+      "NPOI/2.5.6": {
         "type": "package",
         "dependencies": {
           "Portable.BouncyCastle": "1.8.9",
-          "SharpZipLib": "1.3.2",
+          "SharpZipLib": "1.3.3",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "System.Drawing.Common": "4.5.0"
         },
@@ -8960,7 +9151,7 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "runtime.win.System.Console/4.3.0": {
+      "runtime.win.System.Console/4.3.1": {
         "type": "package",
         "dependencies": {
           "System.IO": "4.3.0",
@@ -9077,16 +9268,29 @@
           "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "SharpZipLib/1.3.3": {
+      "SharpZipLib/1.4.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/_._": {
+          "lib/net6.0/_._": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0-beta18": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -9306,7 +9510,7 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
-          "runtime.win.System.Console": "4.3.0"
+          "runtime.win.System.Console": "4.3.1"
         },
         "compile": {
           "ref/netstandard1.3/_._": {
@@ -10363,11 +10567,11 @@
           }
         }
       },
-      "System.Runtime/4.3.0": {
+      "System.Runtime/4.3.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3",
           "runtime.any.System.Runtime": "4.3.0"
         },
         "compile": {
@@ -11005,10 +11209,10 @@
           }
         }
       },
-      "System.Text.RegularExpressions/4.3.0": {
+      "System.Text.RegularExpressions/4.3.1": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.3.0"
+          "System.Runtime": "4.3.1"
         },
         "compile": {
           "ref/netcoreapp1.1/_._": {}
@@ -11552,18 +11756,23 @@
           "lib/net5.0/vcruntime140_1.dll": {}
         }
       },
-      "UiPath.Excel.Activities/2.22.3": {
+      "UiPath.Excel.Activities/2.23.5": {
         "type": "package",
         "dependencies": {
-          "ClosedXML": "0.95.4",
+          "ClosedXML": "0.100.3",
           "CsvHelper": "15.0.5",
-          "DocumentFormat.OpenXml": "2.12.1",
+          "DocumentFormat.OpenXml": "2.16.0",
           "Microsoft.VisualStudio.OLE.Interop": "16.7.30328.74",
-          "NPOI": "2.5.5",
-          "SharpZipLib": "1.3.3",
+          "NPOI": "2.5.6",
+          "SharpZipLib": "1.4.2",
+          "System.Drawing.Common": "6.0.0",
+          "System.Formats.Asn1": "6.0.1",
+          "System.Net.Http": "4.3.4",
           "System.Text.Encoding.CodePages": "6.0.0",
-          "UiPath.Platform": "23.10.0",
-          "UiPath.Telemetry.Client": "1.6.69"
+          "System.Text.RegularExpressions": "4.3.1",
+          "UiPath.CodedWorkflows": "24.10.0",
+          "UiPath.Platform": "24.10.3",
+          "UiPath.Telemetry.Client": "2.1.3"
         },
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -11572,10 +11781,18 @@
           "lib/net6.0-windows7.0/Microsoft.Office.Interop.Excel.dll": {},
           "lib/net6.0-windows7.0/Microsoft.Vbe.Interop.dll": {},
           "lib/net6.0-windows7.0/Office.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.API.dll": {
+            "related": ".xml"
+          },
           "lib/net6.0-windows7.0/UiPath.Excel.Activities.Design.dll": {},
           "lib/net6.0-windows7.0/UiPath.Excel.Activities.Package.dll": {},
-          "lib/net6.0-windows7.0/UiPath.Excel.Activities.dll": {},
-          "lib/net6.0-windows7.0/UiPath.Excel.dll": {}
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.ViewModels.dll": {},
+          "lib/net6.0-windows7.0/UiPath.Excel.Activities.dll": {
+            "related": ".API.xml"
+          },
+          "lib/net6.0-windows7.0/UiPath.Excel.dll": {
+            "related": ".Activities.API.xml"
+          }
         },
         "resource": {
           "lib/net6.0-windows7.0/de/UiPath.Excel.Activities.Design.resources.dll": {
@@ -13190,6 +13407,19 @@
       },
       "UiPath.WebView2.Runtime.x64/0.1.0": {
         "type": "package"
+      },
+      "XLParser/1.5.2": {
+        "type": "package",
+        "dependencies": {
+          "Irony.NetCore": "1.0.11",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/XLParser.dll": {}
+        }
       }
     }
   },
@@ -13291,23 +13521,16 @@
         "packageIcon.png"
       ]
     },
-    "ClosedXML/0.95.4": {
-      "sha512": "YixFPzUJ4Ni2AaW/FbPgzFvdtjIzE/4NKROwI1RqIQHWka7QN9Spt4sHuXaSk9PLmXBkk8newHGW0UWLcLs5GA==",
+    "ClosedXML/0.100.3": {
+      "sha512": "yvEK5ga48mSalPknChOh5hppZixBY5tDkHN7V6WybLjLBBoHvRqm0Vi23XdIaDu9St2rLGJ9/vmgvdCyMPPAsA==",
       "type": "package",
-      "path": "closedxml/0.95.4",
+      "path": "closedxml/0.100.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "closedxml.0.95.4.nupkg.sha512",
+        "closedxml.0.100.3.nupkg.sha512",
         "closedxml.nuspec",
-        "lib/net40/ClosedXML.dll",
-        "lib/net40/ClosedXML.pdb",
-        "lib/net40/ClosedXML.xml",
-        "lib/net46/ClosedXML.dll",
-        "lib/net46/ClosedXML.pdb",
-        "lib/net46/ClosedXML.xml",
         "lib/netstandard2.0/ClosedXML.dll",
-        "lib/netstandard2.0/ClosedXML.pdb",
         "lib/netstandard2.0/ClosedXML.xml",
         "nuget-logo.png"
       ]
@@ -13344,14 +13567,14 @@
         "lib/netstandard2.1/CsvHelper.xml"
       ]
     },
-    "DocumentFormat.OpenXml/2.12.1": {
-      "sha512": "9nqz+/djR7Upcve7JSrxli+djUh5NRT5GxzvTe43dQqcGdLQzUBTd6fXZtKlaEbsfkswHtbQTEXwnAgGbmRbOA==",
+    "DocumentFormat.OpenXml/2.16.0": {
+      "sha512": "RhpnDgyyx1KjZm98T3w3bSXFHG/7ZNUaVmz4NAUA+jmV3PcVNZeW87Y04CpBNLdDHEMSspirfo0B5kLRaoE97w==",
       "type": "package",
-      "path": "documentformat.openxml/2.12.1",
+      "path": "documentformat.openxml/2.16.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "documentformat.openxml.2.12.1.nupkg.sha512",
+        "documentformat.openxml.2.16.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "icon.png",
         "lib/net35/DocumentFormat.OpenXml.dll",
@@ -13451,6 +13674,107 @@
         "lib/net6.0-windows7.0/DRACOE.Logging.64_Expressions_9923843.dll"
       ]
     },
+    "DRACOE.Microsoft.Graph.64/1.0.46": {
+      "sha512": "omkTTls6XJ8Ya/7XJVoRvoNKSeVulpiEx1ONW0oJzdz/5VyoSv9ybb/VoenoKUBtWsfDvISILYz1KsadDMcmIQ==",
+      "type": "package",
+      "path": "dracoe.microsoft.graph.64/1.0.46",
+      "files": [
+        ".nupkg.metadata",
+        "content/.project/PackageBindingsMetadata.json",
+        "content/.project/design.json",
+        "content/.settings/Design/settings-afad0842.json",
+        "content/.settings/Release/settings-9e9290da.json",
+        "content/.settings/Release/settings-afad0842.json",
+        "content/Assets/SaveDraftPayload.txt",
+        "content/Assets/SendEmailPayload.txt",
+        "content/Authentication/Get Bearer Token.xaml",
+        "content/Error Handling/Response Codes.xaml",
+        "content/Exchange Tests - Dev.xaml",
+        "content/Exchange/Apply Category.xaml",
+        "content/Exchange/Forward Email.xaml",
+        "content/Exchange/Forward Email.xaml.json",
+        "content/Exchange/Generate Email Object.xaml",
+        "content/Exchange/Get Conversation.xaml",
+        "content/Exchange/Get Emails.xaml",
+        "content/Exchange/Get Emails.xaml.json",
+        "content/Exchange/Get Folder List.xaml",
+        "content/Exchange/Get Folder Name.xaml",
+        "content/Exchange/Move Email.xaml",
+        "content/Exchange/Reply Email.xaml",
+        "content/Exchange/Save Draft.xaml",
+        "content/Exchange/Save Draft.xaml.json",
+        "content/Exchange/Save Email Attachments.xaml",
+        "content/Exchange/Send Email.xaml",
+        "content/Exchange/Send Email.xaml.json",
+        "content/Rest API/Get REST Auth Token.xaml",
+        "content/Rest API/Get REST Auth Token.xaml.json",
+        "content/Rest API/TEST.xaml",
+        "content/Rest API/Upload Attachment to SPOL List.xaml",
+        "content/Rest API/Upload Attachment to SPOL List.xaml.json",
+        "content/SPOL Tests - DEV.xaml",
+        "content/SharePoint/Add Sharepoint List Item.xaml",
+        "content/SharePoint/Add Sharepoint List Item.xaml.json",
+        "content/SharePoint/CheckOut-In File.xaml",
+        "content/SharePoint/Create Folder.xaml",
+        "content/SharePoint/Delete File or Folder.xaml",
+        "content/SharePoint/Delete Sharepoint List Item.xaml",
+        "content/SharePoint/Download File.xaml",
+        "content/SharePoint/Edit Sharepoint List Item.xaml",
+        "content/SharePoint/Get Folder Contents.xaml",
+        "content/SharePoint/Get List ID.xaml",
+        "content/SharePoint/Get List Item ID.xaml",
+        "content/SharePoint/Get List Items.xaml",
+        "content/SharePoint/Get List Items.xaml.json",
+        "content/SharePoint/Get Site ID.xaml",
+        "content/SharePoint/Update File MetaData.xaml",
+        "content/SharePoint/Upload Large File.xaml",
+        "content/SharePoint/Upload Small File.xaml",
+        "content/SharePoint/Upload Small File.xaml.json",
+        "content/TEST OUTPUT.csv",
+        "content/bindings.json",
+        "content/bindings_v2.json",
+        "content/project.json",
+        "contentFiles/any/any/.objects/.metadata",
+        "contentFiles/any/any/.objects/.type",
+        "dracoe.microsoft.graph.64.1.0.46.nupkg.sha512",
+        "dracoe.microsoft.graph.64.nuspec",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_12583703.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19053174.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_19877590.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_20769753.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_22533626.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_23346982.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25671656.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_25789258.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_29361926.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_32246090.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39198737.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_39358206.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40135900.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40326532.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_40574458.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_41567761.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_42561941.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_43488964.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_47781801.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53291655.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53620587.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_53876290.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_55688513.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56247200.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_56503155.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_57178418.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_5761695.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_59101483.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_60964495.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_61629390.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_62320341.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6521047.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_65255139.dll",
+        "lib/net8.0-windows7.0/DRACOE Microsoft Graph 64_Expressions_6657677.dll"
+      ]
+    },
     "DRACOE.PopUps.64/1.0.9": {
       "sha512": "BFAccH46EefKzsr0+Ijjk5gfFpiVOFolKSmW9uDyuNaPOXx0p1F231DD57Jg97K9x1fI8OCPTpkS4BRSoFchhg==",
       "type": "package",
@@ -13519,15 +13843,16 @@
         "lib/net6.0-windows7.0/DRACOE.PopUps.64_Expressions_9276599.dll"
       ]
     },
-    "ExcelNumberFormat/1.0.10": {
-      "sha512": "dRx817M5t0sv4GCJyAXU8qmhFXcqRpCHzLpxNmkMWTvzlfE0/KM7BNk6qEble0ffAr4xT7RyU7s/HpovVlA/9g==",
+    "ExcelNumberFormat/1.1.0": {
+      "sha512": "R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
       "type": "package",
-      "path": "excelnumberformat/1.0.10",
+      "path": "excelnumberformat/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "excelnumberformat.1.0.10.nupkg.sha512",
+        "excelnumberformat.1.1.0.nupkg.sha512",
         "excelnumberformat.nuspec",
+        "icon.png",
         "lib/net20/ExcelNumberFormat.dll",
         "lib/net20/ExcelNumberFormat.xml",
         "lib/netstandard1.0/ExcelNumberFormat.dll",
@@ -13797,6 +14122,20 @@
         "lib/uap10.0/HtmlAgilityPack.dll",
         "lib/uap10.0/HtmlAgilityPack.pdb",
         "lib/uap10.0/HtmlAgilityPack.pri"
+      ]
+    },
+    "Irony.NetCore/1.0.11": {
+      "sha512": "/2MCkqdhEjPiSTZKYXg6u9AO9o3m68biqcFHAnM28WdnrcZii2vYbmKPzT5ejByyV72FUlygOtHBMt8SLnUyNw==",
+      "type": "package",
+      "path": "irony.netcore/1.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "irony.netcore.1.0.11.nupkg.sha512",
+        "irony.netcore.nuspec",
+        "lib/net452/Irony.dll",
+        "lib/net461/Irony.dll",
+        "lib/netstandard1.6/Irony.dll"
       ]
     },
     "MailKit/4.7.1.1": {
@@ -15654,17 +15993,17 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+    "Microsoft.NETCore.Targets/1.1.3": {
+      "sha512": "3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
       "type": "package",
-      "path": "microsoft.netcore.targets/1.1.0",
+      "path": "microsoft.netcore.targets/1.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
+        "microsoft.netcore.targets.1.1.3.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
       ]
@@ -16598,10 +16937,10 @@
         "nlog.nuspec"
       ]
     },
-    "NPOI/2.5.5": {
-      "sha512": "xTCJOXdcBWV9GUAVRJTC73L5bU3Ahgtuk13U/rOix8Gi05XWf9E4K+vGx63JZt35WoroXq+hM0RZ+aad2y8Ceg==",
+    "NPOI/2.5.6": {
+      "sha512": "xQfr09LZN3fr4rjSuV3li+WJUo2LiSg00IUtnomzrKO51zhhavyIgvbZ1f8c8zwHXvRbFc1JB4PNZpxqyxizWw==",
       "type": "package",
-      "path": "npoi/2.5.5",
+      "path": "npoi/2.5.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -16610,6 +16949,7 @@
         "lib/net45/NPOI.OOXML.XML",
         "lib/net45/NPOI.OOXML.dll",
         "lib/net45/NPOI.OOXML.pdb",
+        "lib/net45/NPOI.OpenXml4Net.XML",
         "lib/net45/NPOI.OpenXml4Net.dll",
         "lib/net45/NPOI.OpenXml4Net.pdb",
         "lib/net45/NPOI.OpenXmlFormats.dll",
@@ -16641,7 +16981,7 @@
         "logo/240_240.png",
         "logo/32_32.jpg",
         "logo/60_60.jpg",
-        "npoi.2.5.5.nupkg.sha512",
+        "npoi.2.5.6.nupkg.sha512",
         "npoi.nuspec"
       ]
     },
@@ -17570,17 +17910,17 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll"
       ]
     },
-    "runtime.win.System.Console/4.3.0": {
-      "sha512": "RRACWygml5dnmfgC1SW6tLGsFgwsUAKFtvhdyHnIEz4EhWyrd7pacDdY95CacQJy7BMXRDRCejC9aCRC0Y1sQA==",
+    "runtime.win.System.Console/4.3.1": {
+      "sha512": "vHPXC3B18dxhyipVce8xQT1MQv1o5srYZqBlCNu9p9MNjhgGOntdQh/Xh2X4o7M2F839YUcQiGwu8Q498FyDjg==",
       "type": "package",
-      "path": "runtime.win.system.console/4.3.0",
+      "path": "runtime.win.system.console/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard/_._",
-        "runtime.win.system.console.4.3.0.nupkg.sha512",
+        "runtime.win.system.console.4.3.1.nupkg.sha512",
         "runtime.win.system.console.nuspec",
         "runtimes/win/lib/net/_._",
         "runtimes/win/lib/netcore50/System.Console.dll",
@@ -17680,25 +18020,43 @@
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
       ]
     },
-    "SharpZipLib/1.3.3": {
-      "sha512": "N8+hwhsKZm25tDJfWpBSW7EGhH/R7EMuiX+KJ4C4u+fCWVc1lJ5zg1u3S1RPPVYgTqhx/C3hxrqUpi6RwK5+Tg==",
+    "SharpZipLib/1.4.2": {
+      "sha512": "yjj+3zgz8zgXpiiC3ZdF/iyTBbz2fFvMxZFEBPUcwZjIvXOf37Ylm+K58hqMfIBt5JgU/Z2uoUS67JmTLe973A==",
       "type": "package",
-      "path": "sharpziplib/1.3.3",
+      "path": "sharpziplib/1.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "images/sharpziplib-nuget-256x256.png",
-        "lib/net45/ICSharpCode.SharpZipLib.dll",
-        "lib/net45/ICSharpCode.SharpZipLib.pdb",
-        "lib/net45/ICSharpCode.SharpZipLib.xml",
+        "lib/net6.0/ICSharpCode.SharpZipLib.dll",
+        "lib/net6.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/net6.0/ICSharpCode.SharpZipLib.xml",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
         "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll",
         "lib/netstandard2.1/ICSharpCode.SharpZipLib.pdb",
         "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
-        "sharpziplib.1.3.3.nupkg.sha512",
+        "sharpziplib.1.4.2.nupkg.sha512",
         "sharpziplib.nuspec"
+      ]
+    },
+    "SixLabors.Fonts/1.0.0-beta18": {
+      "sha512": "evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0-beta18",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+        "lib/netcoreapp3.1/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "lib/netstandard2.1/SixLabors.Fonts.dll",
+        "lib/netstandard2.1/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0-beta18.nupkg.sha512",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.nuspec"
       ]
     },
     "System.Activities.ViewModels/1.0.0-20240418.6": {
@@ -20680,10 +21038,10 @@
         "system.resources.resourcemanager.nuspec"
       ]
     },
-    "System.Runtime/4.3.0": {
-      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+    "System.Runtime/4.3.1": {
+      "sha512": "abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
       "type": "package",
-      "path": "system.runtime/4.3.0",
+      "path": "system.runtime/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -20768,7 +21126,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.runtime.4.3.0.nupkg.sha512",
+        "system.runtime.4.3.1.nupkg.sha512",
         "system.runtime.nuspec"
       ]
     },
@@ -22304,10 +22662,10 @@
         "version.txt"
       ]
     },
-    "System.Text.RegularExpressions/4.3.0": {
-      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
+    "System.Text.RegularExpressions/4.3.1": {
+      "sha512": "N0kNRrWe4+nXOWlpLT4LAY5brb8caNFlUuIRpraCVMDLYutKkol1aV079rQjLuSxKMJT2SpBQsYX9xbcTMmzwg==",
       "type": "package",
-      "path": "system.text.regularexpressions/4.3.0",
+      "path": "system.text.regularexpressions/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -22384,7 +22742,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.text.regularexpressions.4.3.0.nupkg.sha512",
+        "system.text.regularexpressions.4.3.1.nupkg.sha512",
         "system.text.regularexpressions.nuspec"
       ]
     },
@@ -23272,10 +23630,10 @@
         "uipath.emgucvbundle.nuspec"
       ]
     },
-    "UiPath.Excel.Activities/2.22.3": {
-      "sha512": "LBAn2iRu7QrjGlL0gO0BV3tZTuJeTcgyZZ8efa17VMgrQC21gUewRP+2DUOxmMGiZqvf4XmD1BDFpYZIFPUKAA==",
+    "UiPath.Excel.Activities/2.23.5": {
+      "sha512": "bA4nVw5Yn0TqvYlHOnPPSArmlE8QGmUCSI/3C5BeY9MzpkFVEH1rgGCxMiHfC4Vw8qS2g6pzRz0FP6cOuKUBnQ==",
       "type": "package",
-      "path": "uipath.excel.activities/2.22.3",
+      "path": "uipath.excel.activities/2.23.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -23325,8 +23683,11 @@
         "lib/net6.0-windows7.0/Microsoft.Office.Interop.Excel.dll",
         "lib/net6.0-windows7.0/Microsoft.Vbe.Interop.dll",
         "lib/net6.0-windows7.0/Office.dll",
+        "lib/net6.0-windows7.0/UiPath.Excel.Activities.API.dll",
+        "lib/net6.0-windows7.0/UiPath.Excel.Activities.API.xml",
         "lib/net6.0-windows7.0/UiPath.Excel.Activities.Design.dll",
         "lib/net6.0-windows7.0/UiPath.Excel.Activities.Package.dll",
+        "lib/net6.0-windows7.0/UiPath.Excel.Activities.ViewModels.dll",
         "lib/net6.0-windows7.0/UiPath.Excel.Activities.dll",
         "lib/net6.0-windows7.0/UiPath.Excel.dll",
         "lib/net6.0-windows7.0/de/UiPath.Excel.Activities.Design.resources.dll",
@@ -23365,7 +23726,10 @@
         "lib/net6.0-windows7.0/zh-TW/UiPath.Excel.Activities.Design.resources.dll",
         "lib/net6.0-windows7.0/zh-TW/UiPath.Excel.Activities.resources.dll",
         "lib/net6.0-windows7.0/zh-TW/UiPath.Excel.resources.dll",
+        "lib/net6.0/UiPath.Excel.Activities.API.dll",
+        "lib/net6.0/UiPath.Excel.Activities.API.xml",
         "lib/net6.0/UiPath.Excel.Activities.Package.dll",
+        "lib/net6.0/UiPath.Excel.Activities.ViewModels.dll",
         "lib/net6.0/UiPath.Excel.Activities.dll",
         "lib/net6.0/UiPath.Excel.dll",
         "lib/net6.0/de/UiPath.Excel.Activities.resources.dll",
@@ -23392,7 +23756,7 @@
         "lib/net6.0/zh-CN/UiPath.Excel.resources.dll",
         "lib/net6.0/zh-TW/UiPath.Excel.Activities.resources.dll",
         "lib/net6.0/zh-TW/UiPath.Excel.resources.dll",
-        "uipath.excel.activities.2.22.3.nupkg.sha512",
+        "uipath.excel.activities.2.23.5.nupkg.sha512",
         "uipath.excel.activities.nuspec"
       ]
     },
@@ -26096,14 +26460,29 @@
         "wdag.dll",
         "wns_push_client.dll"
       ]
+    },
+    "XLParser/1.5.2": {
+      "sha512": "8tnUCmMbn6c/HGuHFyq1sulHym8YReTKDNXFFQk0U8nldNx6RGrwRvLh0+aQjEc7YoC3Q1ztH1npLt7dClKqjw==",
+      "type": "package",
+      "path": "xlparser/1.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/XLParser.dll",
+        "lib/net461/XLParser.dll",
+        "lib/netstandard1.6/XLParser.dll",
+        "xlparser.1.5.2.nupkg.sha512",
+        "xlparser.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [],
     "net8.0-windows7.0": [
       "DRACOE.Logging.64 >= 1.0.9 <= 1.0.9",
+      "DRACOE.Microsoft.Graph.64 >= 1.0.46 <= 1.0.46",
       "DRACOE.PopUps.64 >= 1.0.9 <= 1.0.9",
-      "UiPath.Excel.Activities >= 2.22.3 <= 2.22.3",
+      "UiPath.Excel.Activities >= 2.23.5 <= 2.23.5",
       "UiPath.Mail.Activities >= 1.23.11 <= 1.23.11",
       "UiPath.System.Activities >= 24.10.4 <= 24.10.4",
       "UiPath.Testing.Activities >= 23.10.1 <= 23.10.1",
@@ -26130,6 +26509,11 @@
             "target": "Package",
             "version": "[1.0.9, 1.0.9]"
           },
+          "DRACOE.Microsoft.Graph.64": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.46, 1.0.46]"
+          },
           "DRACOE.PopUps.64": {
             "include": "Runtime",
             "target": "Package",
@@ -26138,7 +26522,7 @@
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[2.22.3, 2.22.3]"
+            "version": "[2.23.5, 2.23.5]"
           },
           "UiPath.Mail.Activities": {
             "include": "Runtime",
@@ -26176,6 +26560,17 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.9 requires UiPath.Excel.Activities (= 2.22.3) but version UiPath.Excel.Activities 2.23.5 was resolved.",
+      "libraryId": "UiPath.Excel.Activities",
+      "targetGraphs": [
+        "net8.0-windows7.0",
+        "net8.0-windows7.0/win-x64"
+      ]
+    },
     {
       "code": "NU1608",
       "level": "Warning",
