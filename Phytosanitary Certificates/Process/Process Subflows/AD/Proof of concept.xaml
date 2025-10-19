@@ -123,6 +123,9 @@
       <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
       <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
       <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -239,9 +242,15 @@
       <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
       <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
       <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="774,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="775.2,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -254,27 +263,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Size x:Key="ShapeSize">50,50</av:Size>
         <av:Point x:Key="ShapeLocation">345,35</av:Point>
-        <av:PointCollection x:Key="ConnectorLocation">370,85 370,125</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">370,85 370,115</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID15</x:Reference>
+      <x:Reference>__ReferenceID17</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <FlowStep x:Name="__ReferenceID15" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">315,245</av:Point>
+          <av:Point x:Key="ShapeLocation">315,335</av:Point>
           <av:Size x:Key="ShapeSize">110,70</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">370,315 370,365</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">370,405 370,455</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table" sap:VirtualizedContainerService.HintSize="736,4836" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table" sap:VirtualizedContainerService.HintSize="736,4632.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="702,4669.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="702,4466" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="x:String" Name="strHold" />
@@ -285,42 +294,68 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[booMultipleCountries]" DisplayName="Handle country of origin based on multiple countries flag" sap:VirtualizedContainerService.HintSize="668,502.4" sap2010:WorkflowViewState.IdRef="If_6">
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign - remove brackets" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_25">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("country")]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">[regex.Replace(io_dtCommodityLines(intCommodityIndex)("country").tostring,"\(|\)","")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign country of origin" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_26">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("country")]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">[in_strCountryOfOrigin]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
-                </If.Else>
-              </If>
+              <Sequence DisplayName="format row values" sap:VirtualizedContainerService.HintSize="668,299.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[booMultipleCountries]" DisplayName="Handle country of origin based on multiple countries flag" sap:VirtualizedContainerService.HintSize="434,56.8" sap2010:WorkflowViewState.IdRef="If_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign - remove brackets" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_25">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("country")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[regex.Replace(io_dtCommodityLines(intCommodityIndex)("country").tostring,"\(|\)","")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign country of origin" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_26">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("country")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_strCountryOfOrigin]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <Assign sap2010:Annotation.AnnotationText="CHECK WITH RICHARD IF ID HAS ZEROS STRIPPED?&#xD;&#xA;POTENTIALLY BECAUSE OF EXCEL FORMATTING" DisplayName="Assign - IS THIS REQUIRED? " sap:VirtualizedContainerService.HintSize="434,150.4" sap2010:WorkflowViewState.IdRef="Assign_47">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("ID")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">[Commodity("ID").ToString.Trim.PadLeft(4, "0"c)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+              </Sequence>
               <Sequence DisplayName="Initialise &amp; populate mini pop up table" sap:VirtualizedContainerService.HintSize="668,1795.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strRegexPattern" />
@@ -447,7 +482,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <ui:Comment sap:VirtualizedContainerService.HintSize="668,147.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="PAss row into davids module&#xA;output - dtRegulation&#xA;&#xA;2 inputs - plant and country" />
+              <ui:Comment sap:VirtualizedContainerService.HintSize="668,146.8" sap2010:WorkflowViewState.IdRef="Comment_1" Text="PAss row into davids module&#xA;output - dtRegulation&#xA;&#xA;2 inputs - plant and country" />
               <WriteLine DisplayName="Write Line - input1" sap:VirtualizedContainerService.HintSize="668,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Commodity(&quot;Commodities&quot;).tostring]" />
               <WriteLine DisplayName="Write Line - input2" sap:VirtualizedContainerService.HintSize="668,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[Commodity(&quot;Country&quot;).tostring]" />
               <ui:ReadCsvFile DataTable="[dtRegulations]" Delimitator="Comma" DisplayName="Read CSV" FilePath="matcheditems 1.csv" sap:VirtualizedContainerService.HintSize="668,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
@@ -463,7 +498,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Flowchart sap2010:Annotation.AnnotationText="prohibited = red&#xA;no statement required = green&#xA;host is conditional = orange&#xA;origin is conditional = yellow&#xA;&#xA;from the Special Requirements column?&#xA;&#xA;found this as kay on the top of the self made azure app the team uses - is that correct?&#xA;David to output priority order" DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="600,807.6" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+                      <Flowchart sap2010:Annotation.AnnotationText="prohibited = red&#xA;no statement required = green&#xA;host is conditional = orange&#xA;origin is conditional = yellow&#xA;&#xA;from the Special Requirements column?&#xA;&#xA;found this as kay on the top of the self made azure app the team uses - is that correct?&#xA;David to output priority order" DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="775.2,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                         <Flowchart.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="booReferenceConditions" />
                           <Variable x:TypeArguments="x:String" Name="strPest" />
@@ -474,22 +509,22 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <av:Point x:Key="ShapeLocation">275,35</av:Point>
                             <av:Size x:Key="ShapeSize">50,50</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">300,85 300,150</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">300,85 300,140</av:PointCollection>
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <Flowchart.StartNode>
-                          <x:Reference>__ReferenceID12</x:Reference>
+                          <x:Reference>__ReferenceID13</x:Reference>
                         </Flowchart.StartNode>
                         <FlowDecision x:Name="__ReferenceID3" Condition="[regex.IsMatch(Commodity(&quot;Items&quot;).ToString,&quot;part &quot; + Regulation(&quot;Part&quot;).ToString + &quot; item &quot; +Regulation(&quot;Annex&quot;).ToString + Regulation(&quot;Item&quot;).ToString)]" DisplayName="Regulation exists" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <av:Point x:Key="ShapeLocation">270,300</av:Point>
+                              <av:Point x:Key="ShapeLocation">270,360</av:Point>
                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                              <av:PointCollection x:Key="TrueConnector">270,330 180,330 180,385</av:PointCollection>
+                              <av:PointCollection x:Key="TrueConnector">270,390 180,390 180,435</av:PointCollection>
                               <x:String x:Key="TrueLabel">Found</x:String>
-                              <av:PointCollection x:Key="FalseConnector">330,330 480,330</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">330,390 480,390</av:PointCollection>
                               <x:String x:Key="FalseLabel">Not Found</x:String>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -497,12 +532,12 @@
                             <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">125,385</av:Point>
-                                  <av:PointCollection x:Key="ConnectorLocation">180,455 180,510</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">125,435</av:Point>
+                                  <av:PointCollection x:Key="ConnectorLocation">180,505 180,550</av:PointCollection>
                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Reference Conditions" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Text matching Statement check" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -591,11 +626,11 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <av:Point x:Key="ShapeLocation">150,510</av:Point>
+                                      <av:Point x:Key="ShapeLocation">150,550</av:Point>
                                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                      <av:PointCollection x:Key="TrueConnector">180,570 180,625</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">180,610 180,655</av:PointCollection>
                                       <x:String x:Key="TrueLabel">Correct Reference</x:String>
-                                      <av:PointCollection x:Key="FalseConnector">210,540 415,540</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">210,580 415,580</av:PointCollection>
                                       <x:String x:Key="FalseLabel">Incorrect Reference</x:String>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -603,9 +638,9 @@
                                     <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">125,625</av:Point>
+                                          <av:Point x:Key="ShapeLocation">125,655</av:Point>
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">180,695 180,730</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">180,725 180,760</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <Assign DisplayName="extract pest info" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_18">
@@ -626,10 +661,10 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <av:Point x:Key="ShapeLocation">150,730</av:Point>
+                                              <av:Point x:Key="ShapeLocation">150,760</av:Point>
                                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                              <av:PointCollection x:Key="TrueConnector">150,760 120,760 120,1040 125,1040</av:PointCollection>
-                                              <av:PointCollection x:Key="FalseConnector">180,790 180,880</av:PointCollection>
+                                              <av:PointCollection x:Key="TrueConnector">150,790 120,790 120,1070 125,1070</av:PointCollection>
+                                              <av:PointCollection x:Key="FalseConnector">180,820 180,910</av:PointCollection>
                                               <x:String x:Key="TrueLabel">No Pest</x:String>
                                               <x:String x:Key="FalseLabel">Pest Found</x:String>
                                             </scg:Dictionary>
@@ -638,7 +673,7 @@
                                             <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">125,1005</av:Point>
+                                                  <av:Point x:Key="ShapeLocation">125,1035</av:Point>
                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -656,11 +691,11 @@
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  <av:Point x:Key="ShapeLocation">150,880</av:Point>
+                                                  <av:Point x:Key="ShapeLocation">150,910</av:Point>
                                                   <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                  <av:PointCollection x:Key="FalseConnector">210,910 435,910</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">210,940 435,940</av:PointCollection>
                                                   <x:String x:Key="TrueLabel">Found</x:String>
-                                                  <av:PointCollection x:Key="TrueConnector">180,940 180,1005</av:PointCollection>
+                                                  <av:PointCollection x:Key="TrueConnector">180,970 180,1035</av:PointCollection>
                                                   <x:String x:Key="FalseLabel">Missing</x:String>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -668,9 +703,9 @@
                                                 <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">435,875</av:Point>
+                                                      <av:Point x:Key="ShapeLocation">435,905</av:Point>
                                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">490,945 490,1040 235,1040</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">490,975 490,1070 235,1070</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <Assign DisplayName="Assign - OHR 3" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_19">
@@ -701,9 +736,9 @@
                                     <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">415,505</av:Point>
+                                          <av:Point x:Key="ShapeLocation">415,545</av:Point>
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">470,575 470,660 235,660</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">470,615 470,690 235,690</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <Assign DisplayName="Assign - OHR 2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_20">
@@ -733,9 +768,9 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">480,300</av:Point>
+                                  <av:Point x:Key="ShapeLocation">480,360</av:Point>
                                   <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                  <av:PointCollection x:Key="TrueConnector">510,300 510,215</av:PointCollection>
+                                  <av:PointCollection x:Key="TrueConnector">510,360 510,205</av:PointCollection>
                                   <x:String x:Key="TrueLabel">Yellow/Orange</x:String>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -743,7 +778,7 @@
                                 <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">455,145</av:Point>
+                                      <av:Point x:Key="ShapeLocation">455,135</av:Point>
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -765,21 +800,43 @@
                             </FlowDecision>
                           </FlowDecision.False>
                         </FlowDecision>
-                        <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID3}" x:Name="__ReferenceID12" DisplayName="Regulation colour" Expression="[Regulation(&quot;Condition&quot;).ToString.ToLower]" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_3">
+                        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID13" DisplayName="Regulation colour" Expression="[Regulation(&quot;Condition&quot;).ToString.ToLower]" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_3">
+                          <FlowSwitch.Default>
+                            <FlowStep x:Name="__ReferenceID12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">245,245</av:Point>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,315 300,360</av:PointCollection>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="Text matching part item check" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Comment sap:VirtualizedContainerService.HintSize="416,236" sap2010:WorkflowViewState.IdRef="Comment_16" Text="1 - get column 1 item list + get part letter&#xD;&#xA;&#xD;&#xA;2 - split list by \n&#xD;&#xA;&#xD;&#xA;3 - check against mini pop up DT&#xD;&#xA;&#xD;&#xA;4 - save minipopup index - index should be able to be used as indicator of whether part item&#xD;&#xA;" />
+                              </Sequence>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID3</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowSwitch.Default>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">270,150</av:Point>
+                              <av:Point x:Key="ShapeLocation">270,140</av:Point>
                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                              <av:PointCollection x:Key="Default">300,210 300,300</av:PointCollection>
-                              <av:PointCollection x:Key="no statement requiredConnector">270,180 145,180</av:PointCollection>
-                              <av:PointCollection x:Key="prohibitedConnector">330,180 455,180</av:PointCollection>
+                              <av:PointCollection x:Key="Default">300,200 300,245</av:PointCollection>
+                              <av:PointCollection x:Key="no statement requiredConnector">270,170 145,170</av:PointCollection>
+                              <av:PointCollection x:Key="prohibitedConnector">330,170 455,170</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <x:Reference>__ReferenceID2<x:Key>prohibited</x:Key></x:Reference>
                           <FlowStep x:Key="no statement required" x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">35,145</av:Point>
+                                <av:Point x:Key="ShapeLocation">35,135</av:Point>
                                 <av:Size x:Key="ShapeSize">110,70</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -818,6 +875,7 @@
                           </ui:Comment>
                         </FlowStep>
                         <x:Reference>__ReferenceID11</x:Reference>
+                        <x:Reference>__ReferenceID12</x:Reference>
                       </Flowchart>
                     </Sequence>
                   </ActivityAction>
@@ -887,10 +945,10 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID13" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+        <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">315,365</av:Point>
+              <av:Point x:Key="ShapeLocation">315,455</av:Point>
               <av:Size x:Key="ShapeSize">110,70</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -904,12 +962,12 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID13</x:Reference>
-    <FlowStep x:Name="__ReferenceID15" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <x:Reference>__ReferenceID14</x:Reference>
+    <FlowStep x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">315,125</av:Point>
-          <av:PointCollection x:Key="ConnectorLocation">370,195 370,245</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">315,215</av:Point>
+          <av:PointCollection x:Key="ConnectorLocation">370,285 370,335</av:PointCollection>
           <av:Size x:Key="ShapeSize">110,70</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -919,7 +977,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove text such as&#xA;, nursery: Woudenberg van tuinplanten Zevenhuizen NL755920902,&#xA;&#xA;and trims the text" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_strSec11AD.Trim]" IsBuilderTabModified="False" Pattern="(?s), nursery:.*?," RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove text such as&#xA;, nursery: Woudenberg van tuinplanten Zevenhuizen NL755920902,&#xA;&#xA;and trims the text" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?s), nursery:.*?," RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -932,7 +990,19 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;11 Additional declaration" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\A\s*11\s*Additional declaration\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;11 Additional declaration" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*11\s*Additional declaration\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
+          <ui:Replace.Replacement>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ui:Replace.Replacement>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:Replace>
+        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;(number of pages:\d+)" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Replace_5" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*See annex \(number of pages:\d+\)\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -961,7 +1031,7 @@
             <OutArgument x:TypeArguments="x:String">[strAD_AllApplied]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[regex.Match(in_strSec11AD,"(?s)(?'AD'\AThe consignment complies.*?)(?=\s{3,}([\w\.]+\s)+\(\d{4}\)|\Z)").Value]</InArgument>
+            <InArgument x:TypeArguments="x:String">[regex.Match(in_strSec11AD.Trim,"(?s)(?'AD'\AThe consignment complies.*?)(?=\s{3,}([\w\.]+\s)+\(\d{4}\)|\Z)").Value]</InArgument>
           </Assign.Value>
         </Assign>
         <ui:Replace sap2010:Annotation.AnnotationText="format strAD_AllApplied" DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="434,123.2" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[strAD_AllApplied]" IsBuilderTabModified="False" Pattern="\s+" RegexOption="IgnoreCase, Compiled" Replacement=" " Result="[strAD_AllApplied]">
@@ -995,7 +1065,628 @@
         <ui:BuildDataTable DataTable="[dtPopUp]" DisplayName="Build Data Table - initialise dtPopUp" sap:VirtualizedContainerService.HintSize="434,83.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;5&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;20&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;AD_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID14</x:Reference>
+        <x:Reference>__ReferenceID15</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID17">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">315,115</av:Point>
+          <av:PointCollection x:Key="ConnectorLocation">370,185 370,215</av:PointCollection>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Test Data" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="CHEDPP.GB.2024.4081760" sap:VirtualizedContainerService.HintSize="508,755.2" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Sequence x:Key="CHEDPP.GB.2024.4081760" sap:VirtualizedContainerService.HintSize="468,472" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_39">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strCountryOfOrigin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Several countries</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadCsvFile DataTable="[io_dtCommodityLines]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\richard\Complete\(7) Supporting Docs CHEDPP.GB.2024.4081760.pdf P4P (2).xlsx" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,106.8" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strSec11AD]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">
+11  Additional declaration
+See annex (number of pages:7)
+     - - - - - - - - - - - - - - - - - - - - -   &lt; TEXT END &gt;   - - - - - - - - - - - - - - - - - - - -
+
+     11  Additional declaration
+    Acanthus hungaricus (0001); Actaea hybrid (0004); Alcea rosea (0006); Andromeda hybride
+    (0007); Antennaria dioica (0008); Arenaria montana (0009); Armeria maritima (0012);
+    Asplenium scolopendrium (0013); Astelia nervosa (0014); Athyrium nipponicum (0016); Blechnum
+    spicant (0017); Buxus sempervirens (0018); Calamagrostis acutiflora (0019); Calycanthus
+    raulstonii (0021); Canna hybrid (0025); Carex hybrid (0026), (0027); Ceanothus hybrid
+    (0028); Ceanothus thyrsiflorus (0029); Clerodendrum trichotomum (0031); Cordyline australis
+    (0032); Cortaderia selloana (0033); Cyrtomium fortunei (0035); Delosperma cooperi (0037);
+    Deutzia hybrid (0038); Dryopteris affinis (0041); Dryopteris atrata (0042); Dryopteris
+    austriaca (0043); Dryopteris championii (0044); Dryopteris erythrosora (0045); Dryopteris
+    hybrid (0040); Escallonia hybrid (0049); Escallonia laevis (0050); Euonymus fortunei (0051),
+    (0052); Euonymus japonicus (0054), (0055); Fargesia nitida (0057); Fargesia robusta (0058);
+    Fascicularia bicolor (0059); Fatsia polycarpa (0061); Festuca glauca (0063); Geranium
+    cantabrigiense (0066); Geranium hybrid (0065); Geranium sanguineum (0067); Geum hybrid
+    (0068); Heuchera americana (0073); Hosta hybrid (0076); Hydrangea anomala (0077), (0078);
+    Hydrangea anomala subsp. petiolaris (0079); Hydrangea macrophylla (0080); Hydrangea
+    petiolaris (0081), (0082); Ilex crenata (0083); Imperata cylindrica (0084); Kalmia
+    angustifolia (0087); Kalmia polifolia (0088); Leucophyta brownii (0096); Levisticum
+    officinale (0097); Ligularia dentata (0098); Lithodora diffusa (0099); Lonicera hybrid
+    (0100); Loropetalum chinense (0101); Mahonia eurybracteata (0104); Miscanthus sinensis
+    (0106); Molinia caerulea (0107); Ornithogalum dubium (0109); Parthenocissus tricuspidata
+    (0111); Photinia fraseri (0120), (0121); Photinia serratifolia (0122); Pieris japonica
+    (0125); Polypodium vulgare (0126); Polystichum munitum (0127); Polystichum neolobatum
+    (0128); Polystichum polyblepharum (0129); Polystichum setiferum (0130); Ribes hybrid (0132);
+    Rudbeckia fulgida (0135); Schizophragma fauriei (0138); Schizophragma hydrangeoides (0139);
+    Sedum hybrid (0140); Sempervivum hybrid (0141), (0142); Syringa meyeri (0146); Taxus baccata
+    (0147); Thalictrum delavayi (0148); Trachelospermum jasminoides (0149); Uncinia rubra
+    (0150); Veronica spicata (0151); Wisteria frutescens (0155); Zantedeschia aethiopica (0157);
+    Zantedeschia hybrid (0156)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    Acer conspicuum (0002); Acer palmatum (0003); Cytisus scoparius (0036); Euryops pectinatus
+    (0056); Fatsia japonica (0060); Hebe hybrid (0069), (0070); Magnolia grandiflora (0103);
+    Rubus hybrid (0134); Strelitzia reginae (0145), (0158)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Agapanthus africanus (0005); Euonymus japonicus (0053); Hosta hybrid (0075); Iris sibirica
+    (0085); Paeonia lactiflora (0110); Photinia fraseri (0119); Pieris japonica (0123), (0124)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Belgium as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    Argyranthemum frutescens (0010)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Italy as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8a + 8bi: No symptoms of the relevant pests (Begomo viruses, Cucumber vein yellowing virus,
+    Cucurbit yellow stunting disorder virus, Lettuce infectious yellow virus, Melon yellowing-associated
+    virus, Squash vein yellowing virus, Sweet potato chlorotic stunt virus, Sweet potato mild mottle virus,5031
+    Tomato mild mottle virus, Tomato leaf curl New Delhi virus) have been observed on the plants during
+    their complete cycle of vegetation, and the plants originate in areas which, in accordance with the
+    measures specified in ISPM4, are known to be free from Bemisia tabaci and other vectors of the relevant
+    pests.
+    Argyranthemum frutescens (0011); Astrantia major (0015); Campanula hybrid (0022); Campanula
+    persicifolia (0023); Campanula portenschlagiana (0024); Clematis hybrid (0030); Cyclamen
+    hybrid (0034); Echinacea purpurea (0046), (0047); Felicia amelloides (0062); Fuchsia hybrid
+    (0064); Jasminum polyanthum (0086); Leucanthemum maximum (0095); Nepeta faassenii (0108);
+    Passiflora caerulea (0113); Passiflora hybrid (0112); Phlox paniculata (0118); Salvia
+    greggii (0136); Salvia nemorosa (0137); Senecio hybrid (0143); Stachys officinalis (0144)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    Calibrachoa hybrid (0020); Petunia hybrid (0117)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 28a: The plants originate in an area established by the national plant protection organisation in
+    accordance with ISPM4 as an area that is free from Candidiatus Phytoplasma 'solani'.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 9ai + 9bii: The plants originate in areas which, in accordance with the measures specified in
+    ISPM4, are known to be free from Tomato leaf curl New Delhi Virus, and The plants have been subjected to
+    an effective treatment ensuring the eradication of Bemisia tabaci and other vectors of Tomato leaf curl
+    New Delhi Virus.
+    Dianthus hybrid (0039)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 36a: The plants originate in the area The Netherlands, established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Spodoptera eridania, Spodoptera
+    frugiperda and Spodoptera litura.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 38b: No signs of Helicoverpa armigera or Spodoptera littoralis have been observed at the place of
+    production since the beginning of the last complete cycle of vegetation.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    Erysimum hybrid (0048); Helianthus hybrid (0071); Lupinus hybrid (0102)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Hemerocallis hybrid (0072)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Belgium as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in an area
+    which has been established by the national plant protection organisation in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Hibiscus syriacus (0074)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 12d: The plants have been officially inspected and found free from Bemisia tabaci immediately prior
+    to their movement.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A5031
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Lavandula angustifolia (0089); Lavandula stoechas (0092)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 28a: The plants originate in an area established by the national plant protection organisation in
+    accordance with ISPM4 as an area that is free from Candidiatus Phytoplasma 'solani'.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Italy as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8a + 8bi: No symptoms of the relevant pests (Begomo viruses, Cucumber vein yellowing virus,
+    Cucurbit yellow stunting disorder virus, Lettuce infectious yellow virus, Melon yellowing-associated
+    virus, Squash vein yellowing virus, Sweet potato chlorotic stunt virus, Sweet potato mild mottle virus,
+    Tomato mild mottle virus, Tomato leaf curl New Delhi virus) have been observed on the plants during
+    their complete cycle of vegetation, and the plants originate in areas which, in accordance with the
+    measures specified in ISPM4, are known to be free from Bemisia tabaci and other vectors of the relevant
+    pests.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 4b: (i) The plants have been grown in a place of production which has been registered and
+    supervised by the national plant protection organisation for a period of at least one year before the
+    export of the plants, and (ii) the place of production, together with a 200m zone surrounding the place
+    of production, is known to be free from Xylella fastidiosa on the basis of official inspections, which
+    included testing where appropriate, that was carried out at appropriate times; and (iii) the plants have
+    been subjected to an annual official inspection at an appropriate time, which included sampling and
+    testing, that confirmed the absence of Xylella fastidiosa and was carried out in accordance with
+    international standards using a sampling scheme able to identify with 99% reliability a level of
+    presence of infected plants of 5%, and (iv) immediately before their export, the plants were subjected
+    to an official visual inspection for the presence of Xylella fastidiosa and, where any symptoms giving
+    rise to a suspicion of its presence were observed, were tested in line with international standards for
+    its presence, confirming its absence, and (v) where there has been any evidence of the presence of the
+    vector of Xylella fastidiosa at the place of production, chemical and cultural controls have been used
+    to suppress the vector, and (vi) the plants have been grown throughout their life under complete
+    physical protection, and appropriate hygiene measures have been implemented at the place of production
+    to ensure that Xylella fastidiosa is not transmitted by tools or equipment.
+    Lavandula angustifolia (0090), (0091); Lavandula stoechas (0093), (0094)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 28a: The plants originate in an area established by the national plant protection organisation in
+    accordance with ISPM4 as an area that is free from Candidiatus Phytoplasma 'solani'.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 4a: The plants have been grown: (i) during a period of at least three years before export, or in
+    the case of plants which are younger than three years, have been grown throughout their life, in a
+    country which, in accordance with the measures specified in ISPM4, is known to be free from Xylella
+    fastidiosa, and (ii) in a site that is subject to annual official inspection, with sampling and testing
+    carried out at the appropriate times on those plants for the presence of Xylella fastidiosa and in
+    accordance with international standards, using a sampling scheme able to identify with 99% reliability a
+    level of presence of infected plants of 5%, in which the absence of Xylella fastidiosa was confirmed.
+    Mesembryanthemum sp. (0105)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Italy as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8a + 8bi: No symptoms of the relevant pests (Begomo viruses, Cucumber vein yellowing virus,
+    Cucurbit yellow stunting disorder virus, Lettuce infectious yellow virus, Melon yellowing-associated
+    virus, Squash vein yellowing virus, Sweet potato chlorotic stunt virus, Sweet potato mild mottle virus,
+    Tomato mild mottle virus, Tomato leaf curl New Delhi virus) have been observed on the plants during
+    their complete cycle of vegetation, and the plants originate in areas which, in accordance with the
+    measures specified in ISPM4, are known to be free from Bemisia tabaci and other vectors of the relevant
+    pests.
+    Pelargonium grandiflorum (0115); Pelargonium hybrid (0114); Pelargonium zonale (0116)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A5031
+    item 36a: The plants originate in the area The Netherlands, established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Spodoptera eridania, Spodoptera
+    frugiperda and Spodoptera litura.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 38b: No signs of Helicoverpa armigera or Spodoptera littoralis have been observed at the place of
+    production since the beginning of the last complete cycle of vegetation.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Rhododendron japonicum (0131)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Belgium as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 1c: Where signs of Phytophthora ramorum, have been found on the plants at the place of production,
+    an official statement that appropriate procedures have been implemented for the purpose of eradicating
+    that pest and the plants have been found free from the pest following those procedures, which consisted
+    of at least: (i) destruction of the infected plants and all susceptible plants within a 2 m radius of
+    the infected plants, including associated growing media and plant debris, (ii) in the case of plants
+    (Viburnum spp., Camellia spp. of Rhododendron spp., other than Rhododendron simsii) of this entry within
+    a 10 m radius of the infected plants and any remaining plants from the infected lot: (aa)they have been
+    retained at the place of production, (bb)additional official inspections have been carried out at least
+    twice in the three months after the eradication measures have been taken when the plants are in active
+    growth, (cc)no treatments that may suppress symptoms of the plant pest have been carried out in that
+    three month period, and (dd)the plants have been found free from the pest on these official inspections,
+    (iii) in the case of all other plants (Viburnum spp., Camellia spp. of Rhododendron spp., m.u.v.
+    Rhododendron simsii) of this entry at the place of production, the plants have been subjected to
+    intensive official re-inspection and have been found free from the pest on those inspections, and (iv)
+    appropriate phytosanitary measures have been taken on the growing surface within a 2 m radius of
+    infected plants.
+    Salvia rosmarinus (0133)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Italy as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8a + 8bi: No symptoms of the relevant pests (Begomo viruses, Cucumber vein yellowing virus,
+    Cucurbit yellow stunting disorder virus, Lettuce infectious yellow virus, Melon yellowing-associated
+    virus, Squash vein yellowing virus, Sweet potato chlorotic stunt virus, Sweet potato mild mottle virus,
+    Tomato mild mottle virus, Tomato leaf curl New Delhi virus) have been observed on the plants during
+    their complete cycle of vegetation, and the plants originate in areas which, in accordance with the
+    measures specified in ISPM4, are known to be free from Bemisia tabaci and other vectors of the relevant
+    pests.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 4b: (i) The plants have been grown in a place of production which has been registered and
+    supervised by the national plant protection organisation for a period of at least one year before the
+    export of the plants, and (ii) the place of production, together with a 200m zone surrounding the place
+    of production, is known to be free from Xylella fastidiosa on the basis of official inspections, which
+    included testing where appropriate, that was carried out at appropriate times; and (iii) the plants have
+    been subjected to an annual official inspection at an appropriate time, which included sampling and
+    testing, that confirmed the absence of Xylella fastidiosa and was carried out in accordance with
+    international standards using a sampling scheme able to identify with 99% reliability a level of
+    presence of infected plants of 5%, and (iv) immediately before their export, the plants were subjected
+    to an official visual inspection for the presence of Xylella fastidiosa and, where any symptoms giving
+    rise to a suspicion of its presence were observed, were tested in line with international standards for
+    its presence, confirming its absence, and (v) where there has been any evidence of the presence of the
+    vector of Xylella fastidiosa at the place of production, chemical and cultural controls have been used
+    to suppress the vector, and (vi) the plants have been grown throughout their life under complete
+    physical protection, and appropriate hygiene measures have been implemented at the place of production
+    to ensure that Xylella fastidiosa is not transmitted by tools or equipment.
+    Viburnum davidii (0152); Viburnum plicatum (0153); Viburnum tinus (0154)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A5031
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 1c: Where signs of Phytophthora ramorum, have been found on the plants at the place of production,
+    an official statement that appropriate procedures have been implemented for the purpose of eradicating
+    that pest and the plants have been found free from the pest following those procedures, which consisted
+    of at least: (i) destruction of the infected plants and all susceptible plants within a 2 m radius of
+    the infected plants, including associated growing media and plant debris, (ii) in the case of plants
+    (Viburnum spp., Camellia spp. of Rhododendron spp., other than Rhododendron simsii) of this entry within
+    a 10 m radius of the infected plants and any remaining plants from the infected lot: (aa)they have been
+    retained at the place of production, (bb)additional official inspections have been carried out at least
+    twice in the three months after the eradication measures have been taken when the plants are in active
+    growth, (cc)no treatments that may suppress symptoms of the plant pest have been carried out in that
+    three month period, and (dd)the plants have been found free from the pest on these official inspections,
+    (iii) in the case of all other plants (Viburnum spp., Camellia spp. of Rhododendron spp., m.u.v.
+    Rhododendron simsii) of this entry at the place of production, the plants have been subjected to
+    intensive official re-inspection and have been found free from the pest on those inspections, and (iv)
+    appropriate phytosanitary measures have been taken on the growing surface within a 2 m radius of
+    infected plants.
+
+
+</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Sequence x:Key="335580221 Pot plants" sap:VirtualizedContainerService.HintSize="468,472" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_42">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strCountryOfOrigin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Neatherlands</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadCsvFile DataTable="[io_dtCommodityLines]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\richard\Complete\335580221 Pot plants.xlsx" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_3" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,106.8" sap2010:WorkflowViewState.IdRef="Assign_41">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strSec11AD]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">
+11  Additional declaration
+
+     See annex (number of pages:1)
+     - - - - - - - - - - - - - - - - - - - - -   &lt; TEXT END &gt;   - - - - - - - - - - - - - - - - - - - -
+
+     11  Additional declaration
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    Rosa hybrid (0793)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+
+
+</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Sequence x:Key="335726741 with PFA or PFPP next to botanical name" sap:VirtualizedContainerService.HintSize="468,472" sap2010:WorkflowViewState.IdRef="Sequence_31">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_44">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strCountryOfOrigin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Neatherlands</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadCsvFile DataTable="[io_dtCommodityLines]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\richard\Complete\335726741 with PFA or PFPP next to botanical name.xlsx" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_4" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,106.8" sap2010:WorkflowViewState.IdRef="Assign_43">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strSec11AD]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">
+11  Additional declaration
+
+     See annex (number of pages:2)
+     - - - - - - - - - - - - - - - - - - - - -   &lt; TEXT END &gt;   - - - - - - - - - - - - - - - - - - - -
+
+     11  Additional declaration
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    Aster hybrid (0001); Celosia hybrid (0005); Centaurea hybrid (0006); Echinacea hybrid
+    (0013); Gladiolus hybrid (0019)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    Chrysanthemum sp. (0008)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 36a: The plants originate in the area The Netherlands, established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Spodoptera eridania, Spodoptera
+    frugiperda and Spodoptera litura.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 37a: The plants have been grown throughout their life in a country which, in accordance with the
+    measures specified in ISPM4, is known to be free from Chrysanthemum stem necrosis virus.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 38b: No signs of Helicoverpa armigera or Spodoptera littoralis have been observed at the place of
+    production since the beginning of the last complete cycle of vegetation.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    Dianthus hybrid (0012)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 36a: The plants originate in the area The Netherlands, established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Spodoptera eridania, Spodoptera
+    frugiperda and Spodoptera litura.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 38b: No signs of Helicoverpa armigera or Spodoptera littoralis have been observed at the place of
+    production since the beginning of the last complete cycle of vegetation.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    Fatsia japonica (0014); Hebe hybrid (0020); Jacobaea maritima (0022); Leucophyta brownii
+    (0024)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Ficus benjamina (0016); Ficus elastica (0017)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 12d: The plants have been officially inspected and found free from Bemisia tabaci immediately prior
+    to their movement.
+    Lavandula stoechas (0023)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 28a: The plants originate in an area established by the national plant protection organisation in
+    accordance with ISPM4 as an area that is free from Candidiatus Phytoplasma 'solani'.7243
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 4a: The plants have been grown: (i) during a period of at least three years before export, or in
+    the case of plants which are younger than three years, have been grown throughout their life, in a
+    country which, in accordance with the measures specified in ISPM4, is known to be free from Xylella
+    fastidiosa, and (ii) in a site that is subject to annual official inspection, with sampling and testing
+    carried out at the appropriate times on those plants for the presence of Xylella fastidiosa and in
+    accordance with international standards, using a sampling scheme able to identify with 99% reliability a
+    level of presence of infected plants of 5%, in which the absence of Xylella fastidiosa was confirmed.
+
+
+</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Sequence x:Key="336561170 - mixed commodity groups" sap:VirtualizedContainerService.HintSize="468,466" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_46">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strCountryOfOrigin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Neatherlands</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadCsvFile DataTable="[io_dtCommodityLines]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\richard\Complete\336561170 - mixed commodity groups.xlsx" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_5" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,106.8" sap2010:WorkflowViewState.IdRef="Assign_45">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strSec11AD]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">
+11  Additional declaration
+
+     See annex (number of pages:4)
+     - - - - - - - - - - - - - - - - - - - - -   &lt; TEXT END &gt;   - - - - - - - - - - - - - - - - - - - -
+
+     11  Additional declaration
+    Alocasia hybrid (0001); Anthurium hybrid (0004); Ceropegia sp. (0011); Coreopsis sp. (0014);
+    Curcuma sp. (0015); Dracaena hybrid (0022); Guzmania hybrid (0028); Hedera sp. (0032); Howea
+    forsteriana (0034); Kalanchoe hybrid (0036); Kalanchoe sp. (0035); Lilium hybrid (0039);
+    Maranta sp. (0040); Monstera sp. (0041); Nephrolepis hybrid (0023); Philodendron hybrid
+    (0047); Phlebodium sp. (0048); Pilea sp. (0049); Radermachera sp. (0052); Sansevieria sp.
+    (0054); Scindapsus sp. (0056); Sedum hybrid (0057); Sempervivum hybrid (0058); Spathiphyllum
+    hybrid (0059); Stephanotis sp. (0060); Strelitzia nicolai (0061); Tillandsia cyanea (0063)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    Callistephus hybrid (0007); Cyclamen persicum (0016); Peperomia sp. (0042); Viola hybrid
+    (0064)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    Calluna vulgaris (0008); Calocephalus brownii (0038); Hebe hybrid (0031); Rosa hybrid (0053)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Chrysanthemum hybrid (0013)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 36a: The plants originate in the area The Netherlands, established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Spodoptera eridania, Spodoptera
+    frugiperda and Spodoptera litura.
+    The consignment complies with The Plant Health (Phytosanitary Conditions) (Amendment) (EU exit)
+    Regulations 2020 No 1527, schedule 7, Part A item 39a: The plants originate in a country which, in
+    accordance with the measures specified in ISPM4, is known to be free from Liriomyza sativae and
+    Nemorimyza maculosa.
+    Cymbidium hybrid (0021); Phalaenopsis hybrid (0043)
+    The consignment complies with The Plant Health (Phytosanitary Conditions) (Amendment) (EU exit)0221
+    Regulations 2020 No 1527, schedule 7, Part A item 41a: The plants originate in a country which, in
+    accordance with the measures specified in ISPM4, is known to be free from Thrips palmi.
+    Dionaea muscipula (0027)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    The specimens are artificially propagated as defined by CITES
+    Ficus benjamina (0024); Ficus elastica (0025); Ficus lyrata (0026)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 12d: The plants have been officially inspected and found free from Bemisia tabaci immediately prior
+    to their movement.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    Gypsophila sp. (0029), (0030)
+    The consignment complies with The Plant Health (Phytosanitary Conditions) (Amendment) (EU exit)
+    Regulations 2020 No 1527, schedule 7, Part A item 39b: Immediately prior to their export, they have been
+    officially inspected and found free from Liriomyza sativae and Nemorimyza maculosa.
+    Hibiscus hybrid (0033)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 12d: The plants have been officially inspected and found free from Bemisia tabaci immediately prior
+    to their movement.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 40e: Immediately prior to their export, the plants have been officially inspected and found free
+    from Liriomyza huidobrensis and Liriomyza trifolii.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B
+    item 2b: The plants have been grown during a period of at least three years before export, or in the
+    case of plants which are younger than three years have been grown throughout their life, in the
+    Netherlands established by the national plant protection organization in accordance with ISPM4 as an
+    area that is free from Xylella fastidiosa.
+    Kalanchoe hybrid (0006)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in Denmark as an area established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in Denmark established by the national plant protection organisation in
+    accordance with ISPM4 as an area that is free from Popillia japonica
+    Phalaenopsis hybrid (0044)
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 6ai: The plants originate in The Netherlands as an area established by the national plant
+    protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+    The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A
+    item 8A a: the plants originate in the Netherlands established by the national plant protection
+    organisation in accordance with ISPM4 as an area that is free from Popillia japonica
+    The specimens are artificially propagated as defined by CITES
+
+
+</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Switch>
+      </Sequence>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID16</x:Reference>
       </FlowStep.Next>
     </FlowStep>
   </Flowchart>
