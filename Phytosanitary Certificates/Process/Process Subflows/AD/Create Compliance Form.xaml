@@ -1,0 +1,552 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Create_Compliance_Form" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_dtCommodityLines" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_strPhytoFilepath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Create_Compliance_Form_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Create_Compliance_Form" sap:VirtualizedContainerService.HintSize="875.6,5319.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strHTML" />
+      <Variable x:TypeArguments="x:String" Name="strProductCount" />
+      <Variable x:TypeArguments="x:String" Name="strCompliantCount" />
+      <Variable x:TypeArguments="x:String" Name="strADIssueCount" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtAdditionalDeclarations" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtAdditionalDeclarationsSearchTool" />
+      <Variable x:TypeArguments="x:String" Name="strTrackerPane" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Sequence - Create TEST data" sap:VirtualizedContainerService.HintSize="570,910" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Delete this test data when integrated with Ali's code&quot;]" />
+      <Assign DisplayName="Assign phyto pdf" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_26">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_strPhytoFilepath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["C:\Users\da000087\Downloads\Phyto\pdfs\Example Phyto NL Short 1.pdf"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:BuildDataTable DataTable="[io_dtCommodityLines]" DisplayName="Build Data Table - Commodity Lines" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Hold_x0020_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Outcome_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;ID&gt;0001&lt;/ID&gt;&#xD;&#xA;    &lt;Product&gt;Camellia Japonica&lt;/Product&gt;&#xD;&#xA;    &lt;Country&gt;SPAIN&lt;/Country&gt;&#xD;&#xA;    &lt;Outcome&gt;On Hold&lt;/Outcome&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;ID&gt;0002&lt;/ID&gt;&#xD;&#xA;    &lt;Product&gt;Camellia Japonica&lt;/Product&gt;&#xD;&#xA;    &lt;Country&gt;SPAIN&lt;/Country&gt;&#xD;&#xA;    &lt;Outcome&gt;Compliant&lt;/Outcome&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;ID&gt;0003&lt;/ID&gt;&#xD;&#xA;    &lt;Product&gt;Cornus Alba&lt;/Product&gt;&#xD;&#xA;    &lt;Country&gt;BELGIUM&lt;/Country&gt;&#xD;&#xA;    &lt;Outcome&gt;On Hold&lt;/Outcome&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber - Add 100 test rows" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, 100)]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,273.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentNumber.ToString,&quot;Camellia Japonica&quot;,&quot;Spain&quot;,&quot;Compliant&quot;}]" DataTable="[io_dtCommodityLines]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Test data below needs changing out to the real data structure/format&quot;]" />
+      <ui:BuildDataTable DataTable="[dtAdditionalDeclarations]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;1&lt;/ID&gt;&#xA;    &lt;AD&gt;Annex 7 Part A Item 6Ai: The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;2&lt;/ID&gt;&#xA;    &lt;AD&gt;Annex 7 Part A Item 8A d: The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:BuildDataTable DataTable="[dtAdditionalDeclarationsSearchTool]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,83.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;1&lt;/ID&gt;&#xA;    &lt;AD&gt;The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;2&lt;/ID&gt;&#xA;    &lt;AD&gt;The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+    </Sequence>
+    <ui:MultipleAssign DisplayName="Assign counts of commodity lines" sap:VirtualizedContainerService.HintSize="570,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strProductCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[io_dtCommodityLines.Rows.Count.ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strCompliantCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[io_dtCommodityLines.AsEnumerable().Where(Function(row) row("Outcome").ToString().Equals("Compliant")).Count().ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strADIssueCount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[io_dtCommodityLines.AsEnumerable().Where(Function(row) row("Outcome").ToString().Equals("On Hold")).Count().ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <Assign DisplayName="Initialise empty string" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add HTML Header" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	"&lt;!DOCTYPE html&gt;" &amp; vbCRLF &amp; _
+					"&lt;html lang=""en""&gt;" &amp; vbCRLF &amp; _
+					"&lt;head&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;meta charset=""UTF-8""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;meta name=""viewport"" content=""width=device-width, initial-scale=1""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;title&gt;Phytosanitary Compliance Dashboard&lt;/title&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;link rel=""stylesheet"" href=""styles.css""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css""&gt;" &amp; vbCRLF &amp; _
+					"&lt;/head&gt;" &amp; vbCRLF &amp; _
+					"&lt;body&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add Page Header" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	"&lt;header role=""banner""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;div&gt;" &amp; strProductCount &amp; " Products&lt;/div&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;div&gt;" &amp; strCompliantCount &amp; " Compliant&lt;/div&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;div&gt;" &amp; strADIssueCount &amp; " Missing Detail&lt;/div&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;div&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;button id=""collapse-toggle"" aria-label=""Expand all accordions""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;i aria-hidden=""true"" class=""fas fa-chevron-down""&gt;&lt;/i&gt;Expand all accordions" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;/button&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;label for=""theme-toggle"" aria-label=""Toggle dark mode On or off""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""checkbox"" id=""theme-toggle""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;span&gt;Dark Mode&lt;/span&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;/label&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;label for=""cvd-toggle"" aria-label=""Toggle high contrast mode On or off""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""checkbox"" id=""cvd-toggle""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;span&gt;High Contrast Mode&lt;/span&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;/label&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;label for=""single-expand-toggle"" aria-label=""Toggle single accordion expansion on or off""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""checkbox"" id=""single-expand-toggle""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;span&gt;Single Expand&lt;/span&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; "&lt;/label&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF &amp; _
+					"&lt;/header&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Flag main content section" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;main&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="For screen readers add hidden announcer" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML 	&amp; vbTab &amp; "&lt;div class=""status-announcer"" aria-live=""polite""&gt;&lt;/div&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add page spinner" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_29">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML 	&amp; vbTab &amp; "&lt;div class=""overlay"" id=""spinnerOverlay""&gt;" &amp; vbCRLF &amp; _
+				vbTab &amp; "&lt;i class=""fas fa-spinner fa-spin spinner""&gt;&lt;/i&gt;" &amp; vbCRLF &amp; _
+				vbTab &amp; "&lt;div class=""spinner-text"" id=""spinnerText""&gt;&lt;/div&gt;" &amp; vbCRLF &amp; _
+				vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="570,2076.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body - Create Accordion and add content" sap:VirtualizedContainerService.HintSize="536,1878" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strComplianceText" />
+              <Variable x:TypeArguments="x:String" Name="strCompliantButtonActive" />
+              <Variable x:TypeArguments="x:String" Name="strAccordionStatus" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[CurrentRow(&quot;Outcome&quot;).ToString = &quot;Compliant&quot;]" DisplayName="If product is compliant" sap:VirtualizedContainerService.HintSize="502,1188.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,508.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign compliance text" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_16">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strComplianceText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">no issues</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign this commodity line to tracker pane" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_19">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strTrackerPane]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[strTrackerPane &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;li class=""complete""&gt;&lt;a href=""#product" &amp; CurrentRow("ID").ToString &amp; """ aria-label=""Navigate To commodity product " &amp; CurrentRow("ID").ToString &amp; ", complete""&gt;&lt;i class=""fas fa-check""&gt;&lt;/i&gt; " &amp; CurrentRow("ID").ToString &amp; "&lt;/a&gt;&lt;/li&gt;" &amp; vbCRLF]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign button active" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_21">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strCompliantButtonActive]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[" active"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign accordion status" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_23">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strAccordionStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">green</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,508.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign compliance text" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strComplianceText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">issues</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign this commodity line to tracker pane" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_20">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strTrackerPane]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[strTrackerPane &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;li class=""unfinished""&gt;&lt;a href=""#product" &amp; CurrentRow("ID").ToString &amp; """ aria-label=""Navigate To product " &amp; CurrentRow("ID").ToString &amp; ", incomplete""&gt;&lt;i class=""fas fa-exclamation-triangle""&gt;&lt;/i&gt; " &amp; CurrentRow("ID").ToString &amp; "&lt;/a&gt;&lt;/li&gt;" &amp; vbCRLF]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign button not-active" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strCompliantButtonActive]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign accordion status" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strAccordionStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">red</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign DisplayName="Add accordion header" sap:VirtualizedContainerService.HintSize="502,115.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	vbTab &amp; "&lt;details class=""" &amp; strAccordionStatus &amp; """ id=""product" &amp; CurrentRow("ID").ToString &amp; """&gt;" &amp; vbCrLf &amp; _
+					vbTab &amp; vbTab &amp; "&lt;summary aria-label=""" &amp; CurrentRow("ID").ToString &amp; " " &amp; CurrentRow("product").ToString &amp; " from " &amp; CurrentRow("Country").ToString &amp; " with " &amp; strComplianceText &amp; """&gt;" &amp; _
+					CurrentRow("ID").ToString &amp; " " &amp; CurrentRow("product").ToString &amp; _
+					" (" &amp; CurrentRow("Country").ToString &amp; ")&lt;/summary&gt;" &amp; vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Hard coded text - replace this&quot;]" />
+            <Assign DisplayName="Add Accordion Content" sap:VirtualizedContainerService.HintSize="502,115.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; "&lt;div class=""accordion-content""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-red""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi." &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-green""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica." &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-red""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi." &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-green""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica." &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Add Outcome" sap:VirtualizedContainerService.HintSize="502,115.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	vbTab &amp; vbTab &amp; "&lt;div class=""accordion-controls""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div class=""control-group control-outcome""&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;label for=""outcome" &amp; CurrentRow("ID").ToString &amp; """&gt;Outcome&lt;/label&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div class=""button-group"" id=""outcome" &amp; CurrentRow("ID").ToString &amp; """&gt;" &amp; vbCrLf &amp; _
+								vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;button class=""btn-outcome" &amp; strCompliantButtonActive &amp; """ data-value=""Compliant""&gt;Compliant&lt;/button&gt;" &amp; vbCrLf &amp; _
+								vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;button class=""btn-outcome"" data-value=""On-hold""&gt;On Hold&lt;/button&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div class=""control-group control-comments""&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;label for=""comments" &amp; CurrentRow("ID").ToString &amp; """&gt;Comments&lt;/label&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""text"" id=""comments" &amp; CurrentRow("ID").ToString &amp; """ placeholder=""Hold Reason""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+					vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Close content and accordion" sap:VirtualizedContainerService.HintSize="502,106.8" sap2010:WorkflowViewState.IdRef="Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+					vbTab &amp; "&lt;/details&gt;" &amp; vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <Assign DisplayName="Add PDF Panel" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;div class=""pdf-panel"" aria-hidden=""true""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; vbTab &amp; "&lt;div class=""pdf-header""&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;span&gt;Supporting Document&lt;/span&gt;" &amp; vbCRLF &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; "&lt;button class=""close-panel"" aria-label=""Close PDF panel""&gt;×&lt;/button&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; vbTab &amp; "&lt;iframe class=""pdf-embed-side"" title=""Supporting Document PDF Viewer"" src=""" &amp; in_strPhytoFilepath &amp; """&gt;&lt;/iframe&gt;" &amp; vbCRLF &amp; _
+					vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF &amp; _
+					vbTab &amp; "&lt;button class=""pdf-banner"" aria-label=""Open Supporting Document PDF""&gt;View PDF&lt;/button&gt;" &amp; vbCRLF &amp; _
+					vbTab &amp; "&lt;div class=""backdrop"" aria-hidden=""true""&gt;&lt;/div&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add Submit Button" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_25">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;button class=""submit-btn"" aria-label=""Submit all product outcomes""&gt;Submit&lt;/button&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add Product Tracker Pane" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;nav class=""tracker-pane"" aria-label=""Product status navigation""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; vbTab &amp; "&lt;ul&gt;" &amp; vbCRLF &amp; _
+							strTrackerPane &amp; _
+						vbTab &amp; vbTab &amp; "&lt;/ul&gt;" &amp; vbCRLF &amp; _
+					vbTab &amp; "&lt;/nav&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Close flag for main content section" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;/main&gt;" &amp; vbCRLF]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add js file reference" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;script src=""functions.js""&gt;&lt;/script&gt;" &amp; vbCrLf]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Close body and HTML sections" sap:VirtualizedContainerService.HintSize="570,115.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	"&lt;/body&gt;" &amp; vbCrLf &amp; _
+					"&lt;/html&gt;"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="570,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Hard coded text file path&quot;]" />
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="C:\Users\da000087\Downloads\Phyto\HTML Wireframes\Index.html" sap:VirtualizedContainerService.HintSize="570,167.6" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strHTML]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="570,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;Remove this open form after integration, it should be called from Alis code&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Open Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="570,199.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Open Compliance Form.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strComplianceFormFilePath">C:\Users\da000087\Downloads\Phyto\HTML Wireframes\Index.html</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
