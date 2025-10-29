@@ -154,7 +154,7 @@
       <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed."Removed_Key"Set Transaction Status"Removed_Key"2315,1170.04"Removed_Key"Flowchart_2">
+  <FlowchartRemoved_Key"Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed."Removed_Key"Set Transaction Status"Removed_Key"2315,1426.04"Removed_Key"Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strLogNote" />
     </Flowchart.Variables>
@@ -193,7 +193,7 @@
               <av:Point x:Key="AnnotationLocation">90,410</av:Point>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder."Removed_Key"Success"Removed_Key"110,70"Removed_Key"Sequence_11">
+          <SequenceRemoved_Key"If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder."Removed_Key"Success"Removed_Key"484,865"Removed_Key"Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -201,33 +201,13 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"452,175"Removed_Key"LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
-            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"452,175"Removed_Key"LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Remember to configure the SUCCESS set transaction status activity!&quot;]" />
-            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"452,388"Removed_Key"CommentOut_1">
-              <ui:CommentOut.Body>
-                <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,277"Removed_Key"Sequence_25">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}"Removed_Key"Set Transaction Status" ErrorType="Business"Removed_Key"382,217"Removed_Key"SetTransactionStatus_9" Status="Successful" TransactionItem="[g_TransactionItem]">
-                    <ui:SetTransactionStatus.Analytics>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                    </ui:SetTransactionStatus.Analytics>
-                    <ui:SetTransactionStatus.Output>
-                      <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                    </ui:SetTransactionStatus.Output>
-                  </ui:SetTransactionStatus>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"452,169"Removed_Key"InvokeMethod_8" MethodName="Stop">
+            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"450,175"Removed_Key"LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Transaction Successful&quot;]" />
+            <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"450,169"Removed_Key"InvokeMethod_8" MethodName="Stop">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
               </InvokeMethod.TargetObject>
             </InvokeMethod>
-            <d:LogTransactionRemoved_Key"452,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_1">
+            <d:LogTransactionRemoved_Key"450,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="-1" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Success" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_1">
               <d:LogTransaction.IN_strMiscNotes>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String"Removed_Key"Literal&lt;String&gt;" Value="" />
@@ -239,7 +219,7 @@
                 </InArgument>
               </d:LogTransaction.IN_strOutcomeNotes>
             </d:LogTransaction>
-            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"452,360"Removed_Key"If_7">
+            <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,360"Removed_Key"If_7">
               <If.Then>
                 <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_26">
                   <sap:WorkflowViewStateService.ViewState>
@@ -359,40 +339,20 @@
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessageRemoved_Key"Log Message (Business Exception)"Removed_Key"452,175"Removed_Key"LogMessage_20" Level="Error" Message="[in_BusinessException.Message]" />
-                <ui:LogMessageRemoved_Key"Log Message"Removed_Key"452,175"Removed_Key"LogMessage_21" Level="Warn" Message="[&quot;Remember to configure the BUSINESS set transaction status activity!&quot;]" />
-                <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"452,388"Removed_Key"CommentOut_2">
-                  <ui:CommentOut.Body>
-                    <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,277"Removed_Key"Sequence_28">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}"Removed_Key"Set Transaction Status" ErrorType="Business"Removed_Key"382,217"Removed_Key"SetTransactionStatus_10" Status="Successful" TransactionItem="[g_TransactionItem]">
-                        <ui:SetTransactionStatus.Analytics>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                        </ui:SetTransactionStatus.Analytics>
-                        <ui:SetTransactionStatus.Output>
-                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                        </ui:SetTransactionStatus.Output>
-                      </ui:SetTransactionStatus>
-                    </Sequence>
-                  </ui:CommentOut.Body>
-                </ui:CommentOut>
-                <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"452,169"Removed_Key"InvokeMethod_7" MethodName="Stop">
+                <ui:LogMessageRemoved_Key"Log Message (Business Exception)"Removed_Key"450,175"Removed_Key"LogMessage_20" Level="Error" Message="[in_BusinessException.Message]" />
+                <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"450,169"Removed_Key"InvokeMethod_7" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransactionRemoved_Key"452,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_2">
+                <d:LogTransactionRemoved_Key"450,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strOutcome="Business Exception" IN_strOutcomeNotes="[in_BusinessException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_2">
                   <d:LogTransaction.IN_strMiscNotes>
                     <InArgument x:TypeArguments="x:String">
                       <Literal x:TypeArguments="x:String"Removed_Key"Literal&lt;String&gt;" Value="" />
                     </InArgument>
                   </d:LogTransaction.IN_strMiscNotes>
                 </d:LogTransaction>
-                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"452,795"Removed_Key"If_8">
+                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,795"Removed_Key"If_8">
                   <If.Then>
                     <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_29">
                       <sap:WorkflowViewStateService.ViewState>
@@ -435,7 +395,7 @@
                   <av:Point x:Key="AnnotationLocation">530,400</av:Point>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <SequenceRemoved_Key"If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)."Removed_Key"System Exception"Removed_Key"530,3512"Removed_Key"Sequence_17">
+              <SequenceRemoved_Key"If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)."Removed_Key"System Exception"Removed_Key"110,70"Removed_Key"Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -447,7 +407,7 @@
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <AssignRemoved_Key"Assign QueryRetry"Removed_Key"496,115"Removed_Key"Assign_13">
+                <AssignRemoved_Key"Assign QueryRetry"Removed_Key"484,115"Removed_Key"Assign_13">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[QueueRetry]</OutArgument>
                   </Assign.To>
@@ -455,7 +415,7 @@
                     <InArgument x:TypeArguments="x:Boolean">[g_TransactionItem isNot Nothing AndAlso (g_TransactionItem.GetType is GetType(Uipath.Core.QueueItem))]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke RetryCurrentTransaction workflow"Removed_Key"496,207"Removed_Key"InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Framework\RetryCurrentTransaction.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke RetryCurrentTransaction workflow"Removed_Key"484,207"Removed_Key"InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Framework\RetryCurrentTransaction.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">[io_RetryNumber]</InOutArgument>
                     <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">[io_TransactionNumber]</InOutArgument>
@@ -463,41 +423,7 @@
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_QueueRetry">[QueueRetry]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <TryCatchRemoved_Key"Take a screenshot of the current state of the screen to facilitate debugging."Removed_Key"Try taking screenshot"Removed_Key"496,484"Removed_Key"TryCatch_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch.Try>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke TakeScreenshot workflow"Removed_Key"334,175"Removed_Key"InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[g_Config("ExScreenshotsFolderPath").ToString]</InArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </TryCatch.Try>
-                  <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception"Removed_Key"404,23"Removed_Key"Catch`1_13">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ActivityAction x:TypeArguments="s:Exception">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
-                        </ActivityAction.Argument>
-                        <ui:LogMessageRemoved_Key"Log message (Screenshot not taken)"Removed_Key"334,143"Removed_Key"LogMessage_22" Level="Warn" Message="[&quot;Failed to take screenshot: &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
-                      </ActivityAction>
-                    </Catch>
-                  </TryCatch.Catches>
-                </TryCatch>
-                <ui:LogMessageRemoved_Key"Log Message"Removed_Key"496,175"Removed_Key"LogMessage_23" Level="Warn" Message="[&quot;Remember to configure the SYSTEM set transaction status activity!&quot;]" />
-                <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"496,388"Removed_Key"CommentOut_3">
+                <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"484,388"Removed_Key"CommentOut_3">
                   <ui:CommentOut.Body>
                     <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,277"Removed_Key"Sequence_34">
                       <sap:WorkflowViewStateService.ViewState>
@@ -516,13 +442,13 @@
                     </Sequence>
                   </ui:CommentOut.Body>
                 </ui:CommentOut>
-                <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"496,169"Removed_Key"InvokeMethod_6" MethodName="Stop">
+                <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"484,169"Removed_Key"InvokeMethod_6" MethodName="Stop">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                   </InvokeMethod.TargetObject>
                 </InvokeMethod>
-                <d:LogTransactionRemoved_Key"496,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_3" />
-                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"496,749"Removed_Key"If_10">
+                <d:LogTransactionRemoved_Key"484,57" IN_dateEndDateTime="[Now]" IN_dateStartDateTime="[in_dateCaseStartTime]" IN_intExitPoint="[g_intExitPoint]" IN_strFileName="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" IN_strMiscNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeNotes="[in_SystemException.Message]" IN_strTotalTime="[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)).ToString]" IN_strTransactionID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strVersion="[g_Config(&quot;WorkPackageVersion&quot;).ToString]" IN_strWorkPackage="[g_Config(&quot;WorkPackageID&quot;).ToString]"Removed_Key"LogTransaction_3" />
+                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"484,804"Removed_Key"If_10">
                   <If.Then>
                     <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_35">
                       <sap:WorkflowViewStateService.ViewState>
@@ -533,18 +459,18 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <SequenceRemoved_Key"Else"Removed_Key"416,488"Removed_Key"Sequence_36">
+                    <SequenceRemoved_Key"Else"Removed_Key"416,543"Removed_Key"Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <d:Log_CaseRemoved_Key"Log Case - Local file"Removed_Key"334,25" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeMessage="[in_SystemException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]"Removed_Key"Log_Case_3" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]" />
-                      <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"System Exception Form"Removed_Key"334,403" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;System Exception Encountered&lt;/h1&gt;&lt;P&gt;A System Exception has occured during processing.&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,350}]"Removed_Key"Generic_PopUp_2" />
+                      <d:Log_CaseRemoved_Key"Log Case - Local file"Removed_Key"382,57" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[in_dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - in_dateCaseStartTime).ToString]" IN_strCaseID="[String.Join(&quot;, &quot;, g_arrCaseID.Where(Function(s) not String.IsNullOrEmpty(s)))]" IN_strFilePath="[in_strWorkLogFilepath]" IN_strNotes="[strLogNote]" IN_strOutcome="System Exception" IN_strOutcomeMessage="[in_SystemException.Message]" IN_strUser="[g_Config(&quot;Username&quot;).ToString]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]"Removed_Key"Log_Case_3" in_dblCaseProcessingTime="[Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds, 2)]" />
+                      <d1:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"System Exception Form"Removed_Key"382,426" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;System Exception Encountered&lt;/h1&gt;&lt;P&gt;A System Exception has occured during processing.&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+in_strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,350}]"Removed_Key"Generic_PopUp_2" />
                     </Sequence>
                   </If.Else>
                 </If>
-                <TryCatchRemoved_Key"Close all applications before returning to the Initialization state and opening them again.&#xA;If applications cannot be closed, kill their respective processes."Removed_Key"Try closing applications"Removed_Key"496,468"Removed_Key"TryCatch_15">
+                <TryCatchRemoved_Key"Close all applications before returning to the Initialization state and opening them again.&#xA;If applications cannot be closed, kill their respective processes."Removed_Key"Try closing applications"Removed_Key"484,500"Removed_Key"TryCatch_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -560,7 +486,7 @@
                     </ui:InvokeWorkflowFile>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception"Removed_Key"404,22"Removed_Key"Catch`1_15">
+                    <Catch x:TypeArguments="s:Exception"Removed_Key"404,23"Removed_Key"Catch`1_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -571,14 +497,14 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                         </ActivityAction.Argument>
-                        <SequenceRemoved_Key"Close applications"Removed_Key"500,633.5"Removed_Key"Sequence_37">
+                        <SequenceRemoved_Key"Close applications"Removed_Key"472,611"Removed_Key"Sequence_37">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessageRemoved_Key"Log message (CloseAllApplications failed)"Removed_Key"438,143"Removed_Key"LogMessage_24" Level="Warn" Message="[&quot;CloseAllApplications failed. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
-                          <TryCatchRemoved_Key"Try killing processes"Removed_Key"438,408"Removed_Key"TryCatch_14">
+                          <ui:LogMessageRemoved_Key"Log message (CloseAllApplications failed)"Removed_Key"438,175"Removed_Key"LogMessage_24" Level="Warn" Message="[&quot;CloseAllApplications failed. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
+                          <TryCatchRemoved_Key"Try killing processes"Removed_Key"438,431"Removed_Key"TryCatch_14">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -593,7 +519,7 @@
                               </ui:InvokeWorkflowFile>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception"Removed_Key"404,22"Removed_Key"Catch`1_14">
+                              <Catch x:TypeArguments="s:Exception"Removed_Key"404,23"Removed_Key"Catch`1_14">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -614,13 +540,13 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <SequenceRemoved_Key"Evaluate Consecutive System Exceptions"Removed_Key"496,596"Removed_Key"Sequence_40">
+                <SequenceRemoved_Key"Evaluate Consecutive System Exceptions"Removed_Key"484,624"Removed_Key"Sequence_40">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <AssignRemoved_Key"Increment Consecutive SysEx"Removed_Key"434,83"Removed_Key"Assign_18">
+                  <AssignRemoved_Key"Increment Consecutive SysEx"Removed_Key"450,115"Removed_Key"Assign_18">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[io_intConSysEx]</OutArgument>
                     </Assign.To>
@@ -628,19 +554,25 @@
                       <InArgument x:TypeArguments="x:Int32">[io_intConSysEx+1]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[io_intConSysEx = CType(g_Config(&quot;MaxConsecutiveSysEx&quot;), Int32)]"Removed_Key"Maximum Consecutive SysEx Reached?"Removed_Key"434,362"Removed_Key"If_11">
+                  <If Condition="[io_intConSysEx = CType(g_Config(&quot;MaxConsecutiveSysEx&quot;), Int32)]"Removed_Key"Maximum Consecutive SysEx Reached?"Removed_Key"450,426"Removed_Key"If_11">
                     <If.Then>
-                      <SequenceRemoved_Key"376,179"Removed_Key"Sequence_38">
+                      <SequenceRemoved_Key"Then"Removed_Key"416,174"Removed_Key"Sequence_38">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ThrowRemoved_Key"Throw SysEx" Exception="[New SystemException(&quot;Max consecutive system exceptions&quot;)]"Removed_Key"334,91"Removed_Key"Throw_1" />
+                        <ThrowRemoved_Key"Throw SysEx" Exception="[New SystemException(&quot;Max consecutive system exceptions&quot;)]"Removed_Key"382,114"Removed_Key"Throw_1" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <SequenceRemoved_Key""Removed_Key"Sequence_39" />
+                      <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_39">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
                     </If.Else>
                   </If>
                 </Sequence>
