@@ -447,7 +447,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID4"Removed_Key"Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried."Removed_Key"Process Transaction"Removed_Key"209,269"Removed_Key"State_3">
               <State.Entry>
-                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"540,1580"Removed_Key"TryCatch_9">
+                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"497.5,664"Removed_Key"TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -610,7 +610,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessageRemoved_Key"Log message (Failed to set transaction status)"Removed_Key"450,175"Removed_Key"LogMessage_47" Level="Fatal" Message="[&quot;SetTransactionStatus.xaml failed: &quot;+exception.Message+&quot; at Source: &quot;+exception.Source]" />
-                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,430"Removed_Key"If_34">
+                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,215"Removed_Key"If_34">
                                 <If.Then>
                                   <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_85">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -773,9 +773,9 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[boolContinue AND SystemException IsNot Nothing]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2"Removed_Key"Read configuration file and initialize applications used in the process."Removed_Key"Initialization"Removed_Key"232,120"Removed_Key"State_2">
+                            <State x:Name="__ReferenceID2"Removed_Key"Read configuration file and initialize applications used in the process."Removed_Key"Initialization"Removed_Key"858,5391"Removed_Key"State_2">
                               <State.Entry>
-                                <TryCatchRemoved_Key"Try initializing settings and applications"Removed_Key"812,4996"Removed_Key"TryCatch_2">
+                                <TryCatchRemoved_Key"Try initializing settings and applications"Removed_Key"812,4939"Removed_Key"TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -783,7 +783,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <SequenceRemoved_Key"Load configurations and open applications"Removed_Key"774,4740"Removed_Key"Sequence_4">
+                                    <SequenceRemoved_Key"Load configurations and open applications"Removed_Key"774,4683"Removed_Key"Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -798,7 +798,7 @@
                                           <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <IfRemoved_Key"An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]"Removed_Key"If first run, read local configuration file"Removed_Key"740,3540"Removed_Key"If_1">
+                                      <IfRemoved_Key"An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]"Removed_Key"If first run, read local configuration file"Removed_Key"740,3483"Removed_Key"If_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -807,7 +807,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <SequenceRemoved_Key"First run"Removed_Key"706,3248"Removed_Key"Sequence_17">
+                                          <SequenceRemoved_Key"First run"Removed_Key"706,3191"Removed_Key"Sequence_17">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -880,7 +880,7 @@
                                                 <InArgument x:TypeArguments="x:Object">[String.Format(g_Config("AttachmentsFilepath").ToString, g_Config("Username").ToString)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <SequenceRemoved_Key"Folder/File Setup"Removed_Key"672,2090"Removed_Key"Sequence_40">
+                                            <SequenceRemoved_Key"Folder/File Setup"Removed_Key"672,2033"Removed_Key"Sequence_40">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listConfigFilepaths" />
                                                 <Variable x:TypeArguments="s:String[]" Name="arrFilePath" />
@@ -891,7 +891,7 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <SequenceRemoved_Key"Add all Filepath Assets to the list in this sequence."Removed_Key"Add Filepaths to List"Removed_Key"638,342"Removed_Key"Sequence_39">
+                                              <SequenceRemoved_Key"Add all Filepath Assets to the list in this sequence."Removed_Key"Add Filepaths to List"Removed_Key"638,285"Removed_Key"Sequence_39">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -900,7 +900,6 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add strWorkLogFilepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_1" Item="[strWorkLogFilepath]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add SQL Log Filepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_2" Item="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" />
-                                                <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add Exception Screenshot Filepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_3" Item="[g_Config(&quot;ExScreenshotsFolderPath&quot;).ToString]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add Attachments Filepath"Removed_Key"416,48"Removed_Key"AddToCollection`1_4" Item="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]" />
                                               </Sequence>
                                               <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each Config Filepath"Removed_Key"638,1665"Removed_Key"ForEach`1_1" Values="[listConfigFilepaths]">
