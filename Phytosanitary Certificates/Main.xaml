@@ -447,7 +447,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="209,269" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="540,1580" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="497.5,664" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -610,7 +610,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessage DisplayName="Log message (Failed to set transaction status)" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Fatal" Message="[&quot;SetTransactionStatus.xaml failed: &quot;+exception.Message+&quot; at Source: &quot;+exception.Source]" />
-                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="450,430" sap2010:WorkflowViewState.IdRef="If_34">
+                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]" DisplayName="If - unattended" sap:VirtualizedContainerService.HintSize="450,215" sap2010:WorkflowViewState.IdRef="If_34">
                                 <If.Then>
                                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_85">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -773,9 +773,9 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[boolContinue AND SystemException IsNot Nothing]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="232,120" sap2010:WorkflowViewState.IdRef="State_2">
+                            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="858,5391" sap2010:WorkflowViewState.IdRef="State_2">
                               <State.Entry>
-                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="812,4996" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="812,4939" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -783,7 +783,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="774,4740" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="774,4683" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -798,7 +798,7 @@
                                           <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="740,3540" sap2010:WorkflowViewState.IdRef="If_1">
+                                      <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="740,3483" sap2010:WorkflowViewState.IdRef="If_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -807,7 +807,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="706,3248" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="706,3191" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -880,7 +880,7 @@
                                                 <InArgument x:TypeArguments="x:Object">[String.Format(g_Config("AttachmentsFilepath").ToString, g_Config("Username").ToString)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Sequence DisplayName="Folder/File Setup" sap:VirtualizedContainerService.HintSize="672,2090" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                            <Sequence DisplayName="Folder/File Setup" sap:VirtualizedContainerService.HintSize="672,2033" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listConfigFilepaths" />
                                                 <Variable x:TypeArguments="s:String[]" Name="arrFilePath" />
@@ -891,7 +891,7 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence sap2010:Annotation.AnnotationText="Add all Filepath Assets to the list in this sequence." DisplayName="Add Filepaths to List" sap:VirtualizedContainerService.HintSize="638,342" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                              <Sequence sap2010:Annotation.AnnotationText="Add all Filepath Assets to the list in this sequence." DisplayName="Add Filepaths to List" sap:VirtualizedContainerService.HintSize="638,285" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -900,7 +900,6 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]" DisplayName="Add strWorkLogFilepath" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[strWorkLogFilepath]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]" DisplayName="Add SQL Log Filepath" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" />
-                                                <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]" DisplayName="Add Exception Screenshot Filepath" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[g_Config(&quot;ExScreenshotsFolderPath&quot;).ToString]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]" DisplayName="Add Attachments Filepath" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]" />
                                               </Sequence>
                                               <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Config Filepath" sap:VirtualizedContainerService.HintSize="638,1665" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listConfigFilepaths]">
