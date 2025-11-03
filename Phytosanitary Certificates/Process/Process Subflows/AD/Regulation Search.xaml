@@ -1,7 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Regulation_Search" this:Regulation_Search.in_strGenus="Camellia" this:Regulation_Search.in_strCountryName="Spain" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Regulation_Search" this:Regulation_Search.in_strGenus="Camellia" this:Regulation_Search.in_strCountryName="Spain" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strGenus" Type="InArgument(x:String)" />
     <x:Property Name="in_strCountryName" Type="InArgument(x:String)" />
+    <x:Property Name="out_dtMatchedItems" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -44,6 +45,8 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,9 +112,19 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Regulation_Search" sap:VirtualizedContainerService.HintSize="875.6,3826.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Regulation_Search" sap:VirtualizedContainerService.HintSize="758,6904.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSpeciesPart" />
     </Sequence.Variables>
@@ -120,7 +133,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="502,3803.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="638,6881.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtSheet" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtHost" />
@@ -137,7 +150,6 @@
         <Variable x:TypeArguments="sd:DataTable" Name="dtInvasiveGroup" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtHostGroupRegulation" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtHostRegulation" />
-        <Variable x:TypeArguments="sd:DataTable" Name="dtMatchedItems" />
         <Variable x:TypeArguments="x:String" Name="strGenusPart" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtTaxonSearch" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtXFGroupSearch" />
@@ -153,24 +165,24 @@
         <Variable x:TypeArguments="scg:List(x:String)" Name="lisAllGenusItems" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtFamilyRegulationItems" />
         <Variable x:TypeArguments="s:String[]" Name="arrGenusParts" />
+        <Variable x:TypeArguments="scg:IEnumerable(ucas:StorageFileInfo)" Name="listcsvFiles" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Hard coded test data reading in - remove this&quot;]" />
-      <ui:ForEachFileX DisplayName="Read all CSVs - For Each File in Folder" Filter="*.csv" Folder="C:\Users\da000087\Downloads\Phyto" sap:VirtualizedContainerService.HintSize="468,114" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
-        <ui:ForEachFileX.Body>
-          <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
-            <ActivityAction.Argument1>
-              <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
-            </ActivityAction.Argument1>
-            <ActivityAction.Argument2>
-              <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-            </ActivityAction.Argument2>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="531.6,1130.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Hard coded test data reading in - remove this&quot;]" />
+      <ucas:ListStorageFiles Filter="{x:Null}" TimeoutMS="{x:Null}" Directory="\" DisplayName="List Storage Files - DATAVERSE" sap:VirtualizedContainerService.HintSize="604,167.6" sap2010:WorkflowViewState.IdRef="ListStorageFiles_1" Recursive="True" Result="[listcsvFiles]" StorageBucketName="Additional Declarations" />
+      <ui:ForEach x:TypeArguments="ucas:StorageFileInfo" CurrentIndex="{x:Null}" DisplayName="For Each currentStorageFileInfo - REPLACED BY DATAVERSE" sap:VirtualizedContainerService.HintSize="604,998" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[listcsvFiles]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="ucas:StorageFileInfo">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ucas:StorageFileInfo" Name="currentStorageFileInfo" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,850.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
               <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strDeleteMe" />
                 <Variable x:TypeArguments="x:String" Name="strFileWithoutExtension" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
@@ -178,24 +190,26 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="497.6,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Reading &quot; &amp; CurrentFile.Name &amp; &quot; &quot; &amp; Now]" />
-              <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dtSheet]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Read CSV" FilePath="[CurrentFile.ToString]" sap:VirtualizedContainerService.HintSize="497.6,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-              <Assign DisplayName="Assign file name without extension" sap:VirtualizedContainerService.HintSize="497.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Reading &quot; &amp; currentStorageFileInfo.FileFullPath &amp; &quot; &quot; &amp; Now]" />
+              <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[strDeleteMe]" sap:VirtualizedContainerService.HintSize="434,118.4" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+              <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]" DisplayName="Download Storage File" sap:VirtualizedContainerService.HintSize="434,167.6" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="[currentStorageFileInfo.FileFullPath]" StorageBucketName="Additional Declarations" />
+              <ui:ReadCsvFile DataTable="[dtSheet]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+              <Assign DisplayName="Assign file name without extension" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_54">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strFileWithoutExtension]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[CurrentFile.Name.replace(".csv","")]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(currentStorageFileInfo.FileFullPath)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch file names" Expression="[strFileWithoutExtension]" sap:VirtualizedContainerService.HintSize="497.6,528" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch file names" Expression="[strFileWithoutExtension]" sap:VirtualizedContainerService.HintSize="434,76.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign x:Key="host" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign x:Key="host" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtHost]</OutArgument>
                   </Assign.To>
@@ -203,8 +217,8 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:Comment x:Key="homepage_updates" sap:VirtualizedContainerService.HintSize="457.6,56.4" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sheet is not required" />
-                <Assign x:Key="herb_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <ui:Comment x:Key="homepage_updates" sap:VirtualizedContainerService.HintSize="334,56.4" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sheet is not required" />
+                <Assign x:Key="herb_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtHerbGroup]</OutArgument>
                   </Assign.To>
@@ -212,7 +226,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="group_names" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign x:Key="group_names" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtGroupNames]</OutArgument>
                   </Assign.To>
@@ -220,7 +234,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="genera_list" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign x:Key="genera_list" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtGenera]</OutArgument>
                   </Assign.To>
@@ -228,7 +242,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="commodity_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign x:Key="commodity_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtCommodityRegulation]</OutArgument>
                   </Assign.To>
@@ -236,7 +250,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="commodity" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign x:Key="commodity" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtCommodity]</OutArgument>
                   </Assign.To>
@@ -244,7 +258,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="cites_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign x:Key="cites_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtCitesGroup]</OutArgument>
                   </Assign.To>
@@ -252,7 +266,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="xf_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign x:Key="xf_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtXFGroup]</OutArgument>
                   </Assign.To>
@@ -260,7 +274,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="taxon_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign x:Key="taxon_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtTaxonGroup]</OutArgument>
                   </Assign.To>
@@ -268,7 +282,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign x:Key="regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtRegulation]</OutArgument>
                   </Assign.To>
@@ -276,7 +290,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="origin_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign x:Key="origin_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtOriginRegulation]</OutArgument>
                   </Assign.To>
@@ -284,7 +298,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="origin" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign x:Key="origin" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtOrigin]</OutArgument>
                   </Assign.To>
@@ -292,7 +306,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="invasive_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign x:Key="invasive_group" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtInvasiveGroup]</OutArgument>
                   </Assign.To>
@@ -300,7 +314,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="hostgroup_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign x:Key="hostgroup_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_15">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtHostGroupRegulation]</OutArgument>
                   </Assign.To>
@@ -308,7 +322,7 @@
                     <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign x:Key="host_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="457.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_16">
+                <Assign x:Key="host_regulation" DisplayName="Assign to relevant DataTable" sap:VirtualizedContainerService.HintSize="434,81.6" sap2010:WorkflowViewState.IdRef="Assign_16">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dtHostRegulation]</OutArgument>
                   </Assign.To>
@@ -317,19 +331,12 @@
                   </Assign.Value>
                 </Assign>
               </Switch>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="497.6,114.4" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Finished Reading &quot; &amp; CurrentFile.Name &amp; &quot; &quot; &amp; Now]" />
             </Sequence>
           </ActivityAction>
-        </ui:ForEachFileX.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:ForEachFileX>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="468,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="CSVs read in" />
-      <Assign DisplayName="Split genus into parts" sap:VirtualizedContainerService.HintSize="468,114.4" sap2010:WorkflowViewState.IdRef="Assign_49">
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="604,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="CSVs read in" />
+      <Assign DisplayName="Split genus into parts" sap:VirtualizedContainerService.HintSize="604,114.4" sap2010:WorkflowViewState.IdRef="Assign_49">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arrGenusParts]</OutArgument>
         </Assign.To>
@@ -337,7 +344,7 @@
           <InArgument x:TypeArguments="s:String[]">[in_strGenus.Split(" "c)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Split out the genus name" sap:VirtualizedContainerService.HintSize="468,114.4" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign DisplayName="Split out the genus name" sap:VirtualizedContainerService.HintSize="604,114.4" sap2010:WorkflowViewState.IdRef="Assign_17">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strGenusPart]</OutArgument>
         </Assign.To>
@@ -345,7 +352,7 @@
           <InArgument x:TypeArguments="x:String">[in_strGenus.Split(" "c)(0).ToString]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[arrGenusParts.length &gt;= 2]" DisplayName="If there is more than 2 results in the array" sap:VirtualizedContainerService.HintSize="468,85.2" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[arrGenusParts.length &gt;= 2]" DisplayName="If there is more than 2 results in the array" sap:VirtualizedContainerService.HintSize="604,85.2" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -387,7 +394,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Any matched term ID wills be added here, and then filtered down to only relevant matches during the Intersection sequence" DataTable="[dtMatchedItems]" DisplayName="Create Matched Items DT" sap:VirtualizedContainerService.HintSize="468,153.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ItemID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ItemCategory&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cites&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invasive&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SpecialRequirements&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Conditions&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Any matched term ID wills be added here, and then filtered down to only relevant matches during the Intersection sequence" DataTable="[out_dtMatchedItems]" DisplayName="Create Matched Items DT" sap:VirtualizedContainerService.HintSize="604,153.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ItemID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ItemCategory&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cites&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invasive&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SpecialRequirements&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Conditions&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -396,7 +403,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:BuildDataTable>
-      <ui:JoinDataTables DataTable1="[dtHostRegulation]" DataTable2="[dtHost]" DisplayName="Join Host DTs" sap:VirtualizedContainerService.HintSize="468,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dtHostRegulationJoin]">
+      <ui:JoinDataTables DataTable1="[dtHostRegulation]" DataTable2="[dtHost]" DisplayName="Join Host DTs" sap:VirtualizedContainerService.HintSize="604,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dtHostRegulationJoin]">
         <ui:JoinDataTables.Arguments>
           <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
             <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -410,7 +417,7 @@
           </scg:List>
         </ui:JoinDataTables.Arguments>
       </ui:JoinDataTables>
-      <Sequence sap2010:Annotation.AnnotationText="Prepare filtered data for querying later, fetching only the rows relevant for this genus" DisplayName="Consolidated queries for taxon_search, check_xf, check_herb, check_invasive, and cites_search" sap:VirtualizedContainerService.HintSize="468,146.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence sap2010:Annotation.AnnotationText="Prepare filtered data for querying later, fetching only the rows relevant for this genus" DisplayName="Consolidated queries for taxon_search, check_xf, check_herb, check_invasive, and cites_search" sap:VirtualizedContainerService.HintSize="604,146.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtHostGroupAndNames" />
           <Variable x:TypeArguments="sd:DataTable" Name="dtValidationSearch" />
@@ -625,7 +632,7 @@
             </ui:FilterDataTable.SelectColumns>
           </ui:FilterDataTable>
         </Sequence>
-        <Sequence sap2010:Annotation.AnnotationText="Filters dtHostRegulationJoin to include only rows where the &quot;order_tax&quot; column&#xA;matches any &quot;order_tax&quot; value in dtDistinctOrders. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xD;&#xA;&#xD;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;order_tax&quot; column.&#xA;dtDistinctOrders: Reference DataTable containing unique &quot;order_tax&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin." DisplayName="Order regulation Items" sap:VirtualizedContainerService.HintSize="470,716.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence sap2010:Annotation.AnnotationText="Filters dtHostRegulationJoin to include only rows where the &quot;order_tax&quot; column&#xA;matches any &quot;order_tax&quot; value in dtDistinctOrders. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xA;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;order_tax&quot; column.&#xA;dtDistinctOrders: Reference DataTable containing unique &quot;order_tax&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin." DisplayName="Order regulation Items" sap:VirtualizedContainerService.HintSize="470,716.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctOrders" />
             <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredTaxonGroup" />
@@ -673,7 +680,7 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence sap2010:Annotation.AnnotationText="Filters Taxonomic results for this genus.&#xD;&#xA;Filters dtHostRegulationJoin to include only rows where the &quot;family&quot; column matches any &quot;family&quot; value in dtDistinctFamilies. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xD;&#xA;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;family&quot; column.&#xA;dtDistinctFamilies: Reference DataTable containing unique &quot;family&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin." DisplayName="Family Recognition Items" sap:VirtualizedContainerService.HintSize="470,724.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap2010:Annotation.AnnotationText="Filters Taxonomic results for this genus.&#xA;Filters dtHostRegulationJoin to include only rows where the &quot;family&quot; column matches any &quot;family&quot; value in dtDistinctFamilies. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xA;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;family&quot; column.&#xA;dtDistinctFamilies: Reference DataTable containing unique &quot;family&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin." DisplayName="Family Recognition Items" sap:VirtualizedContainerService.HintSize="470,724.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredTaxonGroup" />
             <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctFamilies" />
@@ -723,7 +730,7 @@
           </Assign>
         </Sequence>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Get the ID for the country of origin, find regulations for the country of origin ID and add them to dtMatchedItems&#xD;&#xA;If a matching country of origin isn't found - throw business exception" DisplayName="Country check" sap:VirtualizedContainerService.HintSize="468,162.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence sap2010:Annotation.AnnotationText="Get the ID for the country of origin, find regulations for the country of origin ID and add them to dtMatchedItems&#xA;If a matching country of origin isn't found - throw business exception" DisplayName="Country check" sap:VirtualizedContainerService.HintSize="604,162.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtCountryID" />
           <Variable x:TypeArguments="x:Int32" Name="intCountriesFound" />
@@ -819,7 +826,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;itemid&quot;).ToString, &quot;OriginCountry&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;itemid&quot;).ToString, &quot;OriginCountry&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
@@ -838,7 +845,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Join all host regulations to the regulation data&#xD;&#xA;Assign the list of Genuses to search (this should only ever be 1 genus - the code was converted where this could be a list, this functionality was replicated to allow for future expansion if needed)&#xD;&#xA;Filters dtHostRegulationsFull to include rows where the &quot;genus&quot; column matches any value in lisGenus or where &quot;genus&quot; is &quot;All&quot; with empty or null &quot;order_tax&quot; and &quot;family&quot; columns. Returns the filtered rows as the DataTable dtGenusFiltered&#xD;&#xA;&#xD;&#xA;---&#xD;&#xA;&#xD;&#xA;Create exclusion lists (for full genus or specific species of a genus) to filter out certain regulation items based on genus/species (as appropiate). The sequence creates two datatables: dtGenusExclusionList to exclude entire genera and dtSpeciesExclusionList to exclude specific species within a genus.&#xD;&#xA;&#xD;&#xA;---&#xD;&#xA;&#xD;&#xA;Filters dtGenusFiltered to return a distinct list of itemid values for regulation items that are not excluded and then adds these to dtMatchedItems as valid regulations that apply." DisplayName="Host Regulation" sap:VirtualizedContainerService.HintSize="468,474.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence sap2010:Annotation.AnnotationText="Join all host regulations to the regulation data&#xA;Assign the list of Genuses to search (this should only ever be 1 genus - the code was converted where this could be a list, this functionality was replicated to allow for future expansion if needed)&#xA;Filters dtHostRegulationsFull to include rows where the &quot;genus&quot; column matches any value in lisGenus or where &quot;genus&quot; is &quot;All&quot; with empty or null &quot;order_tax&quot; and &quot;family&quot; columns. Returns the filtered rows as the DataTable dtGenusFiltered&#xA;&#xA;---&#xA;&#xA;Create exclusion lists (for full genus or specific species of a genus) to filter out certain regulation items based on genus/species (as appropiate). The sequence creates two datatables: dtGenusExclusionList to exclude entire genera and dtSpeciesExclusionList to exclude specific species within a genus.&#xA;&#xA;---&#xA;&#xA;Filters dtGenusFiltered to return a distinct list of itemid values for regulation items that are not excluded and then adds these to dtMatchedItems as valid regulations that apply." DisplayName="Host Regulation" sap:VirtualizedContainerService.HintSize="604,474.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtHostRegulationsFull" />
           <Variable x:TypeArguments="sd:DataTable" Name="dtGenusFiltered" />
@@ -900,7 +907,7 @@
    dtHostRegulationsFull.Clone())]</InArgument>
           </Assign.Value>
         </Assign>
-        <Sequence sap2010:Annotation.AnnotationText="Exclusions are for any genus (or a specific species within a genus) that are excluded from the regulations that are found. &#xD;&#xA;&#xD;&#xA;It starts by identifying regulations for &quot;All Hosts&quot; and then finds any excluded species or genera within those, narrowing the list further to the genus we are looking at." DisplayName="Identify Exclusions" sap:VirtualizedContainerService.HintSize="450,212" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence sap2010:Annotation.AnnotationText="Exclusions are for any genus (or a specific species within a genus) that are excluded from the regulations that are found. &#xA;&#xA;It starts by identifying regulations for &quot;All Hosts&quot; and then finds any excluded species or genera within those, narrowing the list further to the genus we are looking at." DisplayName="Identify Exclusions" sap:VirtualizedContainerService.HintSize="450,167.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -973,7 +980,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:FilterDataTable>
         </Sequence>
-        <Sequence sap2010:Annotation.AnnotationText="Populate either the full genus, or the genus and species to the exclusion DTs" DisplayName="Build exclusion lists" sap:VirtualizedContainerService.HintSize="450,146.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence sap2010:Annotation.AnnotationText="Populate either the full genus, or the genus and species to the exclusion DTs" DisplayName="Build exclusion lists" sap:VirtualizedContainerService.HintSize="450,101.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="arrGenus" />
           </Sequence.Variables>
@@ -1207,13 +1214,13 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItemID, &quot;Genus&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItemID, &quot;Genus&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
               </Sequence>
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <Sequence DisplayName="Commodity Items" sap:VirtualizedContainerService.HintSize="468,101.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence DisplayName="Commodity Items" sap:VirtualizedContainerService.HintSize="604,101.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtCommodityTypes" />
         </Sequence.Variables>
@@ -1282,7 +1289,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentCommodityTypeItemsRow(&quot;itemid&quot;).ToString, &quot;Commodity&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentCommodityTypeItemsRow(&quot;itemid&quot;).ToString, &quot;Commodity&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEachRow.Body>
@@ -1292,7 +1299,7 @@
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Filter taxon_group rows for the desired genus and process each row for relevant regulations" DisplayName="Process Data for Genus" sap:VirtualizedContainerService.HintSize="468,146.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence sap2010:Annotation.AnnotationText="Filter taxon_group rows for the desired genus and process each row for relevant regulations" DisplayName="Process Data for Genus" sap:VirtualizedContainerService.HintSize="604,146.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtTaxonMatches" />
         </Sequence.Variables>
@@ -1376,7 +1383,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxOrderRow(&quot;itemid&quot;).ToString, &quot;Order&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Order Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_8">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxOrderRow(&quot;itemid&quot;).ToString, &quot;Order&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Order Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1431,7 +1438,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxFamilyRow(&quot;itemid&quot;).ToString, &quot;Family&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Family Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_9">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxFamilyRow(&quot;itemid&quot;).ToString, &quot;Family&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Family Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_9">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1487,7 +1494,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxXFRow(&quot;itemid&quot;).ToString, &quot;XF&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add XF Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_10">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxXFRow(&quot;itemid&quot;).ToString, &quot;XF&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add XF Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1544,7 +1551,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxHerbGroupRow(&quot;itemid&quot;).ToString, &quot;Herb&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Herb Group Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_11">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxHerbGroupRow(&quot;itemid&quot;).ToString, &quot;Herb&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Herb Group Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1602,7 +1609,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxInvasiveSpeciesRow(&quot;itemid&quot;).ToString, &quot;Invasive&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add Invasive Species Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_12">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxInvasiveSpeciesRow(&quot;itemid&quot;).ToString, &quot;Invasive&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add Invasive Species Row Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_12">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1661,7 +1668,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxCitesRow(&quot;itemid&quot;).ToString, &quot;Cites&quot;}]" DataTable="[dtMatchedItems]" DisplayName="Add CitesRow Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_13">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxCitesRow(&quot;itemid&quot;).ToString, &quot;Cites&quot;}]" DataTable="[out_dtMatchedItems]" DisplayName="Add CitesRow Data Row to Matched Items" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_13">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1685,21 +1692,21 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="For every row in dtMatchedItems, get the full regulation information (EG annex, part, regulation text)" DisplayName="Get regulation data" sap:VirtualizedContainerService.HintSize="468,146.4" sap2010:WorkflowViewState.IdRef="Sequence_53">
+      <Sequence sap2010:Annotation.AnnotationText="For every row in dtMatchedItems, get the full regulation information (EG annex, part, regulation text)" DisplayName="Get regulation data" sap:VirtualizedContainerService.HintSize="604,2067.2" sap2010:WorkflowViewState.IdRef="Sequence_53">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMatchedItems]" DisplayName="For Each Row in MatchedItems Data Table" sap:VirtualizedContainerService.HintSize="547.6,1146.4" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtMatchedItems]" DisplayName="For Each Row in MatchedItems Data Table" sap:VirtualizedContainerService.HintSize="570,1944" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentMatchedItemRow" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.6,956.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,1754.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="dtRegulationItemID" />
                   <Variable x:TypeArguments="x:String" Name="strConditions" />
@@ -1709,7 +1716,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:FilterDataTable DataTable="[dtRegulation]" DisplayName="Filter Regulation to ItemID " FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="479.6,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_22" OutputDataTable="[dtRegulationItemID]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable DataTable="[dtRegulation]" DisplayName="Filter Regulation to ItemID " FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="502,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_22" OutputDataTable="[dtRegulationItemID]" SelectColumnsMode="Remove">
                   <ui:FilterDataTable.Filters>
                     <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                       <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -1728,7 +1735,7 @@
                     </scg:List>
                   </ui:FilterDataTable.SelectColumns>
                 </ui:FilterDataTable>
-                <Assign DisplayName="Assign blank Conditions string" sap:VirtualizedContainerService.HintSize="479.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_36">
+                <Assign DisplayName="Assign blank Conditions string" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_36">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
                   </Assign.To>
@@ -1738,7 +1745,7 @@
                     </InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[dtRegulationItemID.Rows(0)(&quot;statementreq&quot;).Tostring = &quot;0&quot;]" DisplayName="If statementreq = 0" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;statementreq&quot;).Tostring = &quot;0&quot;]" DisplayName="If statementreq = 0" sap:VirtualizedContainerService.HintSize="502,56.8" sap2010:WorkflowViewState.IdRef="If_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1772,7 +1779,7 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[dtRegulationItemID.Rows(0)(&quot;specialreq&quot;).Tostring.Contains(&quot;PROHIBITED&quot;) = True]" DisplayName="If specialreq contains PROHIBITED" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;specialreq&quot;).Tostring.Contains(&quot;PROHIBITED&quot;) = True]" DisplayName="If specialreq contains PROHIBITED" sap:VirtualizedContainerService.HintSize="502,56.8" sap2010:WorkflowViewState.IdRef="If_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1806,7 +1813,7 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_host&quot;).Tostring = &quot;1&quot;]" DisplayName="If conditional host = 1" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_6">
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_host&quot;).Tostring = &quot;1&quot;]" DisplayName="If conditional host = 1" sap:VirtualizedContainerService.HintSize="502,56.8" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1840,10 +1847,10 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_origin&quot;).Tostring = &quot;1&quot;]" DisplayName="If conditional origin = 1" sap:VirtualizedContainerService.HintSize="479.6,56.8" sap2010:WorkflowViewState.IdRef="If_7">
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_origin&quot;).Tostring = &quot;1&quot;]" DisplayName="If conditional origin = 1" sap:VirtualizedContainerService.HintSize="502,427.2" sap2010:WorkflowViewState.IdRef="If_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -1865,7 +1872,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,90.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1874,7 +1881,35 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:MultipleAssign DisplayName="Assign all Regulation metadata" sap:VirtualizedContainerService.HintSize="479.6,359.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <If Condition="[string.IsNullOrWhiteSpace(strConditions)]" DisplayName="If No conditions" sap:VirtualizedContainerService.HintSize="502,427.2" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign - White to conditions" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_55">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">|White|</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:MultipleAssign DisplayName="Assign all Regulation metadata" sap:VirtualizedContainerService.HintSize="502,359.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -1949,7 +1984,7 @@
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Query all relevant regulations for this genus, country of origin and commodity type, find the intersection (where the regulation appears in all 3) and save that to dtMatchedItems (which overwrites the previous dtMatchedItems as it is no longer relevant). Remove the category column (not required for the output) and removes duplicate rows to give only the regulations required" DisplayName="Intersection" sap:VirtualizedContainerService.HintSize="468,1318" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <Sequence sap2010:Annotation.AnnotationText="Query all relevant regulations for this genus, country of origin and commodity type, find the intersection (where the regulation appears in all 3) and save that to dtMatchedItems (which overwrites the previous dtMatchedItems as it is no longer relevant). Remove the category column (not required for the output) and removes duplicate rows to give only the regulations required" DisplayName="Intersection" sap:VirtualizedContainerService.HintSize="604,1318" sap2010:WorkflowViewState.IdRef="Sequence_23">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="listGenus" />
           <Variable x:TypeArguments="scg:List(x:String)" Name="listOrigin" />
@@ -1968,7 +2003,7 @@
             <OutArgument x:TypeArguments="scg:List(x:String)">[listGenus]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[dtMatchedItems.AsEnumerable().
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
     Where(Function(r) r("ItemCategory").ToString = "Genus").
     Select(Function(r) r("ItemId").ToString()).
     Distinct().
@@ -1980,7 +2015,7 @@
             <OutArgument x:TypeArguments="scg:List(x:String)">[listOrigin]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[dtMatchedItems.AsEnumerable().
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
     Where(Function(r) r("ItemCategory").ToString = "OriginCountry").
     Select(Function(r) r("ItemId").ToString()).
     Distinct().
@@ -1992,7 +2027,7 @@
             <OutArgument x:TypeArguments="scg:List(x:String)">[listCommodity]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[dtMatchedItems.AsEnumerable().
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
     Where(Function(r) r("ItemCategory").ToString = "Commodity").
     Select(Function(r) r("ItemId").ToString()).
     Distinct().
@@ -2009,10 +2044,10 @@
         </Assign>
         <Assign sap2010:Annotation.AnnotationText="This overwrites the previous dtMatchedItems with only the relevant regulations" DisplayName="Save listintersection to datatable" sap:VirtualizedContainerService.HintSize="434,159.2" sap2010:WorkflowViewState.IdRef="Assign_45">
           <Assign.To>
-            <OutArgument x:TypeArguments="sd:DataTable">[dtMatchedItems]</OutArgument>
+            <OutArgument x:TypeArguments="sd:DataTable">[out_dtMatchedItems]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="sd:DataTable">[If(dtMatchedItems.AsEnumerable().Any(Function(r) listIntersection.Contains(r("ItemID").ToString)), dtMatchedItems.AsEnumerable().Where(Function(r) listIntersection.Contains(r("ItemID").ToString)).CopyToDataTable(), dtMatchedItems.Clone())]</InArgument>
+            <InArgument x:TypeArguments="sd:DataTable">[If(out_dtMatchedItems.AsEnumerable().Any(Function(r) listIntersection.Contains(r("ItemID").ToString)), out_dtMatchedItems.AsEnumerable().Where(Function(r) listIntersection.Contains(r("ItemID").ToString)).CopyToDataTable(), out_dtMatchedItems.Clone())]</InArgument>
           </Assign.Value>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2046,7 +2081,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove the category column, not relevant for output" ColumnName="ItemCategory" DataTable="[dtMatchedItems]" DisplayName="Remove Item Category Data Column" sap:VirtualizedContainerService.HintSize="434,146.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove the category column, not relevant for output" ColumnName="ItemCategory" DataTable="[out_dtMatchedItems]" DisplayName="Remove Item Category Data Column" sap:VirtualizedContainerService.HintSize="434,146.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2055,7 +2090,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataColumn>
-        <ui:RemoveDuplicateRows DataTable="[dtMatchedItems]" DisplayName="Remove Duplicate Matched Item Rows" sap:VirtualizedContainerService.HintSize="434,104.4" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_9" OutputDataTable="[dtMatchedItems]">
+        <ui:RemoveDuplicateRows DataTable="[out_dtMatchedItems]" DisplayName="Remove Duplicate Matched Item Rows" sap:VirtualizedContainerService.HintSize="434,104.4" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_9" OutputDataTable="[out_dtMatchedItems]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2064,15 +2099,8 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDuplicateRows>
       </Sequence>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Delete the write csv below after integration.&quot;]" />
-      <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" DataTable="[dtMatchedItems]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Write CSV - For testing output only" FilePath="C:\Users\da000087\Downloads\Phyto\matcheditems.csv" sap:VirtualizedContainerService.HintSize="468,76.4" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_1" ShouldQuote="True">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:AppendWriteCsvFile>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Delete the write csv below after integration.&quot;]" />
+      <ui:WriteCsvFile AddHeaders="True" DataTable="[out_dtMatchedItems]" Delimitator="Comma" DisplayName="Write CSV - DELETE ME" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\david.csv" sap:VirtualizedContainerService.HintSize="604,182" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
     </Sequence>
   </Sequence>
 </Activity>
