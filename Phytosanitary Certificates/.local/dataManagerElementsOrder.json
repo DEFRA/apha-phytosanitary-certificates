@@ -77,18 +77,15 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Process/Process Subflows/AD/Proof of concept.xaml",
+      "Path": "Process/Process Subflows/AD/Review ADs.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strAdvDecCountry&Sequence_76",
-        "booADCountryOrigin&Flowchart_5",
-        "dtGenusSynonyms&Sequence_68",
-        "g_arrCaseID&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_Config&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_swProcessingTimer&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_TransactionItem&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_intExitPoint&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "strRgxPtrn&Sequence_44",
+        "strPhytoFilepath&Flowchart_1",
+        "listDataRow&Sequence_85",
+        "dtRegulations_syn&Sequence_85",
+        "strCountryExtra&Sequence_1",
+        "strCountry&Sequence_1",
+        "listSpreadItems&Sequence_79",
         "intCommodityIndex&Flowchart_1",
         "strAD_AllApplied&Flowchart_1",
         "booMultipleCountries&Flowchart_1",
@@ -103,6 +100,7 @@
         "listSplitAD_Text&Sequence_22",
         "strCleanAD&Sequence_24",
         "rgxPart_Item&Sequence_23",
+        "dtGenusSynonyms&Sequence_68",
         "booPartItemMatch&Flowchart_5",
         "intMiniRowIndex&Flowchart_5",
         "strSpecial_Tag&Flowchart_5",
@@ -110,6 +108,8 @@
         "booAdvancedDeclaration&Flowchart_5",
         "intAdvDecIndex&Flowchart_5",
         "booNurseryInfoBlank&Flowchart_5",
+        "booADCountryOrigin&Flowchart_5",
+        "strRgxPtrn&Sequence_44",
         "strRgx&Sequence_12",
         "strStatements&Sequence_12",
         "listStatementTexts&Sequence_12",
@@ -118,8 +118,13 @@
         "listStatementTexts&Sequence_45",
         "rgxTextSegmentCheck&Sequence_49",
         "strKey&Sequence_59",
+        "strAdvDecCountry&Sequence_76",
         "strNurseryInfo&Sequence_60",
-        "strCountry&Sequence_62"
+        "g_arrCaseID&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_Config&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_swProcessingTimer&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_TransactionItem&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_intExitPoint&422b6595-c8f0-4798-a18c-982d8bb513f0"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_dtAdvancedDeclarations",
@@ -131,46 +136,16 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Process/Process Subflows/AD/Extract Phyto Text.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "g_arrCaseID&f253d461-bf55-4cf1-a203-551ffca4ba8f",
-        "g_Config&f253d461-bf55-4cf1-a203-551ffca4ba8f",
-        "g_swProcessingTimer&f253d461-bf55-4cf1-a203-551ffca4ba8f",
-        "g_TransactionItem&f253d461-bf55-4cf1-a203-551ffca4ba8f",
-        "g_intExitPoint&f253d461-bf55-4cf1-a203-551ffca4ba8f",
-        "booMultipleCountries&Flowchart_1",
-        "strAD_AllApplied&Flowchart_1",
-        "listExtractedAD&Flowchart_1",
-        "intDeleteME&Sequence_7",
-        "strRegexPattern&Sequence_13",
-        "strCountry&Sequence_13",
-        "intIndexPosition&Sequence_13",
-        "intRow&Sequence_13",
-        "strCleanAD&Sequence_20",
-        "intIndex&Sequence_21",
-        "listItems&Sequence_22",
-        "intRow&Sequence_11"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_strCountryOfOrigin",
-        "in_strSec11AD",
-        "io_dtCommodityLines"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Process/Process Subflows/AD/Regulation Search.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "g_arrCaseID&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_Config&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_swProcessingTimer&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_TransactionItem&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_intExitPoint&422b6595-c8f0-4798-a18c-982d8bb513f0",
         "strFileWithoutExtension&Sequence_64",
         "strDeleteMe&Sequence_64",
-        "g_arrCaseID&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_Config&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_swProcessingTimer&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_TransactionItem&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_intExitPoint&5b9f696a-a1eb-4624-8be6-410a85289eb8",
         "listcsvFiles&Sequence_3",
         "strSpeciesPart&Sequence_1",
         "dtSheet&Sequence_3",
@@ -267,17 +242,38 @@
       "Path": "Sequence.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dtRegulations_syn&Sequence_1",
+        "listDataRow&Sequence_1",
+        "dtRegulations&Sequence_1",
+        "g_arrCaseID&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_Config&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_swProcessingTimer&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_TransactionItem&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_intExitPoint&422b6595-c8f0-4798-a18c-982d8bb513f0",
         "listMatches&Sequence_1",
         "stringy&Sequence_1",
         "strDeleteMe&Sequence_1",
-        "g_arrCaseID&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_Config&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_swProcessingTimer&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_TransactionItem&5b9f696a-a1eb-4624-8be6-410a85289eb8",
-        "g_intExitPoint&5b9f696a-a1eb-4624-8be6-410a85289eb8",
         "listcsvFiles&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/Process Subflows/AD/Open Compliance Form.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "g_arrCaseID&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_Config&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_swProcessingTimer&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_TransactionItem&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "g_intExitPoint&422b6595-c8f0-4798-a18c-982d8bb513f0",
+        "browComplianceForm&TryCatch_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strComplianceFormFilePath",
+        "io_dtCommodityLines"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
