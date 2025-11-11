@@ -138,7 +138,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="2315,1170.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="2301,1426.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -158,10 +158,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID1" DisplayName="Pause Point #2" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-      <FlowDecision.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))" />
-      </FlowDecision.Condition>
+    <FlowDecision x:Name="__ReferenceID1" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))]" DisplayName="Pause Point #2" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,15 +225,9 @@
                 </ActivityAction>
               </ufa:FormActivity.DelayBody>
               <ufa:FormActivity.FormFieldsCollection>
-                <InArgument x:TypeArguments="x:String" x:Key="PopupMessage">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&lt;h1&gt;Pause Point #2&lt;/h1&gt;&lt;P&gt;Please review that the data scraped from Dynamics &amp; IPAFFS is accurate. Once you are happy, please press Continue.&lt;/P&gt;&lt;BR&gt;&quot;+&quot;&lt;P&gt;&lt;B&gt;Consignor Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Consignor Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Delivery Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Delivery Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Importer Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Importer Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Origin:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Country of Origin&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Consignment:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Country of Consignment&quot;)+&quot;&lt;/P&gt;&lt;BR&gt;&quot;" />
-                </InArgument>
-                <InArgument x:TypeArguments="sd1:DataTable" x:Key="commodityInfo">
-                  <VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtIPAFFSCommodityLines" />
-                </InArgument>
-                <InArgument x:TypeArguments="sd1:DataTable" x:Key="certificateDetails">
-                  <VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtCertificateDetails" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="PopupMessage">["&lt;h1&gt;Pause Point #2&lt;/h1&gt;&lt;P&gt;Please review that the data scraped from Dynamics &amp; IPAFFS is accurate. Once you are happy, please press Continue.&lt;/P&gt;&lt;BR&gt;"+"&lt;P&gt;&lt;B&gt;Consignor Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Consignor Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Delivery Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Delivery Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Importer Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Importer Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Origin:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Country of Origin")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Consignment:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Country of Consignment")+"&lt;/P&gt;&lt;BR&gt;"]</InArgument>
+                <InArgument x:TypeArguments="sd1:DataTable" x:Key="commodityInfo">[dtIPAFFSCommodityLines]</InArgument>
+                <InArgument x:TypeArguments="sd1:DataTable" x:Key="certificateDetails">[dtCertificateDetails]</InArgument>
               </ufa:FormActivity.FormFieldsCollection>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -451,35 +442,66 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Navigate Dynamics &amp; Assign CHEDPP Record" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtWorkOrderTasks" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="570,3183" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="570,5610" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,2933" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-                </Sequence.Variables>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,5360" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="494,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[g_Config(&quot;Dynamics URL&quot;).ToString]" Version="V3" />
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search Button" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Import Notifications&quot;" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=contact&amp;viewid=cbae0a36-5446-ed11-bba2-6045bd8f972b&amp;viewType=1039" CVScreenId="0388bbea-78a6-442b-a440-74611a7aeec7" CvElementArea="3196, 244, 50, 47" CvType="Icon" DesignTimeRectangle="3205, 253, 32, 32" DesignTimeScaleFactor="2" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='searchLauncher-button' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='searchLauncher-button' tag='SPAN' type='' class='symbolFont SearchButton-symbol pa-fg pa-ey ' aaname='' /&gt;" Guid="6f65f3b6-d52f-4590-b70f-58abacc038ee" InformativeScreenshot="61809c630419251d421e67460106a5ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=contact&amp;viewid=cbae0a36-5446-ed11-bba2-6045bd8f972b&amp;viewType=1039" CVScreenId="0388bbea-78a6-442b-a440-74611a7aeec7" CvElementArea="3196, 244, 50, 47" CvType="Icon" DesignTimeRectangle="21, 1459, 88, 70" DesignTimeScaleFactor="2" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl tag='LI' aria-label='Import Notifications' aria-role='treeitem' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' parentid='searchLauncher-button' tag='SPAN' type='' class='symbolFont SearchButton-symbol pa-fg pa-ey ' aaname='' /&gt;" Guid="6f65f3b6-d52f-4590-b70f-58abacc038ee" ImageBase64="" InformativeScreenshot="94cf26fe99e790b2dbb3d67e42075b94.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Active Import'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="485, 467, 508, 56" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Active Import'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Active Import Notifications' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Active Import Notifications' type='' class='ms-Button-label label-131' check:text='Active Import Notifications' /&gt;" Guid="a92a0e2b-f8ed-4767-8cf0-eaf46b7389bd" InformativeScreenshot="29f9cea4b57da569fce991a3c6ec77c3.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
                 </uix:NClick>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Search Bar" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="494,251" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Text="[g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Open CHEDPP Reference Options" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="295, 573, 238, 37" DesignTimeScaleFactor="2" FriendlyName="'CHEDPP ReferenceCHEDPP'" FullSelectorArgument="&lt;webctrl aaname='CHEDPP Reference' tag='DIV' visibleinnertext='CHEDPP Reference' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='CHEDPP Reference' tag='DIV' visibleinnertext='CHEDPP Reference' type='' class='ms-TooltipHost root-204' check:text='CHEDPP ReferenceCHEDPP Reference' /&gt;" Guid="5e5ee7ce-dc3e-431b-b1b6-e0cd4057b57d" ImageBase64="" InformativeScreenshot="0e472a5454c735f2b35912a3ac449a5b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Filter by'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="695, 851, 224, 72" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Filter by'" FullSelectorArgument="&lt;webctrl parentname='Filter by' tag='SPAN' aaname='Filter by' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Filter by' tag='SPAN' aaname='Filter by' type='' class='ms-ContextualMenu-itemText label-391' check:text='Filter by' /&gt;" Guid="198e994a-5bfa-4b1b-bb9e-40ca72f8bed3" InformativeScreenshot="1ebb7081bf9f0240f9b6124f07ebf7fb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Filter By&quot;" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="383, 851, 224, 72" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Filter by'" FullSelectorArgument="&lt;webctrl parentname='Filter by' tag='SPAN' innertext='Filter by' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Filter by' tag='SPAN' innertext='Filter by' type='' class='ms-ContextualMenu-itemText label-403' aaname='Filter by' check:text='Filter by' /&gt;" Guid="29f2c267-1f41-49b8-8c6d-9ba923b54ff6" InformativeScreenshot="18ea0c93aaea426d50d2a0cc714e5985.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Filter by'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="615, 665, 404, 43" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Filter by'" FullSelectorArgument="&lt;webctrl tag='H3' aaname='Filter by' class='title-*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' aaname='Filter by' class='title-*' type='' check:text='Filter by' /&gt;" Guid="82da06ad-4d0a-46b8-b41e-11bb87304280" InformativeScreenshot="fcf19ba07d96277c3e1d5c03abbf387c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Filter" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="494,251" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Text="[g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=search&amp;searchText=" DesignTimeRectangle="1121, 359, 1160, 70" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT id-8'" FullSelectorArgument="&lt;webctrl tag='INPUT' aria-label='Search box' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' aria-label='Search box' type='text' class='pa-do pa-nf pa-lq pa-el pa-o pa-kk pa-ib pa-nj pa-dr pa-nk pa-fa pa-ah pa-nl ' aaname='Select to enter data' /&gt;" Guid="47ed8270-efd9-46b6-89da-877b3e4564d3" ImageBase64="" InformativeScreenshot="c49caf6ee5bc52a36c9108f3e85c5266.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="305, 852, 432, 60" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT TextField497'" FullSelectorArgument="&lt;webctrl tag='INPUT' aria-label='Filter by value' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' aria-label='Filter by value' type='text' class='ms-TextField-field field-460' aaname='' /&gt;" Guid="88b6d523-e272-4ec4-ac8f-7333427da1ba" InformativeScreenshot="8acedf273e83b527554514bf04ad26d6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
                 <uix:NCheckState DisplayName="No Search Results?" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,429" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="5" Version="V3">
@@ -503,7 +525,7 @@
                     </Sequence>
                   </uix:NCheckState.IfNotExists>
                   <uix:NCheckState.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=search&amp;searchText=CHEDPP.GB.2025.1181462&amp;searchType=1" DesignTimeRectangle="561, 471, 1175, 1768" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'No results'" FullSelectorArgument="&lt;webctrl id='CategorizedSearchNoResultsFound' tag='LABEL' aaname='No results found. Make sure all words are spelled correctly, or you could try different keywords.' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CategorizedSearchNoResultsFound' tag='LABEL' aaname='No results found. Make sure all words are spelled correctly, or you could try different keywords.' type='' class=' ' check:text='No results found. Make sure all words are spelled correctly, or you could try different keywords.' /&gt;" Guid="f72bbc12-ac41-4e9c-8f76-113e0aa55215" ImageBase64="" InformativeScreenshot="caad022c76da944ba524fa9e22c0040c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="183, 2210, 93, 40" DesignTimeScaleFactor="2" FriendlyName="'Rows: 0'" FullSelectorArgument="&lt;webctrl parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='Rows: 0' innertext='Rows: 0' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='Rows: 0' innertext='Rows: 0' type='' class='statusTextContainer-183' check:text='Rows: 0' /&gt;" Guid="36c88cf4-3ebc-402f-a8cc-996f636bc2c3" InformativeScreenshot="f1d29f6b8d35cd5394edca7f44834e92.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:NCheckState.Target>
                 </uix:NCheckState>
                 <Assign sap2010:Annotation.AnnotationText="Dynamic Selector requires we store this value in a variable rather than in the g_TransactionItem Dictionary." DisplayName="Assign strCHEDPPReference" sap:VirtualizedContainerService.HintSize="494,159" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -519,29 +541,128 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open CHEDPP Record" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click CHEDPP Record" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=search&amp;searchText=CHEDPP.GB.2025.1181461&amp;searchType=1" DesignTimeRectangle="395, 251, 154, 37" DesignTimeScaleFactor="2" FriendlyName="'CHEDPP.GB.2025.1181461C…'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='none' tag='DIV' aaname='{0}' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='none' tag='DIV' aaname='{0}' type='' class='ms-TooltipHost root-203' check:text='CHEDPP.GB.2025.1181461CHEDPP.GB.2025.1181461' /&gt;&quot;, strCHEDPPReference)]" Guid="62ac3208-8c88-41b8-ab41-0ca93bf4e901" ImageBase64="" InformativeScreenshot="e290e6a54628a71c85d7e003c8667319.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="53, 221, 32, 96" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' tag='SPAN' aaname='{0}' idx='1' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' tag='SPAN' aaname='{0}' type='' class='ms-Icon--WaffleOffice365 ms-icon-font-size-16' /&gt;&quot;, strCHEDPPReference)]" Guid="a5230000-59fb-4511-b976-0bf6f3573907" InformativeScreenshot="7407cff3b1cf1154f9642fbfeff0221d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                   <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="Verify CHEDPP Record Open" Mode="Appears" Timeout="30">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions DisplayName="Element 'SummarySummary'" Mode="Appears" Retry="True" Timeout="30">
                       <uix:VerifyExecutionOptions.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="493, 916, 540, 88" DesignTimeScaleFactor="2" FullSelectorArgument="[string.Format(&quot;&lt;html app='msedge.exe' title='Work Order* - Dynamics 365' /&gt;&lt;webctrl tag='H1' aaname='{0}' /&gt;&quot;, strCHEDPPReference)]" Guid="a7b21f64-16ff-4ebd-8398-397ac95c46a3" ImageBase64="" InformativeScreenshot="ecae8d563bbd2a011fff202b38354bb6.png" SearchSteps="Selector" WaitForReadyArgument="Complete" />
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="497, 680, 139, 90" DesignTimeScaleFactor="2" ElementType="ListItem" FriendlyName="'SummarySummary'" FullSelectorArgument="&lt;webctrl tag='LI' aaname='Summary' aria-role='tab' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LI' aaname='Summary' aria-role='tab' type='' class='pa-bk pa-nw pa-bw pa-pz pa-oh pa-cm pa-ds pa-qa pa-cb pa-k pa-bc pa-ck pa-hq pa-oi pa-ol pa-fj ' check:text='SummarySummary' /&gt;" Guid="136e3af9-acdc-46e9-a33d-cc38d6962ac9" InformativeScreenshot="030cd964324486bf138f9622e03ce5dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Related&quot;" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="935, 680, 145, 56" DesignTimeScaleFactor="2" FriendlyName="'Related'" FullSelectorArgument="&lt;webctrl tag='DIV' aaname='Related' aria-role='presentation' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aaname='Related' aria-role='presentation' type='' class='pa-g flexbox' check:text='Related' /&gt;" Guid="56fe8f21-236f-42a6-8f43-133c9f5b346c" InformativeScreenshot="ebc6bee2d9264c4f729eac790097b892.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Work Orders'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="1317, 938, 340, 40" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Work Orders'" FullSelectorArgument="&lt;webctrl aaname='Work Orders' parentid='relatedEntityContainer' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Work Orders' parentid='relatedEntityContainer' tag='SPAN' type='' class='fui-MenuItem__content r1ls86vo' check:text='Work Orders' /&gt;" Guid="2aae4fcd-c957-44a8-856c-c2690e8516cd" InformativeScreenshot="1d6d24c1184094aebb57a52b52be438c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Work Orders&quot;" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_30" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="1005, 938, 340, 40" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Work Orders'" FullSelectorArgument="&lt;webctrl aaname='Work Orders' parentid='relatedEntityContainer' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Work Orders' parentid='relatedEntityContainer' tag='SPAN' type='' class='fui-MenuItem__content r1ls86vo' check:text='Work Orders' /&gt;" Guid="3b3ea4f8-431b-40a4-a023-54f085acbcc3" InformativeScreenshot="7d6404e9361805c331d9823bd7cac648.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Work Order'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="527, 930, 544, 84" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Work Order'" FullSelectorArgument="&lt;webctrl aaname='Work Order Associated View' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Work Order Associated View' tag='SPAN' type='' class='pa-eo pa-k pa-cb ' check:text='Work Order Associated View' /&gt;" Guid="5ad34832-d273-4dad-a27a-34ca7b3f297a" InformativeScreenshot="1857c602c1cc95ff2dab06678bcffb48.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:VerifyExecutionOptions.Target>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Work Order" sap:VirtualizedContainerService.HintSize="494,227" sap2010:WorkflowViewState.IdRef="NClick_31" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=trd_plantsimportnotification&amp;id=4c93a474-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="21, 221, 0, 0" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='{0}' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='{0}' type='' class='ag-icon ag-icon-group ag-column-drop-icon ag-column-drop-horizontal-icon' /&gt;&quot;, strCHEDPPReference)]" Guid="319a1ea9-1a73-4c28-9415-3dc819569ad1" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="Label 'Active Import'" Mode="Appears" Retry="True" Timeout="30">
+                      <uix:VerifyExecutionOptions.Target>
+                        <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=f98fd87a-02a9-f011-bbd2-7ced8d8bf2d3" DesignTimeRectangle="509, 916, 460, 88" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Active Import'" FullSelectorArgument="&lt;webctrl aaname='Active Import Commodity Lines' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Active Import Commodity Lines' tag='SPAN' type='' class='pa-eo pa-k pa-cb ' check:text='Active Import Commodity Lines' /&gt;" Guid="fd39d942-e920-4b41-b352-0f21d979e2d7" InformativeScreenshot="6866a2a720a6a8bdc355cb1238aff6f0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                       </uix:VerifyExecutionOptions.Target>
                     </uix:VerifyExecutionOptions>
                   </uix:NClick.VerifyOptions>
                 </uix:NClick>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open &quot;Work Order Tasks&quot; Tab" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="637, 680, 255, 90" DesignTimeScaleFactor="2" ElementType="ListItem" FriendlyName="'Work Order'" FullSelectorArgument="&lt;webctrl tag='LI' aaname='Work Order Tasks' aria-role='tab' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LI' aaname='Work Order Tasks' aria-role='tab' type='' class='pa-bk pa-pb pa-pm pa-bt pa-ck pa-hq pa-pn pa-dr pa-po pa-by pa-k pa-bc pa-pp pa-ci pa-pq pa-pr pa-ps pa-pt ' check:text='Work Order TasksWork Order Tasks' /&gt;" Guid="cc5d0a9f-e8f2-43d4-963d-c516b621c809" ImageBase64="" InformativeScreenshot="d857e7a1c1b00d7679d7839a9d6bfb8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="637, 680, 255, 90" DesignTimeScaleFactor="2" ElementType="ListItem" FriendlyName="'Work Order'" FullSelectorArgument="&lt;webctrl tag='LI' aaname='Work Order Tasks' aria-role='tab' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LI' aaname='Work Order Tasks' aria-role='tab' type='' class='pa-bk pa-pb pa-pm pa-bt pa-ck pa-hq pa-pn pa-dr pa-po pa-by pa-k pa-bc pa-pp pa-ci pa-pq pa-pr pa-ps pa-pt ' check:text='Work Order TasksWork Order Tasks' /&gt;" Guid="cc5d0a9f-e8f2-43d4-963d-c516b621c809" ImageBase64="" InformativeScreenshot="d857e7a1c1b00d7679d7839a9d6bfb8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
+                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtWorkOrderTasks]" DisplayName="Extract Work Order Tasks " ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Owner'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='button' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NExtractData_5" LimitExtractionTo="None" MaximumResults="0" Version="V3">
+                  <uix:NExtractData.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="527, 1008, 3180, 252" DesignTimeScaleFactor="2" FriendlyName="'Document CheckDocument'" FullSelectorArgument="&lt;webctrl aria-role='rowgroup' class='ag-center-cols-container' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" Guid="30e08f15-c45a-45c5-aecc-533518b6f0b1" InformativeScreenshot="1480004140be94025ea1501621b331d7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NExtractData.Target>
+                </uix:NExtractData>
+                <ui:FilterDataTable DataTable="[dtWorkOrderTasks]" DisplayName="Filter - Filter to Document Check" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="494,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dtWorkOrderTasks]" SelectColumnsMode="Remove">
+                  <ui:FilterDataTable.Filters>
+                    <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                      <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                        <ui:FilterOperationArgument.Column>
+                          <InArgument x:TypeArguments="x:String">["Name"]</InArgument>
+                        </ui:FilterOperationArgument.Column>
+                        <ui:FilterOperationArgument.Operand>
+                          <InArgument x:TypeArguments="x:String">["Document Check"]</InArgument>
+                        </ui:FilterOperationArgument.Operand>
+                      </ui:FilterOperationArgument>
+                    </scg:List>
+                  </ui:FilterDataTable.Filters>
+                  <ui:FilterDataTable.SelectColumns>
+                    <scg:List x:TypeArguments="InArgument" Capacity="4">
+                      <x:Null />
+                    </scg:List>
+                  </ui:FilterDataTable.SelectColumns>
+                </ui:FilterDataTable>
+                <If Condition="[dtWorkOrderTasks.RowCount &lt;&gt; 1]" DisplayName="Document Check Found?" sap:VirtualizedContainerService.HintSize="494,435" sap2010:WorkflowViewState.IdRef="If_11">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Unable to locate Document Check work order task for Work Order &quot;+strCHEDPPReference)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[dtWorkOrderTasks.Rows(0).Item(&quot;Owner&quot;).ToString.Contains(&quot;CIT Imports&quot;)]" DisplayName="Document Check Assigned to CIT Import?" sap:VirtualizedContainerService.HintSize="494,435" sap2010:WorkflowViewState.IdRef="If_12">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Document Check not assigned to 'CIT Imports' for Work Order &quot;+strCHEDPPReference)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                    </Sequence>
+                  </If.Else>
+                </If>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open &quot;Document Check&quot; Task" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="639, 1031, 211, 37" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Document Check'" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' type='' class='spanWrapper-247' check:text='Document Check' /&gt;" Guid="f3daf58f-08c6-44bb-a4ec-bade56cc5e6e" ImageBase64="" InformativeScreenshot="b2ad803b2ca5413e0e1d84e046bf48ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="639, 1031, 211, 37" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Document Check'" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' type='' class='spanWrapper-247' check:text='Document Check' /&gt;" Guid="f3daf58f-08c6-44bb-a4ec-bade56cc5e6e" ImageBase64="" InformativeScreenshot="b2ad803b2ca5413e0e1d84e046bf48ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
                 <If Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint1&quot;))]" DisplayName="Pause Point #1" sap:VirtualizedContainerService.HintSize="494,747" sap2010:WorkflowViewState.IdRef="If_10">
@@ -565,14 +686,14 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select &quot;Assign&quot;" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select &quot;Assign&quot;" sap:VirtualizedContainerService.HintSize="494,190" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1525, 642, 81, 42" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='Assign' /&gt;" Guid="a208ecde-9fef-4574-aeae-f37ecfa3738e" ImageBase64="" InformativeScreenshot="4b53c75bcfcac5428953537d02c43169.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1525, 642, 81, 42" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='Assign' /&gt;" Guid="a208ecde-9fef-4574-aeae-f37ecfa3738e" ImageBase64="" InformativeScreenshot="4b53c75bcfcac5428953537d02c43169.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="494,183" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1903, 1431, 192, 64" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' check:text='Assign' /&gt;" Guid="d2d1e10e-c160-4588-b11c-7f97d6936842" InformativeScreenshot="f56d983473f597c5a33682a8fe842305.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1903, 1431, 192, 64" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' check:text='Assign' /&gt;" Guid="d2d1e10e-c160-4588-b11c-7f97d6936842" InformativeScreenshot="f56d983473f597c5a33682a8fe842305.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
               </Sequence>
@@ -613,7 +734,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;IPAFFS&quot; Button" sap:VirtualizedContainerService.HintSize="382,183" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                           <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="589, 642, 82, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'IPAFFS'" FullSelectorArgument="&lt;webctrl aaname='IPAFFS' tag='SPAN' innertext='IPAFFS' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='IPAFFS' tag='SPAN' innertext='IPAFFS' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='IPAFFS' /&gt;" Guid="1c4a5505-4c86-4c7c-b90c-917892f42368" InformativeScreenshot="3e69206f512c54a888d6163c6cdfcb5b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="589, 642, 82, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'IPAFFS'" FullSelectorArgument="&lt;webctrl aaname='IPAFFS' tag='SPAN' innertext='IPAFFS' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='IPAFFS' tag='SPAN' innertext='IPAFFS' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='IPAFFS' /&gt;" Guid="1c4a5505-4c86-4c7c-b90c-917892f42368" InformativeScreenshot="3e69206f512c54a888d6163c6cdfcb5b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                           </uix:NClick.Target>
                         </uix:NClick>
                       </Sequence>
@@ -649,7 +770,7 @@
                     </Sequence>
                   </uix:NCheckState.IfNotExists>
                   <uix:NCheckState.Target>
-                    <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1181461/hub?id=91D6F82D-EF99-F011-B4CC-6045BD939994" DesignTimeRectangle="1320, 535, 373, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'CHEDPP.GB.2025.1181461'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reference-number' tag='SPAN' aaname='{0}' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='reference-number' tag='SPAN' aaname='{0}' type='' class='' check:text='{0}' /&gt;&quot;, strCHEDPPReference)]" Guid="b496b276-d090-4fa9-8b6a-153143897f89" InformativeScreenshot="aad55a3c2f58bdf5fff37e949e90e134.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1181461/hub?id=91D6F82D-EF99-F011-B4CC-6045BD939994" DesignTimeRectangle="1320, 535, 373, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'CHEDPP.GB.2025.1181461'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reference-number' tag='SPAN' aaname='{0}' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='reference-number' tag='SPAN' aaname='{0}' type='' class='' check:text='{0}' /&gt;&quot;, strCHEDPPReference)]" Guid="b496b276-d090-4fa9-8b6a-153143897f89" InformativeScreenshot="aad55a3c2f58bdf5fff37e949e90e134.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NCheckState.Target>
                 </uix:NCheckState>
               </Sequence>
@@ -670,7 +791,7 @@
               <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Extract IPAFFs Info" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Extract IPAFFs Info" sap:VirtualizedContainerService.HintSize="910,9264" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -741,7 +862,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Importer Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Importer Address"), ",[+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Importer Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
@@ -763,7 +884,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Delivery Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Delivery Address"), ",[+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Delivery Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
@@ -785,7 +906,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Consignor Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Consignor Address"), ",[+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Consignor Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>

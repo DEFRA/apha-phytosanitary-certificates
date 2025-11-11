@@ -161,7 +161,7 @@
       <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="2315,1426.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="2301,1426.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="strTenantID" />
       <Variable x:TypeArguments="ss:SecureString" Name="strClientID" />
@@ -184,7 +184,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
@@ -360,7 +360,7 @@
         </If>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID5">
+        <FlowStep x:Name="__ReferenceID4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">1105,375</av:Point>
@@ -380,10 +380,10 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[booDis]" DisplayName="Priority Override Form" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="750" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Option:&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Default Prioritisation&quot;,&quot;value&quot;:&quot;defaultPrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Override Prioritisation&quot;,&quot;value&quot;:&quot;overridePrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;PrioritisationOption&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;SPOL Data&quot;,&quot;key&quot;:&quot;spolData&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Records&quot;,&quot;uniqueOptions&quot;:true,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;chedppRecords&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Checklist Data:&quot;,&quot;Sortable&quot;:true,&quot;Filterable&quot;:true,&quot;Resizeable&quot;:true,&quot;Pagination&quot;:true,&quot;PageSizeComponent&quot;:50,&quot;key&quot;:&quot;checklistData&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;tree&quot;:true,&quot;disableAddingRemovingRows&quot;:false,&quot;type&quot;:&quot;datagrid2&quot;,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Reference&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Submitted Date&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_2&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Ready for Inspection&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_3&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Origin Country&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_4&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Commodity Group&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_5&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Inspection Classification&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_6&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]}]},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Food and Rural Affairs" FormWidth="1500" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="484,228" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Prioritisation Form.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
+            <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[booDis]" DisplayName="Priority Override Form" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="750" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Option:&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Default Prioritisation&quot;,&quot;value&quot;:&quot;defaultPrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Override Prioritisation&quot;,&quot;value&quot;:&quot;overridePrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;PrioritisationOption&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;SPOL Data&quot;,&quot;key&quot;:&quot;spolData&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Records&quot;,&quot;uniqueOptions&quot;:true,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;chedppRecords&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Checklist Data:&quot;,&quot;Sortable&quot;:true,&quot;Filterable&quot;:true,&quot;Resizeable&quot;:true,&quot;Pagination&quot;:true,&quot;PageSizeComponent&quot;:50,&quot;key&quot;:&quot;checklistData&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;tree&quot;:true,&quot;disableAddingRemovingRows&quot;:false,&quot;type&quot;:&quot;datagrid2&quot;,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Reference&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Submitted Date&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_2&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Ready for Inspection&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_3&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Origin Country&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_4&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Commodity Group&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_5&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Inspection Classification&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_6&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]}]},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Food and Rural Affairs" FormWidth="1500" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="484,184" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Prioritisation Form.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
               <ufa:FormActivity.Body>
                 <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,69" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_38">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -547,17 +547,17 @@
             </Sequence>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID1">
+            <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">1105,495</av:Point>
                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">1160,565 1160,640</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">1160,565 1160,630</av:PointCollection>
                   <av:Point x:Key="AnnotationLocation">865,395</av:Point>
                   <av:Size x:Key="AnnotationSize">170,110</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="Retrieve Updated SPOL Checklist records to ensure the selected record hasn't been assigned to a different user concurrently." DisplayName="Retrieve Updated Record Assigned Status" sap:VirtualizedContainerService.HintSize="492,738" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <Sequence sap2010:Annotation.AnnotationText="Retrieve Updated SPOL Checklist records to ensure the selected record hasn't been assigned to a different user concurrently." DisplayName="Retrieve Updated Record Assigned Status" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_27">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -589,93 +589,128 @@
                 </ui:RetryScope>
               </Sequence>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" Condition="[dtChedppRecord.RowCount = 1]" DisplayName="Record Unassigned?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID5" DisplayName="Record Unassigned?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                  <FlowSwitch.Default>
+                    <FlowStep x:Name="__ReferenceID6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">895,625</av:Point>
+                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Found multiple checklist items for reference: &quot;+g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                    </FlowStep>
+                  </FlowSwitch.Default>
+                  <FlowSwitch.Expression>
+                    <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="dtChedppRecord.RowCount" />
+                  </FlowSwitch.Expression>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">1130,640</av:Point>
+                      <av:Point x:Key="ShapeLocation">1130,630</av:Point>
                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                      <av:PointCollection x:Key="FalseConnector">1190,670 1420,670 1420,445</av:PointCollection>
-                      <av:PointCollection x:Key="TrueConnector">1160,700 1160,775</av:PointCollection>
+                      <av:PointCollection x:Key="0Connector">1190,660 1420,660 1420,565</av:PointCollection>
+                      <av:PointCollection x:Key="1Connector">1160,690 1160,775</av:PointCollection>
+                      <av:PointCollection x:Key="Default">1130,660 1005,660</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID4">
+                  <FlowStep x:Key="1" x:Name="__ReferenceID3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">1105,775</av:Point>
+                        <av:Size x:Key="ShapeSize">110,70</av:Size>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Assign Record to User" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="strItemID" />
+                        <Variable x:TypeArguments="njl:JObject" Name="jsonListItem" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">1105,775</av:Point>
-                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Assign Record to User" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:String" Name="strItemID" />
-                          <Variable x:TypeArguments="njl:JObject" Name="jsonListItem" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Assign init json object" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_20">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="njl:JObject">[jsonListItem]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="njl:JObject">[new JObject]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Assign  - init fields" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_21">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="njl:JToken">[jsonListItem("fields")]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="njl:JToken">[new JObject]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Assign - add &quot;field_8&quot; column" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_22">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="njl:JToken">[jsonListItem("fields")("field_8")]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="njl:JToken">[g_Config("User Name").ToString]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <ds:Edit_Sharepoint_List_Item DisplayName="Edit Sharepoint List Item (Edit_Sharepoint_List_Item)" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="Edit_Sharepoint_List_Item_1" in_strBearerToken="[strBearerToken]" in_strBody="[jsonListItem]" in_strItemID="[dtChedppRecord.Rows(0).Item(&quot;ID&quot;).ToString]" in_strListID="[strListID]" in_strSiteID="[strSiteID]" />
-                      </Sequence>
-                    </FlowStep>
-                  </FlowDecision.True>
-                  <FlowDecision.False>
-                    <FlowStep x:Name="__ReferenceID3">
+                      <Assign DisplayName="Assign init json object" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_20">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="njl:JObject">[jsonListItem]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="njl:JObject">[new JObject]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign  - init fields" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_21">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="njl:JToken">[jsonListItem("fields")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="njl:JToken">[new JObject]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign - add &quot;field_8&quot; column" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_22">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="njl:JToken">[jsonListItem("fields")("field_8")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="njl:JToken">[g_Config("User Name").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ds:Edit_Sharepoint_List_Item DisplayName="Edit Sharepoint List Item (Edit_Sharepoint_List_Item)" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="Edit_Sharepoint_List_Item_1" in_strBearerToken="[strBearerToken]" in_strBody="[jsonListItem]" in_strItemID="[dtChedppRecord.Rows(0).Item(&quot;ID&quot;).ToString]" in_strListID="[strListID]" in_strSiteID="[strSiteID]" />
+                    </Sequence>
+                  </FlowStep>
+                  <FlowStep x:Key="0" x:Name="__ReferenceID7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">1365,495</av:Point>
+                        <av:Size x:Key="ShapeSize">110,70</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">1420,495 1420,445</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Clear Transaction Item" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_31">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[g_TransactionItem]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[Nothing]</InArgument>
+                      </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">1365,375</av:Point>
-                          <av:Size x:Key="ShapeSize">110,70</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">1420,375 1420,290 1215,290</av:PointCollection>
-                          <av:Point x:Key="AnnotationLocation">1460,280</av:Point>
-                          <av:Size x:Key="AnnotationSize">220,60</av:Size>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" sap2010:Annotation.AnnotationText="Inform the user that the selected record has already been assigned to a user." DisplayName="User Pop-Up" sap:VirtualizedContainerService.HintSize="110,70" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\InitialisationException.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Oops!&lt;/h1&gt;&lt;P&gt;The Checklist item I have tried to assign has already been assigned to a user.&lt;/P&gt;&lt;P&gt;If you would like me to try pick up another record, then please click Continue.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,300}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1">
+                    </Assign>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">1365,375</av:Point>
+                            <av:Size x:Key="ShapeSize">110,70</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">1420,375 1420,290 1215,290</av:PointCollection>
+                            <av:Point x:Key="AnnotationLocation">1460,280</av:Point>
+                            <av:Size x:Key="AnnotationSize">220,60</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </d:Generic_PopUp>
-                      <FlowStep.Next>
-                        <x:Reference>__ReferenceID0</x:Reference>
-                      </FlowStep.Next>
-                    </FlowStep>
-                  </FlowDecision.False>
-                </FlowDecision>
+                        <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" sap2010:Annotation.AnnotationText="Inform the user that the selected record has already been assigned to a user." DisplayName="User Pop-Up" sap:VirtualizedContainerService.HintSize="110,70" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\InitialisationException.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Oops!&lt;/h1&gt;&lt;P&gt;The Checklist item I have tried to assign has already been assigned to a user.&lt;/P&gt;&lt;P&gt;If you would like me to try pick up another record, then please click Continue.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,300}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </d:Generic_PopUp>
+                        <FlowStep.Next>
+                          <x:Reference>__ReferenceID0</x:Reference>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowSwitch>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID6">
+    <FlowStep x:Name="__ReferenceID8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">1105,135</av:Point>
@@ -699,5 +734,7 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
   </Flowchart>
 </Activity>
