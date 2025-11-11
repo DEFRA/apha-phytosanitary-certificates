@@ -150,7 +150,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="2298,5292" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="2284,6294" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -163,20 +163,21 @@
         </sap:WorkflowViewStateService.ViewState>
       </Variable>
       <Variable x:TypeArguments="sd:DataTable" Name="dtResultsTable" />
+      <Variable x:TypeArguments="x:String" Name="strGenusText" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="672,5269" sap2010:WorkflowViewState.IdRef="Sequence_87">
+    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="673,6271" sap2010:WorkflowViewState.IdRef="Sequence_87">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertLocation]" sap:VirtualizedContainerService.HintSize="638,115" sap2010:WorkflowViewState.IdRef="ReadPDFText_3" PreserveFormatting="True" Range="[in_pageRange]" Text="[strExtractedPDF]" />
-      <Sequence DisplayName="Get Additional Declarations " sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="Sequence_88">
+      <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertLocation]" sap:VirtualizedContainerService.HintSize="639,115" sap2010:WorkflowViewState.IdRef="ReadPDFText_4" PreserveFormatting="True" Range="All" Text="[strExtractedPDF]" />
+      <Sequence DisplayName="Get Additional Declarations " sap:VirtualizedContainerService.HintSize="639,1464" sap2010:WorkflowViewState.IdRef="Sequence_100">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strCleanText" />
           <Variable x:TypeArguments="x:String" Name="strAddDecFirst" />
@@ -185,11 +186,11 @@
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Assign strExtractPDF to strCleanText" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_192">
+        <Assign DisplayName="Assign strExtractPDF to strCleanText" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_260">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -197,7 +198,7 @@
             <InArgument x:TypeArguments="x:String">[strExtractedPDF]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="** Remove un-needed text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_193">
+        <Assign DisplayName="** Remove un-needed text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_261">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -205,7 +206,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanText, "(11\s+Additional\s+declaration[\s\S]*)", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="** Get first AD group" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_194">
+        <Assign DisplayName="** Get first AD group" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_262">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strADOOutputOne]</OutArgument>
           </Assign.To>
@@ -213,7 +214,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanText, "(?i)11\s+Additional\s+declaration[\s\S]*?(?=\s*DISINFESTATION\s+AND/OR\s+DISINFECTION\s+TREATMENT)", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove first AD group from text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_195">
+        <Assign DisplayName="Remove first AD group from text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_263">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -221,7 +222,7 @@
             <InArgument x:TypeArguments="x:String">[strCleanText.Replace(strADOOutputOne,"")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="** Further Tidy Clean text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_196">
+        <Assign DisplayName="** Further Tidy Clean text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_264">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -229,7 +230,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanText, "^[\s\S]*?(?=11\s+Additional\s+declaration)", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase)]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="** Replace un-needed text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_197">
+        <Assign DisplayName="** Replace un-needed text" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_265">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -241,7 +242,7 @@
 )]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Replace text at the end" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_198">
+        <Assign DisplayName="Replace text at the end" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_266">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -249,7 +250,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanText, "(?ms)^Place of issue\s*:.*\r?\nDate\s*:.*\r?\nStamp of organization and name of authorized officer:\s*\r?\n\r?\n\(Signature\)\s*:", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Replace final bit of text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_199">
+        <Assign DisplayName="Replace final bit of text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_267">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -257,7 +258,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanText, "Place of issue\s*:.*\r?\nDate\s*:.*\r?\nStamp of organization and name of authorized officer:\s*\r?\n\r?\n\(Signature\)\s*", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Compine text to make out_strAdditionalDeclarions" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_200">
+        <Assign DisplayName="Compine text to make out_strAdditionalDeclarions" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_268">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strAdditionalDeclarions]</OutArgument>
           </Assign.To>
@@ -265,11 +266,34 @@
             <InArgument x:TypeArguments="x:String">[strADOOutputOne + strCleanText]</InArgument>
           </Assign.Value>
         </Assign>
+        <Assign DisplayName="Assign strExtractedPDF to strGenusText" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_269">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strExtractedPDF]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="** Remove first AD group" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_270">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strGenusText.Replace(strCleanText,"")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="** Remove second AD group" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_271">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strGenusText.Replace(strADOOutputOne,"")]</InArgument>
+          </Assign.Value>
+        </Assign>
       </Sequence>
-      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="638,3792" sap2010:WorkflowViewState.IdRef="Sequence_89">
+      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="639,4218" sap2010:WorkflowViewState.IdRef="Sequence_101">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
-          <Variable x:TypeArguments="x:String" Name="strGenusText" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieGenusText" />
           <Variable x:TypeArguments="x:String" Name="strCleanedText" />
         </Sequence.Variables>
@@ -279,15 +303,23 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Assign strExtractedPDF to strGenusText" sap:VirtualizedContainerService.HintSize="604,115" sap2010:WorkflowViewState.IdRef="Assign_201">
+        <Assign DisplayName="** Remove all repeating headers" sap:VirtualizedContainerService.HintSize="605,115" sap2010:WorkflowViewState.IdRef="Assign_272">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[strExtractedPDF]</InArgument>
+            <InArgument x:TypeArguments="x:String">[Regex.Replace(strGenusText, "(?ms)^ANNEX.*?Page : \d+ of \d+\r?\n", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Replace Un-needed text" sap:VirtualizedContainerService.HintSize="604,115" sap2010:WorkflowViewState.IdRef="Assign_202">
+        <Assign DisplayName="** Remove stray numbers" sap:VirtualizedContainerService.HintSize="605,115" sap2010:WorkflowViewState.IdRef="Assign_273">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Regex.Replace(strGenusText, "(?&lt;=Pieces)\d+", "")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="** Replace Un-needed text" sap:VirtualizedContainerService.HintSize="605,115" sap2010:WorkflowViewState.IdRef="Assign_274">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
           </Assign.To>
@@ -295,15 +327,15 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strGenusText, "(?sm)^.*?(?=^[ \t]*\d{4}\\b)", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:BuildDataTable DataTable="[out_dtCommodityLines]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="604,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="604,92" sap2010:WorkflowViewState.IdRef="Matches_17" Input="[strGenusText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?m)^\\s*\\d{4}.*(?:\\r?\\n\\s{2,}.*){0,2}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="604,3286" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[ieMatches]">
+        <ui:BuildDataTable DataTable="[out_dtCommodityLines]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="605,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_5" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="605,92" sap2010:WorkflowViewState.IdRef="Matches_18" Input="[strGenusText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?m)^\\s*\\d{4}.*(?:\\r?\\n\\s{2,}.*){0,2}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="605,3597" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[ieMatches]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="570,3148" sap2010:WorkflowViewState.IdRef="Sequence_90">
+              <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="571,3459" sap2010:WorkflowViewState.IdRef="Sequence_102">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="rowText" />
                   <Variable x:TypeArguments="x:String" Name="entry" />
@@ -324,7 +356,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign item to entry" sap:VirtualizedContainerService.HintSize="536,115" sap2010:WorkflowViewState.IdRef="Assign_203">
+                <Assign DisplayName="Assign item to entry" sap:VirtualizedContainerService.HintSize="537,115" sap2010:WorkflowViewState.IdRef="Assign_275">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                   </Assign.To>
@@ -332,9 +364,9 @@
                     <InArgument x:TypeArguments="x:String">[item.ToString.Trim]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;)]" sap:VirtualizedContainerService.HintSize="536,2973" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;)]" sap:VirtualizedContainerService.HintSize="537,3284" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_108">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -343,13 +375,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502,2721" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.85714285714283,3032" sap2010:WorkflowViewState.IdRef="Sequence_109">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Replace text at the start of the string" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_204">
+                      <Assign DisplayName="Replace text at the start of the string" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_276">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -357,7 +389,7 @@
                           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(entry, "(?s)^.*?(?=\r?\n\s*\d{3,}\s)", "").Trim()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Replace text at the end of the string" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_205">
+                      <Assign DisplayName="Replace text at the end of the string" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_277">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -365,7 +397,7 @@
                           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(entry, "See annex \(number of pages:\d+\)[\s\S]*?(?=PHYTOSANITARY CERTIFICATE:)", "")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Replace un-needed headers" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_206">
+                      <Assign DisplayName="Replace un-needed headers" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_278">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -373,7 +405,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(entry, "(?s)No\.   Product \(Plants for planting\)\s+Packages.*", "")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Replace remaining un-needed headers" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_207">
+                      <Assign DisplayName="Replace remaining un-needed headers" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_279">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -381,7 +413,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(entry, "(?s).*?(?=No\.   Product \(Plants for planting\)\s+Packages)", "")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Replace &quot;Text End&quot; text" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_208">
+                      <Assign DisplayName="Replace &quot;Text End&quot; text" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_280">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -389,7 +421,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Split(New String() {"- - - - - - - - - - - - - - -   &lt; TEXT END &gt;   - - - - - - - - - - - - - -"}, StringSplitOptions.None)(0).Trim()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Reaplce text before ANNEX" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_209">
+                      <Assign DisplayName="Reaplce text before ANNEX" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_281">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -397,7 +429,7 @@
                           <InArgument x:TypeArguments="x:String">[entry.Split(New String() {"ANNEX"}, StringSplitOptions.None)(0).Trim()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Remove Additional declarations" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_210">
+                      <Assign DisplayName="Remove Additional declarations" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_282">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -405,7 +437,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Split(New String() {"11  Additional declaration"}, StringSplitOptions.None)(0).Trim()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Remove text after phyto cert" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_211">
+                      <Assign DisplayName="Remove text after phyto cert" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_283">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -413,7 +445,7 @@
                           <InArgument x:TypeArguments="x:String">[entry.Split(New String() {"PHYTOSANITARY CERTIFICATE"}, StringSplitOptions.None)(0).Trim()]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Replace remaining headers" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_212">
+                      <Assign DisplayName="Replace remaining headers" sap:VirtualizedContainerService.HintSize="468.57142857142856,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_284">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                         </Assign.To>
@@ -421,7 +453,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Sequence DisplayName="Extract Each needed part" sap:VirtualizedContainerService.HintSize="468,1578" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                      <Sequence DisplayName="Extract Each needed part" sap:VirtualizedContainerService.HintSize="468.57142857142856,1840.5714285714287" sap2010:WorkflowViewState.IdRef="Sequence_103">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="lines" />
                         </Sequence.Variables>
@@ -431,7 +463,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Extract ID" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_213">
+                        <Assign DisplayName="Extract ID" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_285">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[ID]</OutArgument>
                           </Assign.To>
@@ -439,7 +471,7 @@
                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "^\d{4}").Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Remove ID" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_214">
+                        <Assign DisplayName="Remove ID" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_286">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                           </Assign.To>
@@ -447,7 +479,7 @@
                             <InArgument x:TypeArguments="x:String">[entry.Replace(ID,"")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Extract Country" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_215">
+                        <Assign DisplayName="Extract Country" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_287">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Country]</OutArgument>
                           </Assign.To>
@@ -455,7 +487,7 @@
                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "\(\w+\)").Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Remove Country" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_216">
+                        <Assign DisplayName="Remove Country" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_288">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                           </Assign.To>
@@ -463,7 +495,7 @@
                             <InArgument x:TypeArguments="x:String">[If(Country.Length &gt; 1, entry.Replace(Country, ""), entry)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Extract Total" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_217">
+                        <Assign DisplayName="Extract Total" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_289">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
                           </Assign.To>
@@ -471,7 +503,7 @@
                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "([\d,]+\s+\w+)\s*$", System.Text.RegularExpressions.RegexOptions.Multiline).Value.Trim]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Remove Total" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_218">
+                        <Assign DisplayName="Remove Total" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_290">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                           </Assign.To>
@@ -479,7 +511,19 @@
                             <InArgument x:TypeArguments="x:String">[entry.Replace(Total,"")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Extract Packages" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_219">
+                        <Assign DisplayName="** Tidy Total" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_291">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    Total,
+    "(?i)\bPieces\b.*",
+    "Pieces"
+).Trim()]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Extract Packages" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_292">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Packages]</OutArgument>
                           </Assign.To>
@@ -487,7 +531,7 @@
                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "\s*\d+\s+\w+").Value.trim()]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Tidy Packages" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_220">
+                        <Assign DisplayName="Remove Packages" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_293">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                           </Assign.To>
@@ -495,7 +539,7 @@
                             <InArgument x:TypeArguments="x:String">[entry.Replace(Packages,"")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_221">
+                        <Assign DisplayName="Split Lines" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_294">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[lines]</OutArgument>
                           </Assign.To>
@@ -503,7 +547,7 @@
                             <InArgument x:TypeArguments="x:String">[entry.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Extract Commodity" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_222">
+                        <Assign DisplayName="Extract Commodity" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_295">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
                           </Assign.To>
@@ -511,15 +555,23 @@
                             <InArgument x:TypeArguments="x:String">[lines.Trim()]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Tidy Packages" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_223">
+                        <Assign DisplayName="** Tidy Packages" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_296">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[If(lines.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).Length &gt; 1, lines.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)(1).Trim(), "")]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[entry.Replace(lines,"")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Assign Outcome" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_224">
+                        <Assign DisplayName="** Remove Newlines" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_297">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(AdditionalInfo, "[\r\n]+", " ").Trim]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Assign Outcome" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_298">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Outcome]</OutArgument>
                           </Assign.To>
@@ -529,7 +581,7 @@
                             </InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Assign Status Notes" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_225">
+                        <Assign DisplayName="Assign Status Notes" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_299">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[StatusNotes]</OutArgument>
                           </Assign.To>
@@ -540,7 +592,7 @@
                           </Assign.Value>
                         </Assign>
                       </Sequence>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ID, Commodity, AdditionalInfo, Country, Packages, Total, CommodityGroup, Outcome, StatusNotes}]" DataTable="[out_dtCommodityLines]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="468,48" sap2010:WorkflowViewState.IdRef="AddDataRow_11">
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ID, Commodity, AdditionalInfo, Country, Packages, Total, CommodityGroup, Outcome, StatusNotes}]" DataTable="[out_dtCommodityLines]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="468.57142857142856,77.14285714285714" sap2010:WorkflowViewState.IdRef="AddDataRow_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -562,7 +614,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
       </Sequence>
-      <Assign DisplayName="Remove New Lines from ExtractedPDF" sap:VirtualizedContainerService.HintSize="638,115" sap2010:WorkflowViewState.IdRef="Assign_226">
+      <Assign DisplayName="Remove New Lines from ExtractedPDF" sap:VirtualizedContainerService.HintSize="639,115" sap2010:WorkflowViewState.IdRef="Assign_259">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strCleanExtractedPDF]</OutArgument>
         </Assign.To>
@@ -570,14 +622,14 @@
           <InArgument x:TypeArguments="x:String">[strExtractedPDF.Replace(Environment.NewLine, String.Empty)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Get Phyto Cert Number" sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="Sequence_94">
+      <Sequence DisplayName="Get Phyto Cert Number" sap:VirtualizedContainerService.HintSize="639,57" sap2010:WorkflowViewState.IdRef="Sequence_104">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Extract strPhytoCert" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_227">
+        <Assign DisplayName="Extract strPhytoCert" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_300">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strPhytoCertNo]</OutArgument>
           </Assign.To>
@@ -585,7 +637,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanExtractedPDF, "No\.\s*EC\s*NL\s*/\s*PCNU\s*\d+").Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove Phyto Cert from strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_228">
+        <Assign DisplayName="Remove Phyto Cert from strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_301">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanExtractedPDF]</OutArgument>
           </Assign.To>
@@ -593,7 +645,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanExtractedPDF, "No\.\s*EC\s*NL\s*/\s*PCNU\s*\d+", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove PHYTOSANITARY CERTIFICATE from strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_229">
+        <Assign DisplayName="Remove PHYTOSANITARY CERTIFICATE from strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_302">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanExtractedPDF]</OutArgument>
           </Assign.To>
@@ -602,14 +654,14 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Get ExporterAddress" sap:VirtualizedContainerService.HintSize="638,888" sap2010:WorkflowViewState.IdRef="Sequence_95">
+      <Sequence DisplayName="Get ExporterAddress" sap:VirtualizedContainerService.HintSize="639,57" sap2010:WorkflowViewState.IdRef="Sequence_105">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Extract strExporterAddress" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_230">
+        <Assign DisplayName="Extract strExporterAddress" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_303">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strExporterAddress]</OutArgument>
           </Assign.To>
@@ -617,7 +669,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanExtractedPDF, "\*\d+\*.*", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove Exporter Address From strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_231">
+        <Assign DisplayName="Remove Exporter Address From strExtractedPDF" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_304">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanExtractedPDF]</OutArgument>
           </Assign.To>
@@ -625,7 +677,7 @@
             <InArgument x:TypeArguments="x:String">[strCleanExtractedPDF.Replace(out_strExporterAddress,"")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove unrequired text from strExporterAddress" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_232">
+        <Assign DisplayName="Remove unrequired text from strExporterAddress" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_305">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strExporterAddress]</OutArgument>
           </Assign.To>
@@ -633,7 +685,7 @@
             <InArgument x:TypeArguments="x:String" xml:space="preserve">[out_strExporterAddress.Replace("1  Name and address of exporter","")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Format strExporterAddress" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_233">
+        <Assign DisplayName="Format strExporterAddress" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_306">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strExporterAddress]</OutArgument>
           </Assign.To>
@@ -641,7 +693,7 @@
             <InArgument x:TypeArguments="x:String">[String.Join("," &amp; Environment.NewLine, System.Text.RegularExpressions.Regex.Split(out_strExporterAddress.Trim(), "\s{2,}").Select(Function(s) s.Trim()))]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Further Tidu strExporterAddress" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_234">
+        <Assign DisplayName="Further Tidu strExporterAddress" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_307">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strExporterAddress]</OutArgument>
           </Assign.To>
@@ -649,7 +701,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(out_strExporterAddress, "^(?:\d+,\s*.*?\s*)+", "").Trim()]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="** Assign remove header" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_235">
+        <Assign DisplayName="** Assign remove header" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_308">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strExporterAddress]</OutArgument>
           </Assign.To>
@@ -657,7 +709,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(out_strExporterAddress, "^\d+\s*Name and address of exporter,\s*", "", RegexOptions.Multiline)]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Tidy strExtractedPDF" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_236">
+        <Assign DisplayName="Tidy strExtractedPDF" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_309">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanExtractedPDF]</OutArgument>
           </Assign.To>
@@ -666,14 +718,14 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Get strConsignee" sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="Sequence_96">
+      <Sequence DisplayName="Get strConsignee" sap:VirtualizedContainerService.HintSize="639,57" sap2010:WorkflowViewState.IdRef="Sequence_106">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Extract strConsignee" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_237">
+        <Assign DisplayName="Extract strConsignee" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_310">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strConsignee]</OutArgument>
           </Assign.To>
@@ -681,7 +733,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanExtractedPDF, "3\s+Declared name and address of consignee([\s\S]*?)(?=5\s+Place of origin)").Groups(1).Value.Trim]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Remove uneeded text from strCongsignee" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_238">
+        <Assign DisplayName="Remove uneeded text from strCongsignee" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_311">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strConsignee]</OutArgument>
           </Assign.To>
@@ -689,16 +741,29 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(out_strConsignee, "^4\s+Plant Protection Organization of the Netherlands\s+", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign DisplayName="Tidy &amp; Format strConsignee" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_239">
+        <Assign DisplayName="** Remove plant protection agency text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_312">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strConsignee]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[String.Join("," &amp; Environment.NewLine, System.Text.RegularExpressions.Regex.Split(out_strConsignee.Trim(), "\s{2,}").Select(Function(s) s.Trim()).Where(Function(s) s &lt;&gt; "UNITED KINGDOM"))]</InArgument>
+            <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    out_strConsignee,
+    "to\s+Plant\s+Protection\s+Organization\(s\)\s+of\s+UNITED\s+KINGDOM\s+",
+    "",
+    System.Text.RegularExpressions.RegexOptions.IgnoreCase
+)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="** Tidy &amp; Format strConsignee" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_313">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[out_strConsignee]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[String.Join("," &amp; Environment.NewLine, System.Text.RegularExpressions.Regex.Split(out_strConsignee.Trim(), "\s{2,}").Select(Function(s) s.Trim()))]</InArgument>
           </Assign.Value>
         </Assign>
       </Sequence>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="639,57" sap2010:WorkflowViewState.IdRef="TryCatch_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -706,14 +771,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Get Place of Origin" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_97">
+          <Sequence DisplayName="Get Place of Origin" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_110">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign Place of Origin" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_240">
+            <Assign DisplayName="Assign Place of Origin" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_314">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_strPlaceOfOrigin]</OutArgument>
               </Assign.To>
@@ -730,7 +795,7 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="473.14285714285717,24" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="473.14285714285717,24" sap2010:WorkflowViewState.IdRef="Catch`1_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -741,7 +806,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="Nothing" />
               </ActivityAction.Argument>
-              <Assign DisplayName="Assign Place of Origin" sap:VirtualizedContainerService.HintSize="434.2857142857143,85.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_241">
+              <Assign DisplayName="Assign Place of Origin" sap:VirtualizedContainerService.HintSize="434.2857142857143,85.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_315">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_strPlaceOfOrigin]</OutArgument>
                 </Assign.To>
@@ -761,14 +826,14 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <Sequence DisplayName="Get Date of Issue" sap:VirtualizedContainerService.HintSize="638,48" sap2010:WorkflowViewState.IdRef="Sequence_98">
+      <Sequence DisplayName="Get Date of Issue" sap:VirtualizedContainerService.HintSize="639,48" sap2010:WorkflowViewState.IdRef="Sequence_107">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Get Date of Issue" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_242">
+        <Assign DisplayName="Get Date of Issue" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_316">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strIssueDate]</OutArgument>
           </Assign.To>
@@ -776,7 +841,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanExtractedPDF, "Date:\s*(\d{2}-[A-Z]+-\d{4})").Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_243">
+        <Assign sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_317">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strIssueDate]</OutArgument>
           </Assign.To>
