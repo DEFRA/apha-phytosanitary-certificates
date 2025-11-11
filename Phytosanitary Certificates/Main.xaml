@@ -154,7 +154,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID5}"Removed_Key"Automation Template"Removed_Key"2315,1426.04"Removed_Key"StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID5}"Removed_Key"Automation Template"Removed_Key"2301,1426.04"Removed_Key"StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -164,9 +164,9 @@
         <av:PointCollection x:Key="ConnectorLocation">340,97.4 370,97.4 370,108.4 482.4,108.4</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0"Removed_Key"Get the next transaction to be processed."Removed_Key"Get Transaction Data"Removed_Key"229,109"Removed_Key"State_4">
+    <State x:Name="__ReferenceID0"Removed_Key"Get the next transaction to be processed."Removed_Key"Get Transaction Data"Removed_Key"638,3391"Removed_Key"State_4">
       <State.Entry>
-        <SequenceRemoved_Key"Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached."Removed_Key"Retrieve Data"Removed_Key"552,2405"Removed_Key"Sequence_25">
+        <SequenceRemoved_Key"Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached."Removed_Key"Retrieve Data"Removed_Key"592,2967"Removed_Key"Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolShouldStop" />
           </Sequence.Variables>
@@ -177,7 +177,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[Cbool(g_Config(&quot;ShouldStop&quot;))]"Removed_Key"If - manually should stop check"Removed_Key"518,550"Removed_Key"If_27">
+          <If Condition="[Cbool(g_Config(&quot;ShouldStop&quot;))]"Removed_Key"If - manually should stop check"Removed_Key"558,550"Removed_Key"If_27">
             <If.Then>
               <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_63">
                 <sap:WorkflowViewStateService.ViewState>
@@ -206,7 +206,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <IfRemoved_Key"In the case of a fatal error on the previous transaction, the Config variable &quot;Should Stop&quot; will be set to True. The robot will gracefully finish processing and then should stop." Condition="[CType(g_Config(&quot;ShouldStop&quot;), boolean)]"Removed_Key"Should Process Stop?"Removed_Key"518,1703"Removed_Key"If_11">
+          <IfRemoved_Key"In the case of a fatal error on the previous transaction, the Config variable &quot;Should Stop&quot; will be set to True. The robot will gracefully finish processing and then should stop." Condition="[CType(g_Config(&quot;ShouldStop&quot;), boolean)]"Removed_Key"Should Process Stop?"Removed_Key"558,2281"Removed_Key"If_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -260,7 +260,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <TryCatchRemoved_Key"Try GetTransactionData"Removed_Key"438,431"Removed_Key"TryCatch_7">
+              <TryCatchRemoved_Key"Try GetTransactionData"Removed_Key"524,1025"Removed_Key"TryCatch_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -278,7 +278,7 @@
                   </ui:InvokeWorkflowFile>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception"Removed_Key"404,23"Removed_Key"Catch`1_8">
+                  <Catch x:TypeArguments="s:Exception"Removed_Key"490,23"Removed_Key"Catch`1_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -333,7 +333,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,82.4"Removed_Key"Assign_44">
+                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,115"Removed_Key"Assign_44">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[boolSkipEndConfirmation]</OutArgument>
                           </Assign.To>
@@ -341,7 +341,7 @@
                             <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"End Process (Could not get new transaction)"Removed_Key"434,82.4"Removed_Key"Assign_23">
+                        <AssignRemoved_Key"End Process (Could not get new transaction)"Removed_Key"434,48"Removed_Key"Assign_23">
                           <Assign.To>
                             <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[g_TransactionItem]</OutArgument>
                           </Assign.To>
@@ -352,7 +352,7 @@
                       </Sequence>
                     </ActivityAction>
                   </Catch>
-                  <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"404,23"Removed_Key"Catch`1_18">
+                  <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"490,836"Removed_Key"Catch`1_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -363,13 +363,13 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                       </ActivityAction.Argument>
-                      <SequenceRemoved_Key"468,581"Removed_Key"Sequence_67">
+                      <SequenceRemoved_Key"484,765"Removed_Key"Sequence_67">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign BusinessException"Removed_Key"434,115"Removed_Key"Assign_46">
+                        <AssignRemoved_Key"Assign BusinessException"Removed_Key"450,115"Removed_Key"Assign_46">
                           <Assign.To>
                             <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                           </Assign.To>
@@ -377,7 +377,7 @@
                             <InArgument x:TypeArguments="ui:BusinessRuleException">[exception]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,115"Removed_Key"Assign_47">
+                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"450,115"Removed_Key"Assign_47">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[boolSkipEndConfirmation]</OutArgument>
                           </Assign.To>
@@ -385,7 +385,7 @@
                             <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"End Process (User Requested Stop)"Removed_Key"434,115"Removed_Key"Assign_48">
+                        <AssignRemoved_Key"End Process (User Requested Stop)"Removed_Key"450,115"Removed_Key"Assign_48">
                           <Assign.To>
                             <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[g_TransactionItem]</OutArgument>
                           </Assign.To>
@@ -393,9 +393,9 @@
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[Nothing]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"434,176"Removed_Key"If_33">
+                        <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,360"Removed_Key"If_33">
                           <If.Then>
-                            <SequenceRemoved_Key"300,81.6"Removed_Key"Sequence_79">
+                            <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_79">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,13 +404,13 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <SequenceRemoved_Key"376,113.2"Removed_Key"Sequence_80">
+                            <SequenceRemoved_Key"Else"Removed_Key"416,108"Removed_Key"Sequence_80">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <d1:Log_CaseRemoved_Key"Log Case"Removed_Key"334,24.8" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[Now]" IN_dateCaseTotalTime="[Now.ToString]" IN_strCaseID="N/A" IN_strFilePath="[strWorkLogFilepath]" IN_strNotes="Process failed during get transaction data process" IN_strOutcome="Business Exception" IN_strOutcomeMessage="[BusinessException.Message]" IN_strUser="[System.Environment.UserName]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]"Removed_Key"Log_Case_2" in_dblCaseProcessingTime="0" />
+                              <d1:Log_CaseRemoved_Key"Log Case"Removed_Key"382,48" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[Now]" IN_dateCaseTotalTime="[Now.ToString]" IN_strCaseID="N/A" IN_strFilePath="[strWorkLogFilepath]" IN_strNotes="Process failed during get transaction data process" IN_strOutcome="Business Exception" IN_strOutcomeMessage="[BusinessException.Message]" IN_strUser="[System.Environment.UserName]" IN_strWorkpackageName="[g_Config(&quot;BusinessProcessName&quot;).ToString]"Removed_Key"Log_Case_2" in_dblCaseProcessingTime="0" />
                             </Sequence>
                           </If.Else>
                         </If>
@@ -447,7 +447,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID4"Removed_Key"Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried."Removed_Key"Process Transaction"Removed_Key"209,269"Removed_Key"State_3">
               <State.Entry>
-                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"540,1580"Removed_Key"TryCatch_9">
+                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"497.5,664"Removed_Key"TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -610,7 +610,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessageRemoved_Key"Log message (Failed to set transaction status)"Removed_Key"450,175"Removed_Key"LogMessage_47" Level="Fatal" Message="[&quot;SetTransactionStatus.xaml failed: &quot;+exception.Message+&quot; at Source: &quot;+exception.Source]" />
-                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,430"Removed_Key"If_34">
+                              <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"450,215"Removed_Key"If_34">
                                 <If.Then>
                                   <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_85">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -775,7 +775,7 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID2"Removed_Key"Read configuration file and initialize applications used in the process."Removed_Key"Initialization"Removed_Key"232,120"Removed_Key"State_2">
                               <State.Entry>
-                                <TryCatchRemoved_Key"Try initializing settings and applications"Removed_Key"812,4996"Removed_Key"TryCatch_2">
+                                <TryCatchRemoved_Key"Try initializing settings and applications"Removed_Key"812,4939"Removed_Key"TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -783,7 +783,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <SequenceRemoved_Key"Load configurations and open applications"Removed_Key"774,4740"Removed_Key"Sequence_4">
+                                    <SequenceRemoved_Key"Load configurations and open applications"Removed_Key"774,4683"Removed_Key"Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -798,7 +798,7 @@
                                           <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <IfRemoved_Key"An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]"Removed_Key"If first run, read local configuration file"Removed_Key"740,3540"Removed_Key"If_1">
+                                      <IfRemoved_Key"An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[g_Config is Nothing]"Removed_Key"If first run, read local configuration file"Removed_Key"740,3483"Removed_Key"If_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -807,7 +807,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <SequenceRemoved_Key"First run"Removed_Key"706,3248"Removed_Key"Sequence_17">
+                                          <SequenceRemoved_Key"First run"Removed_Key"706,3191"Removed_Key"Sequence_17">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -880,7 +880,7 @@
                                                 <InArgument x:TypeArguments="x:Object">[String.Format(g_Config("AttachmentsFilepath").ToString, g_Config("Username").ToString)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <SequenceRemoved_Key"Folder/File Setup"Removed_Key"672,2090"Removed_Key"Sequence_40">
+                                            <SequenceRemoved_Key"Folder/File Setup"Removed_Key"672,2033"Removed_Key"Sequence_40">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listConfigFilepaths" />
                                                 <Variable x:TypeArguments="s:String[]" Name="arrFilePath" />
@@ -891,7 +891,7 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <SequenceRemoved_Key"Add all Filepath Assets to the list in this sequence."Removed_Key"Add Filepaths to List"Removed_Key"638,342"Removed_Key"Sequence_39">
+                                              <SequenceRemoved_Key"Add all Filepath Assets to the list in this sequence."Removed_Key"Add Filepaths to List"Removed_Key"638,285"Removed_Key"Sequence_39">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -900,7 +900,6 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add strWorkLogFilepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_1" Item="[strWorkLogFilepath]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add SQL Log Filepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_2" Item="[g_Config(&quot;SQLTransactionLogFilepath&quot;).ToString]" />
-                                                <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add Exception Screenshot Filepath"Removed_Key"416,57"Removed_Key"AddToCollection`1_3" Item="[g_Config(&quot;ExScreenshotsFolderPath&quot;).ToString]" />
                                                 <AddToCollection x:TypeArguments="x:String" Collection="[listConfigFilepaths]"Removed_Key"Add Attachments Filepath"Removed_Key"416,48"Removed_Key"AddToCollection`1_4" Item="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]" />
                                               </Sequence>
                                               <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each Config Filepath"Removed_Key"638,1665"Removed_Key"ForEach`1_1" Values="[listConfigFilepaths]">
