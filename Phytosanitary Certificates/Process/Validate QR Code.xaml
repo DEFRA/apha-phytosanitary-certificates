@@ -1,0 +1,253 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Validate_QR_Code" VisualBasic.Settings="{x:Null}"Removed_Key"Validate_QR_Code_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.PDF</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>ZXing</x:String>
+      <x:String>UiPathTeam_Barcode</x:String>
+      <x:String>ZXing.Windows.Compatibility</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Shared.Telemetry</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>ZXing.Windows.Compatibility</AssemblyReference>
+      <AssemblyReference>zxing</AssemblyReference>
+      <AssemblyReference>UiPathTeam.Barcode</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"1349.7142857142858,1709.7142857142858"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Image" Name="imgQRPage" />
+      <Variable x:TypeArguments="x:String" Name="strDecodedQRCode" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <SequenceRemoved_Key"553.1428571428571,1686.857142857143"Removed_Key"Sequence_10">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strResponse" />
+        <Variable x:TypeArguments="x:String" Name="decodedURL" />
+        <Variable x:TypeArguments="njl:JArray" Name="jsonArray" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="C:\Users\rj000088\Downloads\341308740.pdf"Removed_Key"518.8571428571429,171.42857142857142"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="C:\Users\rj000088\Downloads\341308740.png" PageNumber="1" />
+      <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml"Removed_Key"HTTP Request" EnableSSLVerification="True" EndPoint="https://api.qrserver.com/v1/read-qr-code/"Removed_Key"518.8571428571429,104"Removed_Key"HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="6000">
+        <ui:HttpClient.Attachments>
+          <InArgument x:TypeArguments="x:String" x:Key="file">C:\Users\rj000088\Downloads\341308740.png</InArgument>
+        </ui:HttpClient.Attachments>
+        <ui:HttpClient.Cookies>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+        </ui:HttpClient.Cookies>
+        <ui:HttpClient.Headers>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+        </ui:HttpClient.Headers>
+        <ui:HttpClient.Parameters>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+        </ui:HttpClient.Parameters>
+        <ui:HttpClient.UrlSegments>
+          <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+        </ui:HttpClient.UrlSegments>
+      </ui:HttpClient>
+      <ui:DeserializeJsonArrayRemoved_Key"Deserialize JSON Array"Removed_Key"518.8571428571429,92"Removed_Key"DeserializeJsonArray_1" JsonArray="[jsonArray]" JsonString="[strResponse]" />
+      <AssignRemoved_Key"518.8571428571429,117.14285714285714"Removed_Key"Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[decodedURL]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[jsonArray(0)("symbol")(0)("data").ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Google"Removed_Key"518.8571428571429,1119.4285714285713"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <SequenceRemoved_Key"Do"Removed_Key"484.57142857142856,876.5714285714286"Removed_Key"Sequence_11">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strWebsiteText" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGetTextRemoved_Key"Get Text 'Please enter'"Removed_Key"450.2857142857143,191.42857142857142"Removed_Key"NGetText_1" ScopeIdentifier="acea61c5-962f-4319-aa27-068c4965e9d3" TextString="[strWebsiteText]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://checkecert.nl/cov/en?cc=341308740&amp;vc=6379554496345957" DesignTimeRectangle="1149, 751, 1442, 196" DesignTimeScaleFactor="1.75" FriendlyName="'The combination'" FullSelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' type='' class='mt-4 mb-5' aaname='' /&gt;" Guid="29d8c2a6-b79a-4f45-9b53-87184fee18df" InformativeScreenshot="cd80e7f7d229a9a99a20328586764136.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Check certificate | NVWA' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="597f9761-86c2-4020-a6a5-bbe5d4fd184c" CvTextArea="1147, 1034, 901, 29" CvTextArgument="Please enter both numbers that can be found on the certificate." CvType="Text" DesignTimeRectangle="1149, 1031, 1442, 42" ElementType="Text" FriendlyName="'Please enter'" FullSelectorArgument="&lt;webctrl parentid='check-certificate' tag='H5' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='check-certificate' tag='H5' type='' class='' aaname='Please enter both numbers that can be found on the certificate.' check:innerText='Please enter both numbers that can be found on the certificate.' /&gt;" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"450.2857142857143,625.1428571428571"Removed_Key"If_1">
+                <If.Then>
+                  <SequenceRemoved_Key"Then"Removed_Key"416,230.85714285714286"Removed_Key"Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"381.7142857142857,170.85714285714286"Removed_Key"LogMessage_1" Level="Info" Message="[&quot;Phyto Cert is Valid&quot;]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <SequenceRemoved_Key"Else"Removed_Key"416,230.85714285714286"Removed_Key"Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"381.7142857142857,170.85714285714286"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;On hold - Phyto Cert not valid&quot;]" />
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-12, -12, 3864, 2340" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAT+SURBVFhHtZd9TNR1HMcBKe6Ag2I60J5ztAwbuEUtx8oseZBCxAeKnOIzuQrStWqZ8x8wZNUKE8uHmMqaFgIlOB4OOJ4uHu6OQh1spuRYzmpxICYHd793n+/vfvfjfvf9HZ6N3ttrt9/34fN5fx9+39/3/AD4Shyxl2gmvInVsTasrVoMDtVCD7KJXuJOxfqwvmoxZVQLJR4mphutr2IxWCy1HF4NpBNWYqbEYrGYXC6ugGDTpq72VmD/PmBdJpC4BFjGWEq8SGWvQyjaD6HDKDVWFbckigeCueTVZwI2rQJSE5yJk4jEF5zJE5cRyVSWCiElDY7lK2HftAPCL+elzpwUM+GenK0TP+2nacRZTwFpi50kMwOUPJElp5EnJVFZKpCyggykw/HyGtjTskQch49LQRRiOeQ94W6A33Bl7wE5MU4Dq5+5vYHlGUoDue8DYzelYAqxXAoD/LrXvgUU3A/sfoRMPAlsWARkxjuXIeU5Sv6800ByEo2cTf8KOFJXyQamSe6SuB9cBpTv+fUq4JQOKJoHFEeRiWhgM50tW2OBN1YC9TUU/IbUmDQ2RmV6OLK3kYG1viRnYjlFA+zUUspACZmBYxFTBvKeoOfdysSeIiNC2WlfkrsUxwywo3NKf/8AGDWAPhioDgXKw4Gv5wDfbpcazKj2MgPKzXd5K2Ch5N1EYwhQR1TQXrDN5Lkkq5kZUOrigikDRqKVuPiuVMmr+zcvDAI9g4KMadCBa8OC1GtKnAHBooHQS0ktNHIzYSJGWqRaXnEFXsgXOA61+GQgiCADvbQJyYBgoX1go+F4kWpyT5gB+vXJgMN8l2yAJRex0Zx6EZdsGkpUJpI3YJoFwXw37GYtbMQ/Zg0mRg1SLS8WOLbAQdglHFTGRuziTg30zYfdFAhrTyDGTEG42h2IP6/ulGp5ldC0lrQ43GDPAlK+9N2A4jWcvJKN8Z4A0cB1Ss4MmE2zMWkfllrcXqO3gIRP+Flgb4eHxNdQcRBNDFdgqMsffZ3++LkzAPU/BeBoRxAq++kO4KM+6xjD44U3EV00ipiPx7Fw3wT92qRahcSDiDuKzZaHUGn0wzmjP8o6/JHfrsWutggcGcjDjclRqZW6Dp4fwpyD/ZhbfAWRB37Fo5/+hQWFt/BB9YTUQiHxKGYoPkYjI02igVJK/nn7LOS1hWF9SxReMcxHkjED312rhXWSPkBuqvr9El5qrIGmrBxhR7oQcahPNhBdNIIhK/cKyh8jBvc5brqchz1tQchtDUV6y31YangM8c2L8KA+GZH6NETo10BXvxFzG3OhrX0TmrMfQlN+AJrvS6A9cRah3zQh4nAXmbiEPQbV/aP4HDO4C8nJgW3IoJE/a4jB082xiG5cgij9asym5Pc2rEN4w0aE1OUgtG47Qs7thLaiCNrKQmhPnYCuVI/g47VYfOaCFE0h7kLCUL2SfTHwtmggtil+ykDDq7IBXf0W2UDwjx/JBrRlZ7C2yQKrzS5FkuX1SsZQvZR2DpuQ0PEa5ulTKXEW7hGTbyCyoavbQiY2Q1e7A6E1uxBSlY/IylIU9w9IvTl5vZS64K9nkqr/6ETOha+wsO0dSr5eNBFG+yC8PhsPNOYh01SKk0PdsE6MSz04ievujuLBDeZyJi8ALJZi5C64AjfYOnEb8z+IxZDX3BPVQg/YtCkvrb6J9eGm3BPVQi/8D3/P4fcvQkhmhhmYhmoAAAAASUVORK5CYII=" InformativeScreenshot="648908e3c117e07baa987e9f50a90458.jpg" Selector="&lt;html app='msedge.exe' title='Google' /&gt;" Title="Google" Url="[decodedURL]" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -1,0 +1,412 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Digitise___Classify___New" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p4="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:PropertyRemoved_Key"Transaction item to be processed." Name="in_strFilepath" Type="InArgument(x:String)" />
+    <x:PropertyRemoved_Key"Dictionary of all assets retrieved from Orchestrator." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <this:Digitise___Classify___New.in_strFilepath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Digitise___Classify___New.in_strFilepath>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:Removed_Key.HintSize>1220,1730</sap:Removed_Key.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Digitise___Classify___New_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <FlowchartRemoved_Key"This workflow reads in the taxonomy that describes the fields we are interested in extracting from documents and then digitises the document and carries out the classification of pages within the PDF. If a document contains multiple documents across separate pages, it will &#xA;&#xA;If any pages are missed from the classificationt the flow will present Classification Station for manual verification.&#xA;&#xA;Once classification has been carried out it will loop around all classification results to extract data from each page range, if there are no classified documents it will throw an exception informing the user."Removed_Key"Digitise &amp; Classify"Removed_Key"844,1665"Removed_Key"Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="p6:DocumentTaxonomy" Name="oTaxonomy" />
+      <Variable x:TypeArguments="x:String" Name="strText" />
+      <Variable x:TypeArguments="p1:Document" Name="oDocument" />
+      <Variable x:TypeArguments="p:ClassificationResult[]" Name="classResults" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="intConSysEx" />
+      <Variable x:TypeArguments="x:Int32"Removed_Key"Used to control the number of attempts of retrying the transaction processing in case of system exceptions." Default="0" Name="RetryNumber" />
+      <Variable x:TypeArguments="x:Int32"Removed_Key"Sequential counter of transaction items." Default="1" Name="TransactionNumber" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="boolPDFException" />
+      <Variable x:TypeArguments="sd1:Stopwatch" Name="swDigitisationTimer" />
+      <Variable x:TypeArguments="x:Double" Name="dblDigitisationTime" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="boolDisplayClassificationStation" />
+      <Variable x:TypeArguments="x:String" Name="strFilename" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <x:Double x:Key="Width">810</x:Double>
+        <x:Double x:Key="Height">1504.04</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,137.5</av:PointCollection>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID8</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID0">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">230,1312.04</av:Point>
+          <av:Size x:Key="ShapeSize">200,192</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ForEach x:TypeArguments="p:ClassificationResult" CurrentIndex="{x:Null}"Removed_Key"Loop around each Classification Result. If the PDF processed only contains a single &quot;document&quot; this will only occur once, else it will loop around each individual &quot;document&quot; within the larger PDF."Removed_Key"For Each Classification"Removed_Key"200,192"Removed_Key"ForEach`1_1" Values="[classResults]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="p:ClassificationResult">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="p:ClassificationResult" Name="Classification" />
+            </ActivityAction.Argument>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke Extract Data workflow"Removed_Key"334,113"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process Flows\Extract Data.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="p:ClassificationResult" x:Key="in_Classification">[Classification]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strDocumentText">[strText]</InArgument>
+                <InArgument x:TypeArguments="p1:Document" x:Key="in_oDocument">[oDocument]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strFilename">[strFilename]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[in_strFilepath]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">610,1209</av:Point>
+          <av:Size x:Key="ShapeSize">200,22</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ThrowRemoved_Key"Throw SysEx" Exception="[New SystemException(&quot;No valid forms within document &quot;+in_strFilepath)]"Removed_Key"200,22"Removed_Key"Throw_1" />
+    </FlowStep>
+    <FlowDecision x:Name="__ReferenceID2" Condition="[classResults.Length &gt; 0]"Removed_Key"Classification Results?"Removed_Key"121,87"Removed_Key"FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <av:Point x:Key="ShapeLocation">449.5,1063.5</av:Point>
+          <av:Size x:Key="ShapeSize">121,87</av:Size>
+          <av:PointCollection x:Key="FalseConnector">570.5,1107 710,1107 710,1209</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">449.5,1107 330,1107 330,1312.04</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </FlowDecision>
+    <FlowStep x:Name="__ReferenceID3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">10,856</av:Point>
+          <av:Size x:Key="ShapeSize">200,144</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">110,1000 110,1030 510,1030 510,1063.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p2:PresentClassificationStationRemoved_Key"If there is any ambiguity on the classification results then display to the user for manual validation." AutomaticClassificationResults="[classResults]"Removed_Key"Present Classification Station" DocumentObjectModel="[oDocument]" DocumentPath="[in_strFilepath]" DocumentText="[strText]"Removed_Key"200,144"Removed_Key"PresentClassificationStation_1" Taxonomy="[oTaxonomy]" ValidatedClassificationResults="[classResults]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </p2:PresentClassificationStation>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,467.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,161</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,627.5 300,707.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <IfRemoved_Key"Check if the total page count of the document matches the number of classified pages. If they don't match then display Classification Station for verification." Condition="[oDocument.Pages.Count &gt; classResults.Sum(Function(x) x.DocumentBounds.PageCount)]"Removed_Key"All Pages Classified?"Removed_Key"200,161"Removed_Key"If_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <AssignRemoved_Key"Assign boolDisplayClassificationStation"Removed_Key"262,60"Removed_Key"Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[boolDisplayClassificationStation]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </If.Then>
+        <If.Else>
+          <SequenceRemoved_Key"Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <FlowStep.Next>
+        <FlowDecision x:Name="__ReferenceID4" Condition="[boolDisplayClassificationStation OR CBool(in_Config(&quot;DisplayClassStation&quot;))]"Removed_Key"Display Classifcation Station?"Removed_Key"160,87"Removed_Key"FlowDecision_2" True="{x:Reference __ReferenceID3}" False="{x:Reference __ReferenceID2}">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <av:Point x:Key="ShapeLocation">220,707.5</av:Point>
+              <av:Size x:Key="ShapeSize">160,87</av:Size>
+              <x:String x:Key="TrueLabel">Yes</x:String>
+              <x:String x:Key="FalseLabel">No</x:String>
+              <av:PointCollection x:Key="TrueConnector">220,751 110,751 110,856</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">380,751 510,751 510,1063.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </FlowDecision>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <FlowStep x:Name="__ReferenceID8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,137.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,69</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,205.5 300,255.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <SequenceRemoved_Key"Digitise &amp; Classify"Removed_Key"530,2154"Removed_Key"Sequence_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <p3:LoadTaxonomyRemoved_Key"Loads the taxonomy that specifies what fields we are interested in from each document type. &#xA;&#xA;IMPORTANT: If using as a template, make sure you have updated the taxonomy to be relevant for your own documents. This is done from the Taxonomy Manager in the Studio toolbar."Removed_Key"Load Taxonomy"Removed_Key"482,230"Removed_Key"LoadTaxonomy_1" Taxonomy="[oTaxonomy]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p3:LoadTaxonomy>
+        <SequenceRemoved_Key"Log Current File"Removed_Key"482,406"Removed_Key"Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <AssignRemoved_Key"Assign Filename"Removed_Key"434,83"Removed_Key"Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strFilename]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[System.IO.Path.GetFilename(in_strFilepath)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ReportStatusRemoved_Key"Report Status"Removed_Key"434,68"Removed_Key"ReportStatus_1" StatusText="[&quot;Digitising: &quot;+strFilename]" />
+          <ui:LogMessageRemoved_Key"Log Message"Removed_Key"434,94"Removed_Key"LogMessage_1" Level="Info" Message="[&quot;Digitising: &quot;+strFilename]" />
+        </Sequence>
+        <p3:DigitizeDocumentRemoved_Key"DegreeOfParallelism is important to note, by default it is set to -1 (it will process as many pages simultaneously as the laptop processor allows)&#xA;&#xA;This often causes the process to crash on larger files (200 pages+). In these cases, set the DegreeOfParallelism to 1, it is slower, but it shouldn't crash." ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True"Removed_Key"Digitize Document" DocumentObjectModel="[oDocument]" DocumentPath="[in_strFilepath]" DocumentText="[strText]" ForceApplyOCR="False"Removed_Key"482,582"Removed_Key"DigitizeDocument_1">
+          <p3:DigitizeDocument.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Argument2="{x:Reference __ReferenceID5}">
+              <ActivityFunc.Argument1>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument1>
+              <p4:UiPathDocumentOCR Output="{x:Null}" Text="{x:Null}"Removed_Key"Use the UiPath Document OCR for Digitisation where possible. &#xA;&#xA;By default, we set UseLocalServer to True so that it doesn'Removed_Key" ApiKey="Removed_Key" ComputeSkewAngle="False"Removed_Key"UiPath Document OCR" Endpoint="Removed_Key" ExtractWords="True"Removed_Key"312,165"Removed_Key"UiPathDocumentOCR_1" Image="[Image]" Language="auto" Profile="None" Scale="1" Timeout="100000"Removed_Key"True">
+                <p4:UiPathDocumentOCR.PredictionId>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String"Removed_Key"DelegateArgumentValue`1_1">
+                      <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID5" Name="PredictionId" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p4:UiPathDocumentOCR.PredictionId>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </p4:UiPathDocumentOCR>
+            </ActivityFunc>
+          </p3:DigitizeDocument.OCREngine>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p3:DigitizeDocument>
+        <ui:LogMessageRemoved_Key"Log Message"Removed_Key"482,94"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;Digitisation Complete: &quot;+strFilename]" />
+        <p2:ClassifyDocumentScope ClassificationResults="[classResults]"Removed_Key"Classify Document Scope" DocumentObjectModel="[oDocument]" DocumentPath="[in_strFilepath]" DocumentText="[strText]"Removed_Key"482,617"Removed_Key"ClassifyDocumentScope_1" Taxonomy="[oTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI5ace787c461b46f7abd87c07eab11349&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.NetherlandsPhytosanitaryCertificates(1)&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;NoGroup.NoCategory.NetherlandsPhytosanitaryCertificates(1)&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;NoGroup.NoCategory.NetherlandsPhytosanitaryCertificates(2)&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;NoGroup.NoCategory.NetherlandsPhytosanitaryCertificates(2)&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI5ace787c461b46f7abd87c07eab11349&quot;:&quot;90&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI5ace787c461b46f7abd87c07eab11349&quot;:[]}}">
+          <p2:ClassifyDocumentScope.Classifiers>
+            <p2:Removed_Key LearningData="{x:Null}" TimeoutMs="{x:Null}"Removed_Key"If using the IDP Sampler as a template, make sure you &quot;Manage Learning&quot; and train the classifier against your own files." ApiKey="Removed_Key"Removed_Key"Classifier" Endpoint="Removed_Key"Removed_Key"234,289"Removed_Key"Removed_Key_1" LearningFilePath="DocumentProcessing\classifier-keywords.json" PerformDocumentSplitting="True"Removed_Key"UI5ace787c461b46f7abd87c07eab11349" SendDocumentsForAlgorithmImprovements="False" UsePageNumbers="False">
+              <p2:Removed_Key.ClassifierResult>
+                <OutArgument x:TypeArguments="p5:ClassifierResult">
+                  <DelegateArgumentReference x:TypeArguments="p5:ClassifierResult">
+                    <DelegateOutArgument x:TypeArguments="p5:ClassifierResult" Name="ClassifierResult" />
+                  </DelegateArgumentReference>
+                </OutArgument>
+              </p2:Removed_Key.ClassifierResult>
+              <p2:Removed_Key.DocumentObjectModel>
+                <InArgument x:TypeArguments="p1:Document">
+                  <DelegateArgumentValue x:TypeArguments="p1:Document">
+                    <DelegateInArgument x:TypeArguments="p1:Document" Name="DocumentObjectModel" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:Removed_Key.DocumentObjectModel>
+              <p2:Removed_Key.DocumentPath>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:Removed_Key.DocumentPath>
+              <p2:Removed_Key.DocumentText>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:Removed_Key.DocumentText>
+              <p2:Removed_Key.DocumentTypes>
+                <InArgument x:TypeArguments="p5:ClassifierDocumentType[]">
+                  <DelegateArgumentValue x:TypeArguments="p5:ClassifierDocumentType[]">
+                    <DelegateInArgument x:TypeArguments="p5:ClassifierDocumentType[]" Name="DocumentTypes" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:Removed_Key.DocumentTypes>
+              <p2:Removed_Key.PredictionId>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:Removed_Key.PredictionId>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p2:Removed_Key>
+          </p2:ClassifyDocumentScope.Classifiers>
+        </p2:ClassifyDocumentScope>
+      </Sequence>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">200,255.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,145</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,399.5 300,467.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEach x:TypeArguments="p:ClassificationResult" CurrentIndex="{x:Null}"Removed_Key"Check for each classification that the confidence percentage is above the defined confidence threshold set in the IDP Config file."Removed_Key"Check Classification Confidences"Removed_Key"200,145"Removed_Key"ForEach`1_2" Values="[classResults]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="p:ClassificationResult">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="p:ClassificationResult" Name="Classification" />
+                </ActivityAction.Argument>
+                <If Condition="[CDbl(Classification.Confidence*100) &lt; CDbl(in_Config(&quot;ClassificationConfidencePercentage&quot;))]"Removed_Key"Classifcation Below Minimum Percentage?"Removed_Key"484,250"Removed_Key"If_2">
+                  <If.Then>
+                    <AssignRemoved_Key"Assign boolDisplayClassificationStation"Removed_Key"262,60"Removed_Key"Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[boolDisplayClassificationStation]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </ActivityAction>
+            </ui:ForEach.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEach>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID6</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID7</x:Reference>
+  </Flowchart>
+</Activity>

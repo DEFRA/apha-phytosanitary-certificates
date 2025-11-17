@@ -1,0 +1,368 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Check_No_of_Certs" this:Check_No_of_Certs.in_PhytoCertLocation="C:\Users\rj000088\OneDrive - Defra\Documents\Phyto Certificates\CHEDPP.GB.2025.5692500 Phyto (2).pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_PhytoCertLocation" Type="InArgument(x:String)" />
+    <x:Property Name="out_dictIdentifiers" Type="OutArgument(scg:Dictionary(x:String, scg:List(x:Int32)))" />
+    <x:Property Name="io_IPAFSPhytoNumber" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Check_No_of_Certs_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <SequenceRemoved_Key"Check_No_of_Certs"Removed_Key"1350,3169"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="intTotalPages" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <SequenceRemoved_Key"774,3146"Removed_Key"Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strPdfPath" />
+        <Variable x:TypeArguments="x:String" Name="strPageText" />
+        <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
+        <Variable x:TypeArguments="x:String" Name="strPageRange" />
+        <Variable x:TypeArguments="s:String[]" Name="arrayPhytoCertNo" />
+        <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatchesPhytoCertNo" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <upap:GetPDFPageCountRemoved_Key"Get PDF Page Count" FileName="[in_PhytoCertLocation]"Removed_Key"740,115"Removed_Key"GetPDFPageCount_1" PageCount="[intTotalPages]" />
+      <AssignRemoved_Key"Initialize Dictionary"Removed_Key"740,115"Removed_Key"Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[out_dictIdentifiers]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[New Dictionary(Of String, List(Of Int32))()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"740,57"Removed_Key"CommentOut_3">
+        <ui:CommentOut.Body>
+          <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,166"Removed_Key"Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"434,106"Removed_Key"Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_IPAFSPhytoNumber]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["EC NL / PCNU 323826750, EC NL / PCNU 337691737, EC NL / PCNU 337691747"]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <AssignRemoved_Key"Split Cert Numbers &amp; Assign to arrayPhytoCertNo"Removed_Key"740,115"Removed_Key"Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[arrayPhytoCertNo]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[io_IPAFSPhytoNumber.Split(","c)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <SequenceRemoved_Key"Extract Array of Cert Numbers from PDF"Removed_Key"740,290"Removed_Key"Sequence_14">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="strFullPDFText" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertLocation]"Removed_Key"416,115"Removed_Key"ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
+        <ui:Matches FirstMatch="{x:Null}"Removed_Key"Find Matching Patterns"Removed_Key"416,83"Removed_Key"Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="False" Pattern="No\.\s*EC\s*NL\s*/\s*PCNU\s*\d+" RegexOption="IgnoreCase, Compiled" Result="[ieMatchesPhytoCertNo]" />
+      </Sequence>
+      <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number in arrayPhytoCertNo"Removed_Key"740,1777"Removed_Key"ForEach`1_4" Values="[ieMatchesPhytoCertNo]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="str:Match">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="str:Match" Name="Match" />
+            </ActivityAction.Argument>
+            <SequenceRemoved_Key"Body"Removed_Key"706,1630"Removed_Key"Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}"Removed_Key"For Each i in intTotalPages"Removed_Key"672,1570"Removed_Key"ForEach`1_1" Values="[Enumerable.Range(1, intTotalPages)]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:Int32">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
+                    </ActivityAction.Argument>
+                    <SequenceRemoved_Key"Body"Removed_Key"638,1432"Removed_Key"Sequence_5">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="strPhytoCert" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertLocation]"Removed_Key"604,115"Removed_Key"ReadPDFText_1" PreserveFormatting="True" Range="[i.ToString]" Text="[strPageText]" />
+                      <AssignRemoved_Key"Remove unneeded text"Removed_Key"604,115"Removed_Key"Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strPhytoCert]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Match.ToString().Replace("No. EC NL / ","").Trim()]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:Matches FirstMatch="{x:Null}" BuilderPattern="PCNU 323826750"Removed_Key"Find Phyto Cert Number in extracted text"Removed_Key"604,92"Removed_Key"Matches_3" Input="[strPageText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;PCNU 323826750&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[strPhytoCert]" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
+                      <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Match"Removed_Key"604,1050"Removed_Key"ForEach`1_2" Values="[ieMatches]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="str:Match">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="str:Match" Name="Match" />
+                            </ActivityAction.Argument>
+                            <SequenceRemoved_Key"Body"Removed_Key"570,912"Removed_Key"Sequence_6">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="strTidyCertNo" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <AssignRemoved_Key"Tidy Cert Number"Removed_Key"536,115"Removed_Key"Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[strTidyCertNo]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(Match.Value, "\s+", " ").Trim]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[Match.ToString.Contains(strTidyCertNo)]"Removed_Key"If Match contains cert Number"Removed_Key"536,737"Removed_Key"If_1">
+                                <If.Then>
+                                  <SequenceRemoved_Key"Then"Removed_Key"502,485"Removed_Key"Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[out_dictIdentifiers.ContainsKey(strTidyCertNo)]"Removed_Key"If dictIdentifiers contains cert number"Removed_Key"468,425"Removed_Key"If_2">
+                                      <If.Then>
+                                        <InvokeMethodRemoved_Key"Add page to dict"Removed_Key"434,136"Removed_Key"InvokeMethod_3" MethodName="Add">
+                                          <InvokeMethod.TargetObject>
+                                            <InArgument x:TypeArguments="scg:List(x:Int32)">[out_dictIdentifiers(strTidyCertNo)]</InArgument>
+                                          </InvokeMethod.TargetObject>
+                                          <InArgument x:TypeArguments="x:Int32">[i]</InArgument>
+                                        </InvokeMethod>
+                                      </If.Then>
+                                      <If.Else>
+                                        <AssignRemoved_Key"Assign new dictIdentifiers"Removed_Key"434,83"Removed_Key"Assign_12">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="scg:List(x:Int32)">[out_dictIdentifiers(strTidyCertNo)]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="scg:List(x:Int32)">[New List(Of Int32) From {i}]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <SequenceRemoved_Key"Else"Removed_Key"502,90"Removed_Key"Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEach>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <AssignRemoved_Key"See whether any Phystos exist"Removed_Key"740,116"Removed_Key"Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[arrayPhytoCertNo]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[arrayPhytoCertNo.
+    Where(Function(cert) Not ieMatchesPhytoCertNo.
+        Cast(Of Match)().
+        Any(Function(m) cert.Contains(m.Value.Replace("No.", "").Trim))
+    ).ToArray()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[arrayPhytoCertNo.Count &gt; 0]"Removed_Key"If there are left over Phytos"Removed_Key"740,478"Removed_Key"If_3">
+        <If.Then>
+          <SequenceRemoved_Key"Then"Removed_Key"416,226"Removed_Key"Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,166"Removed_Key"LogMessage_1" Level="Info" Message="[&quot;On hold - More certs than on IPAF&quot;]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>
