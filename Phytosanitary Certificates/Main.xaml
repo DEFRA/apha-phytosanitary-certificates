@@ -5,10 +5,12 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:Removed_Key.HintSize>2323,1467</sap:Removed_Key.HintSize>
+  <sap:Removed_Key.HintSize>1221,1133.5</sap:Removed_Key.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
+      <x:String>DRACOE_Logging_64</x:String>
+      <x:String>DRACOE_PopUps_64</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
@@ -19,6 +21,7 @@
       <x:String>System</x:String>
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Validation</x:String>
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -30,9 +33,11 @@
       <x:String>System.Drawing</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
       <x:String>System.Net</x:String>
       <x:String>System.Net.Mail</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Windows.Forms</x:String>
@@ -43,34 +48,34 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Activities.Runtime.Collections</x:String>
-      <x:String>DRACOE_PopUps_64</x:String>
-      <x:String>UiPath.Studio.Forms.Runtime</x:String>
-      <x:String>UiPath.Forms.Activities</x:String>
-      <x:String>UiPath.Platform.GlobalVariables</x:String>
-      <x:String>UiPath.Forms.Activities.Base</x:String>
-      <x:String>UiPath.Platform.Triggers</x:String>
-      <x:String>UiPath.Platform.ResourceHandling</x:String>
-      <x:String>UiPath.Platform.Triggers.Scope</x:String>
-      <x:String>System.Runtime.CompilerServices</x:String>
-      <x:String>System.Management.Automation</x:String>
-      <x:String>DRACOE_Logging_64</x:String>
-      <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.GlobalVariables</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="88">
+      <AssemblyReference>DRACOE.Logging.64</AssemblyReference>
+      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
@@ -81,15 +86,38 @@
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.Unsafe</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
@@ -99,67 +127,35 @@
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
-      <AssemblyReference>DRACOE.PopUps.64.ViewModels</AssemblyReference>
-      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
-      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
-      <AssemblyReference>System.Runtime.CompilerServices.Unsafe</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>System.Management.Automation</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>System.Net.Mail</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Linq.Async</AssemblyReference>
-      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
-      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
-      <AssemblyReference>DRACOE.Logging.64</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.CodeDom</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
-      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
-      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
-      <AssemblyReference>System.IO.Packaging</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID5}"Removed_Key"Automation Template"Removed_Key"2315,1426.04"Removed_Key"StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID5}"Removed_Key"Automation Template"Removed_Key"1035,898.04"Removed_Key"StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">290,72.4</av:Point>
         <x:Double x:Key="StateContainerWidth">1058.0000000000002</x:Double>
         <x:Double x:Key="StateContainerHeight">1031.6</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">340,97.4 370,97.4 370,108.4 482.4,108.4</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">340,97.4 370,97.4 370,138.8 482.4,138.8</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <State x:Name="__ReferenceID0"Removed_Key"Get the next transaction to be processed."Removed_Key"Get Transaction Data"Removed_Key"229,109"Removed_Key"State_4">
       <State.Entry>
-        <SequenceRemoved_Key"Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached."Removed_Key"Retrieve Data"Removed_Key"572,2432.4"Removed_Key"Sequence_25">
+        <SequenceRemoved_Key"Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached."Removed_Key"Retrieve Data"Removed_Key"552,2405"Removed_Key"Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolShouldStop" />
           </Sequence.Variables>
@@ -170,9 +166,9 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[Cbool(g_Config(&quot;ShouldStop&quot;))]"Removed_Key"If - manually should stop check"Removed_Key"510,566.8"Removed_Key"If_27">
+          <If Condition="[Cbool(g_Config(&quot;ShouldStop&quot;))]"Removed_Key"If - manually should stop check"Removed_Key"518,550"Removed_Key"If_27">
             <If.Then>
-              <SequenceRemoved_Key"300,81.6"Removed_Key"Sequence_63">
+              <SequenceRemoved_Key"Then"Removed_Key"468,90"Removed_Key"Sequence_63">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,14 +177,14 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <SequenceRemoved_Key"476,302"Removed_Key"Sequence_64">
+              <SequenceRemoved_Key"Else"Removed_Key"468,289"Removed_Key"Sequence_64">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ShouldStopRemoved_Key"Check Stop Signal"Removed_Key"434,91.2"Removed_Key"ShouldStop_2" Result="[boolShouldStop]" />
-                <AssignRemoved_Key"434,82.4"Removed_Key"Assign_42">
+                <ui:ShouldStopRemoved_Key"Check Stop Signal"Removed_Key"434,123"Removed_Key"ShouldStop_2" Result="[boolShouldStop]" />
+                <AssignRemoved_Key"434,106"Removed_Key"Assign_42">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Object">[g_Config("ShouldStop")]</OutArgument>
                   </Assign.To>
@@ -199,21 +195,21 @@
               </Sequence>
             </If.Else>
           </If>
-          <IfRemoved_Key"In the case of a fatal error on the previous transaction, the Config variable &quot;Should Stop&quot; will be set to True. The robot will gracefully finish processing and then should stop." Condition="[CType(g_Config(&quot;ShouldStop&quot;), boolean)]"Removed_Key"Should Process Stop?"Removed_Key"510,1636.8"Removed_Key"If_11">
+          <IfRemoved_Key"In the case of a fatal error on the previous transaction, the Config variable &quot;Should Stop&quot; will be set to True. The robot will gracefully finish processing and then should stop." Condition="[CType(g_Config(&quot;ShouldStop&quot;), boolean)]"Removed_Key"Should Process Stop?"Removed_Key"518,1703"Removed_Key"If_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <SequenceRemoved_Key"Orchestrator stop requested"Removed_Key"476,1092"Removed_Key"Sequence_23">
+              <SequenceRemoved_Key"Orchestrator stop requested"Removed_Key"484,1028"Removed_Key"Sequence_23">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,82.4"Removed_Key"Assign_43">
+                <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"450,115"Removed_Key"Assign_43">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[boolSkipEndConfirmation]</OutArgument>
                   </Assign.To>
@@ -221,7 +217,7 @@
                     <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                   </Assign.Value>
                 </Assign>
-                <AssignRemoved_Key"End Process (Stop process requested)"Removed_Key"434,82.4"Removed_Key"Assign_22">
+                <AssignRemoved_Key"End Process (Stop process requested)"Removed_Key"450,115"Removed_Key"Assign_22">
                   <Assign.To>
                     <OutArgument x:TypeArguments="snm:MailMessage">[g_TransactionItem]</OutArgument>
                   </Assign.To>
@@ -229,9 +225,9 @@
                     <InArgument x:TypeArguments="snm:MailMessage">[Nothing]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - Unattended"Removed_Key"434,758.8"Removed_Key"If_28">
+                <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - Unattended"Removed_Key"450,738"Removed_Key"If_28">
                   <If.Then>
-                    <SequenceRemoved_Key"300,81.6"Removed_Key"Sequence_65">
+                    <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_65">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,20 +236,20 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <SequenceRemoved_Key"376,494"Removed_Key"Sequence_66">
+                    <SequenceRemoved_Key"Else"Removed_Key"416,486"Removed_Key"Sequence_66">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"should stop form"Removed_Key"334,405.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Stop Signal Encountered&lt;/h1&gt;&lt;P&gt;A unrecoverable exception has been encountered during processing which has requested the process to end..&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,375}]"Removed_Key"Generic_PopUp_3" />
+                      <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"should stop form"Removed_Key"382,426" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Exception.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Stop Signal Encountered&lt;/h1&gt;&lt;P&gt;A unrecoverable exception has been encountered during processing which has requested the process to end..&lt;BR&gt;&lt;BR&gt;More details can be found within: &quot;+strWorkLogFilepath+&quot;&lt;/P&gt;&lt;BR&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{600,375}]"Removed_Key"Generic_PopUp_3" />
                     </Sequence>
                   </If.Else>
                 </If>
               </Sequence>
             </If.Then>
             <If.Else>
-              <TryCatchRemoved_Key"Try GetTransactionData"Removed_Key"437.6,316.8"Removed_Key"TryCatch_7">
+              <TryCatchRemoved_Key"Try GetTransactionData"Removed_Key"484,431"Removed_Key"TryCatch_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,7 +257,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke GetTransactionData workflow"Removed_Key"334,176"Removed_Key"InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Framework\GetTransactionData.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke GetTransactionData workflow"Removed_Key"400,175"Removed_Key"InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Framework\GetTransactionData.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolLastTransaction">[boolLastTransaction]</OutArgument>
@@ -272,7 +268,7 @@
                   </ui:InvokeWorkflowFile>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception"Removed_Key"403.6,22.8"Removed_Key"Catch`1_8">
+                  <Catch x:TypeArguments="s:Exception"Removed_Key"404,23"Removed_Key"Catch`1_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -283,14 +279,14 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                       </ActivityAction.Argument>
-                      <SequenceRemoved_Key"Log exception message and end process"Removed_Key"496,1166.4"Removed_Key"Sequence_24">
+                      <SequenceRemoved_Key"Log exception message and end process"Removed_Key"496,730"Removed_Key"Sequence_24">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign SystemException"Removed_Key"434,82.4"Removed_Key"Assign_45">
+                        <AssignRemoved_Key"Assign SystemException"Removed_Key"434,115"Removed_Key"Assign_45">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                           </Assign.To>
@@ -298,8 +294,8 @@
                             <InArgument x:TypeArguments="s:Exception">[Exception]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LogMessageRemoved_Key"Log message  (Get transaction data error)"Removed_Key"434,143.6"Removed_Key"LogMessage_43" Level="Fatal" Message="[&quot;The robot has encountered a fatal exception processsing transaction &quot;+TransactionNumber.ToString+&quot;. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
-                        <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"434,504.4"Removed_Key"If_32">
+                        <ui:LogMessageRemoved_Key"Log message  (Get transaction data error)"Removed_Key"434,175"Removed_Key"LogMessage_43" Level="Fatal" Message="[&quot;The robot has encountered a fatal exception processsing transaction &quot;+TransactionNumber.ToString+&quot;. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
+                        <If Condition="[Cbool(g_Config(&quot;Unattended&quot;))]"Removed_Key"If - unattended"Removed_Key"434,215"Removed_Key"If_32">
                           <If.Then>
                             <SequenceRemoved_Key"300,81.6"Removed_Key"Sequence_77">
                               <sap:WorkflowViewStateService.ViewState>
@@ -346,7 +342,7 @@
                       </Sequence>
                     </ActivityAction>
                   </Catch>
-                  <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"403.6,22.8"Removed_Key"Catch`1_18">
+                  <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"404,23"Removed_Key"Catch`1_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -357,13 +353,13 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                       </ActivityAction.Argument>
-                      <SequenceRemoved_Key"496,856.4"Removed_Key"Sequence_67">
+                      <SequenceRemoved_Key"496,783"Removed_Key"Sequence_67">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign BusinessException"Removed_Key"434,82.4"Removed_Key"Assign_46">
+                        <AssignRemoved_Key"Assign BusinessException"Removed_Key"434,115"Removed_Key"Assign_46">
                           <Assign.To>
                             <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                           </Assign.To>
@@ -371,7 +367,7 @@
                             <InArgument x:TypeArguments="ui:BusinessRuleException">[exception]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,82.4"Removed_Key"Assign_47">
+                        <AssignRemoved_Key" Assign boolSkipEndConfirmation"Removed_Key"434,115"Removed_Key"Assign_47">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[boolSkipEndConfirmation]</OutArgument>
                           </Assign.To>
@@ -379,7 +375,7 @@
                             <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"End Process (User Requested Stop)"Removed_Key"434,82.4"Removed_Key"Assign_48">
+                        <AssignRemoved_Key"End Process (User Requested Stop)"Removed_Key"434,115"Removed_Key"Assign_48">
                           <Assign.To>
                             <OutArgument x:TypeArguments="snm:MailMessage">[g_TransactionItem]</OutArgument>
                           </Assign.To>
@@ -439,9 +435,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <Transition.Condition>[g_TransactionItem IsNot Nothing]</Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID4"Removed_Key"Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried."Removed_Key"Process Transaction"Removed_Key"209,269"Removed_Key"State_3">
+            <State x:Name="__ReferenceID4"Removed_Key"Process a single transaction. &#xA;The result of the processing can be: &#xA;&#xA;1) Success&#xA;2) Business Exception&#xA;3) System Exception&#xA;4) Last Transaction&#xA;&#xA;In the case of a system exception, the transaction can be automatically retried."Removed_Key"Process Transaction"Removed_Key"586,2185"Removed_Key"State_3">
               <State.Entry>
-                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"574,1471"Removed_Key"TryCatch_9">
+                <TryCatchRemoved_Key"Try to process transaction"Removed_Key"540,1580"Removed_Key"TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -449,7 +445,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <SequenceRemoved_Key"Process the current TransactionItem"Removed_Key"558,1436"Removed_Key"Sequence_28">
+                    <SequenceRemoved_Key"Process the current TransactionItem"Removed_Key"502,1324"Removed_Key"Sequence_28">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strCaseIDText" />
                       </Sequence.Variables>
@@ -458,7 +454,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <AssignRemoved_Key"Assign BusinessException"Removed_Key"496,83"Removed_Key"Assign_25">
+                      <AssignRemoved_Key"Assign BusinessException"Removed_Key"468,115"Removed_Key"Assign_25">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                         </Assign.To>
@@ -466,14 +462,14 @@
                           <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <SequenceRemoved_Key"Assign values relevant for the Work Log file. &#xA;&#xA;Case Start Time - Time the transaction began processing. &#xA;&#xA;Case ID - Unique identifier used to identify transaction. By default passed as an array as arrays are updated even on workflow failure, whereas Out arguments are not passed on error."Removed_Key"Assign Logging Values"Removed_Key"496,987"Removed_Key"Sequence_68">
+                      <SequenceRemoved_Key"Assign values relevant for the Work Log file. &#xA;&#xA;Case Start Time - Time the transaction began processing. &#xA;&#xA;Case ID - Unique identifier used to identify transaction. By default passed as an array as arrays are updated even on workflow failure, whereas Out arguments are not passed on error."Removed_Key"Assign Logging Values"Removed_Key"468,951"Removed_Key"Sequence_68">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign Case Start Time"Removed_Key"434,83"Removed_Key"Assign_49">
+                        <AssignRemoved_Key"Assign Case Start Time"Removed_Key"434,115"Removed_Key"Assign_49">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:DateTime">[dateCaseStartTime]</OutArgument>
                           </Assign.To>
@@ -481,7 +477,7 @@
                             <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"Assign Case ID Text"Removed_Key"434,83"Removed_Key"Assign_50">
+                        <AssignRemoved_Key"Assign Case ID Text"Removed_Key"434,115"Removed_Key"Assign_50">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strCaseIDText]</OutArgument>
                           </Assign.To>
@@ -489,7 +485,7 @@
                             <InArgument x:TypeArguments="x:String">["Email Subject: "+g_TransactionItem.Subject]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"Assign Case ID"Removed_Key"434,83"Removed_Key"Assign_51">
+                        <AssignRemoved_Key"Assign Case ID"Removed_Key"434,115"Removed_Key"Assign_51">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:String[]">[g_arrCaseID]</OutArgument>
                           </Assign.To>
@@ -497,7 +493,7 @@
                             <InArgument x:TypeArguments="s:String[]">[New String() {strCaseIDText, Nothing}]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"Assign Exit Point"Removed_Key"434,83"Removed_Key"Assign_52">
+                        <AssignRemoved_Key"Assign Exit Point"Removed_Key"434,115"Removed_Key"Assign_52">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">[g_intExitPoint]</OutArgument>
                           </Assign.To>
@@ -505,7 +501,7 @@
                             <InArgument x:TypeArguments="x:Int32">0</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <AssignRemoved_Key"434,83"Removed_Key"Assign_57">
+                        <AssignRemoved_Key"434,115"Removed_Key"Assign_57">
                           <Assign.To>
                             <OutArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</OutArgument>
                           </Assign.To>
@@ -513,13 +509,13 @@
                             <InArgument x:TypeArguments="sd:Stopwatch">[new stopwatch()]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"434,137"Removed_Key"InvokeMethod_2" MethodName="Start">
+                        <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"434,160"Removed_Key"InvokeMethod_2" MethodName="Start">
                           <InvokeMethod.TargetObject>
                             <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
                           </InvokeMethod.TargetObject>
                         </InvokeMethod>
                       </Sequence>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke Process Transaction workflow"Removed_Key"496,175"Removed_Key"InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Process\Process Transaction.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Invoke Process Transaction workflow"Removed_Key"468,198"Removed_Key"InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Process\Process Transaction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                         </ui:InvokeWorkflowFile.Arguments>
@@ -527,7 +523,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"540,22"Removed_Key"Catch`1_9">
+                    <Catch x:TypeArguments="ui:BusinessRuleException"Removed_Key"506,23"Removed_Key"Catch`1_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -538,7 +534,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="Exception" />
                         </ActivityAction.Argument>
-                        <AssignRemoved_Key"Set transaction status to BusinessRuleException"Removed_Key"434,82"Removed_Key"Assign_54">
+                        <AssignRemoved_Key"Set transaction status to BusinessRuleException"Removed_Key"500,82"Removed_Key"Assign_54">
                           <Assign.To>
                             <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                           </Assign.To>
@@ -548,7 +544,7 @@
                         </Assign>
                       </ActivityAction>
                     </Catch>
-                    <Catch x:TypeArguments="s:Exception"Removed_Key"540,22"Removed_Key"Catch`1_10">
+                    <Catch x:TypeArguments="s:Exception"Removed_Key"506,23"Removed_Key"Catch`1_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -559,7 +555,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                         </ActivityAction.Argument>
-                        <AssignRemoved_Key"Set transaction status to SystemException"Removed_Key"434,82"Removed_Key"Assign_55">
+                        <AssignRemoved_Key"Set transaction status to SystemException"Removed_Key"500,82"Removed_Key"Assign_55">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                           </Assign.To>
@@ -767,7 +763,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[boolContinue AND SystemException IsNot Nothing]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2"Removed_Key"Read configuration file and initialize applications used in the process."Removed_Key"Initialization"Removed_Key"938,5191.5"Removed_Key"State_2">
+                            <State x:Name="__ReferenceID2"Removed_Key"Read configuration file and initialize applications used in the process."Removed_Key"Initialization"Removed_Key"232,120"Removed_Key"State_2">
                               <State.Entry>
                                 <TryCatchRemoved_Key"Try initializing settings and applications"Removed_Key"892,4739.5"Removed_Key"TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -863,7 +859,7 @@
                                                 <OutArgument x:TypeArguments="x:Object">[g_Config("SQLTransactionLogFilepath")]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[String.Format(g_Config("SQLTransactionLogFilepath").ToString, g_Config("Username").ToString)]</InArgument>
+                                                <InArgument x:TypeArguments="x:Object">[String.Format(g_Config("SQLTransactionLogFilepath").ToString, g_Config("Username").ToString)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                             <SequenceRemoved_Key"Folder/File Setup"Removed_Key"688,2134"Removed_Key"Sequence_40">

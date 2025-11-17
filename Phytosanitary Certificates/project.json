@@ -4,14 +4,23 @@
   "description": "Robotic Automation Process for the handling of Phytosanitary Certificates submitted to APHA for the processing of imported plant commodities.",
   "main": "Main.xaml",
   "dependencies": {
+    "BarCode": "[2025.10.4]",
     "DRACOE.Logging.64": "[1.0.9]",
     "DRACOE.PopUps.64": "[1.0.9]",
-    "UiPath.Excel.Activities": "[2.22.3]",
+    "IronQR.MacOs": "[2025.10.9]",
+    "UiPath.DocumentUnderstanding.Activities": "[2.16.1]",
+    "UiPath.Excel.Activities": "[2.23.5]",
+    "UiPath.IntegrationService.Activities": "[1.20.0]",
+    "UiPath.IntelligentOCR.Activities": "[6.26.0]",
     "UiPath.Mail.Activities": "[1.23.11]",
-    "UiPath.System.Activities": "[24.10.4]",
+    "UiPath.PDF.Activities": "[3.24.0]",
+    "UiPath.System.Activities": "25.10.3",
     "UiPath.Testing.Activities": "[23.10.1]",
     "UiPath.UIAutomation.Activities": "[23.10.13]",
-    "UiPath.WebAPI.Activities": "[1.21.1]"
+    "UiPath.WebAPI.Activities": "[1.21.1]",
+    "UiPath.Word.Activities": "[2.2.0]",
+    "UiPathTeam.Barcode": "[1.0.9]",
+    "UiPathTeam.SharePoint.Activities": "[2.0.2]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -44,7 +53,13 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "Test.xaml",
+        "Process/Process Subflows/Compare Addresses.xaml",
+        "Process/Process Subflows/Power Platform IDP.xaml",
+        "Process/Process Subflows/Split PDF (May not be needed).xaml",
+        "Process/Process Subflows/Test.xaml"
+      ]
     },
     "fileInfoCollection": [],
     "saveToCloud": false

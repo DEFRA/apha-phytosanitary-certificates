@@ -1,0 +1,544 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="IDP" mva:VisualBasic.Settings="{x:Null}"Removed_Key"1208,7091"Removed_Key"IDP_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:iv="clr-namespace:IDP.Validation_Station;assembly=IDP" xmlns:iv1="clr-namespace:IDP.Validator;assembly=IDP" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="51">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>IDP</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>IDP.Validation_Station</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>IDP.Validator</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>IDP</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <SequenceRemoved_Key"IDP Sample Extractor - Designed to loop through a folder that a user selects at startup, loop through all PDF files, show validation station/output to excel (based on variables) and then move the PDF to a &quot;Completed&quot; sub-folder.&#xA;&#xA;Requires UiPath.IntelligentOCR package (designed on 6.9.0), UiPath.OCR (designed on 3.15.1) and UiPath.Excel (if outputting to Excel)&#xA;&#xA;Developer Instructions:&#xA;Change Top level variables for requirements:&#xA;1) Whether you need to extract the results to Excel&#xA;2) Where the Excel document should be saved (if results will be extracted)&#xA;3) Where the PDF files should be retrieved from (by default the &quot;Processing Folder&quot; within the project)&#xA;4) Click on Taxonomy Manager, create (or update if relevant) a new Document Type, create/update each field that will need to be extracted from the scanned PDF file&#xA;5) In the Removed_Key activity, click Manage Templates, then click Create Template - highlight all fields needed in the Template Manager that loads&#xA;6) Click Configure Extractor and tick the checkbox next to the new template (this will extract all fields)&#xA;7) Set any fields, priority group and mandatory flags needed within &quot;DocumentProcessing\Field Level Confidences.csv&quot; (if using the Field Confidence Check activity) &#xA;    N.B Field names must EXACTLY match the field names provided in the taxonomy.&#xA;8) Set the confidence levels required for each group within &quot;DocumentProcessing\Priority Group Percentages.csv&quot; (if using the Field Confidence Check activity)&#xA;9) Update in_DocumentType within the Generate Filtered Taxonomy activity. Should be changed to the name of the Document Type as found in the Taxonomy Manager.&#xA;10) Run File&#xA;&#xA;After amending top level variables, run robot."Removed_Key"IDP"Removed_Key"1111,7026"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p5:Document" Name="oDocument" />
+      <Variable x:TypeArguments="x:String" Name="strText" />
+      <Variable x:TypeArguments="p6:DocumentTaxonomy" Name="oTaxonomy" />
+      <Variable x:TypeArguments="p4:ExtractionResult" Name="erExtractionResult" />
+      <Variable x:TypeArguments="p4:ClassificationResult" Name="strClassificationResult" />
+      <Variable x:TypeArguments="p4:ExtractionResult" Name="erValidatedExtractionResult" />
+      <Variable x:TypeArguments="sd1:DataSet" Name="dsDataSet" />
+      <Variable x:TypeArguments="x:Int32" Default="10" Name="intRowNumber" />
+      <Variable x:TypeArguments="x:String" Name="strFolderPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolShowValidationStation" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolOutputToExcel" />
+      <Variable x:TypeArguments="x:String" Name="strRunType" />
+      <Variable x:TypeArguments="x:String" Name="strSaveExcelPath" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="dtConfidenceCheckResults" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="dtPostCodes" />
+      <Variable x:TypeArguments="x:String" Name="strFilePath" />
+      <Variable x:TypeArguments="x:String" Name="strFileName" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="dtTaxonomyFieldPriorities" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="dtPriorityPercentages" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new list(Of String)]" Name="lisPostcodes" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssignRemoved_Key"Multiple Assign - Top level variables"Removed_Key"1069,160"Removed_Key"MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperationRemoved_Key"AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[boolOutputToExcel]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperationRemoved_Key"AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strSaveExcelPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Processing Folder\Results\Results.xlsx</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperationRemoved_Key"AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Processing Folder</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <p:LoadTaxonomyRemoved_Key"Load Taxonomy"Removed_Key"1069,103"Removed_Key"LoadTaxonomy_1" Taxonomy="[oTaxonomy]" />
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}"Removed_Key"For Each PDF file in the folder"Removed_Key"1069,6279"Removed_Key"ForEach`1_2" Values="[Directory.GetFiles(strFolderPath,&quot;*.pdf&quot;)]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="itemFile" />
+          </ActivityAction.Argument>
+          <SequenceRemoved_Key"Body"Removed_Key"1033,6145"Removed_Key"Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"Assign current File path"Removed_Key"991,60"Removed_Key"Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strFilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[itemFile.ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <AssignRemoved_Key"Assign increment count"Removed_Key"991,60"Removed_Key"Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intRowNumber]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[intRowNumber+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True"Removed_Key"Digitize Document" DocumentObjectModel="[oDocument]" DocumentPath="[strFilePath]" DocumentText="[strText]" ForceApplyOCR="False"Removed_Key"991,293"Removed_Key"DigitizeDocument_1">
+              <p:DigitizeDocument.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Argument2="{x:Reference __ReferenceID0}">
+                  <ActivityFunc.Argument1>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument1>
+                  <p1:UiPathDocumentOCR Output="{x:Null}" Text="{x:Null}"Removed_Key"{x:Null}" ApiKey="Removed_Key" ComputeSkewAngle="False"Removed_Key"UiPath Document OCR" Endpoint="Removed_Key" ExtractWords="True"Removed_Key"312,22"Removed_Key"UiPathDocumentOCR_1" Image="[Image]" Language="auto" Profile="None" Scale="1" Timeout="100000">
+                    <p1:UiPathDocumentOCR.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String"Removed_Key"DelegateArgumentValue`1_1">
+                          <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID0" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p1:UiPathDocumentOCR.PredictionId>
+                  </p1:UiPathDocumentOCR>
+                </ActivityFunc>
+              </p:DigitizeDocument.OCREngine>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:DigitizeDocument>
+            <p2:DataExtractionScope ClassificationResult="{x:Null}"Removed_Key"Data Extraction Scope" DocumentObjectModel="[oDocument]" DocumentPath="[strFilePath]" DocumentText="[strText]" DocumentTypeId="NoGroup.NoCategory.PPP" ExtractionResult="[erExtractionResult]" FormatValuesIfPossible="True"Removed_Key"991,482"Removed_Key"DataExtractionScope_1" Taxonomy="[oTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;Removed_Key&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.PPP&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.PPP.Yourorganisationname&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Yourorganisationname&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Buildingandstreet,orfarmname&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Buildingandstreet,orfarmname&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Townorcity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Townorcity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.County&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.County&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Country&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Country&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Postcode&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Postcode&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Yourtelephonenumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Yourtelephonenumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Youremailaddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Youremailaddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Westorethem&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Westorethem&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Weusethem&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Weusethem&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.BusinessType&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.BusinessType&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Whatquantity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Whatquantity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Agricultureorhorticulture&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Agricultureorhorticulture&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Amenity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Amenity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.PPP.Forestry&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.PPP.Forestry&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;Removed_Key&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;Removed_Key&quot;:[]}}">
+              <p2:DataExtractionScope.Extractors>
+                <p2:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="Removed_Key"Removed_Key"Removed_Key" Endpoint="Removed_Key"Removed_Key"234,161"Removed_Key"FormExtractor_1"Removed_Key"65"Removed_Key"Removed_Key"Removed_Key"{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;NoGroup.NoCategory.PPP&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;],&quot;CaseSensitiveSynonyms&quot;:false}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;NoGroup.NoCategory.PPP&quot;,&quot;FormId&quot;:&quot;f635c782&quot;,&quot;FormName&quot;:&quot;PPP&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:-1.6,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Professional&quot;,&quot;Box&quot;:[23.74,29.34,147.76,24.54]},{&quot;Text&quot;:&quot;plant&quot;,&quot;Box&quot;:[28.27,181.1,59.48,25.34]},{&quot;Text&quot;:&quot;protection&quot;,&quot;Box&quot;:[29.87,244.31,120.29,25.87]},{&quot;Text&quot;:&quot;products&quot;,&quot;Box&quot;:[32.27,369.13,104.82,27.47]},{&quot;Text&quot;:&quot;(PPPs)&quot;,&quot;Box&quot;:[34.14,478.21,78.41,28.27]},{&quot;Text&quot;:&quot;and&quot;,&quot;Box&quot;:[53.34,28.54,44.27,19.2]},{&quot;Text&quot;:&quot;adjuvants&quot;,&quot;Box&quot;:[53.61,78.15,114.68,25.87]},{&quot;Text&quot;:&quot;user&quot;,&quot;Box&quot;:[60.54,197.9,52.54,16.54]},{&quot;Text&quot;:&quot;registration&quot;,&quot;Box&quot;:[57.88,254.71,134.15,25.87]},{&quot;Text&quot;:&quot;form&quot;,&quot;Box&quot;:[60.81,393.66,54.41,21.34]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Yourorganisationname&quot;,&quot;Box&quot;:[240.4912,406.3116,156.551,137.4971]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Buildingandstreet,orfarmname&quot;,&quot;Box&quot;:[463.9006,400.1852,160.5978,45.3863]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Townorcity&quot;,&quot;Box&quot;:[509.2869,399.3124,158.8521,42.7679]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.County&quot;,&quot;Box&quot;:[549.0,397.1303,159.2885,44.0771]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Country&quot;,&quot;Box&quot;:[591.7679,396.6939,161.0342,45.3863]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Postcode&quot;,&quot;Box&quot;:[635.4086,395.3847,159.2885,49.7504]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Yourtelephonenumber&quot;,&quot;Box&quot;:[682.1041,393.2027,159.2885,106.9197]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.2,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;How&quot;,&quot;Box&quot;:[158.69,26.67,38.94,15.47]},{&quot;Text&quot;:&quot;you&quot;,&quot;Box&quot;:[162.16,68.54,33.34,15.47]},{&quot;Text&quot;:&quot;work&quot;,&quot;Box&quot;:[157.89,105.88,44.54,15.74]},{&quot;Text&quot;:&quot;with&quot;,&quot;Box&quot;:[157.63,152.29,37.61,15.74]},{&quot;Text&quot;:&quot;PPPs&quot;,&quot;Box&quot;:[157.36,194.7,46.41,15.74]},{&quot;Text&quot;:&quot;and&quot;,&quot;Box&quot;:[157.36,245.37,32.54,15.47]},{&quot;Text&quot;:&quot;any&quot;,&quot;Box&quot;:[160.56,282.98,32.27,15.47]},{&quot;Text&quot;:&quot;adjuvants&quot;,&quot;Box&quot;:[156.56,318.98,84.55,19.47]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Youremailaddress&quot;,&quot;Box&quot;:[31.4213,405.8585,161.4706,109.9746]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Westorethem&quot;,&quot;Box&quot;:[224.7496,407.1677,160.1614,39.2766]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Weusethem&quot;,&quot;Box&quot;:[264.4626,406.7313,161.907,38.8402]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.BusinessType&quot;,&quot;Box&quot;:[305.0485,407.6041,159.725,70.6979]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Whatquantity&quot;,&quot;Box&quot;:[378.3648,407.6041,161.0342,158.8521]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Agricultureorhorticulture&quot;,&quot;Box&quot;:[612.7154,409.3497,159.2885,36.2218]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Amenity&quot;,&quot;Box&quot;:[650.2464,408.9133,159.2885,38.8402]},{&quot;Field&quot;:&quot;NoGroup.NoCategory.PPP.Forestry&quot;,&quot;Box&quot;:[690.8322,409.3497,159.2885,33.1669]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
+                  <p2:FormExtractor.DocumentBounds>
+                    <InArgument x:TypeArguments="p4:ResultsDocumentBounds">
+                      <DelegateArgumentValue x:TypeArguments="p4:ResultsDocumentBounds">
+                        <DelegateInArgument x:TypeArguments="p4:ResultsDocumentBounds" Name="DocumentBounds" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.DocumentBounds>
+                  <p2:FormExtractor.DocumentObjectModel>
+                    <InArgument x:TypeArguments="p5:Document">
+                      <DelegateArgumentValue x:TypeArguments="p5:Document">
+                        <DelegateInArgument x:TypeArguments="p5:Document" Name="DocumentObjectModel" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.DocumentObjectModel>
+                  <p2:FormExtractor.DocumentPath>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.DocumentPath>
+                  <p2:FormExtractor.DocumentText>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.DocumentText>
+                  <p2:FormExtractor.ExtractorDocumentType>
+                    <InArgument x:TypeArguments="p3:ExtractorDocumentType">
+                      <DelegateArgumentValue x:TypeArguments="p3:ExtractorDocumentType">
+                        <DelegateInArgument x:TypeArguments="p3:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.ExtractorDocumentType>
+                  <p2:FormExtractor.ExtractorResult>
+                    <OutArgument x:TypeArguments="p3:ExtractorResult">
+                      <DelegateArgumentReference x:TypeArguments="p3:ExtractorResult">
+                        <DelegateOutArgument x:TypeArguments="p3:ExtractorResult" Name="ExtractorResult" />
+                      </DelegateArgumentReference>
+                    </OutArgument>
+                  </p2:FormExtractor.ExtractorResult>
+                  <p2:FormExtractor.PredictionId>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:FormExtractor.PredictionId>
+                </p2:FormExtractor>
+              </p2:DataExtractionScope.Extractors>
+            </p2:DataExtractionScope>
+            <p2:ExportExtractionResults DataSet="[dsDataSet]"Removed_Key"Export Extraction Results" ExtractionResult="[erExtractionResult]"Removed_Key"991,173"Removed_Key"ExportExtractionResults_3" IncludeConfidence="False" IncludeOCRConfidence="False" />
+            <SequenceRemoved_Key"Read Confidence Level/Priority Info"Removed_Key"991,436"Removed_Key"Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadCsvFile DataTable="[dtTaxonomyFieldPriorities]" Delimitator="Comma"Removed_Key"Read Field Level Confidences" FilePath="DocumentProcessing\Field Level Confidences.csv"Removed_Key"434,152"Removed_Key"ReadCsvFile_1" />
+              <ui:ReadCsvFile DataTable="[dtPriorityPercentages]" Delimitator="Comma"Removed_Key"Read Priority Group Percentages" FilePath="DocumentProcessing\Priority Group Percentages.csv"Removed_Key"434,152"Removed_Key"ReadCsvFile_2" />
+            </Sequence>
+            <iv:Fields_Confidence_CheckRemoved_Key"Fields Confidence Check"Removed_Key"991,22" IN_ExtractionResults="[erExtractionResult]" IN_PriorityPercentages="[dtPriorityPercentages]" IN_Taxonomy="[oTaxonomy]" IN_TaxonomyFieldConfidencePriorities="[dtTaxonomyFieldPriorities]"Removed_Key"Fields_Confidence_Check_1" OUT_boolPresentValidationStation="[boolShowValidationStation]" OUT_dtExtractionResults="[dtConfidenceCheckResults]" />
+            <SequenceRemoved_Key"Sequence - postcode transform and validate"Removed_Key"991,1672"Removed_Key"Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <SequenceRemoved_Key"Add new collection for each postcode field in your Taxonomy. The Item property must match EXACTLY to the name of the field in dtConfidenceCheckResults.&#xA;"Removed_Key"Sequence - Build up list of Postcodes"Removed_Key"648,216"Removed_Key"Sequence_21">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <AddToCollection x:TypeArguments="x:String" Collection="[lisPostcodes]"Removed_Key"Add Field &quot;Postcode&quot;"Removed_Key"200,22"Removed_Key"AddToCollection`1_1" Item="Postcode" />
+              </Sequence>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each"Removed_Key"648,1324"Removed_Key"ForEach`1_4" Values="[lisPostcodes]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                    </ActivityAction.Argument>
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtConfidenceCheckResults]"Removed_Key"For Each Postcode field in DataTable"Removed_Key"612,1190"Removed_Key"ForEachRow_2">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd1:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="row" />
+                          </ActivityAction.Argument>
+                          <If Condition="[row(&quot;Field&quot;).ToString = item]"Removed_Key"If this list collection name equals the dtConfidenceCheckResults field name"Removed_Key"562,1042"Removed_Key"If_10">
+                            <If.Then>
+                              <SequenceRemoved_Key"526,855"Removed_Key"Sequence_33">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="strIDPPostcode" />
+                                  <Variable x:TypeArguments="x:String" Name="strTransformedPostcode" />
+                                  <Variable x:TypeArguments="x:Boolean" Name="boolValidPostcode" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <AssignRemoved_Key"Assign Loop Postcode"Removed_Key"484,60"Removed_Key"Assign_15">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[strIDPPostcode]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row("ReadValue").ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <iv1:Validate_and_TransformRemoved_Key"Validate and Transform"Removed_Key"484,22" IO_Postcode="[strIDPPostcode]"Removed_Key"Validate_and_Transform_1" OUT_ValidPostcode="[boolValidPostcode]" />
+                                <AssignRemoved_Key"Assign - set to the transformed postcode"Removed_Key"484,60"Removed_Key"Assign_16">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Object">[row("ReadValue")]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Object">[strIDPPostcode]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <If Condition="[boolValidPostcode = False]"Removed_Key"If postcode is not valid still"Removed_Key"484,439"Removed_Key"If_9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <SequenceRemoved_Key"304,252"Removed_Key"Sequence_31">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <AssignRemoved_Key"Assign - Set to Show Validation Station"Removed_Key"262,60"Removed_Key"Assign_17">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("VS Present Field")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <AssignRemoved_Key"Assign - Force Validation Station to show"Removed_Key"262,60"Removed_Key"Assign_18">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[boolShowValidationStation]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <SequenceRemoved_Key"200,83"Removed_Key"Sequence_32">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <ui:BreakRemoved_Key"484,22"Removed_Key"Break_1" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <SequenceRemoved_Key"200,83"Removed_Key"Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEach>
+            </Sequence>
+            <If Condition="[boolShowValidationStation = True]"Removed_Key"If Validation Station should be shown"Removed_Key"991,1436"Removed_Key"If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <SequenceRemoved_Key"433,1249"Removed_Key"Sequence_8">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd1:DataTable" Name="dtPresentValidationStation" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtConfidenceCheckResults]"Removed_Key"Filter Confidence Check Results"Removed_Key"391,59"Removed_Key"FilterDataTable_1" OutputDataTable="[dtPresentValidationStation]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <InArgument x:TypeArguments="x:String">["Field"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["VS Present Field"]</InArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <iv:Generate_Filtered_TaxonomyRemoved_Key"Generate Filtered Taxonomy"Removed_Key"391,22"Removed_Key"Generate_Filtered_Taxonomy_1" in_dtValidationFlags="[dtPresentValidationStation]" in_strDocumentType="NoGroup.NoCategory.PPP" io_Taxonomy="[oTaxonomy]" />
+                  <p:PresentValidationStation AutomaticExtractionResults="[erExtractionResult]"Removed_Key"Present Validation Station" DocumentObjectModel="[oDocument]" DocumentPath="[strFilePath]" DocumentText="[strText]"Removed_Key"391,365"Removed_Key"PresentValidationStation_1" ShowOnlyRelevantPageRange="False" Taxonomy="[oTaxonomy]" ValidatedExtractionResults="[erValidatedExtractionResult]" />
+                  <SequenceRemoved_Key"Update Extracted Results"Removed_Key"391,591"Removed_Key"Sequence_13">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd1:DataSet" Name="dsValidatedDataSet" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p2:ExportExtractionResults DataSet="[dsValidatedDataSet]"Removed_Key"Export Validated Extraction Results" ExtractionResult="[erValidatedExtractionResult]"Removed_Key"349,173"Removed_Key"ExportExtractionResults_4" IncludeConfidence="False" IncludeOCRConfidence="False" />
+                    <SequenceRemoved_Key"Merge Extraction Results"Removed_Key"349,286"Removed_Key"Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="sd1:DataColumn" CurrentIndex="{x:Null}"Removed_Key"For Each Column"Removed_Key"307,194"Removed_Key"ForEach`1_3" Values="[dsValidatedDataSet.Tables(0).Columns]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="sd1:DataColumn">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="sd1:DataColumn" Name="Col" />
+                            </ActivityAction.Argument>
+                            <AssignRemoved_Key"Assign Validated Value"Removed_Key"262,60"Removed_Key"Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[dsDataSet.Tables(0).Rows(0)(Col.ColumnName)]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[dsValidatedDataSet.Tables(0).Rows(0)(Col.ColumnName)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                    </Sequence>
+                  </Sequence>
+                </Sequence>
+              </If.Then>
+            </If>
+            <If Condition="[boolOutputToExcel = True]"Removed_Key"If Outputting results to Excel"Removed_Key"991,862"Removed_Key"If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <SequenceRemoved_Key"Save Row to Excel"Removed_Key"955,675"Removed_Key"Sequence_15">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="boolFileExists" />
+                    <Variable x:TypeArguments="sd1:DataTable" Name="dtResult" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <AssignRemoved_Key"Remove Suggestions from Row"Removed_Key"913,60"Removed_Key"Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd1:DataTable">[dtResult]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd1:DataTable">[dsDataSet.Tables(0).AsEnumerable().Take(1).CopyToDataTable]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:PathExistsRemoved_Key"Check for File" Exists="[boolFileExists]"Removed_Key"913,89"Removed_Key"PathExists_1" Path="[strSaveExcelPath]" PathType="File" />
+                  <If Condition="[boolFileExists]"Removed_Key"File Exists?"Removed_Key"913,354"Removed_Key"If_3">
+                    <If.Then>
+                      <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False"Removed_Key"Excel Application Scope"Removed_Key"434,196"Removed_Key"ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[strSaveExcelPath]">
+                        <ui:ExcelApplicationScope.Body>
+                          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                            </ActivityAction.Argument>
+                            <ui:ExcelAppendRange DataTable="[dtResult]"Removed_Key"Append Range"Removed_Key"334,87"Removed_Key"ExcelAppendRange_1" SheetName="Sheet1" />
+                          </ActivityAction>
+                        </ui:ExcelApplicationScope.Body>
+                      </ui:ExcelApplicationScope>
+                    </If.Then>
+                    <If.Else>
+                      <ui:ExcelApplicationScope Password="{x:Null}"Removed_Key"Excel Application Scope"Removed_Key"434,196"Removed_Key"ExcelApplicationScope_3" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[strSaveExcelPath]">
+                        <ui:ExcelApplicationScope.Body>
+                          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                            </ActivityAction.Argument>
+                            <ui:ExcelWriteRange AddHeaders="True" DataTable="[dtResult]"Removed_Key"Write Range"Removed_Key"334,87"Removed_Key"ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                          </ActivityAction>
+                        </ui:ExcelApplicationScope.Body>
+                      </ui:ExcelApplicationScope>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+            </If>
+            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[strFolderPath + &quot;\Completed\&quot; + path.GetFileName(itemfile.ToString)]"Removed_Key"Move PDF File to Completed sub-folder"Removed_Key"991,157"Removed_Key"MoveFile_1" Overwrite="True" Path="[itemFile.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
