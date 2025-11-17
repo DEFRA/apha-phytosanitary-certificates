@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="io_dtCommodityLines" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_strPhytoFilepath" Type="InArgument(x:String)" />
+    <x:Property Name="in_dtAdditionalDeclarations" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -116,9 +117,11 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"570,4381.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"744,5302.8"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strProductCount" />
@@ -133,7 +136,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"570,180"Removed_Key"CommentOut_2">
+    <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"672,180"Removed_Key"CommentOut_2">
       <ui:CommentOut.Body>
         <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,69.6"Removed_Key"Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
@@ -198,7 +201,7 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:MultipleAssignRemoved_Key"Assign counts of commodity lines"Removed_Key"570,212"Removed_Key"MultipleAssign_1">
+    <ui:MultipleAssignRemoved_Key"Assign counts of commodity lines"Removed_Key"672,212"Removed_Key"MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperationRemoved_Key"AssignOperation_1">
@@ -228,7 +231,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <AssignRemoved_Key"Initialise empty string"Removed_Key"570,114.4"Removed_Key"Assign_1">
+    <AssignRemoved_Key"Initialise empty string"Removed_Key"672,114.4"Removed_Key"Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -238,7 +241,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add HTML Header"Removed_Key"570,115.6"Removed_Key"Assign_2">
+    <AssignRemoved_Key"Add HTML Header"Removed_Key"672,115.6"Removed_Key"Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -255,7 +258,7 @@
 					"&lt;body&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add Page Header"Removed_Key"570,115.6"Removed_Key"Assign_4">
+    <AssignRemoved_Key"Add Page Header"Removed_Key"672,115.6"Removed_Key"Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -284,7 +287,7 @@
 					"&lt;/header&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Flag main content section"Removed_Key"570,114.4"Removed_Key"Assign_5">
+    <AssignRemoved_Key"Flag main content section"Removed_Key"672,114.4"Removed_Key"Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -292,7 +295,7 @@
         <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;main&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"For screen readers add hidden announcer"Removed_Key"570,114.4"Removed_Key"Assign_11">
+    <AssignRemoved_Key"For screen readers add hidden announcer"Removed_Key"672,114.4"Removed_Key"Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -300,7 +303,7 @@
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML 	&amp; vbTab &amp; "&lt;div class=""status-announcer"" aria-live=""polite""&gt;&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add page spinner"Removed_Key"570,115.6"Removed_Key"Assign_29">
+    <AssignRemoved_Key"Add page spinner"Removed_Key"672,115.6"Removed_Key"Assign_29">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -311,13 +314,13 @@
 				vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"570,2076.4"Removed_Key"ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"672,3173.2"Removed_Key"ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"536,1878"Removed_Key"Sequence_9">
+          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"638,2974.8"Removed_Key"Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strComplianceText" />
               <Variable x:TypeArguments="x:String" Name="strCompliantButtonActive" />
@@ -328,7 +331,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(&quot;Outcome&quot;).ToString.ToUpper = &quot;COMPLIANT&quot;]"Removed_Key"If product is compliant"Removed_Key"502,1188.8"Removed_Key"If_1">
+            <If Condition="[CurrentRow(&quot;Outcome&quot;).ToString.ToUpper = &quot;COMPLIANT&quot;]"Removed_Key"If product is compliant"Removed_Key"604,1188.8"Removed_Key"If_1">
               <If.Then>
                 <SequenceRemoved_Key"Then"Removed_Key"468,508.8"Removed_Key"Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
@@ -414,7 +417,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <AssignRemoved_Key"Add accordion header"Removed_Key"502,115.6"Removed_Key"Assign_12">
+            <AssignRemoved_Key"Add accordion header"Removed_Key"604,115.6"Removed_Key"Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
               </Assign.To>
@@ -425,13 +428,123 @@
 					" (" &amp; CurrentRow("Country").ToString &amp; ")&lt;/summary&gt;" &amp; vbCrLf]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"502,175.6"Removed_Key"LogMessage_7" Level="Warn" Message="[&quot;Hard coded text - replace this&quot;]" />
-            <AssignRemoved_Key"Add Accordion Content"Removed_Key"502,115.6"Removed_Key"Assign_18">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; "&lt;div class=""accordion-content""&gt;" &amp; vbCrLf &amp; _
+            <SequenceRemoved_Key"604,1302.8"Removed_Key"Sequence_16">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="dtSingleAccordion" />
+                <Variable x:TypeArguments="x:Int32" Name="intTextSegmentIndex" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FilterDataTable DataTable="[in_dtAdditionalDeclarations]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"570,196"Removed_Key"FilterDataTable_1" OutputDataTable="[dtSingleAccordion]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:String">["ID"]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                      <ui:FilterOperationArgument.Operand>
+                        <InArgument x:TypeArguments="x:Object">[CurrentRow("ID")]</InArgument>
+                      </ui:FilterOperationArgument.Operand>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+              <AssignRemoved_Key"Assign - accordian div tag start"Removed_Key"570,115.6"Removed_Key"Assign_30">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; "&lt;div class=""accordion-content""&gt;" &amp; vbCrLf &amp; _
+						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intTextSegmentIndex]" DataTable="[dtSingleAccordion]"Removed_Key"For Each Row in Data Table"Removed_Key"570,793.6"Removed_Key"ForEachRow_2">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="TextSegment" />
+                    </ActivityAction.Argument>
+                    <SequenceRemoved_Key"Body"Removed_Key"536,595.2"Removed_Key"Sequence_17">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign - accordian class and text"Removed_Key"502,115.6"Removed_Key"Assign_31">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-" +If(CBool(TextSegment("Compliant")),"green","red") + """&gt;" &amp; vbCrLf &amp; _
+ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; TextSegment("AD Text").ToString &amp; vbCrLf &amp; _
+vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <If Condition="[intTextSegmentIndex = math.Ceiling(dtSingleAccordion.RowCount/2) -1]"Removed_Key"If - calculate midway point"Removed_Key"502,419.6"Removed_Key"If_2">
+                        <If.Then>
+                          <SequenceRemoved_Key"Then"Removed_Key"468,166.8"Removed_Key"Sequence_19">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <AssignRemoved_Key"Assign - Divider"Removed_Key"434,106.8"Removed_Key"Assign_34">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
+					vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+              <AssignRemoved_Key"Assign - accordian div tag end"Removed_Key"570,105.6"Removed_Key"Assign_32">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strHTML &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"604,85.2"Removed_Key"CommentOut_3">
+              <ui:CommentOut.Body>
+                <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,342.4"Removed_Key"Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessageRemoved_Key"Log Message"Removed_Key"434,175.6"Removed_Key"LogMessage_7" Level="Warn" Message="[&quot;Hard coded text - replace this&quot;]" />
+                  <AssignRemoved_Key"Add Accordion Content"Removed_Key"434,106.8"Removed_Key"Assign_18">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; "&lt;div class=""accordion-content""&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-red""&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi." &amp; vbCrLf &amp; _
@@ -448,9 +561,18 @@
 						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica." &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <AssignRemoved_Key"Add Outcome"Removed_Key"502,115.6"Removed_Key"Assign_14">
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <AssignRemoved_Key"Add Outcome"Removed_Key"604,115.6"Removed_Key"Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
               </Assign.To>
@@ -470,7 +592,7 @@
 					vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
               </Assign.Value>
             </Assign>
-            <AssignRemoved_Key"Close content and accordion"Removed_Key"502,106.8"Removed_Key"Assign_15">
+            <AssignRemoved_Key"Close content and accordion"Removed_Key"604,106.8"Removed_Key"Assign_15">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
               </Assign.To>
@@ -483,7 +605,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <AssignRemoved_Key"Add PDF Panel"Removed_Key"570,115.6"Removed_Key"Assign_7">
+    <AssignRemoved_Key"Add PDF Panel"Removed_Key"672,115.6"Removed_Key"Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -499,7 +621,7 @@
 					vbTab &amp; "&lt;div class=""backdrop"" aria-hidden=""true""&gt;&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add Submit Button"Removed_Key"570,114.4"Removed_Key"Assign_25">
+    <AssignRemoved_Key"Add Submit Button"Removed_Key"672,114.4"Removed_Key"Assign_25">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -507,7 +629,7 @@
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;button class=""submit-btn"" aria-label=""Submit all product outcomes""&gt;Submit&lt;/button&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add Product Tracker Pane"Removed_Key"570,115.6"Removed_Key"Assign_8">
+    <AssignRemoved_Key"Add Product Tracker Pane"Removed_Key"672,115.6"Removed_Key"Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -519,7 +641,7 @@
 					vbTab &amp; "&lt;/nav&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Close flag for main content section"Removed_Key"570,114.4"Removed_Key"Assign_6">
+    <AssignRemoved_Key"Close flag for main content section"Removed_Key"672,114.4"Removed_Key"Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -527,7 +649,7 @@
         <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;/main&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Add js file reference"Removed_Key"570,114.4"Removed_Key"Assign_10">
+    <AssignRemoved_Key"Add js file reference"Removed_Key"672,114.4"Removed_Key"Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -535,7 +657,7 @@
         <InArgument x:TypeArguments="x:String">[strHTML &amp; "&lt;script src=""functions.js""&gt;&lt;/script&gt;" &amp; vbCrLf]</InArgument>
       </Assign.Value>
     </Assign>
-    <AssignRemoved_Key"Close body and HTML sections"Removed_Key"570,115.6"Removed_Key"Assign_9">
+    <AssignRemoved_Key"Close body and HTML sections"Removed_Key"672,115.6"Removed_Key"Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
@@ -544,8 +666,7 @@
 					"&lt;/html&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"570,175.6"Removed_Key"LogMessage_1" Level="Warn" Message="[&quot;Hard coded text file path&quot;]" />
-    <ui:WriteTextFile File="{x:Null}"Removed_Key"Write Text File" FileName="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\Index.html"Removed_Key"570,167.6"Removed_Key"WriteTextFile_1" Text="[strHTML]" />
-    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"570,166.8"Removed_Key"LogMessage_8" Level="Warn" Message="[&quot;Remove this open form after integration, it should be called from Alis code&quot;]" />
+    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"672,175.6"Removed_Key"LogMessage_1" Level="Warn" Message="[&quot;Hard coded text file path&quot;]" />
+    <ui:WriteTextFile File="{x:Null}"Removed_Key"Write Text File" FileName="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\Index.html"Removed_Key"672,158.8"Removed_Key"WriteTextFile_1" Text="[strHTML]" />
   </Sequence>
 </Activity>
