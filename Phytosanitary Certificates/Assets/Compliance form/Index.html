@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Phytosanitary Compliance Dashboard</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header role="banner">
+	<div>5 Products</div>
+	<div>0 Compliant</div>
+	<div>5 Missing Detail</div>
+	<div>
+		<button id="collapse-toggle" aria-label="Expand all accordions">
+			<i aria-hidden="true" class="fas fa-chevron-down"></i>Expand all accordions
+		</button>
+		<label for="theme-toggle" aria-label="Toggle dark mode On or off">
+			<input type="checkbox" id="theme-toggle">
+			<span>Dark Mode</span>
+		</label>
+		<label for="cvd-toggle" aria-label="Toggle high contrast mode On or off">
+			<input type="checkbox" id="cvd-toggle">
+			<span>High Contrast Mode</span>
+		</label>
+		<label for="single-expand-toggle" aria-label="Toggle single accordion expansion on or off">
+			<input type="checkbox" id="single-expand-toggle">
+			<span>Single Expand</span>
+		</label>
+	</div>
+</header>
+<main>
+	<div class="status-announcer" aria-live="polite"></div>
+	<div class="overlay" id="spinnerOverlay">
+	<i class="fas fa-spinner fa-spin spinner"></i>
+	<div class="spinner-text" id="spinnerText"></div>
+	</div>
+	<details class="red" id="product0001">
+		<summary aria-label="0001 Acanthus hungaricus from NETHERLANDS with issues">0001 Acanthus hungaricus (NETHERLANDS)</summary>
+		<div class="accordion-content">
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in The Netherlands as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+				</p>
+			</div>
+			<div>
+			</div>
+		<div class="accordion-controls">
+			<div class="control-group control-outcome">
+				<label for="outcome0001">Outcome</label>
+				<div class="button-group" id="outcome0001">
+					<button class="btn-outcome" data-value="Compliant">Compliant</button>
+					<button class="btn-outcome" data-value="On-hold">On Hold</button>
+				</div>
+			</div>
+			<div class="control-group control-comments">
+				<label for="comments0001">Comments</label>
+				<input type="text" id="comments0001" placeholder="Hold Reason">
+			</div>
+		</div>
+		</div>
+	</details>
+	<details class="red" id="product0002">
+		<summary aria-label="0002 Acer conspicuum from NETHERLANDS with issues">0002 Acer conspicuum (NETHERLANDS)</summary>
+		<div class="accordion-content">
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in The Netherlands as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi. 
+				</p>
+			</div>
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B item 2b: The plants have been grown during a period of at least three years before export, or in the case of plants which are younger than three years have been grown throughout their life, in the Netherlands established by the national plant protection organization in accordance with ISPM4 as an area that is free from Xylella fastidiosa.
+				</p>
+			</div>
+		<div class="accordion-controls">
+			<div class="control-group control-outcome">
+				<label for="outcome0002">Outcome</label>
+				<div class="button-group" id="outcome0002">
+					<button class="btn-outcome" data-value="Compliant">Compliant</button>
+					<button class="btn-outcome" data-value="On-hold">On Hold</button>
+				</div>
+			</div>
+			<div class="control-group control-comments">
+				<label for="comments0002">Comments</label>
+				<input type="text" id="comments0002" placeholder="Hold Reason">
+			</div>
+		</div>
+		</div>
+	</details>
+	<details class="red" id="product0003">
+		<summary aria-label="0003 Acer palmatum from NETHERLANDS with issues">0003 Acer palmatum (NETHERLANDS)</summary>
+		<div class="accordion-content">
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in The Netherlands as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi. 
+				</p>
+			</div>
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part B item 2b: The plants have been grown during a period of at least three years before export, or in the case of plants which are younger than three years have been grown throughout their life, in the Netherlands established by the national plant protection organization in accordance with ISPM4 as an area that is free from Xylella fastidiosa.
+				</p>
+			</div>
+		<div class="accordion-controls">
+			<div class="control-group control-outcome">
+				<label for="outcome0003">Outcome</label>
+				<div class="button-group" id="outcome0003">
+					<button class="btn-outcome" data-value="Compliant">Compliant</button>
+					<button class="btn-outcome" data-value="On-hold">On Hold</button>
+				</div>
+			</div>
+			<div class="control-group control-comments">
+				<label for="comments0003">Comments</label>
+				<input type="text" id="comments0003" placeholder="Hold Reason">
+			</div>
+		</div>
+		</div>
+	</details>
+	<details class="red" id="product0004">
+		<summary aria-label="0004 Actaea hybrid from NETHERLANDS with issues">0004 Actaea hybrid (NETHERLANDS)</summary>
+		<div class="accordion-content">
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in The Netherlands as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+				</p>
+			</div>
+			<div>
+			</div>
+		<div class="accordion-controls">
+			<div class="control-group control-outcome">
+				<label for="outcome0004">Outcome</label>
+				<div class="button-group" id="outcome0004">
+					<button class="btn-outcome" data-value="Compliant">Compliant</button>
+					<button class="btn-outcome" data-value="On-hold">On Hold</button>
+				</div>
+			</div>
+			<div class="control-group control-comments">
+				<label for="comments0004">Comments</label>
+				<input type="text" id="comments0004" placeholder="Hold Reason">
+			</div>
+		</div>
+		</div>
+	</details>
+	<details class="red" id="product0005">
+		<summary aria-label="0005 Agapanthus africanus from BELGIUM with issues">0005 Agapanthus africanus (BELGIUM)</summary>
+		<div class="accordion-content">
+			<div>
+				<p class="highlight-red">
+					The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Belgium as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.
+				</p>
+			</div>
+			<div>
+			</div>
+		<div class="accordion-controls">
+			<div class="control-group control-outcome">
+				<label for="outcome0005">Outcome</label>
+				<div class="button-group" id="outcome0005">
+					<button class="btn-outcome" data-value="Compliant">Compliant</button>
+					<button class="btn-outcome" data-value="On-hold">On Hold</button>
+				</div>
+			</div>
+			<div class="control-group control-comments">
+				<label for="comments0005">Comments</label>
+				<input type="text" id="comments0005" placeholder="Hold Reason">
+			</div>
+		</div>
+		</div>
+	</details>
+	<div class="pdf-panel" aria-hidden="true">
+		<div class="pdf-header">
+			<span>Supporting Document</span>
+			<button class="close-panel" aria-label="Close PDF panel">×</button>
+		</div>
+		<iframe class="pdf-embed-side" title="Supporting Document PDF Viewer" src="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\NL Phytos\N851-GBPHC2025326484268.pdf"></iframe>
+	</div>
+	<button class="pdf-banner" aria-label="Open Supporting Document PDF">View PDF</button>
+	<div class="backdrop" aria-hidden="true"></div>
+	<button class="submit-btn" aria-label="Submit all product outcomes" disabled>Submit</button>
+	<nav class="tracker-pane" aria-label="Product status navigation">
+		<ul>
+			<li class="unfinished"><a href="#product0001" aria-label="Navigate To product 0001, incomplete"><i class="fas fa-exclamation-triangle"></i> 0001</a></li>
+			<li class="unfinished"><a href="#product0002" aria-label="Navigate To product 0002, incomplete"><i class="fas fa-exclamation-triangle"></i> 0002</a></li>
+			<li class="unfinished"><a href="#product0003" aria-label="Navigate To product 0003, incomplete"><i class="fas fa-exclamation-triangle"></i> 0003</a></li>
+			<li class="unfinished"><a href="#product0004" aria-label="Navigate To product 0004, incomplete"><i class="fas fa-exclamation-triangle"></i> 0004</a></li>
+			<li class="unfinished"><a href="#product0005" aria-label="Navigate To product 0005, incomplete"><i class="fas fa-exclamation-triangle"></i> 0005</a></li>
+		</ul>
+	</nav>
+</main>
+<div id="buttonStates" style="display:none;"></div>
+<script src="functions.js"></script>
+
+</body>
+</html>

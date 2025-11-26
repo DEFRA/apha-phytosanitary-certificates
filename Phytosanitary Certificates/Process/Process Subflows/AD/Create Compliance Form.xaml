@@ -121,7 +121,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"875.6,5388.8"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"744,5241.6"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strProductCount" />
@@ -314,13 +314,13 @@
 				vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"672,3144.8"Removed_Key"ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"672,3173.2"Removed_Key"ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"638,2946.4"Removed_Key"Sequence_9">
+          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"638,2974.8"Removed_Key"Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strComplianceText" />
               <Variable x:TypeArguments="x:String" Name="strCompliantButtonActive" />
@@ -508,7 +508,7 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"468,90.4"Removed_Key"Sequence_20">
+                          <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_20">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -530,7 +530,7 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
                 </Assign.Value>
               </Assign>
             </Sequence>
-            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"604,56.8"Removed_Key"CommentOut_3">
+            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"604,85.2"Removed_Key"CommentOut_3">
               <ui:CommentOut.Body>
                 <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,342.4"Removed_Key"Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
@@ -626,7 +626,7 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
         <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;button class=""submit-btn"" aria-label=""Submit all product outcomes""&gt;Submit&lt;/button&gt;" &amp; vbCRLF]</InArgument>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp;	vbTab &amp; "&lt;button class=""submit-btn"" aria-label=""Submit all product outcomes"" disabled&gt;Submit&lt;/button&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
     <AssignRemoved_Key"Add Product Tracker Pane"Removed_Key"672,115.6"Removed_Key"Assign_8">
@@ -674,7 +674,6 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
 					"&lt;/html&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessageRemoved_Key"Log Message"Removed_Key"672,175.6"Removed_Key"LogMessage_1" Level="Warn" Message="[&quot;Hard coded text file path&quot;]" />
-    <ui:WriteTextFile File="{x:Null}"Removed_Key"Write Text File" FileName="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\Index.html"Removed_Key"672,158.8"Removed_Key"WriteTextFile_1" Text="[strHTML]" />
+    <ui:WriteTextFile File="{x:Null}"Removed_Key"Write Text File" FileName="Assets\Compliance form\Index.html"Removed_Key"672,158.8"Removed_Key"WriteTextFile_1" Text="[strHTML]" />
   </Sequence>
 </Activity>
