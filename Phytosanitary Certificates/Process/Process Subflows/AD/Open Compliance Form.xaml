@@ -144,7 +144,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Open_Compliance_Form"Removed_Key"875.6,4423.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Open_Compliance_Form"Removed_Key"795.2,4423.6"Removed_Key"Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -281,7 +281,7 @@
                                       <InArgument x:TypeArguments="x:String">[drProductID("Outcome").ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <If Condition="[strComplianceFormOutcome.contains(&quot;active&quot;)]"Removed_Key"If Compliant button is active"Removed_Key"502,845.6"Removed_Key"If_3">
+                                  <If Condition="[strComplianceFormOutcome.ToUpper.contains(&quot;COMPLIANT&quot;)]"Removed_Key"If Compliant button is active"Removed_Key"502,845.6"Removed_Key"If_3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -357,16 +357,16 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <AssignRemoved_Key"Assign status notes"Removed_Key"434,105.6"Removed_Key"Assign_16">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Object">[drProductID("Outcome Notes")]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Object">[drProductID("Status Notes")]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Object">[strOriginalOutcome]</InArgument>
+                                            <InArgument x:TypeArguments="x:Object">[drProductID("Status Notes").ToString + vbcr + strOriginalOutcome]</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <SequenceRemoved_Key"Else"Removed_Key"468,90.4"Removed_Key"Sequence_18">
+                                      <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_18">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -583,7 +583,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="uue:ApplicationOpenException" Name="exception" />
             </ActivityAction.Argument>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00"Removed_Key"Message Box - Edge Setting Requirement"Removed_Key"1469.2,86.4"Removed_Key"MessageBox_1" Text="[&quot;Fatal Exception: Your UiPath Web Browser extension needs this setting enabling: Allow access to file URLs&quot;]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00"Removed_Key"Message Box - Edge Setting Requirement"Removed_Key"334,86.4"Removed_Key"MessageBox_1" Text="[&quot;Fatal Exception: Your UiPath Web Browser extension needs this setting enabling: Allow access to file URLs&quot;]" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
