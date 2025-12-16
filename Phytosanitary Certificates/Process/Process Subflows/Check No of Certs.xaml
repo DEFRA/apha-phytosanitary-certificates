@@ -131,7 +131,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_No_of_Certs" sap:VirtualizedContainerService.HintSize="2298,6614" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_No_of_Certs" sap:VirtualizedContainerService.HintSize="2125,6933" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intTotalPages" />
     </Sequence.Variables>
@@ -140,7 +140,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Check No of Certs" sap:VirtualizedContainerService.HintSize="706,6591" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Check No of Certs" sap:VirtualizedContainerService.HintSize="706,6910" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strPdfPath" />
         <Variable x:TypeArguments="x:String" Name="strPageText" />
@@ -162,7 +162,7 @@
           <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[New Dictionary(Of String, List(Of Int32))()]</InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Extract Cert Numbers from IPAFFs" sap:VirtualizedContainerService.HintSize="672,1143" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="Extract Cert Numbers from IPAFFs" sap:VirtualizedContainerService.HintSize="672,1085" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieIPAFFSPhytoCertNos" />
         </Sequence.Variables>
@@ -172,7 +172,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:Matches FirstMatch="{x:Null}" DisplayName="Find IPAFFs Cert Numbers" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[in_IPAFFSCertificateReference]" IsBuilderTabModified="False" Pattern="[0-9]{9}" RegexOption="IgnoreCase, Compiled" Result="[ieIPAFFSPhytoCertNos]" />
-        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]" DisplayName="No IPAFFS Phyto Numbers?" sap:VirtualizedContainerService.HintSize="450,480" sap2010:WorkflowViewState.IdRef="If_5">
+        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]" DisplayName="No IPAFFS Phyto Numbers?" sap:VirtualizedContainerService.HintSize="450,422" sap2010:WorkflowViewState.IdRef="If_5">
           <If.Then>
             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_24">
               <sap:WorkflowViewStateService.ViewState>
@@ -184,7 +184,7 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_25">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -226,7 +226,7 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <Sequence DisplayName="Extract Cert Numbers from PDF" sap:VirtualizedContainerService.HintSize="672,1373" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence DisplayName="Extract Cert Numbers from PDF" sap:VirtualizedContainerService.HintSize="672,1750" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strFullPDFText" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="iePDFPhytoCertNos" />
@@ -237,8 +237,29 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertFilepath]" sap:VirtualizedContainerService.HintSize="450,115" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
+        <If Condition="[strFullPDFText.Replace(&quot; &quot;,&quot;&quot;).Length = 0]" DisplayName="PDF Contains Content?" sap:VirtualizedContainerService.HintSize="450,435" sap2010:WorkflowViewState.IdRef="If_7">
+          <If.Then>
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_33">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Robot cannot read any content in Phytosanitary Certificate for reference: '&quot;+in_IPAFFSCertificateReference+&quot;'. It's possible this is a scanned document. The application must be processed manually: &quot;+g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
         <ui:Matches FirstMatch="{x:Null}" BuilderPattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" DisplayName="Find PDF Cert Numbers" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;No\\.\\s*EC\\s*NL\\s*\/\\s*(PCNU\\s*\\d+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" RegexOption="IgnoreCase, Compiled" Result="[iePDFPhytoCertNos]" />
-        <If Condition="[iePDFPhytoCertNos.Count = 0]" DisplayName="No PDF Phyto Numbers?" sap:VirtualizedContainerService.HintSize="450,480" sap2010:WorkflowViewState.IdRef="If_4">
+        <If Condition="[iePDFPhytoCertNos.Count = 0]" DisplayName="No PDF Phyto Numbers?" sap:VirtualizedContainerService.HintSize="450,422" sap2010:WorkflowViewState.IdRef="If_4">
           <If.Then>
             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_22">
               <sap:WorkflowViewStateService.ViewState>
@@ -250,7 +271,7 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -401,11 +422,7 @@
       </ui:ForEach>
       <Sequence sap2010:Annotation.AnnotationText="We need to check if declared IPAFFs certificate numbers and the certificate numbers present in the PDF match.&#xA;&#xA;We must check if there are extra certificate numbers either -&#xA;&#xA;A) Declared in IPAFFS and not present in the PDF.&#xA;or&#xA;B) Not declared in IPAFFS, but are present in the PDF.&#xA;&#xA;The two lists should match exactly, so if we compare them and remove any matches then this should leave two empty lists. If any values are left on either side of the comparison, these are extra certificate numbers." DisplayName="Check for Excess Certificate Numbers" sap:VirtualizedContainerService.HintSize="672,1289" sap2010:WorkflowViewState.IdRef="Sequence_29">
         <Sequence.Variables>
-          <Variable x:TypeArguments="scg:List(x:String)" Name="listPhytoCertNosComparison">
-            <Variable.Default>
-              <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)" />
-            </Variable.Default>
-          </Variable>
+          <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listPhytoCertNosComparison" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
