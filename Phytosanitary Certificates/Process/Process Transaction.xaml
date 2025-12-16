@@ -138,7 +138,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"2301,1426.04"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"2142,1170.04"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -165,7 +165,7 @@
           <av:Point x:Key="ShapeLocation">560,510</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
           <av:PointCollection x:Key="TrueConnector">560,540 470,540 470,635</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">620,540 650,540 650,745 590,745 590,775</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">620,540 699.5,540 699.5,735.54 590,735.54 590,775</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -225,9 +225,15 @@
                 </ActivityAction>
               </ufa:FormActivity.DelayBody>
               <ufa:FormActivity.FormFieldsCollection>
-                <InArgument x:TypeArguments="x:String" x:Key="PopupMessage">["&lt;h1&gt;Pause Point #2&lt;/h1&gt;&lt;P&gt;Please review that the data scraped from Dynamics &amp; IPAFFS is accurate. Once you are happy, please press Continue.&lt;/P&gt;&lt;BR&gt;"+"&lt;P&gt;&lt;B&gt;Consignor Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Consignor Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Delivery Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Delivery Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Importer Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Importer Address")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Origin:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Country of Origin")+"&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Consignment:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;"+dictApplicationInfo("Country of Consignment")+"&lt;/P&gt;&lt;BR&gt;"]</InArgument>
-                <InArgument x:TypeArguments="sd1:DataTable" x:Key="commodityInfo">[dtIPAFFSCommodityLines]</InArgument>
-                <InArgument x:TypeArguments="sd1:DataTable" x:Key="certificateDetails">[dtCertificateDetails]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="PopupMessage">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&lt;h1&gt;Pause Point #2&lt;/h1&gt;&lt;P&gt;Please review that the data scraped from Dynamics &amp; IPAFFS is accurate. Once you are happy, please press Continue.&lt;/P&gt;&lt;BR&gt;&quot;+&quot;&lt;P&gt;&lt;B&gt;Consignor Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Consignor Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Delivery Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Delivery Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Importer Address:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Importer Address&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Origin:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Country of Origin&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Country of Consignment:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Country of Consignment&quot;)+&quot;&lt;/P&gt;&lt;P&gt;&lt;B&gt;Date of Arrival:&lt;/B&gt;&lt;/P&gt;&lt;P&gt;&quot;+dictApplicationInfo(&quot;Date of Arrival&quot;)+&quot;&lt;/P&gt;&lt;BR&gt;&quot;" />
+                </InArgument>
+                <InArgument x:TypeArguments="sd1:DataTable" x:Key="commodityInfo">
+                  <VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtIPAFFSCommodityLines" />
+                </InArgument>
+                <InArgument x:TypeArguments="sd1:DataTable" x:Key="certificateDetails">
+                  <VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtCertificateDetails" />
+                </InArgument>
               </ufa:FormActivity.FormFieldsCollection>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -264,13 +270,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row"Removed_Key"110,70"Removed_Key"ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row"Removed_Key"586,2175"Removed_Key"ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentAttachment" />
                     </ActivityAction.Argument>
-                    <SequenceRemoved_Key"Body"Removed_Key"552,1574"Removed_Key"Sequence_59">
+                    <SequenceRemoved_Key"Body"Removed_Key"552,2009"Removed_Key"Sequence_59">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" Name="dictCertPageRanges" />
                         <Variable x:TypeArguments="x:String" Name="strAttachmentFilepath" />
@@ -280,7 +286,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <AssignRemoved_Key"Assign strAttachmentFilepath"Removed_Key"518,115"Removed_Key"Assign_14">
+                      <AssignRemoved_Key"Assign strAttachmentFilepath"Removed_Key"518,115"Removed_Key"Assign_16">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strAttachmentFilepath]</OutArgument>
                         </Assign.To>
@@ -288,15 +294,15 @@
                           <InArgument x:TypeArguments="x:String">[g_Config("AttachmentsFilepath").ToString+"\"+CurrentAttachment.Item("Attachments").ToString]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"518,277"Removed_Key"CommentOut_9">
+                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"518,277"Removed_Key"CommentOut_18">
                         <ui:CommentOut.Body>
-                          <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,166"Removed_Key"Sequence_67">
+                          <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,166"Removed_Key"Sequence_86">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <AssignRemoved_Key"Assign strAttachmentFilepath - Dev"Removed_Key"434,106"Removed_Key"Assign_13">
+                            <AssignRemoved_Key"Assign strAttachmentFilepath - Dev"Removed_Key"434,106"Removed_Key"Assign_15">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[strAttachmentFilepath]</OutArgument>
                               </Assign.To>
@@ -307,6 +313,27 @@
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
+                      <If Condition="[NOT(strAttachmentFilepath.ToLower.Contains(&quot;.pdf&quot;))]"Removed_Key"Not a PDF File?"Removed_Key"518,435"Removed_Key"If_13">
+                        <If.Then>
+                          <SequenceRemoved_Key"Then"Removed_Key"416,174"Removed_Key"Sequence_79">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ThrowRemoved_Key"Throw BRE" Exception="[New BusinessRuleException(&quot;Phytosanitary certificate is not in PDF format. The application must be processed manually: &quot;+strCHEDPPReference)]"Removed_Key"382,114"Removed_Key"Throw_9" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_80">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Check No of Certs - Invoke Workflow File (Process\Process Subflows\Check No of Certs.xaml)"Removed_Key"518,207"Removed_Key"InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\Check No of Certs.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_IPAFFSCertificateReference">[CurrentAttachment("Document_Reference").ToString]</InArgument>
@@ -403,7 +430,7 @@
                       <av:Size x:Key="ShapeSize">110,70</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Close IPAFFs"Removed_Key"110,70"Removed_Key"NApplicationCard_8" InteractionMode="DebuggerApi" ScopeGuid="fed1a01d-dcdc-4745-9865-62f88dcf402f" Timeout="5" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Close IPAFFs"Removed_Key"110,70"Removed_Key"NApplicationCard_8" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="fed1a01d-dcdc-4745-9865-62f88dcf402f" Timeout="5" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -420,7 +447,7 @@
                       </ActivityAction>
                     </uix:NApplicationCard.Body>
                     <uix:NApplicationCard.TargetApp>
-                      <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="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" InformativeScreenshot="db096494416528d361d8d53737d399a4.jpg" Selector="&lt;html app='msedge.exe' url='https://importnotification*' /&gt;" Title="CHED Overview CHEDPP.GB.2025.1190598 - Import and export applications - GOV.UK" Url="https://importnotification*" />
+                      <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="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" InformativeScreenshot="db096494416528d361d8d53737d399a4.jpg" Selector="&lt;html app='msedge.exe' url='https://importnotification*' /&gt;" Title="CHED Overview CHEDPP.GB.2025.1190598 - Import and export applications - GOV.UK" />
                     </uix:NApplicationCard.TargetApp>
                   </uix:NApplicationCard>
                 </FlowStep>
@@ -450,7 +477,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"570,5610"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"570,5530"Removed_Key"NApplicationCard_4" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -700,7 +727,7 @@
             </ActivityAction>
           </uix:NApplicationCard.Body>
           <uix:NApplicationCard.TargetApp>
-            <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" InformativeScreenshot="9a56be72698322c27794207358959ffa.jpg" Selector="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" Title="Contacts My Active Contacts - Dynamics 365" Url="[g_Config(&quot;Dynamics URL Wildcard&quot;).ToString]" />
+            <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" InformativeScreenshot="9a56be72698322c27794207358959ffa.jpg" Selector="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" Title="Contacts My Active Contacts - Dynamics 365" />
           </uix:NApplicationCard.TargetApp>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -708,16 +735,16 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
-        <ui:RetryScopeRemoved_Key"Retry Scope - Open IPAFFS"Removed_Key"570,1184"Removed_Key"RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
+        <ui:RetryScopeRemoved_Key"Retry Scope - Open IPAFFS"Removed_Key"570,1104"Removed_Key"RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <SequenceRemoved_Key"Action"Removed_Key"528,975"Removed_Key"Sequence_16">
+              <SequenceRemoved_Key"Action"Removed_Key"528,895"Removed_Key"Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"494,495"Removed_Key"NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"494,415"Removed_Key"NApplicationCard_5" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -741,7 +768,7 @@
                     </ActivityAction>
                   </uix:NApplicationCard.Body>
                   <uix:NApplicationCard.TargetApp>
-                    <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" InformativeScreenshot="9a56be72698322c27794207358959ffa.jpg" Selector="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" Title="Contacts My Active Contacts - Dynamics 365" Url="[g_Config(&quot;Dynamics URL&quot;).ToString]" />
+                    <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" InformativeScreenshot="9a56be72698322c27794207358959ffa.jpg" Selector="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" Title="Contacts My Active Contacts - Dynamics 365" />
                   </uix:NApplicationCard.TargetApp>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -791,19 +818,19 @@
               <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"910,9264"Removed_Key"Sequence_19">
+          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"110,70"Removed_Key"Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Notification overview - Import and export applications - GOV.UK"Removed_Key"876,9204"Removed_Key"NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Notification overview - Import and export applications - GOV.UK"Removed_Key"876,9370"Removed_Key"NApplicationCard_6" InteractionMode="DebuggerApi" OutUiElement="[g_IPAFFSElement]" ScopeGuid="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <SequenceRemoved_Key"Do"Removed_Key"842,8963"Removed_Key"Sequence_20">
+                  <SequenceRemoved_Key"Do"Removed_Key"842,9129"Removed_Key"Sequence_20">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -862,7 +889,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Importer Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Importer Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Importer Address"), ",[\*+\s0-9]*,[\s\w\.\@\-]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
@@ -884,7 +911,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Delivery Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Delivery Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Delivery Address"), ",[\*+\s0-9]*,[\s\w\.\@\-]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
@@ -906,7 +933,7 @@
                                   <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Consignor Address")]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Consignor Address"), ",[\*+\s0-9]*,[\s\w\.\@]*$", "")]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Regex.Replace(dictApplicationInfo("Consignor Address"), ",[\*+\s0-9]*,[\s\w\.\@\-]*$", "")]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
@@ -924,26 +951,31 @@
                         <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1183169/CHED-overview" DesignTimeRectangle="1918, 1294, 918, 90" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Netherlands'" FullSelectorArgument="&lt;webctrl id='review-table-about-notification' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Country from where consigned' /&gt;" FuzzySelectorArgument="&lt;webctrl id='review-table-about-notification' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Country from where consigned' type='' aaname='Netherlands' check:text='Netherlands' /&gt;" Guid="a8505154-0083-4353-a116-76569cff59c6" InformativeScreenshot="b77b4a29a2440c35306c6fd76042c3fc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NGetAttributeGeneric.Target>
                     </uix:NGetAttributeGeneric>
-                    <SequenceRemoved_Key"Extract Commodity Lines"Removed_Key"808,817"Removed_Key"Sequence_31">
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext"Removed_Key"Extract Estimated Arrival Date"Removed_Key"808,241"Removed_Key"NGetAttributeGeneric`1_6" Result="[dictApplicationInfo(&quot;Date of Arrival&quot;)]" ScopeIdentifier="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V3">
+                      <uix:NGetAttributeGeneric.Target>
+                        <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1190598/overview" DesignTimeRectangle="1897, 1115, 960, 90" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'21 December 2025'" FullSelectorArgument="&lt;webctrl id='review-table-bip-details' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Estimated arrival date at BCP' /&gt;" FuzzySelectorArgument="&lt;webctrl id='review-table-bip-details' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Estimated arrival date at BCP' type='' aaname='21 December 2025' check:text='21 December 2025' /&gt;" Guid="90ea808b-f8c1-4e06-94bd-5d3143dd80a3" InformativeScreenshot="afd7efe105587b94f91e92d0971063a5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetAttributeGeneric.Target>
+                    </uix:NGetAttributeGeneric>
+                    <SequenceRemoved_Key"Extract Commodity Lines"Removed_Key"808,742"Removed_Key"Sequence_31">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="strCurrentURL" />
-                        <Variable x:TypeArguments="x:String" Name="strCommodityURL" />
+                        <Variable x:TypeArguments="x:String" Name="strOverviewURL" />
+                        <Variable x:TypeArguments="x:String" Name="strCommoditySummaryURL" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetUrl CurrentUrl="[strCurrentURL]"Removed_Key"Get Current URL"Removed_Key"434,120"Removed_Key"NGetUrl_1" Version="V3" />
+                      <uix:NGetUrl CurrentUrl="[strOverviewURL]"Removed_Key"Get Current URL"Removed_Key"434,120"Removed_Key"NGetUrl_1" Version="V3" />
                       <AssignRemoved_Key"Create Commodity Summary URL"Removed_Key"434,115"Removed_Key"Assign_8">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[strCommodityURL]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[strCommoditySummaryURL]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[strCurrentURL.Replace("#notification","").Replace("overview","CHED-overview")+"/commodities-summary"]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[strOverviewURL.Replace("#notification","").Replace("overview","CHED-overview")+"/commodities-summary"]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <uix:NGoToUrlRemoved_Key"Open Commodity Summary"Removed_Key"434,115"Removed_Key"NGoToUrl_1" Url="[strCommodityURL]" Version="V3" />
+                      <uix:NGoToUrlRemoved_Key"Open Commodity Summary"Removed_Key"434,115"Removed_Key"NGoToUrl_1" Url="[strCommoditySummaryURL]" Version="V3" />
                       <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtIPAFFSCommodityLines]"Removed_Key"Extract Commodity Info" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Genus_Species'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Quantity'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Quantity_Type'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Commodity_Code'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='dl' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;"Removed_Key"434,190"Removed_Key"NExtractData_2" LimitExtractionTo="None" MaximumResults="0" Timeout="5" Version="V3">
                         <uix:NExtractData.NextLink>
                           <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1183169/CHED-overview/commodities-summary" DesignTimeRectangle="1948, 1582, 930, 68" DesignTimeScaleFactor="2" FriendlyName="'Next page'" FullSelectorArgument="&lt;webctrl parentid='next-page' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='next-page' tag='SPAN' type='' class='pagination-link-title' aaname='                Next page                            ' check:innerText='Next page' /&gt;" Guid="a11974c1-5e8b-4c8c-8583-bb3b073ac2a5" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Summary of all commodities - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -952,11 +984,7 @@
                           <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1183169/CHED-overview#notification" DesignTimeRectangle="958, -984, 1920, 12461" DesignTimeScaleFactor="2" FriendlyName="'Show CHED'" FullSelectorArgument="&lt;webctrl id='main-content' tag='MAIN' /&gt;" Guid="36887882-b07d-44bd-88c3-45c0244b2a87" InformativeScreenshot="114b191aee19f9627cfd004ab5a9a7e2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='CHED Overview CHEDPP.GB.2025.1183169 - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                         </uix:NExtractData.Target>
                       </uix:NExtractData>
-                      <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click Back"Removed_Key"434,183"Removed_Key"NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V3">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1183169/CHED-overview/commodities-summary?page=3" DesignTimeRectangle="958, 523, 98, 40" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Back'" FullSelectorArgument="&lt;webctrl id='back-link-nojs' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='back-link-nojs' tag='A' type='' class='govuk-back-link back-link--next-to-breadcrumbs' aaname='Back' check:innerText='Back' /&gt;" Guid="d067ef5c-b52b-4b41-8945-22357d2ce2cf" InformativeScreenshot="c99abc917c45383c3e0a4e69fc9028ad.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Summary of all commodities - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                      </uix:NClick>
+                      <uix:NGoToUrlRemoved_Key"Go To URL"Removed_Key"434,108"Removed_Key"NGoToUrl_3" Url="[strOverviewURL]" Version="V3" />
                     </Sequence>
                     <SequenceRemoved_Key"Lookup Commodity Groups"Removed_Key"808,3770"Removed_Key"Sequence_32">
                       <Sequence.Variables>
@@ -979,7 +1007,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ueab:ExcelApplicationCard Password="{x:Null}" AutoSave="False" CreateNewFile="False"Removed_Key"Use Excel File - Commodity Group Lookup"Removed_Key"582,582"Removed_Key"ExcelApplicationCard_5" ReadFormatting="RawValue" ReadOnly="True" ResizeWindow="None" UseTemplate="True" WorkbookPath="[g_Config(&quot;CommodityLookupFilepath&quot;).ToString]">
+                              <ueab:ExcelApplicationCard Password="{x:Null}" AutoSave="False" CreateNewFile="False"Removed_Key"Use Excel File - Commodity Group Lookup"Removed_Key"582,582"Removed_Key"ExcelApplicationCard_7" ReadFormatting="RawValue" ReadOnly="True" ResizeWindow="None" UseTemplate="True" WorkbookPath="[g_Config(&quot;CommodityLookupFilepath&quot;).ToString]">
                                 <ueab:ExcelApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                     <ActivityAction.Argument>
@@ -996,15 +1024,15 @@
                                   </ActivityAction>
                                 </ueab:ExcelApplicationCard.Body>
                               </ueab:ExcelApplicationCard>
-                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"582,712"Removed_Key"CommentOut_10">
+                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"582,712"Removed_Key"CommentOut_15">
                                 <ui:CommentOut.Body>
-                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"546,610"Removed_Key"Sequence_68">
+                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"546,610"Removed_Key"Sequence_84">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ueab:ExcelApplicationCard Password="{x:Null}" AutoSave="False" CreateNewFile="False"Removed_Key"Use Excel File - Commodity Group Lookup TEST"Removed_Key"512,550"Removed_Key"ExcelApplicationCard_4" ReadFormatting="RawValue" ReadOnly="True" ResizeWindow="None" WorkbookPath="C:\Users\ws000012\OneDrive - Defra\Documents\Work Packages\APHA\WP223 - Phytosanitary\Commodity Group Lookup\Commodity codes to commodity groups lookup.xlsx">
+                                    <ueab:ExcelApplicationCard Password="{x:Null}" AutoSave="False" CreateNewFile="False"Removed_Key"Use Excel File - Commodity Group Lookup TEST"Removed_Key"512,550"Removed_Key"ExcelApplicationCard_6" ReadFormatting="RawValue" ReadOnly="True" ResizeWindow="None" WorkbookPath="C:\Users\ws000012\OneDrive - Defra\Documents\Work Packages\APHA\WP223 - Phytosanitary\Commodity Group Lookup\Commodity Groups Lookup.xlsx">
                                       <ueab:ExcelApplicationCard.Body>
                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                           <ActivityAction.Argument>
@@ -1238,20 +1266,20 @@
                                           </uix:VerifyExecutionOptions>
                                         </uix:NKeyboardShortcuts.VerifyOptions>
                                       </uix:NKeyboardShortcuts>
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None"Removed_Key"Type Filepath" EmptyFieldMode="SingleLine"Removed_Key"452,251"Removed_Key"NTypeInto_8" InteractionMode="WindowMessages" ScopeIdentifier="9cf54532-790f-4f9e-ab21-b472e07ac87b" Text="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentRow.Item(&quot;Attachments&quot;).ToString+&quot;[k(Enter)]&quot;]" Version="V3">
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None"Removed_Key"Type Filepath" EmptyFieldMode="SingleLine"Removed_Key"452,251"Removed_Key"NTypeInto_10" InteractionMode="WindowMessages" ScopeIdentifier="9cf54532-790f-4f9e-ab21-b472e07ac87b" Text="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentRow.Item(&quot;Attachments&quot;).ToString+&quot;[k(Enter)]&quot;]" Version="V3">
                                         <uix:NTypeInto.Target>
                                           <uix:TargetAnchorable CVScreenId="ff4095c9-e175-4dd4-9f3a-9b8191392955" CvElementArea="271, 746, 1625, 43" CvType="InputBox" DesignTimeRectangle="266, 752, 1594, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'authorize.htm'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;" Guid="093ce698-6b05-4f8d-a3d7-db6e8a6d243b" InformativeScreenshot="9144f772b56ca8dd1bdcfe7530a1d841.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NTypeInto.Target>
                                       </uix:NTypeInto>
-                                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"452,406"Removed_Key"CommentOut_11">
+                                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"452,406"Removed_Key"CommentOut_16">
                                         <ui:CommentOut.Body>
-                                          <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,302"Removed_Key"Sequence_69">
+                                          <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,302"Removed_Key"Sequence_85">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None"Removed_Key"Type Filepath TEST" EmptyFieldMode="SingleLine"Removed_Key"382,242"Removed_Key"NTypeInto_7" InteractionMode="WindowMessages" ScopeIdentifier="9cf54532-790f-4f9e-ab21-b472e07ac87b" Text="[&quot;C:\Users\ws000012\DRACOE Robotics\Phytosanitary Certificates\Attachments&quot;+&quot;\&quot;+CurrentRow.Item(&quot;Attachments&quot;).ToString+&quot;[k(Enter)]&quot;]" Version="V3">
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None"Removed_Key"Type Filepath TEST" EmptyFieldMode="SingleLine"Removed_Key"382,242"Removed_Key"NTypeInto_9" InteractionMode="WindowMessages" ScopeIdentifier="9cf54532-790f-4f9e-ab21-b472e07ac87b" Text="[&quot;C:\Users\ws000012\DRACOE Robotics\Phytosanitary Certificates\Attachments&quot;+&quot;\&quot;+CurrentRow.Item(&quot;Attachments&quot;).ToString+&quot;[k(Enter)]&quot;]" Version="V3">
                                               <uix:NTypeInto.Target>
                                                 <uix:TargetAnchorable CVScreenId="ff4095c9-e175-4dd4-9f3a-9b8191392955" CvElementArea="271, 746, 1625, 43" CvType="InputBox" DesignTimeRectangle="266, 752, 1594, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'authorize.htm'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;" Guid="093ce698-6b05-4f8d-a3d7-db6e8a6d243b" InformativeScreenshot="9144f772b56ca8dd1bdcfe7530a1d841.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                               </uix:NTypeInto.Target>
