@@ -268,7 +268,12 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Data_validation"Removed_Key"756,658.84"Removed_Key"Flowchart_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <FlowchartRemoved_Key"Data_validation"Removed_Key"754,658.84"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -297,16 +302,16 @@
           <av:PointCollection x:Key="ConnectorLocation">370,505 370,555</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"736,3734.8"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"736,8126.4"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"702,3480"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"702,7960"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
-                <Variable x:TypeArguments="x:String" Name="strHold" />
+                <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
                 <Variable x:TypeArguments="sd:DataTable" Name="dtMiniPopUp" />
                 <Variable x:TypeArguments="x:String" Name="strCountry" />
                 <Variable x:TypeArguments="x:String" Name="strCountryExtra" />
@@ -314,16 +319,25 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <SequenceRemoved_Key"format row values"Removed_Key"668,56.8"Removed_Key"Sequence_34">
+              <AssignRemoved_Key"Assign - init List"Removed_Key"668,114.4"Removed_Key"Assign_130">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[listHold]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[new list (of String)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <SequenceRemoved_Key"format row values"Removed_Key"668,1553.2"Removed_Key"Sequence_34">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[booMultipleCountries]"Removed_Key"Handle country of origin based on multiple countries flag"Removed_Key"502,361.6"Removed_Key"If_6">
+                <If Condition="[booMultipleCountries]"Removed_Key"Handle country of origin based on multiple countries flag"Removed_Key"502,420.4"Removed_Key"If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -331,7 +345,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <SequenceRemoved_Key"Then"Removed_Key"416,24.8"Removed_Key"Sequence_20">
+                    <SequenceRemoved_Key"Then"Removed_Key"416,83.6"Removed_Key"Sequence_20">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -439,7 +453,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
               </Sequence>
-              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"668,56.8"Removed_Key"Sequence_22">
+              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"668,2081.2"Removed_Key"Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strRegexPattern" />
                   <Variable x:TypeArguments="x:Int32" Name="intIndexPosition" />
@@ -448,7 +462,7 @@
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -519,15 +533,22 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[strAD_CommodityText.ToLower.Contains(&quot;artificially propagated&quot;)]"Removed_Key"If - check for artificially proagated text in AD Text"Removed_Key"502,460"Removed_Key"If_20">
+                <If Condition="[strAD_CommodityText.ToLower.Contains(&quot;artificially propagated&quot;)]"Removed_Key"If - check for artificially proagated text in AD Text"Removed_Key"502,427.2"Removed_Key"If_20">
                   <If.Then>
-                    <SequenceRemoved_Key"Then"Removed_Key"416,198.4"Removed_Key"Sequence_88">
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_88">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CommentRemoved_Key"382,138.4"Removed_Key"Comment_37" Text="CITES - check if strAD_CommodityText has artificially propagated&#xA;&#xA;then add to where? new column?" />
+                      <AssignRemoved_Key"Assign - add cites details"Removed_Key"434,105.6"Removed_Key"Assign_127">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("CITES")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">["True"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -562,7 +583,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"434,114.4"Removed_Key"Assign_38">
+                        <AssignRemoved_Key"Assign - get part item and annex"Removed_Key"434,114.4"Removed_Key"Assign_38">
                           <Assign.To>
                             <OutArgument x:TypeArguments="str:Match">[rgxPart_Item]</OutArgument>
                           </Assign.To>
@@ -759,7 +780,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <SequenceRemoved_Key"Build regulation Table"Removed_Key"668,1522.8"Removed_Key"Sequence_87">
+              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"668,2176.8"Removed_Key"Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
@@ -767,6 +788,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]"Removed_Key"For Each - find regulation index"Removed_Key"570,56.8"Removed_Key"ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
@@ -781,7 +803,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;eppo&quot;).tostring Andalso currentJObject(&quot;original_origin&quot;).ToString = Commodity(&quot;Country&quot;).tostring AndAlso currentJObject(&quot;commodity&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]"Removed_Key"If -find match"Removed_Key"502,409.6"Removed_Key"If_21">
+                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;eppo&quot;).tostring AndAlso &#xA;currentJObject(&quot;original_origin&quot;).ToString.ToLower.Contains(Commodity(&quot;Country&quot;).tostring.ToLower) AndAlso &#xA;currentJObject(&quot;commodity&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]"Removed_Key"If -find match"Removed_Key"502,409.6"Removed_Key"If_21">
                           <If.Then>
                             <SequenceRemoved_Key"Then"Removed_Key"468,222.4"Removed_Key"Sequence_92">
                               <sap:WorkflowViewStateService.ViewState>
@@ -821,15 +843,16 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:BuildDataTable DataTable="[dtRegulations]"Removed_Key"Build Data Table"Removed_Key"570,92"Removed_Key"BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Colour&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Phytosanitary_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Breakdown&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-                <If Condition="[booFound]"Removed_Key"If - Regulation not found"Removed_Key"570,1282"Removed_Key"If_22">
+                <ui:BuildDataTable DataTable="[dtRegulations]"Removed_Key"Build Reg Data Table"Removed_Key"570,92"Removed_Key"BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Colour&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phytosanitary_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Breakdown&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <If Condition="[booFound]"Removed_Key"If - Regulation not found"Removed_Key"570,1432.8"Removed_Key"If_22">
                   <If.Then>
-                    <SequenceRemoved_Key"Then"Removed_Key"536,954"Removed_Key"Sequence_94">
+                    <SequenceRemoved_Key"Then"Removed_Key"536,1042.4"Removed_Key"Sequence_94">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <ui:CommentRemoved_Key"502,88.4"Removed_Key"Comment_41" Text="CITES and Invasive Species here" />
                       <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"502,56.8"Removed_Key"CommentOut_3">
                         <ui:CommentOut.Body>
                           <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,165.6"Removed_Key"Sequence_96">
@@ -888,14 +911,10 @@
                                   <InArgument x:TypeArguments="s:String[]">[currentRegulation.tostring.split("-"c)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If jsonT_Reg.Value(Of Boolean)(&quot;prohibited&quot;) Then&#xD;&#xA;    strColour = &quot;Red&quot;&#xD;&#xA;&#xD;&#xA;ElseIf Not jsonT_Reg.Value(Of Boolean)(&quot;statement_required&quot;) Then&#xD;&#xA;    strColour = &quot;Green&quot;&#xD;&#xA;&#xD;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;host_conditional&quot;) Then&#xD;&#xA;    strColour = &quot;Orange&quot;&#xD;&#xA;&#xD;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;origin_conditional&quot;) Then&#xD;&#xA;    strColour = &quot;Yellow&quot;&#xD;&#xA;&#xD;&#xA;Else&#xD;&#xA;    strColour = &quot;White&quot;&#xD;&#xA;End If&#xD;&#xA;"Removed_Key"Determine color based on JSON data"Removed_Key"434,196.8"Removed_Key"InvokeCode_1">
+                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If jsonT_Reg.Value(Of Boolean)(&quot;prohibited&quot;) Then&#xA;    strColour = &quot;Red&quot;&#xA;&#xA;ElseIf Not jsonT_Reg.Value(Of Boolean)(&quot;statement_required&quot;) Then&#xA;    strColour = &quot;Green&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;host_conditional&quot;) Then&#xA;    strColour = &quot;Orange&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;origin_conditional&quot;) Then&#xA;    strColour = &quot;Yellow&quot;&#xA;&#xA;Else&#xA;    strColour = &quot;White&quot;&#xA;End If&#xA;"Removed_Key"Determine color based on JSON data"Removed_Key"434,196.8"Removed_Key"InvokeCode_1">
                                 <ui:InvokeCode.Arguments>
-                                  <InArgument x:TypeArguments="njl:JObject" x:Key="jsonT_Reg">
-                                    <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="jsonT_Reg" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="strColour">
-                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strColour" />
-                                  </OutArgument>
+                                  <InArgument x:TypeArguments="njl:JObject" x:Key="jsonT_Reg">[jsonT_Reg]</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="strColour">[strColour]</OutArgument>
                                 </ui:InvokeCode.Arguments>
                               </ui:InvokeCode>
                               <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{arrPartItem(1), arrPartItem(2), strColour, jsonT_Reg(&quot;phyto_text&quot;), jsonT_Reg(&quot;statement_text&quot;), jsonT_Reg(&quot;statement_breakdown&quot;)}]" DataTable="[dtRegulations]"Removed_Key"Add Data Row - add regulation row"Removed_Key"434,213.2"Removed_Key"AddDataRow_2" />
@@ -906,29 +925,39 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <SequenceRemoved_Key"Else"Removed_Key"468,165.6"Removed_Key"Sequence_95">
+                    <SequenceRemoved_Key"Else"Removed_Key"416,219.2"Removed_Key"Sequence_95">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <AssignRemoved_Key"Assign - Not Found"Removed_Key"434,105.6"Removed_Key"Assign_122">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[strHold + "Regulation Not Found" + vbCr]</InArgument>
-                        </Assign.Value>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Assign>
+                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List - Not Found"Removed_Key"382,159.2"Removed_Key"AppendItemToList`1_4" ItemToAppend="Regulation Not Found" List="[listHold]" />
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[dtRegulations.RowCount = 0]"Removed_Key"If - empty API response"Removed_Key"570,472"Removed_Key"If_23">
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"416,219.2"Removed_Key"Sequence_99">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List - Missing"Removed_Key"382,159.2"Removed_Key"AppendItemToList`1_5" ItemToAppend="Regulations missing" List="[listHold]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_100">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </Sequence>
                   </If.Else>
                 </If>
               </Sequence>
+              <ui:ReadCsvFile DataTable="[dtRegulations]" Delimitator="Comma"Removed_Key"Read CSV - TEST DATA" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\matcheditems 1.csv"Removed_Key"668,190.8"Removed_Key"ReadCsvFile_7" />
               <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]"Removed_Key"For Each Row in Data Table - Regulation Table"Removed_Key"668,906.4"Removed_Key"ForEachRow_3">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
@@ -964,7 +993,7 @@
                         <Flowchart.StartNode>
                           <x:Reference>__ReferenceID38</x:Reference>
                         </Flowchart.StartNode>
-                        <FlowDecision x:Name="__ReferenceID8" Condition="[booPartItemMatch]"Removed_Key"Part Item found"Removed_Key"60,60"Removed_Key"FlowDecision_12">
+                        <FlowDecision x:Name="__ReferenceID6" Condition="[booPartItemMatch]"Removed_Key"Part Item found"Removed_Key"60,60"Removed_Key"FlowDecision_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -977,7 +1006,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowStep x:Name="__ReferenceID7"Removed_Key"FlowStep_5">
+                            <FlowStep x:Name="__ReferenceID5"Removed_Key"FlowStep_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">125,535</av:Point>
@@ -1093,7 +1122,7 @@
                                 </Assign>
                               </Sequence>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID11" Condition="[booPartItemMatch]"Removed_Key"Item Option match"Removed_Key"60,60"Removed_Key"FlowDecision_13">
+                                <FlowDecision x:Name="__ReferenceID8" Condition="[booPartItemMatch]"Removed_Key"Item Option match"Removed_Key"60,60"Removed_Key"FlowDecision_13">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1106,7 +1135,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.True>
-                                    <FlowStep x:Name="__ReferenceID12"Removed_Key"FlowStep_5">
+                                    <FlowStep x:Name="__ReferenceID9"Removed_Key"FlowStep_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">125,755</av:Point>
@@ -1373,7 +1402,7 @@
                                         </ui:ForEach>
                                       </Sequence>
                                       <FlowStep.Next>
-                                        <FlowDecision x:Name="__ReferenceID5" Condition="[booStatementMismatch]"Removed_Key"Statements Match"Removed_Key"60,60"Removed_Key"FlowDecision_10">
+                                        <FlowDecision x:Name="__ReferenceID4" Condition="[booStatementMismatch]"Removed_Key"Statements Match"Removed_Key"60,60"Removed_Key"FlowDecision_10">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1386,7 +1415,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <FlowDecision.True>
-                                            <FlowStep x:Name="__ReferenceID6"Removed_Key"FlowStep_11">
+                                            <FlowStep x:Name="__ReferenceID30">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">385,865</av:Point>
@@ -1394,19 +1423,13 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">440,935 440,965 180,965 180,1000</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <AssignRemoved_Key"Assign - OHR 4"Removed_Key"110,70"Removed_Key"Assign_20">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[strHold + "AD statements incomplete" +vbCr]</InArgument>
-                                                </Assign.Value>
+                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 4"Removed_Key"110,70"Removed_Key"AppendItemToList`1_8" ItemToAppend="AD statements incomplete" List="[listHold]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                              </Assign>
+                                              </uasa:AppendItemToList>
                                               <FlowStep.Next>
                                                 <FlowDecision x:Name="__ReferenceID2" Condition="[booAdvancedDeclaration]"Removed_Key"Advanced Declaration"Removed_Key"60,60"Removed_Key"FlowDecision_15">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -1419,7 +1442,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <FlowDecision.True>
-                                                    <FlowStep x:Name="__ReferenceID16"Removed_Key"FlowStep_9">
+                                                    <FlowStep x:Name="__ReferenceID12"Removed_Key"FlowStep_9">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">125,1135</av:Point>
@@ -1478,7 +1501,7 @@
                                                         </ui:ForEachRow>
                                                       </Sequence>
                                                       <FlowStep.Next>
-                                                        <FlowDecision x:Name="__ReferenceID14" Condition="[booAdvancedDeclaration]"Removed_Key"ADV full check"Removed_Key"60,60"Removed_Key"FlowDecision_16">
+                                                        <FlowDecision x:Name="__ReferenceID11" Condition="[booAdvancedDeclaration]"Removed_Key"ADV full check"Removed_Key"60,60"Removed_Key"FlowDecision_16">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1489,7 +1512,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <FlowDecision.True>
-                                                            <FlowDecision x:Name="__ReferenceID25" Condition="[regex.IsMatch(strSpecial_Tag,&quot;(?i)PFPP|TRT&quot;)]"Removed_Key"PFPP|TRT"Removed_Key"60,60"Removed_Key"FlowDecision_23">
+                                                            <FlowDecision x:Name="__ReferenceID20" Condition="[regex.IsMatch(strSpecial_Tag,&quot;(?i)PFPP|TRT&quot;)]"Removed_Key"PFPP|TRT"Removed_Key"60,60"Removed_Key"FlowDecision_23">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1500,30 +1523,25 @@
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <FlowDecision.True>
-                                                                <FlowStep x:Name="__ReferenceID26"Removed_Key"FlowStep_15">
+                                                                <FlowStep x:Name="__ReferenceID35">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <av:Point x:Key="ShapeLocation">385,1445</av:Point>
                                                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">815.4000000000001,1471.2408695652143 815.4000000000001,1501.2408695652143 555.4000000000001,1501.2408695652143 555.4000000000001,1536.2408695652143</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <AssignRemoved_Key"Assign - OHR8"Removed_Key"110,70"Removed_Key"Assign_102">
-                                                                    <Assign.To>
-                                                                      <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                    </Assign.To>
-                                                                    <Assign.Value>
-                                                                      <InArgument x:TypeArguments="x:String">[strHold + "AD requires PFPP or Treatment details to be checked" + vbCr]</InArgument>
-                                                                    </Assign.Value>
+                                                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 8"Removed_Key"110,70"Removed_Key"AppendItemToList`1_14" ItemToAppend="AD requires PFPP or Treatment details to be checked." List="[listHold]">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                  </Assign>
+                                                                  </uasa:AppendItemToList>
                                                                 </FlowStep>
                                                               </FlowDecision.True>
                                                               <FlowDecision.False>
-                                                                <FlowDecision x:Name="__ReferenceID27" Condition="[string.IsNullOrWhiteSpace(strSpecial_Tag)]"Removed_Key"blank"Removed_Key"60,60"Removed_Key"FlowDecision_24">
+                                                                <FlowDecision x:Name="__ReferenceID21" Condition="[string.IsNullOrWhiteSpace(strSpecial_Tag)]"Removed_Key"blank"Removed_Key"60,60"Removed_Key"FlowDecision_24">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1534,7 +1552,7 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <FlowDecision.True>
-                                                                    <FlowStep x:Name="__ReferenceID28"Removed_Key"FlowStep_16">
+                                                                    <FlowStep x:Name="__ReferenceID22"Removed_Key"FlowStep_16">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">385,1595</av:Point>
@@ -1551,7 +1569,7 @@
                                                                     </FlowStep>
                                                                   </FlowDecision.True>
                                                                   <FlowDecision.False>
-                                                                    <FlowStep x:Name="__ReferenceID29"Removed_Key"FlowStep_17">
+                                                                    <FlowStep x:Name="__ReferenceID23"Removed_Key"FlowStep_17">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">125,1735</av:Point>
@@ -1586,7 +1604,7 @@
                                                                         </Assign>
                                                                       </Sequence>
                                                                       <FlowStep.Next>
-                                                                        <FlowDecision x:Name="__ReferenceID30" Condition="[booADCountryOrigin]"Removed_Key"Country check"Removed_Key"60,60"Removed_Key"FlowDecision_25">
+                                                                        <FlowDecision x:Name="__ReferenceID24" Condition="[booADCountryOrigin]"Removed_Key"Country check"Removed_Key"60,60"Removed_Key"FlowDecision_25">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1598,7 +1616,7 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                           <FlowDecision.True>
-                                                                            <FlowDecision x:Name="__ReferenceID33" Condition="[strSpecial_Tag.Contains(&quot;PFA&quot;)]"Removed_Key"Flow Decision"Removed_Key"60,60"Removed_Key"FlowDecision_26">
+                                                                            <FlowDecision x:Name="__ReferenceID26" Condition="[strSpecial_Tag.Contains(&quot;PFA&quot;)]"Removed_Key"Flow Decision"Removed_Key"60,60"Removed_Key"FlowDecision_26">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1610,7 +1628,7 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                               <FlowDecision.True>
-                                                                                <FlowStep x:Name="__ReferenceID34"Removed_Key"FlowStep_1">
+                                                                                <FlowStep x:Name="__ReferenceID27"Removed_Key"FlowStep_1">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">125,2115</av:Point>
@@ -1634,7 +1652,7 @@
                                                                                     </Assign>
                                                                                   </Sequence>
                                                                                   <FlowStep.Next>
-                                                                                    <FlowDecision x:Name="__ReferenceID35" Condition="[booADCountryOrigin]"Removed_Key"Originating Country"Removed_Key"60,60"Removed_Key"FlowDecision_27">
+                                                                                    <FlowDecision x:Name="__ReferenceID28" Condition="[booADCountryOrigin]"Removed_Key"Originating Country"Removed_Key"60,60"Removed_Key"FlowDecision_27">
                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1644,26 +1662,21 @@
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                       <FlowDecision.False>
-                                                                                        <FlowStep x:Name="__ReferenceID36"Removed_Key"FlowStep_2">
+                                                                                        <FlowStep x:Name="__ReferenceID37">
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                               <av:Point x:Key="ShapeLocation">385,2235</av:Point>
                                                                                               <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                                              <av:PointCollection x:Key="ConnectorLocation">935.0000000000002,1869.535652173929 935.0000000000002,1899.535652173929 675.0000000000002,1899.535652173929 675.0000000000002,1934.535652173929</av:PointCollection>
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                          <AssignRemoved_Key"Assign - OH11"Removed_Key"110,70"Removed_Key"Assign_108">
-                                                                                            <Assign.To>
-                                                                                              <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                                            </Assign.To>
-                                                                                            <Assign.Value>
-                                                                                              <InArgument x:TypeArguments="x:String">[strHold + "AD option likely not certified to be used" + vbCr]</InArgument>
-                                                                                            </Assign.Value>
+                                                                                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 11"Removed_Key"110,70"Removed_Key"AppendItemToList`1_16" ItemToAppend="AD option likely not certified to be used." List="[listHold]">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                                          </Assign>
+                                                                                          </uasa:AppendItemToList>
                                                                                         </FlowStep>
                                                                                       </FlowDecision.False>
                                                                                     </FlowDecision>
@@ -1671,7 +1684,7 @@
                                                                                 </FlowStep>
                                                                               </FlowDecision.True>
                                                                               <FlowDecision.False>
-                                                                                <FlowStep x:Name="__ReferenceID31"Removed_Key"FlowStep_3">
+                                                                                <FlowStep x:Name="__ReferenceID25"Removed_Key"FlowStep_3">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">385,1985</av:Point>
@@ -1690,26 +1703,21 @@
                                                                             </FlowDecision>
                                                                           </FlowDecision.True>
                                                                           <FlowDecision.False>
-                                                                            <FlowStep x:Name="__ReferenceID32"Removed_Key"FlowStep_4">
+                                                                            <FlowStep x:Name="__ReferenceID36">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <av:Point x:Key="ShapeLocation">385,1855</av:Point>
                                                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                                  <av:PointCollection x:Key="ConnectorLocation">888.8000000000002,1485.080869565214 888.8000000000002,1515.080869565214 628.8000000000002,1515.080869565214 628.8000000000002,1550.080869565214</av:PointCollection>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <AssignRemoved_Key"Assign - OHR10"Removed_Key"110,70"Removed_Key"Assign_105">
-                                                                                <Assign.To>
-                                                                                  <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                                </Assign.To>
-                                                                                <Assign.Value>
-                                                                                  <InArgument x:TypeArguments="x:String">[strHold + "AD requires PFA or PFPP detail to be checked" + vbCr]</InArgument>
-                                                                                </Assign.Value>
+                                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 10"Removed_Key"110,70"Removed_Key"AppendItemToList`1_15" ItemToAppend="AD requires PFA or PFPP detail to be checked." List="[listHold]">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                              </Assign>
+                                                                              </uasa:AppendItemToList>
                                                                             </FlowStep>
                                                                           </FlowDecision.False>
                                                                         </FlowDecision>
@@ -1721,26 +1729,21 @@
                                                             </FlowDecision>
                                                           </FlowDecision.True>
                                                           <FlowDecision.False>
-                                                            <FlowStep x:Name="__ReferenceID15"Removed_Key"FlowStep_8">
+                                                            <FlowStep x:Name="__ReferenceID34">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">385,1275</av:Point>
                                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                  <av:PointCollection x:Key="ConnectorLocation">735.2,1452.157391304346 735.2,1482.157391304346 475.20000000000005,1482.157391304346 475.20000000000005,1517.157391304346</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <AssignRemoved_Key"Assign - OHR9"Removed_Key"110,70"Removed_Key"Assign_83">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strHold + "AD reference not found in the Advanced Declaration tool, AD option likely not certified to be used" + vbCr]</InArgument>
-                                                                </Assign.Value>
+                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 9"Removed_Key"110,70"Removed_Key"AppendItemToList`1_13" ItemToAppend="AD reference not found in the Advanced Declaration tool, AD option likely not certified to be used." List="[listHold]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                              </Assign>
+                                                              </uasa:AppendItemToList>
                                                             </FlowStep>
                                                           </FlowDecision.False>
                                                         </FlowDecision>
@@ -1748,11 +1751,11 @@
                                                     </FlowStep>
                                                   </FlowDecision.True>
                                                   <FlowDecision.False>
-                                                    <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID13"Removed_Key"Special Req" Expression="[strSpecial_Tag]"Removed_Key"60,60"Removed_Key"FlowSwitch`1_5">
+                                                    <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID10"Removed_Key"Special Req" Expression="[strSpecial_Tag]"Removed_Key"60,60"Removed_Key"FlowSwitch`1_5">
                                                       <FlowSwitch.Default>
-                                                        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID17"Removed_Key"Special Req" Expression="[strSpecial_Tag.Trim.ToUpper]"Removed_Key"60,60"Removed_Key"FlowSwitch`1_7">
+                                                        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID13"Removed_Key"Special Req" Expression="[strSpecial_Tag.Trim.ToUpper]"Removed_Key"60,60"Removed_Key"FlowSwitch`1_7">
                                                           <FlowSwitch.Default>
-                                                            <FlowStep x:Name="__ReferenceID21"Removed_Key"FlowStep_14">
+                                                            <FlowStep x:Name="__ReferenceID31"Removed_Key"FlowStep_1">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">765,745</av:Point>
@@ -1760,19 +1763,13 @@
                                                                   <av:PointCollection x:Key="ConnectorLocation">820,815 820,865</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <AssignRemoved_Key"Assign - OHR5"Removed_Key"110,70"Removed_Key"Assign_95">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strHold + "PFPP details not found, requires checking" + vbCr]</InArgument>
-                                                                </Assign.Value>
+                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 5"Removed_Key"110,70"Removed_Key"AppendItemToList`1_9" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                              </Assign>
+                                                              </uasa:AppendItemToList>
                                                               <FlowStep.Next>
                                                                 <x:Reference>__ReferenceID1</x:Reference>
                                                               </FlowStep.Next>
@@ -1789,29 +1786,7 @@
                                                               <av:PointCollection x:Key="PFAConnector">960,1030 1080,1030 1080,1225</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <FlowStep x:Key="PFPP" x:Name="__ReferenceID37"Removed_Key"FlowStep_1">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">875,1225</av:Point>
-                                                                <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">874.2297632469024,845.8182608695612 874.2297632469024,895.8182608695612</av:PointCollection>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <AssignRemoved_Key"Assign - OHR5"Removed_Key"110,70"Removed_Key"Assign_117">
-                                                              <Assign.To>
-                                                                <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                              </Assign.To>
-                                                              <Assign.Value>
-                                                                <InArgument x:TypeArguments="x:String">[strHold + "PFPP details not found, requires checking" + vbCr]</InArgument>
-                                                              </Assign.Value>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </Assign>
-                                                          </FlowStep>
-                                                          <FlowStep x:Key="PFA" x:Name="__ReferenceID19"Removed_Key"FlowStep_12">
+                                                          <FlowStep x:Key="PFA" x:Name="__ReferenceID15"Removed_Key"FlowStep_12">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <av:Point x:Key="ShapeLocation">1025,1225</av:Point>
@@ -1835,40 +1810,51 @@
                                                               </Assign>
                                                             </Sequence>
                                                             <FlowStep.Next>
-                                                              <FlowDecision x:Name="__ReferenceID18" Condition="[booADCountryOrigin]"Removed_Key"Originating Country"Removed_Key"60,60"Removed_Key"FlowDecision_19">
+                                                              <FlowDecision x:Name="__ReferenceID14" Condition="[booADCountryOrigin]"Removed_Key"Originating Country"Removed_Key"60,60"Removed_Key"FlowDecision_19">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <av:Point x:Key="ShapeLocation">1050,1360</av:Point>
                                                                     <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                    <av:PointCollection x:Key="FalseConnector">1110,1390 1185,1390</av:PointCollection>
+                                                                    <av:PointCollection x:Key="FalseConnector">1110,1390 1205,1390</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <FlowDecision.False>
-                                                                  <FlowStep x:Name="__ReferenceID20"Removed_Key"FlowStep_13">
+                                                                  <FlowStep x:Name="__ReferenceID32">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">1185,1355</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">1205,1355</av:Point>
                                                                         <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">1007.3222095671924,1366.6486956521708 1007.3222095671924,1416.6486956521708</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <AssignRemoved_Key"Assign - OHR7"Removed_Key"110,70"Removed_Key"Assign_94">
-                                                                      <Assign.To>
-                                                                        <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                                      </Assign.To>
-                                                                      <Assign.Value>
-                                                                        <InArgument x:TypeArguments="x:String">[strHold + "PFA details not found, requires checking" + vbCr]</InArgument>
-                                                                      </Assign.Value>
+                                                                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 7"Removed_Key"110,70"Removed_Key"AppendItemToList`1_11" ItemToAppend="PFA details not found, requires checking." List="[listHold]">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                    </Assign>
+                                                                    </uasa:AppendItemToList>
                                                                   </FlowStep>
                                                                 </FlowDecision.False>
                                                               </FlowDecision>
                                                             </FlowStep.Next>
+                                                          </FlowStep>
+                                                          <FlowStep x:Key="PFPP" x:Name="__ReferenceID33">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <av:Point x:Key="ShapeLocation">875,1225</av:Point>
+                                                                <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">862.4146924829107,1349.7573913043461 862.4146924829107,1399.7573913043461</av:PointCollection>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 5"Removed_Key"110,70"Removed_Key"AppendItemToList`1_12" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </uasa:AppendItemToList>
                                                           </FlowStep>
                                                         </FlowSwitch>
                                                       </FlowSwitch.Default>
@@ -1897,28 +1883,23 @@
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:Comment>
                                                       </FlowStep>
-                                                      <FlowStep x:Key="TRT" x:Name="__ReferenceID1"Removed_Key"FlowStep_6">
+                                                      <x:Reference>__ReferenceID0<x:Key>CFR</x:Key></x:Reference>
+                                                      <FlowStep x:Key="TRT" x:Name="__ReferenceID1">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">765,865</av:Point>
                                                             <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">880.9075170842818,825.783478260865 880.9075170842818,875.783478260865</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <AssignRemoved_Key"Assign - OHR6"Removed_Key"110,70"Removed_Key"Assign_78">
-                                                          <Assign.To>
-                                                            <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                                          </Assign.To>
-                                                          <Assign.Value>
-                                                            <InArgument x:TypeArguments="x:String">[strHold + "AD requires Treatment details to be checked" + vbCr]</InArgument>
-                                                          </Assign.Value>
+                                                        <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 6"Removed_Key"110,70"Removed_Key"AppendItemToList`1_10" ItemToAppend="AD requires Treatment details to be checked." List="[listHold]">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                        </Assign>
+                                                        </uasa:AppendItemToList>
                                                       </FlowStep>
-                                                      <x:Reference>__ReferenceID0<x:Key>CFR</x:Key></x:Reference>
                                                     </FlowSwitch>
                                                   </FlowDecision.False>
                                                 </FlowDecision>
@@ -1933,27 +1914,20 @@
                                     </FlowStep>
                                   </FlowDecision.True>
                                   <FlowDecision.False>
-                                    <FlowStep x:Name="__ReferenceID10"Removed_Key"FlowStep_4">
+                                    <FlowStep x:Name="__ReferenceID29">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">385,635</av:Point>
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">662,688.8372332015774 662,763.8372332015774 427,763.8372332015774</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <AssignRemoved_Key"Assign - OHR 3"Removed_Key"110,70"Removed_Key"Assign_64">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String">[strHold + "AD reference not found" +vbCr]</InArgument>
-                                        </Assign.Value>
+                                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 3"Removed_Key"110,70"Removed_Key"AppendItemToList`1_7" ItemToAppend="AD reference not found" List="[listHold]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                      </Assign>
+                                      </uasa:AppendItemToList>
                                     </FlowStep>
                                   </FlowDecision.False>
                                 </FlowDecision>
@@ -1961,10 +1935,7 @@
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowDecision x:Name="__ReferenceID4"Removed_Key"Category"Removed_Key"60,60"Removed_Key"FlowDecision_11">
-                              <FlowDecision.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="Regulation(&quot;Colour&quot;).ToString = (&quot;White&quot;)" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID3" Condition="[Regulation(&quot;Colour&quot;).ToString = (&quot;White&quot;)]"Removed_Key"Category"Removed_Key"60,60"Removed_Key"FlowDecision_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1977,31 +1948,24 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_2">
+                                <FlowStep x:Name="__ReferenceID16">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">455,105</av:Point>
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <AssignRemoved_Key"Assign - OHR 1 &amp; 2"Removed_Key"110,70"Removed_Key"Assign_21">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:String">[strHold]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[strhold + "Likely to be prohibited item, full manual AD check " _
-+ vbCr + "AD option incomplete, requires checking" +vbCr]</InArgument>
-                                    </Assign.Value>
+                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 1 &amp; 2"Removed_Key"110,70"Removed_Key"AppendItemToList`1_6" ItemToAppend="Likely to be prohibited item, full manual AD check. AD option incomplete, requires checking" List="[listHold]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                  </Assign>
+                                  </uasa:AppendItemToList>
                                 </FlowStep>
                               </FlowDecision.True>
                               <FlowDecision.False>
-                                <FlowStep x:Name="__ReferenceID9"Removed_Key"FlowStep_3">
+                                <FlowStep x:Name="__ReferenceID7"Removed_Key"FlowStep_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">615,355</av:Point>
@@ -2023,9 +1987,7 @@
                         <x:Reference>__ReferenceID3</x:Reference>
                         <x:Reference>__ReferenceID4</x:Reference>
                         <x:Reference>__ReferenceID5</x:Reference>
-                        <x:Reference>__ReferenceID6</x:Reference>
-                        <x:Reference>__ReferenceID7</x:Reference>
-                        <FlowStep x:Name="__ReferenceID22"Removed_Key"FlowStep_8">
+                        <FlowStep x:Name="__ReferenceID17"Removed_Key"FlowStep_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">35,235</av:Point>
@@ -2040,7 +2002,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:Comment>
                         </FlowStep>
-                        <FlowStep x:Name="__ReferenceID23"Removed_Key"FlowStep_2">
+                        <FlowStep x:Name="__ReferenceID18"Removed_Key"FlowStep_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">245,345</av:Point>
@@ -2124,29 +2086,21 @@
                             </ui:ForEachRow>
                           </Sequence>
                           <FlowStep.Next>
-                            <x:Reference>__ReferenceID8</x:Reference>
+                            <x:Reference>__ReferenceID6</x:Reference>
                           </FlowStep.Next>
                         </FlowStep>
+                        <x:Reference>__ReferenceID7</x:Reference>
+                        <x:Reference>__ReferenceID8</x:Reference>
                         <x:Reference>__ReferenceID9</x:Reference>
                         <x:Reference>__ReferenceID10</x:Reference>
-                        <x:Reference>__ReferenceID11</x:Reference>
-                        <x:Reference>__ReferenceID12</x:Reference>
-                        <x:Reference>__ReferenceID1</x:Reference>
-                        <x:Reference>__ReferenceID13</x:Reference>
                         <x:Reference>__ReferenceID0</x:Reference>
                         <x:Reference>__ReferenceID2</x:Reference>
+                        <x:Reference>__ReferenceID11</x:Reference>
+                        <x:Reference>__ReferenceID12</x:Reference>
+                        <x:Reference>__ReferenceID13</x:Reference>
                         <x:Reference>__ReferenceID14</x:Reference>
                         <x:Reference>__ReferenceID15</x:Reference>
-                        <x:Reference>__ReferenceID16</x:Reference>
-                        <x:Reference>__ReferenceID17</x:Reference>
-                        <x:Reference>__ReferenceID18</x:Reference>
-                        <x:Reference>__ReferenceID19</x:Reference>
-                        <x:Reference>__ReferenceID20</x:Reference>
-                        <x:Reference>__ReferenceID21</x:Reference>
-                        <FlowDecision x:Name="__ReferenceID38"Removed_Key"Prohibited/RED?"Removed_Key"60,60"Removed_Key"FlowDecision_21">
-                          <FlowDecision.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="Regulation(&quot;Colour&quot;).ToString= (&quot;Red&quot;)" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID38" Condition="[Regulation(&quot;Colour&quot;).ToString= (&quot;Red&quot;)]"Removed_Key"Prohibited/RED?"Removed_Key"60,60"Removed_Key"FlowDecision_21" True="{x:Reference __ReferenceID16}">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2157,14 +2111,8 @@
                               <x:String x:Key="TrueLabel">RED</x:String>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <FlowDecision.True>
-                            <x:Reference>__ReferenceID3</x:Reference>
-                          </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowDecision x:Name="__ReferenceID24"Removed_Key"no statement required/GREEN?"Removed_Key"60,60"Removed_Key"FlowDecision_22">
-                              <FlowDecision.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="Regulation(&quot;Colour&quot;).ToString = &quot;Green&quot;" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID19" Condition="[Regulation(&quot;Colour&quot;).ToString = &quot;Green&quot;]"Removed_Key"no statement required/GREEN?"Removed_Key"60,60"Removed_Key"FlowDecision_22" True="{x:Reference __ReferenceID17}" False="{x:Reference __ReferenceID18}">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2175,23 +2123,24 @@
                                   <x:String x:Key="TrueLabel">GREEN</x:String>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <FlowDecision.True>
-                                <x:Reference>__ReferenceID22</x:Reference>
-                              </FlowDecision.True>
-                              <FlowDecision.False>
-                                <x:Reference>__ReferenceID23</x:Reference>
-                              </FlowDecision.False>
                             </FlowDecision>
                           </FlowDecision.False>
                         </FlowDecision>
+                        <x:Reference>__ReferenceID19</x:Reference>
+                        <x:Reference>__ReferenceID20</x:Reference>
+                        <x:Reference>__ReferenceID21</x:Reference>
+                        <x:Reference>__ReferenceID22</x:Reference>
+                        <x:Reference>__ReferenceID23</x:Reference>
                         <x:Reference>__ReferenceID24</x:Reference>
                         <x:Reference>__ReferenceID25</x:Reference>
                         <x:Reference>__ReferenceID26</x:Reference>
                         <x:Reference>__ReferenceID27</x:Reference>
                         <x:Reference>__ReferenceID28</x:Reference>
+                        <x:Reference>__ReferenceID16</x:Reference>
                         <x:Reference>__ReferenceID29</x:Reference>
                         <x:Reference>__ReferenceID30</x:Reference>
                         <x:Reference>__ReferenceID31</x:Reference>
+                        <x:Reference>__ReferenceID1</x:Reference>
                         <x:Reference>__ReferenceID32</x:Reference>
                         <x:Reference>__ReferenceID33</x:Reference>
                         <x:Reference>__ReferenceID34</x:Reference>
@@ -2216,7 +2165,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MergeDataTable>
-              <If Condition="[string.IsNullOrWhiteSpace(strHold)]"Removed_Key"If - Hold string blank?"Removed_Key"668,608"Removed_Key"If_2">
+              <If Condition="[listHold.Count = 0]"Removed_Key"If - Hold string blank?"Removed_Key"668,608"Removed_Key"If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2271,7 +2220,7 @@
                         <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("Status Notes")]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">[strHold.Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:Object">[string.join(" ",listHold.Distinct)]</InArgument>
                       </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2543,8 +2492,8 @@
                 <OutArgument x:TypeArguments="njl:JObject" x:Key="out_jsonRegulationResponse">[jsonRegulationResponse]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CITES" DataTable="[io_dtCommodityLines]"Removed_Key"Add Data Column - ADD cites"Removed_Key"416,222"Removed_Key"AddDataColumn`1_1" />
-            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Invasive Species" DataTable="[io_dtCommodityLines]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"416,213.2"Removed_Key"AddDataColumn`1_2" />
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CITES" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD cites"Removed_Key"416,222"Removed_Key"AddDataColumn`1_1" />
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Invasive Species" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"416,213.2"Removed_Key"AddDataColumn`1_2" />
           </Sequence>
           <FlowStep.Next>
             <x:Reference>__ReferenceID40</x:Reference>
@@ -2566,7 +2515,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Switch x:TypeArguments="x:String"Removed_Key"Switch" Expression="CHEDPP.GB.2024.4081760"Removed_Key"508,764"Removed_Key"Switch`1_1">
+        <Switch x:TypeArguments="x:String"Removed_Key"Switch" Expression="CHEDPP.GB.2024.4081760"Removed_Key"508,804"Removed_Key"Switch`1_1">
           <Sequence x:Key="CHEDPP.GB.2024.4081760"Removed_Key"468,472"Removed_Key"Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2890,7 +2839,7 @@ See annex (number of pages:7)
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence x:Key="335580221 Pot plants"Removed_Key"468,469.6"Removed_Key"Sequence_30">
+          <Sequence x:Key="335580221 Pot plants"Removed_Key"468,472"Removed_Key"Sequence_30">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2935,7 +2884,7 @@ See annex (number of pages:7)
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence x:Key="335726741 with PFA or PFPP next to botanical name"Removed_Key"468,469.6"Removed_Key"Sequence_31">
+          <Sequence x:Key="335726741 with PFA or PFPP next to botanical name"Removed_Key"468,472"Removed_Key"Sequence_31">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3027,7 +2976,7 @@ See annex (number of pages:7)
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence x:Key="336561170 - mixed commodity groups"Removed_Key"468,469.6"Removed_Key"Sequence_32">
+          <Sequence x:Key="336561170 - mixed commodity groups"Removed_Key"468,472"Removed_Key"Sequence_32">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
