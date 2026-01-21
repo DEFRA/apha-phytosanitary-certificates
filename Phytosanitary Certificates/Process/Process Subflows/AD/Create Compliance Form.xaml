@@ -47,6 +47,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Web</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,9 +120,10 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Web.HttpUtility</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"744,5241.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Create_Compliance_Form"Removed_Key"736.8,5356"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strProductCount" />
@@ -253,7 +255,7 @@
 						vbTab &amp; "&lt;meta name=""viewport"" content=""width=device-width, initial-scale=1""&gt;" &amp; vbCRLF &amp; _
 						vbTab &amp; "&lt;title&gt;Phytosanitary Compliance Dashboard&lt;/title&gt;" &amp; vbCRLF &amp; _
 						vbTab &amp; "&lt;link rel=""stylesheet"" href=""styles.css""&gt;" &amp; vbCRLF &amp; _
-						vbTab &amp; "&lt;link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css""&gt;" &amp; vbCRLF &amp; _
+						vbTab &amp; "&lt;link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css""&gt;" &amp; vbCRLF &amp; _
 					"&lt;/head&gt;" &amp; vbCRLF &amp; _
 					"&lt;body&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
@@ -314,17 +316,18 @@
 				vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"672,3173.2"Removed_Key"ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"672,3287.6"Removed_Key"ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"638,2974.8"Removed_Key"Sequence_9">
+          <SequenceRemoved_Key"Body - Create Accordion and add content"Removed_Key"638,3089.2"Removed_Key"Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strComplianceText" />
               <Variable x:TypeArguments="x:String" Name="strCompliantButtonActive" />
               <Variable x:TypeArguments="x:String" Name="strAccordionStatus" />
+              <Variable x:TypeArguments="x:String" Name="strNotes" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -425,7 +428,7 @@
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; 	vbTab &amp; "&lt;details class=""" &amp; strAccordionStatus &amp; """ id=""product" &amp; CurrentRow("ID").ToString &amp; """&gt;" &amp; vbCrLf &amp; _
 					vbTab &amp; vbTab &amp; "&lt;summary aria-label=""" &amp; CurrentRow("ID").ToString &amp; " " &amp; CurrentRow("Commodity").ToString &amp; " from " &amp; CurrentRow("Country").ToString &amp; " with " &amp; strComplianceText &amp; """&gt;" &amp; _
 					CurrentRow("ID").ToString &amp; " " &amp; CurrentRow("Commodity").ToString &amp; _
-					" (" &amp; CurrentRow("Country").ToString &amp; ")&lt;/summary&gt;" &amp; vbCrLf]</InArgument>
+					" (" &amp; CurrentRow("Country").ToString &amp;")"&amp; If(CBool(CurrentRow("CITES")),"&amp;nbsp;&lt;i class=""fa fa-heartbeat""&gt;&lt;/i&gt;&amp;nbsp;CITES","") &amp;  If(CBool(CurrentRow("Invasive Species")),"&amp;nbsp;&lt;i class=""fa-solid fa-bug""&gt;&lt;/i&gt;&amp;nbsp;Invasive Species","") &amp; "&lt;/summary&gt;" &amp; vbCrLf]</InArgument>
               </Assign.Value>
             </Assign>
             <SequenceRemoved_Key"604,1302.8"Removed_Key"Sequence_16">
@@ -438,7 +441,12 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:FilterDataTable DataTable="[in_dtAdditionalDeclarations]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"570,196"Removed_Key"FilterDataTable_1" OutputDataTable="[dtSingleAccordion]" SelectColumnsMode="Remove">
+              <ui:FilterDataTable DataTable="[in_dtAdditionalDeclarations]"Removed_Key"Filter Data Table"Removed_Key"570,196"Removed_Key"FilterDataTable_1" OutputDataTable="[dtSingleAccordion]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable.FilterRowsMode>
+                  <InArgument x:TypeArguments="ui:SelectMode">
+                    <Literal x:TypeArguments="ui:SelectMode"Removed_Key"Literal`1_1" />
+                  </InArgument>
+                </ui:FilterDataTable.FilterRowsMode>
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -572,6 +580,14 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
+            <AssignRemoved_Key"604,114.4"Removed_Key"Assign_36">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strNotes]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Web.HttpUtility.HtmlEncode(CurrentRow("Status Notes").ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
             <AssignRemoved_Key"Add Outcome"Removed_Key"604,115.6"Removed_Key"Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
@@ -587,7 +603,7 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
 						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div class=""control-group control-comments""&gt;" &amp; vbCrLf &amp; _
 							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;label for=""comments" &amp; CurrentRow("ID").ToString &amp; """&gt;Comments&lt;/label&gt;" &amp; vbCrLf &amp; _
-							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""text"" id=""comments" &amp; CurrentRow("ID").ToString &amp; """ placeholder=""Hold Reason""&gt;" &amp; vbCrLf &amp; _
+							vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;input type=""text"" id=""comments" &amp; CurrentRow("ID").ToString &amp;""" value=""" &amp; CurrentRow("Status Notes").ToString &amp; """&gt;" &amp; vbCrLf &amp; _
 						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
 					vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
               </Assign.Value>
