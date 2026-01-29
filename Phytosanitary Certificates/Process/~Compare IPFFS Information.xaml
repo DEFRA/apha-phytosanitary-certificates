@@ -1,10 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Compare_IPFFS_Information" this:Compare_IPFFS_Information.in_strExporterAddress="IMPULSE PLANTS B.V. (W&amp;A),&#xA;WIJKSESTRAAT 13,&#xA;4261TV WIJK EN AALBURG,&#xA;Netherlands" this:Compare_IPFFS_Information.in_strIPAFFSExporterAddress="Impulse Plants B.V. Wijksestraat 13, Wijk en Aalburg, 4261 TV, Netherlands" this:Compare_IPFFS_Information.in_strConsigneeAddress="Impulse Plants UK Ltd,&#xA;Tavistock House South,&#xA;WC1H 9LG London,&#xA;to Plant Protection Organization(s) of,&#xA;United Kingdom" this:Compare_IPFFS_Information.in_strIPFFsConsigneeAddress="IMPULSE PLANTS UK LTD C/O Rayner Essex Llp Tavistock House, Tavistock Square, London, WC1H 9LG, United Kingdom of Great Britain and Northern Ireland" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Compare_IPFFS_Information" this:Compare_IPFFS_Information.in_strExporterAddress="IMPULSE PLANTS B.V. (W&amp;A),&#xA;WIJKSESTRAAT 13,&#xA;4261TV WIJK EN AALBURG,&#xA;Netherlands" this:Compare_IPFFS_Information.in_strIPAFFSExporterAddress="Impulse Plants B.V. Wijksestraat 13, Wijk en Aalburg, 4261 TV, Netherlands" this:Compare_IPFFS_Information.in_strConsigneeAddress="Impulse Plants UK Ltd,&#xA;Tavistock House South,&#xA;WC1H 9LG London,&#xA;to Plant Protection Organization(s) of,&#xA;United Kingdom" this:Compare_IPFFS_Information.in_strIPFFsConsigneeAddress="IMPULSE PLANTS UK LTD C/O Rayner Essex Llp Tavistock House, Tavistock Square, London, WC1H 9LG, United Kingdom of Great Britain and Northern Ireland" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strExporterAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_strIPAFFSExporterAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_strConsigneeAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_strIPFFsConsigneeAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_strIPFFsImpoterAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_strMainContryOfOrigin" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -263,25 +264,27 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>GlobalVariablesEonmBTSs6o</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"1349.7142857142858,1712.5714285714287"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"1360,2106.285714285714"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="douExporterSimilarityScore" />
       <Variable x:TypeArguments="x:Double" Name="douConsigneeSimilarityScore" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtExtractedInformation" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Compare IPFFS Details"Removed_Key"518.8571428571429,542.2857142857143"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"Compare IPFFS Details"Removed_Key"621.7142857142857,2083.4285714285716"Removed_Key"Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Excel Process Scope"Removed_Key"484.57142857142856,57.142857142857146"Removed_Key"ExcelProcessScopeX_1">
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Excel Process Scope"Removed_Key"587.4285714285714,746.2857142857143"Removed_Key"ExcelProcessScopeX_1">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
@@ -305,7 +308,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ReadRangeX Range="{x:Null}" SaveTo="{x:Null}"Removed_Key"Read Range"Removed_Key"444.57142857142856,199.42857142857142"Removed_Key"ReadRangeX_1" />
+                      <ueab:ReadRangeX Range="{x:Null}"Removed_Key"Read Range"Removed_Key"444.57142857142856,199.42857142857142"Removed_Key"ReadRangeX_1" SaveTo="[dtExtractedInformation]" />
                     </Sequence>
                   </ActivityAction>
                 </ueab:ExcelApplicationCard.Body>
@@ -315,12 +318,12 @@
         </ueab:ExcelProcessScopeX.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ueab:ExcelProcessScopeX>
-      <SequenceRemoved_Key"Compate Addresses"Removed_Key"484.57142857142856,254.28571428571428"Removed_Key"Sequence_20">
+      <SequenceRemoved_Key"Compate Addresses"Removed_Key"587.4285714285714,254.28571428571428"Removed_Key"Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -647,7 +650,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Validate QR Code - Invoke Workflow File (Process\Validate QR Code.xaml)"Removed_Key"484.57142857142856,57.142857142857146"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Validate QR Code.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Validate QR Code - Invoke Workflow File (Process\Validate QR Code.xaml)"Removed_Key"587.4285714285714,57.142857142857146"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Validate QR Code.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_PhytoCertLocation" />
         </ui:InvokeWorkflowFile.Arguments>
@@ -658,12 +661,72 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <SequenceRemoved_Key"Check countries of origin"Removed_Key"450.2857142857143,90.85714285714286"Removed_Key"Sequence_21">
+      <SequenceRemoved_Key"Check countries of origin"Removed_Key"587.4285714285714,942.8571428571429"Removed_Key"Sequence_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[in_strMainContryOfOrigin.tolower.contains(&quot;Several countries&quot;) or in_strMainContryOfOrigin.ToLower.Contains(“Multiple countries”)]"Removed_Key"Check whether the main Country of Origin is Several/Multi"Removed_Key"553.1428571428571,860"Removed_Key"If_4">
+          <If.Then>
+            <SequenceRemoved_Key"Check each comodity line"Removed_Key"518.8571428571429,605.7142857142857"Removed_Key"Sequence_23">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listBlankRows" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <SequenceRemoved_Key"Check whether there are blank entries"Removed_Key"484.57142857142856,545.7142857142857"Removed_Key"Sequence_26">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <AssignRemoved_Key"450.2857142857143,117.71428571428571"Removed_Key"Assign_24">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[listBlankRows]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[dtExtractedInformation.AsEnumerable().
+Where(Function(r) String.IsNullOrWhiteSpace(r.Field(Of String)("Country"))).
+ToList()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[listBlankRows.Count &gt; 0]"Removed_Key"Count the number of blank entries"Removed_Key"450.2857142857143,345.14285714285717"Removed_Key"If_5">
+                  <If.Then>
+                    <SequenceRemoved_Key"Add on hold reason"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_24">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Check each row"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_25">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <SequenceRemoved_Key"Match with IPAFFS"Removed_Key"518.8571428571429,90.85714285714286"Removed_Key"Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
       </Sequence>
     </Sequence>
   </Sequence>
