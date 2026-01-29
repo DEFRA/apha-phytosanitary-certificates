@@ -1,4 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Validate_QR_Code" VisualBasic.Settings="{x:Null}"Removed_Key"Validate_QR_Code_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Validate_QR_Code" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_PhytoCertLocation" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Validate_QR_Code_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -145,7 +152,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"1349.7142857142858,1709.7142857142858"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"1349.7142857142858,1831.4285714285713"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="imgQRPage" />
       <Variable x:TypeArguments="x:String" Name="strDecodedQRCode" />
@@ -155,18 +162,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"553.1428571428571,1686.857142857143"Removed_Key"Sequence_10">
+    <SequenceRemoved_Key"553.1428571428571,1808.5714285714287"Removed_Key"Sequence_10">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strResponse" />
         <Variable x:TypeArguments="x:String" Name="decodedURL" />
         <Variable x:TypeArguments="njl:JArray" Name="jsonArray" />
+        <Variable x:TypeArguments="x:String" Name="strImageSaveLocation" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="C:\Users\rj000088\Downloads\341308740.pdf"Removed_Key"518.8571428571429,171.42857142857142"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="C:\Users\rj000088\Downloads\341308740.png" PageNumber="1" />
+      <AssignRemoved_Key"518.8571428571429,117.14285714285714"Removed_Key"Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[strImageSaveLocation]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[in_PhytoCertLocation.Replace(".pdf",".jpg")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="[in_PhytoCertLocation]"Removed_Key"518.8571428571429,171.42857142857142"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="[strImageSaveLocation]" PageNumber="1" />
       <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml"Removed_Key"HTTP Request" EnableSSLVerification="True" EndPoint="https://api.qrserver.com/v1/read-qr-code/"Removed_Key"518.8571428571429,104"Removed_Key"HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="6000">
         <ui:HttpClient.Attachments>
           <InArgument x:TypeArguments="x:String" x:Key="file">C:\Users\rj000088\Downloads\341308740.png</InArgument>
@@ -193,13 +209,13 @@
           <InArgument x:TypeArguments="x:String">[jsonArray(0)("symbol")(0)("data").ToString]</InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Google"Removed_Key"518.8571428571429,1119.4285714285713"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Google"Removed_Key"518.8571428571429,1124"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"484.57142857142856,876.5714285714286"Removed_Key"Sequence_11">
+            <SequenceRemoved_Key"Do"Removed_Key"484.57142857142856,881.1428571428571"Removed_Key"Sequence_11">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strWebsiteText" />
               </Sequence.Variables>
@@ -212,14 +228,14 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://checkecert.nl/cov/en?cc=341308740&amp;vc=6379554496345957" DesignTimeRectangle="1149, 751, 1442, 196" DesignTimeScaleFactor="1.75" FriendlyName="'The combination'" FullSelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' type='' class='mt-4 mb-5' aaname='' /&gt;" Guid="29d8c2a6-b79a-4f45-9b53-87184fee18df" InformativeScreenshot="cd80e7f7d229a9a99a20328586764136.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Check certificate | NVWA' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="597f9761-86c2-4020-a6a5-bbe5d4fd184c" CvTextArea="1147, 1034, 901, 29" CvTextArgument="Please enter both numbers that can be found on the certificate." CvType="Text" DesignTimeRectangle="1149, 1031, 1442, 42" ElementType="Text" FriendlyName="'Please enter'" FullSelectorArgument="&lt;webctrl parentid='check-certificate' tag='H5' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='check-certificate' tag='H5' type='' class='' aaname='Please enter both numbers that can be found on the certificate.' check:innerText='Please enter both numbers that can be found on the certificate.' /&gt;" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"450.2857142857143,625.1428571428571"Removed_Key"If_1">
+              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"450.2857142857143,627.4285714285714"Removed_Key"If_1">
                 <If.Then>
                   <SequenceRemoved_Key"Then"Removed_Key"416,230.85714285714286"Removed_Key"Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>

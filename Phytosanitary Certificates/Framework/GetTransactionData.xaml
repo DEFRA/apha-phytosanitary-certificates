@@ -139,7 +139,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. "Removed_Key"Get Transaction Data"Removed_Key"682,3052.8"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;This framework is setup by default to look for an Outlook MailMessage from a config-specified mailbox, this should be changed on a work package basis with out_TransactionItem being set to a single transaction from whatever source is required.&#xA;&#xA;If there are no transaction items remaining, out_TransactionItem should be set to Nothing, which leads to the End Process state. &#xA;&#xA;out_boolLastTransaction should be set to True where it is possible to determine that a transaction is the last in the batch. If this is not possible to derive then changes will need to be made to the &quot;Final Transaction&quot; transition at the framework's parent level. "Removed_Key"Get Transaction Data"Removed_Key"1349.7142857142858,2576"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailMessages" />
     </Sequence.Variables>
@@ -149,10 +149,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[g_Config(&quot;AccountName&quot;).ToString]"Removed_Key"Get &quot;To Process&quot; Email" GetAttachements="False"Removed_Key"620,24.8"Removed_Key"GetOutlookMailMessages_1" MailFolder="[g_Config(&quot;ToProcess&quot;).ToString]" MarkAsRead="False" Messages="[listMailMessages]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="2" />
-    <If Condition="[listMailMessages.Count &gt; 0]"Removed_Key"Retrieved Emails?"Removed_Key"620,2651.6"Removed_Key"If_1">
+    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[g_Config(&quot;AccountName&quot;).ToString]"Removed_Key"Get &quot;To Process&quot; Email" GetAttachements="False"Removed_Key"612.5714285714286,57.142857142857146"Removed_Key"GetOutlookMailMessages_1" MailFolder="[g_Config(&quot;ToProcess&quot;).ToString]" MarkAsRead="False" Messages="[listMailMessages]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="2" />
+    <If Condition="[listMailMessages.Count &gt; 0]"Removed_Key"Retrieved Emails?"Removed_Key"612.5714285714286,2415.4285714285716"Removed_Key"If_1">
       <If.Then>
-        <SequenceRemoved_Key"586,2297.6"Removed_Key"Sequence_2">
+        <SequenceRemoved_Key"Then"Removed_Key"578.2857142857143,2081.1428571428573"Removed_Key"Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="snm:MailMessage" Name="mailCurrentMessage" />
             <Variable x:TypeArguments="snm:MailMessage" Name="mailInProgressMessage" />
@@ -163,9 +163,9 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[listMailMessages.Count = 1]"Removed_Key"Last Transaction?"Removed_Key"544,348"Removed_Key"If_2">
+          <If Condition="[listMailMessages.Count = 1]"Removed_Key"Last Transaction?"Removed_Key"544,386.2857142857143"Removed_Key"If_2">
             <If.Then>
-              <AssignRemoved_Key"Assign Last Transaction"Removed_Key"434,82.4"Removed_Key"Assign_1">
+              <AssignRemoved_Key"Assign Last Transaction"Removed_Key"434.2857142857143,85.14285714285714"Removed_Key"Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[out_boolLastTransaction]</OutArgument>
                 </Assign.To>
@@ -175,7 +175,7 @@
               </Assign>
             </If.Then>
             <If.Else>
-              <AssignRemoved_Key"Assign Last Transaction"Removed_Key"434,82.4"Removed_Key"Assign_2">
+              <AssignRemoved_Key"Assign Last Transaction"Removed_Key"434.2857142857143,85.14285714285714"Removed_Key"Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[out_boolLastTransaction]</OutArgument>
                 </Assign.To>
@@ -185,24 +185,24 @@
               </Assign>
             </If.Else>
           </If>
-          <IfRemoved_Key"Where the Process Type has been selected as &quot;Single&quot; mode and the framework has completed the first transaction then it should prompt the user to ask if it should continue processing. &#xA;&#xA;Before prompting it also checks to ensure there is more data to process before presenting the user with the option to continue." Condition="[in_strProcessType = &quot;single&quot; AND in_TransactionNumber &gt;1 AND in_boolContinue = False]"Removed_Key"Present &quot;Single&quot; Mode Form?"Removed_Key"544,787.6"Removed_Key"If_3">
+          <IfRemoved_Key"Where the Process Type has been selected as &quot;Single&quot; mode and the framework has completed the first transaction then it should prompt the user to ask if it should continue processing. &#xA;&#xA;Before prompting it also checks to ensure there is more data to process before presenting the user with the option to continue." Condition="[in_strProcessType = &quot;single&quot; AND in_TransactionNumber &gt;1 AND in_boolContinue = False]"Removed_Key"Present &quot;Single&quot; Mode Form?"Removed_Key"544,801.7142857142857"Removed_Key"If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <SequenceRemoved_Key"376,494"Removed_Key"Sequence_4">
+              <SequenceRemoved_Key"Then"Removed_Key"416,494.2857142857143"Removed_Key"Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"Single Mode Form"Removed_Key"334,405.6" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\ProcessAnotherForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Continue processing?&lt;/h1&gt;&lt;P&gt;The robot has completed processing the previous case. Click Continue to process more cases.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,350}]"Removed_Key"Generic_PopUp_1" />
+                <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"Single Mode Form"Removed_Key"381.7142857142857,434.2857142857143" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\ProcessAnotherForm.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Continue processing?&lt;/h1&gt;&lt;P&gt;The robot has completed processing the previous case. Click Continue to process more cases.&lt;/P&gt;&lt;BR&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,350}]"Removed_Key"Generic_PopUp_1" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <SequenceRemoved_Key"Sequence_5" />
+              <SequenceRemoved_Key"Else"Removed_Key"Sequence_5" />
             </If.Else>
           </If>
           <AssignRemoved_Key"Assign Current Mail Message"Removed_Key"544,82.4"Removed_Key"Assign_3">
@@ -258,7 +258,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <SequenceRemoved_Key"476,170.8"Removed_Key"Sequence_3">
+        <SequenceRemoved_Key"Else"Removed_Key"476,170.8"Removed_Key"Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

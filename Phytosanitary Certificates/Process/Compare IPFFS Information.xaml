@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Compare_IPFFS_Information" this:Compare_IPFFS_Information.in_strConsignee="Impulse Plants UK Ltd,&#xA;Tavistock House South,&#xA;WC1H 9LG London,&#xA;to Plant Protection Organization(s) of,&#xA;United Kingdom" this:Compare_IPFFS_Information.in_strExporterAddress="IMPULSE PLANTS B.V. (W&amp;A),&#xA;WIJKSESTRAAT 13,&#xA;4261TV WIJK EN AALBURG,&#xA;Netherlands" this:Compare_IPFFS_Information.in_IPFFsConsignee="IMPULSE PLANTS UK LTD C/O Rayner Essex Llp Tavistock House, Tavistock Square, London, WC1H 9LG, United Kingdom of Great Britain and Northern Ireland" this:Compare_IPFFS_Information.in_strIPFFSExporterAddress="Impulse Plants B.V. Wijksestraat 13, Wijk en Aalburg, 4261 TV, Netherlands" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uast="clr-namespace:UiPath.Activities.System.Text;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Compare_IPFFS_Information" this:Compare_IPFFS_Information.in_strExporterAddress="IMPULSE PLANTS B.V. (W&amp;A),&#xA;WIJKSESTRAAT 13,&#xA;4261TV WIJK EN AALBURG,&#xA;Netherlands" this:Compare_IPFFS_Information.in_strIPAFFSExporterAddress="Impulse Plants B.V. Wijksestraat 13, Wijk en Aalburg, 4261 TV, Netherlands" this:Compare_IPFFS_Information.in_strConsigneeAddress="Impulse Plants UK Ltd,&#xA;Tavistock House South,&#xA;WC1H 9LG London,&#xA;to Plant Protection Organization(s) of,&#xA;United Kingdom" this:Compare_IPFFS_Information.in_strIPFFsConsigneeAddress="IMPULSE PLANTS UK LTD C/O Rayner Essex Llp Tavistock House, Tavistock Square, London, WC1H 9LG, United Kingdom of Great Britain and Northern Ireland" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_strConsignee" Type="InArgument(x:String)" />
     <x:Property Name="in_strExporterAddress" Type="InArgument(x:String)" />
-    <x:Property Name="in_IPFFsConsignee" Type="InArgument(x:String)" />
-    <x:Property Name="in_strIPFFSExporterAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_strIPAFFSExporterAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_strConsigneeAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_strIPFFsConsigneeAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_strIPFFsImpoterAddress" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -125,6 +126,10 @@
       <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
       <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
       <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -246,60 +251,393 @@
       <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
       <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"1349.7142857142858,2520.5714285714284"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"1349.7142857142858,1712.5714285714287"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Double" Name="douExporterSimilarityScore" />
+      <Variable x:TypeArguments="x:Double" Name="douConsigneeSimilarityScore" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Compare IPFFS Details"Removed_Key"518.8571428571429,2497.714285714286"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"Compare IPFFS Details"Removed_Key"518.8571428571429,542.2857142857143"Removed_Key"Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Compare Exporter Addresses"Removed_Key"484.57142857142856,1212"Removed_Key"Sequence_7">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="exporterAddressParts" />
-          <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="exporterParts" />
-          <Variable x:TypeArguments="x:Double" Name="similarity" />
-        </Sequence.Variables>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <AssignRemoved_Key"Remove Newlines from IPFFs Exporter Address"Removed_Key"450.2857142857143,117.14285714285714"Removed_Key"Assign_1">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[in_strExporterAddress]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(in_strExporterAddress.Trim,"\r?\n"," ")]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <uast:SplitTextRemoved_Key"Split the first input string into smaller parts."Removed_Key"450.2857142857143,230.28571428571428"Removed_Key"SplitText_1" Results="[exporterAddressParts]" Separator="Comma" SeparatorKey="Comma" Source="[in_strExporterAddress.ToLower]" />
-        <uast:SplitTextRemoved_Key"Split the second input string into smaller parts."Removed_Key"450.2857142857143,230.28571428571428"Removed_Key"SplitText_2" Results="[exporterParts]" Separator="Comma" SeparatorKey="Comma" Source="[in_strIPFFSExporterAddress.ToLower]" />
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Ensure input lists are not Nothing&#xA;If exporterParts Is Nothing Then exporterParts = New List(Of String)&#xA;If exporterAddressParts Is Nothing Then exporterAddressParts = New List(Of String)&#xA;&#xA;' --- Normalize lists ---&#xA;Dim normalizedExporterParts As New List(Of String)&#xA;For Each s As String In exporterParts&#xA;    normalizedExporterParts.Add(System.Text.RegularExpressions.Regex.Replace(s, &quot;[^\w\s]&quot;, &quot;&quot;).ToLower.Trim)&#xA;Next&#xA;&#xA;Dim normalizedExporterAddressParts As New List(Of String)&#xA;For Each s As String In exporterAddressParts&#xA;    normalizedExporterAddressParts.Add(System.Text.RegularExpressions.Regex.Replace(s, &quot;[^\w\s]&quot;, &quot;&quot;).ToLower.Trim)&#xA;Next&#xA;&#xA;' --- Compute word-level fuzzy similarity ---&#xA;Dim totalSim As Double = 0&#xA;Dim count As Integer = 0&#xA;&#xA;For Each part1 As String In normalizedExporterParts&#xA;    Dim bestSim As Double = 0&#xA;    Dim words1() As String = part1.Split({&quot; &quot;c}, StringSplitOptions.RemoveEmptyEntries)&#xA;&#xA;    For Each part2 As String In normalizedExporterAddressParts&#xA;        Dim words2() As String = part2.Split({&quot; &quot;c}, StringSplitOptions.RemoveEmptyEntries)&#xA;        Dim matches As Double = 0&#xA;&#xA;        ' Compare each word in part1 to words in part2 using inline Levenshtein&#xA;        For Each w1 As String In words1&#xA;            Dim bestWordSim As Double = 0&#xA;&#xA;            For Each w2 As String In words2&#xA;                ' Inline Levenshtein distance calculation&#xA;                Dim n As Integer = w1.Length&#xA;                Dim m As Integer = w2.Length&#xA;                Dim d(n, m) As Integer&#xA;&#xA;                For i As Integer = 0 To n&#xA;                    d(i, 0) = i&#xA;                Next&#xA;                For j As Integer = 0 To m&#xA;                    d(0, j) = j&#xA;                Next&#xA;&#xA;                For i As Integer = 1 To n&#xA;                    For j As Integer = 1 To m&#xA;                        Dim cost As Integer = If(w1(i - 1) = w2(j - 1), 0, 1)&#xA;                        d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1), d(i - 1, j - 1) + cost)&#xA;                    Next&#xA;                Next&#xA;&#xA;                Dim simWord As Double = 0&#xA;                If Math.Max(n, m) &gt; 0 Then&#xA;                    simWord = 1.0 - CDbl(d(n, m)) / Math.Max(n, m)&#xA;                End If&#xA;&#xA;                If simWord &gt; bestWordSim Then bestWordSim = simWord&#xA;            Next&#xA;&#xA;            matches += bestWordSim&#xA;        Next&#xA;&#xA;        Dim sim As Double = 0&#xA;        If Math.Max(words1.Length, words2.Length) &gt; 0 Then&#xA;            sim = matches / Math.Max(words1.Length, words2.Length)&#xA;        End If&#xA;&#xA;        If sim &gt; bestSim Then bestSim = sim&#xA;    Next&#xA;&#xA;    totalSim += bestSim&#xA;    count += 1&#xA;Next&#xA;&#xA;similarity = 0&#xA;If count &gt; 0 Then similarity = totalSim / count&#xA;"Removed_Key"Invoke Code"Removed_Key"450.2857142857143,197.14285714285714"Removed_Key"InvokeCode_1">
-          <ui:InvokeCode.Arguments>
-            <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="exporterParts">[exporterParts]</InArgument>
-            <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="exporterAddressParts">[exporterAddressParts]</InArgument>
-            <OutArgument x:TypeArguments="x:Double" x:Key="similarity">[similarity]</OutArgument>
-          </ui:InvokeCode.Arguments>
-        </ui:InvokeCode>
-        <If Condition="[similarity &gt;= 0.8]"Removed_Key"450.2857142857143,345.14285714285717"Removed_Key"If_1">
-          <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_5">
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Excel Process Scope"Removed_Key"484.57142857142856,57.142857142857146"Removed_Key"ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <SequenceRemoved_Key"Do"Removed_Key"547.4285714285714,626.8571428571429"Removed_Key"Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" WorkbookPath="{x:Null}"Removed_Key"Use Excel File"Removed_Key"513.1428571428571,566.8571428571429"Removed_Key"ExcelApplicationCard_1" ResizeWindow="None">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <SequenceRemoved_Key"Do"Removed_Key"478.85714285714283,259.42857142857144"Removed_Key"Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ReadRangeX Range="{x:Null}" SaveTo="{x:Null}"Removed_Key"Read Range"Removed_Key"444.57142857142856,199.42857142857142"Removed_Key"ReadRangeX_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelProcessScopeX>
+      <SequenceRemoved_Key"Compate Addresses"Removed_Key"484.57142857142856,254.28571428571428"Removed_Key"Sequence_20">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <SequenceRemoved_Key"Compare Exporter Addresses"Removed_Key"450.2857142857143,57.142857142857146"Removed_Key"Sequence_7">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strNormA" />
+            <Variable x:TypeArguments="x:String" Name="strNormB" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="tokensA" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="tokensB" />
+            <Variable x:TypeArguments="x:Int32" Name="unionCount" />
+            <Variable x:TypeArguments="x:Int32" Name="intersectionCount" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <AssignRemoved_Key"Normalise Cert Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strNormA]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strExporterAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Normalise IPAFFS Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strNormB]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strIPAFFSExporterAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Assign strNormA to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[tokensA]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[strNormA.Split(" "c).Distinct().ToList()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Assign strNormB to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[tokensB]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[strNormB.Split(" "c).Distinct().ToList()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <SequenceRemoved_Key"Calculate similarity score"Removed_Key"468.57142857142856,425.14285714285717"Removed_Key"Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"Assign intersectionCount"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intersectionCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[tokensA.Intersect(tokensB).Count]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <AssignRemoved_Key"Assign unionCount "Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[unionCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[tokensA.Union(tokensB).Count]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <AssignRemoved_Key"Work out similarityScore"Removed_Key"434.2857142857143,108"Removed_Key"Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[douExporterSimilarityScore]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double">[intersectionCount / unionCount]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+        <SequenceRemoved_Key"Compare Consignee Address"Removed_Key"450.2857142857143,57.142857142857146"Removed_Key"Sequence_14">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strNormA" />
+            <Variable x:TypeArguments="x:String" Name="strNormB" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="tokensA" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="tokensB" />
+            <Variable x:TypeArguments="x:Int32" Name="intersectionCount" />
+            <Variable x:TypeArguments="x:Int32" Name="unionCount" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <AssignRemoved_Key"Normalise Cert Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_10">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strNormA]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strConsigneeAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Normalise IPAFFS Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strNormB]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strIPFFsConsigneeAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Assign strNormA to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[tokensA]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[strNormA.Split(" "c).Distinct().ToList()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <AssignRemoved_Key"Assign strNormB to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_14">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[tokensB]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[strNormB.Split(" "c).Distinct().ToList()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <SequenceRemoved_Key"Calculate similarity score"Removed_Key"468.57142857142856,425.14285714285717"Removed_Key"Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"Assign intersectionCount"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intersectionCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[tokensA.Intersect(tokensB).Count]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <AssignRemoved_Key"Assign unionCount "Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[unionCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[tokensA.Union(tokensB).Count]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <AssignRemoved_Key"Work out similarityScore"Removed_Key"434.2857142857143,108"Removed_Key"Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[douConsigneeSimilarityScore]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double">[intersectionCount / unionCount]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+        <If Condition="[douConsigneeSimilarityScore &lt; 0.8]"Removed_Key"If the Consignee Similaroty Score is less than 0.8"Removed_Key"450.2857142857143,48"Removed_Key"If_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <SequenceRemoved_Key"Then"Removed_Key"537.1428571428571,1037.7142857142858"Removed_Key"Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <SequenceRemoved_Key"Compare Consignee Address with Importer"Removed_Key"502.85714285714283,977.7142857142857"Removed_Key"Sequence_17">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="strNormA" />
+                  <Variable x:TypeArguments="x:String" Name="strNormB" />
+                  <Variable x:TypeArguments="scg:List(x:String)" Name="tokensA" />
+                  <Variable x:TypeArguments="scg:List(x:String)" Name="tokensB" />
+                  <Variable x:TypeArguments="x:Int32" Name="intersectionCount" />
+                  <Variable x:TypeArguments="x:Int32" Name="unionCount" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <AssignRemoved_Key"Normalise Cert Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[strNormA]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strConsigneeAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <AssignRemoved_Key"Normalise IPAFFS Address"Removed_Key"468.57142857142856,117.71428571428571"Removed_Key"Assign_18">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[strNormB]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+    System.Text.RegularExpressions.Regex.Replace(
+        System.Text.RegularExpressions.Regex.Replace(
+            in_strIPFFsImpoterAddress.ToLower(),
+            "\([^\)]*\)", ""
+        ),
+        "[^a-z0-9\s]", " "
+    ),
+    "\s+", " "
+).Trim()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <AssignRemoved_Key"Assign strNormA to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_20">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:List(x:String)">[tokensA]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[strNormA.Split(" "c).Distinct().ToList()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <AssignRemoved_Key"Assign strNormB to list"Removed_Key"468.57142857142856,117.14285714285714"Removed_Key"Assign_21">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:List(x:String)">[tokensB]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[strNormB.Split(" "c).Distinct().ToList()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <SequenceRemoved_Key"Calculate similarity score"Removed_Key"468.57142857142856,425.14285714285717"Removed_Key"Sequence_18">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Double" Name="douImporterSimilarityScore" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <AssignRemoved_Key"Assign intersectionCount"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[intersectionCount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[tokensA.Intersect(tokensB).Count]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <AssignRemoved_Key"Assign unionCount "Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_23">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[unionCount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[tokensA.Union(tokensB).Count]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <AssignRemoved_Key"Work out similarityScore"Removed_Key"434.2857142857143,108"Removed_Key"Assign_19">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Double">[douImporterSimilarityScore]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Double">[intersectionCount / unionCount]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_6">
+            <SequenceRemoved_Key"Else"Removed_Key"537.1428571428571,90.85714285714286"Removed_Key"Sequence_19">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -309,60 +647,23 @@
           </If.Else>
         </If>
       </Sequence>
-      <SequenceRemoved_Key"Compare Name &amp; Address of Consignee"Removed_Key"484.57142857142856,1202.857142857143"Removed_Key"Sequence_4">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ConsigneePartsCert" />
-          <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ConsigneePartsIPFFs" />
-          <Variable x:TypeArguments="x:Double" Name="similarity" />
-        </Sequence.Variables>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Validate QR Code - Invoke Workflow File (Process\Validate QR Code.xaml)"Removed_Key"484.57142857142856,57.142857142857146"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Validate QR Code.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PhytoCertLocation" />
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <SequenceRemoved_Key"Check countries of origin"Removed_Key"450.2857142857143,90.85714285714286"Removed_Key"Sequence_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <AssignRemoved_Key"Remove Newlines from IPFFs Exporter Address"Removed_Key"450.2857142857143,117.14285714285714"Removed_Key"Assign_2">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[in_strConsignee]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(in_strConsignee.Trim,"\r?\n"," ")]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <uast:SplitTextRemoved_Key"Split the first input string into smaller parts."Removed_Key"450.2857142857143,230.28571428571428"Removed_Key"SplitText_3" Results="[ConsigneePartsCert]" Separator="Comma" SeparatorKey="Comma" Source="[in_strConsignee.ToLower]" />
-        <uast:SplitTextRemoved_Key"Split the second input string into smaller parts."Removed_Key"450.2857142857143,230.28571428571428"Removed_Key"SplitText_4" Results="[ConsigneePartsIPFFs]" Separator="Comma" SeparatorKey="Comma" Source="[in_IPFFsConsignee.ToLower]" />
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Ensure input lists are not Nothing&#xD;&#xA;If ConsigneePartsCert Is Nothing Then ConsigneePartsCert = New List(Of String)&#xD;&#xA;If ConsigneePartsIPFFs Is Nothing Then ConsigneePartsIPFFs = New List(Of String)&#xD;&#xA;&#xD;&#xA;' --- Normalize lists ---&#xD;&#xA;Dim normalizedConsigneePartsCert As New List(Of String)&#xD;&#xA;For Each s As String In ConsigneePartsCert&#xD;&#xA;    normalizedConsigneePartsCert.Add(System.Text.RegularExpressions.Regex.Replace(s, &quot;[^\w\s]&quot;, &quot;&quot;).ToLower.Trim)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;Dim normalizedConsigneePartsIPFFs As New List(Of String)&#xD;&#xA;For Each s As String In ConsigneePartsIPFFs&#xD;&#xA;    normalizedConsigneePartsIPFFs.Add(System.Text.RegularExpressions.Regex.Replace(s, &quot;[^\w\s]&quot;, &quot;&quot;).ToLower.Trim)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' --- Compute word-level fuzzy similarity ---&#xD;&#xA;Dim totalSim As Double = 0&#xD;&#xA;Dim count As Integer = 0&#xD;&#xA;&#xD;&#xA;For Each part1 As String In normalizedConsigneePartsCert&#xD;&#xA;    Dim bestSim As Double = 0&#xD;&#xA;    Dim words1() As String = part1.Split({&quot; &quot;c}, StringSplitOptions.RemoveEmptyEntries)&#xD;&#xA;&#xD;&#xA;    For Each part2 As String In normalizedConsigneePartsIPFFs&#xD;&#xA;        Dim words2() As String = part2.Split({&quot; &quot;c}, StringSplitOptions.RemoveEmptyEntries)&#xD;&#xA;        Dim matches As Double = 0&#xD;&#xA;&#xD;&#xA;        ' Compare each word in part1 to words in part2 using inline Levenshtein&#xD;&#xA;        For Each w1 As String In words1&#xD;&#xA;            Dim bestWordSim As Double = 0&#xD;&#xA;&#xD;&#xA;            For Each w2 As String In words2&#xD;&#xA;                ' Inline Levenshtein distance calculation&#xD;&#xA;                Dim n As Integer = w1.Length&#xD;&#xA;                Dim m As Integer = w2.Length&#xD;&#xA;                Dim d(n, m) As Integer&#xD;&#xA;&#xD;&#xA;                For i As Integer = 0 To n&#xD;&#xA;                    d(i, 0) = i&#xD;&#xA;                Next&#xD;&#xA;                For j As Integer = 0 To m&#xD;&#xA;                    d(0, j) = j&#xD;&#xA;                Next&#xD;&#xA;&#xD;&#xA;                For i As Integer = 1 To n&#xD;&#xA;                    For j As Integer = 1 To m&#xD;&#xA;                        Dim cost As Integer = If(w1(i - 1) = w2(j - 1), 0, 1)&#xD;&#xA;                        d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1), d(i - 1, j - 1) + cost)&#xD;&#xA;                    Next&#xD;&#xA;                Next&#xD;&#xA;&#xD;&#xA;                Dim simWord As Double = 0&#xD;&#xA;                If Math.Max(n, m) &gt; 0 Then&#xD;&#xA;                    simWord = 1.0 - CDbl(d(n, m)) / Math.Max(n, m)&#xD;&#xA;                End If&#xD;&#xA;&#xD;&#xA;                If simWord &gt; bestWordSim Then bestWordSim = simWord&#xD;&#xA;            Next&#xD;&#xA;&#xD;&#xA;            matches += bestWordSim&#xD;&#xA;        Next&#xD;&#xA;&#xD;&#xA;        Dim sim As Double = 0&#xD;&#xA;        If Math.Max(words1.Length, words2.Length) &gt; 0 Then&#xD;&#xA;            sim = matches / Math.Max(words1.Length, words2.Length)&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If sim &gt; bestSim Then bestSim = sim&#xD;&#xA;    Next&#xD;&#xA;&#xD;&#xA;    totalSim += bestSim&#xD;&#xA;    count += 1&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;similarity = 0&#xD;&#xA;If count &gt; 0 Then similarity = totalSim / count&#xD;&#xA;"Removed_Key"Invoke Code"Removed_Key"450.2857142857143,197.14285714285714"Removed_Key"InvokeCode_2">
-          <ui:InvokeCode.Arguments>
-            <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="ConsigneePartsCert">
-              <VisualBasicValue x:TypeArguments="scg:IEnumerable(x:String)" ExpressionText="ConsigneePartsCert" />
-            </InArgument>
-            <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="ConsigneePartsIPFFs">
-              <VisualBasicValue x:TypeArguments="scg:IEnumerable(x:String)" ExpressionText="ConsigneePartsIPFFs" />
-            </InArgument>
-            <OutArgument x:TypeArguments="x:Double" x:Key="similarity">
-              <VisualBasicReference x:TypeArguments="x:Double" ExpressionText="similarity" />
-            </OutArgument>
-          </ui:InvokeCode.Arguments>
-        </ui:InvokeCode>
-        <If Condition="[similarity &gt;= 0.8]"Removed_Key"450.2857142857143,345.14285714285717"Removed_Key"If_2">
-          <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_8">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
-          </If.Then>
-          <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_9">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
-          </If.Else>
-        </If>
       </Sequence>
     </Sequence>
   </Sequence>
