@@ -302,13 +302,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,505 370,555</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"740,5001.2"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"740,4842.8"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,4834.8"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,4676.4"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -337,7 +337,7 @@
                   <InArgument x:TypeArguments="x:String">[Commodity("Country").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"672,101.6"Removed_Key"Sequence_22">
+              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"672,56.8"Removed_Key"Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strRegexPattern" />
                   <Variable x:TypeArguments="x:Int32" Name="intIndexPosition" />
@@ -486,185 +486,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"672,85.2"Removed_Key"CommentOut_4">
-                <ui:CommentOut.Body>
-                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"672,2181.2"Removed_Key"Sequence_98">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="True"Removed_Key"If - ALEX LINES CODE HERE"Removed_Key"638,2121.2"Removed_Key"If_14">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <SequenceRemoved_Key"Then"Removed_Key"468,488.4"Removed_Key"Sequence_67">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <WriteLineRemoved_Key"Write Line - input1"Removed_Key"434,123.2"Removed_Key"WriteLine_1" Text="[Commodity(&quot;Commodity&quot;).tostring]" />
-                          <WriteLineRemoved_Key"Write Line - input2"Removed_Key"434,123.2"Removed_Key"WriteLine_2" Text="[strCountry]" />
-                          <ui:ReadCsvFile DataTable="[dtRegulations]" Delimitator="Comma"Removed_Key"Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\matcheditems 1.csv"Removed_Key"434,182"Removed_Key"ReadCsvFile_1" />
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <SequenceRemoved_Key"Else"Removed_Key"604,1470.4"Removed_Key"Sequence_68">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="sd:DataTable" Name="dtGenusSynonyms" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <SequenceRemoved_Key"This section will retrieve all the name variations (synonyms) of a given plant. this will then check to see if regulation exists for that version of name."Removed_Key"Get Reguation data"Removed_Key"570,1410.4"Removed_Key"Sequence_72">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <SequenceRemoved_Key"Name + ipaffs synonym"Removed_Key"536,1177.6"Removed_Key"Sequence_83">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:CommentRemoved_Key"502,147.2"Removed_Key"Comment_32" Text="its decided that they will add onother column 'synonym' if not blank then get datatable merge into original then remove all rows with same part and item values" />
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Regulation Search - Invoke Workflow File (Process\Process Subflows\AD\Regulation Search.xaml)"Removed_Key"502,208"Removed_Key"InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Regulation Search.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strGenus">[Commodity("Commodity").tostring]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCountryName">[StrConv(strCountry,VbStrConv.ProperCase)]</InArgument>
-                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtMatchedItems">[dtRegulations]</OutArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                              </ui:InvokeWorkflowFile>
-                              <If Condition="[string.IsNullOrWhiteSpace(Commodity(&quot;Synonym&quot;).tostring)]"Removed_Key"502,730.4"Removed_Key"If_19">
-                                <If.Then>
-                                  <SequenceRemoved_Key"Then"Removed_Key"416,24.8"Removed_Key"Sequence_84">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </Sequence>
-                                </If.Then>
-                                <If.Else>
-                                  <SequenceRemoved_Key"Else"Removed_Key"468,543.2"Removed_Key"Sequence_85">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations_syn" />
-                                      <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listDataRow" />
-                                    </Sequence.Variables>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Regulation Search - Invoke Workflow File (Process\Process Subflows\AD\Regulation Search.xaml)"Removed_Key"434,208"Removed_Key"InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Regulation Search.xaml">
-                                      <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strGenus">[Commodity("Synonym").tostring]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strCountryName">[StrConv(strCountry,VbStrConv.ProperCase)]</InArgument>
-                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtMatchedItems">[dtRegulations_syn]</OutArgument>
-                                      </ui:InvokeWorkflowFile.Arguments>
-                                    </ui:InvokeWorkflowFile>
-                                    <AssignRemoved_Key"434,115.6"Removed_Key"Assign_114">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[listDataRow]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[(From row In dtRegulations_syn.AsEnumerable()
- Where Not dtRegulations.AsEnumerable().Any(Function(r) r("Part").ToString = row("Part").ToString AndAlso r("Item").ToString = row("Item").ToString)
- Select row).ToList()]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"434,159.6"Removed_Key"InvokeMethod_2" MethodName="Merge">
-                                      <InvokeMethod.TargetObject>
-                                        <InArgument x:TypeArguments="sd:DataTable">[dtRegulations]</InArgument>
-                                      </InvokeMethod.TargetObject>
-                                      <InArgument x:TypeArguments="sd:DataTable">[listDataRow.CopyToDataTable]</InArgument>
-                                    </InvokeMethod>
-                                  </Sequence>
-                                </If.Else>
-                              </If>
-                            </Sequence>
-                            <ui:BuildDataTable DataTable="[dtGenusSynonyms]"Removed_Key"Build Data Table"Removed_Key"536,56.8"Removed_Key"BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Genus&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Genus&gt;Camillia&lt;/Genus&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:BuildDataTable>
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtGenusSynonyms]"Removed_Key"For Each Row in Data Table"Removed_Key"536,48"Removed_Key"ForEachRow_10">
-                              <ui:ForEachRow.Body>
-                                <ActivityAction x:TypeArguments="sd:DataRow">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="GenusAlternateName" />
-                                  </ActivityAction.Argument>
-                                  <SequenceRemoved_Key"Body"Removed_Key"484,628.8"Removed_Key"Sequence_69">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Regulation Search - Invoke Workflow File (Process\Process Subflows\AD\Regulation Search.xaml)"Removed_Key"450,208"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Regulation Search.xaml">
-                                      <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strGenus">[Commodity("Commodity").tostring]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strCountryName">[StrConv(strCountry,VbStrConv.ProperCase)]</InArgument>
-                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtMatchedItems">[dtRegulations]</OutArgument>
-                                      </ui:InvokeWorkflowFile.Arguments>
-                                    </ui:InvokeWorkflowFile>
-                                    <If Condition="[dtRegulations.RowCount = 0]"Removed_Key"If is datatable empty"Removed_Key"450,360.8"Removed_Key"If_15">
-                                      <If.Then>
-                                        <SequenceRemoved_Key"Then"Removed_Key"416,90.4"Removed_Key"Sequence_70">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <SequenceRemoved_Key"Else"Removed_Key"416,108"Removed_Key"Sequence_71">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BreakRemoved_Key"382,48"Removed_Key"Break_1" />
-                                        </Sequence>
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
-                                </ActivityAction>
-                              </ui:ForEachRow.Body>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:ForEachRow>
-                          </Sequence>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                  </Sequence>
-                </ui:CommentOut.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:CommentOut>
-              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,2632.4"Removed_Key"Sequence_87">
+              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,2604"Removed_Key"Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
@@ -675,7 +497,7 @@
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]"Removed_Key"For Each - find regulation index"Removed_Key"638,85.2"Removed_Key"ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
+                <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]"Removed_Key"For Each - find regulation index"Removed_Key"638,56.8"Removed_Key"ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="njl:JObject">
                       <ActivityAction.Argument>
