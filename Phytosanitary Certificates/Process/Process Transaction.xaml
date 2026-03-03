@@ -137,14 +137,19 @@
       <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"2142,1426.04"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"2365,1426.04"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtCertificateDetails" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(Of String, String)]" Name="dictApplicationInfo" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="dtOnHoldReasons" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -157,9 +162,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID1" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))]"Removed_Key"Pause Point #2"Removed_Key"60,60"Removed_Key"FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID2" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))]"Removed_Key"Pause Point #2"Removed_Key"60,60"Removed_Key"FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +175,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_3">
+        <FlowStep x:Name="__ReferenceID4"Removed_Key"FlowStep_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">415,635</av:Point>
@@ -247,7 +252,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ThrowRemoved_Key"Throw BRE" Exception="[New BusinessRuleException(&quot;Pause Point #1 form closed by user!&quot;)]"Removed_Key"334,91"Removed_Key"Throw_6" />
+                <ThrowRemoved_Key"Throw BRE" Exception="[New BusinessRuleException(&quot;Pause Point #2 form closed by user!&quot;)]"Removed_Key"334,91"Removed_Key"Throw_6" />
               </If.Else>
             </If>
             <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"454,160"Removed_Key"InvokeMethod_6" MethodName="Start">
@@ -257,7 +262,7 @@
             </InvokeMethod>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID0"Removed_Key"FlowStep_1">
+            <FlowStep x:Name="__ReferenceID1"Removed_Key"FlowStep_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">535,775</av:Point>
@@ -265,13 +270,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row"Removed_Key"110,70"Removed_Key"ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row - Extract Data &amp; Validate QR Code"Removed_Key"110,70"Removed_Key"ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentAttachment" />
                     </ActivityAction.Argument>
-                    <SequenceRemoved_Key"Body"Removed_Key"552,2009"Removed_Key"Sequence_59">
+                    <SequenceRemoved_Key"Body"Removed_Key"552,2216"Removed_Key"Sequence_59">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" Name="dictCertPageRanges" />
                         <Variable x:TypeArguments="x:String" Name="strAttachmentFilepath" />
@@ -334,15 +339,17 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_IPAFFSCertificateReference">[CurrentAttachment("Document_Reference").ToString]</InArgument>
                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" x:Key="out_dictCertPageRanges">[dictCertPageRanges]</OutArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_PhytoCertFilepath">[strAttachmentFilepath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strCHEDPPReference">[strCHEDPPReference]</InArgument>
+                          <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, scg:List(x:Int32))" CurrentIndex="{x:Null}"Removed_Key"For Each PDF Certificate"Removed_Key"518,915"Removed_Key"ForEach`1_1" Values="[dictCertPageRanges]">
+                      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, scg:List(x:Int32))" CurrentIndex="{x:Null}"Removed_Key"For Each PDF Certificate"Removed_Key"518,1122"Removed_Key"ForEach`1_1" Values="[dictCertPageRanges]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, scg:List(x:Int32))">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, scg:List(x:Int32))" Name="currentCertificate" />
                             </ActivityAction.Argument>
-                            <SequenceRemoved_Key"Body"Removed_Key"484,777"Removed_Key"Sequence_60">
+                            <SequenceRemoved_Key"Body"Removed_Key"484,984"Removed_Key"Sequence_60">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="strExtractedPhytoCertNo" />
                                 <Variable x:TypeArguments="x:String" Name="strExtractedExporterAddress" />
@@ -370,6 +377,15 @@
                                   <InArgument x:TypeArguments="x:String" x:Key="in_pageRange">[String.Join(",",currentCertificate.Value)]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Validate QR Code - Invoke Workflow File (Process\Process Subflows\Validate QR Code.xaml)"Removed_Key"450,207"Removed_Key"InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\Validate QR Code.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_PhytoCertLocation">[strAttachmentFilepath]</InArgument>
+                                  <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ApplicationRef">[strCHEDPPReference]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_PhytoCertNumber">[currentCertificate.Key]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intQRPageNumber">[currentCertificate.Value.First]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
                               <If Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint3&quot;))]"Removed_Key"Pause Point #3"Removed_Key"450,510"Removed_Key"If_9">
                                 <If.Then>
                                   <SequenceRemoved_Key"Then"Removed_Key"416,258"Removed_Key"Sequence_64">
@@ -390,6 +406,7 @@
                                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_dictApplicationInfo">[dictApplicationInfo]</InArgument>
                                         <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtIPAFFSCommodityInfo">[dtIPAFFSCommodityLines]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_FormattedCertNo">[currentCertificate.Key]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strAttachmentFilepath">[strAttachmentFilepath]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -418,39 +435,180 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID5">
+                <FlowStep x:Name="__ReferenceID6"Removed_Key"FlowStep_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">535,895</av:Point>
                       <av:Size x:Key="ShapeSize">110,70</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">590,965 590,1010</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_21">
-                    <ui:CommentOut.Body>
-                      <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_89">
-                        <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Close IPAFFs"Removed_Key"110,70"Removed_Key"NApplicationCard_8" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="fed1a01d-dcdc-4745-9865-62f88dcf402f" Timeout="5" Version="V2">
-                          <uix:NApplicationCard.Body>
-                            <ActivityAction x:TypeArguments="x:Object">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                              </ActivityAction.Argument>
-                              <SequenceRemoved_Key"Do"Removed_Key"416,170"Removed_Key"Sequence_73">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NNavigateBrowser Action="CloseTab"Removed_Key"Navigate Browser - Close Tab"Removed_Key"382,108"Removed_Key"NNavigateBrowser_2" Version="V3" />
-                              </Sequence>
-                            </ActivityAction>
-                          </uix:NApplicationCard.Body>
-                          <uix:NApplicationCard.TargetApp>
-                            <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="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" InformativeScreenshot="db096494416528d361d8d53737d399a4.jpg" Selector="&lt;html app='msedge.exe' url='https://importnotification*' /&gt;" Title="CHED Overview CHEDPP.GB.2025.1190598 - Import and export applications - GOV.UK" />
-                          </uix:NApplicationCard.TargetApp>
-                        </uix:NApplicationCard>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                  </ui:CommentOut>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Compare IPAFFS Information - Invoke Workflow File (Process\Process Subflows\Compare IPAFFS Information.xaml)"Removed_Key"110,70"Removed_Key"InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\Compare IPAFFS Information.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ApplicationRef">[strCHEDPPReference]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID8" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint4&quot;))]"Removed_Key"Pause Point #4"Removed_Key"60,60"Removed_Key"FlowDecision_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">560,1010</av:Point>
+                          <av:Size x:Key="ShapeSize">60,60</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">560,1040 470,1040 470,1155</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">620,1040 640,1040 640,1275 580,1275 580,1305</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID7"Removed_Key"FlowStep_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">415,1155</av:Point>
+                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">470,1225 470,1269.54 580,1269.54 580,1305</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <SequenceRemoved_Key"Pause Point #4"Removed_Key"110,70"Removed_Key"Sequence_108">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="booDis" />
+                              <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
+                              <Variable x:TypeArguments="x:String" Name="strFormOutput" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"454,169"Removed_Key"InvokeMethod_7" MethodName="Stop">
+                              <InvokeMethod.TargetObject>
+                                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                              </InvokeMethod.TargetObject>
+                            </InvokeMethod>
+                            <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[booDis]"Removed_Key"Pause Point #4" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="750" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;h1&gt;Pause Point #4&lt;/h1&gt;\n&lt;p&gt;Please review the below On Hold reasons assessed for the comparison of the IPAFFs application information with the provided certificate level information e.g. commodity quanitities etc.&lt;/p&gt;\n&lt;b&gt;Note that this does include Additional Declaration checks at this point.&lt;/b&gt;\n&lt;br&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;On Hold Reasons&quot;,&quot;key&quot;:&quot;OnHoldReasonsBox&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;On Hold Reasons&quot;,&quot;Sortable&quot;:true,&quot;Filterable&quot;:true,&quot;Resizeable&quot;:true,&quot;Pagination&quot;:true,&quot;PageSizeComponent&quot;:50,&quot;key&quot;:&quot;OnHoldReasons&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;tree&quot;:true,&quot;disableAddingRemovingRows&quot;:false,&quot;type&quot;:&quot;datagrid2&quot;,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Reference&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Application_Reference&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Certificate Number&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Certificate_Number&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Commodity Line Reference&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Commodity_Line_Reference&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;On Hold Text&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;On_Hold_Text&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]}]},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;p&gt;Once you have reviewed the automation summary, please report any incorrect/missed On Hold reasons to DRACoE. You must then ensure you have carried out the Additional Declarations checks and recorded the application outcomes correctly in IPAFFS/Dynamics before clicking Continue. The robot will then move on to the next available CHEDPP.&lt;/p&gt;\n&lt;br&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Food and Rural Affairs" FormWidth="1500" GenerateInputFields="False"Removed_Key"454,184"Removed_Key"FormActivity_3" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Prioritisation Form.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
+                              <ufa:FormActivity.Body>
+                                <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                                  <SequenceRemoved_Key"Do"Removed_Key"416,25"Removed_Key"Sequence_109">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[strButtonSelected = &quot;link&quot;]"Removed_Key"If - link button pressed"Removed_Key"501,416"Removed_Key"If_19">
+                                      <If.Then>
+                                        <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge"Removed_Key"Open Browser"Removed_Key"467,142"Removed_Key"OpenBrowser_3" Url="https://defra.sharepoint.com/sites/Community290">
+                                          <ui:OpenBrowser.Body>
+                                            <ActivityAction x:TypeArguments="x:Object">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                              </ActivityAction.Argument>
+                                            </ActivityAction>
+                                          </ui:OpenBrowser.Body>
+                                        </ui:OpenBrowser>
+                                      </If.Then>
+                                      <If.Else>
+                                        <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_111">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ufa:FormActivity.Body>
+                              <ufa:FormActivity.DelayBody>
+                                <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                                  <Delay Duration="00:00:00.2500000"Removed_Key"Delay_3" />
+                                </ActivityAction>
+                              </ufa:FormActivity.DelayBody>
+                              <ufa:FormActivity.FormFieldsCollection>
+                                <InArgument x:TypeArguments="sd1:DataTable" x:Key="OnHoldReasons">
+                                  <VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="dtOnHoldReasons" />
+                                </InArgument>
+                              </ufa:FormActivity.FormFieldsCollection>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ufa:FormActivity>
+                            <If Condition="[NOT(booDis = True OR strButtonSelected = &quot;no&quot;)]"Removed_Key"Robot Dismissed?"Removed_Key"454,374"Removed_Key"If_20">
+                              <If.Then>
+                                <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_110">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <ThrowRemoved_Key"Throw BRE" Exception="[New BusinessRuleException(&quot;Pause Point #4 form closed by user!&quot;)]"Removed_Key"334,91"Removed_Key"Throw_11" />
+                              </If.Else>
+                            </If>
+                            <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"454,160"Removed_Key"InvokeMethod_8" MethodName="Start">
+                              <InvokeMethod.TargetObject>
+                                <InArgument x:TypeArguments="sd:Stopwatch">[g_swProcessingTimer]</InArgument>
+                              </InvokeMethod.TargetObject>
+                            </InvokeMethod>
+                          </Sequence>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID0"Removed_Key"FlowStep_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">525,1305</av:Point>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_21">
+                                <ui:CommentOut.Body>
+                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"484,391"Removed_Key"Sequence_89">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Close IPAFFs"Removed_Key"450,331"Removed_Key"NApplicationCard_8" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="fed1a01d-dcdc-4745-9865-62f88dcf402f" Timeout="5" Version="V2">
+                                      <uix:NApplicationCard.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                          </ActivityAction.Argument>
+                                          <SequenceRemoved_Key"Do"Removed_Key"416,170"Removed_Key"Sequence_73">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NNavigateBrowser Action="CloseTab"Removed_Key"Navigate Browser - Close Tab"Removed_Key"382,108"Removed_Key"NNavigateBrowser_2" Version="V3" />
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </uix:NApplicationCard.Body>
+                                      <uix:NApplicationCard.TargetApp>
+                                        <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAABgiSURBVHhe1dt3WJRXvgdws7HQi5Rsbu5z3bt3N3eLXREUrLHRexEpgohiRVBCRxAFFERFjQVLoomaREnU2KIwMzBDn6HMUAfFSixZtiTe3XUv3/s77/sOjIqRMTHJPc/zfciTPyTfz/md876MZNCrXmPEd6LHiG+LRotvdo0Wdz4aJbmGUZIOiprShlGlrZRmjCprwmipktLweIysrnusTK6gFE2oqPIX/qj/H2u86OGIcaL7hWNFX3WNEd0FAVBugQAoNzBKrAFoF8q3CAAqCgeAMdJ6jJUpMLa8FuMrqjGhsrJnYqWsy7ZGUmhXKxohfKuf15og+nP0BNGf1AQAAgABUHFtAKE8B6DGSA6ATcCTAKPKGgihDmNkcgKoIYAqBoCJVTJMqimFXW0Jpiiuqh3qLkcL3/qnXRNFf4meKPpz9wRRNwgA2gBjxV0CANv9Tq3dZwBtlFaMpPIjS5soDICVrxcA2ATUYBw3ARUcgF2tGFPkV2FfdxlT6y9ieuO5RzOVn2UJ/yk/7rIRfTPCRvQ3NQGAAKh8N5X/mvKAAFh5FjYBt/sBaOfLS1ooGgAlpYEQGICidwLGlvcBTKoRE0IxTcCXcKi7iBmNZzFLVYTZTZ92z205+eNNxCTRt1mTRN/0EABsRH8lAIbwJMA42n0NABv/0eLrVJwf/2cAJDwAm4BnAaowXgCwJYDJ8mLYE8C0+i8wveEcZio/J4BTmNdyHE5tRxXuHQde7R1hK3qkpvKYROVZeAA2Afz4M4DxontC+VtcendfrNl9YfwFgD9KVPij1gSMKmMAtRzA+IoKmgAZAZTBplpCAFfpGFzhJmBaPQ8wp/ljzG/9EM7tR+CmPvDI6/ruH/7JYSf6+wgq/8hW9C1sewH48mz3e8+/+B6FjT8bff7y43afyvPFWbSKa0IAf+wFqKMpkBMCuwPYBJQLAPwRsFdcpvLn6Qh8jneUpzC3+TgcW48JAIXwvL67x7tzR6Hwn/79F5X3txP9D5V/ROVZvhV2nz//PACNv/i+UP4uhV1+rHwnhe0+XXzifnZeQsUljVx5PvUYSQCjuGNQSwCVBKCZAHYErhDAJUytu0BH4CzmNJ3EvOaP4Nx2BC7tB+F1fRe8rxfA/2YuAm5t/f4Ik0X/cJgs+nsPAcBOKK+ZAB6gm8J2n0af23129u9Q2PjfoPC73wfQT/legHohBEDHYLS0lhCq6RjQBFQKE1BDl6D8SwKgCWigCVB9QgDH4NJ2EO4dezkAn87t8LuRi8DbWQi+m/HyCFR+BJV/ROHK2/WW/ysXHuBPlK8xQawNcJvCync+BcB2ny48rfJ/kDT0pg+BAchpChhAFb0UsXcBAqgSEQA9BuV0/uvOEcBnmK36mACOwqn1MFzb98OjY7cWwCYCSEfoV8kvh0AAXPnJwu5rAGy58/8XAuimEID4IQHcJwB2+7Pxv9lbXjP+o1h5DuDJ3dcG4KM1BQxAWk0AdAwq6DFIAJNrv6QjcB7T689gZuNpAjiB+QTg0lZI5ffA8xpNwPV8LLiVhYV3MhDctQGL7iVi8f043R6TU0T/UPPlnwXgJ0Ab4AEB3COALgJg488DsPKjufLs0cdGn6Wpn/L1T0RzFNgU8AAVGF/OA9jVsDvgPBwUbAJO451GegI0fwDn1oNwa99HCAUcQODtzbT7qWz3EXYvngBieyIfRA/sETml5J9ZU0T/BCH0C9A3AewCfPgUABt/BsB2n40+vfJyF5/wvOd2n537Z4trhwGMJIDRUnoXIACWiZUSQqA7oJYuQQZQX4Q5quME8D43AW7t7xHATvh1bsWCm5kIuZtMSUL4V3GIuB+DyIeru4WKz1/2JY9HUHoI4QkAHoEB/E0LgJ1/Gn969eUB7hIAu/w0499BIQAa/VEcwMDKs/TdBewYsHuA3gcqyjiAyTUagFOYrWQAR+DUchAe6h0CQA4Cb6Uj+E4KQu8mIPzeOkQ+WIVlD5cj6uvI7351pvJqCpV/3gTwz//xlx7idx+p8esDdfjlhrP4ZfpZvJlBXzfS141n8NaWi/jPQxV4u4jKXnly9/sr/HQ0x4CfAnYMygmgtBfAQX4O0+uK6Agcx1wVTUDrXgLYCa+OPALYjMCbGxB0O4kA4rD43losub8KSx9EIephxOMVfwrv/yg4lDyOZuXtafft+wEY+8XXGFFQjeFrjsFo8XswWXoQJiveh+mqD2G25jjMok/AfC0l5iR9PQ7z1UdhvvIIzKP2wyruA/zHvhL896WB7z4fBU0BvRGWS+kIiAWAiwRwhibgE8xRfgDH5gNwbd3FhQfYREdgA0LuxCH0znqEd0UTwEoCWEYA4Vj+MEwkVH5yOZT8q5sQngEY/dkDvJF2HoaL98Mo6iiMV52ASfQpmMQWwXTd5zCNOwMzinn8OS7DE4QknoVFwhlYxH8Gy3c/hUXscQxfdRD/trkIv/1C0W95TTQTwB8B/g6YUCGGTeXVPoC6jzG7kQdwadkFj/Zt8O7Ign9nOk1AIoJvMYAYhN1dgyX3lmPp/UgBILRnxcOgJ6dgasm/oll5TRiCzcVv8GamCAZLDsFoxQkYrzkF45jPYbL+HEzizsM0/iJMEy/DLPkKzFKuwjy1GOZpJRhOsdhQzCftCixSL8My9RIsUy7AMuksLOM+gcXqw/j3vPP43ZXvngjNERhHE6ABmFJzDva1nxHASbzT8AHmq/bBuXkX3Fq3wbM9B77XMhDQmYzAG/EIub2WAFYi4quliLy/hBDCEPUglBCCnnw3IAA1TQCVZ3mMkR/fg/HyD2EQdRyGa4pgGHMWRuvOwzjuEkwSrsA0WQTTFDHM0kphli6F+UYZl+EsmeWw2MQi42KZWQbLjWJYZpTAKv0KLNMuwiqFQXwKy/XH8JvP5P2XL6WXobIqehmS0REQY2LFFdhWXaQJ0AAcx6x6BvAenJo0ANnw7UiD/7UkBHbGIfjmWoTficLiu0sR0RUhAARj+YOFj4TqrPz/jqAI5f+Ftw91Qj/yKAxWnYbh2rMwjD0Po7jLMEq4CuMkMYxTpTDZIIPpxiqYbayG+aZamGfVYni2nKKARY4cFlvo6xY5LLfUwjKnBlbZVbDMKofV5jJYZYphlXEVVgRhnXQGlrEf4lfvS58B4M9/JZdxMgZwmQAuwL6mCNPkJzGz7hgBHMHcxv1wVBXAtWUrPNo2w1udDr+OZCzsXIeQm6ux6NYKQohExN0wRH61CMvuBSHqfgBWPPBz0AAUMgCaArrklNBb/jH015yDQcwFGKy7BMP4YhglSmCcIoPxhgqYZNTAJFMO0811MM1ugFlOI8y2KGG+VYnhuSouFnmUbSpY5ilhta0RVnn1sMpVwGprLaxyKmCdJYPVJjGsaSKsUi/QJfkxRhRKhOJ1tPu1XPExZVKMlYoxXibCxPLLmFRxHvbVpzC19jimy49iVt0hAqAJUOXBvSULXu0Z8G5PJYAkLLgeh6DOtQi5sQJht5Yg4k4oltwNwdKuhYi654fl93yLNABdDOD3x7qgt+I09NdehH7sZRisv0rlRTBMKoNRaiWM0mtgvFEB480NMMlqhGmOioo3wSy3BeYsea0Yvq2VirfBIr8VltvpnymW21tgmd8Eq3wVrPMJJK8O1rkEsaUS1jQR1hvpaGy4BCu6KH/zaXUvwMjSKozWAEivwqb8PGwrzmBy1WlMqz2KGfIjmKk4iLkNu+GozIOLKhserRnwaU+ErzoOAR0xWHh9FUI6lxJAmAAQhMi7CwjBjxB8ujiAaVR+4tlvMGzF59CLvQL9dcXQjyuBQUIZDJLKYZhWDcMMBYwyG6i8EibZTZRmmG5phenWVgKg5LXBfFs7zPPbMXx7OxVXU9phuYOyUw2rne2w2tFGaYH1jiZYb1fCehsPYZ1dDmtuGr6kafgMv7tcjVGlMgKoJIAyAighgMsEcA52lacxpeoEB8DKz6krwPyGPDgrs+CmyoBHcyq8WxPg276OANYi8NpKBF1fSgiLEXYzFBG3gzmAyLu+WPaV7yNWPpoBmKeUYlhsMfTixNCLL4V+ghT6yZUw2CCHYXo9lVfCaHMTjLNaYJzdAhMqb7KljQDaYZrbTgB8zLepCUGN4RSL7R2w2NHBAVgWMARKgbrHuqCt441d6hzrgtbYN3aqYt/Ir88liOtvZJX1WKdfxlv5lzC6VELlS3vLT5BepPH/nABOcQBTqw9jpvwABzC3Lg+ODTlwUWYSQhq8muPh27oWAe2rsLBjGYKvL6aEI+xGMMJvLiCEACy544+ld33AAER/+PAehsZcxbB3yyhS6CWUQy+5GvqpchhQecONShhuaiYACpU3zm6DcU4bTKg8i2muGqZ5agKgcAAdMKfyw1l2XIPFzmuE0AHr+Ms9b605PZsbu37WL/Pkv7bOlt23Sr2It09JMKb0KsaWsfLnuEwqPwW7ihNwqDqM6dV7MaNmL2YrdmJePQHUb4JLYxrcVckE8C4BxHAAgeooBF2LQPC1UCy6EUIAgQi/4Yclt30RedsLgxwufPvYjC62oVR8aHw5hiVWQi+JL6+fVg+DDCUMMps4AMPNrTDMaoURlTfOaYfxFh7gRQjmm+rxVnhhtdDzheuN7LIP38w5j7GlFzGujC8/UXqKAD7hASoPEcA+zKzZiVm1+Zgjz4FjXQac6tPg2phICOvh3RwD/9ZILoHtYQjqCEJo50Isuu6P8E5fRNz0obhj0LhPv8bQWAmVr8SwhCoMS6qBXooCelReP10J/YxmAqBsahEA2mBIE2DEwiBegGAScwkGc1JvC90GvKzSv7w1+upFjC87Q+WLYCP7BLblxzFZdoQACjG9sgAzq/MxuzaLCwNwbkiBmzKeA/BpXgW/lkgEtIYLAMEI7ghA2HU/DiC80xOLb7hh0O+P3efKD02oxtDEGgJQYFhqPfQ20OMwvQn6G1laCKAVBgTA0h+CBkIbwTicXqRmp/YYOm76rdBrwMs6u+K/3j55CRNLT8Km7CPYSE/AVnqEByjfi2kVOwgglys/R74Z8xVpcKpLgGvDu/BQroW3ajl8mpbArzmcEEKwsG0BgtW+CO3wpngRhAchEMAb+W0Ykiin8hQqPzSlngCUGLahCXoZLM3Qz2yhUPkBIpjQpWi8+CMqnwbD+ZuahU46r5HHvvjHBMkJ2JQew6SyI7CTHoC9bA+mlu/A9Io8zKjMxqyqTMytTcY8eSocFQRQvwZuDSvh0RhFAOEEsAgBLcEIbA1EUJs/gtsJQO2JRR3uCL9OABZ0mw+h4kOS6qh8A6URQ9NUHMCw9GYCaIEeTYAGQX8ACMb0GDWYS+XnZcLQeWui0EfnZXv6QvlEyfuwkRzCpNIDHICDbAcB5BFADmZWbiKANMypTsT82vVwkkfDtW4l3BuWwbMxAj6qcPgoQxHQHEQAAQTgSwBeCBEAFnW4dg8ypcttcFI9hiRTWPlUFQcwlANowTAGICDoDQSBHpsGs1No56m8Uw6MXPPjhT46r4mfnI+3kRzAJMl7sCvdjSllBbCXbsdUWTaml2cSQCZmVSZjbvV6AojhAFwIwK0ukgPwbgzhAPxUAYTgj8AWHyxs9SIED5oCV4qLYtDgRAUBNGBwciMBKDGEA2jiQxPApmBACBSGYOi9k3Z+I1/eJQ9G7gVxQh+d10TJQQcbyX4BoIAAtsO+LAdTpZswXZaOmeUpmFWRgNlV6wlhLebXrIRT7TICiIBnQxi8GxbCpzGAB2jyxYJmb4oHIbghuM0FIe3O/oNeT1JSeZZGDBYAhlD5IWnNNAWUFyEIEBzC6otC+Wza+W1UfieMPfesE/rovCaKD2RNEu+GrXg77CR5mFKaC/vSzQSwkQA29ALMqYrFvOo1cKxZAaeaSLgqFsOjPhSe9YGE4A/fRm/4Kb0IwZMHaCGAVpfH3DdhAL0IKSoMZgCpPEAvAuUZBO5eeBLBwGkzDB0pLrlceSPPPTD23neY+0YvsWxKdqgniQpgJ96KKZLNsJdkwqE0E9Ok6QSQQgAJmFUegzkVqzGvMgrzqyLhXBMGV/kiuCuC4Fm3AN71fvBpYACeCFC5U1wJwY0QnPnPA16n4nyoPANIaSIEAtAVYe1VGLBz77wFRm7bqfxuGHntJYADHdw30nHZlBSMIIAeW9E2AtiCyWIGkIGppamYVpqAGWVxmCmNxSzZGswuX0UAEZQlcKwKg3N1MNzkQfBQLIBXnR8heMO3wRP+SjcEKF2woMml79PhXyQpu/sQqDwDGAACB6GFYOC1kyYgm3afzr1HAYy8Wfn9MPY9yI+ajsumJL/LtiQHtiVZXPkpYtp9STIBJGF6aTwBrMcs6Wq8I1uOObKlmFcRTuXD4VQVAueqQLjWBBCALwF4UzzhU+8OvwZXiktPgJLOvmb9IknVRQELm4KBIHD3gjYCvTsYzM2AgcvWvt33ofI+BxgAjP0O6fS3MjbFudGTirOpPEsmJovSMUWUAgdxEqZKEjBNsh4zSmMwq2wl3pEuI4AlmFe+CPMrQuBYGUwACwnAH+61vvCQexGABwG4wafOhQCE0desXySqRBoAnRGEx6R+ND336ewbcBcf7b7Xe33lfQ8xALXw7Qa0JhVnddsWb6LyGbAr2UgAGzgAewYgjsV0STQBrMTM0hV4p2wp5kgXY64slBBC4VS5gAD84FbjC/cab3jUesBT7gYvhSu8FU+VZ+u1RFU0IfQCaCO8PkAE/YhTMKCzb6jZfe99VLxQs/t8fA8N+JcWbIszi2yL0wkgHZNLUiipBJBEExCHaQQwTRJDCKsJYDlmlS7BbGkYAQRjfnkQHCsCCcEfzpU+cK32IgQOoMdb4fL8KSQEDASBg+gHQc+/kMY/F4aam5+Nf9/uawBe/NdSWsu2eIPajopPLknGlJJE2IveJYB1NAHRmC5egRmSFQSwlCYgDLPLQjFXuhDzKI7lAXCu8IFLlTfcqj3hXu2m9qhx/e6/E3wtQdWlGwIPoUHQX3CIxj8PhuzyYzc/G38/DcBhDQBD6f8vJJ6z7IpToqm8ekpJfI99yTo4iAhAtJoHEC/DTEkETQAPMKcsiAeQ+cOp3LvHpdJb7VrlwX/o+aL1WoKykBDQi6AF8QyCAKGNYMDe+en8G2qPv2bnnwRgealfayOAaAfR2qJp4lWi6eKorhniJd0E0E0A3e+UhnbPlQZ2zZP6iRxlvrr/+QQwggKdEYQjwT3/6fw/CSAUfxagx8Sn8Of3668EoNZGePpI9CJQnkbQ99krAOwhAOH8Px8ABEAIB17utzZe2YpX+vMAQnRA0F9wWFcAygEWne6EV7/ild0DQ+AhNAh6oSdeFgAm3vu7KT+TI0FTQMEgHRGGRdFPgb0AL7wDngbg47VPTRnYra3DMnfOG2HunFto7pQ7wN8gjVeqB4LQB0H3wPpqegrQe8DAngLPAxCyV23q+d73/r1fM5dtDlReROkhABDAI3OnrQNAiFeOoPQ8g6D9hOgHwcBrN70H7NJ6D3hpABAAy2NTzz1qU489haYeu184GWau20dQos1c8kWURwQAKi+EA+gZGABb8cosDkAHhKFLzgkvQuznALoHNKU1ELoDUPaAACi7+bjvekTpNnUv6DZz2ylkR7eZ6w5QeT4u+UKeAdDx/SBeqdAFYfC7cu5liL0K88eAlf3BAYQUgMoLYeVfCKDTD2N9K175SBcEvUUfw4gdA/ZZgOaHIQ5B+PrTAPT9IoTOi78PXowgQLye0EAXIbsHhB+IqChX+qcDeEQZ4Ll/3tIRYWjUJZoC+qmw7xOhZ/IjAdDtn/cDPVafRqA8jaB9JPSDPur7TJBKcsfBh5XnJ+JHAGBPgR/4nUIHBHYUDPwP912ImuPAHQlW/pUCUPn87zn237W0nw5PIFCeg2CsOQ5sGrTL//AAL3nb67r49wT+ZYnlOxD0A49xx8GYHQduGlhpVp5Ks/wwAD1U/kf+3+f4I8G/Nn8HAncxRn5BFyO7E+gliRD40tpf+eIvCaAmgFc48i9a/A9Q3c8gPPWuMDi2CvoL2TTsgQmV4wprF/dkX1mE4lyE4v0DsDfBH+//FXzh4iHU34XAMmStDIYhJ6nwbq5sLwb7KoTfdW0AKs3CA6gJ4Of3iVLvYkeD+4xR2fU8BG4i6NV52MpiDoO9KJlQORMqbcKNPb/bxgFHYBR+CsMjix6/GfxBEf27n3DUX3IRQjQhiAihixC6tRE0P0lqf+o8LFEBw4SqHuukir/8KlFyVvhjXtEaNOj/AP7riU5g+kK5AAAAAElFTkSuQmCC" InformativeScreenshot="db096494416528d361d8d53737d399a4.jpg" Selector="&lt;html app='msedge.exe' url='https://importnotification*' /&gt;" Title="CHED Overview CHEDPP.GB.2025.1190598 - Import and export applications - GOV.UK" />
+                                      </uix:NApplicationCard.TargetApp>
+                                    </uix:NApplicationCard>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                              </ui:CommentOut>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <x:Reference>__ReferenceID0</x:Reference>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
@@ -458,10 +616,10 @@
         </FlowStep>
       </FlowDecision.True>
       <FlowDecision.False>
-        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID4">
+    <FlowStep x:Name="__ReferenceID5"Removed_Key"FlowStep_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,275</av:Point>
@@ -469,7 +627,7 @@
           <av:PointCollection x:Key="ConnectorLocation">590,345 590,395</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Navigate Dynamics &amp; Assign CHEDPP Record"Removed_Key"110,70"Removed_Key"Sequence_22">
+      <SequenceRemoved_Key"Navigate Dynamics &amp; Assign CHEDPP Record"Removed_Key"110,70"Removed_Key"Sequence_114">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtWorkOrderTasks" />
         </Sequence.Variables>
@@ -478,13 +636,13 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"594,6012"Removed_Key"NApplicationCard_4" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"594,5853"Removed_Key"NApplicationCard_4" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Do"Removed_Key"560,5842"Removed_Key"Sequence_12">
+              <SequenceRemoved_Key"Do"Removed_Key"560,5683"Removed_Key"Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -577,19 +735,6 @@
                     <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="183, 2210, 93, 40" DesignTimeScaleFactor="2" FriendlyName="'Rows: 0'" FullSelectorArgument="&lt;webctrl parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='Rows: 0' innertext='Rows: 0' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='entity_control-powerapps_onegrid_control_container' tag='SPAN' aaname='Rows: 0' innertext='Rows: 0' type='' class='statusTextContainer-183' check:text='Rows: 0' /&gt;" Guid="36c88cf4-3ebc-402f-a8cc-996f636bc2c3" InformativeScreenshot="f1d29f6b8d35cd5394edca7f44834e92.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:NCheckState.Target>
                 </uix:NCheckState>
-                <AssignRemoved_Key"Dynamic Selector requires we store this value in a variable rather than in the g_TransactionItem Dictionary."Removed_Key"Assign strCHEDPPReference"Removed_Key"526,159"Removed_Key"Assign_4">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[strCHEDPPReference]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[g_TransactionItem("CHEDPP Reference").ToString.Replace(" ","")]</InArgument>
-                  </Assign.Value>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Assign>
                 <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click CHEDPP Record"Removed_Key"526,227"Removed_Key"NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entitylist&amp;etn=trd_plantsimportnotification&amp;viewid=c3a736cd-39d6-4aab-bec0-825a2bd10ec9&amp;viewType=1039" DesignTimeRectangle="53, 221, 32, 96" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' tag='SPAN' aaname='{0}' idx='1' /&gt;&quot;, strCHEDPPReference)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='presentation' tag='SPAN' aaname='{0}' type='' class='ms-Icon--WaffleOffice365 ms-icon-font-size-16' /&gt;&quot;, strCHEDPPReference)]" Guid="a5230000-59fb-4511-b976-0bf6f3573907" InformativeScreenshot="7407cff3b1cf1154f9642fbfeff0221d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
@@ -735,12 +880,12 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Select &quot;Assign&quot;"Removed_Key"520,190"Removed_Key"NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Select &quot;Assign&quot;"Removed_Key"526,190"Removed_Key"NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1525, 642, 81, 42" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='Assign' /&gt;" Guid="a208ecde-9fef-4574-aeae-f37ecfa3738e" ImageBase64="" InformativeScreenshot="4b53c75bcfcac5428953537d02c43169.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click &quot;Assign&quot; Button"Removed_Key"520,183"Removed_Key"NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click &quot;Assign&quot; Button"Removed_Key"526,183"Removed_Key"NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1903, 1431, 192, 64" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' check:text='Assign' /&gt;" Guid="d2d1e10e-c160-4588-b11c-7f97d6936842" InformativeScreenshot="f56d983473f597c5a33682a8fe842305.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
@@ -757,16 +902,16 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
-        <ui:RetryScopeRemoved_Key"Retry Scope - Open IPAFFS"Removed_Key"588,1144"Removed_Key"RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
+        <ui:RetryScopeRemoved_Key"Retry Scope - Open IPAFFS"Removed_Key"594,1095"Removed_Key"RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <SequenceRemoved_Key"Action"Removed_Key"528,935"Removed_Key"Sequence_16">
+              <SequenceRemoved_Key"Action"Removed_Key"528,895"Removed_Key"Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"494,455"Removed_Key"NApplicationCard_5" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Use Browser Edge: Dynamics"Removed_Key"494,415"Removed_Key"NApplicationCard_5" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -829,10 +974,9 @@
             <ActivityFunc x:TypeArguments="x:Boolean" />
           </ui:RetryScope.Condition>
         </ui:RetryScope>
-        <ui:LogMessageRemoved_Key"Log Message"Removed_Key"588,166"Removed_Key"LogMessage_2" Level="Fatal" Message="[&quot;Add Open Notification Overview Click&quot;]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID2"Removed_Key"FlowStep_2">
+        <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">535,395</av:Point>
@@ -840,19 +984,19 @@
               <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"910,11453"Removed_Key"Sequence_19">
+          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"110,70"Removed_Key"Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Notification overview - Import and export applications - GOV.UK"Removed_Key"876,11393"Removed_Key"NApplicationCard_6" InteractionMode="DebuggerApi" OutUiElement="[g_IPAFFSElement]" ScopeGuid="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Notification overview - Import and export applications - GOV.UK"Removed_Key"876,12382"Removed_Key"NApplicationCard_6" InteractionMode="DebuggerApi" OutUiElement="[g_IPAFFSElement]" ScopeGuid="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <SequenceRemoved_Key"Do"Removed_Key"842,11152"Removed_Key"Sequence_20">
+                  <SequenceRemoved_Key"Do"Removed_Key"842,12141"Removed_Key"Sequence_20">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -973,13 +1117,13 @@
                         <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1183169/CHED-overview" DesignTimeRectangle="1918, 1294, 918, 90" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Netherlands'" FullSelectorArgument="&lt;webctrl id='review-table-about-notification' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Country from where consigned' /&gt;" FuzzySelectorArgument="&lt;webctrl id='review-table-about-notification' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Country from where consigned' type='' aaname='Netherlands' check:text='Netherlands' /&gt;" Guid="a8505154-0083-4353-a116-76569cff59c6" InformativeScreenshot="b77b4a29a2440c35306c6fd76042c3fc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NGetAttributeGeneric.Target>
                     </uix:NGetAttributeGeneric>
-                    <SequenceRemoved_Key"Extract Date of Arrival"Removed_Key"808,2266"Removed_Key"Sequence_95">
+                    <SequenceRemoved_Key"Extract Date of Arrival"Removed_Key"808,2637"Removed_Key"Sequence_95">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <AssignRemoved_Key"Initialise Date of Arrival"Removed_Key"502,115"Removed_Key"Assign_19">
+                      <AssignRemoved_Key"Initialise Date of Arrival"Removed_Key"581,115"Removed_Key"Assign_19">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[dictApplicationInfo("Date of Arrival")]</OutArgument>
                         </Assign.To>
@@ -989,12 +1133,12 @@
                           </InArgument>
                         </Assign.Value>
                       </Assign>
-                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" ContinueOnError="True"Removed_Key"Extract Estimated Arrival Date"Removed_Key"502,241"Removed_Key"NGetAttributeGeneric`1_6" Result="[dictApplicationInfo(&quot;Date of Arrival&quot;)]" ScopeIdentifier="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Timeout="5" Version="V3">
+                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" ContinueOnError="True"Removed_Key"Extract Estimated Arrival Date"Removed_Key"581,241"Removed_Key"NGetAttributeGeneric`1_6" Result="[dictApplicationInfo(&quot;Date of Arrival&quot;)]" ScopeIdentifier="42b44f4c-b824-4aaa-9809-f688fa1c9fb6" Timeout="5" Version="V3">
                         <uix:NGetAttributeGeneric.Target>
                           <uix:TargetAnchorable BrowserURL="https://importnotification-int-static-snd.azure.defra.cloud/decision/vnet/protected/bip-notifications/CHEDPP.GB.2025.1190598/overview" DesignTimeRectangle="1897, 1115, 960, 90" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'21 December 2025'" FullSelectorArgument="&lt;webctrl id='review-table-bip-details' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Estimated arrival date at BCP' /&gt;" FuzzySelectorArgument="&lt;webctrl id='review-table-bip-details' tag='TABLE' /&gt;&lt;webctrl class='govuk-table__cell' tag='TD' rowName='Estimated arrival date at BCP' type='' aaname='21 December 2025' check:text='21 December 2025' /&gt;" Guid="90ea808b-f8c1-4e06-94bd-5d3143dd80a3" InformativeScreenshot="afd7efe105587b94f91e92d0971063a5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Import and export applications - GOV.UK' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                         </uix:NGetAttributeGeneric.Target>
                       </uix:NGetAttributeGeneric>
-                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"502,668"Removed_Key"If_16">
+                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"581,668"Removed_Key"If_16">
                         <If.Then>
                           <SequenceRemoved_Key"Then"Removed_Key"468,407"Removed_Key"Sequence_99">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1027,7 +1171,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"502,668"Removed_Key"If_15">
+                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"581,668"Removed_Key"If_15">
                         <If.Then>
                           <SequenceRemoved_Key"Then"Removed_Key"468,407"Removed_Key"Sequence_97">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1060,15 +1204,70 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"502,482"Removed_Key"If_17">
+                      <If Condition="[String.IsNullOrWhiteSpace(dictApplicationInfo(&quot;Date of Arrival&quot;).ToString)]"Removed_Key"Date of Arrival Blank?"Removed_Key"581,851"Removed_Key"If_17">
                         <If.Then>
-                          <SequenceRemoved_Key"Then"Removed_Key"416,228"Removed_Key"Sequence_101">
+                          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_101">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,168"Removed_Key"LogMessage_3" Level="Info" Message="[&quot;Remember On Hold reason for blank Date of Arrival!&quot;]" />
+                            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_103">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                                <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                                <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                                <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_4">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_7">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[strCHEDPPReference]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_8">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_9">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_10">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">Date of Arrival is not correctly populated on the IPAFFs application.</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_1" />
+                            </Sequence>
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -1082,7 +1281,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <SequenceRemoved_Key"Extract Commodity Lines"Removed_Key"808,740"Removed_Key"Sequence_31">
+                    <SequenceRemoved_Key"Extract Commodity Lines"Removed_Key"808,742"Removed_Key"Sequence_31">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strOverviewURL" />
                         <Variable x:TypeArguments="x:String" Name="strCommoditySummaryURL" />
@@ -1325,7 +1524,7 @@
                         </ui:ForEachRow.Body>
                       </ui:ForEachRow>
                     </Sequence>
-                    <SequenceRemoved_Key"Extract Phyto Certificate Details &amp; Download Files"Removed_Key"808,2129"Removed_Key"Sequence_34">
+                    <SequenceRemoved_Key"Extract Phyto Certificate Details &amp; Download Files"Removed_Key"808,2745"Removed_Key"Sequence_34">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1355,7 +1554,83 @@
                           </scg:List>
                         </ui:FilterDataTable.SelectColumns>
                       </ui:FilterDataTable>
-                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"588,177"Removed_Key"LogMessage_1" Level="Warn" Message="[&quot;Remember to put logic to record On Hold reason if no Phyto Certs are marked correctly&quot;]" />
+                      <If Condition="[dtCertificateDetails.Rows.Count = 0]"Removed_Key"No Documents Marked as Phyto?"Removed_Key"588,793"Removed_Key"If_18">
+                        <If.Then>
+                          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_104">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_105">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                                <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                                <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                                <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_5">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_11">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[strCHEDPPReference]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_12">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_13">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperationRemoved_Key"AssignOperation_14">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">Date of Arrival is not correctly populated on the IPAFFs application.</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_2" />
+                            </Sequence>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <SequenceRemoved_Key"Else"Removed_Key"416,25"Removed_Key"Sequence_106">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                       <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Phytosantiary Certificate"Removed_Key"588,1480"Removed_Key"ForEachRow_3">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd1:DataRow">
@@ -1434,14 +1709,14 @@
             </uix:NApplicationCard>
           </Sequence>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
-    <FlowStep x:Name="__ReferenceID6">
+    <x:Reference>__ReferenceID4</x:Reference>
+    <FlowStep x:Name="__ReferenceID9"Removed_Key"FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,155</av:Point>
@@ -1449,13 +1724,13 @@
           <av:PointCollection x:Key="ConnectorLocation">590,225 590,275</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Cleardown Folders"Removed_Key"110,70"Removed_Key"Sequence_58">
+      <SequenceRemoved_Key"Cleardown Folders &amp; Initialise Variables"Removed_Key"110,70"Removed_Key"Sequence_58">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachFileXRemoved_Key"For Each File in Attachments Folder" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]"Removed_Key"450,451"Removed_Key"ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+        <ui:ForEachFileXRemoved_Key"For Each File in Attachments Folder" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]"Removed_Key"450,460"Removed_Key"ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
           <ui:ForEachFileX.Body>
             <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
               <ActivityAction.Argument1>
@@ -1475,12 +1750,29 @@
             </ActivityAction>
           </ui:ForEachFileX.Body>
         </ui:ForEachFileX>
+        <ui:BuildDataTable DataTable="[dtOnHoldReasons]"Removed_Key"Initialise On Hold Table"Removed_Key"450,92"Removed_Key"BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Application_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_Line_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;On_Hold_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <AssignRemoved_Key"Dynamic Selector requires we store this value in a variable rather than in the g_TransactionItem Dictionary."Removed_Key"Assign strCHEDPPReference"Removed_Key"450,150"Removed_Key"Assign_22">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCHEDPPReference]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[g_TransactionItem("CHEDPP Reference").ToString.Replace(" ","")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
   </Flowchart>
 </Activity>
