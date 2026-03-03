@@ -1,8 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Check_No_of_Certs" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:uascf="clr-namespace:UiPath.Activities.System.Collections.Filters;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Check_No_of_Certs" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:uascf="clr-namespace:UiPath.Activities.System.Collections.Filters;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_IPAFFSCertificateReference" Type="InArgument(x:String)" />
     <x:Property Name="out_dictCertPageRanges" Type="OutArgument(scg:Dictionary(x:String, scg:List(x:Int32)))" />
     <x:Property Name="in_PhytoCertFilepath" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCHEDPPReference" Type="InArgument(x:String)" />
+    <x:Property Name="io_dtOnHoldReasons" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -131,7 +133,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Check_No_of_Certs"Removed_Key"2125,6933"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Check_No_of_Certs"Removed_Key"2348,8677"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intTotalPages" />
     </Sequence.Variables>
@@ -140,7 +142,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Check No of Certs"Removed_Key"706,6910"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"Check No of Certs"Removed_Key"706,8654"Removed_Key"Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strPdfPath" />
         <Variable x:TypeArguments="x:String" Name="strPageText" />
@@ -153,7 +155,23 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <upap:GetPDFPageCountRemoved_Key"Get PDF Page Count" FileName="[in_PhytoCertFilepath]"Removed_Key"672,115"Removed_Key"GetPDFPageCount_1" PageCount="[intTotalPages]" />
+      <ui:RetryScopeRemoved_Key"Retry - Get PDF Page Count"Removed_Key"672,375"Removed_Key"RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <SequenceRemoved_Key"Action"Removed_Key"416,166"Removed_Key"Sequence_39">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <upap:GetPDFPageCountRemoved_Key"Get PDF Page Count" FileName="[in_PhytoCertFilepath]"Removed_Key"382,106"Removed_Key"GetPDFPageCount_1" PageCount="[intTotalPages]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean" />
+        </ui:RetryScope.Condition>
+      </ui:RetryScope>
       <AssignRemoved_Key"Initialise Dictionary"Removed_Key"672,115"Removed_Key"Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[out_dictCertPageRanges]</OutArgument>
@@ -162,7 +180,7 @@
           <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[New Dictionary(Of String, List(Of Int32))()]</InArgument>
         </Assign.Value>
       </Assign>
-      <SequenceRemoved_Key"Extract Cert Numbers from IPAFFs"Removed_Key"672,1085"Removed_Key"Sequence_19">
+      <SequenceRemoved_Key"Extract Cert Numbers from IPAFFs"Removed_Key"672,1456"Removed_Key"Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieIPAFFSPhytoCertNos" />
         </Sequence.Variables>
@@ -171,16 +189,69 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Matches FirstMatch="{x:Null}"Removed_Key"Find IPAFFs Cert Numbers"Removed_Key"450,92"Removed_Key"Matches_5" Input="[in_IPAFFSCertificateReference]" IsBuilderTabModified="False" Pattern="[0-9]{9}" RegexOption="IgnoreCase, Compiled" Result="[ieIPAFFSPhytoCertNos]" />
-        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]"Removed_Key"No IPAFFS Phyto Numbers?"Removed_Key"450,422"Removed_Key"If_5">
+        <ui:Matches FirstMatch="{x:Null}"Removed_Key"Find IPAFFs Cert Numbers"Removed_Key"581,92"Removed_Key"Matches_5" Input="[in_IPAFFSCertificateReference]" IsBuilderTabModified="False" Pattern="[0-9]{9}" RegexOption="IgnoreCase, Compiled" Result="[ieIPAFFSPhytoCertNos]" />
+        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]"Removed_Key"No IPAFFS Phyto Numbers?"Removed_Key"581,793"Removed_Key"If_5">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,226"Removed_Key"Sequence_24">
+            <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_24">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,166"Removed_Key"LogMessage_3" Level="Warn" Message="[&quot;Add logic for: On hold - Document marked as Phyto Certificate has an invalid Reference Number&quot;]" />
+              <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_35">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                  <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                  <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                  <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_1">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperationRemoved_Key"AssignOperation_1">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_2">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_3">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_4">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">["The Document Reference provided does not contain a valid Phytosanitary Certificate Number: "+in_IPAFFSCertificateReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_1" />
+              </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
@@ -194,7 +265,7 @@
             </Sequence>
           </If.Else>
         </If>
-        <AssignRemoved_Key"Initialise List"Removed_Key"450,115"Removed_Key"Assign_16">
+        <AssignRemoved_Key"Initialise List"Removed_Key"581,115"Removed_Key"Assign_16">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listIPAFFSPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -202,7 +273,7 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"450,364"Removed_Key"ForEach`1_5" Values="[ieIPAFFSPhytoCertNos]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"581,364"Removed_Key"ForEach`1_5" Values="[ieIPAFFSPhytoCertNos]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
@@ -226,7 +297,7 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <SequenceRemoved_Key"Extract Cert Numbers from PDF"Removed_Key"672,1750"Removed_Key"Sequence_14">
+      <SequenceRemoved_Key"Extract Cert Numbers from PDF"Removed_Key"672,2121"Removed_Key"Sequence_14">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strFullPDFText" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="iePDFPhytoCertNos" />
@@ -236,8 +307,8 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertFilepath]"Removed_Key"450,115"Removed_Key"ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
-        <If Condition="[strFullPDFText.Replace(&quot; &quot;,&quot;&quot;).Length = 0]"Removed_Key"PDF Contains Content?"Removed_Key"450,435"Removed_Key"If_7">
+        <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertFilepath]"Removed_Key"581,115"Removed_Key"ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
+        <If Condition="[strFullPDFText.Replace(&quot; &quot;,&quot;&quot;).Length = 0]"Removed_Key"PDF Contains Content?"Removed_Key"581,435"Removed_Key"If_7">
           <If.Then>
             <SequenceRemoved_Key"Then"Removed_Key"416,174"Removed_Key"Sequence_33">
               <sap:WorkflowViewStateService.ViewState>
@@ -258,16 +329,69 @@
             </Sequence>
           </If.Else>
         </If>
-        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)"Removed_Key"Find PDF Cert Numbers"Removed_Key"450,92"Removed_Key"Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;No\\.\\s*EC\\s*NL\\s*\/\\s*(PCNU\\s*\\d+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" RegexOption="IgnoreCase, Compiled" Result="[iePDFPhytoCertNos]" />
-        <If Condition="[iePDFPhytoCertNos.Count = 0]"Removed_Key"No PDF Phyto Numbers?"Removed_Key"450,422"Removed_Key"If_4">
+        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)"Removed_Key"Find PDF Cert Numbers"Removed_Key"581,92"Removed_Key"Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;No\\.\\s*EC\\s*NL\\s*\/\\s*(PCNU\\s*\\d+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" RegexOption="IgnoreCase, Compiled" Result="[iePDFPhytoCertNos]" />
+        <If Condition="[iePDFPhytoCertNos.Count = 0]"Removed_Key"No PDF Phyto Numbers?"Removed_Key"581,793"Removed_Key"If_4">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,226"Removed_Key"Sequence_22">
+            <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_22">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,166"Removed_Key"LogMessage_2" Level="Warn" Message="[&quot;Add logic for: On hold - Document marked as Phyto Certificate contains no identifiable reference number&quot;]" />
+              <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_36">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                  <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                  <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                  <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_2">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperationRemoved_Key"AssignOperation_5">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_6">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_7">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_8">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">["Document listed on IPAFFS as a Phytosanitary Certificate does not contain a valid Phytosanitary Certificate Number: "+in_IPAFFSCertificateReference]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_2" />
+              </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
@@ -281,7 +405,7 @@
             </Sequence>
           </If.Else>
         </If>
-        <AssignRemoved_Key"Initialise List"Removed_Key"450,115"Removed_Key"Assign_19">
+        <AssignRemoved_Key"Initialise List"Removed_Key"581,115"Removed_Key"Assign_19">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listPDFPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -289,7 +413,7 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"450,373"Removed_Key"ForEach`1_6" Values="[iePDFPhytoCertNos]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"581,373"Removed_Key"ForEach`1_6" Values="[iePDFPhytoCertNos]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
@@ -312,7 +436,7 @@
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
-        <AssignRemoved_Key"Remove Duplicate Values"Removed_Key"450,106"Removed_Key"Assign_20">
+        <AssignRemoved_Key"Remove Duplicate Values"Removed_Key"581,106"Removed_Key"Assign_20">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listPDFPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -502,15 +626,68 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <If Condition="[listIPAFFSPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining IPAFFS Numbers?"Removed_Key"672,487"Removed_Key"If_3">
+      <If Condition="[listIPAFFSPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining IPAFFS Numbers?"Removed_Key"672,858"Removed_Key"If_3">
         <If.Then>
-          <SequenceRemoved_Key"Then"Removed_Key"416,226"Removed_Key"Sequence_15">
+          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,166"Removed_Key"LogMessage_1" Level="Warn" Message="[&quot;Add logic for: On hold - Cert declared on IPAFFS not found in PDF&quot;]" />
+            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_37">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_3">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperationRemoved_Key"AssignOperation_9">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_10">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_11">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_12">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">["Phytosanitary Certificates - "+String.Join(",",listIPAFFSPhytoCertNos)+" - referenced on IPAFFS but not declared on CHEDPP"]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_3" />
+            </Sequence>
           </Sequence>
         </If.Then>
         <If.Else>
@@ -523,15 +700,68 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[listPDFPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining PDF Numbers?"Removed_Key"672,478"Removed_Key"If_6">
+      <If Condition="[listPDFPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining PDF Numbers?"Removed_Key"672,849"Removed_Key"If_6">
         <If.Then>
-          <SequenceRemoved_Key"Then"Removed_Key"416,226"Removed_Key"Sequence_31">
+          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_31">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,166"Removed_Key"LogMessage_4" Level="Warn" Message="[&quot;Add logic for: On hold - Cert found in PDF not declared on IPAFFS&quot;]" />
+            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_38">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Application_Reference" />
+                <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
+                <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
+                <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_4">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperationRemoved_Key"AssignOperation_13">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_14">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_15">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperationRemoved_Key"AssignOperation_16">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">["References declared within Phytosanitary Certificate - "+String.Join(",",listPDFPhytoCertNos)+" - do not match Phytosanitary Certificate Numbers declared on CHEDPP"]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_4" />
+            </Sequence>
           </Sequence>
         </If.Then>
         <If.Else>

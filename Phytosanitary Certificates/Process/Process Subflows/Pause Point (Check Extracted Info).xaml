@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Pause_Point__Check_Extracted_Info_" this:Pause_Point__Check_Extracted_Info_.in_dictApplicationInfo="[New Dictionary(Of String, String)]" this:Pause_Point__Check_Extracted_Info_.in_dtIPAFFSCommodityInfo="[New System.Data.DataTable]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Pause_Point__Check_Extracted_Info_" this:Pause_Point__Check_Extracted_Info_.in_dictApplicationInfo="[New Dictionary(Of String, String)]" this:Pause_Point__Check_Extracted_Info_.in_dtIPAFFSCommodityInfo="[New System.Data.DataTable]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strExporterAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_strConsignee" Type="InArgument(x:String)" />
@@ -10,6 +10,7 @@
     <x:Property Name="in_dictApplicationInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="in_dtIPAFFSCommodityInfo" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_FormattedCertNo" Type="InArgument(x:String)" />
+    <x:Property Name="in_strAttachmentFilepath" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -51,6 +52,13 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>DRACOE_PopUps_64</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,9 +127,19 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Pause_Point__Check_Extracted_Info_"Removed_Key"2125,2767"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Pause_Point__Check_Extracted_Info_"Removed_Key"1880,3464"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtResultsTable" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSData" />
@@ -131,21 +149,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"570,169"Removed_Key"InvokeMethod_1" MethodName="Stop">
+    <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"638,169"Removed_Key"InvokeMethod_1" MethodName="Stop">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <SequenceRemoved_Key"Build IPAFFs Data Table"Removed_Key"570,396"Removed_Key"Sequence_7">
+    <SequenceRemoved_Key"Build IPAFFs Data Table"Removed_Key"638,396"Removed_Key"Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BuildDataTable DataTable="[dtIPAFFSData]"Removed_Key"Build Temp IPAFFS Data Table"Removed_Key"416,92"Removed_Key"BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Consignor_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Delivery_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Importer_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Consignment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Arrival&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:BuildDataTable DataTable="[dtIPAFFSData]"Removed_Key"Build Temp IPAFFS Data Table"Removed_Key"416,92"Removed_Key"BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Consignor_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Delivery_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Importer_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Consignment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Arrival&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_dictApplicationInfo(&quot;Consignor Address&quot;),in_dictApplicationInfo(&quot;Delivery Address&quot;),in_dictApplicationInfo(&quot;Importer Address&quot;),in_dictApplicationInfo(&quot;Country of Origin&quot;),in_dictApplicationInfo(&quot;Country of Consignment&quot;),in_dictApplicationInfo(&quot;Date of Arrival&quot;)}]" DataTable="[dtIPAFFSData]"Removed_Key"Add Data Row"Removed_Key"416,212"Removed_Key"AddDataRow_2" />
     </Sequence>
-    <SequenceRemoved_Key"Build Cert Results Table"Removed_Key"570,563"Removed_Key"Sequence_6">
+    <SequenceRemoved_Key"Build Cert Results Table"Removed_Key"638,563"Removed_Key"Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,44 +173,64 @@
       <ui:BuildDataTable DataTable="[dtResultsTable]"Removed_Key"Build Temp Results Table"Removed_Key"416,92"Removed_Key"BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Exporter_x0020_Details&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Consignee&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phyto_x0020_Cert_x0020_Number_x0020__x0028_From_x0020_Cert_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Place_x0020_of_x0020_Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Issue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Declarations&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_strExporterAddress, in_strConsignee, in_strPhytoCertNo, in_strPlaceOfOrigin, in_strIssueDate, g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+in_FormattedCertNo+&quot; - Additional Declarations.txt&quot;}]" DataTable="[dtResultsTable]"Removed_Key"Add Data Row"Removed_Key"416,212"Removed_Key"AddDataRow_1" />
     </Sequence>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Excel Process Scope"Removed_Key"570,1456"Removed_Key"ExcelProcessScopeX_1">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always"Removed_Key"Use Browser Edge: Open PDF Cert File"Removed_Key"638,2153"Removed_Key"NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="be1681e3-8b01-4f36-9fd0-e73f8a28b606" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Do"Removed_Key"536,1337"Removed_Key"Sequence_4">
+          <SequenceRemoved_Key"Do"Removed_Key"604,1903"Removed_Key"Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}"Removed_Key"Create Results Spreadsheet"Removed_Key"502,1277"Removed_Key"ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+in_FormattedCertNo+&quot;.xlsx&quot;]">
-              <ueab:ExcelApplicationCard.Body>
-                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <uix:NGoToUrlRemoved_Key"Go To URL"Removed_Key"570,115"Removed_Key"NGoToUrl_1" Url="[&quot;file:///&quot;+in_strAttachmentFilepath]" Version="V3" />
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Excel Process Scope"Removed_Key"570,1726"Removed_Key"ExcelProcessScopeX_1">
+              <ueab:ExcelProcessScopeX.Body>
+                <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                   </ActivityAction.Argument>
-                  <SequenceRemoved_Key"Do"Removed_Key"468,941"Removed_Key"Sequence_8">
+                  <SequenceRemoved_Key"Do"Removed_Key"536,1614"Removed_Key"Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;IPAFFS Application Data&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_5" IgnoreEmptySource="False" Source="[dtIPAFFSData]" />
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;IPAFFS Commodity Lines&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_6" IgnoreEmptySource="False" Source="[in_dtIPAFFSCommodityInfo]" />
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Certificate Data&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_7" IgnoreEmptySource="False" Source="[dtResultsTable]" />
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Certificate Commodity Lines&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_8" IgnoreEmptySource="False" Source="[in_dtCommodityLines]" />
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00"Removed_Key"Message Box"Removed_Key"434,109"Removed_Key"MessageBox_2" Text="[&quot;Please check that the Excel details correctly match the data within the relevant Phyto Certificate and IPAFFs application. Once you have completed all manual checks, including Additional Declarations, please click OK and the robot will move to the next Phyto Certificate.&quot;]" />
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}"Removed_Key"Create Results Spreadsheet"Removed_Key"502,1554"Removed_Key"ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+in_FormattedCertNo+&quot;.xlsx&quot;]">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                          </ActivityAction.Argument>
+                          <SequenceRemoved_Key"Do"Removed_Key"468,1258"Removed_Key"Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;IPAFFS Application Data&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_5" IgnoreEmptySource="False" Source="[dtIPAFFSData]" />
+                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;IPAFFS Commodity Lines&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_6" IgnoreEmptySource="False" Source="[in_dtIPAFFSCommodityInfo]" />
+                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Certificate Data&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_7" IgnoreEmptySource="False" Source="[dtResultsTable]" />
+                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Certificate Commodity Lines&quot;)]"Removed_Key"Write DataTable to Excel"Removed_Key"434,193"Removed_Key"WriteRangeX_8" IgnoreEmptySource="False" Source="[in_dtCommodityLines]" />
+                            <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}"Removed_Key"Validation Pop-Up"Removed_Key"434,426" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="[&quot;&lt;h1&gt;Check Certificate Extraction&lt;/h1&gt;&lt;p&gt;Please check the extracted data for Certificate &quot;+in_FormattedCertNo+&quot;. If any details appears to have extracted incorrectly, please correct these within the Excel sheet and/or Additional Declarations text file.&lt;/p&gt;&lt;p&gt;Once you are happy, please click Continue. If there are additional Certificates to extract the robot will move onto the next one, else it will proceed to the Application data checks.&lt;/p&gt;&lt;br&gt;&quot;]" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{750,500}]"Removed_Key"Generic_PopUp_1" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                    </ueab:ExcelApplicationCard>
                   </Sequence>
                 </ActivityAction>
-              </ueab:ExcelApplicationCard.Body>
-            </ueab:ExcelApplicationCard>
+              </ueab:ExcelProcessScopeX.Body>
+            </ueab:ExcelProcessScopeX>
           </Sequence>
         </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
-    <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"570,160"Removed_Key"InvokeMethod_2" MethodName="Start">
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-13, -13, 3866, 2330" BrowserType="Edge" IconBase64="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" InformativeScreenshot="ee74c79fea658d30c61371b77ceb3825.png" Selector="&lt;html app='msedge.exe' url='www.Google.com' /&gt;" Title="Defra Intranet - Home" Url="www.Google.com" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <InvokeMethodRemoved_Key"Invoke Method"Removed_Key"638,160"Removed_Key"InvokeMethod_2" MethodName="Start">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd1:Stopwatch">[g_swProcessingTimer]</InArgument>
       </InvokeMethod.TargetObject>

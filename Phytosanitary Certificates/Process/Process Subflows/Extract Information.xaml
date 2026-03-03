@@ -150,7 +150,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Extract Information"Removed_Key"2125,13146.5"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Extract Information"Removed_Key"2403,15629"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -170,7 +170,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Extract Information"Removed_Key"876,13123.5"Removed_Key"Sequence_146">
+    <SequenceRemoved_Key"Extract Information"Removed_Key"876,15606"Removed_Key"Sequence_146">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,7 +207,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <SequenceRemoved_Key"Get Additional Declarations "Removed_Key"842,57"Removed_Key"Sequence_186">
+      <SequenceRemoved_Key"Get Additional Declarations "Removed_Key"842,1579"Removed_Key"Sequence_186">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strAddDecFirst" />
           <Variable x:TypeArguments="x:String" Name="strAddDecSec" />
@@ -218,11 +218,11 @@
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <AssignRemoved_Key"Assign strExtractPDF to strCleanText"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_641">
+        <AssignRemoved_Key"Assign strExtractPDF to strCleanText"Removed_Key"434,115"Removed_Key"Assign_641">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -230,7 +230,7 @@
             <InArgument x:TypeArguments="x:String">[strExtractedPDF]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Remove un-needed text"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_642">
+        <AssignRemoved_Key"Remove un-needed text"Removed_Key"434,115"Removed_Key"Assign_642">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -238,7 +238,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanText, "(11\s+Additional\s+declaration[\s\S]*)", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Get first AD group"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_643">
+        <AssignRemoved_Key"Get first AD group"Removed_Key"434,115"Removed_Key"Assign_643">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strADOOutputOne]</OutArgument>
           </Assign.To>
@@ -246,7 +246,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCleanText, "(?i)11\s+Additional\s+declaration[\s\S]*?(?=\s*DISINFESTATION\s+AND/OR\s+DISINFECTION\s+TREATMENT)", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Remove first AD group from text"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_644">
+        <AssignRemoved_Key"Remove first AD group from text"Removed_Key"434,115"Removed_Key"Assign_644">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCleanText]</OutArgument>
           </Assign.To>
@@ -254,7 +254,7 @@
             <InArgument x:TypeArguments="x:String">[strCleanText.Replace(strADOOutputOne,"")]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Further Tidy Clean text"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_645">
+        <AssignRemoved_Key"Further Tidy Clean text"Removed_Key"434,115"Removed_Key"Assign_645">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strUneditedADGroupTwo]</OutArgument>
           </Assign.To>
@@ -262,7 +262,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strCleanText, "^[\s\S]*?(?=11\s+Additional\s+declaration)", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase)]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Replace un-needed text"Removed_Key"434.2857142857143,117.71428571428571"Removed_Key"Assign_646">
+        <AssignRemoved_Key"Replace un-needed text"Removed_Key"434,116"Removed_Key"Assign_646">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strADOOutputTwo]</OutArgument>
           </Assign.To>
@@ -274,7 +274,7 @@
 )]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Replace text at the end"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_647">
+        <AssignRemoved_Key"Replace text at the end"Removed_Key"434,115"Removed_Key"Assign_647">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strADOOutputTwo]</OutArgument>
           </Assign.To>
@@ -282,7 +282,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strADOOutputTwo, "(?ms)^Place of issue\s*:.*\r?\nDate\s*:.*\r?\nStamp of organization and name of authorized officer:\s*\r?\n\r?\n\(Signature\)\s*:", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Replace final bit of text"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_648">
+        <AssignRemoved_Key"Replace final bit of text"Removed_Key"434,115"Removed_Key"Assign_648">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strADOOutputTwo]</OutArgument>
           </Assign.To>
@@ -290,7 +290,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strADOOutputTwo, "Place of issue\s*:.*\r?\nDate\s*:.*\r?\nStamp of organization and name of authorized officer:\s*\r?\n\r?\n\(Signature\)\s*", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Compine text to make out_strAdditionalDeclarions"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_649">
+        <AssignRemoved_Key"Compine text to make out_strAdditionalDeclarions"Removed_Key"434,115"Removed_Key"Assign_649">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strAdditionalDeclarions]</OutArgument>
           </Assign.To>
@@ -298,7 +298,7 @@
             <InArgument x:TypeArguments="x:String">[strADOOutputOne + strADOOutputTwo]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Assign strExtractedPDF to strGenusText"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_650">
+        <AssignRemoved_Key"Assign strExtractedPDF to strGenusText"Removed_Key"434,115"Removed_Key"Assign_650">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
           </Assign.To>
@@ -306,7 +306,7 @@
             <InArgument x:TypeArguments="x:String">[strExtractedPDF]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Remove first AD group"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_651">
+        <AssignRemoved_Key"Remove first AD group"Removed_Key"434,115"Removed_Key"Assign_651">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
           </Assign.To>
@@ -314,7 +314,7 @@
             <InArgument x:TypeArguments="x:String">[strGenusText.Replace(strADOOutputOne,"")]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"Remove second AD group"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_652">
+        <AssignRemoved_Key"Remove second AD group"Removed_Key"434,115"Removed_Key"Assign_652">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strGenusText]</OutArgument>
           </Assign.To>
@@ -322,16 +322,16 @@
             <InArgument x:TypeArguments="x:String">[strGenusText.Replace(strUneditedADGroupTwo,"")]</InArgument>
           </Assign.Value>
         </Assign>
-        <AssignRemoved_Key"** Remove Digits at the end of the text"Removed_Key"434.2857142857143,108"Removed_Key"Assign_653">
+        <AssignRemoved_Key"Remove 4 Digit Text"Removed_Key"434,106"Removed_Key"Assign_740">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_strAdditionalDeclarions]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(out_strAdditionalDeclarions, "[0-9]*$", "")]</InArgument>
+            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(out_strAdditionalDeclarions, "(?&lt;!\()\d{4}(?![^()]*\))", "")]</InArgument>
           </Assign.Value>
         </Assign>
       </Sequence>
-      <SequenceRemoved_Key"Get Genus Information"Removed_Key"842,11848.5"Removed_Key"Sequence_187">
+      <SequenceRemoved_Key"Get Genus Information"Removed_Key"842,12809"Removed_Key"Sequence_187">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieGenusText" />
@@ -423,10 +423,11 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strGenusText, "(?sm)^.*?(?=^[ \t]*\d{4}\\b)", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <SequenceRemoved_Key"Get Commodity Group from main header"Removed_Key"808,659"Removed_Key"Sequence_200">
+        <SequenceRemoved_Key"Get Commodity Group from main header"Removed_Key"808,57"Removed_Key"Sequence_200">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <AssignRemoved_Key"Get Full Commodity Group Text"Removed_Key"434,116"Removed_Key"Assign_657">
@@ -498,13 +499,13 @@
         </Assign>
         <ui:BuildDataTable DataTable="[out_dtCommodityLines]"Removed_Key"Build Data Table"Removed_Key"808,92"Removed_Key"BuildDataTable_10" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         <ui:Matches FirstMatch="{x:Null}" BuilderPattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}"Removed_Key"Find Matching Patterns"Removed_Key"808,92"Removed_Key"Matches_23" Input="[strGenusText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?m)^\\s*\\d{4}.*(?:\\r?\\n\\s{2,}.*){0,2}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]"Removed_Key"For Each item"Removed_Key"808,9524.5"Removed_Key"ForEach`1_15" Values="[ieMatches]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]"Removed_Key"For Each item"Removed_Key"808,11087"Removed_Key"ForEach`1_15" Values="[ieMatches]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Extract Information"Removed_Key"774,9386.5"Removed_Key"Sequence_188">
+              <SequenceRemoved_Key"Extract Information"Removed_Key"774,10949"Removed_Key"Sequence_188">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="rowText" />
                   <Variable x:TypeArguments="x:String" Name="entry" />
@@ -539,7 +540,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"740,9211.5"Removed_Key"If_25">
+                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"740,10774"Removed_Key"If_25">
                   <If.Then>
                     <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_201">
                       <sap:WorkflowViewStateService.ViewState>
@@ -550,14 +551,14 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <SequenceRemoved_Key"Else"Removed_Key"706,8959.5"Removed_Key"Sequence_214">
+                    <SequenceRemoved_Key"Else"Removed_Key"706,10522"Removed_Key"Sequence_214">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or entry.Contains(&quot;No. EC NL&quot;) or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;) or entry.Length &lt; 15 or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"672,8899.5"Removed_Key"If_24">
+                      <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or entry.Contains(&quot;No. EC NL&quot;) or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;) or entry.Length &lt; 15 or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"672,10462"Removed_Key"If_24">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -565,14 +566,14 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <SequenceRemoved_Key"Then"Removed_Key"638,4513"Removed_Key"Sequence_208">
+                          <SequenceRemoved_Key"Then"Removed_Key"638,5248"Removed_Key"Sequence_208">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[Regex.IsMatch(entry, &quot;\A\d{4}\s&quot;)]"Removed_Key"604,4453"Removed_Key"If_21">
+                            <If Condition="[Regex.IsMatch(entry, &quot;\A\d{4}\s&quot;)]"Removed_Key"604,5188"Removed_Key"If_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -580,7 +581,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <SequenceRemoved_Key"Then"Removed_Key"570,4201"Removed_Key"Sequence_206">
+                                <SequenceRemoved_Key"Then"Removed_Key"570,4936"Removed_Key"Sequence_206">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -667,7 +668,7 @@
                                       <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,2779"Removed_Key"Sequence_189">
+                                  <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3514"Removed_Key"Sequence_189">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="lines" />
                                     </Sequence.Variables>
@@ -687,20 +688,27 @@
     FirstOrDefault(Function(c) entry.ToLower.Contains(c.ToLower))]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <If Condition="[String.IsNullOrWhiteSpace(CommodityGroup)]"Removed_Key"Check whether Commodity Group is empty"Removed_Key"502,427"Removed_Key"If_19">
+                                    <If Condition="[String.IsNullOrWhiteSpace(CommodityGroup)]"Removed_Key"Check whether Commodity Group is empty"Removed_Key"502,428"Removed_Key"If_19">
                                       <If.Then>
-                                        <SequenceRemoved_Key"Then"Removed_Key"468,166"Removed_Key"Sequence_202">
+                                        <SequenceRemoved_Key"Then"Removed_Key"468,167"Removed_Key"Sequence_202">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <AssignRemoved_Key"434,106"Removed_Key"Assign_675">
+                                          <AssignRemoved_Key"Assign Commodity Group"Removed_Key"434,107"Removed_Key"Assign_675">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:String">[CommodityGroup]</OutArgument>
                                             </Assign.To>
                                             <Assign.Value>
-                                              <InArgument x:TypeArguments="x:String">[strCommodityFullText]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(
+    System.Text.RegularExpressions.Regex.IsMatch(strCommodityFullText, "\s+\d"),
+    System.Text.RegularExpressions.Regex.Match(
+        strCommodityFullText,
+        "^(.*?)(?=\s+\d)"
+    ).Value.Trim,
+    strCommodityFullText.Trim
+)]</InArgument>
                                             </Assign.Value>
                                           </Assign>
                                         </Sequence>
@@ -775,12 +783,16 @@
                                         <InArgument x:TypeArguments="x:String">[If(Country.Length &gt; 1, entry.Replace(Country, ""), entry)]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <AssignRemoved_Key"Extract Total"Removed_Key"502,115"Removed_Key"Assign_681">
+                                    <AssignRemoved_Key"Extract Total"Removed_Key"502,116"Removed_Key"Assign_681">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "([\d,]+\s+\w+)\s*$", System.Text.RegularExpressions.RegexOptions.Multiline).Value.Trim]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Match(
+    entry,
+    "([\d.,]+\s+\w+)\s*$",
+    System.Text.RegularExpressions.RegexOptions.Multiline
+).Value.Trim]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                     <AssignRemoved_Key"Remove Total"Removed_Key"502,115"Removed_Key"Assign_682">
@@ -851,6 +863,66 @@
                                         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(AdditionalInfo, "[\r\n]+", " ").Trim]</InArgument>
                                       </Assign.Value>
                                     </Assign>
+                                    <If Condition="[Commodity.Contains(&quot;nursery&quot;)]"Removed_Key"Check whether Nursery is in the Commodity"Removed_Key"502,733"Removed_Key"If_26">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If.Then>
+                                        <SequenceRemoved_Key"Then"Removed_Key"468,396"Removed_Key"Sequence_216">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <AssignRemoved_Key"Extract Nursery "Removed_Key"434,115"Removed_Key"Assign_741">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Commodity, "nursery:\s*[^,]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <AssignRemoved_Key"Remove Nursery from Commodity"Removed_Key"434,115"Removed_Key"Assign_742">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Commodity.Replace(AdditionalInfo,"")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <AssignRemoved_Key"Tidy Commodity"Removed_Key"434,106"Removed_Key"Assign_743">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Commodity.Split(","c)(0).Trim]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <SequenceRemoved_Key"Else"Removed_Key"468,166"Removed_Key"Sequence_217">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <AssignRemoved_Key"Set AdditionalInfo to Blank"Removed_Key"434,106"Removed_Key"Assign_747">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">
+                                                <Literal x:TypeArguments="x:String" Value="" />
+                                              </InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
                                     <AssignRemoved_Key"Assign Outcome"Removed_Key"502,115"Removed_Key"Assign_690">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[Outcome]</OutArgument>
@@ -895,7 +967,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"570,4224.5"Removed_Key"Sequence_213">
+                          <SequenceRemoved_Key"Else"Removed_Key"570,5052"Removed_Key"Sequence_213">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -982,7 +1054,7 @@
                                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,2798.5"Removed_Key"Sequence_190">
+                            <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3630"Removed_Key"Sequence_190">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="lines" />
                               </Sequence.Variables>
@@ -1002,20 +1074,27 @@
     FirstOrDefault(Function(c) entry.ToLower.Contains(c.ToLower))]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If Condition="[String.IsNullOrWhiteSpace(CommodityGroup)]"Removed_Key"Check whether Commodity Group is empty"Removed_Key"502,427"Removed_Key"If_22">
+                              <If Condition="[String.IsNullOrWhiteSpace(CommodityGroup)]"Removed_Key"Check whether Commodity Group is empty"Removed_Key"502,428"Removed_Key"If_22">
                                 <If.Then>
-                                  <SequenceRemoved_Key"Then"Removed_Key"468,166"Removed_Key"Sequence_209">
+                                  <SequenceRemoved_Key"Then"Removed_Key"468,167"Removed_Key"Sequence_209">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <AssignRemoved_Key"434,106"Removed_Key"Assign_703">
+                                    <AssignRemoved_Key"Assign Commodity Group"Removed_Key"434,107"Removed_Key"Assign_703">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[CommodityGroup]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[strCommodityFullText]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(
+    System.Text.RegularExpressions.Regex.IsMatch(strCommodityFullText, "\s+\d"),
+    System.Text.RegularExpressions.Regex.Match(
+        strCommodityFullText,
+        "^(.*?)(?=\s+\d)"
+    ).Value.Trim,
+    strCommodityFullText.Trim
+)]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                   </Sequence>
@@ -1090,15 +1169,19 @@
                                   <InArgument x:TypeArguments="x:String">[If(Country.Length &gt; 1, entry.Replace(Country, ""), entry)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Extract Total"Removed_Key"502,115"Removed_Key"Assign_709">
+                              <AssignRemoved_Key"Extract Total"Removed_Key"502,116"Removed_Key"Assign_709">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "([\d,]+\s+\w+)\s*$", System.Text.RegularExpressions.RegexOptions.Multiline).Value.Trim]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Match(
+    entry,
+    "([\d.,]+\s+\w+)\s*$",
+    System.Text.RegularExpressions.RegexOptions.Multiline
+).Value.Trim]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Remove Total"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_710">
+                              <AssignRemoved_Key"Remove Total"Removed_Key"502,115"Removed_Key"Assign_710">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                                 </Assign.To>
@@ -1106,7 +1189,7 @@
                                   <InArgument x:TypeArguments="x:String">[entry.Replace(Total,"")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Tidy Total"Removed_Key"434.2857142857143,117.71428571428571"Removed_Key"Assign_711">
+                              <AssignRemoved_Key"Tidy Total"Removed_Key"502,116"Removed_Key"Assign_711">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
                                 </Assign.To>
@@ -1118,7 +1201,7 @@
 ).Trim()]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Extract Packages"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_712">
+                              <AssignRemoved_Key"Extract Packages"Removed_Key"502,115"Removed_Key"Assign_712">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Packages]</OutArgument>
                                 </Assign.To>
@@ -1126,7 +1209,7 @@
                                   <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(entry, "\s*\d+\s+\w+").Value.trim()]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Remove Packages"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_713">
+                              <AssignRemoved_Key"Remove Packages"Removed_Key"502,115"Removed_Key"Assign_713">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
                                 </Assign.To>
@@ -1134,7 +1217,7 @@
                                   <InArgument x:TypeArguments="x:String">[entry.Replace(Packages,"")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Split Lines"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_714">
+                              <AssignRemoved_Key"Split Lines"Removed_Key"502,115"Removed_Key"Assign_714">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[lines]</OutArgument>
                                 </Assign.To>
@@ -1142,7 +1225,7 @@
                                   <InArgument x:TypeArguments="x:String">[entry.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Extract Commodity"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_715">
+                              <AssignRemoved_Key"Extract Commodity"Removed_Key"502,115"Removed_Key"Assign_715">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
                                 </Assign.To>
@@ -1150,7 +1233,7 @@
                                   <InArgument x:TypeArguments="x:String">[lines.Trim()]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Tidy Packages"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_716">
+                              <AssignRemoved_Key"Tidy Packages"Removed_Key"502,115"Removed_Key"Assign_716">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
                                 </Assign.To>
@@ -1158,7 +1241,7 @@
                                   <InArgument x:TypeArguments="x:String">[entry.Replace(lines,"")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Remove Newlines"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_717">
+                              <AssignRemoved_Key"Remove Newlines"Removed_Key"502,115"Removed_Key"Assign_717">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
                                 </Assign.To>
@@ -1166,7 +1249,77 @@
                                   <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(AdditionalInfo, "[\r\n]+", " ").Trim]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Assign Outcome"Removed_Key"434.2857142857143,117.14285714285714"Removed_Key"Assign_718">
+                              <If Condition="[Commodity.Contains(&quot;nursery&quot;)]"Removed_Key"Check whether Nursery is in the Commodity"Removed_Key"502,733"Removed_Key"If_27">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <SequenceRemoved_Key"Then"Removed_Key"468,396"Removed_Key"Sequence_218">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <AssignRemoved_Key"Extract Nursery "Removed_Key"434,115"Removed_Key"Assign_744">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Commodity, "nursery:\s*[^,]+", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Value]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <AssignRemoved_Key"Remove Nursery from Commodity"Removed_Key"434,115"Removed_Key"Assign_745">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Commodity.Replace(AdditionalInfo,"")]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <AssignRemoved_Key"Tidy Commodity"Removed_Key"434,106"Removed_Key"Assign_746">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Commodity.Split(","c)(0).Trim]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <SequenceRemoved_Key"Else"Removed_Key"468,166"Removed_Key"Sequence_219">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <AssignRemoved_Key"Set AdditionalInfo to Blank"Removed_Key"434,106"Removed_Key"Assign_748">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[AdditionalInfo]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <AssignRemoved_Key"Remove Text after &quot;,&quot;"Removed_Key"502,116"Removed_Key"Assign_749">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Commodity.Contains(","), 
+   Commodity.Substring(0, Commodity.IndexOf(","c)).Trim, 
+   Commodity)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <AssignRemoved_Key"Assign Outcome"Removed_Key"502,115"Removed_Key"Assign_718">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Outcome]</OutArgument>
                                 </Assign.To>
@@ -1176,7 +1329,7 @@
                                   </InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <AssignRemoved_Key"Assign Status Notes"Removed_Key"434.2857142857143,108"Removed_Key"Assign_719">
+                              <AssignRemoved_Key"Assign Status Notes"Removed_Key"502,106"Removed_Key"Assign_719">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[StatusNotes]</OutArgument>
                                 </Assign.To>
@@ -1187,7 +1340,7 @@
                                 </Assign.Value>
                               </Assign>
                             </Sequence>
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ID, Commodity, AdditionalInfo, Country, Packages, Total, CommodityGroup, Outcome, StatusNotes}]" DataTable="[out_dtCommodityLines]"Removed_Key"Add Data Row"Removed_Key"468.57142857142856,216"Removed_Key"AddDataRow_21">
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ID, Commodity, AdditionalInfo, Country, Packages, Total, CommodityGroup, Outcome, StatusNotes}]" DataTable="[out_dtCommodityLines]"Removed_Key"Add Data Row"Removed_Key"536,212"Removed_Key"AddDataRow_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
