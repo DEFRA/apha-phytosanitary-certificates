@@ -1,3 +1,7 @@
+/* ==========================================================================
+   CUSTOM PROPERTIES / VARIABLES
+   Root variables for colors (light mode default)
+   ========================================================================== */
 :root {
   --bg-color: #f4f6f9;
   --text-color: #000;
@@ -7,32 +11,43 @@
   --highlight-green: #28a745;
   --highlight-red: #dc3545;
   --highlight-yellow: #e0a800;
-  --banner-bg: #ff8c00;
+  --banner-bg: #0288d1;
   --banner-text: #000;
   --submit-bg: #007bff;
   --submit-text: #fff;
   --submit-hover-bg: #0056b3;
+  --highlight-green-bg: #e6f4ea;
+  --highlight-green-text: #1e7e34;
+  --highlight-red-bg:   #fee2e2;
+  --highlight-red-text: #b91c1c;
 }
 
+body.dark-mode #collapse-toggle {
+  color: var(--text-color);
+}
+
+/* Dark mode override for submit button */
 body.dark-mode {
   --submit-bg: #3399ff;
   --submit-text: #fff;
   --submit-hover-bg: #1a73e8;
 }
 
+/* Color vision deficiency/(High Contrast toggle) (CVD) mode override for submit button */
 body.cvd-mode {
   --submit-bg: #004085;
   --submit-text: #fff;
   --submit-hover-bg: #002752;
 }
 
+/* Combined dark + CVD mode */
 body.dark-mode.cvd-mode {
   --submit-bg: #1a73e8;
   --submit-text: #fff;
   --submit-hover-bg: #135a9e;
 }
 
-/* Submit button – base styles (already good) */
+/* Submit button – base styles (fixed bottom-right floating action button) */
 .submit-btn {
   position: fixed;
   bottom: 1rem;
@@ -50,14 +65,14 @@ body.dark-mode.cvd-mode {
   opacity: 1;
 }
 
-/* Hover state – only when NOT disabled */
+/* Hover effect – only applies when button is enabled */
 .submit-btn:hover:not(:disabled) {
   background: var(--submit-hover-bg);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Focus state – only when enabled */
+/* Focus indicator – only when enabled */
 .submit-btn:focus:not(:disabled) {
   outline: 3px solid var(--submit-bg);
   outline-offset: 2px;
@@ -77,36 +92,64 @@ body.dark-mode .submit-btn:focus:not(:disabled) {
   box-shadow: none;
 }
 
-/* Optional: make it even clearer in dark mode */
+/* Slightly darker gray in dark mode for better contrast */
 body.dark-mode .submit-btn:disabled {
   background: #495057 !important;
   color: #777 !important;
 }
 
-/* CVD mode – keep disabled style consistent and readable */
+/* Consistent disabled appearance in CVD modes */
 body.cvd-mode .submit-btn:disabled,
 body.dark-mode.cvd-mode .submit-btn:disabled {
   background: #5a6268 !important;
   color: #999 !important;
 }
 
-body.dark-mode .submit-btn:focus {
-  outline-color: #fff;
-}
-
+/* Full dark mode color scheme */
 body.dark-mode {
   --bg-color: #1e1e1e;
   --text-color: #ddd;
   --header-bg: rgba(30,30,30,0.95);
   --summary-red: #5c3a3a;
   --summary-green: #3a5c3a;
+  --summary-text: #f0f0f0;
   --highlight-green: #2b6b2b;
   --highlight-red: #6b2b2b;
   --highlight-yellow: #b58900;
-  --banner-bg: #cc5500;
+  --banner-bg: #1e40af;
   --banner-text: #fff;
 }
 
+body.dark-mode .accordion-controls {
+  background: #1f2937;
+  border: 1px solid #4b5563;
+}
+
+/* Dark mode for tracker pane */
+body.dark-mode .tracker-pane {
+  background: #1e1e1e;           /* matches body background or slightly darker */
+  border-left: 1px solid #444;   /* subtle dark border */
+  color: #e0e0e0;                /* light text for readability */
+}
+
+body.dark-mode .tracker-pane li:hover,
+body.dark-mode .tracker-pane li a:focus {
+  background: #2d2d2d;           /* darker hover/focus state */
+}
+
+body.dark-mode .tracker-pane .complete {
+  color: #4ade80;                /* softer green for complete status */
+}
+
+body.dark-mode .tracker-pane .unfinished {
+  color: #f87171;                /* softer red for unfinished */
+}
+
+body.dark-mode .tracker-pane .pending {
+  color: #fbbf24;                /* warm amber for pending */
+}
+
+/* CVD-friendly colors (better differentiation for red/green) */
 body.cvd-mode {
   --summary-red: #e6a8a8;
   --summary-green: #6b9ac4;
@@ -115,6 +158,7 @@ body.cvd-mode {
   --highlight-yellow: #e0a800;
 }
 
+/* Combined dark + CVD adjustments */
 body.dark-mode.cvd-mode {
   --summary-red: #5c3a3a;
   --summary-green: #3a4a5c;
@@ -123,6 +167,9 @@ body.dark-mode.cvd-mode {
   --highlight-yellow: #b58900;
 }
 
+/* ==========================================================================
+   GLOBAL & BODY STYLES
+   ========================================================================== */
 body {
   margin: 0;
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
@@ -132,13 +179,14 @@ body {
   line-height: 1.5;
 }
 
+/* Main content padding to avoid overlap with fixed header & tracker */
 main {
   padding-top: 4.8rem;
   padding-right: 10%;
   padding-left: 1rem;
 }
 
-/* Focus styles */
+/* Strong focus outline for keyboard navigation (accessibility) */
 :focus {
   outline: 3px solid #007bff;
   outline-offset: 2px;
@@ -148,7 +196,9 @@ body.dark-mode :focus {
   outline-color: #fff;
 }
 
-/* Header bar */
+/* ==========================================================================
+   HEADER (fixed top bar with stats & toggles)
+   ========================================================================== */
 header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 7fr;
@@ -172,15 +222,16 @@ header div {
   justify-content: center;
 }
 
+/* Font Awesome icons before the first three stat items */
 header div:not(:last-child)::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 0.5rem;
 }
 
-header div:nth-child(1)::before { content: '\f466'; }
-header div:nth-child(2)::before { content: '\f00c'; }
-header div:nth-child(3)::before { content: '\f071'; }
+header div:nth-child(1)::before { content: '\f466'; } /* documents */
+header div:nth-child(2)::before { content: '\f00c'; } /* check/success */
+header div:nth-child(3)::before { content: '\f071'; } /* warning/exclamation */
 
 header div button {
   background: none;
@@ -207,7 +258,7 @@ header div label span {
   font-size: 0.9rem;
 }
 
-/* Theme toggles */
+/* Custom toggle switches (theme, CVD, single-expand) */
 #theme-toggle, #cvd-toggle, #single-expand-toggle {
   appearance: none;
   width: 36px;
@@ -238,7 +289,9 @@ header div label span {
   left: 20px;
 }
 
-/* Accordion styles */
+/* ==========================================================================
+   ACCORDIONS (main regulation/review sections)
+   ========================================================================== */
 details {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -267,11 +320,17 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-.red summary { background: var(--summary-red); }
-.green summary { background: var(--summary-green); }
+/* Red/green status coloring for accordions */
+.red summary { background: var(--summary-red); color: #1e293b; }
+.green summary { background: var(--summary-green); color: #1e293b; }
+
+body.dark-mode .red summary,
+body.dark-mode .green summary {
+  color: var(--summary-text);
+}
 
 .red summary::before {
-  content: '\f071';
+  content: '\f071';           /* warning triangle */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 0.5rem;
@@ -279,7 +338,7 @@ summary::-webkit-details-marker {
 }
 
 .green summary::before {
-  content: '\f00c';
+  content: '\f00c';           /* check mark */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 0.5rem;
@@ -294,6 +353,7 @@ summary::-webkit-details-marker {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.7s ease;
+  background: var(--bg-color);
 }
 
 details[open] .accordion-content {
@@ -308,11 +368,13 @@ details[open] .accordion-content {
   padding-right: 0.5rem;
 }
 
+/* Outcome buttons + comment field container */
 .accordion-controls {
   grid-column: span 2;
   margin-top: 0.5rem;
-  padding: 0.5rem;
-  background: #f8f9fa;
+  padding: 0.75rem;
+  background: #f1f5f9;;
+  border-radius: 12px;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -325,13 +387,8 @@ details[open] .accordion-content {
   gap: 0.25rem;
 }
 
-.control-outcome {
-  flex: 0 0 auto;
-}
-
-.control-comments {
-  flex: 1 1 auto;
-}
+.control-outcome { flex: 0 0 auto; }
+.control-comments { flex: 1 1 auto; }
 
 .control-group label {
   font-weight: bold;
@@ -369,111 +426,57 @@ details[open] .accordion-content {
 input[type="text"] {
   width: 100%;
   padding: 0.4rem;
-  border: 1px solid #ddd;
+  border: 1px solid #6b7280;
   border-radius: 4px;
   font-size: 0.85rem;
   height: 1.8rem;
   box-sizing: border-box;
 }
 
+body.dark-mode input[type="text"] {
+  border-color: #4b5563;
+}
+
 input[type="text"].error {
   border-color: #dc3545;
 }
 
-/* Regulation details accordion */
-.regulation-details {
-  border: none;
-  margin: 0.5rem 1rem;
-  background: transparent;
-}
 
-.regulation-details summary {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: var(--text-color);
-  background: #f8f9fa;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
 
-.regulation-details summary:hover {
-  background: #e0e0e0;
-}
-
-.regulation-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.regulation-details .regulation-content {
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.7s ease;
-}
-
-.regulation-details[open] .regulation-content {
-  max-height: none;
-}
-
-.regulation-details .regulation-content p {
-  margin: 0.5rem 0;
-}
-
-/* Highlight styles */
+/* Inline status highlights */
 .highlight-green {
-  background-color: var(--highlight-green);
-  color: #000;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  position: relative;
+  background-color: var(--highlight-green-bg);
+  color: var(--highlight-green-text);
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
 }
 
 .highlight-green::before {
-  content: '\f00c Compliant: ';
+  content: '\f00c ';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 0.3rem;
+  color: inherit;
 }
 
 .highlight-red {
-  background-color: var(--highlight-red);
-  color: #000;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  position: relative;
+  background-color: var(--highlight-red-bg);
+  color: var(--highlight-red-text);
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
 }
 
 .highlight-red::before {
-  content: '\f071 Issue: ';
+  content: '\f071 ';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: 0.3rem;
+  color: inherit;
 }
 
-.highlight-yellow {
-  background-color: var(--highlight-yellow);
-  color: #000;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-}
-
-.highlight-yellow::before {
-  content: 'Note: ';
-  font-weight: bold;
-}
-
-/* PDF viewer */
-.pdf-embed {
-  grid-column: span 2;
-  width: 100%;
-  height: 80vh;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
+/* ==========================================================================
+   PDF viewer & side panel
+   ========================================================================== */
 
 .pdf-panel {
   position: fixed;
@@ -510,12 +513,7 @@ input[type="text"].error {
   cursor: pointer;
 }
 
-.pdf-embed-side {
-  flex: 1;
-  width: 100%;
-  border: none;
-}
-
+/* Vertical side banner (click to open PDF panel) */
 .pdf-banner {
   position: fixed;
   bottom: 0;
@@ -537,7 +535,10 @@ input[type="text"].error {
   justify-content: center;
 }
 
-/* Tracker pane */
+/* ==========================================================================
+   Tracker sidebar (progress list)
+   ========================================================================== */
+
 .tracker-pane {
   position: fixed;
   right: 0;
@@ -592,11 +593,12 @@ body.dark-mode .tracker-pane li a:focus {
   text-align: center;
 }
 
+/* Status colors used in tracker */
 .complete { color: #28a745; }
 .unfinished { color: #dc3545; font-weight: bold; }
 .pending { color: #ffc107; }
 
-/* Status announcer */
+/* Accessibility helpers */
 .status-announcer {
   position: absolute;
   width: 1px;
@@ -608,7 +610,7 @@ body.dark-mode .tracker-pane li a:focus {
   border: 0;
 }
 
-/* Backdrop */
+/* Modal backdrop (used for PDF panel / overlays) */
 .backdrop {
   position: fixed;
   top: 0;
@@ -624,7 +626,9 @@ body.dark-mode .tracker-pane li a:focus {
   display: block;
 }
 
-/* Mobile responsiveness */
+/* ==========================================================================
+   RESPONSIVE STYLES
+   ========================================================================== */
 @media (max-width: 768px) {
   header {
     grid-template-columns: 1fr;
@@ -651,29 +655,30 @@ body.dark-mode .tracker-pane li a:focus {
   }
 }
 
-/* Fullscreen overlay */
+/* ==========================================================================
+   LOADING OVERLAY / SPINNER
+   ========================================================================== */
 .overlay {
-  position: fixed; /* Position fixed to cover the entire viewport */
+  position: fixed;
   top: 0; 
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: none; /* Hide the overlay by default */
-  flex-direction: column; /* Align items in a column */
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* High z-index to ensure it overlays all other elements */
+  z-index: 1000;
 }
 
-/* Spinner style */
 .spinner {
-  font-size: 8rem; /* Size of the spinner */
-  color: white; /* Color of the spinner */
+  font-size: 8rem;
+  color: white;
 }
 
 .spinner-text {
   margin-top: 20px;
   font-size: 1.5rem;
-  color: white; /* Color of the text */
+  color: white;
 }
