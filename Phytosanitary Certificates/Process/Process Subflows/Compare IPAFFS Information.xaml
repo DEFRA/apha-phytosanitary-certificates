@@ -308,7 +308,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"2348,32553"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Compare_IPFFS_Information"Removed_Key"2348,11482"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateCommodityLines" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateData" />
@@ -321,7 +321,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Compare IPAFFS Details"Removed_Key"1023,32530"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"Compare IPAFFS Details"Removed_Key"853,11459"Removed_Key"Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtCondensed" />
       </Sequence.Variables>
@@ -331,7 +331,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachFileXRemoved_Key"Compare Cert &amp; IPFFS MetaData" Filter="*.xlsx" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]"Removed_Key"989,21128"Removed_Key"ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileXRemoved_Key"Compare Cert &amp; IPFFS MetaData" Filter="*.xlsx" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]"Removed_Key"819,57"Removed_Key"ForEachFileX_4" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
         <ui:ForEachFileX.Body>
           <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
             <ActivityAction.Argument1>
@@ -345,14 +345,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <SequenceRemoved_Key"Do"Removed_Key"955,20832"Removed_Key"Sequence_36">
+            <SequenceRemoved_Key"Do"Removed_Key"955,22056"Removed_Key"Sequence_36">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Extract Meta Data"Removed_Key"921,1378"Removed_Key"ExcelProcessScopeX_1">
+              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}"Removed_Key"Extract Meta Data"Removed_Key"921,1338"Removed_Key"ExcelProcessScopeX_1">
                 <ueab:ExcelProcessScopeX.Body>
                   <ActivityAction x:TypeArguments="ui:IExcelProcess">
                     <ActivityAction.Argument>
@@ -402,7 +402,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ueab:ExcelProcessScopeX>
-              <SequenceRemoved_Key"Compate Cert &amp; IPAFFS MetaData"Removed_Key"921,19394"Removed_Key"Sequence_20">
+              <SequenceRemoved_Key"Compate Cert &amp; IPAFFS MetaData"Removed_Key"921,20658"Removed_Key"Sequence_20">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="in_PhytoCertLocation" />
                 </Sequence.Variables>
@@ -1845,7 +1845,7 @@ ToList()]</InArgument>
                     </If.Else>
                   </If>
                 </Sequence>
-                <SequenceRemoved_Key"Compare Dates"Removed_Key"887,2197"Removed_Key"Sequence_59">
+                <SequenceRemoved_Key"Compare Dates"Removed_Key"887,3461"Removed_Key"Sequence_59">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strCertDate" />
                     <Variable x:TypeArguments="x:String" Name="strIPAFFSDate" />
@@ -1889,18 +1889,89 @@ ToList()]</InArgument>
 )]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <AssignRemoved_Key"Convert the IPAFFS arrival date"Removed_Key"547,116"Removed_Key"Assign_39">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="s:DateTime">[dtArrivalDate]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[DateTime.ParseExact(
-    strIPAFFSDate,
-    "dd-MMM-yy",
+                  <SequenceRemoved_Key"The IPAFFs arrival date can either be one or two digits depending on the day of the month e.g. 3 March, 10 March. We have to try both date formats to check which is valid."Removed_Key"Convert the IPAFFs Arrival Date"Removed_Key"547,1380"Removed_Key"Sequence_160">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatchRemoved_Key"Try Catch - Convert the IPAFFS arrival date - dd MMMM yyyy"Removed_Key"512,1244"Removed_Key"TryCatch_8">
+                      <TryCatch.Try>
+                        <AssignRemoved_Key"Convert the IPAFFS arrival date - dd MMMM yyyy"Removed_Key"434,84"Removed_Key"Assign_39">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:DateTime">[dtArrivalDate]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[DateTime.ParseExact(
+	System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(
+       strIPAFFSDate.Trim().ToLower()
+    ),
+    "dd MMMM yyyy",
     System.Globalization.CultureInfo.InvariantCulture
 )]</InArgument>
-                    </Assign.Value>
-                  </Assign>
+                          </Assign.Value>
+                        </Assign>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception"Removed_Key"478,823"Removed_Key"Catch`1_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <TryCatchRemoved_Key"Try Catch - Convert the IPAFFS arrival date - d MMMM yyyy"Removed_Key"472,752"Removed_Key"TryCatch_9">
+                              <TryCatch.Try>
+                                <AssignRemoved_Key"Convert the IPAFFS arrival date - d MMMM yyyy"Removed_Key"434,84"Removed_Key"Assign_58">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="s:DateTime">[dtArrivalDate]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[DateTime.ParseExact(
+	System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(
+       strIPAFFSDate.Trim().ToLower()
+    ),
+    "d MMMM yyyy",
+    System.Globalization.CultureInfo.InvariantCulture
+)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception"Removed_Key"438,354"Removed_Key"Catch`1_8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <SequenceRemoved_Key"416,283"Removed_Key"Sequence_161">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"382,175"Removed_Key"LogMessage_2" Level="Error" Message="[&quot;Neither the 'dd MMMM yyyy' or 'd MMMM yyyy' date formats have successfully converted the IPAFFs arrival date.&quot;]" />
+                                      <RethrowRemoved_Key"382,48"Removed_Key"Rethrow_1" />
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                  </Sequence>
                   <AssignRemoved_Key"Calculate the Date Difference"Removed_Key"547,115"Removed_Key"Assign_41">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Double">[daysDiff]</OutArgument>
@@ -2203,12 +2274,12 @@ ToList()]</InArgument>
         </ui:ForEachFileX.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachFileX>
-      <SequenceRemoved_Key"Summarise commodity quantity data for all certificates"Removed_Key"989,11319"Removed_Key"Sequence_29">
+      <SequenceRemoved_Key"Summarise commodity quantity data for all certificates"Removed_Key"819,11319"Removed_Key"Sequence_29">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2275,7 +2346,7 @@ ToList()]</InArgument>
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <AssignRemoved_Key"Assign strAPIKey"Removed_Key"434,115"Removed_Key"Assign_55">
+                    <AssignRemoved_Key"Assign strAPIKey"Removed_Key"434,115"Removed_Key"Assign_61">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strAPIKey]</OutArgument>
                       </Assign.To>
@@ -2291,9 +2362,7 @@ ToList()]</InArgument>
                         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                       </ui:HttpClient.Cookies>
                       <ui:HttpClient.Headers>
-                        <InArgument x:TypeArguments="x:String" x:Key="x-api-key">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAPIKey" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="x-api-key">[strAPIKey]</InArgument>
                       </ui:HttpClient.Headers>
                       <ui:HttpClient.Parameters>
                         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -2386,7 +2455,7 @@ ToList()]</InArgument>
                             <InArgument x:TypeArguments="x:Int32">[grp.Sum(Function(r) CInt(System.Text.RegularExpressions.Regex.Replace(If(r.Item("Total") IsNot Nothing, r.Item("Total").ToString().Trim(), "0"), "[^\d]", "")))]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;  grp.First()(&quot;ID&quot;),&#xA;  grp.First()(&quot;Commodity&quot;),&#xA;  grp.First()(&quot;Additional Info&quot;),&#xA;  grp.First()(&quot;Country&quot;),&#xA;  &quot;&quot;,                                    ' ← Packages = blank/empty&#xA;  totalsum.ToString(&quot;N0&quot;),               ' ← Total = summed clean number&#xA;  grp.First()(&quot;Commodity Group&quot;),&#xA;  grp.First()(&quot;Outcome&quot;),&#xA;  grp.First()(&quot;Status Notes&quot;),&#xA;  grp.First()(&quot;EPPO&quot;)&#xA;}]" DataTable="[dtCondensed]"Removed_Key"Add Data Row **"Removed_Key"434,212"Removed_Key"AddDataRow_1" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;  grp.First()(&quot;ID&quot;),&#xA;  grp.First()(&quot;Commodity&quot;),&#xA;  grp.First()(&quot;Additional Info&quot;),&#xA;  grp.First()(&quot;Country&quot;),&#xA;  &quot;&quot;,                                    ' ← Packages = blank/empty&#xA;  totalsum.ToString,               ' ← Total = summed clean number&#xA;  grp.First()(&quot;Commodity Group&quot;),&#xA;  grp.First()(&quot;Outcome&quot;),&#xA;  grp.First()(&quot;Status Notes&quot;),&#xA;  grp.First()(&quot;EPPO&quot;)&#xA;}]" DataTable="[dtCondensed]"Removed_Key"Add Data Row **"Removed_Key"434,212"Removed_Key"AddDataRow_1" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
@@ -2494,7 +2563,7 @@ ToList()]</InArgument>
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <AssignRemoved_Key"Assign strAPIKey"Removed_Key"434,115"Removed_Key"Assign_56">
+                    <AssignRemoved_Key"Assign strAPIKey"Removed_Key"434,115"Removed_Key"Assign_62">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strAPIKey]</OutArgument>
                       </Assign.To>
@@ -2510,9 +2579,7 @@ ToList()]</InArgument>
                         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                       </ui:HttpClient.Cookies>
                       <ui:HttpClient.Headers>
-                        <InArgument x:TypeArguments="x:String" x:Key="x-api-key">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAPIKey" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="x-api-key">[strAPIKey]</InArgument>
                       </ui:HttpClient.Headers>
                       <ui:HttpClient.Parameters>
                         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

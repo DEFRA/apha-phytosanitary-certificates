@@ -150,7 +150,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Extract Information"Removed_Key"2403,15629"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Extract Information"Removed_Key"2348,16320"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -170,34 +170,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Extract Information"Removed_Key"876,15606"Removed_Key"Sequence_146">
+    <SequenceRemoved_Key"Extract Information"Removed_Key"876,16297"Removed_Key"Sequence_146">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertLocation]"Removed_Key"842,115"Removed_Key"ReadPDFText_8" PreserveFormatting="True" Range="[in_pageRange]" Text="[strExtractedPDF]" />
-      <SequenceRemoved_Key"Check whether cert is re-forwarded"Removed_Key"842,57"Removed_Key"Sequence_185">
+      <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertLocation]"Removed_Key"842,115"Removed_Key"ReadPDFText_10" PreserveFormatting="True" Range="[in_pageRange]" Text="[strExtractedPDF]" />
+      <SequenceRemoved_Key"Check whether cert is re-forwarded"Removed_Key"842,518"Removed_Key"Sequence_185">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[strExtractedPDF.Contains(&quot;that the plants, plant products or other regulated articles described above were imported into the Netherlands (contracting party or re-export) from&quot;) or strExtractedPDF.Contains(&quot;that during storage in the Netherlands (country/contracting party of re-export) the consignment has not been&quot;)]"Removed_Key"If PhytoCert contains re-forwarded wording"Removed_Key"450.2857142857143,429.7142857142857"Removed_Key"If_18">
+        <If Condition="[strExtractedPDF.Contains(&quot;that the plants, plant products or other regulated articles described above were imported into the Netherlands (contracting party or re-export) from&quot;) or strExtractedPDF.Contains(&quot;that during storage in the Netherlands (country/contracting party of re-export) the consignment has not been&quot;)]"Removed_Key"If PhytoCert contains re-forwarded wording"Removed_Key"450,426"Removed_Key"If_18">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,175.42857142857142"Removed_Key"Sequence_195">
+            <SequenceRemoved_Key"Then"Removed_Key"416,174"Removed_Key"Sequence_195">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ThrowRemoved_Key"Throw Business Exception" Exception="[new BusinessRuleException(&quot;Reforwarded Phyto Cert - Unable to process&quot;)]"Removed_Key"381.7142857142857,115.42857142857143"Removed_Key"Throw_5" />
+              <ThrowRemoved_Key"Throw Business Exception" Exception="[new BusinessRuleException(&quot;Reforwarded Phyto Cert - Unable to process&quot;)]"Removed_Key"382,114"Removed_Key"Throw_5" />
             </Sequence>
           </If.Then>
           <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,90.85714285714286"Removed_Key"Sequence_196">
+            <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_196">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -331,7 +331,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <SequenceRemoved_Key"Get Genus Information"Removed_Key"842,12809"Removed_Key"Sequence_187">
+      <SequenceRemoved_Key"Get Genus Information"Removed_Key"842,13039"Removed_Key"Sequence_187">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieGenusText" />
@@ -499,13 +499,13 @@
         </Assign>
         <ui:BuildDataTable DataTable="[out_dtCommodityLines]"Removed_Key"Build Data Table"Removed_Key"808,92"Removed_Key"BuildDataTable_10" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         <ui:Matches FirstMatch="{x:Null}" BuilderPattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}"Removed_Key"Find Matching Patterns"Removed_Key"808,92"Removed_Key"Matches_23" Input="[strGenusText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?m)^\\s*\\d{4}.*(?:\\r?\\n\\s{2,}.*){0,2}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]"Removed_Key"For Each item"Removed_Key"808,11087"Removed_Key"ForEach`1_15" Values="[ieMatches]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]"Removed_Key"For Each item"Removed_Key"808,11317"Removed_Key"ForEach`1_15" Values="[ieMatches]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Extract Information"Removed_Key"774,10949"Removed_Key"Sequence_188">
+              <SequenceRemoved_Key"Extract Information"Removed_Key"774,11179"Removed_Key"Sequence_188">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="rowText" />
                   <Variable x:TypeArguments="x:String" Name="entry" />
@@ -540,7 +540,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"740,10774"Removed_Key"If_25">
+                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) Or &#xD;&#xA;entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;) Or &#xD;&#xA;System.Text.RegularExpressions.Regex.Matches(entry, &quot;\S+&quot;).Count &lt;= 2]"Removed_Key"740,11004"Removed_Key"If_25">
                   <If.Then>
                     <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_201">
                       <sap:WorkflowViewStateService.ViewState>
@@ -551,14 +551,14 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <SequenceRemoved_Key"Else"Removed_Key"706,10522"Removed_Key"Sequence_214">
+                    <SequenceRemoved_Key"Else"Removed_Key"706,10752"Removed_Key"Sequence_214">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or entry.Contains(&quot;No. EC NL&quot;) or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;) or entry.Length &lt; 15 or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"672,10462"Removed_Key"If_24">
+                      <If Condition="[entry.Contains(&quot;ANNEX&quot;) Or entry.Contains(&quot;Distinguishing&quot;) Or entry.Contains(&quot;Plant Protection Organization of the Netherlands&quot;) Or entry.Contains(&quot;No. EC NL&quot;) or System.Text.RegularExpressions.Regex.IsMatch(item.ToString.Trim, &quot;^\d{4}$&quot;) or entry.Length &lt; 15 or entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;)]"Removed_Key"672,10692"Removed_Key"If_24">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -566,14 +566,14 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <SequenceRemoved_Key"Then"Removed_Key"638,5248"Removed_Key"Sequence_208">
+                          <SequenceRemoved_Key"Then"Removed_Key"638,5363"Removed_Key"Sequence_208">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[Regex.IsMatch(entry, &quot;\A\d{4}\s&quot;)]"Removed_Key"604,5188"Removed_Key"If_21">
+                            <If Condition="[Regex.IsMatch(entry, &quot;\A\d{4}\s&quot;)]"Removed_Key"604,5303"Removed_Key"If_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -581,7 +581,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <SequenceRemoved_Key"Then"Removed_Key"570,4936"Removed_Key"Sequence_206">
+                                <SequenceRemoved_Key"Then"Removed_Key"570,5051"Removed_Key"Sequence_206">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -668,7 +668,7 @@
                                       <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3514"Removed_Key"Sequence_189">
+                                  <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3629"Removed_Key"Sequence_189">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="lines" />
                                     </Sequence.Variables>
@@ -839,6 +839,14 @@
                                         <InArgument x:TypeArguments="x:String">[entry.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()]</InArgument>
                                       </Assign.Value>
                                     </Assign>
+                                    <AssignRemoved_Key"Remove CommodityGroup from lines"Removed_Key"502,115"Removed_Key"Assign_750">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[lines]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[lines.Replace(CommodityGroup.ToLower,"").Trim]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
                                     <AssignRemoved_Key"Extract Commodity"Removed_Key"502,115"Removed_Key"Assign_687">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[Commodity]</OutArgument>
@@ -967,7 +975,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"570,5052"Removed_Key"Sequence_213">
+                          <SequenceRemoved_Key"Else"Removed_Key"570,5167"Removed_Key"Sequence_213">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1054,7 +1062,7 @@
                                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3630"Removed_Key"Sequence_190">
+                            <SequenceRemoved_Key"Extract Each needed part"Removed_Key"536,3745"Removed_Key"Sequence_190">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="lines" />
                               </Sequence.Variables>
@@ -1223,6 +1231,14 @@
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:String">[entry.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <AssignRemoved_Key"Remove CommodityGroup from lines"Removed_Key"502,115"Removed_Key"Assign_751">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[lines]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[lines.Replace(CommodityGroup.ToLower,"").Trim]</InArgument>
                                 </Assign.Value>
                               </Assign>
                               <AssignRemoved_Key"Extract Commodity"Removed_Key"502,115"Removed_Key"Assign_715">
