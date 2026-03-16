@@ -1,0 +1,2106 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Regulation_Search" this:Regulation_Search.in_strGenus="Camellia" this:Regulation_Search.in_strCountryName="Spain" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strGenus" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCountryName" Type="InArgument(x:String)" />
+    <x:Property Name="out_dtMatchedItems" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Regulation_Search_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <SequenceRemoved_Key"Regulation_Search"Removed_Key"758,6904.4"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strSpeciesPart" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <SequenceRemoved_Key"Main Sequence"Removed_Key"638,6881.2"Removed_Key"Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtSheet" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHost" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHerbGroup" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtGenera" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtCommodityRegulation" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtCommodity" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtCitesGroup" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtXFGroup" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtTaxonGroup" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtRegulation" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtOriginRegulation" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtOrigin" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtInvasiveGroup" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHostGroupRegulation" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHostRegulation" />
+        <Variable x:TypeArguments="x:String" Name="strGenusPart" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtTaxonSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtXFGroupSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHerbGroupSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtInvasiveSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtCitesSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtValidationSearch" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtGroupNames" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtXFItems" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHerbItems" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtHostRegulationJoin" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtOrderRegulationItems" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="lisAllGenusItems" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtFamilyRegulationItems" />
+        <Variable x:TypeArguments="s:String[]" Name="arrGenusParts" />
+        <Variable x:TypeArguments="scg:IEnumerable(ucas:StorageFileInfo)" Name="listcsvFiles" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"604,175.6"Removed_Key"LogMessage_3" Level="Warn" Message="[&quot;Hard coded test data reading in - remove this&quot;]" />
+      <ucas:ListStorageFiles Filter="{x:Null}" TimeoutMS="{x:Null}" Directory="\"Removed_Key"List Storage Files - DATAVERSE"Removed_Key"604,167.6"Removed_Key"ListStorageFiles_1" Recursive="True" Result="[listcsvFiles]" StorageBucketName="Additional Declarations" />
+      <ui:ForEach x:TypeArguments="ucas:StorageFileInfo" CurrentIndex="{x:Null}"Removed_Key"For Each currentStorageFileInfo - REPLACED BY DATAVERSE"Removed_Key"604,998"Removed_Key"ForEach`1_6" Values="[listcsvFiles]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="ucas:StorageFileInfo">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ucas:StorageFileInfo" Name="currentStorageFileInfo" />
+            </ActivityAction.Argument>
+            <SequenceRemoved_Key"Body"Removed_Key"468,850.8"Removed_Key"Sequence_64">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strDeleteMe" />
+                <Variable x:TypeArguments="x:String" Name="strFileWithoutExtension" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <WriteLineRemoved_Key"Write Line"Removed_Key"434,123.2"Removed_Key"WriteLine_4" Text="[&quot;Reading &quot; &amp; currentStorageFileInfo.FileFullPath &amp; &quot; &quot; &amp; Now]" />
+              <ui:GetEnvironmentFolderRemoved_Key"Get Environment Folder" FolderPath="[strDeleteMe]"Removed_Key"434,118.4"Removed_Key"GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+              <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]"Removed_Key"Download Storage File"Removed_Key"434,167.6"Removed_Key"DownloadStorageFile_1" Path="[currentStorageFileInfo.FileFullPath]" StorageBucketName="Additional Declarations" />
+              <ui:ReadCsvFile DataTable="[dtSheet]" Delimitator="Comma"Removed_Key"Read CSV" FilePath="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]"Removed_Key"434,190.8"Removed_Key"ReadCsvFile_1" />
+              <AssignRemoved_Key"Assign file name without extension"Removed_Key"434,114.4"Removed_Key"Assign_54">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strFileWithoutExtension]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(currentStorageFileInfo.FileFullPath)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Switch x:TypeArguments="x:String"Removed_Key"Switch file names" Expression="[strFileWithoutExtension]"Removed_Key"434,76.4"Removed_Key"Switch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign x:Key="host"Removed_Key"Assign to relevant DataTable"Removed_Key"434,82.4"Removed_Key"Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtHost]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:Comment x:Key="homepage_updates"Removed_Key"334,56.4"Removed_Key"Comment_1" Text="// This sheet is not required" />
+                <Assign x:Key="herb_group"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtHerbGroup]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="group_names"Removed_Key"Assign to relevant DataTable"Removed_Key"434,82.4"Removed_Key"Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtGroupNames]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="genera_list"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtGenera]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="commodity_regulation"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtCommodityRegulation]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="commodity"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtCommodity]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="cites_group"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtCitesGroup]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="xf_group"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtXFGroup]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="taxon_group"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtTaxonGroup]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="regulation"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtRegulation]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="origin_regulation"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtOriginRegulation]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="origin"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtOrigin]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="invasive_group"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_14">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtInvasiveGroup]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="hostgroup_regulation"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtHostGroupRegulation]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key="host_regulation"Removed_Key"Assign to relevant DataTable"Removed_Key"434,81.6"Removed_Key"Assign_16">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[dtHostRegulation]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[dtSheet]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Switch>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <WriteLineRemoved_Key"Write Line"Removed_Key"604,123.2"Removed_Key"WriteLine_2" Text="CSVs read in" />
+      <AssignRemoved_Key"Split genus into parts"Removed_Key"604,114.4"Removed_Key"Assign_49">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[arrGenusParts]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[in_strGenus.Split(" "c)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <AssignRemoved_Key"Split out the genus name"Removed_Key"604,114.4"Removed_Key"Assign_17">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[strGenusPart]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[in_strGenus.Split(" "c)(0).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[arrGenusParts.length &gt;= 2]"Removed_Key"If there is more than 2 results in the array"Removed_Key"604,85.2"Removed_Key"If_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_57">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"Assign species"Removed_Key"434,105.6"Removed_Key"Assign_50">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strSpeciesPart]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[arrGenusParts(1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <SequenceRemoved_Key"Else"Removed_Key"468,165.6"Removed_Key"Sequence_58">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AssignRemoved_Key"Assign spp. (species plural)"Removed_Key"434,105.6"Removed_Key"Assign_51">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strSpeciesPart]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">spp.</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+      <ui:BuildDataTableRemoved_Key"Any matched term ID wills be added here, and then filtered down to only relevant matches during the Intersection sequence" DataTable="[out_dtMatchedItems]"Removed_Key"Create Matched Items DT"Removed_Key"604,153.2"Removed_Key"BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ItemID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ItemCategory&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cites&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invasive&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Origin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SpecialRequirements&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Conditions&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BuildDataTable>
+      <ui:JoinDataTables DataTable1="[dtHostRegulation]" DataTable2="[dtHost]"Removed_Key"Join Host DTs"Removed_Key"604,92"Removed_Key"JoinDataTables_1" JoinType="Inner" OutputDataTable="[dtHostRegulationJoin]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["hostid"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["hostid"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <SequenceRemoved_Key"Prepare filtered data for querying later, fetching only the rows relevant for this genus"Removed_Key"Consolidated queries for taxon_search, check_xf, check_herb, check_invasive, and cites_search"Removed_Key"604,146.4"Removed_Key"Sequence_5">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtHostGroupAndNames" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtValidationSearch" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:FilterDataTable DataTable="[dtTaxonGroup]"Removed_Key"Filter TaxonSearch Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_1" OutputDataTable="[dtTaxonSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[dtXFGroup]"Removed_Key"Filter XF Group Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_2" OutputDataTable="[dtXFGroupSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[dtHerbGroup]"Removed_Key"Filter Herb Group Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_3" OutputDataTable="[dtHerbGroupSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[dtInvasiveGroup]"Removed_Key"Filter Invasive Group Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_4" OutputDataTable="[dtInvasiveSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[dtCitesGroup]"Removed_Key"Filter Cites Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_5" OutputDataTable="[dtCitesSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[dtGenera]"Removed_Key"Filter Validation Data Table" FilterRowsMode="Keep"Removed_Key"470,196"Removed_Key"FilterDataTable_6" OutputDataTable="[dtValidationSearch]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genera"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <SequenceRemoved_Key"Join tables and then query the joined DT for any rows with Xylella fastidiosa (XF - a plant-pathogenic bacterium that causes devastating diseases in crops)"Removed_Key"Host group and group names"Removed_Key"470,432.4"Removed_Key"Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:JoinDataTables DataTable1="[dtHostGroupRegulation]" DataTable2="[dtGroupNames]"Removed_Key"Join hostgroup and group names Data Tables"Removed_Key"416,92"Removed_Key"JoinDataTables_2" JoinType="Inner" OutputDataTable="[dtHostGroupAndNames]">
+            <ui:JoinDataTables.Arguments>
+              <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                  <ui:JoinOperationArgument.Column1>
+                    <InArgument x:TypeArguments="x:String">["groupid"]</InArgument>
+                  </ui:JoinOperationArgument.Column1>
+                  <ui:JoinOperationArgument.Column2>
+                    <InArgument x:TypeArguments="x:String">["groupid"]</InArgument>
+                  </ui:JoinOperationArgument.Column2>
+                </ui:JoinOperationArgument>
+              </scg:List>
+            </ui:JoinDataTables.Arguments>
+          </ui:JoinDataTables>
+          <ui:FilterDataTable DataTable="[dtHostGroupAndNames]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"416,187.2"Removed_Key"FilterDataTable_7" OutputDataTable="[dtXFItems]" SelectColumnsMode="Remove">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["groupname"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">["xf_group"]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+          </ui:FilterDataTable>
+        </Sequence>
+        <SequenceRemoved_Key"Join tables and then query the joined DT for any rows with Herbs"Removed_Key"Herb Items"Removed_Key"470,402.4"Removed_Key"Sequence_25">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:JoinDataTables DataTable1="[dtHostGroupRegulation]" DataTable2="[dtGroupNames]"Removed_Key"Join hostgroup and group names Data Tables"Removed_Key"416,92"Removed_Key"JoinDataTables_3" JoinType="Inner" OutputDataTable="[dtHostGroupAndNames]">
+            <ui:JoinDataTables.Arguments>
+              <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                  <ui:JoinOperationArgument.Column1>
+                    <InArgument x:TypeArguments="x:String">["groupid"]</InArgument>
+                  </ui:JoinOperationArgument.Column1>
+                  <ui:JoinOperationArgument.Column2>
+                    <InArgument x:TypeArguments="x:String">["groupid"]</InArgument>
+                  </ui:JoinOperationArgument.Column2>
+                </ui:JoinOperationArgument>
+              </scg:List>
+            </ui:JoinDataTables.Arguments>
+          </ui:JoinDataTables>
+          <ui:FilterDataTable DataTable="[dtHostGroupAndNames]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"416,187.2"Removed_Key"FilterDataTable_8" OutputDataTable="[dtHerbItems]" SelectColumnsMode="Remove">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["groupname"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">["herb_group"]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+          </ui:FilterDataTable>
+        </Sequence>
+        <SequenceRemoved_Key"Filters dtHostRegulationJoin to include only rows where the &quot;order_tax&quot; column&#xA;matches any &quot;order_tax&quot; value in dtDistinctOrders. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xA;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;order_tax&quot; column.&#xA;dtDistinctOrders: Reference DataTable containing unique &quot;order_tax&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin."Removed_Key"Order regulation Items"Removed_Key"470,716.8"Removed_Key"Sequence_6">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctOrders" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredTaxonGroup" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FilterDataTable DataTable="[dtTaxonGroup]"Removed_Key"Filter specific column Data Table" FilterRowsMode="Keep"Removed_Key"434,196"Removed_Key"FilterDataTable_9" OutputDataTable="[dtFilteredTaxonGroup]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="x:String">["order_tax"]</InArgument>
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+          </ui:FilterDataTable>
+          <ui:RemoveDuplicateRows DataTable="[dtFilteredTaxonGroup]"Removed_Key"Remove Duplicate Rows to give distinct orders"Removed_Key"434,113.2"Removed_Key"RemoveDuplicateRows_1" OutputDataTable="[dtDistinctOrders]" />
+          <AssignRemoved_Key"Get Order Items"Removed_Key"434,106.8"Removed_Key"Assign_18">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dtOrderRegulationItems]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If((From row In dtHostRegulationJoin.AsEnumerable()
+     Where dtDistinctOrders.AsEnumerable().
+           Any(Function(r) r("order_tax").ToString = row("order_tax").ToString)
+     Select row).Any(),     
+    (From row In dtHostRegulationJoin.AsEnumerable()
+     Where dtDistinctOrders.AsEnumerable().
+           Any(Function(r) r("order_tax").ToString = row("order_tax").ToString)
+     Select row).CopyToDataTable(),
+    dtHostRegulationJoin.Clone())]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+        <SequenceRemoved_Key"Filters Taxonomic results for this genus.&#xA;Filters dtHostRegulationJoin to include only rows where the &quot;family&quot; column matches any &quot;family&quot; value in dtDistinctFamilies. Returns a new DataTable with the filtered rows or an empty DataTable with the same schema if no matches are found.&#xA;&#xA;Parameters:&#xA;dtHostRegulationJoin: Source DataTable containing plant data with a &quot;family&quot; column.&#xA;dtDistinctFamilies: Reference DataTable containing unique &quot;family&quot; values to match against.&#xA;Returns: A DataTable containing matching rows or an empty clone of dtHostRegulationJoin."Removed_Key"Family Recognition Items"Removed_Key"470,724.4"Removed_Key"Sequence_7">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredTaxonGroup" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctFamilies" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FilterDataTable DataTable="[dtTaxonGroup]"Removed_Key"Filter specific column Data Table" FilterRowsMode="Keep"Removed_Key"434,196"Removed_Key"FilterDataTable_10" OutputDataTable="[dtFilteredTaxonGroup]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="x:String">["family"]</InArgument>
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+          </ui:FilterDataTable>
+          <ui:RemoveDuplicateRows DataTable="[dtFilteredTaxonGroup]"Removed_Key"Remove Duplicate Rows to give distinct orders"Removed_Key"434,113.2"Removed_Key"RemoveDuplicateRows_2" OutputDataTable="[dtDistinctFamilies]" />
+          <AssignRemoved_Key"Get Family Regulation Items"Removed_Key"434,106.8"Removed_Key"Assign_19">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dtFamilyRegulationItems]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If((From row In dtHostRegulationJoin.AsEnumerable()
+     Where dtDistinctFamilies.AsEnumerable().
+           Any(Function(fam) fam("family").ToString = row("family").ToString)
+     Select row).Any(),
+    (From row In dtHostRegulationJoin.AsEnumerable()
+     Where dtDistinctFamilies.AsEnumerable().
+           Any(Function(fam) fam("family").ToString = row("family").ToString)
+     Select row).CopyToDataTable(),
+    dtHostRegulationJoin.Clone())]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </Sequence>
+      <SequenceRemoved_Key"Get the ID for the country of origin, find regulations for the country of origin ID and add them to dtMatchedItems&#xA;If a matching country of origin isn't found - throw business exception"Removed_Key"Country check"Removed_Key"604,162.8"Removed_Key"Sequence_8">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtCountryID" />
+          <Variable x:TypeArguments="x:Int32" Name="intCountriesFound" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:FilterDataTable DataTable="[dtOrigin]"Removed_Key"Filter Country" FilterRowsMode="Keep"Removed_Key"518,196"Removed_Key"FilterDataTable_11" OutputDataTable="[dtCountryID]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["country"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[in_strCountryName]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <AssignRemoved_Key"Count countries returned"Removed_Key"518,114.4"Removed_Key"Assign_20">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[intCountriesFound]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[dtCountryID.RowCount]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <If Condition="[intCountriesFound = 1]"Removed_Key"If country found"Removed_Key"518,1170"Removed_Key"If_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <SequenceRemoved_Key"Then"Removed_Key"484,833.2"Removed_Key"Sequence_9">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strCountryID" />
+                <Variable x:TypeArguments="sd:DataTable" Name="dtCountryRegulations" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <AssignRemoved_Key"Assign Country ID"Removed_Key"450,114.4"Removed_Key"Assign_21">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strCountryID]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[dtCountryID.Rows(0)("originid").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:FilterDataTable DataTable="[dtOriginRegulation]"Removed_Key"Filter Origin Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_12" OutputDataTable="[dtCountryRegulations]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:String">["originid"]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                      <ui:FilterOperationArgument.Operand>
+                        <InArgument x:TypeArguments="x:String">[strCountryID]</InArgument>
+                      </ui:FilterOperationArgument.Operand>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCountryRegulations]"Removed_Key"For Each Row in Country Regulations Data Table"Removed_Key"450,462.8"Removed_Key"ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_26">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;itemid&quot;).ToString, &quot;OriginCountry&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <SequenceRemoved_Key"Else"Removed_Key"484,174.4"Removed_Key"Sequence_27">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ThrowRemoved_Key"Throw business exception - missing country of origin" Exception="[new BusinessRuleException(&quot;Country of origin not found: &quot; &amp; in_strCountryName)]"Removed_Key"382,114.4"Removed_Key"Throw_1" />
+            </Sequence>
+          </If.Else>
+        </If>
+      </Sequence>
+      <SequenceRemoved_Key"Join all host regulations to the regulation data&#xA;Assign the list of Genuses to search (this should only ever be 1 genus - the code was converted where this could be a list, this functionality was replicated to allow for future expansion if needed)&#xA;Filters dtHostRegulationsFull to include rows where the &quot;genus&quot; column matches any value in lisGenus or where &quot;genus&quot; is &quot;All&quot; with empty or null &quot;order_tax&quot; and &quot;family&quot; columns. Returns the filtered rows as the DataTable dtGenusFiltered&#xA;&#xA;---&#xA;&#xA;Create exclusion lists (for full genus or specific species of a genus) to filter out certain regulation items based on genus/species (as appropiate). The sequence creates two datatables: dtGenusExclusionList to exclude entire genera and dtSpeciesExclusionList to exclude specific species within a genus.&#xA;&#xA;---&#xA;&#xA;Filters dtGenusFiltered to return a distinct list of itemid values for regulation items that are not excluded and then adds these to dtMatchedItems as valid regulations that apply."Removed_Key"Host Regulation"Removed_Key"604,474.4"Removed_Key"Sequence_10">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtHostRegulationsFull" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtGenusFiltered" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="lisGenus" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtAllHostsItems" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtExcludedSpecies" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="lisExcludedGenusList" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtSearchSharedExGenus" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtGenusItems" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtGenusExclusionList" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtSpeciesExclusionList" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:JoinDataTables DataTable1="[dtHostRegulationJoin]" DataTable2="[dtRegulation]"Removed_Key"Join Host Regulations to Regulations"Removed_Key"450,92"Removed_Key"JoinDataTables_4" JoinType="Inner" OutputDataTable="[dtHostRegulationsFull]">
+          <ui:JoinDataTables.Arguments>
+            <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+              <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                <ui:JoinOperationArgument.Column1>
+                  <InArgument x:TypeArguments="x:String">["itemid"]</InArgument>
+                </ui:JoinOperationArgument.Column1>
+                <ui:JoinOperationArgument.Column2>
+                  <InArgument x:TypeArguments="x:String">["itemid"]</InArgument>
+                </ui:JoinOperationArgument.Column2>
+              </ui:JoinOperationArgument>
+            </scg:List>
+          </ui:JoinDataTables.Arguments>
+        </ui:JoinDataTables>
+        <AssignRemoved_Key"Assign all Genus from in argument to list"Removed_Key"450,114.4"Removed_Key"Assign_22">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[lisGenus]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From { strGenusPart }]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AssignRemoved_Key"Query Host Regs where genus matches the current item or where genus is ALL"Removed_Key"450,115.6"Removed_Key"Assign_47">
+          <Assign.To>
+            <OutArgument x:TypeArguments="sd:DataTable">[dtGenusFiltered]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If((From row In dtHostRegulationsFull.AsEnumerable()
+    Where lisGenus.Contains(row.Field(Of String)("genus")) OrElse
+          (row.Field(Of String)("genus") = "All" AndAlso
+           (String.IsNullOrEmpty(row.Field(Of String)("order_tax")) OrElse row.Field(Of String)("order_tax") = "") AndAlso
+           (String.IsNullOrEmpty(row.Field(Of String)("family")) OrElse row.Field(Of String)("family") = ""))
+    Select row).Any(),
+   (From row In dtHostRegulationsFull.AsEnumerable()
+    Where lisGenus.Contains(row.Field(Of String)("genus")) OrElse
+          (row.Field(Of String)("genus") = "All" AndAlso
+           (String.IsNullOrEmpty(row.Field(Of String)("order_tax")) OrElse row.Field(Of String)("order_tax") = "") AndAlso
+           (String.IsNullOrEmpty(row.Field(Of String)("family")) OrElse row.Field(Of String)("family") = ""))
+    Select row).CopyToDataTable(),
+   dtHostRegulationsFull.Clone())]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <SequenceRemoved_Key"Exclusions are for any genus (or a specific species within a genus) that are excluded from the regulations that are found. &#xA;&#xA;It starts by identifying regulations for &quot;All Hosts&quot; and then finds any excluded species or genera within those, narrowing the list further to the genus we are looking at."Removed_Key"Identify Exclusions"Removed_Key"450,167.2"Removed_Key"Sequence_28">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <AssignRemoved_Key"Filters dtGenusFiltered to include rows where the &quot;genus&quot; column is &quot;All&quot; and the &quot;species&quot; column is &quot;Hosts&quot; (both trimmed to remove whitespace). Returns a new DataTable (dtAllHostsItems) containing the filtered rows or an empty DataTable with the same schema if no matches are found."Removed_Key"Find items with genus = &quot;All&quot; and species = &quot;Hosts&quot;"Removed_Key"434,209.6"Removed_Key"Assign_25">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dtAllHostsItems]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If((From row In dtGenusFiltered.AsEnumerable()
+     Where row("genus").ToString.Trim = "All" And row("species").ToString.Trim = "Hosts"
+     Select row).Any(),
+    (From row In dtGenusFiltered.AsEnumerable()
+     Where row("genus").ToString.Trim = "All" And row("species").ToString.Trim = "Hosts"
+     Select row).CopyToDataTable(),
+    dtGenusFiltered.Clone())]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <AssignRemoved_Key"Filters dtGenusFiltered to include rows where the &quot;genus&quot; column is not &quot;All&quot; (after trimming whitespace) and the &quot;itemid&quot; column matches any &quot;itemid&quot; value in dtAllHostsItems. Returns a new DataTable (dtExcludedSpecies) containing the filtered rows or an empty DataTable with the same schema if no matches are found."Removed_Key"Find excluded species in excluded genus"Removed_Key"434,209.6"Removed_Key"Assign_48">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dtExcludedSpecies]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If((From row In dtGenusFiltered.AsEnumerable()
+    Where row("genus").ToString.Trim &lt;&gt; "All" And
+          dtAllHostsItems.AsEnumerable().Any(Function(r) r("itemid").ToString = row("itemid").ToString)
+    Select row).Any(),
+   (From row In dtGenusFiltered.AsEnumerable()
+    Where row("genus").ToString.Trim &lt;&gt; "All" And
+          dtAllHostsItems.AsEnumerable().Any(Function(r) r("itemid").ToString = row("itemid").ToString)
+    Select row).CopyToDataTable(),
+   dtGenusFiltered.Clone())]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <ui:FilterDataTableRemoved_Key"Filters the Excluded Species DT to only return the rows for the current genus" DataTable="[dtExcludedSpecies]"Removed_Key"Filter Excluded Species for this genus" FilterRowsMode="Keep"Removed_Key"434,232"Removed_Key"FilterDataTable_23" OutputDataTable="[dtSearchSharedExGenus]" SelectColumnsMode="Remove">
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:FilterDataTable>
+        </Sequence>
+        <SequenceRemoved_Key"Populate either the full genus, or the genus and species to the exclusion DTs"Removed_Key"Build exclusion lists"Removed_Key"450,101.6"Removed_Key"Sequence_11">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="s:String[]" Name="arrGenus" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:BuildDataTable DataTable="[dtGenusExclusionList]"Removed_Key"Build Exclusion Genus Data Table"Removed_Key"434,92"Removed_Key"BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;itemid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;species&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:BuildDataTable DataTable="[dtSpeciesExclusionList]"Removed_Key"Build Exclusion Species Data Table"Removed_Key"434,92"Removed_Key"BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ItemID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;genus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <AssignRemoved_Key"Extract distinct genera"Removed_Key"434,115.6"Removed_Key"Assign_30">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[arrGenus]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[(From row In dtSearchSharedExGenus.AsEnumerable()
+            Select row.Field(Of String)("Genus")
+            Distinct).ToArray()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each Distinct Genus"Removed_Key"434,48"Removed_Key"ForEach`1_4" Values="[arrGenus]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="x:String">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:String" Name="currentGenus" />
+                </ActivityAction.Argument>
+                <SequenceRemoved_Key"Body"Removed_Key"552,1942.4"Removed_Key"Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="scg:List(x:String)" Name="lisExGenus" />
+                    <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="lisSearchGenus" />
+                    <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="lisItemIDs" />
+                    <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="lisAllExGenus" />
+                    <Variable x:TypeArguments="x:Boolean" Name="boolHasNonExcludedSpecies" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <AssignRemoved_Key"Assign list of excluded excluded species = &quot;All&quot; for this genus"Removed_Key"518,115.6"Removed_Key"Assign_34">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[lisAllExGenus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[(From row In dtExcludedSpecies.AsEnumerable()
+              Where row.Field(Of String)("Genus") = currentGenus AndAlso
+                    row.Field(Of String)("Species") = "All"
+              Select row).ToList()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <AssignRemoved_Key"Assign all excluded rows for this genus"Removed_Key"518,115.6"Removed_Key"Assign_33">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[lisItemIDs]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[(From row In dtExcludedSpecies.AsEnumerable()
+              Where row.Field(Of String)("Genus") = currentGenus
+              Select row).ToList()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <AssignRemoved_Key"Retrieve a list of species from dtExcludedSpecies where the genus matches currentGenus, used to identify excluded species for the current genus in regulation filtering."Removed_Key"Assign list of excluded specific genus species"Removed_Key"518,176.8"Removed_Key"Assign_31">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:List(x:String)">[lisExGenus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[(From row In dtExcludedSpecies.AsEnumerable()
+           Where row.Field(Of String)("Genus") = currentGenus
+           Select row.Field(Of String)("Species")).ToList()]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <AssignRemoved_Key"Extracts rows from dtSearchSharedExGenus where the genus matches currentGenus, used to identify genus-species pairs in the exclusion list for further processing."Removed_Key"Assign all matching genus rows in dtSearchSharedExGenus"Removed_Key"518,176.8"Removed_Key"Assign_32">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[lisSearchGenus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[(From row In dtSearchSharedExGenus.AsEnumerable()
+               Where row.Field(Of String)("Genus") = currentGenus
+               Select row).ToList()]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <AssignRemoved_Key"Check if any species in dtSearchSharedExGenus for currentGenus is not in dtExcludedSpecies' species list&#xA;Mimics Python's search_genus.difference(ex_genus) to identify non-excluded species"Removed_Key"Assign if any non excluded species"Removed_Key"518,192"Removed_Key"Assign_53">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[boolHasNonExcludedSpecies]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[lisSearchGenus.Any(Function(row) Not lisExGenus.Contains(row.Field(Of String)("Species")))]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <If Condition="[boolHasNonExcludedSpecies = True]"Removed_Key"If there are non excluded species, add to species DT"Removed_Key"518,1105.6"Removed_Key"If_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <SequenceRemoved_Key"Then"Removed_Key"484,471.6"Removed_Key"Sequence_60">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each Genus and Species for Exclusion"Removed_Key"450,411.6"Removed_Key"ForEach`1_2" Values="[lisItemIDs]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentItem" />
+                              </ActivityAction.Argument>
+                              <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_31">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItem(&quot;ItemId&quot;), currentItem(&quot;Genus&quot;), currentItem(&quot;Species&quot;)}]" DataTable="[dtSpeciesExclusionList]"Removed_Key"Add Species Exclusion Data Row"Removed_Key"382,213.2"Removed_Key"AddDataRow_4" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ForEach>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <SequenceRemoved_Key"Else"Removed_Key"484,471.6"Removed_Key"Sequence_61">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each Genus for Exclusion"Removed_Key"450,411.6"Removed_Key"ForEach`1_3" Values="[lisItemIDs]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentItem" />
+                              </ActivityAction.Argument>
+                              <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_33">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItem(&quot;ItemId&quot;), currentItem(&quot;Genus&quot;)}]" DataTable="[dtGenusExclusionList]"Removed_Key"Add Genus Exclusion Data Row"Removed_Key"382,213.2"Removed_Key"AddDataRow_5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:AddDataRow>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ForEach>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEach>
+        </Sequence>
+        <AssignRemoved_Key"Filters dtGenusFiltered to return a distinct list of itemid values for regulation items that are not excluded.&#xA;Excludes items where itemid and genus match dtGenusExclusionList or where itemid, genus, and species match dtSpeciesExclusionList.&#xA;Returns unique itemid strings for valid regulations after applying exclusion rules."Removed_Key"Create list of all genus items needed downstream"Removed_Key"450,226"Removed_Key"Assign_35">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[lisAllGenusItems]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[dtGenusFiltered.AsEnumerable() _
+    .Where(Function(gRow) Not dtGenusExclusionList.AsEnumerable() _
+        .Any(Function(exRow) exRow("itemid").ToString = gRow("itemid").ToString AndAlso exRow("genus").ToString = gRow("genus").ToString) AndAlso _
+        Not dtSpeciesExclusionList.AsEnumerable() _
+        .Any(Function(spRow) spRow("itemid").ToString = gRow("itemid").ToString AndAlso spRow("genus").ToString = gRow("genus").ToString AndAlso spRow("species").ToString = gRow("species").ToString)) _
+    .Select(Function(gRow) gRow("itemid").ToString) _
+    .Distinct() _
+    .ToList()]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each itemid in lisAllGenusItems"Removed_Key"450,411.6"Removed_Key"ForEach`1_5" Values="[lisAllGenusItems]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="x:String">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:String" Name="currentItemID" />
+              </ActivityAction.Argument>
+              <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_62">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItemID, &quot;Genus&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_14" />
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+        </ui:ForEach>
+      </Sequence>
+      <SequenceRemoved_Key"Commodity Items"Removed_Key"604,101.6"Removed_Key"Sequence_13">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtCommodityTypes" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:LogMessageRemoved_Key"Log Message"Removed_Key"518,175.6"Removed_Key"LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Commodity Items are not yet filtered, so all are returned. This needs amending after Sally has defined process&quot;]" />
+        <ui:FilterDataTable DataTable="[dtCommodity]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"518,196"Removed_Key"FilterDataTable_13" OutputDataTable="[dtCommodityTypes]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="EQ" />
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCommodityTypes]"Removed_Key"For Each Commodity Type Row in Data Table"Removed_Key"518,908.4"Removed_Key"ForEachRow_4">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCommodityRow" />
+              </ActivityAction.Argument>
+              <SequenceRemoved_Key"Body"Removed_Key"484,718.8"Removed_Key"Sequence_14">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Name="dtCommodityTypeItems" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:FilterDataTable DataTable="[dtCommodityRegulation]"Removed_Key"Filter Commodity Items for this Commodity Type Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_14" OutputDataTable="[dtCommodityTypeItems]" SelectColumnsMode="Remove">
+                  <ui:FilterDataTable.Filters>
+                    <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                      <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                        <ui:FilterOperationArgument.Column>
+                          <InArgument x:TypeArguments="x:String">["commodityid"]</InArgument>
+                        </ui:FilterOperationArgument.Column>
+                        <ui:FilterOperationArgument.Operand>
+                          <InArgument x:TypeArguments="x:Object">[CurrentCommodityRow("commodityid")]</InArgument>
+                        </ui:FilterOperationArgument.Operand>
+                      </ui:FilterOperationArgument>
+                    </scg:List>
+                  </ui:FilterDataTable.Filters>
+                  <ui:FilterDataTable.SelectColumns>
+                    <scg:List x:TypeArguments="InArgument" Capacity="4">
+                      <x:Null />
+                    </scg:List>
+                  </ui:FilterDataTable.SelectColumns>
+                </ui:FilterDataTable>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCommodityTypeItems]"Removed_Key"For Each Row in Data Table"Removed_Key"450,462.8"Removed_Key"ForEachRow_3">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCommodityTypeItemsRow" />
+                      </ActivityAction.Argument>
+                      <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_37">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentCommodityTypeItemsRow(&quot;itemid&quot;).ToString, &quot;Commodity&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_7" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                </ui:ForEachRow>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+        </ui:ForEachRow>
+      </Sequence>
+      <SequenceRemoved_Key"Filter taxon_group rows for the desired genus and process each row for relevant regulations"Removed_Key"Process Data for Genus"Removed_Key"604,146.4"Removed_Key"Sequence_15">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtTaxonMatches" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:FilterDataTable DataTable="[dtTaxonGroup]"Removed_Key"Filter Taxon Matches for this Genus" FilterRowsMode="Keep"Removed_Key"518,196"Removed_Key"FilterDataTable_15" OutputDataTable="[dtTaxonMatches]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[strGenusPart]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxonMatches]"Removed_Key"For Each Row in Taxon Matches Data Table"Removed_Key"518,581.6"Removed_Key"ForEachRow_11">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+              </ActivityAction.Argument>
+              <SequenceRemoved_Key"Body"Removed_Key"484,392"Removed_Key"Sequence_16">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Name="dtTaxOrderRows" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <SequenceRemoved_Key"Order Regulation Items"Removed_Key"450,56.8"Removed_Key"Sequence_39">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtOrderRegulationItems]"Removed_Key"Filter Taxonomic Order Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_16" OutputDataTable="[dtTaxOrderRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["order_tax"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("order_tax")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxOrderRows]"Removed_Key"Remove Duplicate Taxonomic Order Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_3" OutputDataTable="[dtTaxOrderRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxOrderRows]"Removed_Key"For Each Row in TaxOrderRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_5">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxOrderRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_38">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxOrderRow(&quot;itemid&quot;).ToString, &quot;Order&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Order Row Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+                <SequenceRemoved_Key"Family Regulation Items"Removed_Key"450,56.8"Removed_Key"Sequence_17">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxFamilyRows" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtFamilyRegulationItems]"Removed_Key"Filter Family Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_17" OutputDataTable="[dtTaxFamilyRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["family"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("family")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxFamilyRows]"Removed_Key"Remove Duplicate Family Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_4" OutputDataTable="[dtTaxFamilyRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxFamilyRows]"Removed_Key"For Each Row in TaxFamilyRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_6">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxFamilyRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxFamilyRow(&quot;itemid&quot;).ToString, &quot;Family&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Family Row Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+                <SequenceRemoved_Key"XF Items"Removed_Key"450,56.8"Removed_Key"Sequence_18">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxFamilyRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxXFGroupRows" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtXFGroupSearch]"Removed_Key"Filter XF Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_18" OutputDataTable="[dtTaxXFGroupRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("genus")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxXFGroupRows]"Removed_Key"Remove Duplicate XF Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_5" OutputDataTable="[dtTaxXFGroupRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxXFGroupRows]"Removed_Key"For Each Row in TaxXFGroupRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_7">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxXFRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_41">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxXFRow(&quot;itemid&quot;).ToString, &quot;XF&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add XF Row Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+                <SequenceRemoved_Key"Check Herb Items"Removed_Key"450,56.8"Removed_Key"Sequence_19">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxFamilyRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxXFGroupRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxHerbGroupRows" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtHerbGroupSearch]"Removed_Key"Filter Herbs Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_19" OutputDataTable="[dtTaxHerbGroupRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("genus")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxHerbGroupRows]"Removed_Key"Remove Duplicate Herbs Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_6" OutputDataTable="[dtTaxHerbGroupRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxHerbGroupRows]"Removed_Key"For Each Row in dtTaxHerbGroupRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_8">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxHerbGroupRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_42">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxHerbGroupRow(&quot;itemid&quot;).ToString, &quot;Herb&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Herb Group Row Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+                <SequenceRemoved_Key"Check Invasive Species Items"Removed_Key"450,56.8"Removed_Key"Sequence_20">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxFamilyRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxXFGroupRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxHerbGroupRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxInvasiveSpeciesRows" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtInvasiveSearch]"Removed_Key"Filter Invasive Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_20" OutputDataTable="[dtTaxInvasiveSpeciesRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("genus")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxInvasiveSpeciesRows]"Removed_Key"Remove Invasive Duplicate Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_7" OutputDataTable="[dtTaxInvasiveSpeciesRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxInvasiveSpeciesRows]"Removed_Key"For Each Row in dtTaxInvasiveSpeciesRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_9">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxInvasiveSpeciesRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_43">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxInvasiveSpeciesRow(&quot;itemid&quot;).ToString, &quot;Invasive&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add Invasive Species Row Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+                <SequenceRemoved_Key"Check CITES Items"Removed_Key"450,48"Removed_Key"Sequence_21">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxFamilyRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxXFGroupRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxHerbGroupRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxInvasiveSpeciesRows" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dtTaxCitesRows" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dtCitesSearch]"Removed_Key"Filter Cites Data Table" FilterRowsMode="Keep"Removed_Key"450,196"Removed_Key"FilterDataTable_21" OutputDataTable="[dtTaxCitesRows]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["genus"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("genus")]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                  <ui:RemoveDuplicateRows DataTable="[dtTaxCitesRows]"Removed_Key"Remove Duplicate Cites Rows"Removed_Key"450,113.2"Removed_Key"RemoveDuplicateRows_8" OutputDataTable="[dtTaxCitesRows]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtTaxCitesRows]"Removed_Key"For Each Row in dtTaxCitesRows"Removed_Key"450,462.8"Removed_Key"ForEachRow_10">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentTaxCitesRow" />
+                        </ActivityAction.Argument>
+                        <SequenceRemoved_Key"Body"Removed_Key"416,273.2"Removed_Key"Sequence_44">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentTaxCitesRow(&quot;itemid&quot;).ToString, &quot;Cites&quot;}]" DataTable="[out_dtMatchedItems]"Removed_Key"Add CitesRow Data Row to Matched Items"Removed_Key"382,213.2"Removed_Key"AddDataRow_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AddDataRow>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEachRow>
+      </Sequence>
+      <SequenceRemoved_Key"For every row in dtMatchedItems, get the full regulation information (EG annex, part, regulation text)"Removed_Key"Get regulation data"Removed_Key"604,2067.2"Removed_Key"Sequence_53">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtMatchedItems]"Removed_Key"For Each Row in MatchedItems Data Table"Removed_Key"570,1944"Removed_Key"ForEachRow_12">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentMatchedItemRow" />
+              </ActivityAction.Argument>
+              <SequenceRemoved_Key"Body"Removed_Key"536,1754.4"Removed_Key"Sequence_22">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Name="dtRegulationItemID" />
+                  <Variable x:TypeArguments="x:String" Name="strConditions" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:FilterDataTable DataTable="[dtRegulation]"Removed_Key"Filter Regulation to ItemID " FilterRowsMode="Keep"Removed_Key"502,196"Removed_Key"FilterDataTable_22" OutputDataTable="[dtRegulationItemID]" SelectColumnsMode="Remove">
+                  <ui:FilterDataTable.Filters>
+                    <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                      <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                        <ui:FilterOperationArgument.Column>
+                          <InArgument x:TypeArguments="x:String">["itemid"]</InArgument>
+                        </ui:FilterOperationArgument.Column>
+                        <ui:FilterOperationArgument.Operand>
+                          <InArgument x:TypeArguments="x:String">[CurrentMatchedItemRow("itemid").Tostring]</InArgument>
+                        </ui:FilterOperationArgument.Operand>
+                      </ui:FilterOperationArgument>
+                    </scg:List>
+                  </ui:FilterDataTable.Filters>
+                  <ui:FilterDataTable.SelectColumns>
+                    <scg:List x:TypeArguments="InArgument" Capacity="4">
+                      <x:Null />
+                    </scg:List>
+                  </ui:FilterDataTable.SelectColumns>
+                </ui:FilterDataTable>
+                <AssignRemoved_Key"Assign blank Conditions string"Removed_Key"502,114.4"Removed_Key"Assign_36">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;statementreq&quot;).Tostring = &quot;0&quot;]"Removed_Key"If statementreq = 0"Removed_Key"502,56.8"Removed_Key"If_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_45">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign StatementReq to Conditions string"Removed_Key"434,105.6"Removed_Key"Assign_37">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strConditions &amp; "|No Statement Required|"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"468,90.4"Removed_Key"Sequence_46">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;specialreq&quot;).Tostring.Contains(&quot;PROHIBITED&quot;) = True]"Removed_Key"If specialreq contains PROHIBITED"Removed_Key"502,56.8"Removed_Key"If_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_47">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign Prohibited to Conditions string"Removed_Key"434,105.6"Removed_Key"Assign_38">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strConditions &amp; "|Prohibited|"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"468,90.4"Removed_Key"Sequence_48">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_host&quot;).Tostring = &quot;1&quot;]"Removed_Key"If conditional host = 1"Removed_Key"502,56.8"Removed_Key"If_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign Conditional Host to Conditions string"Removed_Key"434,105.6"Removed_Key"Assign_39">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strConditions &amp; "|Conditional Host|"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"468,90.4"Removed_Key"Sequence_50">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[dtRegulationItemID.Rows(0)(&quot;conditional_origin&quot;).Tostring = &quot;1&quot;]"Removed_Key"If conditional origin = 1"Removed_Key"502,427.2"Removed_Key"If_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_51">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign Conditional Origin to Conditions string"Removed_Key"434,105.6"Removed_Key"Assign_40">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strConditions &amp; "|Conditional Origin|"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_52">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[string.IsNullOrWhiteSpace(strConditions)]"Removed_Key"If No conditions"Removed_Key"502,427.2"Removed_Key"If_10">
+                  <If.Then>
+                    <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_65">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <AssignRemoved_Key"Assign - White to conditions"Removed_Key"434,105.6"Removed_Key"Assign_55">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strConditions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">|White|</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_66">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:MultipleAssignRemoved_Key"Assign all Regulation metadata"Removed_Key"502,359.2"Removed_Key"MultipleAssign_1">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                      <ui:AssignOperationRemoved_Key"AssignOperation_1">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("Annex")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Annex").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_2">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("Part")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Part").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_3">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("Item")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Item").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_4">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("origin")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Origin").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_5">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("Description")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Description").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_6">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("SpecialRequirements")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("specialreq").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_7">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("notes")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[dtRegulationItemID.Rows(0)("Notes").Tostring]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperationRemoved_Key"AssignOperation_8">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentMatchedItemRow("Conditions")]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Object">[strConditions]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+        </ui:ForEachRow>
+      </Sequence>
+      <SequenceRemoved_Key"Query all relevant regulations for this genus, country of origin and commodity type, find the intersection (where the regulation appears in all 3) and save that to dtMatchedItems (which overwrites the previous dtMatchedItems as it is no longer relevant). Remove the category column (not required for the output) and removes duplicate rows to give only the regulations required"Removed_Key"Intersection"Removed_Key"604,1318"Removed_Key"Sequence_23">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:List(x:String)" Name="listGenus" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="listOrigin" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="listCommodity" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="listIntersection" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <AssignRemoved_Key"Get all items for this Genus"Removed_Key"434,115.6"Removed_Key"Assign_41">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[listGenus]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
+    Where(Function(r) r("ItemCategory").ToString = "Genus").
+    Select(Function(r) r("ItemId").ToString()).
+    Distinct().
+    ToList()]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AssignRemoved_Key"Get all items for this origin country"Removed_Key"434,115.6"Removed_Key"Assign_42">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[listOrigin]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
+    Where(Function(r) r("ItemCategory").ToString = "OriginCountry").
+    Select(Function(r) r("ItemId").ToString()).
+    Distinct().
+    ToList()]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AssignRemoved_Key"Get all items for the relevant commoditys"Removed_Key"434,115.6"Removed_Key"Assign_43">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[listCommodity]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_dtMatchedItems.AsEnumerable().
+    Where(Function(r) r("ItemCategory").ToString = "Commodity").
+    Select(Function(r) r("ItemId").ToString()).
+    Distinct().
+    ToList()]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AssignRemoved_Key"Find all items that appear in Genus, Origin Country and Commoditys item lists"Removed_Key"434,114.4"Removed_Key"Assign_44">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[listIntersection]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)">[listGenus.Intersect(listOrigin).Intersect(listCommodity).ToList()]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AssignRemoved_Key"This overwrites the previous dtMatchedItems with only the relevant regulations"Removed_Key"Save listintersection to datatable"Removed_Key"434,159.2"Removed_Key"Assign_45">
+          <Assign.To>
+            <OutArgument x:TypeArguments="sd:DataTable">[out_dtMatchedItems]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="sd:DataTable">[If(out_dtMatchedItems.AsEnumerable().Any(Function(r) listIntersection.Contains(r("ItemID").ToString)), out_dtMatchedItems.AsEnumerable().Where(Function(r) listIntersection.Contains(r("ItemID").ToString)).CopyToDataTable(), out_dtMatchedItems.Clone())]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <ui:LogMessageRemoved_Key"Log Message"Removed_Key"434,175.6"Removed_Key"LogMessage_6" Level="Warn" Message="[&quot;When using commodities, enable the activity below &amp; review&quot;]" />
+        <ui:CommentOutRemoved_Key"Comment Out - If not using commodity"Removed_Key"434,85.2"Removed_Key"CommentOut_1">
+          <ui:CommentOut.Body>
+            <SequenceRemoved_Key"Ignored Activities"Removed_Key"468,165.6"Removed_Key"Sequence_54">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <AssignRemoved_Key"434,105.6"Removed_Key"Assign_46">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[listIntersection]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[listGenus.Intersect(listOrigin).ToList()]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:CommentOut>
+        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}"Removed_Key"Remove the category column, not relevant for output" ColumnName="ItemCategory" DataTable="[out_dtMatchedItems]"Removed_Key"Remove Item Category Data Column"Removed_Key"434,146.4"Removed_Key"RemoveDataColumn_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:RemoveDataColumn>
+        <ui:RemoveDuplicateRows DataTable="[out_dtMatchedItems]"Removed_Key"Remove Duplicate Matched Item Rows"Removed_Key"434,104.4"Removed_Key"RemoveDuplicateRows_9" OutputDataTable="[out_dtMatchedItems]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:RemoveDuplicateRows>
+      </Sequence>
+      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"604,175.6"Removed_Key"LogMessage_4" Level="Warn" Message="[&quot;Delete the write csv below after integration.&quot;]" />
+      <ui:WriteCsvFile AddHeaders="True" DataTable="[out_dtMatchedItems]" Delimitator="Comma"Removed_Key"Write CSV - DELETE ME" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\david.csv"Removed_Key"604,182"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
+    </Sequence>
+  </Sequence>
+</Activity>
