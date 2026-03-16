@@ -301,13 +301,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"740,7430"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"110,70"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,7263.6"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"702,2191.6"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -320,7 +320,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <AssignRemoved_Key"Assign - init List"Removed_Key"672,114.4"Removed_Key"Assign_130">
+              <AssignRemoved_Key"Assign - init List"Removed_Key"668,114.4"Removed_Key"Assign_130">
                 <Assign.To>
                   <OutArgument x:TypeArguments="scg:List(x:String)">[listHold]</OutArgument>
                 </Assign.To>
@@ -328,7 +328,7 @@
                   <InArgument x:TypeArguments="scg:List(x:String)">[new list (of String)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <AssignRemoved_Key"Assign - grab country"Removed_Key"672,114.4"Removed_Key"Assign_136">
+              <AssignRemoved_Key"Assign - grab country"Removed_Key"668,114.4"Removed_Key"Assign_136">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strCountry]</OutArgument>
                 </Assign.To>
@@ -336,7 +336,7 @@
                   <InArgument x:TypeArguments="x:String">[Commodity("Country").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"672,2081.2"Removed_Key"Sequence_22">
+              <SequenceRemoved_Key"Initialise &amp; populate mini pop up table"Removed_Key"668,56.8"Removed_Key"Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strRegexPattern" />
                   <Variable x:TypeArguments="x:Int32" Name="intIndexPosition" />
@@ -345,7 +345,7 @@
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -485,15 +485,16 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,3135.6"Removed_Key"Sequence_87">
+              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"668,88"Removed_Key"Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]"Removed_Key"For Each - find regulation index"Removed_Key"638,616.8"Removed_Key"ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
@@ -712,7 +713,7 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]"Removed_Key"For Each Row in Data Table - Regulation Table"Removed_Key"672,906.4"Removed_Key"ForEachRow_3">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]"Removed_Key"For Each Row in Data Table - Regulation Table"Removed_Key"668,906.4"Removed_Key"ForEachRow_3">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -1174,7 +1175,7 @@
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">385,865</av:Point>
                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">440,935 440,965 180,965 180,1000</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">440,935 440,964.9999999999999 180,964.9999999999999 180,1000</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 4"Removed_Key"110,70"Removed_Key"AppendItemToList`1_8" ItemToAppend="AD statements incomplete" List="[listHold]">
@@ -1218,7 +1219,7 @@
                                                             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <ui:ForEachRow ColumnNames="{x:Null}" Condition="[not(booAdvancedDeclaration)]" CurrentIndex="[intAdvDecIndex]" DataTable="[in_dtAdvancedDeclarations]"Removed_Key"For Each Row in Data Table"Removed_Key"502,469.6"Removed_Key"ForEachRow_9">
+                                                        <ui:ForEachRow ColumnNames="{x:Null}" Condition="[not(booAdvancedDeclaration)]" CurrentIndex="[intAdvDecIndex]" DataTable="[g_dtAdvancedDeclarationCSV]"Removed_Key"For Each Row in Data Table"Removed_Key"502,469.6"Removed_Key"ForEachRow_9">
                                                           <ui:ForEachRow.Body>
                                                             <ActivityAction x:TypeArguments="sd:DataRow">
                                                               <ActivityAction.Argument>
@@ -1331,7 +1332,7 @@
                                                                           <av:PointCollection x:Key="ConnectorLocation">180,1805 180,1860</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <SequenceRemoved_Key"ADV pfpp/pfa country check"Removed_Key"110,70"Removed_Key"Sequence_76">
+                                                                      <SequenceRemoved_Key"ADV pfpp/pfa country check"Removed_Key"468,280"Removed_Key"Sequence_76">
                                                                         <Sequence.Variables>
                                                                           <Variable x:TypeArguments="x:String" Name="strAdvDecCountry" />
                                                                         </Sequence.Variables>
@@ -1345,7 +1346,7 @@
                                                                             <OutArgument x:TypeArguments="x:String">[strAdvDecCountry]</OutArgument>
                                                                           </Assign.To>
                                                                           <Assign.Value>
-                                                                            <InArgument x:TypeArguments="x:String">[in_dtAdvancedDeclarations(intAdvDecIndex)("PFA/PFPP").tostring]</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String">[g_dtAdvancedDeclarationCSV(intAdvDecIndex)("PFA/PFPP").tostring]</InArgument>
                                                                           </Assign.Value>
                                                                         </Assign>
                                                                         <AssignRemoved_Key"Assign - blank or matching?"Removed_Key"434,105.6"Removed_Key"Assign_103">
@@ -1912,14 +1913,14 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:MergeDataTableRemoved_Key"collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]"Removed_Key"Merge dtminipopup into dtpopup"Removed_Key"672,212.4"Removed_Key"MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
+              <ui:MergeDataTableRemoved_Key"collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]"Removed_Key"Merge dtminipopup into dtpopup"Removed_Key"668,212.4"Removed_Key"MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MergeDataTable>
-              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"672,639.2"Removed_Key"If_2">
+              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"668,639.2"Removed_Key"If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
