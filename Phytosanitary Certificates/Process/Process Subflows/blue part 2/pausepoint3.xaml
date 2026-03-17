@@ -32,6 +32,7 @@
       <x:String>UiPath.CSV.Activities</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -83,9 +84,16 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"pausepoint3"Removed_Key"910,658.84"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"pausepoint3"Removed_Key"892.8,1087.6"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtOrange" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtBlue" />
@@ -96,6 +104,99 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadCsvFile DataTable="[dtOrange]" Delimitator="Comma"Removed_Key"orange output example" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\OUTPUT2.csv"Removed_Key"434,190.8"Removed_Key"ReadCsvFile_1" />
-    <ui:ReadCsvFile FilePath="{x:Null}" DataTable="[dtBlue]" Delimitator="Comma"Removed_Key"onhold output example"Removed_Key"434,182"Removed_Key"ReadCsvFile_2" />
+    <ui:ReadCsvFile DataTable="[dtBlue]" Delimitator="Comma"Removed_Key"onhold output example" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\TESTING\PP3onholdtable.csv"Removed_Key"434,190.8"Removed_Key"ReadCsvFile_2" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="AD Comments" DataTable="[dtBlue]"Removed_Key"Add Data Column"Removed_Key"434,222"Removed_Key"AddDataColumn`1_4" MaxLength="-1" />
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="AD Numbers" DataTable="[dtBlue]"Removed_Key"Add Data Column"Removed_Key"434,222"Removed_Key"AddDataColumn`1_3" MaxLength="-1" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtOrange]"Removed_Key"For Each Row in Data Table"Removed_Key"434,56.8"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <SequenceRemoved_Key"Body"Removed_Key"604,1202.8"Removed_Key"Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[CurrentRow(&quot;Outcome&quot;).tostring = &quot;ON HOLD&quot;]"Removed_Key"570,1142.8"Removed_Key"If_1">
+              <If.Then>
+                <SequenceRemoved_Key"Then"Removed_Key"536,890"Removed_Key"Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataRow" Name="filteredRow" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <AssignRemoved_Key"Assign - find row"Removed_Key"502,114.4"Removed_Key"Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataRow">[filteredRow]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataRow">[dtBlue.Select("Certificate_Number = '" &amp; CurrentRow("Cert").ToString &amp; "' AND Commodity_Line_Reference = '" &amp; cint(CurrentRow("ID").ToString).ToString &amp; "'").FirstOrDefault]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[filteredRow is nothing]"Removed_Key"502,715.6"Removed_Key"If_2">
+                    <If.Then>
+                      <SequenceRemoved_Key"Then"Removed_Key"416,273.2"Removed_Key"Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{dtBlue(0)(&quot;Application_Reference&quot;),CurrentRow(&quot;Cert&quot;),cint(CurrentRow(&quot;ID&quot;)).ToString,&quot;&quot;,CurrentRow(&quot;AD Comments&quot;),CurrentRow(&quot;AD Numbers&quot;)}]" DataTable="[dtBlue]"Removed_Key"Add Data Row"Removed_Key"382,213.2"Removed_Key"AddDataRow_2" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <SequenceRemoved_Key"Else"Removed_Key"468,280"Removed_Key"Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <AssignRemoved_Key" Assign - ad Ad Comments"Removed_Key"434,114.4"Removed_Key"Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[filteredRow("AD Comments")]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("AD Comments")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <AssignRemoved_Key"Assign - add AD numbers"Removed_Key"434,105.6"Removed_Key"Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[filteredRow("AD Numbers")]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object">[CurrentRow("AD Numbers")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtBlue]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="test.csv"Removed_Key"434,182"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
   </Sequence>
 </Activity>

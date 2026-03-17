@@ -1,0 +1,56 @@
+<!-- saved from url=(0014)about:internet -->
+<!-- Author: Mohammed Ali -->
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+<link rel="stylesheet" href="CSS_FILE_HERE">
+
+<body>
+
+BODYTEXT_HERE
+<div class="Table_Container" >
+DATATABLE_HERE
+</div>
+
+<br>
+
+<div class="Button_Container">
+<input type="submit"  value="Stop" id="StopButton">
+<input type="submit"  value="Continue" id="ContinueButton">
+</div>
+
+<script>
+document.getElementById("ContinueButton").onclick = function() {
+
+var elements = document.getElementsByTagName("input");
+var JSONObj = {};
+var JSONarr = [];
+var colName = elements[0].id;
+
+for(var i = 0;i < elements.length -2; i++) {
+	var x = elements[i].id;
+
+	if (colName == x && i !=0) {
+		JSONarr.push(JSONObj);
+		JSONObj = {};
+	};
+    
+	JSONObj[x] = elements[i].value;
+};
+
+JSONarr.push(JSONObj);
+
+window.external.setResult(JSON.stringify(JSONarr));
+
+};
+
+
+document.getElementById("StopButton").onclick = function() {
+window.external.setResult("stop");
+};
+</script>
+
+</body>
+</html>
