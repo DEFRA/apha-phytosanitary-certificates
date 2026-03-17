@@ -1,0 +1,56 @@
+<!-- saved from url=(0014)about:internet -->
+<!-- Author: Mohammed Ali -->
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+<link rel="stylesheet" href="C:\Users\ma000091\OneDrive - Defra\Documents\GitHub\apha-phytosanitary-certificates\Phytosanitary Certificates\Assets\PP3\Editable Standard Template.css">
+
+<body>
+
+
+<div class="Table_Container" >
+<table><thead><tr><th>Application_Reference</th><th>Certificate_Number</th><th>Commodity_Line_Reference</th><th>On_Hold_Text</th><th>AD Comments</th><th>AD Numbers</th></tr></thead><tbody><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '123' ></td><td><input id = 'Commodity_Line_Reference' value = '' ></td><td><input id = 'On_Hold_Text' value = 'Doodley Poodley' ></td><td><input id = 'AD Comments' value = '' ></td><td><input id = 'AD Numbers' value = '' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '123' ></td><td><input id = 'Commodity_Line_Reference' value = '1' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = 'AD statements incomplete|Likely to be prohibited item, full manual AD check. AD option incomplete, requires checking qfkwhelifhlef' ></td><td><input id = 'AD Numbers' value = 'Part A Item 6ai' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '123' ></td><td><input id = 'Commodity_Line_Reference' value = '3' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = 'Likely to be prohibited item, full manual AD check. AD option incomplete, requires checking' ></td><td><input id = 'AD Numbers' value = 'Part A Item 6ai, Part B Item 2b' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '123' ></td><td><input id = 'Commodity_Line_Reference' value = '6' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = '' ></td><td><input id = 'AD Numbers' value = '' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '234' ></td><td><input id = 'Commodity_Line_Reference' value = '' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = '' ></td><td><input id = 'AD Numbers' value = '' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '234' ></td><td><input id = 'Commodity_Line_Reference' value = '5' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = '' ></td><td><input id = 'AD Numbers' value = '' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '234' ></td><td><input id = 'Commodity_Line_Reference' value = '' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = '' ></td><td><input id = 'AD Numbers' value = '' ></td></tr><tr><td><input id = 'Application_Reference' value = 'CHEP-PP1' ></td><td><input id = 'Certificate_Number' value = '123' ></td><td><input id = 'Commodity_Line_Reference' value = '2' ></td><td><input id = 'On_Hold_Text' value = '' ></td><td><input id = 'AD Comments' value = 'lkfhwelkfhlkwhfe' ></td><td><input id = 'AD Numbers' value = 'Part A Item 6ai, Part B Item 2b' ></td></tr></tbody></table>
+</div>
+
+<br>
+
+<div class="Button_Container">
+<input type="submit"  value="Stop" id="StopButton">
+<input type="submit"  value="Continue" id="ContinueButton">
+</div>
+
+<script>
+document.getElementById("ContinueButton").onclick = function() {
+
+var elements = document.getElementsByTagName("input");
+var JSONObj = {};
+var JSONarr = [];
+var colName = elements[0].id;
+
+for(var i = 0;i < elements.length -2; i++) {
+	var x = elements[i].id;
+
+	if (colName == x && i !=0) {
+		JSONarr.push(JSONObj);
+		JSONObj = {};
+	};
+    
+	JSONObj[x] = elements[i].value;
+};
+
+JSONarr.push(JSONObj);
+
+window.external.setResult(JSON.stringify(JSONarr));
+
+};
+
+
+document.getElementById("StopButton").onclick = function() {
+window.external.setResult("stop");
+};
+</script>
+
+</body>
+</html>
