@@ -110,7 +110,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"pausepoint3"Removed_Key"1863.6000000000001,11116"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"pausepoint3"Removed_Key"1915.6000000000001,11587.6"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtOrange" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtDynamics" />
@@ -132,7 +132,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"combine io_dtCommodityLines with dtOnHoldTable&#xD;&#xA;all new on hold reasons will be appended onto the OnHoldTable" DataTable="[dtOrange]"Removed_Key"For Each Row in Data Table"Removed_Key"808,1350.4"Removed_Key"ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"combine io_dtCommodityLines with dtOnHoldTable&#xA;all new on hold reasons will be appended onto the OnHoldTable" DataTable="[dtOrange]"Removed_Key"For Each Row in Data Table"Removed_Key"808,1350.4"Removed_Key"ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -179,7 +179,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <AssignRemoved_Key"Manually spotted the difference between these duplicate IPPAF reasons.&#xD;&#xA;Basically the ms dynamics column is not reliable to use as a match because humans can edit this field and the note is dynamic&#xD;&#xA;majority of these are also not included in the excel file that is the source of the priority datatable"Removed_Key"Assign - figure out IPPAFS option from reason"Removed_Key"434,208.4"Removed_Key"Assign_6">
+                          <AssignRemoved_Key"Manually spotted the difference between these duplicate IPPAF reasons.&#xA;Basically the ms dynamics column is not reliable to use as a match because humans can edit this field and the note is dynamic&#xA;majority of these are also not included in the excel file that is the source of the priority datatable"Removed_Key"Assign - figure out IPPAFS option from reason"Removed_Key"434,208.4"Removed_Key"Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[strIPPAFS]</OutArgument>
                             </Assign.To>
@@ -220,7 +220,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <AssignRemoved_Key"order the certifficate numbers first&#xD;&#xA;then order the commodity line reference numbers after that&#xD;&#xA;This is to make it easier to review the data from a human POV"Removed_Key"Assign - order table"Removed_Key"808,176.8"Removed_Key"Assign_7">
+    <AssignRemoved_Key"order the certifficate numbers first&#xA;then order the commodity line reference numbers after that&#xA;This is to make it easier to review the data from a human POV"Removed_Key"Assign - order table"Removed_Key"808,176.8"Removed_Key"Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dtDynamics]</OutArgument>
       </Assign.To>
@@ -238,7 +238,7 @@ CopyToDataTable()]</InArgument>
     </Assign>
     <ui:WriteCsvFile AddHeaders="True" DataTable="[dtDynamics]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="test.csv"Removed_Key"808,190.8"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
     <ui:CommentRemoved_Key"808,88.4"Removed_Key"Comment_1" Text="pause point - check spreadsheet" />
-    <ui:FilterDataTableRemoved_Key"Create a copy of the table to preserver the dynamics table for the dynamics note&#xD;&#xA;&#xD;&#xA;IPPAFS table will go through rigorous manipulation.&#xD;&#xA;&#xD;&#xA;this is removing any rows with blank IPPAF reason filled in" DataTable="[dtDynamics]"Removed_Key"Filter Data Table - Create Copy" FilterRowsMode="Remove"Removed_Key"808,322.8"Removed_Key"FilterDataTable_2" OutputDataTable="[dtIPPAFS]" SelectColumnsMode="Remove">
+    <ui:FilterDataTableRemoved_Key"Create a copy of the table to preserver the dynamics table for the dynamics note&#xA;&#xA;IPPAFS table will go through rigorous manipulation.&#xA;&#xA;this is removing any rows with blank IPPAF reason filled in" DataTable="[dtDynamics]"Removed_Key"Filter Data Table - Create Copy" FilterRowsMode="Remove"Removed_Key"808,322.8"Removed_Key"FilterDataTable_2" OutputDataTable="[dtIPPAFS]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -483,7 +483,7 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDuplicateRows>
-    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtIPPAFS]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="test2a.csv"Removed_Key"808,190.8"Removed_Key"WriteCsvFile_3" ShouldQuote="True" />
+    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtIPPAFS]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="testPREOVERWRITE.csv"Removed_Key"808,190.8"Removed_Key"WriteCsvFile_3" ShouldQuote="True" />
     <SequenceRemoved_Key"This sequence here will find a ched hold and then replace any that are of a lower priority from the rest of the IPAFF table"Removed_Key"Overwriting CHED Level Hold Reasons"Removed_Key"808,1568"Removed_Key"Sequence_30">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataRow" Name="rowCHED" />
@@ -600,7 +600,7 @@ CopyToDataTable()]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtIPPAFS]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="test2.csv"Removed_Key"808,190.8"Removed_Key"WriteCsvFile_4" ShouldQuote="True" />
+    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtIPPAFS]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="test2CHED.csv"Removed_Key"808,190.8"Removed_Key"WriteCsvFile_4" ShouldQuote="True" />
     <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For certifficate and Commodity type"Removed_Key"808,2206.4"Removed_Key"ForEach`1_3" Values="[{&quot;Certificate_Number&quot;,&quot;Commodity&quot;}]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
@@ -615,7 +615,7 @@ CopyToDataTable()]</InArgument>
             </sap:WorkflowViewStateService.ViewState>
             <SequenceRemoved_Key"This will repeat what the CHED level sequence is doing but segmented at certificate and commodity levels"Removed_Key"Overwriting Certificate level Hold reasons"Removed_Key"740,1817.2"Removed_Key"Sequence_36">
               <Sequence.Variables>
-                <Variable x:TypeArguments="scg:List(x:Object)" Name="listObjs" />
+                <Variable x:TypeArguments="scg:List(x:Object)" Name="listFilterSegments" />
                 <Variable x:TypeArguments="sd:DataRow" Name="rowHighPriority" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
@@ -625,9 +625,9 @@ CopyToDataTable()]</InArgument>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <AssignRemoved_Key"We need to do the same thing with certificates that we did with CHED level"Removed_Key"Assign - grab unique Certificates"Removed_Key"706,160.4"Removed_Key"Assign_30">
+              <AssignRemoved_Key"We need to do the same thing with certificates and commodity that we did with CHED level"Removed_Key"Assign - grab unique Certificates"Removed_Key"706,160.4"Removed_Key"Assign_30">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="scg:List(x:Object)">[listObjs]</OutArgument>
+                  <OutArgument x:TypeArguments="scg:List(x:Object)">[listFilterSegments]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="scg:List(x:Object)" xml:space="preserve">[dtIPPAFS.AsEnumerable().
@@ -641,7 +641,7 @@ ToList()]</InArgument>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}"Removed_Key"For Each - Certificate"Removed_Key"706,1533.6"Removed_Key"ForEach`1_4" Values="[listObjs]">
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}"Removed_Key"For Each - Certificate"Removed_Key"706,1533.6"Removed_Key"ForEach`1_4" Values="[listFilterSegments]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -658,10 +658,11 @@ ToList()]</InArgument>
                           <OutArgument x:TypeArguments="sd:DataRow">[rowHighPriority]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="sd:DataRow" xml:space="preserve">[dtIPPAFS.AsEnumerable().
-        Where(Function(r) r(strType).ToString = Segment.ToString()).
-        OrderBy(Function(r) CInt(r("Priority order"))).
-        FirstOrDefault()]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataRow" xml:space="preserve">[dtIPPAFS.AsEnumerable() _
+    .Where(Function(r) r(strType).ToString() = Segment.ToString() AndAlso _
+                        r("Hold level").ToString() = If(strType = "Commodity", "Commodity", "Certificate")) _
+    .OrderBy(Function(r) If(IsDBNull(r("Priority order")), Integer.MaxValue, CInt(r("Priority order")))) _
+    .FirstOrDefault()]</InArgument>
                         </Assign.Value>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -765,7 +766,7 @@ ToList()]</InArgument>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"808,85.2"Removed_Key"CommentOut_1">
+    <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"808,56.8"Removed_Key"CommentOut_1">
       <ui:CommentOut.Body>
         <SequenceRemoved_Key"Ignored Activities"Removed_Key"484,197.6"Removed_Key"Sequence_43">
           <sap:WorkflowViewStateService.ViewState>
@@ -813,7 +814,7 @@ ToList()]</InArgument>
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <AssignRemoved_Key"This is firstly filtering by certififcate number&#xD;&#xA;then ordering by priority&#xD;&#xA;and then taking the highest priority row"Removed_Key"638,176.8"Removed_Key"Assign_25">
+                    <AssignRemoved_Key"This is firstly filtering by certififcate number&#xA;then ordering by priority&#xA;and then taking the highest priority row"Removed_Key"638,176.8"Removed_Key"Assign_25">
                       <Assign.To>
                         <OutArgument x:TypeArguments="sd:DataRow">[rowCert]</OutArgument>
                       </Assign.To>
@@ -923,6 +924,21 @@ ToList()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <WriteLineRemoved_Key"Write Line"Removed_Key"808,114.4"Removed_Key"WriteLine_1" Text="check" />
+    <WriteLineRemoved_Key"Write Line"Removed_Key"808,123.2"Removed_Key"WriteLine_1" Text="check" />
+    <ui:FilterDataTable DataTable="[dtIPPAFS]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"808,196"Removed_Key"FilterDataTable_5" OutputDataTable="[dtIPPAFS]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">["IPPAFS Reasons"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Commodity"]</InArgument>
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[dtIPPAFS]"Removed_Key"Remove Duplicate Rows"Removed_Key"808,113.2"Removed_Key"RemoveDuplicateRows_5" />
+    <ui:WriteCsvFile AddHeaders="True" DataTable="[dtIPPAFS]" Delimitator="Comma"Removed_Key"Write CSV" FilePath="[&quot;test2&quot;+&quot;finalised&quot;+&quot;.csv&quot;]"Removed_Key"808,182"Removed_Key"WriteCsvFile_5" ShouldQuote="True" />
   </Sequence>
 </Activity>
