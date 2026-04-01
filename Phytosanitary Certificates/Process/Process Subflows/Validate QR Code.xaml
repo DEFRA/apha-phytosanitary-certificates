@@ -164,7 +164,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"2348,1848"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"1350.857142857143,1894.2857142857142"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="imgQRPage" />
       <Variable x:TypeArguments="x:String" Name="strDecodedQRCode" />
@@ -174,7 +174,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"649,1825"Removed_Key"Sequence_10">
+    <SequenceRemoved_Key"650.8571428571429,1871.4285714285713"Removed_Key"Sequence_10">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strResponse" />
         <Variable x:TypeArguments="x:String" Name="decodedURL" />
@@ -186,7 +186,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <AssignRemoved_Key"615,115"Removed_Key"Assign_4">
+      <AssignRemoved_Key"616.5714285714286,117.14285714285714"Removed_Key"Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strImageSaveLocation]</OutArgument>
         </Assign.To>
@@ -194,20 +194,20 @@
           <InArgument x:TypeArguments="x:String">[in_PhytoCertLocation.Replace(".pdf",".jpg")]</InArgument>
         </Assign.Value>
       </Assign>
-      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="[in_PhytoCertLocation]"Removed_Key"615,169"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="[strImageSaveLocation]" PageNumber="[in_intQRPageNumber]" />
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim reader As New ZXing.Windows.Compatibility.BarcodeReader()&#xA; &#xA;' Optional: better QR detection&#xA;reader.Options.TryHarder = True&#xA;reader.Options.PossibleFormats = New List(Of ZXing.BarcodeFormat) From {ZXing.BarcodeFormat.QR_CODE}&#xA; &#xA;Using bmp As New System.Drawing.Bitmap(imagePath)&#xA;    Dim result = reader.Decode(bmp)&#xA;    qrText = If(result IsNot Nothing, result. Text, &quot;&quot;)&#xA;End Using"Removed_Key"Invoke Code"Removed_Key"615,197"Removed_Key"InvokeCode_1">
+      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="[in_PhytoCertLocation]"Removed_Key"616.5714285714286,171.42857142857142"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="[strImageSaveLocation]" PageNumber="[in_intQRPageNumber]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim reader As New ZXing.Windows.Compatibility.BarcodeReader()&#xA; &#xA;' Optional: better QR detection&#xA;reader.Options.TryHarder = True&#xA;reader.Options.PossibleFormats = New List(Of ZXing.BarcodeFormat) From {ZXing.BarcodeFormat.QR_CODE}&#xA; &#xA;Using bmp As New System.Drawing.Bitmap(imagePath)&#xA;    Dim result = reader.Decode(bmp)&#xA;    qrText = If(result IsNot Nothing, result. Text, &quot;&quot;)&#xA;End Using"Removed_Key"Invoke Code"Removed_Key"616.5714285714286,197.14285714285714"Removed_Key"InvokeCode_1">
         <ui:InvokeCode.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="imagePath">[strImageSaveLocation]</InArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="qrText">[strResponse]</OutArgument>
         </ui:InvokeCode.Arguments>
       </ui:InvokeCode>
-      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge"Removed_Key"615,1261"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge"Removed_Key"616.5714285714286,1302.857142857143"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"581,1020"Removed_Key"Sequence_11">
+            <SequenceRemoved_Key"Do"Removed_Key"582.2857142857143,1060"Removed_Key"Sequence_11">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strWebsiteText" />
               </Sequence.Variables>
@@ -216,7 +216,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetTextRemoved_Key"Get Text 'Please enter'"Removed_Key"547,190"Removed_Key"NGetText_1" ScopeIdentifier="acea61c5-962f-4319-aa27-068c4965e9d3" TextString="[strWebsiteText]" Version="V3">
+              <uix:NGetTextRemoved_Key"Get Text 'Please enter'"Removed_Key"548,191.42857142857142"Removed_Key"NGetText_1" ScopeIdentifier="acea61c5-962f-4319-aa27-068c4965e9d3" TextString="[strWebsiteText]" Version="V3">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://checkecert.nl/cov/en?cc=341308740&amp;vc=6379554496345957" DesignTimeRectangle="1149, 751, 1442, 196" DesignTimeScaleFactor="1.75" FriendlyName="'The combination'" FullSelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' type='' class='mt-4 mb-5' aaname='' /&gt;" Guid="29d8c2a6-b79a-4f45-9b53-87184fee18df" InformativeScreenshot="cd80e7f7d229a9a99a20328586764136.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Check certificate | NVWA' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -227,9 +227,9 @@
                   </uix:TargetAnchorable>
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"547,768"Removed_Key"If_1">
+              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"548,806.2857142857143"Removed_Key"If_1">
                 <If.Then>
-                  <SequenceRemoved_Key"Then"Removed_Key"416,90"Removed_Key"Sequence_12">
+                  <SequenceRemoved_Key"Then"Removed_Key"513.7142857142857,90.85714285714286"Removed_Key"Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,12 +238,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <SequenceRemoved_Key"Add on Hold Reason"Removed_Key"513,514"Removed_Key"Sequence_15">
+                  <SequenceRemoved_Key"Add on Hold Reason"Removed_Key"513.7142857142857,549.7142857142857"Removed_Key"Sequence_15">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                       <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
                       <Variable x:TypeArguments="x:String" Name="Commodity_Line_Reference" />
                       <Variable x:TypeArguments="x:String" Name="On_Hold_Text" />
+                      <Variable x:TypeArguments="x:String" Name="IPAFFS_Reason" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -251,9 +252,9 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssignRemoved_Key"Assign On Hold Reasons"Removed_Key"479,242"Removed_Key"MultipleAssign_1">
+                    <ui:MultipleAssignRemoved_Key"Assign On Hold Reasons"Removed_Key"479.42857142857144,273.7142857142857"Removed_Key"MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                           <ui:AssignOperationRemoved_Key"AssignOperation_1">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
@@ -288,10 +289,18 @@
                               <InArgument x:TypeArguments="x:String">["Scanned QR code did not confirm validity of phyto " + in_PhytoCertNumber]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
+                          <ui:AssignOperationRemoved_Key"AssignOperation_5">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[IPAFFS_Reason]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">Not endorsed</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_1" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text,IPAFFS_Reason}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479.42857142857144,216"Removed_Key"AddDataRow_1" />
                   </Sequence>
                 </If.Else>
               </If>
