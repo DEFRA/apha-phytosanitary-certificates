@@ -168,7 +168,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID1" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))]"Removed_Key"Pause Point #2"Removed_Key"60,60"Removed_Key"FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID2" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint2&quot;))]"Removed_Key"Pause Point #2"Removed_Key"60,60"Removed_Key"FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +179,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_3">
+        <FlowStep x:Name="__ReferenceID4"Removed_Key"FlowStep_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">415,635</av:Point>
@@ -266,7 +266,7 @@
             </InvokeMethod>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID0"Removed_Key"FlowStep_1">
+            <FlowStep x:Name="__ReferenceID1"Removed_Key"FlowStep_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">535,775</av:Point>
@@ -439,7 +439,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID5"Removed_Key"FlowStep_1">
+                <FlowStep x:Name="__ReferenceID6"Removed_Key"FlowStep_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">535,895</av:Point>
@@ -460,17 +460,18 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID7" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint4&quot;))]"Removed_Key"Pause Point #4"Removed_Key"60,60"Removed_Key"FlowDecision_2">
+                    <FlowDecision x:Name="__ReferenceID8" Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint4&quot;))]"Removed_Key"Pause Point #4"Removed_Key"60,60"Removed_Key"FlowDecision_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">560,1010</av:Point>
                           <av:Size x:Key="ShapeSize">60,60</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">560,1040 469.8,1040 469.8,1155</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">560,1040 470,1040 470,1155</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">620,1040 650,1040 650,1310 645,1310</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID6"Removed_Key"FlowStep_1">
+                        <FlowStep x:Name="__ReferenceID7"Removed_Key"FlowStep_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">415,1155</av:Point>
@@ -564,58 +565,82 @@
                             </InvokeMethod>
                           </Sequence>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID8"Removed_Key"FlowStep_1">
+                            <FlowStep x:Name="__ReferenceID0"Removed_Key"FlowStep_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">535,1275</av:Point>
                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <SequenceRemoved_Key"546,926.4"Removed_Key"Sequence_117">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:ForEachFileXRemoved_Key"For Each Certificate Excel in Folder" Filter="*.xlsx" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]"Removed_Key"512,866.4"Removed_Key"ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
-                                  <ui:ForEachFileX.Body>
-                                    <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
-                                      <ActivityAction.Argument1>
-                                        <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
-                                      </ActivityAction.Argument1>
-                                      <ActivityAction.Argument2>
-                                        <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-                                      </ActivityAction.Argument2>
-                                      <SequenceRemoved_Key"478,578"Removed_Key"Sequence_130">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ueab:ReadRangeX SaveTo="{x:Null}"Removed_Key"Read Range"Removed_Key"444,205.6"Removed_Key"ReadRangeX_3" Range="[Excel.Sheet(&quot;Advanced declarations tracker f&quot;).Range(&quot;A1&quot;)]" />
-                                        <ui:ReadTextFile Content="{x:Null}" File="{x:Null}"Removed_Key"Read Text File - grab section11" FileName="[CurrentFile.FullName.replace(&quot;.xlsx&quot;,&quot;.txt&quot;)]"Removed_Key"444,113.2"Removed_Key"ReadTextFile_1" />
-                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Review ADs - Invoke Workflow File (Process\Process Subflows\AD\Review ADs.xaml)"Removed_Key"444,199.2"Removed_Key"InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Review ADs.xaml">
-                                          <ui:InvokeWorkflowFile.Arguments>
-                                            <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtCommodityLines" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_strCountryOfOrigin" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_strSec11AD" />
-                                          </ui:InvokeWorkflowFile.Arguments>
-                                        </ui:InvokeWorkflowFile>
-                                      </Sequence>
-                                    </ActivityAction>
-                                  </ui:ForEachFileX.Body>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:ForEachFileX>
-                              </Sequence>
+                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_21">
+                                <ui:CommentOut.Body>
+                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_133">
+                                    <SequenceRemoved_Key"110,70"Removed_Key"Sequence_117">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="scg:List(x:String)" Name="listCerts" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <AssignRemoved_Key"502,115.6"Removed_Key"Assign_24">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="scg:List(x:String)">[listCerts]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[dtCertificateDetails.AsEnumerable().
+                   Select(Function(r) r("Cert_No").ToString()).
+                   Distinct().
+                   ToList()]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each CertNo"Removed_Key"502,625.2"Removed_Key"ForEach`1_2" Values="[listCerts]">
+                                        <ui:ForEach.Body>
+                                          <ActivityAction x:TypeArguments="x:String">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="x:String" Name="CertNo" />
+                                            </ActivityAction.Argument>
+                                            <SequenceRemoved_Key"Body"Removed_Key"468,486.8"Removed_Key"Sequence_131">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="sd1:DataTable" Name="dtOrangeCommidtyLines" />
+                                                <Variable x:TypeArguments="x:String" Name="strSection11" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <AssignRemoved_Key"434,114.4"Removed_Key"Assign_25">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="sd1:DataTable">[dtOrangeCommidtyLines]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="sd1:DataTable">[dtCertificateDetails.Select("[Cert_No] ='" + CertNo + "'").CopyToDataTable]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:ReadTextFile File="{x:Null}" Content="[strSection11]"Removed_Key"Read Text File - grab section11" FileName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString +&quot;\&quot; + CertNo +  &quot; - AdditionalDeclation.txt&quot;]"Removed_Key"434,113.2"Removed_Key"ReadTextFile_1" />
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Review ADs - Invoke Workflow File (Process\Process Subflows\AD\Review ADs.xaml)"Removed_Key"434,199.2"Removed_Key"InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Review ADs.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtCommodityLines">[dtOrangeCommidtyLines]</InOutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSec11AD">[strSection11]</InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEach.Body>
+                                      </ui:ForEach>
+                                    </Sequence>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                              </ui:CommentOut>
                             </FlowStep>
                           </FlowStep.Next>
                         </FlowStep>
                       </FlowDecision.True>
+                      <FlowDecision.False>
+                        <x:Reference>__ReferenceID0</x:Reference>
+                      </FlowDecision.False>
                     </FlowDecision>
                   </FlowStep.Next>
                 </FlowStep>
@@ -625,10 +650,10 @@
         </FlowStep>
       </FlowDecision.True>
       <FlowDecision.False>
-        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID4"Removed_Key"FlowStep_2">
+    <FlowStep x:Name="__ReferenceID5"Removed_Key"FlowStep_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,275</av:Point>
@@ -985,7 +1010,7 @@
         </ui:RetryScope>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID2"Removed_Key"FlowStep_2">
+        <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">535,395</av:Point>
@@ -1775,13 +1800,13 @@
             </uix:NApplicationCard>
           </Sequence>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
     <FlowStep x:Name="__ReferenceID9"Removed_Key"FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1832,13 +1857,13 @@
         </Assign>
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID0</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
   </Flowchart>
 </Activity>

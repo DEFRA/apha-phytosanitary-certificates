@@ -1,7 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Data_validation" this:Data_validation.in_strCountryOfOrigin="Netherlands" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Data_validation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="io_dtCommodityLines" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="in_strCountryOfOrigin" Type="InArgument(x:String)" />
     <x:Property Name="in_strSec11AD" Type="InArgument(x:String)" />
   </x:Members>
   <this:Data_validation.in_strSec11AD>
@@ -272,11 +271,10 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <FlowchartRemoved_Key"Data_validation"Removed_Key"1934,882.84"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Data_validation"Removed_Key"1932.8000000000002,1138.84"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
-      <Variable x:TypeArguments="x:Boolean" Name="booMultipleCountries" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="listExtractedAD" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtPopUp" />
       <Variable x:TypeArguments="x:String" Name="strPhytoFilepath" />
@@ -2148,19 +2146,6 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <AssignRemoved_Key"Assign - multiple countries"Removed_Key"434,114.4"Removed_Key"Assign_22">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:Boolean">[booMultipleCountries]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:Boolean">[regex.IsMatch(in_strCountryOfOrigin,"(?si)Several\s*countries")]</InArgument>
-          </Assign.Value>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Assign>
         <ui:Matches FirstMatch="{x:Null}"Removed_Key"This Extracts the plant ID codes and the AD consigment text.&#xA;this will ignore the consigment text that applies to all plants"Removed_Key"Extract Section 11"Removed_Key"434,169.6"Removed_Key"Matches_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?is)(?'Plant'\(\d{4}\).*?)(?'AD'The consignment.*?)(?=\s{3,}([\w\.]+\s)+\(\d{4}\)|\Z)" RegexOption="IgnoreCase, Compiled" Result="[listExtractedAD]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2191,60 +2176,25 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"604,1444"Removed_Key"ForEachRow_11">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"604,1082.4"Removed_Key"ForEachRow_11">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
                   </ActivityAction.Argument>
-                  <SequenceRemoved_Key"Body"Removed_Key"570,1245.6"Removed_Key"Sequence_101">
+                  <SequenceRemoved_Key"Body"Removed_Key"570,884"Removed_Key"Sequence_101">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <SequenceRemoved_Key"format row values"Removed_Key"536,1185.6"Removed_Key"Sequence_102">
+                    <SequenceRemoved_Key"format row values"Removed_Key"536,824"Removed_Key"Sequence_102">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[booMultipleCountries]"Removed_Key"Handle country of origin based on multiple countries flag"Removed_Key"502,361.6"Removed_Key"If_24">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Then>
-                          <SequenceRemoved_Key"Then"Removed_Key"416,24.8"Removed_Key"Sequence_104">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"468,165.6"Removed_Key"Sequence_105">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <AssignRemoved_Key"Assign country of origin"Removed_Key"434,105.6"Removed_Key"Assign_133">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Object">[Commodity("Country")]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Object">[in_strCountryOfOrigin]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Sequence>
-                        </If.Else>
-                      </If>
                       <AssignRemoved_Key"Assign - remove brackets"Removed_Key"502,114.4"Removed_Key"Assign_134">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[Commodity("Country")]</OutArgument>
