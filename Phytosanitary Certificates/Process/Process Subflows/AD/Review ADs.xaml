@@ -271,7 +271,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <FlowchartRemoved_Key"Data_validation"Removed_Key"1932.8000000000002,1138.84"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Data_validation"Removed_Key"908.8000000000001,658.84"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -299,13 +299,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"110,70"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"736,2643.6"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"702,2191.6"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"702,2477.2"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -1330,7 +1330,7 @@
                                                                           <av:PointCollection x:Key="ConnectorLocation">180,1805 180,1860</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <SequenceRemoved_Key"ADV pfpp/pfa country check"Removed_Key"468,280"Removed_Key"Sequence_76">
+                                                                      <SequenceRemoved_Key"ADV pfpp/pfa country check"Removed_Key"110,70"Removed_Key"Sequence_76">
                                                                         <Sequence.Variables>
                                                                           <Variable x:TypeArguments="x:String" Name="strAdvDecCountry" />
                                                                         </Sequence.Variables>
@@ -1918,7 +1918,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MergeDataTable>
-              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"668,639.2"Removed_Key"If_2">
+              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"668,924.8"Removed_Key"If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1949,7 +1949,10 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <SequenceRemoved_Key"Else"Removed_Key"468,311.2"Removed_Key"Sequence_4">
+                  <SequenceRemoved_Key"Else"Removed_Key"468,596.8"Removed_Key"Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="scg:List(x:String)" Name="listADnumbers" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1968,12 +1971,12 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <AssignRemoved_Key"adding | as per stakeholder request to distinguish the different reasons"Removed_Key"Assign - Status On Hold"Removed_Key"434,136.8"Removed_Key"Assign_3">
+                    <AssignRemoved_Key"adding | as per stakeholder request to distinguish the different reasons"Removed_Key"Assign - Status On Hold"Removed_Key"434,145.6"Removed_Key"Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("Status Notes")]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">[if(string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)("Status Notes").tostring),"","|") + string.join("|",listHold.Distinct)]</InArgument>
+                        <InArgument x:TypeArguments="x:Object">[string.join("|",listHold.Distinct)]</InArgument>
                       </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1981,6 +1984,45 @@
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <AssignRemoved_Key"Assign - init List"Removed_Key"434,114.4"Removed_Key"Assign_140">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="scg:List(x:String)">[listADnumbers]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="scg:List(x:String)">[new list (of string)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMiniPopUp]"Removed_Key"For Each Row in Data Table"Removed_Key"434,56.8"Removed_Key"ForEachRow_12">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="AdRow" />
+                          </ActivityAction.Argument>
+                          <SequenceRemoved_Key"Body"Removed_Key"416,219.2"Removed_Key"Sequence_112">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List - add AD numbers"Removed_Key"382,159.2"Removed_Key"AppendItemToList`1_17" ItemToAppend="[&quot;Part &quot; + AdRow(&quot;Part&quot;).tostring + &quot; Item &quot; + AdRow(&quot;Item&quot;).tostring]" List="[listADnumbers]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                    <AssignRemoved_Key"Assign - add flat list to Datatable"Removed_Key"434,105.6"Removed_Key"Assign_141">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("AD Numbers")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[string.Join(", ", listADnumbers)]</InArgument>
+                      </Assign.Value>
                     </Assign>
                   </Sequence>
                 </If.Else>
@@ -2272,7 +2314,8 @@
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CITES" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD cites"Removed_Key"604,222"Removed_Key"AddDataColumn`1_1" />
-            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Invasive Species" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"604,213.2"Removed_Key"AddDataColumn`1_2" />
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Invasive Species" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"604,222"Removed_Key"AddDataColumn`1_2" />
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AD Numbers" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"604,213.2"Removed_Key"AddDataColumn`1_3" />
           </Sequence>
           <FlowStep.Next>
             <x:Reference>__ReferenceID39</x:Reference>
