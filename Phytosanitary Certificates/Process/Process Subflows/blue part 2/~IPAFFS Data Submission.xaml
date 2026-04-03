@@ -133,6 +133,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
+      <AssemblyReference>GlobalVariableseShjhqLGBz</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -140,7 +141,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"pausepoint3"Removed_Key"1058,2809.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"pausepoint3"Removed_Key"1058,3018"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPPAFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -878,9 +879,9 @@ ToList()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"Do While"Removed_Key"1058,1493.6"Removed_Key"InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"Do While"Removed_Key"1058,1702"Removed_Key"InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <SequenceRemoved_Key"Body"Removed_Key"1024,1355.2"Removed_Key"Sequence_70">
+        <SequenceRemoved_Key"Body"Removed_Key"1024,1563.6"Removed_Key"Sequence_70">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1266,13 +1267,15 @@ ToList()]</InArgument>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
           </Sequence>
-          <SequenceRemoved_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"990,122.4"Removed_Key"Sequence_73">
+          <SequenceRemoved_Key"as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons"Removed_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"990,330.8"Removed_Key"Sequence_73">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentRemoved_Key"416,177.6"Removed_Key"Comment_2" Text="1 - get unique list of ippafs reasons&#xD;&#xA;&#xD;&#xA;2 - iterate through it&#xD;&#xA;2a - filter datatble on unique hold reasons&#xD;&#xA;2b - check all boxes&#xD;&#xA;2c - fill in hold/compliant reason&#xD;&#xA;2d - display popup" />
           </Sequence>
           <uix:NCheckStateRemoved_Key"Check App State - look for Next button"Removed_Key"990,641.6"Removed_Key"NCheckState_1" Version="V3">
             <uix:NCheckState.IfExists>
