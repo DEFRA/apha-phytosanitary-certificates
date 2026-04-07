@@ -1,6 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MS_Dynamics" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MS_Dynamics" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="io_dtOnHoldReasons" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_dteTimeStamp" Type="InArgument(s:DateTime)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -123,31 +124,31 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"MS_Dynamics"Removed_Key"1090,3169.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"MS_Dynamics"Removed_Key"891.6,978.8"Removed_Key"Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"add note"Removed_Key"1090,3146.4"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"add note"Removed_Key"702,955.6"Removed_Key"Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365"Removed_Key"668,996.4000000000001"Removed_Key"NApplicationCard_1" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="f332f0ef-cc5e-4251-a127-e86199db05be" Version="V2">
+      <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365"Removed_Key"668,872.4"Removed_Key"NApplicationCard_1" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="f332f0ef-cc5e-4251-a127-e86199db05be" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"634,858.4"Removed_Key"Sequence_3">
+            <SequenceRemoved_Key"Do"Removed_Key"634,711.2"Removed_Key"Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <FlowchartRemoved_Key"600,656.8"Removed_Key"Flowchart_1">
+              <FlowchartRemoved_Key"600,649.6"Removed_Key"Flowchart_1">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="booCompliant" />
                   <Variable x:TypeArguments="x:String" Name="strNoteBody" />
@@ -164,10 +165,7 @@
                 <Flowchart.StartNode>
                   <x:Reference>__ReferenceID6</x:Reference>
                 </Flowchart.StartNode>
-                <FlowDecision x:Name="__ReferenceID2"Removed_Key"Compliant"Removed_Key"60,60"Removed_Key"FlowDecision_1">
-                  <FlowDecision.Condition>
-                    <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="booCompliant" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID2" Condition="[booCompliant]"Removed_Key"Compliant"Removed_Key"60,60"Removed_Key"FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -244,7 +242,6 @@
                             <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=f7067c22-2d2c-f111-88b3-000d3a480d0d" CVScreenId="3b073cba-64a3-4725-835b-cca0910593e1" CvElementArea="601, 1480, 3147, 463" CvType="InputBox" DesignTimeRectangle="608, 1485, 3146, 467" DesignTimeScaleFactor="2.5" ElementType="InputBox" FriendlyName="'DIV rtev22'" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='textbox' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rtev22' tag='DIV' type='' class='ck-table-show-hidden-borders ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred' aaname='' /&gt;" Guid="75350484-8643-4838-a0c9-93c8a6c443df" InformativeScreenshot="a5742b1538f062bff0e206e8e8a11ebb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                           </uix:NSetText.Target>
                         </uix:NSetText>
-                        <ui:CommentRemoved_Key"416,127.6"Removed_Key"Comment_4" Text="Display PopUp here - is this necessary&#xA;the information has already been reviewed and checked? can we eliminate this pausepoint?" />
                         <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click 'Add note and close'"Removed_Key"416,227.2"Removed_Key"NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f332f0ef-cc5e-4251-a127-e86199db05be" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=f7067c22-2d2c-f111-88b3-000d3a480d0d" CVScreenId="89289ed3-54bd-46c6-b33c-1193cac03649" CvTextArea="3077, 1992, 315, 35" CvTextArgument="Add note and close" CvType="Text" DesignTimeRectangle="3085, 1994, 307, 35" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'Add note and close'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Add note and close' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Add note and close' type='' class='ms-Button-label label-432' check:text='Add note and close' /&gt;" Guid="29723553-200a-4cd7-8c2e-dfb5d37521af" InformativeScreenshot="bb7b116306ce8f04735bd9d112700ebd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
@@ -290,7 +287,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">290,495 290,540</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NSetText DelayAfter="0" DelayBefore="0"Removed_Key"Set Text 'No of Phytos Inspected'"Removed_Key"110,70"Removed_Key"NSetText_3" ScopeIdentifier="f332f0ef-cc5e-4251-a127-e86199db05be" Text="[io_dtOnHoldReasons.AsEnumerable().Select(Function(r) r(&quot;Certificate_Number&quot;)).&#xD;&#xA;Distinct().&#xD;&#xA;ToList().&#xD;&#xA;Count().&#xD;&#xA;ToString()]" Version="V3">
+                          <uix:NSetText DelayAfter="0" DelayBefore="0"Removed_Key"Set Text 'No of Phytos Inspected'"Removed_Key"110,70"Removed_Key"NSetText_3" ScopeIdentifier="f332f0ef-cc5e-4251-a127-e86199db05be" Text="[io_dtOnHoldReasons.AsEnumerable().Select(Function(r) r(&quot;Certificate_Number&quot;)).&#xA;Distinct().&#xA;ToList().&#xA;Count().&#xA;ToString()]" Version="V3">
                             <uix:NSetText.Target>
                               <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=f7067c22-2d2c-f111-88b3-000d3a480d0d" CVScreenId="a680f67f-da50-44e7-9d92-1ec4e7ec03b6" CvElementArea="946, 1612, 931, 85" CvType="InputBox" DesignTimeRectangle="952, 1621, 920, 76" DesignTimeScaleFactor="2.5" ElementType="InputBox" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl aria-label='No. of Phytos Inspected' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='No. of Phytos Inspected' tag='INPUT' type='text' class='fui-Input__input r12stul0 ___1ukvzui f7nlbp4 f1l02sjl f1cmbuwj fly5x3f f1pivz5x' aaname='1' /&gt;" Guid="37c85315-3609-4ab3-a3b6-89680e999a47" InformativeScreenshot="1430cd122c6e283e1662c7ac64e5536c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                             </uix:NSetText.Target>
@@ -344,7 +341,7 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <uix:NTypeInto ActivateBefore="True"Removed_Key"the --- only appears if a new field was generated. This does not appear if the user already has a time entry recorded against the case." ClickBeforeMode="Single" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0" DeselectAfter="True"Removed_Key"Type Into" EmptyFieldMode="None"Removed_Key"416,314"Removed_Key"NTypeInto_3" Text="34" Version="V3">
+                                          <uix:NTypeInto ActivateBefore="True"Removed_Key"the --- only appears if a new field was generated. This does not appear if the user already has a time entry recorded against the case." ClickBeforeMode="Single" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0" DeselectAfter="True"Removed_Key"Type Into" EmptyFieldMode="None"Removed_Key"416,314"Removed_Key"NTypeInto_3" Text="[(now - in_dteTimeStamp).TotalMinutes.tostring]" Version="V3">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;webctrl aria-role='gridcell' class='wj-cell' tag='DIV' innertext='---' /&gt;" Guid="4e3aa5bc-9dca-43cd-bc39-cfd1129ee573" SearchSteps="Selector" />
                                             </uix:NTypeInto.Target>
@@ -500,7 +497,6 @@
                 <x:Reference>__ReferenceID4</x:Reference>
                 <x:Reference>__ReferenceID5</x:Reference>
               </Flowchart>
-              <ui:CommentRemoved_Key"600,140"Removed_Key"Comment_3" Text="close IPPAFS AND MSDYNAMICS TO START AGAIN AT INTIALIZE?&#xA;LOOK AT THE CODE - DOE THE LOOP BACK TRIGGER WEBISTES FROM OPENING AGAIN" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
