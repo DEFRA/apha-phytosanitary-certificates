@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="pausepoint3" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DRACOE_PopUps_64;assembly=DRACOE.PopUps.64" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_dtOnHoldReasons" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_dtAD_Compliant" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="io_dtOnHoldReasons" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -140,7 +140,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"pausepoint3"Removed_Key"891.6,8267.2"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"pausepoint3"Removed_Key"891.6,8307.2"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPPAFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -238,10 +238,10 @@
     </uix:NApplicationCard>
     <AssignRemoved_Key"order the certifficate numbers first&#xA;then order the commodity line reference numbers after that&#xA;This is to make it easier to review the data from a human POV"Removed_Key"Assign - order table"Removed_Key"808,200"Removed_Key"Assign_7">
       <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[in_dtOnHoldReasons]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable">[io_dtOnHoldReasons]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[in_dtOnHoldReasons.AsEnumerable().
+        <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[io_dtOnHoldReasons.AsEnumerable().
 OrderBy(Function(r) r("Certificate_Number").ToString()).
 ThenBy(Function(r) If(Integer.TryParse(r("Commodity_Line_Reference").ToString(), New Integer()), CInt(r("Commodity_Line_Reference")), Integer.MinValue)).
 CopyToDataTable()]</InArgument>
@@ -252,28 +252,28 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <SequenceRemoved_Key"Pop Up - display total hold reasons spreadsheet"Removed_Key"808,1279.2"Removed_Key"Sequence_68">
+    <SequenceRemoved_Key"Pop Up - display total hold reasons spreadsheet"Removed_Key"808,1319.2"Removed_Key"Sequence_68">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:WriteCsvFile AddHeaders="True" DataTable="[in_dtOnHoldReasons]" Delimitator="Comma"Removed_Key"Write CSV - create Spreadsheet" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,56.8"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
-      <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayAlerts="False"Removed_Key"Excel Process Scope" ExistingProcessAction="None" FileConflictResolution="PromptUser"Removed_Key"518,1082.4"Removed_Key"ExcelProcessScopeX_2" LaunchMethod="Application" ShowExcelWindow="True">
+      <ui:WriteCsvFile AddHeaders="True" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma"Removed_Key"Write CSV - create Spreadsheet" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,56.8"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
+      <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayAlerts="False"Removed_Key"Excel Process Scope" ExistingProcessAction="None" FileConflictResolution="PromptUser"Removed_Key"518,1122.4"Removed_Key"ExcelProcessScopeX_2" LaunchMethod="Application" ShowExcelWindow="True">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"484,963.6"Removed_Key"Sequence_67">
+            <SequenceRemoved_Key"Do"Removed_Key"484,1003.6"Removed_Key"Sequence_67">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False"Removed_Key"Use Excel File"Removed_Key"450,903.6"Removed_Key"ExcelApplicationCard_2" ResizeWindow="Maximize" WorkbookPath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False"Removed_Key"Use Excel File"Removed_Key"450,943.6"Removed_Key"ExcelApplicationCard_2" ResizeWindow="Maximize" WorkbookPath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
@@ -322,7 +322,7 @@ CopyToDataTable()]</InArgument>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ueab:ExcelProcessScopeX>
-      <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[in_dtOnHoldReasons]" Delimitator="Comma" DelimitatorForViewModel="Comma"Removed_Key"Read CSV - update datatable" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,48"Removed_Key"ReadCsvFile_1" />
+      <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma" DelimitatorForViewModel="Comma"Removed_Key"Read CSV - update datatable" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,48"Removed_Key"ReadCsvFile_1" />
     </Sequence>
     <SequenceRemoved_Key"Filter Data"Removed_Key"808,771.6"Removed_Key"Sequence_69">
       <sap:WorkflowViewStateService.ViewState>
@@ -331,7 +331,7 @@ CopyToDataTable()]</InArgument>
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:FilterDataTableRemoved_Key"Create a copy of the table to preserver the dynamics table for the dynamics note&#xA;&#xA;IPPAFS table will go through rigorous manipulation.&#xA;&#xA;this is removing any rows with blank IPPAF reason filled in" DataTable="[in_dtOnHoldReasons]"Removed_Key"Filter Data Table - Create Copy" FilterRowsMode="Remove"Removed_Key"416,232.8"Removed_Key"FilterDataTable_2" OutputDataTable="[dtIPPAFS]" SelectColumnsMode="Remove">
+      <ui:FilterDataTableRemoved_Key"Create a copy of the table to preserver the dynamics table for the dynamics note&#xA;&#xA;IPPAFS table will go through rigorous manipulation.&#xA;&#xA;this is removing any rows with blank IPPAF reason filled in" DataTable="[io_dtOnHoldReasons]"Removed_Key"Filter Data Table - Create Copy" FilterRowsMode="Remove"Removed_Key"416,232.8"Removed_Key"FilterDataTable_2" OutputDataTable="[dtIPPAFS]" SelectColumnsMode="Remove">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -986,7 +986,7 @@ CopyToDataTable()]</InArgument>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"Do While"Removed_Key"518,1028.4"Removed_Key"InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[booLoop]"Removed_Key"Do While"Removed_Key"518,1028.4"Removed_Key"InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
                 <SequenceRemoved_Key"Body"Removed_Key"484,888.4"Removed_Key"Sequence_70">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1393,7 +1393,7 @@ ToList()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <SequenceRemoved_Key"as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xD;&#xA;&#xD;&#xA;1 - get unique list of ippafs reasons&#xD;&#xA;&#xD;&#xA;2 - iterate through it&#xD;&#xA;2a - filter datatble on unique hold reasons&#xD;&#xA;2b - check relevant boxes&#xD;&#xA;2c - fill in hold/compliant reason&#xD;&#xA;2d - display popup"Removed_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"450,249.2"Removed_Key"Sequence_73">
+                  <SequenceRemoved_Key"as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xA;&#xA;1 - get unique list of ippafs reasons&#xA;&#xA;2 - iterate through it&#xA;2a - filter datatble on unique hold reasons&#xA;2b - check relevant boxes&#xA;2c - fill in hold/compliant reason&#xA;2d - display popup"Removed_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"450,249.2"Removed_Key"Sequence_73">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:List(x:Object)" Name="listReasons" />
                     </Sequence.Variables>
@@ -1825,9 +1825,6 @@ ToList()]</InArgument>
                   </uix:NCheckState>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
-              <ui:InterruptibleDoWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="booLoop" />
-              </ui:InterruptibleDoWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
