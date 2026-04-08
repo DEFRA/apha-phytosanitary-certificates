@@ -121,7 +121,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"TEST"Removed_Key"897.6,869.6"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"TEST"Removed_Key"897.6,1098.4"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtTEst" />
       <Variable x:TypeArguments="s:DateTime" Name="dteTimeStamp" />
@@ -131,13 +131,29 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dtTEst]" Delimitator="Comma" DelimitatorForViewModel="Comma"Removed_Key"Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\blue part 2 TESTING\1spreadsheetpopup.csv"Removed_Key"453.2,190.8"Removed_Key"ReadCsvFile_1" />
+    <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dtTEst]" Delimitator="Comma" DelimitatorForViewModel="Comma"Removed_Key"Read CSV" FilePath="C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\blue part 2 TESTING\1spreadsheetpopup - Compliant.csv"Removed_Key"453.2,190.8"Removed_Key"ReadCsvFile_1" />
     <AssignRemoved_Key"453.2,114.4"Removed_Key"Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[dteTimeStamp]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:DateTime">[now.AddMinutes(-47)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <AssignRemoved_Key"453.2,114.4"Removed_Key"Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[g_Config]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new dictionary(of string, object)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <AssignRemoved_Key"453.2,114.4"Removed_Key"Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[g_Config("Total_Certificates")]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Object">[5]</InArgument>
       </Assign.Value>
     </Assign>
     <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Work Order: Work Order - Main Form: CHEDPP.GB.2026.1419840 - Dynamics 365"Removed_Key"453.2,342"Removed_Key"NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[g_DynamicsElement]" ScopeGuid="3265e8ac-ab86-4c33-8237-659f86df83fa" Version="V2">
