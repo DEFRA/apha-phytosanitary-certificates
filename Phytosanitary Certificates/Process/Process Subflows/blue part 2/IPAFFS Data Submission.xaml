@@ -140,7 +140,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"pausepoint3"Removed_Key"891.6,8228.8"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"pausepoint3"Removed_Key"897.6,8228.8"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPPAFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -1762,67 +1762,73 @@ ToList()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <uix:NCheckStateRemoved_Key"Check App State - look for Next button"Removed_Key"450,48"Removed_Key"NCheckState_1" Version="V3">
-                    <uix:NCheckState.IfExists>
-                      <SequenceRemoved_Key"Target appears"Removed_Key"468,367.6"Removed_Key"Sequence_71">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign - loop again to review next page"Removed_Key"434,114.8"Removed_Key"Assign_48">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Boolean">[booLoop]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                          </Assign.Value>
+                  <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"450,48"Removed_Key"CommentOut_5">
+                    <ui:CommentOut.Body>
+                      <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_87">
+                        <uix:NCheckStateRemoved_Key"Check App State - look for Next button"Removed_Key"450,48"Removed_Key"NCheckState_1" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <SequenceRemoved_Key"Target appears"Removed_Key"468,367.6"Removed_Key"Sequence_71">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <AssignRemoved_Key"Assign - loop again to review next page"Removed_Key"434,114.8"Removed_Key"Assign_48">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[booLoop]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                              <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click - Next button"Removed_Key"434,191.2"Removed_Key"NClick_4" KeyModifiers="None" MouseButton="Left" Version="V3">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <SequenceRemoved_Key"Target does not appear"Removed_Key"468,169.2"Removed_Key"Sequence_72">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <AssignRemoved_Key"Assign - last page or Only page?"Removed_Key"434,107.6"Removed_Key"Assign_49">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[booLoop]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                        <uix:NClick ActivateBefore="True" ClickType="Single"Removed_Key"Click - Next button"Removed_Key"434,191.2"Removed_Key"NClick_4" KeyModifiers="None" MouseButton="Left" Version="V3">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NClick>
+                        </uix:NCheckState>
                       </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <SequenceRemoved_Key"Target does not appear"Removed_Key"468,169.2"Removed_Key"Sequence_72">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <AssignRemoved_Key"Assign - last page or Only page?"Removed_Key"434,107.6"Removed_Key"Assign_49">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Boolean">[booLoop]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                          </Assign.Value>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NCheckState>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
               <sap:WorkflowViewStateService.ViewState>
