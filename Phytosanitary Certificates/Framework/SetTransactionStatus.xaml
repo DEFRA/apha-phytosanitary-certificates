@@ -188,7 +188,7 @@
       <AssemblyReference>System.Management.Automation</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed."Removed_Key"Set Transaction Status"Removed_Key"914.8000000000001,658.84"Removed_Key"Flowchart_2">
+  <FlowchartRemoved_Key"Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed."Removed_Key"Set Transaction Status"Removed_Key"914.8000000000001,402.84000000000003"Removed_Key"Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strLogNote" />
       <Variable x:TypeArguments="ss:SecureString" Name="strBearerToken" />
@@ -228,7 +228,7 @@
               <av:Point x:Key="AnnotationLocation">90,410</av:Point>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder."Removed_Key"Success"Removed_Key"110,70"Removed_Key"Sequence_11">
+          <SequenceRemoved_Key"If the transaction item is processed without any exception, its status is updated as Successful and the email is moved to the Success subfolder."Removed_Key"Success"Removed_Key"639.6,3098.8"Removed_Key"Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -254,15 +254,15 @@
                 </InArgument>
               </d:LogTransaction.IN_strOutcomeNotes>
             </d:LogTransaction>
-            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"605.6,884"Removed_Key"CommentOut_5">
+            <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"605.6,1311.2"Removed_Key"CommentOut_5">
               <ui:CommentOut.Body>
-                <SequenceRemoved_Key"Ignored Activities"Removed_Key"570,773.6"Removed_Key"Sequence_45">
+                <SequenceRemoved_Key"Ignored Activities"Removed_Key"570,1200.8"Removed_Key"Sequence_45">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <SequenceRemoved_Key"The idea is that each commodity or plant thats reviewed shold be treated as a seperate transaction. because CHEDPP are files that contains a random amount of commodities&#xD;&#xA;so treating each commodity as an individual transaction will stabilise analytics"Removed_Key"Success logging"Removed_Key"536,713.6"Removed_Key"Sequence_44">
+                  <SequenceRemoved_Key"The idea is that each commodity or plant thats reviewed shold be treated as a seperate transaction. because CHEDPP are files that contains a random amount of commodities&#xA;so treating each commodity as an individual transaction will stabilise analytics"Removed_Key"Success logging"Removed_Key"536,1140.8"Removed_Key"Sequence_44">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="intLoopCounter" />
                       <Variable x:TypeArguments="x:String" Name="strTimeSegment" />
@@ -274,6 +274,34 @@
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[cint(g_Config(&quot;Total_Commodities&quot;)) = 0]"Removed_Key"If - prevent dividing by zero"Removed_Key"502,427.2"Removed_Key"If_12">
+                      <If.Then>
+                        <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_52">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <AssignRemoved_Key"Assign - override to 1"Removed_Key"434,105.6"Removed_Key"Assign_31">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[g_Config("Total_Commodities")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_53">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                     <AssignRemoved_Key"Assign - get commodity time savings"Removed_Key"502,114.4"Removed_Key"Assign_22">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strTimeSegment]</OutArgument>
@@ -282,7 +310,7 @@
                         <InArgument x:TypeArguments="x:String">[(Math.Round(g_swProcessingTimer.Elapsed.TotalSeconds/cint(g_Config("Total_Commodities")), 2)).ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"is it? dtCombinedCommodities - where in the code is this completed?&#xA;&#xA;column&#xA;Commodity - at the end convert commodity column to a global list- use that here and then wipe the variable"Removed_Key"Do While or for each through plant list"Removed_Key"502,454.8"Removed_Key"InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"is it? dtCombinedCommodities - where in the code is this completed?&#xA;&#xA;column&#xA;Commodity - at the end convert commodity column to a global list- use that here and then wipe the variable" Condition="[intLoopCounter &lt; cint(g_Config(&quot;Total_Commodities&quot;)]"Removed_Key"Do While or for each through plant list"Removed_Key"502,454.8"Removed_Key"InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
                         <SequenceRemoved_Key"Body"Removed_Key"468,222.4"Removed_Key"Sequence_43">
                           <sap:WorkflowViewStateService.ViewState>
@@ -312,9 +340,6 @@
                           </d:LogTransaction>
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
-                      <ui:InterruptibleDoWhile.Condition>
-                        <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="intLoopCounter &lt; cint(g_Config(&quot;Total_Commodities&quot;)" />
-                      </ui:InterruptibleDoWhile.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -597,7 +622,7 @@
                   <av:Point x:Key="AnnotationLocation">530,400</av:Point>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <SequenceRemoved_Key"If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)."Removed_Key"System Exception"Removed_Key"571.6,3896.4"Removed_Key"Sequence_17">
+              <SequenceRemoved_Key"If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)."Removed_Key"System Exception"Removed_Key"110,70"Removed_Key"Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
