@@ -155,7 +155,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Compare_IPAFFS_Information__Flow_"Removed_Key"1216,1067.4285714285713"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Compare_IPAFFS_Information__Flow_"Removed_Key"1061.142857142857,1094.2857142857142"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -179,7 +179,7 @@
           <av:PointCollection x:Key="ConnectorLocation">700,205 700,255</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Compare Cert &amp; IPFFS MetaData"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_1">
+      <SequenceRemoved_Key"Compare Cert &amp; IPFFS MetaData"Removed_Key"668.5714285714286,1071.4285714285713"Removed_Key"Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,7 +195,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
               </ActivityAction.Argument2>
-              <FlowchartRemoved_Key"Compare IPAFFS Information"Removed_Key"1216,1067.4285714285713"Removed_Key"Flowchart_6">
+              <FlowchartRemoved_Key"Compare IPAFFS Information"Removed_Key"600,625.1428571428571"Removed_Key"Flowchart_6">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCondensed" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateCommodityLines" />
@@ -2238,7 +2238,7 @@ ToList()]</InArgument>
               <av:PointCollection x:Key="ConnectorLocation">700,325 700,385</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <FlowchartRemoved_Key"Summarise commodity quantity data for all certificates"Removed_Key"1216,1067.4285714285713"Removed_Key"Flowchart_7">
+          <FlowchartRemoved_Key"Summarise commodity quantity data for all certificates"Removed_Key"1061.142857142857,1094.2857142857142"Removed_Key"Flowchart_7">
             <Flowchart.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtCertCondensed" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctCertEPPO" />
@@ -2572,13 +2572,13 @@ ToList()]</InArgument>
                               <av:PointCollection x:Key="ConnectorLocation">789.8571428571429,564.7142857142857 789.8571428571429,615</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]"Removed_Key"For Each Row in Cert Level DataTable"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"ForEachRow_59">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]"Removed_Key"For Each Row in Cert Level DataTable"Removed_Key"634.2857142857143,815.4285714285714"Removed_Key"ForEachRow_59">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                 </ActivityAction.Argument>
-                                <FlowchartRemoved_Key"600,625.1428571428571"Removed_Key"Flowchart_19">
+                                <FlowchartRemoved_Key"1061.142857142857,1094.2857142857142"Removed_Key"Flowchart_19">
                                   <Flowchart.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredIPAFFsCommodityLines" />
                                     <Variable x:TypeArguments="x:String" Name="foundCertEPPO" />
@@ -2596,9 +2596,9 @@ ToList()]</InArgument>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Flowchart.StartNode>
-                                    <x:Reference>__ReferenceID55</x:Reference>
+                                    <x:Reference>__ReferenceID50</x:Reference>
                                   </Flowchart.StartNode>
-                                  <FlowStep x:Name="__ReferenceID48"Removed_Key"FlowStep_15">
+                                  <FlowStep x:Name="__ReferenceID39"Removed_Key"FlowStep_15">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">375,255</av:Point>
@@ -2619,7 +2619,7 @@ ToList()]</InArgument>
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <AssignRemoved_Key"Get first three EPPO Characters"Removed_Key"502,115"Removed_Key"Assign_318">
+                                      <AssignRemoved_Key"Get first three EPPO Characters"Removed_Key"502.85714285714283,117.14285714285714"Removed_Key"Assign_318">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[phytoCode]</OutArgument>
                                         </Assign.To>
@@ -2627,7 +2627,7 @@ ToList()]</InArgument>
                                           <InArgument x:TypeArguments="x:String">[row("EPPO").ToString.Trim().ToUpper()]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <AssignRemoved_Key"Assign startIndex to 0"Removed_Key"502,115"Removed_Key"Assign_319">
+                                      <AssignRemoved_Key"Assign startIndex to 0"Removed_Key"502.85714285714283,117.14285714285714"Removed_Key"Assign_319">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Int32">[startIndex]</OutArgument>
                                         </Assign.To>
@@ -2635,15 +2635,15 @@ ToList()]</InArgument>
                                           <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[startIndex &lt; phytoCode.Length AndAlso Char.IsDigit(phytoCode(startIndex))]"Removed_Key"Find the position of the first letter (skip leading digits)"Removed_Key"502,313"Removed_Key"InterruptibleWhile_3">
+                                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[startIndex &lt; phytoCode.Length AndAlso Char.IsDigit(phytoCode(startIndex))]"Removed_Key"Find the position of the first letter (skip leading digits)"Removed_Key"502.85714285714283,316.57142857142856"Removed_Key"InterruptibleWhile_3">
                                         <ui:InterruptibleWhile.Body>
-                                          <SequenceRemoved_Key"Body"Removed_Key"468,166"Removed_Key"Sequence_445">
+                                          <SequenceRemoved_Key"Body"Removed_Key"468.57142857142856,168"Removed_Key"Sequence_445">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <AssignRemoved_Key"Add 1 to startIndex"Removed_Key"434,106"Removed_Key"Assign_320">
+                                            <AssignRemoved_Key"Add 1 to startIndex"Removed_Key"434.2857142857143,108"Removed_Key"Assign_320">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Int32">[startIndex]</OutArgument>
                                               </Assign.To>
@@ -2654,7 +2654,7 @@ ToList()]</InArgument>
                                           </Sequence>
                                         </ui:InterruptibleWhile.Body>
                                       </ui:InterruptibleWhile>
-                                      <AssignRemoved_Key"Assign first 3 letters to phytoCode"Removed_Key"502,115"Removed_Key"Assign_321">
+                                      <AssignRemoved_Key"Assign first 3 letters to phytoCode"Removed_Key"502.85714285714283,117.14285714285714"Removed_Key"Assign_321">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[phytoCode]</OutArgument>
                                         </Assign.To>
@@ -2662,7 +2662,7 @@ ToList()]</InArgument>
                                           <InArgument x:TypeArguments="x:String">[phytoCode.Substring(startIndex, 3)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:FilterDataTable DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"502,186"Removed_Key"FilterDataTable_19" OutputDataTable="[dtFilteredMatches]" SelectColumnsMode="Remove">
+                                      <ui:FilterDataTable DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"502.85714285714283,188.57142857142858"Removed_Key"FilterDataTable_19" OutputDataTable="[dtFilteredMatches]" SelectColumnsMode="Remove">
                                         <ui:FilterDataTable.Filters>
                                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                             <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -2683,7 +2683,7 @@ ToList()]</InArgument>
                                       </ui:FilterDataTable>
                                     </Sequence>
                                     <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID50" Condition="[dtFilteredMatches.RowCount = 0]"Removed_Key"Check whether no lines match"Removed_Key"60,60"Removed_Key"FlowDecision_57">
+                                      <FlowDecision x:Name="__ReferenceID51" Condition="[dtFilteredMatches.RowCount = 0]"Removed_Key"Check whether no lines match"Removed_Key"60,60"Removed_Key"FlowDecision_57">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2694,16 +2694,17 @@ ToList()]</InArgument>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <FlowDecision.True>
-                                          <FlowStep x:Name="__ReferenceID46"Removed_Key"FlowStep_16">
+                                          <FlowStep x:Name="__ReferenceID47"Removed_Key"FlowStep_16">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">505,365</av:Point>
                                                 <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                 <av:Point x:Key="AnnotationLocation">670,205</av:Point>
                                                 <av:Size x:Key="AnnotationSize">340,90</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">614.7142857142857,399.85714285714283 644.7142857142857,399.85714285714283 644.7142857142857,79.85714285714286 384.7142857142857,79.85714285714286 384.7142857142857,169.85714285714286 354.7142857142857,169.85714285714286</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <SequenceRemoved_Key"Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process"Removed_Key"Prepare suggestions based on Commodity Name"Removed_Key"605.7142857142857,3085.1428571428573"Removed_Key"Sequence_429">
+                                            <SequenceRemoved_Key"Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process"Removed_Key"Prepare suggestions based on Commodity Name"Removed_Key"553.1428571428571,3172"Removed_Key"Sequence_429">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="listSuggestions" />
                                                 <Variable x:TypeArguments="x:String" Name="strFormOutput" />
@@ -2719,7 +2720,7 @@ ToList()]</InArgument>
                                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <AssignRemoved_Key"Initialize the list"Removed_Key"571.4285714285714,117.14285714285714"Removed_Key"Assign_338">
+                                              <AssignRemoved_Key"Initialize the list"Removed_Key"518.8571428571429,117.14285714285714"Removed_Key"Assign_338">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="scg:List(x:String)">[listSuggestions]</OutArgument>
                                                 </Assign.To>
@@ -2727,7 +2728,7 @@ ToList()]</InArgument>
                                                   <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Build suggestions by matching commodity name"Removed_Key"571.4285714285714,978.2857142857143"Removed_Key"ForEachRow_55">
+                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Build suggestions by matching commodity name"Removed_Key"518.8571428571429,978.2857142857143"Removed_Key"ForEachRow_55">
                                                 <ui:ForEachRow.Body>
                                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                                     <ActivityAction.Argument>
@@ -2796,38 +2797,69 @@ ToList()]</InArgument>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:ForEachRow>
-                                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listSuggestions]"Removed_Key"Add Manual Override option"Removed_Key"571.4285714285714,178.28571428571428"Removed_Key"AppendItemToCollection`1_19">
+                                              <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listSuggestions]"Removed_Key"Add Manual Override option"Removed_Key"518.8571428571429,178.28571428571428"Removed_Key"AppendItemToCollection`1_19">
                                                 <uasc:AppendItemToCollection.Items>
                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                                     <InArgument x:TypeArguments="x:String">===MANUAL OVERRIDE - ENTER EPPO CODE BELOW ===</InArgument>
                                                   </scg:List>
                                                 </uasc:AppendItemToCollection.Items>
                                               </uasc:AppendItemToCollection>
-                                              <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="b94635bb-5e1f-4545-bc92-a6ad82a76adb" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDis]"Removed_Key"Present EPPO Match Options" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="520" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;h1&gt;EPPO Code Matching Required&lt;/h1&gt;&lt;p&gt;No exact match found for:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Commodity:&lt;/strong&gt; {{data.commodity}}&lt;br&gt;&lt;strong&gt;Declared EPPO:&lt;/strong&gt; {{data.eppo}}&lt;/p&gt;&lt;br&gt;&lt;p&gt;Please select the best matching EPPO code from the list below, or use Manual Override.&lt;/p&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Suggested Matches&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;selectedMatch&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Manual EPPO Code (if none of the above match)&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;manualEPPO&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;selectedMatch&quot;,&quot;eq&quot;:&quot;=== MANUAL OVERRIDE - ENTER EPPO CODE BELOW ===&quot;},&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop Processing&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Farming, and Rural Affairs" FormWidth="650" GenerateInputFields="False"Removed_Key"571.4285714285714,176.57142857142858"Removed_Key"FormActivity_7" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\FolderSelect.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strSelectedButton]" StartAsMinimized="False">
+                                              <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="b94635bb-5e1f-4545-bc92-a6ad82a76adb" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDis]"Removed_Key"Present EPPO Match Options" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="520" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;h1&gt;EPPO Code Matching Required&lt;/h1&gt;&lt;p&gt;No exact match found for:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Commodity:&lt;/strong&gt; {{data.commodity}}&lt;br&gt;&lt;strong&gt;Declared EPPO:&lt;/strong&gt; {{data.eppo}}&lt;/p&gt;&lt;br&gt;&lt;p&gt;Please select the best matching EPPO code from the list below, or use Manual Override.&lt;/p&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Suggested Matches&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;selectedMatch&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Manual EPPO Code (if none of the above match)&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;manualEPPO&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop Processing&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Farming, and Rural Affairs" FormWidth="650" GenerateInputFields="False"Removed_Key"518.8571428571429,176.57142857142858"Removed_Key"FormActivity_9" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\FolderSelect.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strSelectedButton]" StartAsMinimized="False">
                                                 <ufa:FormActivity.Body>
                                                   <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
                                                 </ufa:FormActivity.Body>
                                                 <ufa:FormActivity.DelayBody>
                                                   <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-                                                    <Delay Duration="00:00:00.2500000"Removed_Key"Delay_7" />
+                                                    <Delay Duration="00:00:00.2500000"Removed_Key"Delay_9" />
                                                   </ActivityAction>
                                                 </ufa:FormActivity.DelayBody>
                                                 <ufa:FormActivity.FormFieldsCollection>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="commodity">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Commodity&quot;).ToString().Trim()" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="eppo">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;EPPO&quot;).ToString().Trim()" />
-                                                  </InArgument>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="selectedMatch">
-                                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="selectedMatch" />
-                                                  </OutArgument>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="manualEPPO">
-                                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="manualEPPO" />
-                                                  </OutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="commodity">[row("Commodity").ToString().Trim()]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="eppo">[row("EPPO").ToString().Trim()]</InArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="selectedMatch">[selectedMatch]</OutArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="manualEPPO">[manualEPPO]</OutArgument>
+                                                  <InArgument x:TypeArguments="scg:List(x:String)" x:Key="selectedMatch_dropdown">[listSuggestions]</InArgument>
                                                 </ufa:FormActivity.FormFieldsCollection>
                                               </ufa:FormActivity>
-                                              <If Condition="[boolDis OrElse strSelectedButton = &quot;no&quot;]"Removed_Key"Handle Stop Button"Removed_Key"571.4285714285714,438.85714285714283"Removed_Key"If_105">
+                                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"518.8571428571429,338.85714285714283"Removed_Key"CommentOut_5">
+                                                <ui:CommentOut.Body>
+                                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,227.42857142857142"Removed_Key"Sequence_489">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="b94635bb-5e1f-4545-bc92-a6ad82a76adb" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[boolDis]"Removed_Key"Present EPPO Match Options" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="520" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;h1&gt;EPPO Code Matching Required&lt;/h1&gt;&lt;p&gt;No exact match found for:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Commodity:&lt;/strong&gt; {{data.commodity}}&lt;br&gt;&lt;strong&gt;Declared EPPO:&lt;/strong&gt; {{data.eppo}}&lt;/p&gt;&lt;br&gt;&lt;p&gt;Please select the best matching EPPO code from the list below, or use Manual Override.&lt;/p&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Suggested Matches&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;selectedMatch&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Manual EPPO Code (if none of the above match)&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;manualEPPO&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;selectedMatch&quot;,&quot;eq&quot;:&quot;=== MANUAL OVERRIDE - ENTER EPPO CODE BELOW ===&quot;},&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop Processing&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Farming, and Rural Affairs" FormWidth="650" GenerateInputFields="False"Removed_Key"381.7142857142857,167.42857142857142"Removed_Key"FormActivity_7" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\FolderSelect.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strSelectedButton]" StartAsMinimized="False">
+                                                      <ufa:FormActivity.Body>
+                                                        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+                                                      </ufa:FormActivity.Body>
+                                                      <ufa:FormActivity.DelayBody>
+                                                        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                                                          <Delay Duration="00:00:00.2500000"Removed_Key"Delay_7" />
+                                                        </ActivityAction>
+                                                      </ufa:FormActivity.DelayBody>
+                                                      <ufa:FormActivity.FormFieldsCollection>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="commodity">
+                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Commodity&quot;).ToString().Trim()" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="eppo">
+                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;EPPO&quot;).ToString().Trim()" />
+                                                        </InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="selectedMatch">
+                                                          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="selectedMatch" />
+                                                        </OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="manualEPPO">
+                                                          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="manualEPPO" />
+                                                        </OutArgument>
+                                                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="selectedMatch_dropdown">
+                                                          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="listSuggestions" />
+                                                        </InArgument>
+                                                      </ufa:FormActivity.FormFieldsCollection>
+                                                    </ufa:FormActivity>
+                                                  </Sequence>
+                                                </ui:CommentOut.Body>
+                                              </ui:CommentOut>
+                                              <If Condition="[boolDis OrElse strSelectedButton = &quot;no&quot;]"Removed_Key"Handle Stop Button"Removed_Key"518.8571428571429,438.85714285714283"Removed_Key"If_105">
                                                 <If.Then>
                                                   <SequenceRemoved_Key"Then"Removed_Key"416,175.42857142857142"Removed_Key"Sequence_459">
                                                     <sap:WorkflowViewStateService.ViewState>
@@ -2848,14 +2880,17 @@ ToList()]</InArgument>
                                                   </Sequence>
                                                 </If.Else>
                                               </If>
-                                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If String.IsNullOrWhiteSpace(selectedMatch) Then&#xA;    finalEPPO = &quot;&quot;&#xA;    Exit Sub&#xA;End If&#xA;&#xA;If selectedMatch.Trim() = &quot;=== MANUAL OVERRIDE - ENTER EPPO CODE BELOW ===&quot; Then&#xA;    finalEPPO = manualEPPO.Trim().ToUpper()&#xA;Else&#xA;&#x9;&#xA;    Dim match = System.Text.RegularExpressions.Regex.Match(selectedMatch, &quot;- (.*)$&quot;)&#xA;    If match.Success Then&#xA;        finalEPPO = match.Groups(1).Value.Trim().ToUpper()&#xA;    Else&#xA;        finalEPPO = selectedMatch.Trim().ToUpper()&#xA;    End If&#xA;End If&#xA;&#xA;If String.IsNullOrWhiteSpace(finalEPPO) Then&#xA;    Throw New Exception(&quot;No valid EPPO code was provided by the user&quot;)&#xA;End If"Removed_Key"Extract Final EPPO Code"Removed_Key"571.4285714285714,197.14285714285714"Removed_Key"InvokeCode_4">
+                                              <WriteLineRemoved_Key"Write Line"Removed_Key"518.8571428571429,124.57142857142857"Removed_Key"WriteLine_2" Text="[selectedMatch]" />
+                                              <WriteLineRemoved_Key"Write Line"Removed_Key"518.8571428571429,124.57142857142857"Removed_Key"WriteLine_1" Text="[manualEPPO]" />
+                                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If String.IsNullOrWhiteSpace(selectedMatch) Then&#xD;&#xA;    finalEPPO = &quot;&quot;&#xD;&#xA;    Exit Sub&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;If selectedMatch.Trim() = &quot;===MANUAL OVERRIDE - ENTER EPPO CODE BELOW ===&quot; Then&#xD;&#xA;    finalEPPO = manualEPPO.Trim().ToUpper()&#xD;&#xA;Else&#xD;&#xA;&#x9;&#xD;&#xA;    Dim match = System.Text.RegularExpressions.Regex.Match(selectedMatch, &quot;- (.*)$&quot;)&#xD;&#xA;    If match.Success Then&#xD;&#xA;        finalEPPO = match.Groups(1).Value.Trim().ToUpper()&#xD;&#xA;    Else&#xD;&#xA;        finalEPPO = selectedMatch.Trim().ToUpper()&#xD;&#xA;    End If&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;If String.IsNullOrWhiteSpace(finalEPPO) Then&#xD;&#xA;    Throw New Exception(&quot;No valid EPPO code was provided by the user&quot;)&#xD;&#xA;End If"Removed_Key"Extract Final EPPO Code"Removed_Key"518.8571428571429,197.14285714285714"Removed_Key"InvokeCode_4">
                                                 <ui:InvokeCode.Arguments>
                                                   <InArgument x:TypeArguments="x:String" x:Key="selectedMatch">[selectedMatch]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="manualEPPO">[manualEPPO]</InArgument>
                                                   <OutArgument x:TypeArguments="x:String" x:Key="finalEPPO">[finalEPPO]</OutArgument>
                                                 </ui:InvokeCode.Arguments>
                                               </ui:InvokeCode>
-                                              <AssignRemoved_Key"Update New EPPO"Removed_Key"571.4285714285714,117.14285714285714"Removed_Key"Assign_343">
+                                              <WriteLineRemoved_Key"Write Line"Removed_Key"518.8571428571429,124.57142857142857"Removed_Key"WriteLine_3" Text="[finalEPPO]" />
+                                              <AssignRemoved_Key"Update New EPPO"Removed_Key"518.8571428571429,117.14285714285714"Removed_Key"Assign_343">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:Object">[row("New EPPO")]</OutArgument>
                                                 </Assign.To>
@@ -2863,15 +2898,7 @@ ToList()]</InArgument>
                                                   <InArgument x:TypeArguments="x:Object">[finalEPPO]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <AssignRemoved_Key"Update EPPO"Removed_Key"571.4285714285714,117.14285714285714"Removed_Key"Assign_342">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:Object">[row("EPPO")]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:Object">[finalEPPO]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Find and update matching row(s) in IPAFFS table"Removed_Key"571.4285714285714,673.7142857142857"Removed_Key"ForEachRow_58">
+                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Find and update matching row(s) in IPAFFS table"Removed_Key"518.8571428571429,57.142857142857146"Removed_Key"ForEachRow_58">
                                                 <ui:ForEachRow.Body>
                                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                                     <ActivityAction.Argument>
@@ -2914,12 +2941,195 @@ ToList()]</InArgument>
                                                     </Sequence>
                                                   </ActivityAction>
                                                 </ui:ForEachRow.Body>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
                                               </ui:ForEachRow>
+                                              <AssignRemoved_Key"Update EPPO"Removed_Key"518.8571428571429,108"Removed_Key"Assign_371">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Object">[row("EPPO")]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Object">[finalEPPO]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
                                             </Sequence>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID50"Removed_Key"FlowStep_13">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">245,135</av:Point>
+                                                    <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">299.85714285714283,204.71428571428572 299.85714285714283,234.71428571428572 300,234.71428571428572 300,260</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <SequenceRemoved_Key"Match Phyto ↔ IPAFFS EPPO codes"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_430">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:FilterDataTable DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"416,188.57142857142858"Removed_Key"FilterDataTable_18" OutputDataTable="[dtFilteredMatches]" SelectColumnsMode="Remove">
+                                                    <ui:FilterDataTable.Filters>
+                                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                                          <ui:FilterOperationArgument.Column>
+                                                            <InArgument x:TypeArguments="x:String">["EPPO"]</InArgument>
+                                                          </ui:FilterOperationArgument.Column>
+                                                          <ui:FilterOperationArgument.Operand>
+                                                            <InArgument x:TypeArguments="x:String">[row("EPPO").ToString]</InArgument>
+                                                          </ui:FilterOperationArgument.Operand>
+                                                        </ui:FilterOperationArgument>
+                                                      </scg:List>
+                                                    </ui:FilterDataTable.Filters>
+                                                    <ui:FilterDataTable.SelectColumns>
+                                                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                                        <x:Null />
+                                                      </scg:List>
+                                                    </ui:FilterDataTable.SelectColumns>
+                                                  </ui:FilterDataTable>
+                                                </Sequence>
+                                                <FlowStep.Next>
+                                                  <FlowDecision x:Name="__ReferenceID49" Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"Check whether there are any matches"Removed_Key"60,60"Removed_Key"FlowDecision_58">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <av:Point x:Key="ShapeLocation">270,260</av:Point>
+                                                        <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                                        <av:PointCollection x:Key="TrueConnector">270,290 240,290 240,289.85714285714283 214.71428571428572,289.85714285714283</av:PointCollection>
+                                                        <av:PointCollection x:Key="FalseConnector">330,290 360,290 360,289.85714285714283 375,289.85714285714283</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <FlowDecision.True>
+                                                      <FlowStep x:Name="__ReferenceID55"Removed_Key"FlowStep_14">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">105,255</av:Point>
+                                                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <SequenceRemoved_Key"Update &quot;New EPPO&quot; Column"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_431">
+                                                          <Sequence.Variables>
+                                                            <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
+                                                          </Sequence.Variables>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <AssignRemoved_Key"Update New EPPO Column"Removed_Key"502,115"Removed_Key"Assign_312">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Object">[row("New EPPO")]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Object">[row("EPPO").ToString]</InArgument>
+                                                            </Assign.Value>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </Assign>
+                                                          <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Find Matching Row in IPAFFs Table"Removed_Key"502,329"Removed_Key"LookupDataTable_22" LookupColumnName="EPPO" LookupValue="[row(&quot;EPPO&quot;).ToString]" RowIndex="[rowIndex]" />
+                                                          <AssignRemoved_Key"Assign New EPPO Value for IPAFFs Row"Removed_Key"502,115"Removed_Key"Assign_313">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("New EPPO")]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Object">[row("EPPO").ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <IfRemoved_Key"Because one code can match multiple results we need to assign rows an &quot;EPPO group&quot;. &#xA;&#xA;This checks to see if the matching row already has a group value populated aka it has previously matched to a different row." Condition="[String.IsNullOrWhiteSpace(dtDistinctIPAFFSEPPO.Rows(rowIndex)(&quot;Group&quot;).ToString)]"Removed_Key"Does the Matching Row Already have a Group?"Removed_Key"502,920"Removed_Key"If_100">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <If.Then>
+                                                              <SequenceRemoved_Key"In the scenario where there isn't a previously matched group then we assign both sides of the match (Cert &amp; IPAFFs) equal to the current group number then we increment."Removed_Key"Then"Removed_Key"468,456"Removed_Key"Sequence_443">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <AssignRemoved_Key"Assign IPAFFs EPPO Group"Removed_Key"434,115"Removed_Key"Assign_314">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("Group")]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Object">[intEppoGrp.ToString]</InArgument>
+                                                                  </Assign.Value>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </Assign>
+                                                                <AssignRemoved_Key"Assign Cert EPPO Group"Removed_Key"434,115"Removed_Key"Assign_315">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Object">[row("Group")]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Object">[intEppoGrp.ToString]</InArgument>
+                                                                  </Assign.Value>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </Assign>
+                                                                <AssignRemoved_Key"Increment intEppoGrp"Removed_Key"434,106"Removed_Key"Assign_316">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Int32">[intEppoGrp]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Int32">[intEppoGrp + 1]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Then>
+                                                            <If.Else>
+                                                              <SequenceRemoved_Key"Where there is a previous match, we don't edit the IPAFFs side, instead we set the Cert row group to equal the existing group number."Removed_Key"Else"Removed_Key"468,210"Removed_Key"Sequence_444">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <AssignRemoved_Key"Assign Cert EPPO Group"Removed_Key"434,106"Removed_Key"Assign_317">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Object">[row("Group")]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("Group").ToString]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </If.Else>
+                                                          </If>
+                                                        </Sequence>
+                                                      </FlowStep>
+                                                    </FlowDecision.True>
+                                                    <FlowDecision.False>
+                                                      <x:Reference>__ReferenceID39</x:Reference>
+                                                    </FlowDecision.False>
+                                                  </FlowDecision>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowStep.Next>
                                           </FlowStep>
                                         </FlowDecision.True>
                                         <FlowDecision.False>
-                                          <FlowDecision x:Name="__ReferenceID51" Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"One to One match found?"Removed_Key"60,60"Removed_Key"FlowDecision_56">
+                                          <FlowDecision x:Name="__ReferenceID52" Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"One to One match found?"Removed_Key"60,60"Removed_Key"FlowDecision_56">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2930,7 +3140,7 @@ ToList()]</InArgument>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <FlowDecision.True>
-                                              <FlowStep x:Name="__ReferenceID47"Removed_Key"FlowStep_17">
+                                              <FlowStep x:Name="__ReferenceID48"Removed_Key"FlowStep_17">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">235,675</av:Point>
@@ -2950,7 +3160,7 @@ ToList()]</InArgument>
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <AssignRemoved_Key"Initialise listEPPOCodes"Removed_Key"2433.714285714286,117.14285714285714"Removed_Key"Assign_322">
+                                                  <AssignRemoved_Key"Initialise listEPPOCodes"Removed_Key"668.5714285714286,117.14285714285714"Removed_Key"Assign_322">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="scg:List(x:String)">[listEPPOCodes]</OutArgument>
                                                     </Assign.To>
@@ -2958,7 +3168,7 @@ ToList()]</InArgument>
                                                       <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"Is it a 1:1 match?"Removed_Key"2433.714285714286,1142.857142857143"Removed_Key"If_101">
+                                                  <If Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"Is it a 1:1 match?"Removed_Key"668.5714285714286,1142.857142857143"Removed_Key"If_101">
                                                     <If.Then>
                                                       <SequenceRemoved_Key"Where we have a 1:1 match, we haven't presented a list of options to the user to select matching EPPO codes. Therefore, we haven't initialised/populated listSelectedEPPOCodes.&#xA;&#xA;To standardise the subsequent logic, we initialise and populate listSelectedEPPOCodes with the single match value."Removed_Key"Then"Removed_Key"537.1428571428571,344"Removed_Key"Sequence_446">
                                                         <sap:WorkflowViewStateService.ViewState>
@@ -3023,19 +3233,19 @@ ToList()]</InArgument>
                                                       </Sequence>
                                                     </If.Else>
                                                   </If>
-                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each ipaffsEPPO"Removed_Key"2433.714285714286,1992"Removed_Key"ForEach`1_15" Values="[listEPPOCodes]">
+                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each ipaffsEPPO"Removed_Key"668.5714285714286,1216.5714285714287"Removed_Key"ForEach`1_15" Values="[listEPPOCodes]">
                                                     <ui:ForEach.Body>
                                                       <ActivityAction x:TypeArguments="x:String">
                                                         <ActivityAction.Argument>
                                                           <DelegateInArgument x:TypeArguments="x:String" Name="ipaffsEPPO" />
                                                         </ActivityAction.Argument>
-                                                        <SequenceRemoved_Key"Body"Removed_Key"2399.4285714285716,1843.4285714285713"Removed_Key"Sequence_452">
+                                                        <SequenceRemoved_Key"Body"Removed_Key"634.2857142857143,1068"Removed_Key"Sequence_452">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <AssignRemoved_Key"Assign certEPPO"Removed_Key"600,115"Removed_Key"Assign_324">
+                                                          <AssignRemoved_Key"Assign certEPPO"Removed_Key"600,117.14285714285714"Removed_Key"Assign_324">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:String">[certEPPO]</OutArgument>
                                                             </Assign.To>
@@ -3043,7 +3253,7 @@ ToList()]</InArgument>
                                                               <InArgument x:TypeArguments="x:String">[row("EPPO").ToString.Trim().ToUpper()]</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
-                                                          <ui:MultipleAssignRemoved_Key"Assign Priority Level"Removed_Key"600,242"Removed_Key"MultipleAssign_35">
+                                                          <ui:MultipleAssignRemoved_Key"Assign Priority Level"Removed_Key"600,242.85714285714286"Removed_Key"MultipleAssign_35">
                                                             <ui:MultipleAssign.AssignOperations>
                                                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                                 <ui:AssignOperationRemoved_Key"AssignOperation_158">
@@ -3081,20 +3291,20 @@ ToList()]</InArgument>
                                                               </scg:List>
                                                             </ui:MultipleAssign.AssignOperations>
                                                           </ui:MultipleAssign>
-                                                          <FlowchartRemoved_Key"2365,1426.04"Removed_Key"Flowchart_22">
+                                                          <FlowchartRemoved_Key"600,648"Removed_Key"Flowchart_22">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 <av:Point x:Key="ShapeLocation">465,35</av:Point>
-                                                                <av:Size x:Key="ShapeSize">50,50</av:Size>
+                                                                <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
                                                                 <av:PointCollection x:Key="ConnectorLocation">490.14285714285717,85.28571428571428 490.14285714285717,115.28571428571428 490,115.28571428571428 490,130</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <Flowchart.StartNode>
-                                                              <x:Reference>__ReferenceID45</x:Reference>
+                                                              <x:Reference>__ReferenceID46</x:Reference>
                                                             </Flowchart.StartNode>
-                                                            <FlowDecision x:Name="__ReferenceID45" Condition="[certIsPriority1 OrElse ipaffsIsPriority1]"Removed_Key"Check whether either Cert or IPAFFS Priority 1 is TRUE"Removed_Key"60,60"Removed_Key"FlowDecision_54">
+                                                            <FlowDecision x:Name="__ReferenceID46" Condition="[certIsPriority1 OrElse ipaffsIsPriority1]"Removed_Key"Check whether either Cert or IPAFFS Priority 1 is TRUE"Removed_Key"60,60"Removed_Key"FlowDecision_54">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3105,7 +3315,7 @@ ToList()]</InArgument>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <FlowDecision.True>
-                                                                <FlowDecision x:Name="__ReferenceID42" Condition="[certIsPriority1 and ipaffsIsPriority1]"Removed_Key"Check whether specifity is the same"Removed_Key"60,60"Removed_Key"FlowDecision_51">
+                                                                <FlowDecision x:Name="__ReferenceID43" Condition="[certIsPriority1 and ipaffsIsPriority1]"Removed_Key"Check whether specifity is the same"Removed_Key"60,60"Removed_Key"FlowDecision_51">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3116,14 +3326,14 @@ ToList()]</InArgument>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <FlowDecision.True>
-                                                                    <FlowStep x:Name="__ReferenceID39"Removed_Key"FlowStep_18">
+                                                                    <FlowStep x:Name="__ReferenceID40"Removed_Key"FlowStep_18">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">435,755</av:Point>
-                                                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <SequenceRemoved_Key"Assign EPPO code to Cert level"Removed_Key"536,1408"Removed_Key"Sequence_435">
+                                                                      <SequenceRemoved_Key"Assign EPPO code to Cert level"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_435">
                                                                         <Sequence.Variables>
                                                                           <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                                                                         </Sequence.Variables>
@@ -3224,7 +3434,7 @@ ToList()]</InArgument>
                                                                     </FlowStep>
                                                                   </FlowDecision.True>
                                                                   <FlowDecision.False>
-                                                                    <FlowDecision x:Name="__ReferenceID43" Condition="[certIsPriority1]"Removed_Key"Check whether IPAFFS or CERT is Priority 1"Removed_Key"60,60"Removed_Key"FlowDecision_50" True="{x:Reference __ReferenceID39}">
+                                                                    <FlowDecision x:Name="__ReferenceID44" Condition="[certIsPriority1]"Removed_Key"Check whether IPAFFS or CERT is Priority 1"Removed_Key"60,60"Removed_Key"FlowDecision_50" True="{x:Reference __ReferenceID40}">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3235,14 +3445,14 @@ ToList()]</InArgument>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <FlowDecision.False>
-                                                                        <FlowStep x:Name="__ReferenceID40"Removed_Key"FlowStep_19">
+                                                                        <FlowStep x:Name="__ReferenceID41"Removed_Key"FlowStep_19">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <av:Point x:Key="ShapeLocation">425,505</av:Point>
-                                                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <SequenceRemoved_Key"Assign EPPO code to IPAFFS level"Removed_Key"110,70"Removed_Key"Sequence_436">
+                                                                          <SequenceRemoved_Key"Assign EPPO code to IPAFFS level"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_436">
                                                                             <Sequence.Variables>
                                                                               <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                                                                             </Sequence.Variables>
@@ -3341,25 +3551,25 @@ ToList()]</InArgument>
                                                                 </FlowDecision>
                                                               </FlowDecision.True>
                                                               <FlowDecision.False>
-                                                                <FlowDecision x:Name="__ReferenceID41" Condition="[certIsPriority2 and ipaffsIsPriority2]"Removed_Key"Check whether specifity is the same"Removed_Key"60,60"Removed_Key"FlowDecision_53" True="{x:Reference __ReferenceID39}">
+                                                                <FlowDecision x:Name="__ReferenceID42" Condition="[certIsPriority2 and ipaffsIsPriority2]"Removed_Key"Check whether specifity is the same"Removed_Key"60,60"Removed_Key"FlowDecision_53" True="{x:Reference __ReferenceID40}">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       <av:Point x:Key="ShapeLocation">730,220</av:Point>
                                                                       <av:Size x:Key="ShapeSize">60,60</av:Size>
                                                                       <av:PointCollection x:Key="FalseConnector">730,250 650,250 650,340</av:PointCollection>
-                                                                      <av:PointCollection x:Key="TrueConnector">790,250 819.5,250 819.5,725.54 490,725.54 490,755</av:PointCollection>
+                                                                      <av:PointCollection x:Key="TrueConnector">790,250 819.8571428571429,250 819.8571428571429,725 489.85714285714283,725 489.85714285714283,755</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <FlowDecision.False>
-                                                                    <FlowDecision x:Name="__ReferenceID44" Condition="[certIsPriority2]"Removed_Key"Check whether IPAFFS or CERT is Priority 2"Removed_Key"60,60"Removed_Key"FlowDecision_52" True="{x:Reference __ReferenceID39}" False="{x:Reference __ReferenceID40}">
+                                                                    <FlowDecision x:Name="__ReferenceID45" Condition="[certIsPriority2]"Removed_Key"Check whether IPAFFS or CERT is Priority 2"Removed_Key"60,60"Removed_Key"FlowDecision_52" True="{x:Reference __ReferenceID40}" False="{x:Reference __ReferenceID41}">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           <av:Point x:Key="ShapeLocation">620,340</av:Point>
                                                                           <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                          <av:PointCollection x:Key="FalseConnector">620,370 480,370 480,505</av:PointCollection>
-                                                                          <av:PointCollection x:Key="TrueConnector">680,370 700,370 700,725 490,725 490,755</av:PointCollection>
+                                                                          <av:PointCollection x:Key="FalseConnector">620,370 479.85714285714283,370 479.85714285714283,505</av:PointCollection>
+                                                                          <av:PointCollection x:Key="TrueConnector">680,370 699.8571428571429,370 699.8571428571429,725 489.85714285714283,725 489.85714285714283,755</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </FlowDecision>
@@ -3367,18 +3577,18 @@ ToList()]</InArgument>
                                                                 </FlowDecision>
                                                               </FlowDecision.False>
                                                             </FlowDecision>
-                                                            <x:Reference>__ReferenceID41</x:Reference>
                                                             <x:Reference>__ReferenceID42</x:Reference>
                                                             <x:Reference>__ReferenceID43</x:Reference>
                                                             <x:Reference>__ReferenceID44</x:Reference>
-                                                            <x:Reference>__ReferenceID39</x:Reference>
+                                                            <x:Reference>__ReferenceID45</x:Reference>
                                                             <x:Reference>__ReferenceID40</x:Reference>
+                                                            <x:Reference>__ReferenceID41</x:Reference>
                                                           </Flowchart>
                                                         </Sequence>
                                                       </ActivityAction>
                                                     </ui:ForEach.Body>
                                                   </ui:ForEach>
-                                                  <AssignRemoved_Key"Because there can be multiple matches, we have to wait until we're done with the loop before we increment the EPPO Group"Removed_Key"Increment intEppoGrp"Removed_Key"668,150"Removed_Key"Assign_335">
+                                                  <AssignRemoved_Key"Because there can be multiple matches, we have to wait until we're done with the loop before we increment the EPPO Group"Removed_Key"Increment intEppoGrp"Removed_Key"668.5714285714286,154.28571428571428"Removed_Key"Assign_335">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Int32">[intEppoGrp]</OutArgument>
                                                     </Assign.To>
@@ -3395,7 +3605,7 @@ ToList()]</InArgument>
                                               </FlowStep>
                                             </FlowDecision.True>
                                             <FlowDecision.False>
-                                              <FlowStep x:Name="__ReferenceID52"Removed_Key"FlowStep_20">
+                                              <FlowStep x:Name="__ReferenceID53"Removed_Key"FlowStep_20">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">375,565</av:Point>
@@ -3499,7 +3709,7 @@ ToList()]</InArgument>
                                                   </If>
                                                 </Sequence>
                                                 <FlowStep.Next>
-                                                  <FlowDecision x:Name="__ReferenceID53" Condition="[(listSelectedEPPOCodes.Count = 0) Or &#xA;(listSelectedEPPOCodes(0).Trim() = &quot;No Relevant EPPO Code Matches&quot;)]"Removed_Key"Check whether an Eppo Code was picked"Removed_Key"60,60"Removed_Key"FlowDecision_55" True="{x:Reference __ReferenceID46}" False="{x:Reference __ReferenceID47}">
+                                                  <FlowDecision x:Name="__ReferenceID54" Condition="[(listSelectedEPPOCodes.Count = 0) Or &#xA;(listSelectedEPPOCodes(0).Trim() = &quot;No Relevant EPPO Code Matches&quot;)]"Removed_Key"Check whether an Eppo Code was picked"Removed_Key"60,60"Removed_Key"FlowDecision_55" True="{x:Reference __ReferenceID47}" False="{x:Reference __ReferenceID48}">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3518,181 +3728,15 @@ ToList()]</InArgument>
                                       </FlowDecision>
                                     </FlowStep.Next>
                                   </FlowStep>
-                                  <FlowDecision x:Name="__ReferenceID49" Condition="[dtFilteredMatches.RowCount = 1]"Removed_Key"Check whether there are any matches"Removed_Key"60,60"Removed_Key"FlowDecision_58">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <av:Point x:Key="ShapeLocation">270,260</av:Point>
-                                        <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                        <av:PointCollection x:Key="TrueConnector">270,290 240,290 240,289.85714285714283 214.71428571428572,289.85714285714283</av:PointCollection>
-                                        <av:PointCollection x:Key="FalseConnector">330,290 360,290 360,289.85714285714283 375,289.85714285714283</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <FlowDecision.True>
-                                      <FlowStep x:Name="__ReferenceID54"Removed_Key"FlowStep_14">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">105,255</av:Point>
-                                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <SequenceRemoved_Key"Update &quot;New EPPO&quot; Column"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_431">
-                                          <Sequence.Variables>
-                                            <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
-                                          </Sequence.Variables>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <AssignRemoved_Key"Update New EPPO Column"Removed_Key"502,115"Removed_Key"Assign_312">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Object">[row("New EPPO")]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Object">[row("EPPO").ToString]</InArgument>
-                                            </Assign.Value>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </Assign>
-                                          <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Find Matching Row in IPAFFs Table"Removed_Key"502,329"Removed_Key"LookupDataTable_22" LookupColumnName="EPPO" LookupValue="[row(&quot;EPPO&quot;).ToString]" RowIndex="[rowIndex]" />
-                                          <AssignRemoved_Key"Assign New EPPO Value for IPAFFs Row"Removed_Key"502,115"Removed_Key"Assign_313">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("New EPPO")]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Object">[row("EPPO").ToString]</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                          <IfRemoved_Key"Because one code can match multiple results we need to assign rows an &quot;EPPO group&quot;. &#xA;&#xA;This checks to see if the matching row already has a group value populated aka it has previously matched to a different row." Condition="[String.IsNullOrWhiteSpace(dtDistinctIPAFFSEPPO.Rows(rowIndex)(&quot;Group&quot;).ToString)]"Removed_Key"Does the Matching Row Already have a Group?"Removed_Key"502,920"Removed_Key"If_100">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If.Then>
-                                              <SequenceRemoved_Key"In the scenario where there isn't a previously matched group then we assign both sides of the match (Cert &amp; IPAFFs) equal to the current group number then we increment."Removed_Key"Then"Removed_Key"468,456"Removed_Key"Sequence_443">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <AssignRemoved_Key"Assign IPAFFs EPPO Group"Removed_Key"434,115"Removed_Key"Assign_314">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("Group")]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Object">[intEppoGrp.ToString]</InArgument>
-                                                  </Assign.Value>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Assign>
-                                                <AssignRemoved_Key"Assign Cert EPPO Group"Removed_Key"434,115"Removed_Key"Assign_315">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Object">[row("Group")]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Object">[intEppoGrp.ToString]</InArgument>
-                                                  </Assign.Value>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Assign>
-                                                <AssignRemoved_Key"Increment intEppoGrp"Removed_Key"434,106"Removed_Key"Assign_316">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">[intEppoGrp]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">[intEppoGrp + 1]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                              </Sequence>
-                                            </If.Then>
-                                            <If.Else>
-                                              <SequenceRemoved_Key"Where there is a previous match, we don't edit the IPAFFs side, instead we set the Cert row group to equal the existing group number."Removed_Key"Else"Removed_Key"468,210"Removed_Key"Sequence_444">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <AssignRemoved_Key"Assign Cert EPPO Group"Removed_Key"434,106"Removed_Key"Assign_317">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Object">[row("Group")]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("Group").ToString]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                              </Sequence>
-                                            </If.Else>
-                                          </If>
-                                        </Sequence>
-                                      </FlowStep>
-                                    </FlowDecision.True>
-                                    <FlowDecision.False>
-                                      <x:Reference>__ReferenceID48</x:Reference>
-                                    </FlowDecision.False>
-                                  </FlowDecision>
-                                  <FlowStep x:Name="__ReferenceID55"Removed_Key"FlowStep_13">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">245,135</av:Point>
-                                        <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">299.85714285714283,204.71428571428572 299.85714285714283,234.71428571428572 300,234.71428571428572 300,260</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <SequenceRemoved_Key"Match Phyto ↔ IPAFFS EPPO codes"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_430">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:FilterDataTable DataTable="[dtDistinctIPAFFSEPPO]"Removed_Key"Filter Data Table" FilterRowsMode="Keep"Removed_Key"416,188.57142857142858"Removed_Key"FilterDataTable_18" OutputDataTable="[dtFilteredMatches]" SelectColumnsMode="Remove">
-                                        <ui:FilterDataTable.Filters>
-                                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                            <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-                                              <ui:FilterOperationArgument.Column>
-                                                <InArgument x:TypeArguments="x:String">["EPPO"]</InArgument>
-                                              </ui:FilterOperationArgument.Column>
-                                              <ui:FilterOperationArgument.Operand>
-                                                <InArgument x:TypeArguments="x:String">[row("EPPO").ToString]</InArgument>
-                                              </ui:FilterOperationArgument.Operand>
-                                            </ui:FilterOperationArgument>
-                                          </scg:List>
-                                        </ui:FilterDataTable.Filters>
-                                        <ui:FilterDataTable.SelectColumns>
-                                          <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                            <x:Null />
-                                          </scg:List>
-                                        </ui:FilterDataTable.SelectColumns>
-                                      </ui:FilterDataTable>
-                                    </Sequence>
-                                    <FlowStep.Next>
-                                      <x:Reference>__ReferenceID49</x:Reference>
-                                    </FlowStep.Next>
-                                  </FlowStep>
+                                  <x:Reference>__ReferenceID49</x:Reference>
                                   <x:Reference>__ReferenceID50</x:Reference>
-                                  <x:Reference>__ReferenceID46</x:Reference>
                                   <x:Reference>__ReferenceID51</x:Reference>
                                   <x:Reference>__ReferenceID47</x:Reference>
                                   <x:Reference>__ReferenceID52</x:Reference>
+                                  <x:Reference>__ReferenceID48</x:Reference>
                                   <x:Reference>__ReferenceID53</x:Reference>
                                   <x:Reference>__ReferenceID54</x:Reference>
+                                  <x:Reference>__ReferenceID55</x:Reference>
                                 </Flowchart>
                               </ActivityAction>
                             </ui:ForEachRow.Body>
@@ -7207,7 +7251,7 @@ ToList()]</InArgument>
                             <Flowchart.StartNode>
                               <x:Reference>__ReferenceID124</x:Reference>
                             </Flowchart.StartNode>
-                            <FlowStep x:Name="__ReferenceID117">
+                            <FlowStep x:Name="__ReferenceID117"Removed_Key"FlowStep_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">375,255</av:Point>
@@ -7303,7 +7347,7 @@ ToList()]</InArgument>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.True>
-                                    <FlowStep x:Name="__ReferenceID115">
+                                    <FlowStep x:Name="__ReferenceID115"Removed_Key"FlowStep_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">505,365</av:Point>
@@ -7365,7 +7409,7 @@ ToList()]</InArgument>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <FlowDecision.True>
-                                        <FlowStep x:Name="__ReferenceID116">
+                                        <FlowStep x:Name="__ReferenceID116"Removed_Key"FlowStep_5">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">235,575</av:Point>
@@ -7551,7 +7595,7 @@ ToList()]</InArgument>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <FlowDecision.True>
-                                                              <FlowStep x:Name="__ReferenceID108">
+                                                              <FlowStep x:Name="__ReferenceID108"Removed_Key"FlowStep_6">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <av:Point x:Key="ShapeLocation">435,755</av:Point>
@@ -7670,7 +7714,7 @@ ToList()]</InArgument>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <FlowDecision.False>
-                                                                  <FlowStep x:Name="__ReferenceID109">
+                                                                  <FlowStep x:Name="__ReferenceID109"Removed_Key"FlowStep_7">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <av:Point x:Key="ShapeLocation">425,505</av:Point>
@@ -7830,7 +7874,7 @@ ToList()]</InArgument>
                                         </FlowStep>
                                       </FlowDecision.True>
                                       <FlowDecision.False>
-                                        <FlowStep x:Name="__ReferenceID121">
+                                        <FlowStep x:Name="__ReferenceID121"Removed_Key"FlowStep_8">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">375,465</av:Point>
@@ -7964,7 +8008,7 @@ ToList()]</InArgument>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID123">
+                                <FlowStep x:Name="__ReferenceID123"Removed_Key"FlowStep_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">105,255</av:Point>
@@ -8083,7 +8127,7 @@ ToList()]</InArgument>
                                 <x:Reference>__ReferenceID117</x:Reference>
                               </FlowDecision.False>
                             </FlowDecision>
-                            <FlowStep x:Name="__ReferenceID124">
+                            <FlowStep x:Name="__ReferenceID124"Removed_Key"FlowStep_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">245,135</av:Point>
