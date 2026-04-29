@@ -150,7 +150,7 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Dataverse"Removed_Key"1934,1138.84"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"Dataverse"Removed_Key"885.6,982.8"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="jsonBody" />
       <Variable x:TypeArguments="x:String" Name="strResponse" />
@@ -171,7 +171,7 @@
     </Assign>
     <TryCatchRemoved_Key"Try Catch - build API body"Removed_Key"468,430"Removed_Key"TryCatch_1">
       <TryCatch.Try>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jrrRows As New JArray()&#xA;&#xA;For Each row As DataRow In io_dtCommodityLines.Rows&#xA;&#xA;    Dim jsonRow As New JObject From {&#xA;        {&quot;eppo&quot;, row(&quot;eppo&quot;).ToString()},&#xA;        {&quot;origin&quot;, row(&quot;Country&quot;).ToString()},&#xA;        {&quot;commodity_group&quot;, row(&quot;Commodity Group&quot;).ToString()}&#xA;    }&#xA;&#xA;    jrrRows.Add(jsonRow)&#xA;Next&#xA;&#xA;jsonbody(&quot;inputs&quot;) = jrrRows&#xA;"Removed_Key"Invoke Code"Removed_Key"334,164.8"Removed_Key"InvokeCode_1">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jrrRows As New JArray()&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In io_dtCommodityLines.Rows&#xD;&#xA;&#xD;&#xA;    Dim jsonRow As New JObject From {&#xD;&#xA;        {&quot;eppo&quot;, row(&quot;EPPO&quot;).ToString()},&#xD;&#xA;        {&quot;origin&quot;, row(&quot;Country&quot;).ToString()},&#xD;&#xA;        {&quot;commodity_group&quot;, row(&quot;Commodity Group&quot;).ToString()}&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    jrrRows.Add(jsonRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;jsonbody(&quot;inputs&quot;) = jrrRows&#xD;&#xA;"Removed_Key"Invoke Code"Removed_Key"334,164.8"Removed_Key"InvokeCode_1">
           <ui:InvokeCode.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
             <InOutArgument x:TypeArguments="njl:JObject" x:Key="jsonBody">[jsonBody]</InOutArgument>
@@ -220,9 +220,7 @@
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Cookies>
         <ui:HttpClient.Headers>
-          <InArgument x:TypeArguments="x:String" x:Key="x-api-key">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPassword" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="x-api-key">[strPassword]</InArgument>
         </ui:HttpClient.Headers>
         <ui:HttpClient.Parameters>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
