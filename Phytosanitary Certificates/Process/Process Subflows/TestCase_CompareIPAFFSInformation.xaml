@@ -105,15 +105,20 @@
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
       <AssemblyReference>OS.Fuzzy.Activities</AssemblyReference>
       <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"TestCase_CompareIPAFFSInformation"Removed_Key"1042.857142857143,1067.182857142857"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"TestCase_CompareIPAFFSInformation"Removed_Key"1198.857142857143,1156"Removed_Key"Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtOnHoldReasons" />
+      <Variable x:TypeArguments="x:String" Name="ApplicationRef" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"... Given"Removed_Key"484.57142857142856,409.14285714285717"Removed_Key"Sequence_2">
+    <SequenceRemoved_Key"... Given"Removed_Key"484.57142857142856,724.5714285714286"Removed_Key"Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -126,7 +131,7 @@
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_RetrieveCredentials">True</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <SequenceRemoved_Key"Get Username"Removed_Key"450.2857142857143,57.142857142857146"Removed_Key"Sequence_5">
+      <SequenceRemoved_Key"Get Username"Removed_Key"450.2857142857143,103.42857142857143"Removed_Key"Sequence_5">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strUserFolder" />
         </Sequence.Variables>
@@ -146,7 +151,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <AssignRemoved_Key"Assign Attachments Filepath"Removed_Key"450.2857142857143,48"Removed_Key"Assign_8">
+      <AssignRemoved_Key"Assign Attachments Filepath"Removed_Key"450.2857142857143,117.14285714285714"Removed_Key"Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Object">[g_Config("AttachmentsFilepath")]</OutArgument>
         </Assign.To>
@@ -155,10 +160,19 @@
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:BuildDataTable DataTable="[dtOnHoldReasons]"Removed_Key"Initialise On Hold Table"Removed_Key"450.2857142857143,92"Removed_Key"BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Application_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_Line_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;On_Hold_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IPAFFS_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <AssignRemoved_Key"450.2857142857143,108"Removed_Key"Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ApplicationRef]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Test Application</InArgument>
+        </Assign.Value>
       </Assign>
     </Sequence>
     <SequenceRemoved_Key"... When"Removed_Key"484.57142857142856,294.85714285714283"Removed_Key"Sequence_3">
@@ -169,8 +183,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Compare IPAFFS Information - Invoke Workflow File (Process\Process Subflows\Compare IPAFFS Information.xaml)"Removed_Key"416,202.85714285714286"Removed_Key"InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\Process Subflows\Compare IPAFFS Information.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtOnHoldReasons" />
-          <InArgument x:TypeArguments="x:String" x:Key="in_ApplicationRef" />
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ApplicationRef">[ApplicationRef]</InArgument>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtCommodityLines" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
