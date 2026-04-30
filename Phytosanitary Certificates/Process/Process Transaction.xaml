@@ -53,6 +53,7 @@
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>FuzzySharp</x:String>
       <x:String>OS.Fuzzy.Activities</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -176,8 +177,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">560,510</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
-          <av:PointCollection x:Key="TrueConnector">560,540 469.85714285714283,540 469.85714285714283,635</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">620,540 649.8571428571429,540 649.8571428571429,745 589.8571428571429,745 589.8571428571429,775</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">560,540 470,540 470,635</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">620,540 650,540 650,745 590,745 590,775</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -633,7 +634,7 @@
                                             <InArgument x:TypeArguments="sd1:DataTable">[dtCertificateDetails.Select("[Certificate_Number] ='" + CertNo + "'").CopyToDataTable]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:ReadTextFile File="{x:Null}" Content="[strSection11]"Removed_Key"Read Text File - grab section11" FileName="[GlobalVariablesNamespace.GlobalVariables.g_Config(&quot;AttachmentsFilepath&quot;).ToString() + &quot;\&quot; + CertNo + &quot; - AdditionalDeclation.txt&quot;]"Removed_Key"638,113.2"Removed_Key"ReadTextFile_1" />
+                                        <ui:ReadTextFile File="{x:Null}" Content="[strSection11]"Removed_Key"Read Text File - grab section11" FileName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString() + &quot;\&quot; + CertNo + &quot; - AdditionalDeclation.txt&quot;]"Removed_Key"638,113.2"Removed_Key"ReadTextFile_1" />
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Review ADs - Invoke Workflow File (Process\Process Subflows\AD\Review ADs.xaml)"Removed_Key"638,208"Removed_Key"InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Review ADs.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtCommodityLines">[dtOrangeCommidtyLines]</InOutArgument>
@@ -1248,7 +1249,7 @@ and it might be a different datatable]</InArgument>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">535,395</av:Point>
               <av:Size x:Key="ShapeSize">110,70</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">589.8571428571429,464.7142857142857 589.8571428571429,494.7142857142857 590,494.7142857142857 590,510</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"110,70"Removed_Key"Sequence_19">
