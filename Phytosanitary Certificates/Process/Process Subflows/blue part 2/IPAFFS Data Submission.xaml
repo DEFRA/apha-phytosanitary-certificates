@@ -142,7 +142,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"IPPAFS Data Submission"Removed_Key"1126,14467.2"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"IPPAFS Data Submission"Removed_Key"1126,14504.8"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPPAFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -155,13 +155,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,1808.8"Removed_Key"NApplicationCard_4" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,1728.8"Removed_Key"NApplicationCard_4" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"492,1638.8"Removed_Key"Sequence_64">
+          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"492,1558.8"Removed_Key"Sequence_64">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,7 +231,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScopeRemoved_Key"Retry Scope - check n continue"Removed_Key"458,750.8"Removed_Key"RetryScope_3">
+            <ui:RetryScopeRemoved_Key"Retry Scope - check n continue"Removed_Key"458,670.8"Removed_Key"RetryScope_3">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <SequenceRemoved_Key"Action"Removed_Key"416,468.4"Removed_Key"Sequence_101">
@@ -315,10 +315,7 @@
       <Flowchart.StartNode>
         <x:Reference>__ReferenceID10</x:Reference>
       </Flowchart.StartNode>
-      <FlowDecision x:Name="__ReferenceID4"Removed_Key"hold table empty?"Removed_Key"60,60"Removed_Key"FlowDecision_1">
-        <FlowDecision.Condition>
-          <VisualBasicValue x:TypeArguments="x:Boolean"Removed_Key"Visual basic value" ExpressionText="io_dtOnHoldReasons.RowCount = 0" />
-        </FlowDecision.Condition>
+      <FlowDecision x:Name="__ReferenceID4" Condition="[io_dtOnHoldReasons.RowCount = 0]"Removed_Key"hold table empty?"Removed_Key"60,60"Removed_Key"FlowDecision_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -396,20 +393,20 @@ CopyToDataTable()]</InArgument>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:WriteCsvFile AddHeaders="True" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma"Removed_Key"Write CSV - create Spreadsheet" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,56.8"Removed_Key"WriteCsvFile_1" ShouldQuote="True" />
-                  <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayAlerts="False"Removed_Key"Excel Process Scope" ExistingProcessAction="None" FileConflictResolution="PromptUser"Removed_Key"518,1082.4"Removed_Key"ExcelProcessScopeX_2" LaunchMethod="Application" ShowExcelWindow="True">
+                  <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayAlerts="False"Removed_Key"Excel Process Scope" ExistingProcessAction="None" FileConflictResolution="PromptUser"Removed_Key"518,1122.4"Removed_Key"ExcelProcessScopeX_2" LaunchMethod="Application" ShowExcelWindow="True">
                     <ueab:ExcelProcessScopeX.Body>
                       <ActivityAction x:TypeArguments="ui:IExcelProcess">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                         </ActivityAction.Argument>
-                        <SequenceRemoved_Key"Do"Removed_Key"484,963.6"Removed_Key"Sequence_67">
+                        <SequenceRemoved_Key"Do"Removed_Key"484,1003.6"Removed_Key"Sequence_67">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False"Removed_Key"Use Excel File"Removed_Key"450,903.6"Removed_Key"ExcelApplicationCard_2" ResizeWindow="Maximize" WorkbookPath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]">
+                          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False"Removed_Key"Use Excel File"Removed_Key"450,943.6"Removed_Key"ExcelApplicationCard_2" ResizeWindow="Maximize" WorkbookPath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]">
                             <ueab:ExcelApplicationCard.Body>
                               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                 <ActivityAction.Argument>
@@ -1252,7 +1249,7 @@ CopyToDataTable()]</InArgument>
       <x:Reference>__ReferenceID8</x:Reference>
       <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart>
-    <SequenceRemoved_Key"add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xD;&#xA;&#xD;&#xA;This will allow me to sort the search results to get the highest priority"Removed_Key"Apply priority hold levels to dt compliant"Removed_Key"1126,1400"Removed_Key"Sequence_95">
+    <SequenceRemoved_Key"add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xA;&#xA;This will allow me to sort the search results to get the highest priority"Removed_Key"Apply priority hold levels to dt compliant"Removed_Key"1126,1428.4"Removed_Key"Sequence_95">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1260,7 +1257,7 @@ CopyToDataTable()]</InArgument>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]"Removed_Key"Remove Duplicate Rows"Removed_Key"570,56.8"Removed_Key"RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]" />
+      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]"Removed_Key"Remove Duplicate Rows"Removed_Key"570,85.2"Removed_Key"RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]" />
       <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Priority order" DataTable="[in_dtAD_Compliant]"Removed_Key"Add Data Column"Removed_Key"570,222"Removed_Key"AddDataColumn`1_13" MaxLength="3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1375,13 +1372,13 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,9750.4"Removed_Key"NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,9839.6"Removed_Key"NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"1092,9580.4"Removed_Key"Sequence_77">
+          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"1092,9669.6"Removed_Key"Sequence_77">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1389,16 +1386,16 @@ CopyToDataTable()]</InArgument>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[booLoop]"Removed_Key"Do While"Removed_Key"1058,9487.6"Removed_Key"InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[booLoop]"Removed_Key"Do While"Removed_Key"1058,9576.8"Removed_Key"InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <SequenceRemoved_Key"Body"Removed_Key"1024,9347.6"Removed_Key"Sequence_70">
+                <SequenceRemoved_Key"Body"Removed_Key"1024,9436.8"Removed_Key"Sequence_70">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <SequenceRemoved_Key"Grab Datatable&#xA;&#xA;add column IPPAFS Reasons&#xA;&#xA;match on Commodity - fill in IPPAFS Reason"Removed_Key"Get website Datatable"Removed_Key"990,1957.2"Removed_Key"Sequence_47">
+                  <SequenceRemoved_Key"Grab Datatable&#xA;&#xA;add column IPPAFS Reasons&#xA;&#xA;match on Commodity - fill in IPPAFS Reason"Removed_Key"Get website Datatable"Removed_Key"990,2046.4"Removed_Key"Sequence_47">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1406,13 +1403,13 @@ CopyToDataTable()]</InArgument>
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Record PHSI checks - Import and export applications - GOV.UK"Removed_Key"638,1771.2"Removed_Key"NApplicationCard_1" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="34d610f4-9895-4c98-9f49-200494a62012" Version="V2">
+                    <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Record PHSI checks - Import and export applications - GOV.UK"Removed_Key"638,1860.4"Removed_Key"NApplicationCard_1" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="34d610f4-9895-4c98-9f49-200494a62012" Version="V2">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <SequenceRemoved_Key"Do"Removed_Key"604,1610"Removed_Key"Sequence_49">
+                          <SequenceRemoved_Key"Do"Removed_Key"604,1659.2"Removed_Key"Sequence_49">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:DateTime" Name="dteNow" />
                             </Sequence.Variables>
@@ -1453,13 +1450,13 @@ CopyToDataTable()]</InArgument>
                               </sap:WorkflowViewStateService.ViewState>
                             </WriteLine>
                             <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="IPPAFS Reasons" DataTable="[dtWebsite]"Removed_Key"Add Data Column"Removed_Key"570,85.2"Removed_Key"AddDataColumn`1_14" MaxLength="-1" />
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through the website table filling in the IPPAFS reasons where a match on commodity is found" DataTable="[dtWebsite]"Removed_Key"For Each Row in Data Table"Removed_Key"570,1035.6"Removed_Key"ForEachRow_8">
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through the website table filling in the IPPAFS reasons where a match on commodity is found" DataTable="[dtWebsite]"Removed_Key"For Each Row in Data Table"Removed_Key"570,1084.8"Removed_Key"ForEachRow_8">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                   </ActivityAction.Argument>
-                                  <SequenceRemoved_Key"Body"Removed_Key"536,799.6"Removed_Key"Sequence_50">
+                                  <SequenceRemoved_Key"Body"Removed_Key"536,848.8"Removed_Key"Sequence_50">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="sd:DataRow" Name="rowComMatch" />
                                     </Sequence.Variables>
@@ -1469,7 +1466,7 @@ CopyToDataTable()]</InArgument>
                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <AssignRemoved_Key"some of the plamts have a + infront of them&#xA;&#xA;IS RICHARD CLEANING THE + LEAVE IT OTHERWISE"Removed_Key"Assign - remove punctuation"Removed_Key"502,175.6"Removed_Key"Assign_57">
+                                    <AssignRemoved_Key"some of the plamts have a + infront of them or digits&#xD;&#xA;&#xD;&#xA;ive used a number for the column rather than the name because extract data changes the name of the column depndending on the table - different CHEDPP - have different table column names for some reason - but they are always in the same position"Removed_Key"Assign - remove punctuation"Removed_Key"502,224.8"Removed_Key"Assign_57">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Object">[CurrentRow(2)]</OutArgument>
                                       </Assign.To>
@@ -1488,7 +1485,7 @@ CopyToDataTable()]</InArgument>
                                         <OutArgument x:TypeArguments="sd:DataRow">[rowComMatch]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="sd:DataRow">[dtIPPAFS.AsEnumerable.Where(function (r) r("Commodity").ToString.ToLower.Trim = CurrentRow("Genus (and species)").ToString.ToLower).FirstOrDefault]</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataRow">[dtIPPAFS.AsEnumerable.Where(function (r) r("Commodity").ToString.ToLower.Trim = CurrentRow(2).ToString.ToLower).FirstOrDefault]</InArgument>
                                       </Assign.Value>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
