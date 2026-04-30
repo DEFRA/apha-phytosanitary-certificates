@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="io_dtCommodityLines" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_strSec11AD" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPDF_Filepath" Type="InArgument(x:String)" />
   </x:Members>
   <this:Data_validation.in_strSec11AD>
     <InArgument x:TypeArguments="x:String" />
@@ -279,7 +280,7 @@
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="listExtractedAD" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtPopUp" />
-      <Variable x:TypeArguments="x:String" Name="strPhytoFilepath" />
+      <Variable x:TypeArguments="x:String" Name="strPDF_Filepath" />
       <Variable x:TypeArguments="njl:JObject" Name="jsonRegulationResponse" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -301,13 +302,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"740,7715.6"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"110,70"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,7549.2"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,7973.2"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -485,7 +486,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,3135.6"Removed_Key"Sequence_87">
+              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,3559.6"Removed_Key"Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
@@ -509,7 +510,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;EPPO&quot;).tostring AndAlso &#xD;&#xA;currentJObject(&quot;original_origin&quot;).ToString.ToLower.Contains(Commodity(&quot;Country&quot;).tostring.ToLower) AndAlso &#xD;&#xA;currentJObject(&quot;commodity_group&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]"Removed_Key"If -find match"Removed_Key"502,409.6"Removed_Key"If_21">
+                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;EPPO&quot;).tostring AndAlso &#xA;currentJObject(&quot;original_origin&quot;).ToString.ToLower.Contains(Commodity(&quot;Country&quot;).tostring.ToLower) AndAlso &#xA;currentJObject(&quot;commodity_group&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]"Removed_Key"If -find match"Removed_Key"502,409.6"Removed_Key"If_21">
                           <If.Then>
                             <SequenceRemoved_Key"Then"Removed_Key"468,222.4"Removed_Key"Sequence_92">
                               <sap:WorkflowViewStateService.ViewState>
@@ -685,10 +686,10 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[dtRegulations.RowCount = 0]"Removed_Key"If - empty API response"Removed_Key"638,48"Removed_Key"If_23">
+                <If Condition="[dtRegulations.RowCount = 0]"Removed_Key"If - empty API response"Removed_Key"638,472"Removed_Key"If_23">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -1175,7 +1176,7 @@
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">385,865</av:Point>
                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">440,935 440,964.9999999999999 180,964.9999999999999 180,1000</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">440,935 440,965 180,965 180,1000</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}"Removed_Key"Append Item to List OHR 4"Removed_Key"110,70"Removed_Key"AppendItemToList`1_8" ItemToAppend="AD statements incomplete" List="[listHold]">
@@ -1913,7 +1914,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:MergeDataTableRemoved_Key"collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]"Removed_Key"Merge dtminipopup into dtpopup"Removed_Key"668,212.4"Removed_Key"MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
+              <ui:MergeDataTableRemoved_Key"collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]"Removed_Key"Merge dtminipopup into dtpopup"Removed_Key"672,212.4"Removed_Key"MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2047,12 +2048,12 @@
               <av:Size x:Key="ShapeSize">110,70</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <AssignRemoved_Key"110,70"Removed_Key"Assign_116">
+          <AssignRemoved_Key"Assign pdf filepath"Removed_Key"110,70"Removed_Key"Assign_116">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strPhytoFilepath]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[strPDF_Filepath]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">["C:\Users\ma000091\OneDrive - Defra\CURRENT RESEARCH\Phyto\NL Phytos\N851-GBPHC2025326484268.pdf"]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_strPDF_Filepath]</InArgument>
             </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2072,7 +2073,7 @@
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Create Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Create Compliance Form.xaml)"Removed_Key"110,70"Removed_Key"InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Create Compliance Form.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strPhytoFilepath">[strPhytoFilepath]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strPhytoFilepath">[strPDF_Filepath]</InArgument>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtAdditionalDeclarations">[dtPopUp]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
