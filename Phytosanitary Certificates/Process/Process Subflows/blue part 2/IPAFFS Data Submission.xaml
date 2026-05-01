@@ -142,7 +142,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <SequenceRemoved_Key"IPPAFS Data Submission"Removed_Key"1126,14316"Removed_Key"Sequence_1">
+  <SequenceRemoved_Key"IPPAFS Data Submission"Removed_Key"1126,12973.2"Removed_Key"Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPPAFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -155,7 +155,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,1728.8"Removed_Key"NApplicationCard_4" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,56.8"Removed_Key"NApplicationCard_4" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -297,12 +297,12 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <FlowchartRemoved_Key"1126,656.8"Removed_Key"Flowchart_1">
+    <FlowchartRemoved_Key"902.8000000000001,658.84"Removed_Key"Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -326,7 +326,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <FlowDecision.True>
-          <FlowStep x:Name="__ReferenceID7">
+          <FlowStep x:Name="__ReferenceID7"Removed_Key"FlowStep_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">135,335</av:Point>
@@ -350,7 +350,7 @@
           </FlowStep>
         </FlowDecision.True>
         <FlowDecision.False>
-          <FlowStep x:Name="__ReferenceID0">
+          <FlowStep x:Name="__ReferenceID0"Removed_Key"FlowStep_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">355,315</av:Point>
@@ -377,7 +377,7 @@ CopyToDataTable()]</InArgument>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID1">
+              <FlowStep x:Name="__ReferenceID1"Removed_Key"FlowStep_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">355,435</av:Point>
@@ -458,7 +458,7 @@ CopyToDataTable()]</InArgument>
                   <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma" DelimitatorForViewModel="Comma"Removed_Key"Read CSV - update datatable" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]"Removed_Key"518,48"Removed_Key"ReadCsvFile_1" />
                 </Sequence>
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID2">
+                  <FlowStep x:Name="__ReferenceID2"Removed_Key"FlowStep_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">355,545</av:Point>
@@ -473,7 +473,7 @@ CopyToDataTable()]</InArgument>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each currentDataRow"Removed_Key"450,420.4"Removed_Key"ForEach`1_13" Values="[io_dtOnHoldReasons.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPPAFS Reasons&quot;).ToString))]">
+                      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each currentDataRow"Removed_Key"450,420.4"Removed_Key"ForEach`1_13" Values="[io_dtOnHoldReasons.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
@@ -486,7 +486,7 @@ CopyToDataTable()]</InArgument>
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentDataRow(&quot;Certificate_Number&quot;),currentDataRow(&quot;Commodity&quot;)}]" DataTable="[in_dtAD_Compliant]"Removed_Key"Add Data Row"Removed_Key"382,213.2"Removed_Key"AddDataRow_6">
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentDataRow(&quot;Certificate_Number&quot;),currentDataRow(&quot;Commodity_Name&quot;)}]" DataTable="[in_dtAD_Compliant]"Removed_Key"Add Data Row"Removed_Key"382,213.2"Removed_Key"AddDataRow_6">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -507,7 +507,7 @@ CopyToDataTable()]</InArgument>
                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
                               <ui:FilterOperationArgument.Column>
-                                <InArgument x:TypeArguments="x:String">["IPPAFS Reasons"]</InArgument>
+                                <InArgument x:TypeArguments="x:String">["IPAFFS_Reason"]</InArgument>
                               </ui:FilterOperationArgument.Column>
                             </ui:FilterOperationArgument>
                           </scg:List>
@@ -532,7 +532,7 @@ CopyToDataTable()]</InArgument>
                         </ui:FilterDataTable.Filters>
                         <ui:FilterDataTable.SelectColumns>
                           <scg:List x:TypeArguments="InArgument" Capacity="4">
-                            <InArgument x:TypeArguments="x:String">["IPPAFS Reasons"]</InArgument>
+                            <InArgument x:TypeArguments="x:String">["IPAFFS_Reason"]</InArgument>
                             <InArgument x:TypeArguments="x:String">["Commodity"]</InArgument>
                             <InArgument x:TypeArguments="x:String">["On_Hold_Text"]</InArgument>
                             <InArgument x:TypeArguments="x:String">["Certificate_Number"]</InArgument>
@@ -552,23 +552,25 @@ CopyToDataTable()]</InArgument>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RemoveDuplicateRows>
-                      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}"Removed_Key"we wll need to add CHED hold level data to later analyse" ColumnName="Hold level" DataTable="[dtIPPAFS]"Removed_Key"Add Data Column - hold level"Removed_Key"450,118"Removed_Key"AddDataColumn`1_7" MaxLength="-1">
+                      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}"Removed_Key"we wll need to add CHED hold level data to later analyse" ColumnName="Hold level" DataTable="[dtIPPAFS]"Removed_Key"Add Data Column - hold level"Removed_Key"450,266.8"Removed_Key"AddDataColumn`1_7" MaxLength="-1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:AddDataColumn>
-                      <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}"Removed_Key"we will add priority order for later in oder to analyse" ColumnName="Priority order" DataTable="[dtIPPAFS]"Removed_Key"Add Data Column - priority order"Removed_Key"450,92.8"Removed_Key"AddDataColumn`1_8" MaxLength="3">
+                      <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}"Removed_Key"we will add priority order for later in oder to analyse" ColumnName="Priority order" DataTable="[dtIPPAFS]"Removed_Key"Add Data Column - priority order"Removed_Key"450,244.4"Removed_Key"AddDataColumn`1_8" MaxLength="3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:AddDataColumn>
                     </Sequence>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID3">
+                      <FlowStep x:Name="__ReferenceID3"Removed_Key"FlowStep_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">355,655</av:Point>
@@ -576,13 +578,13 @@ CopyToDataTable()]</InArgument>
                             <av:PointCollection x:Key="ConnectorLocation">410,725 410,775</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"filling in Hold level and priority level" DataTable="[dtIPPAFS]"Removed_Key"For Each Row in Data Table"Removed_Key"110,70"Removed_Key"ForEachRow_3">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"filling in Hold level and priority level" DataTable="[dtIPPAFS]"Removed_Key"For Each Row in Data Table"Removed_Key"638,1459.2"Removed_Key"ForEachRow_3">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="IPPAFrow" />
                               </ActivityAction.Argument>
-                              <SequenceRemoved_Key"Body"Removed_Key"552,1036.8"Removed_Key"Sequence_12">
+                              <SequenceRemoved_Key"Body"Removed_Key"604,1292.8"Removed_Key"Sequence_12">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="sd:DataRow" Name="rowPriority" />
                                 </Sequence.Variables>
@@ -592,12 +594,12 @@ CopyToDataTable()]</InArgument>
                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <AssignRemoved_Key"need to locate what row the IPPAF reason sits so that we can extract the adjacent values"Removed_Key"Assign - find matching row based on IPPAF reason "Removed_Key"518,159.2"Removed_Key"Assign_14">
+                                <AssignRemoved_Key"need to locate what row the IPPAF reason sits so that we can extract the adjacent values"Removed_Key"Assign - find matching row based on IPPAF_reason "Removed_Key"570,159.2"Removed_Key"Assign_14">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="sd:DataRow">[rowPriority]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="sd:DataRow">[g_dtPriority.Select("[Drop-down selection on IPAFFS (per commodity)] = '" &amp; IPPAFrow("IPPAFS Reasons").ToString().Replace("'", "''") &amp; "'").FirstOrDefault]</InArgument>
+                                    <InArgument x:TypeArguments="sd:DataRow">[g_dtPriority.Select("[Drop-down selection on IPAFFS (per commodity)] = '" &amp; IPPAFrow("IPPAFS_Reason").ToString().Replace("'", "''") &amp; "'").FirstOrDefault]</InArgument>
                                   </Assign.Value>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -606,7 +608,7 @@ CopyToDataTable()]</InArgument>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
-                                <AssignRemoved_Key"Assign - update priority order"Removed_Key"518,114.4"Removed_Key"Assign_18">
+                                <AssignRemoved_Key"Assign - update priority order"Removed_Key"570,114.4"Removed_Key"Assign_18">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Object">[IPPAFrow("Priority order")]</OutArgument>
                                   </Assign.To>
@@ -619,21 +621,21 @@ CopyToDataTable()]</InArgument>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
-                                <If Condition="[IPPAFrow(&quot;IPPAFS Reasons&quot;).ToString.trim = &quot;Incorrect information: Phytosanitary certificate number&quot;]"Removed_Key"If - only one scenario results in CHED and Certififcate overlap"Removed_Key"518,703.2"Removed_Key"If_6">
+                                <If Condition="[IPPAFrow(&quot;IPAFFS_Reason&quot;).ToString.trim = &quot;Incorrect information: Phytosanitary certificate number&quot;]"Removed_Key"If - only one scenario results in CHED and Certififcate overlap"Removed_Key"570,959.2"Removed_Key"If_6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <SequenceRemoved_Key"Then"Removed_Key"484,516"Removed_Key"Sequence_16">
+                                    <SequenceRemoved_Key"Then"Removed_Key"536,631.2"Removed_Key"Sequence_16">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <IfRemoved_Key"ms dynamics comments are dynamic - so there isnt a reliable way to match them. using hardcoded method for now in order to solve the problem. this issue only exists on this CHED level hold becuase the same IPPAF reason is used for 3 rows and only 1 of them is a certififcate level hold" Condition="[IPPAFrow(&quot;On_Hold_Text&quot;).ToString.Trim.tolower.StartsWith(&quot;reference declared&quot;)]"Removed_Key"If - detect ms dynamics comment"Removed_Key"450,456"Removed_Key"If_7">
+                                      <IfRemoved_Key"ms dynamics comments are dynamic - so there isnt a reliable way to match them. using hardcoded method for now in order to solve the problem. this issue only exists on this CHED level hold becuase the same IPPAF reason is used for 3 rows and only 1 of them is a certififcate level hold" Condition="[IPPAFrow(&quot;On_Hold_Text&quot;).ToString.Trim.tolower.StartsWith(&quot;reference declared&quot;)]"Removed_Key"If - detect ms dynamics comment"Removed_Key"502,571.2"Removed_Key"If_7">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -641,38 +643,48 @@ CopyToDataTable()]</InArgument>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <SequenceRemoved_Key"Then"Removed_Key"416,108"Removed_Key"Sequence_18">
+                                          <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_18">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <AssignRemoved_Key"Assign - hardcoded assign for certificate"Removed_Key"382,48"Removed_Key"Assign_15">
+                                            <AssignRemoved_Key"Assign - hardcoded assign for certificate"Removed_Key"434,105.6"Removed_Key"Assign_15">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Object">[IPPAFrow("Hold level")]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
                                                 <InArgument x:TypeArguments="x:Object">["Certificate"]</InArgument>
                                               </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
                                             </Assign>
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <SequenceRemoved_Key"Else"Removed_Key"416,108"Removed_Key"Sequence_19">
+                                          <SequenceRemoved_Key"Else"Removed_Key"468,165.6"Removed_Key"Sequence_19">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <AssignRemoved_Key"Assign hardcoded CHED level hold level"Removed_Key"382,48"Removed_Key"Assign_16">
+                                            <AssignRemoved_Key"Assign hardcoded CHED level hold level"Removed_Key"434,105.6"Removed_Key"Assign_16">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Object">[IPPAFrow("Hold level")]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
                                                 <InArgument x:TypeArguments="x:Object">["CHED"]</InArgument>
                                               </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
                                             </Assign>
                                           </Sequence>
                                         </If.Else>
@@ -680,10 +692,11 @@ CopyToDataTable()]</InArgument>
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <SequenceRemoved_Key"Else"Removed_Key"416,24.8"Removed_Key"Sequence_17">
+                                    <SequenceRemoved_Key"Else"Removed_Key"468,165.6"Removed_Key"Sequence_17">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <AssignRemoved_Key"Assign - update hold level"Removed_Key"434,105.6"Removed_Key"Assign_9">
@@ -713,7 +726,7 @@ CopyToDataTable()]</InArgument>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ForEachRow>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID8">
+                          <FlowStep x:Name="__ReferenceID8"Removed_Key"FlowStep_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">355,775</av:Point>
@@ -746,7 +759,7 @@ CopyToDataTable()]</InArgument>
                               </ui:RemoveDuplicateRows>
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID5">
+                              <FlowStep x:Name="__ReferenceID5"Removed_Key"FlowStep_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">355,895</av:Point>
@@ -765,7 +778,7 @@ CopyToDataTable()]</InArgument>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <AssignRemoved_Key"All CHEDs have the same priority - we just need to grab one and then overwrite any that are lower priority"Removed_Key"Assign - look for CHED level holds"Removed_Key"518,159.2"Removed_Key"Assign_20">
+                                  <AssignRemoved_Key"All CHEDs have the same priority - we just need to grab one and then overwrite any that are lower priority"Removed_Key"Assign - look for CHED level holds"Removed_Key"638,159.2"Removed_Key"Assign_20">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="sd:DataRow">[rowCHED]</OutArgument>
                                     </Assign.To>
@@ -780,7 +793,7 @@ CopyToDataTable()]</InArgument>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <IfRemoved_Key"skip if no CHED level hold found." Condition="[rowCHED isNot Nothing]"Removed_Key"If - CHED level priority check"Removed_Key"518,829.2"Removed_Key"If_9">
+                                  <IfRemoved_Key"skip if no CHED level hold found." Condition="[rowCHED isNot Nothing]"Removed_Key"If - CHED level priority check"Removed_Key"638,1494"Removed_Key"If_9">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -788,39 +801,45 @@ CopyToDataTable()]</InArgument>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <SequenceRemoved_Key"Then"Removed_Key"484,610.8"Removed_Key"Sequence_21">
+                                      <SequenceRemoved_Key"Then"Removed_Key"604,1210"Removed_Key"Sequence_21">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;CHED&quot;,rowCHED(&quot;Priority order&quot;),&quot;&quot;,rowCHED(&quot;IPPAFS Reasons&quot;)}]" DataTable="[dtCHED_Cert_Hold]"Removed_Key"Add Data Row - add CHED"Removed_Key"450,222"Removed_Key"AddDataRow_4">
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;CHED&quot;,rowCHED(&quot;Priority order&quot;),&quot;&quot;,rowCHED(&quot;IPAFFS_Reason&quot;)}]" DataTable="[dtCHED_Cert_Hold]"Removed_Key"Add Data Row - add CHED"Removed_Key"570,222"Removed_Key"AddDataRow_4">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:AddDataRow>
-                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through all entries and overwrite any that are of a lower priority" DataTable="[dtIPPAFS]"Removed_Key"For Each Row in Data Table - CHED overwrite"Removed_Key"450,328.8"Removed_Key"ForEachRow_5">
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through all entries and overwrite any that are of a lower priority" DataTable="[dtIPPAFS]"Removed_Key"For Each Row in Data Table - CHED overwrite"Removed_Key"570,928"Removed_Key"ForEachRow_5">
                                           <ui:ForEachRow.Body>
                                             <ActivityAction x:TypeArguments="sd:DataRow">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                               </ActivityAction.Argument>
-                                              <SequenceRemoved_Key"Body"Removed_Key"416,108"Removed_Key"Sequence_20">
+                                              <SequenceRemoved_Key"Body"Removed_Key"536,707.2"Removed_Key"Sequence_20">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[cint(CurrentRow(&quot;Priority order&quot;)) &gt; cint(rowCHED(&quot;Priority order&quot;))]"Removed_Key"If - evaluate priority order"Removed_Key"382,48"Removed_Key"If_10">
+                                                <If Condition="[cint(CurrentRow(&quot;Priority order&quot;)) &gt; cint(rowCHED(&quot;Priority order&quot;))]"Removed_Key"If - evaluate priority order"Removed_Key"502,647.2"Removed_Key"If_10">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <SequenceRemoved_Key"Then"Removed_Key"416,24.8"Removed_Key"Sequence_23">
+                                                    <SequenceRemoved_Key"Then"Removed_Key"468,394.4"Removed_Key"Sequence_23">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <AssignRemoved_Key"Assign - overwrite with higher priority"Removed_Key"434,114.4"Removed_Key"Assign_21">
@@ -838,10 +857,10 @@ CopyToDataTable()]</InArgument>
                                                       </Assign>
                                                       <AssignRemoved_Key"Assign - overwrite with higher IPPAFS"Removed_Key"434,114.4"Removed_Key"Assign_22">
                                                         <Assign.To>
-                                                          <OutArgument x:TypeArguments="x:Object">[CurrentRow("IPPAFS Reasons")]</OutArgument>
+                                                          <OutArgument x:TypeArguments="x:Object">[CurrentRow("IPAFFS_Reason")]</OutArgument>
                                                         </Assign.To>
                                                         <Assign.Value>
-                                                          <InArgument x:TypeArguments="x:Object">[rowCHED("IPPAFS Reasons")]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Object">[rowCHED("IPAFFS_Reason")]</InArgument>
                                                         </Assign.Value>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -865,10 +884,11 @@ CopyToDataTable()]</InArgument>
                                                     </Sequence>
                                                   </If.Then>
                                                   <If.Else>
-                                                    <SequenceRemoved_Key"Else"Removed_Key"416,24.8"Removed_Key"Sequence_24">
+                                                    <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_24">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </Sequence>
@@ -888,10 +908,11 @@ CopyToDataTable()]</InArgument>
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <SequenceRemoved_Key"Else"Removed_Key"416,24.8"Removed_Key"Sequence_22">
+                                      <SequenceRemoved_Key"Else"Removed_Key"416,90.4"Removed_Key"Sequence_22">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </Sequence>
@@ -899,7 +920,7 @@ CopyToDataTable()]</InArgument>
                                   </If>
                                 </Sequence>
                                 <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID6">
+                                  <FlowStep x:Name="__ReferenceID6"Removed_Key"FlowStep_8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">355,1015</av:Point>
@@ -907,7 +928,7 @@ CopyToDataTable()]</InArgument>
                                         <av:PointCollection x:Key="ConnectorLocation">410,1085 410,1135</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For certifficate and Commodity type"Removed_Key"110,70"Removed_Key"ForEach`1_3" Values="[{&quot;Certificate_Number&quot;,&quot;Commodity&quot;}]">
+                                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For certifficate and Commodity type"Removed_Key"808,3050.8"Removed_Key"ForEach`1_3" Values="[{&quot;Certificate_Number&quot;,&quot;Commodity_Name&quot;}]">
                                       <ui:ForEach.Body>
                                         <ActivityAction x:TypeArguments="x:String">
                                           <ActivityAction.Argument>
@@ -963,7 +984,7 @@ CopyToDataTable()]</InArgument>
                                                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <If Condition="[strType = &quot;Commodity&quot;]"Removed_Key"If - commodity vs Certififcate"Removed_Key"638,1178.4"Removed_Key"If_15">
+                                                      <If Condition="[strType = &quot;Commodity_Name&quot;]"Removed_Key"If - commodity vs Certififcate"Removed_Key"638,1178.4"Removed_Key"If_15">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1036,7 +1057,7 @@ CopyToDataTable()]</InArgument>
                                                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Certificate&quot;, rowHighPriority(&quot;Priority order&quot;), segment, rowHighPriority(&quot;IPPAFS Reasons&quot;)}]" DataTable="[dtCHED_Cert_Hold]"Removed_Key"Add Data Row - add Cert Hold"Removed_Key"382,213.2"Removed_Key"AddDataRow_5">
+                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Certificate&quot;, rowHighPriority(&quot;Priority order&quot;), segment, rowHighPriority(&quot;IPAFFS_Reason&quot;)}]" DataTable="[dtCHED_Cert_Hold]"Removed_Key"Add Data Row - add Cert Hold"Removed_Key"382,213.2"Removed_Key"AddDataRow_5">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1117,10 +1138,10 @@ CopyToDataTable()]</InArgument>
                                                                           </Assign>
                                                                           <AssignRemoved_Key"Assign - overwrite with higher IPPAFS"Removed_Key"434,114.4"Removed_Key"Assign_33">
                                                                             <Assign.To>
-                                                                              <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPPAFS Reasons")]</OutArgument>
+                                                                              <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPPAFS_Reason")]</OutArgument>
                                                                             </Assign.To>
                                                                             <Assign.Value>
-                                                                              <InArgument x:TypeArguments="x:Object">[rowHighPriority("IPPAFS Reasons")]</InArgument>
+                                                                              <InArgument x:TypeArguments="x:Object">[rowHighPriority("IPPAFS_Reason")]</InArgument>
                                                                             </Assign.Value>
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1197,7 +1218,7 @@ CopyToDataTable()]</InArgument>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ForEach>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID9">
+                                      <FlowStep x:Name="__ReferenceID9"Removed_Key"FlowStep_9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">355,1135</av:Point>
@@ -1218,7 +1239,7 @@ CopyToDataTable()]</InArgument>
                                             </ui:FilterDataTable.Filters>
                                             <ui:FilterDataTable.SelectColumns>
                                               <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                                <InArgument x:TypeArguments="x:String">["IPPAFS Reasons"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">["IPAFFS_Reason"]</InArgument>
                                                 <InArgument x:TypeArguments="x:String">["Commodity"]</InArgument>
                                               </scg:List>
                                             </ui:FilterDataTable.SelectColumns>
@@ -1285,7 +1306,7 @@ CopyToDataTable()]</InArgument>
       <x:Reference>__ReferenceID8</x:Reference>
       <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart>
-    <SequenceRemoved_Key"add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xA;&#xA;This will allow me to sort the search results to get the highest priority"Removed_Key"Apply priority hold levels to dt compliant"Removed_Key"1126,1400"Removed_Key"Sequence_95">
+    <SequenceRemoved_Key"add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xA;&#xA;This will allow me to sort the search results to get the highest priority"Removed_Key"Apply priority hold levels to dt compliant"Removed_Key"1126,1456.4"Removed_Key"Sequence_95">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1293,7 +1314,13 @@ CopyToDataTable()]</InArgument>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]"Removed_Key"Remove Duplicate Rows"Removed_Key"570,56.8"Removed_Key"RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]" />
+      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]"Removed_Key"Remove Duplicate Rows"Removed_Key"570,113.2"Removed_Key"RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RemoveDuplicateRows>
       <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Priority order" DataTable="[in_dtAD_Compliant]"Removed_Key"Add Data Column"Removed_Key"570,222"Removed_Key"AddDataColumn`1_13" MaxLength="3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1408,13 +1435,13 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,10082.4"Removed_Key"NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never"Removed_Key"Use Browser Edge: Overview - Import and export applications - GOV.UK"Removed_Key"1126,10355.2"Removed_Key"NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"1092,9912.4"Removed_Key"Sequence_77">
+          <SequenceRemoved_Key"Navigate to document checks screen"Removed_Key"Do"Removed_Key"1092,10185.2"Removed_Key"Sequence_77">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1422,16 +1449,16 @@ CopyToDataTable()]</InArgument>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"Do While"Removed_Key"1058,9819.6"Removed_Key"InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}"Removed_Key"Do While"Removed_Key"1058,10092.4"Removed_Key"InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <SequenceRemoved_Key"Body"Removed_Key"1024,9679.6"Removed_Key"Sequence_70">
+                <SequenceRemoved_Key"Body"Removed_Key"1024,9952.4"Removed_Key"Sequence_70">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <SequenceRemoved_Key"Grab Datatable&#xA;&#xA;add column IPPAFS Reasons&#xA;&#xA;match on Commodity - fill in IPPAFS Reason"Removed_Key"Get website Datatable"Removed_Key"990,2046.4"Removed_Key"Sequence_47">
+                  <SequenceRemoved_Key"Grab Datatable&#xA;&#xA;add column IPPAFS_Reason&#xA;&#xA;match on Commodity - fill in IPPAFS_Reason"Removed_Key"Get website Datatable"Removed_Key"990,2183.2"Removed_Key"Sequence_47">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1439,13 +1466,13 @@ CopyToDataTable()]</InArgument>
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Record PHSI checks - Import and export applications - GOV.UK"Removed_Key"638,1860.4"Removed_Key"NApplicationCard_1" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="34d610f4-9895-4c98-9f49-200494a62012" Version="V2">
+                    <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge: Record PHSI checks - Import and export applications - GOV.UK"Removed_Key"638,1997.2"Removed_Key"NApplicationCard_1" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="34d610f4-9895-4c98-9f49-200494a62012" Version="V2">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <SequenceRemoved_Key"Do"Removed_Key"604,1659.2"Removed_Key"Sequence_49">
+                          <SequenceRemoved_Key"Do"Removed_Key"604,1796"Removed_Key"Sequence_49">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:DateTime" Name="dteNow" />
                             </Sequence.Variables>
@@ -1485,8 +1512,14 @@ CopyToDataTable()]</InArgument>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </WriteLine>
-                            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="IPPAFS Reasons" DataTable="[dtWebsite]"Removed_Key"Add Data Column"Removed_Key"570,85.2"Removed_Key"AddDataColumn`1_14" MaxLength="-1" />
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through the website table filling in the IPPAFS reasons where a match on commodity is found" DataTable="[dtWebsite]"Removed_Key"For Each Row in Data Table"Removed_Key"570,1084.8"Removed_Key"ForEachRow_8">
+                            <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="IPAFFS_Reason" DataTable="[dtWebsite]"Removed_Key"Add Data Column"Removed_Key"570,222"Removed_Key"AddDataColumn`1_14" MaxLength="-1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AddDataColumn>
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}"Removed_Key"Cycle through the website table filling in the IPPAFS_Reason where a match on commodity is found" DataTable="[dtWebsite]"Removed_Key"For Each Row in Data Table"Removed_Key"570,1084.8"Removed_Key"ForEachRow_8">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
@@ -1521,7 +1554,7 @@ CopyToDataTable()]</InArgument>
                                         <OutArgument x:TypeArguments="sd:DataRow">[rowComMatch]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="sd:DataRow">[dtIPPAFS.AsEnumerable.Where(function (r) r("Commodity").ToString.ToLower.Trim = CurrentRow(2).ToString.ToLower).FirstOrDefault]</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataRow">[dtIPPAFS.AsEnumerable.Where(function (r) r("Commodity_Name").ToString.ToLower.Trim = CurrentRow(2).ToString.ToLower).FirstOrDefault]</InArgument>
                                       </Assign.Value>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1544,12 +1577,12 @@ CopyToDataTable()]</InArgument>
                                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <AssignRemoved_Key"Assign - add in IPPAFS Reasons"Removed_Key"434,105.6"Removed_Key"Assign_39">
+                                          <AssignRemoved_Key"Assign - add in IPPAF_Reason"Removed_Key"434,105.6"Removed_Key"Assign_39">
                                             <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Object">[CurrentRow("IPPAFS Reasons")]</OutArgument>
+                                              <OutArgument x:TypeArguments="x:Object">[CurrentRow("IPAFFS_Reason")]</OutArgument>
                                             </Assign.To>
                                             <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Object">[rowComMatch("IPPAFS Reasons")]</InArgument>
+                                              <InArgument x:TypeArguments="x:Object">[rowComMatch("IPAFFS_Reason")]</InArgument>
                                             </Assign.Value>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1593,7 +1626,7 @@ CopyToDataTable()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NApplicationCard>
                   </Sequence>
-                  <SequenceRemoved_Key"Cycle through blank IPPAFFS Reasons from dtwebsite&#xA;&#xA;get Cert number from dtAD_Compliant&#xA;add them to a new column of dtwebsite - for refencing&#xA;&#xA;get list of unique values of certs - ignore blank cert columns&#xA;&#xA;cycle through list unique certs used as a filter&#xA;&#xA;get highest priority cert level row if it exists&#xA;compare against CHED row if it exists - GET CHED ROW OUTSIDE&#xA;&#xA;3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows&#xA;&#xA;Fill in highest priority IPPAFS Reason if found otherwise Compliant&#xA;"Removed_Key"Check Blanks for CHED and Certififcate Level Holds"Removed_Key"990,2983.6"Removed_Key"Sequence_48">
+                  <SequenceRemoved_Key"Cycle through blank IPPAFFS_Reason from dtwebsite&#xA;&#xA;get Cert number from dtAD_Compliant&#xA;add them to a new column of dtwebsite - for refencing&#xA;&#xA;get list of unique values of certs - ignore blank cert columns&#xA;&#xA;cycle through list unique certs used as a filter&#xA;&#xA;get highest priority cert level row if it exists&#xA;compare against CHED row if it exists - GET CHED ROW OUTSIDE&#xA;&#xA;3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows&#xA;&#xA;Fill in highest priority IPPAFS_Reason if found otherwise Compliant&#xA;"Removed_Key"Check Blanks for CHED and Certififcate Level Holds"Removed_Key"990,3178.4"Removed_Key"Sequence_48">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strRoute" />
                       <Variable x:TypeArguments="sd:DataRow" Name="rowCert" />
@@ -1613,7 +1646,7 @@ CopyToDataTable()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:AddDataColumn>
-                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each currentDataRow - cycle through empty IPPAFS Reasons"Removed_Key"633.6,786"Removed_Key"ForEach`1_6" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPPAFS Reasons&quot;).ToString))]">
+                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"For Each currentDataRow - cycle through empty IPPAFS_Reason"Removed_Key"633.6,786"Removed_Key"ForEach`1_6" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -1714,13 +1747,13 @@ ToList()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"This section figures out of the cert holds a certificate level hold and compares it to the CHED lvel hold priority. if neither are present then it is compliant"Removed_Key"For Each Cert"Removed_Key"633.6,1153.2"Removed_Key"ForEach`1_7" Values="[listCerts]">
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"This section figures out of the cert holds a certificate level hold and compares it to the CHED lvel hold priority. if neither are present then it is compliant"Removed_Key"For Each Cert"Removed_Key"633.6,1281.6"Removed_Key"ForEach`1_7" Values="[listCerts]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="Cert" />
                           </ActivityAction.Argument>
-                          <SequenceRemoved_Key"Body"Removed_Key"599.6,961.2"Removed_Key"Sequence_57">
+                          <SequenceRemoved_Key"Body"Removed_Key"599.6,1089.6"Removed_Key"Sequence_57">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1740,7 +1773,7 @@ ToList()]</InArgument>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Assign>
-                            <ui:InvokeCode ContinueOnError="{x:Null}"Removed_Key"3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows" Code="If rowCHED IsNot Nothing AndAlso rowCert IsNot Nothing Then&#xD;&#xA;&#xD;&#xA;    Dim priorityCHED As Integer = CInt(rowCHED(&quot;Priority order&quot;))&#xD;&#xA;    Dim priorityCert As Integer = CInt(rowCert(&quot;Priority order&quot;))&#xD;&#xA;&#xD;&#xA;    If priorityCHED &lt; priorityCert Then&#xD;&#xA;        strRoute = &quot;CHED&quot;&#xD;&#xA;    Else&#xD;&#xA;       strRoute = &quot;Cert&quot;&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;ElseIf rowCHED IsNot Nothing Then&#xD;&#xA;&#xD;&#xA;  strRoute = &quot;CHED&quot;&#xD;&#xA;&#xD;&#xA;ElseIf rowCert IsNot Nothing Then&#xD;&#xA;&#xD;&#xA;    strRoute = &quot;Cert&quot;&#xD;&#xA;&#xD;&#xA;Else&#xD;&#xA;&#xD;&#xA;   strRoute = &quot;Compliant&quot;&#xD;&#xA;&#xD;&#xA;End If"Removed_Key"Invoke Code - evaluate CHED Cert"Removed_Key"565.6,274.4"Removed_Key"InvokeCode_1">
+                            <ui:InvokeCode ContinueOnError="{x:Null}"Removed_Key"3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows" Code="If rowCHED IsNot Nothing AndAlso rowCert IsNot Nothing Then&#xA;&#xA;    Dim priorityCHED As Integer = CInt(rowCHED(&quot;Priority order&quot;))&#xA;    Dim priorityCert As Integer = CInt(rowCert(&quot;Priority order&quot;))&#xA;&#xA;    If priorityCHED &lt; priorityCert Then&#xA;        strRoute = &quot;CHED&quot;&#xA;    Else&#xA;       strRoute = &quot;Cert&quot;&#xA;    End If&#xA;&#xA;ElseIf rowCHED IsNot Nothing Then&#xA;&#xA;  strRoute = &quot;CHED&quot;&#xA;&#xA;ElseIf rowCert IsNot Nothing Then&#xA;&#xA;    strRoute = &quot;Cert&quot;&#xA;&#xA;Else&#xA;&#xA;   strRoute = &quot;Compliant&quot;&#xA;&#xA;End If"Removed_Key"Invoke Code - evaluate CHED Cert"Removed_Key"565.6,274.4"Removed_Key"InvokeCode_1">
                               <ui:InvokeCode.Arguments>
                                 <InArgument x:TypeArguments="sd:DataRow" x:Key="rowCHED">[rowCHED]</InArgument>
                                 <InArgument x:TypeArguments="sd:DataRow" x:Key="rowCert">[rowCert]</InArgument>
@@ -1753,24 +1786,24 @@ ToList()]</InArgument>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeCode>
-                            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"We only want to replace remaining blanks - this just check if a commodity has no commodity level hold then does a ched or cert level hold apply.&#xD;&#xA;non blanks would have already been processed by this point - so there is no need to touch those&#xD;&#xA;in short - look at remaining blanks - check if cert or ched apply - if it does apply it to all the plants in the cert"Removed_Key"For Each currentDataRow"Removed_Key"565.6,512.4"Removed_Key"ForEach`1_8" Values="[dtWebsite.Select(&quot;[Cert] = '&quot; + Cert.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;' AND ( [IPPAFS Reasons] IS NULL OR [IPPAFS Reasons] = '' )&quot;)]">
+                            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"We only want to replace remaining blanks - this just check if a commodity has no commodity level hold then does a ched or cert level hold apply.&#xA;non blanks would have already been processed by this point - so there is no need to touch those&#xA;in short - look at remaining blanks - check if cert or ched apply - if it does apply it to all the plants in the cert"Removed_Key"For Each currentDataRow"Removed_Key"565.6,640.8"Removed_Key"ForEach`1_8" Values="[dtWebsite.Select(&quot;[Cert] = '&quot; + Cert.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;' AND ( [IPAFFS_Reason] IS NULL OR [IPAFFS_Reason] = '' )&quot;)]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
                                   </ActivityAction.Argument>
-                                  <SequenceRemoved_Key"Body"Removed_Key"531.6,280"Removed_Key"Sequence_58">
+                                  <SequenceRemoved_Key"Body"Removed_Key"531.6,408.4"Removed_Key"Sequence_58">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Switch x:TypeArguments="x:String"Removed_Key"Fill in highest priority IPPAFS Reason if found otherwise Compliant"Removed_Key"Switch - Compliant, CHED, Cert" Expression="[strRoute]"Removed_Key"497.6,220"Removed_Key"Switch`1_2">
+                                    <Switch x:TypeArguments="x:String"Removed_Key"Fill in highest priority IPPAFS Reason if found otherwise Compliant"Removed_Key"Switch - Compliant, CHED, Cert" Expression="[strRoute]"Removed_Key"497.6,348.4"Removed_Key"Switch`1_2">
                                       <Switch.Default>
                                         <AssignRemoved_Key"Assign - mark compliant"Removed_Key"434,82.4"Removed_Key"Assign_45">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPPAFS Reasons")]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPAFFS_Reason")]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
                                             <InArgument x:TypeArguments="x:Object">["Compliant"]</InArgument>
@@ -1788,12 +1821,12 @@ ToList()]</InArgument>
                                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign x:Key="Cert"Removed_Key"Assign - mark Cert"Removed_Key"434,81.6"Removed_Key"Assign_46">
+                                      <Assign x:Key="Cert"Removed_Key"Assign - mark Cert"Removed_Key"434,82.4"Removed_Key"Assign_46">
                                         <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPPAFS Reasons")]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPAFFS_Reason")]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Object">[rowCert("IPPAFS Reasons")]</InArgument>
+                                          <InArgument x:TypeArguments="x:Object">[rowCert("IPAFFS_Reason")]</InArgument>
                                         </Assign.Value>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1801,13 +1834,18 @@ ToList()]</InArgument>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </Assign>
-                                      <Assign x:Key="CHED"Removed_Key"Assign - mark CHED"Removed_Key"200,41.2"Removed_Key"Assign_47">
+                                      <Assign x:Key="CHED"Removed_Key"Assign - mark CHED"Removed_Key"434,82.4"Removed_Key"Assign_47">
                                         <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPPAFS Reasons")]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Object">[currentDataRow("IPAFFS_Reason")]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Object">[rowCHED("IPPAFS Reasons")]</InArgument>
+                                          <InArgument x:TypeArguments="x:Object">[rowCHED("IPAFFS_Reason")]</InArgument>
                                         </Assign.Value>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
                                       </Assign>
                                     </Switch>
                                   </Sequence>
@@ -1831,20 +1869,26 @@ ToList()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
-                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"WHAT IF IPPAFS INCLUDES A PLANT NOT IN ANY CERTIFIFCATE&#xA;This scenario should not happen - adding this here as a just in case"Removed_Key"For Each currentDataRow"Removed_Key"633.6,291.2"Removed_Key"ForEach`1_9" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPPAFS Reasons&quot;).ToString))]">
+                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"WHAT IF IPPAFS INCLUDES A PLANT NOT IN ANY CERTIFIFCATE&#xA;This scenario should not happen - adding this here as a just in case"Removed_Key"For Each currentDataRow"Removed_Key"633.6,357.6"Removed_Key"ForEach`1_9" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
                           </ActivityAction.Argument>
-                          <SequenceRemoved_Key"Body"Removed_Key"416,108"Removed_Key"Sequence_62">
+                          <SequenceRemoved_Key"Body"Removed_Key"416,174.4"Removed_Key"Sequence_62">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Throw Exception="[New BusinessRuleException(&quot;Commodity Found on IPPAFS not Previously found. Please investigate&quot;)]"Removed_Key"382,48"Removed_Key"Throw_1" />
+                            <Throw Exception="[New BusinessRuleException(&quot;Commodity Found on IPPAFS not Previously found. Please investigate&quot;)]"Removed_Key"382,114.4"Removed_Key"Throw_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
                           </Sequence>
                         </ActivityAction>
                       </ui:ForEach.Body>
@@ -1857,7 +1901,7 @@ ToList()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <SequenceRemoved_Key"as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xA;&#xA;1 - get unique list of ippafs reasons&#xA;&#xA;2 - iterate through it&#xA;2a - filter datatble on unique hold reasons&#xA;2b - check relevant boxes&#xA;2c - fill in hold/compliant reason&#xA;2d - display popup"Removed_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"990,3988"Removed_Key"Sequence_73">
+                  <SequenceRemoved_Key"as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xA;&#xA;1 - get unique list of ippafs reasons&#xA;&#xA;2 - iterate through it&#xA;2a - filter datatble on unique hold reasons&#xA;2b - check relevant boxes&#xA;2c - fill in hold/compliant reason&#xA;2d - display popup"Removed_Key"Check all boxes and fill in hold/compliant reason"Removed_Key"990,3929.2"Removed_Key"Sequence_73">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:List(x:Object)" Name="listReasons" />
                     </Sequence.Variables>
@@ -1868,13 +1912,13 @@ ToList()]</InArgument>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <AssignRemoved_Key"Assign - Get untique list of IPPAFS Resons"Removed_Key"722,115.6"Removed_Key"Assign_50">
+                    <AssignRemoved_Key"Assign - Get untique list of IPPAFS_Reason"Removed_Key"722,115.6"Removed_Key"Assign_50">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:List(x:Object)">[listReasons]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="scg:List(x:Object)" xml:space="preserve">[dtWebsite.AsEnumerable().
-Select(Function(r) r("IPPAFS Reasons")).
+Select(Function(r) r("IPAFFS_Reason")).
 Distinct().
 ToList()]</InArgument>
                       </Assign.Value>
@@ -1884,20 +1928,20 @@ ToList()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}"Removed_Key"For Each - iterate through each reason"Removed_Key"722,3604.4"Removed_Key"ForEach`1_10" Values="[listReasons]">
+                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}"Removed_Key"For Each - iterate through each reason"Removed_Key"722,3545.6"Removed_Key"ForEach`1_10" Values="[listReasons]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="IPPAF_Reason" />
                           </ActivityAction.Argument>
-                          <SequenceRemoved_Key"Body - check mark the relavent boxes"Removed_Key"688,3466"Removed_Key"Sequence_74">
+                          <SequenceRemoved_Key"Body - check mark the relavent boxes"Removed_Key"688,3407.2"Removed_Key"Sequence_74">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[listReasons.count = 1]"Removed_Key"If - check all? or check them individually"Removed_Key"654,1905.6"Removed_Key"If_20">
+                            <If Condition="[listReasons.count = 1]"Removed_Key"If - check all? or check them individually"Removed_Key"654,1846.8"Removed_Key"If_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1933,20 +1977,20 @@ ToList()]</InArgument>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <SequenceRemoved_Key"Else"Removed_Key"620,1430.8"Removed_Key"Sequence_76">
+                                <SequenceRemoved_Key"Else"Removed_Key"620,1372"Removed_Key"Sequence_76">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"We want to check all the boxes with the same outcome - this saves time to group them together and reduced the number of times 'Record and select more' needs to be clicked"Removed_Key"For Each currentDataRow"Removed_Key"586,1370.8"Removed_Key"ForEach`1_11" Values="[dtWebsite.Select(&quot;[IPPAFS Reasons] = '&quot; + IPPAF_Reason.ToString + &quot;'&quot;)]">
+                                  <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}"Removed_Key"We want to check all the boxes with the same outcome - this saves time to group them together and reduced the number of times 'Record and select more' needs to be clicked"Removed_Key"For Each currentDataRow"Removed_Key"586,1312"Removed_Key"ForEach`1_11" Values="[dtWebsite.Select(&quot;[IPAFFS_Reason] = '&quot; + IPPAF_Reason.ToString + &quot;'&quot;)]">
                                     <ui:ForEach.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
                                         </ActivityAction.Argument>
-                                        <SequenceRemoved_Key"Body"Removed_Key"552,1187.6"Removed_Key"Sequence_78">
+                                        <SequenceRemoved_Key"Body"Removed_Key"552,1128.8"Removed_Key"Sequence_78">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="ui:UiElement" Name="eleAncestor" />
                                             <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="listChildren" />
@@ -2003,20 +2047,20 @@ ToList()]</InArgument>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:FindChildren>
-                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}"Removed_Key"Search through all decendants of the website datarow selector to find the associated checkbox"Removed_Key"For Each currentUiElement"Removed_Key"518,711.6"Removed_Key"ForEach`1_12" Values="[listChildren]">
+                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}"Removed_Key"Search through all decendants of the website datarow selector to find the associated checkbox"Removed_Key"For Each currentUiElement"Removed_Key"518,652.8"Removed_Key"ForEach`1_12" Values="[listChildren]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="ui:UiElement">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
                                                 </ActivityAction.Argument>
-                                                <SequenceRemoved_Key"Body"Removed_Key"484,528.4"Removed_Key"Sequence_82">
+                                                <SequenceRemoved_Key"Body"Removed_Key"484,469.6"Removed_Key"Sequence_82">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <If Condition="[currentUiElement.Selector.ToString.Contains(&quot;id='checkbox&quot;)]"Removed_Key"If - locate checkbox selector"Removed_Key"450,468.4"Removed_Key"If_21">
+                                                  <If Condition="[currentUiElement.Selector.ToString.Contains(&quot;id='checkbox&quot;)]"Removed_Key"If - locate checkbox selector"Removed_Key"450,409.6"Removed_Key"If_21">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -2040,7 +2084,7 @@ ToList()]</InArgument>
                                                       </Sequence>
                                                     </If.Then>
                                                     <If.Else>
-                                                      <SequenceRemoved_Key"Else"Removed_Key"416,83.6"Removed_Key"Sequence_81">
+                                                      <SequenceRemoved_Key"Else"Removed_Key"416,24.8"Removed_Key"Sequence_81">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
