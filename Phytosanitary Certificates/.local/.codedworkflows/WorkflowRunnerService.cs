@@ -75,23 +75,6 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the Process/Process Transaction.xaml
-        /// </summary>
-        public void Process_Transaction()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Transaction.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Transaction.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Process_Transaction(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Transaction.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
         /// Invokes the Process/Process Subflows/Extract Information.xaml
         /// </summary>
         public (string out_strPhytoCertNo, string out_strExporterAddress, string out_strConsignee, string out_strAdditionalDeclarions, string out_strIssueDate, System.Data.DataTable out_dtCommodityLines, string out_strPlaceOfOrigin) Extract_Information(string in_PhytoCertLocation, string in_pageRange)
@@ -108,23 +91,6 @@ namespace PhytosanitaryCertificates
         {
             var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Extract Information.xaml", new Dictionary<string, object>{{"in_PhytoCertLocation", in_PhytoCertLocation}, {"in_pageRange", in_pageRange}}, default, isolated, default, GetAssemblyName());
             return ((string)result["out_strPhytoCertNo"], (string)result["out_strExporterAddress"], (string)result["out_strConsignee"], (string)result["out_strAdditionalDeclarions"], (string)result["out_strIssueDate"], (System.Data.DataTable)result["out_dtCommodityLines"], (string)result["out_strPlaceOfOrigin"]);
-        }
-
-        /// <summary>
-        /// Invokes the Main.xaml
-        /// </summary>
-        public void Main(bool in_boolUnattended)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Main.xaml", new Dictionary<string, object>{{"in_boolUnattended", in_boolUnattended}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Main.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Main(bool in_boolUnattended, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Main.xaml", new Dictionary<string, object>{{"in_boolUnattended", in_boolUnattended}}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -147,44 +113,6 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the Framework/GetTransactionData.xaml
-        /// </summary>
-        public bool GetTransactionData(int in_TransactionNumber, string in_strProcessType, bool in_boolContinue)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\GetTransactionData.xaml", new Dictionary<string, object>{{"in_TransactionNumber", in_TransactionNumber}, {"in_strProcessType", in_strProcessType}, {"in_boolContinue", in_boolContinue}}, default, default, default, GetAssemblyName());
-            return (bool)result["out_boolLastTransaction"];
-        }
-
-        /// <summary>
-        /// Invokes the Framework/GetTransactionData.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public bool GetTransactionData(int in_TransactionNumber, string in_strProcessType, bool in_boolContinue, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\GetTransactionData.xaml", new Dictionary<string, object>{{"in_TransactionNumber", in_TransactionNumber}, {"in_strProcessType", in_strProcessType}, {"in_boolContinue", in_boolContinue}}, default, isolated, default, GetAssemblyName());
-            return (bool)result["out_boolLastTransaction"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check No of Certs.xaml
-        /// </summary>
-        public (System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> out_dictCertPageRanges, System.Data.DataTable io_dtOnHoldReasons) Check_No_of_Certs(string in_IPAFFSCertificateReference, string in_PhytoCertFilepath, string in_strCHEDPPReference, System.Data.DataTable io_dtOnHoldReasons)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check No of Certs.xaml", new Dictionary<string, object>{{"in_IPAFFSCertificateReference", in_IPAFFSCertificateReference}, {"in_PhytoCertFilepath", in_PhytoCertFilepath}, {"in_strCHEDPPReference", in_strCHEDPPReference}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, default, default, GetAssemblyName());
-            return ((System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>>)result["out_dictCertPageRanges"], (System.Data.DataTable)result["io_dtOnHoldReasons"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Check No of Certs.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public (System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> out_dictCertPageRanges, System.Data.DataTable io_dtOnHoldReasons) Check_No_of_Certs(string in_IPAFFSCertificateReference, string in_PhytoCertFilepath, string in_strCHEDPPReference, System.Data.DataTable io_dtOnHoldReasons, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check No of Certs.xaml", new Dictionary<string, object>{{"in_IPAFFSCertificateReference", in_IPAFFSCertificateReference}, {"in_PhytoCertFilepath", in_PhytoCertFilepath}, {"in_strCHEDPPReference", in_strCHEDPPReference}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, isolated, default, GetAssemblyName());
-            return ((System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>>)result["out_dictCertPageRanges"], (System.Data.DataTable)result["io_dtOnHoldReasons"]);
-        }
-
-        /// <summary>
         /// Invokes the Framework/InitAllSettings.xaml
         /// </summary>
         public System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential> InitAllSettings(string in_OrchestratorFolders, bool in_RetrieveCredentials)
@@ -201,163 +129,6 @@ namespace PhytosanitaryCertificates
         {
             var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllSettings.xaml", new Dictionary<string, object>{{"in_OrchestratorFolders", in_OrchestratorFolders}, {"in_RetrieveCredentials", in_RetrieveCredentials}}, default, isolated, default, GetAssemblyName());
             return (System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential>)result["out_Credentials"];
-        }
-
-        /// <summary>
-        /// Invokes the Framework/NetworkConnectivityTool.xaml
-        /// </summary>
-        public void NetworkConnectivityTool()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\NetworkConnectivityTool.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/NetworkConnectivityTool.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void NetworkConnectivityTool(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\NetworkConnectivityTool.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Sequence.xaml
-        /// </summary>
-        public void Sequence()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Sequence.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Sequence.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Sequence(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Sequence.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Pause Point (Check Extracted Info).xaml
-        /// </summary>
-        public void Pause_Point__Check_Extracted_Info_(string in_strExporterAddress, string in_strConsignee, string in_strPhytoCertNo, string in_strPlaceOfOrigin, string in_strIssueDate, string in_strAdditionalDeclarions, System.Data.DataTable in_dtCommodityLines, System.Collections.Generic.Dictionary<string, string> in_dictApplicationInfo, System.Data.DataTable in_dtIPAFFSCommodityInfo, string in_FormattedCertNo, string in_strAttachmentFilepath)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Pause Point (Check Extracted Info).xaml", new Dictionary<string, object>{{"in_strExporterAddress", in_strExporterAddress}, {"in_strConsignee", in_strConsignee}, {"in_strPhytoCertNo", in_strPhytoCertNo}, {"in_strPlaceOfOrigin", in_strPlaceOfOrigin}, {"in_strIssueDate", in_strIssueDate}, {"in_strAdditionalDeclarions", in_strAdditionalDeclarions}, {"in_dtCommodityLines", in_dtCommodityLines}, {"in_dictApplicationInfo", in_dictApplicationInfo}, {"in_dtIPAFFSCommodityInfo", in_dtIPAFFSCommodityInfo}, {"in_FormattedCertNo", in_FormattedCertNo}, {"in_strAttachmentFilepath", in_strAttachmentFilepath}}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Pause Point (Check Extracted Info).xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void Pause_Point__Check_Extracted_Info_(string in_strExporterAddress, string in_strConsignee, string in_strPhytoCertNo, string in_strPlaceOfOrigin, string in_strIssueDate, string in_strAdditionalDeclarions, System.Data.DataTable in_dtCommodityLines, System.Collections.Generic.Dictionary<string, string> in_dictApplicationInfo, System.Data.DataTable in_dtIPAFFSCommodityInfo, string in_FormattedCertNo, string in_strAttachmentFilepath, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Pause Point (Check Extracted Info).xaml", new Dictionary<string, object>{{"in_strExporterAddress", in_strExporterAddress}, {"in_strConsignee", in_strConsignee}, {"in_strPhytoCertNo", in_strPhytoCertNo}, {"in_strPlaceOfOrigin", in_strPlaceOfOrigin}, {"in_strIssueDate", in_strIssueDate}, {"in_strAdditionalDeclarions", in_strAdditionalDeclarions}, {"in_dtCommodityLines", in_dtCommodityLines}, {"in_dictApplicationInfo", in_dictApplicationInfo}, {"in_dtIPAFFSCommodityInfo", in_dtIPAFFSCommodityInfo}, {"in_FormattedCertNo", in_FormattedCertNo}, {"in_strAttachmentFilepath", in_strAttachmentFilepath}}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Validate QR Code.xaml
-        /// </summary>
-        public System.Data.DataTable Validate_QR_Code(string in_PhytoCertLocation, string in_ApplicationRef, string in_PhytoCertNumber, int in_intQRPageNumber, System.Data.DataTable io_dtOnHoldReasons)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Validate QR Code.xaml", new Dictionary<string, object>{{"in_PhytoCertLocation", in_PhytoCertLocation}, {"in_ApplicationRef", in_ApplicationRef}, {"in_PhytoCertNumber", in_PhytoCertNumber}, {"in_intQRPageNumber", in_intQRPageNumber}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, default, default, GetAssemblyName());
-            return (System.Data.DataTable)result["io_dtOnHoldReasons"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/Validate QR Code.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public System.Data.DataTable Validate_QR_Code(string in_PhytoCertLocation, string in_ApplicationRef, string in_PhytoCertNumber, int in_intQRPageNumber, System.Data.DataTable io_dtOnHoldReasons, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Validate QR Code.xaml", new Dictionary<string, object>{{"in_PhytoCertLocation", in_PhytoCertLocation}, {"in_ApplicationRef", in_ApplicationRef}, {"in_PhytoCertNumber", in_PhytoCertNumber}, {"in_intQRPageNumber", in_intQRPageNumber}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, isolated, default, GetAssemblyName());
-            return (System.Data.DataTable)result["io_dtOnHoldReasons"];
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/AD/DataVerse.xaml
-        /// </summary>
-        public (Newtonsoft.Json.Linq.JObject out_jsonRegulationResponse, System.Data.DataTable io_dtCommodityLines) DataVerse(System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential> in_Credentials, System.Data.DataTable io_dtCommodityLines)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\AD\DataVerse.xaml", new Dictionary<string, object>{{"in_Credentials", in_Credentials}, {"io_dtCommodityLines", io_dtCommodityLines}}, default, default, default, GetAssemblyName());
-            return ((Newtonsoft.Json.Linq.JObject)result["out_jsonRegulationResponse"], (System.Data.DataTable)result["io_dtCommodityLines"]);
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/AD/DataVerse.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public (Newtonsoft.Json.Linq.JObject out_jsonRegulationResponse, System.Data.DataTable io_dtCommodityLines) DataVerse(System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential> in_Credentials, System.Data.DataTable io_dtCommodityLines, System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\AD\DataVerse.xaml", new Dictionary<string, object>{{"in_Credentials", in_Credentials}, {"io_dtCommodityLines", io_dtCommodityLines}}, default, isolated, default, GetAssemblyName());
-            return ((Newtonsoft.Json.Linq.JObject)result["out_jsonRegulationResponse"], (System.Data.DataTable)result["io_dtCommodityLines"]);
-        }
-
-        /// <summary>
-        /// Invokes the Framework/CloseAllApplications.xaml
-        /// </summary>
-        public void CloseAllApplications()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\CloseAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Framework/CloseAllApplications.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void CloseAllApplications(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\CloseAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/blue part 2/TEST - MS dynamics.xaml
-        /// </summary>
-        public void TEST___MS_dynamics()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - MS dynamics.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/blue part 2/TEST - MS dynamics.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void TEST___MS_dynamics(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - MS dynamics.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/TestCase_CompareIPAFFSInformation.xaml
-        /// </summary>
-        public void TestCase_CompareIPAFFSInformation()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\TestCase_CompareIPAFFSInformation.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/TestCase_CompareIPAFFSInformation.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void TestCase_CompareIPAFFSInformation(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\TestCase_CompareIPAFFSInformation.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/blue part 2/TEST - IPPAFFS Data Submission.xaml
-        /// </summary>
-        public void TEST___IPPAFFS_Data_Submission()
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - IPPAFFS Data Submission.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
-        }
-
-        /// <summary>
-        /// Invokes the Process/Process Subflows/blue part 2/TEST - IPPAFFS Data Submission.xaml
-        /// </summary>
-		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void TEST___IPPAFFS_Data_Submission(System.Boolean isolated)
-        {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - IPPAFFS Data Submission.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -380,6 +151,220 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
+        /// Invokes the Framework/TakeScreenshot.xaml
+        /// </summary>
+        public string TakeScreenshot(string in_Folder, string io_FilePath)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\TakeScreenshot.xaml", new Dictionary<string, object>{{"in_Folder", in_Folder}, {"io_FilePath", io_FilePath}}, default, default, default, GetAssemblyName());
+            return (string)result["io_FilePath"];
+        }
+
+        /// <summary>
+        /// Invokes the Framework/TakeScreenshot.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public string TakeScreenshot(string in_Folder, string io_FilePath, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\TakeScreenshot.xaml", new Dictionary<string, object>{{"in_Folder", in_Folder}, {"io_FilePath", io_FilePath}}, default, isolated, default, GetAssemblyName());
+            return (string)result["io_FilePath"];
+        }
+
+        /// <summary>
+        /// Invokes the Framework/NetworkConnectivityTool.xaml
+        /// </summary>
+        public void NetworkConnectivityTool()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\NetworkConnectivityTool.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/NetworkConnectivityTool.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void NetworkConnectivityTool(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\NetworkConnectivityTool.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/KillAllProcesses.xaml
+        /// </summary>
+        public void KillAllProcesses()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/KillAllProcesses.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void KillAllProcesses(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/GetTransactionData.xaml
+        /// </summary>
+        public bool GetTransactionData(int in_TransactionNumber, string in_strProcessType, bool in_boolContinue)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\GetTransactionData.xaml", new Dictionary<string, object>{{"in_TransactionNumber", in_TransactionNumber}, {"in_strProcessType", in_strProcessType}, {"in_boolContinue", in_boolContinue}}, default, default, default, GetAssemblyName());
+            return (bool)result["out_boolLastTransaction"];
+        }
+
+        /// <summary>
+        /// Invokes the Framework/GetTransactionData.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public bool GetTransactionData(int in_TransactionNumber, string in_strProcessType, bool in_boolContinue, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\GetTransactionData.xaml", new Dictionary<string, object>{{"in_TransactionNumber", in_TransactionNumber}, {"in_strProcessType", in_strProcessType}, {"in_boolContinue", in_boolContinue}}, default, isolated, default, GetAssemblyName());
+            return (bool)result["out_boolLastTransaction"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/AD/DataVerse.xaml
+        /// </summary>
+        public (Newtonsoft.Json.Linq.JObject out_jsonRegulationResponse, System.Data.DataTable io_dtCommodityLines) DataVerse(System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential> in_Credentials, System.Data.DataTable io_dtCommodityLines)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\AD\DataVerse.xaml", new Dictionary<string, object>{{"in_Credentials", in_Credentials}, {"io_dtCommodityLines", io_dtCommodityLines}}, default, default, default, GetAssemblyName());
+            return ((Newtonsoft.Json.Linq.JObject)result["out_jsonRegulationResponse"], (System.Data.DataTable)result["io_dtCommodityLines"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/AD/DataVerse.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public (Newtonsoft.Json.Linq.JObject out_jsonRegulationResponse, System.Data.DataTable io_dtCommodityLines) DataVerse(System.Collections.Generic.Dictionary<string, System.Management.Automation.PSCredential> in_Credentials, System.Data.DataTable io_dtCommodityLines, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\AD\DataVerse.xaml", new Dictionary<string, object>{{"in_Credentials", in_Credentials}, {"io_dtCommodityLines", io_dtCommodityLines}}, default, isolated, default, GetAssemblyName());
+            return ((Newtonsoft.Json.Linq.JObject)result["out_jsonRegulationResponse"], (System.Data.DataTable)result["io_dtCommodityLines"]);
+        }
+
+        /// <summary>
+        /// Invokes the TEST2.xaml
+        /// </summary>
+        public void TEST2()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST2.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the TEST2.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void TEST2(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST2.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check No of Certs.xaml
+        /// </summary>
+        public (System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> out_dictCertPageRanges, System.Data.DataTable io_dtOnHoldReasons) Check_No_of_Certs(string in_IPAFFSCertificateReference, string in_PhytoCertFilepath, string in_strCHEDPPReference, System.Data.DataTable io_dtOnHoldReasons)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check No of Certs.xaml", new Dictionary<string, object>{{"in_IPAFFSCertificateReference", in_IPAFFSCertificateReference}, {"in_PhytoCertFilepath", in_PhytoCertFilepath}, {"in_strCHEDPPReference", in_strCHEDPPReference}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, default, default, GetAssemblyName());
+            return ((System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>>)result["out_dictCertPageRanges"], (System.Data.DataTable)result["io_dtOnHoldReasons"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Check No of Certs.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public (System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>> out_dictCertPageRanges, System.Data.DataTable io_dtOnHoldReasons) Check_No_of_Certs(string in_IPAFFSCertificateReference, string in_PhytoCertFilepath, string in_strCHEDPPReference, System.Data.DataTable io_dtOnHoldReasons, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Check No of Certs.xaml", new Dictionary<string, object>{{"in_IPAFFSCertificateReference", in_IPAFFSCertificateReference}, {"in_PhytoCertFilepath", in_PhytoCertFilepath}, {"in_strCHEDPPReference", in_strCHEDPPReference}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, isolated, default, GetAssemblyName());
+            return ((System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<int>>)result["out_dictCertPageRanges"], (System.Data.DataTable)result["io_dtOnHoldReasons"]);
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/TestCase_CompareIPAFFSInformation.xaml
+        /// </summary>
+        public void TestCase_CompareIPAFFSInformation()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\TestCase_CompareIPAFFSInformation.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/TestCase_CompareIPAFFSInformation.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void TestCase_CompareIPAFFSInformation(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\TestCase_CompareIPAFFSInformation.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Validate QR Code.xaml
+        /// </summary>
+        public System.Data.DataTable Validate_QR_Code(string in_PhytoCertLocation, string in_ApplicationRef, string in_PhytoCertNumber, int in_intQRPageNumber, System.Data.DataTable io_dtOnHoldReasons)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Validate QR Code.xaml", new Dictionary<string, object>{{"in_PhytoCertLocation", in_PhytoCertLocation}, {"in_ApplicationRef", in_ApplicationRef}, {"in_PhytoCertNumber", in_PhytoCertNumber}, {"in_intQRPageNumber", in_intQRPageNumber}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, default, default, GetAssemblyName());
+            return (System.Data.DataTable)result["io_dtOnHoldReasons"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/Validate QR Code.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public System.Data.DataTable Validate_QR_Code(string in_PhytoCertLocation, string in_ApplicationRef, string in_PhytoCertNumber, int in_intQRPageNumber, System.Data.DataTable io_dtOnHoldReasons, System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Validate QR Code.xaml", new Dictionary<string, object>{{"in_PhytoCertLocation", in_PhytoCertLocation}, {"in_ApplicationRef", in_ApplicationRef}, {"in_PhytoCertNumber", in_PhytoCertNumber}, {"in_intQRPageNumber", in_intQRPageNumber}, {"io_dtOnHoldReasons", io_dtOnHoldReasons}}, default, isolated, default, GetAssemblyName());
+            return (System.Data.DataTable)result["io_dtOnHoldReasons"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Transaction.xaml
+        /// </summary>
+        public void Process_Transaction()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Transaction.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Transaction.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void Process_Transaction(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Transaction.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/blue part 2/TEST - IPAFFS Data Submission.xaml
+        /// </summary>
+        public void TEST___IPAFFS_Data_Submission()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - IPAFFS Data Submission.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/blue part 2/TEST - IPAFFS Data Submission.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void TEST___IPAFFS_Data_Submission(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - IPAFFS Data Submission.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/CloseAllApplications.xaml
+        /// </summary>
+        public void CloseAllApplications()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\CloseAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Framework/CloseAllApplications.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void CloseAllApplications(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\CloseAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+        }
+
+        /// <summary>
         /// Invokes the Process/Process Subflows/blue part 2/MS Dynamics.xaml
         /// </summary>
         public System.Data.DataTable MS_Dynamics(System.DateTime in_dteTimeStamp, System.Data.DataTable io_dtOnHoldReasons)
@@ -399,22 +384,20 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the Framework/TakeScreenshot.xaml
+        /// Invokes the Process/Process Subflows/Pause Point (Check Extracted Info).xaml
         /// </summary>
-        public string TakeScreenshot(string in_Folder, string io_FilePath)
+        public void Pause_Point__Check_Extracted_Info_(string in_strExporterAddress, string in_strConsignee, string in_strPhytoCertNo, string in_strPlaceOfOrigin, string in_strIssueDate, string in_strAdditionalDeclarions, System.Data.DataTable in_dtCommodityLines, System.Collections.Generic.Dictionary<string, string> in_dictApplicationInfo, System.Data.DataTable in_dtIPAFFSCommodityInfo, string in_FormattedCertNo, string in_strAttachmentFilepath)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\TakeScreenshot.xaml", new Dictionary<string, object>{{"in_Folder", in_Folder}, {"io_FilePath", io_FilePath}}, default, default, default, GetAssemblyName());
-            return (string)result["io_FilePath"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Pause Point (Check Extracted Info).xaml", new Dictionary<string, object>{{"in_strExporterAddress", in_strExporterAddress}, {"in_strConsignee", in_strConsignee}, {"in_strPhytoCertNo", in_strPhytoCertNo}, {"in_strPlaceOfOrigin", in_strPlaceOfOrigin}, {"in_strIssueDate", in_strIssueDate}, {"in_strAdditionalDeclarions", in_strAdditionalDeclarions}, {"in_dtCommodityLines", in_dtCommodityLines}, {"in_dictApplicationInfo", in_dictApplicationInfo}, {"in_dtIPAFFSCommodityInfo", in_dtIPAFFSCommodityInfo}, {"in_FormattedCertNo", in_FormattedCertNo}, {"in_strAttachmentFilepath", in_strAttachmentFilepath}}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Framework/TakeScreenshot.xaml
+        /// Invokes the Process/Process Subflows/Pause Point (Check Extracted Info).xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public string TakeScreenshot(string in_Folder, string io_FilePath, System.Boolean isolated)
+        public void Pause_Point__Check_Extracted_Info_(string in_strExporterAddress, string in_strConsignee, string in_strPhytoCertNo, string in_strPlaceOfOrigin, string in_strIssueDate, string in_strAdditionalDeclarions, System.Data.DataTable in_dtCommodityLines, System.Collections.Generic.Dictionary<string, string> in_dictApplicationInfo, System.Data.DataTable in_dtIPAFFSCommodityInfo, string in_FormattedCertNo, string in_strAttachmentFilepath, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\TakeScreenshot.xaml", new Dictionary<string, object>{{"in_Folder", in_Folder}, {"io_FilePath", io_FilePath}}, default, isolated, default, GetAssemblyName());
-            return (string)result["io_FilePath"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\Pause Point (Check Extracted Info).xaml", new Dictionary<string, object>{{"in_strExporterAddress", in_strExporterAddress}, {"in_strConsignee", in_strConsignee}, {"in_strPhytoCertNo", in_strPhytoCertNo}, {"in_strPlaceOfOrigin", in_strPlaceOfOrigin}, {"in_strIssueDate", in_strIssueDate}, {"in_strAdditionalDeclarions", in_strAdditionalDeclarions}, {"in_dtCommodityLines", in_dtCommodityLines}, {"in_dictApplicationInfo", in_dictApplicationInfo}, {"in_dtIPAFFSCommodityInfo", in_dtIPAFFSCommodityInfo}, {"in_FormattedCertNo", in_FormattedCertNo}, {"in_strAttachmentFilepath", in_strAttachmentFilepath}}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -437,20 +420,20 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the Framework/InitAllApplications.xaml
+        /// Invokes the Main.xaml
         /// </summary>
-        public void InitAllApplications()
+        public void Main(bool in_boolUnattended)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Main.xaml", new Dictionary<string, object>{{"in_boolUnattended", in_boolUnattended}}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Framework/InitAllApplications.xaml
+        /// Invokes the Main.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void InitAllApplications(System.Boolean isolated)
+        public void Main(bool in_boolUnattended, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Main.xaml", new Dictionary<string, object>{{"in_boolUnattended", in_boolUnattended}}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -473,20 +456,20 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the TEST.xaml
+        /// Invokes the Framework/InitAllApplications.xaml
         /// </summary>
-        public void TEST()
+        public void InitAllApplications()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the TEST.xaml
+        /// Invokes the Framework/InitAllApplications.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void TEST(System.Boolean isolated)
+        public void InitAllApplications(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\InitAllApplications.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -509,20 +492,39 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the TEST2.xaml
+        /// Invokes the GlobalExceptionHandler.xaml
         /// </summary>
-        public void TEST2()
+        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST2.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, default, default, GetAssemblyName());
+            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
         }
 
         /// <summary>
-        /// Invokes the TEST2.xaml
+        /// Invokes the GlobalExceptionHandler.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void TEST2(System.Boolean isolated)
+        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo, System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST2.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, isolated, default, GetAssemblyName());
+            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/blue part 2/TEST - MS dynamics.xaml
+        /// </summary>
+        public void TEST___MS_dynamics()
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - MS dynamics.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+        }
+
+        /// <summary>
+        /// Invokes the Process/Process Subflows/blue part 2/TEST - MS dynamics.xaml
+        /// </summary>
+		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
+        public void TEST___MS_dynamics(System.Boolean isolated)
+        {
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Process\Process Subflows\blue part 2\TEST - MS dynamics.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -545,20 +547,20 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the Framework/KillAllProcesses.xaml
+        /// Invokes the Sequence.xaml
         /// </summary>
-        public void KillAllProcesses()
+        public void Sequence()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Sequence.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the Framework/KillAllProcesses.xaml
+        /// Invokes the Sequence.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public void KillAllProcesses(System.Boolean isolated)
+        public void Sequence(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"Framework\KillAllProcesses.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"Sequence.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         /// <summary>
@@ -579,22 +581,20 @@ namespace PhytosanitaryCertificates
         }
 
         /// <summary>
-        /// Invokes the GlobalExceptionHandler.xaml
+        /// Invokes the TEST.xaml
         /// </summary>
-        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo)
+        public void TEST()
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, default, default, GetAssemblyName());
-            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST.xaml", new Dictionary<string, object>{}, default, default, default, GetAssemblyName());
         }
 
         /// <summary>
-        /// Invokes the GlobalExceptionHandler.xaml
+        /// Invokes the TEST.xaml
         /// </summary>
 		/// <param name="isolated">Indicates whether to isolate executions (run them within a different process)</param>
-        public UiPath.Activities.Contracts.ErrorAction GlobalExceptionHandler(UiPath.Activities.Contracts.ExceptionHandlerArgs errorInfo, System.Boolean isolated)
+        public void TEST(System.Boolean isolated)
         {
-            var result = _services.WorkflowInvocationService.RunWorkflow(@"GlobalExceptionHandler.xaml", new Dictionary<string, object>{{"errorInfo", errorInfo}}, default, isolated, default, GetAssemblyName());
-            return (UiPath.Activities.Contracts.ErrorAction)result["result"];
+            var result = _services.WorkflowInvocationService.RunWorkflow(@"TEST.xaml", new Dictionary<string, object>{}, default, isolated, default, GetAssemblyName());
         }
 
         private string GetAssemblyName()
