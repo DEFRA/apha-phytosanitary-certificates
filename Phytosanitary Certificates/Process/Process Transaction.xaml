@@ -150,7 +150,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"1569.142857142857,1067.4285714285713"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"892.8000000000001,472.8400000000001"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -165,7 +165,7 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">565,55</av:Point>
-        <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
+        <av:Size x:Key="ShapeSize">50,50</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">590,105 590,155</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         <x:Double x:Key="Height">1336.6000000000001</x:Double>
@@ -180,8 +180,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">560,510</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
-          <av:PointCollection x:Key="TrueConnector">560,540 469.85714285714283,540 469.85714285714283,635</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">620,540 649.8571428571429,540 649.8571428571429,745 589.8571428571429,745 589.8571428571429,775</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">560,540 470,540 470,635</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">620,540 650,540 650,745 590,745 590,775</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -189,11 +189,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">415,635</av:Point>
-              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+              <av:Size x:Key="ShapeSize">110,70</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">470,705 470,735 590,735 590,775</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"Pause Point #2"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_50">
+          <SequenceRemoved_Key"Pause Point #2"Removed_Key"110,70"Removed_Key"Sequence_50">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="booDis" />
               <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
@@ -276,38 +276,47 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">535,775</av:Point>
-                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row - Extract Data &amp; Validate QR Code"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row - Extract Data &amp; Validate QR Code"Removed_Key"586.8,2833.2"Removed_Key"ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentAttachment" />
                     </ActivityAction.Argument>
-                    <SequenceRemoved_Key"Body"Removed_Key"553.1428571428571,2592.5714285714284"Removed_Key"Sequence_59">
+                    <SequenceRemoved_Key"Body"Removed_Key"552.8,2666.8"Removed_Key"Sequence_59">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" Name="dictCertPageRanges" />
                         <Variable x:TypeArguments="x:String" Name="strAttachmentFilepath" />
+                        <Variable x:TypeArguments="x:String" Name="strNewFileName" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"518.8571428571429,177.71428571428572"Removed_Key"LogMessage_1" Level="Info" Message="[&quot;Attempting to rename file to: &quot; + g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment(&quot;Document_Reference&quot;).ToString]" />
-                      <ui:RenameFileXRemoved_Key"** Rename File **" FilePath="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment.Item(&quot;Attachments&quot;).ToString]"Removed_Key"518.8571428571429,182.28571428571428"Removed_Key"RenameFileX_1" KeepExtension="True" NewName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment(&quot;Document_Reference&quot;).ToString + &quot;.pdf&quot;]" />
-                      <AssignRemoved_Key"Assign strAttachmentFilepath"Removed_Key"518.8571428571429,117.14285714285714"Removed_Key"Assign_32">
+                      <AssignRemoved_Key"Assign new file name and remove special characters"Removed_Key"518.8,114.4"Removed_Key"Assign_33">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strNewFileName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars()))+".pdf"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"518.8,175.6"Removed_Key"LogMessage_1" Level="Info" Message="[&quot;Attempting to rename file from &quot; + g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment.Item(&quot;Attachments&quot;).ToString + &quot; to: &quot; + g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+strNewFileName]" />
+                      <ui:RenameFileXRemoved_Key"** Rename File **" FilePath="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment.Item(&quot;Attachments&quot;).ToString]"Removed_Key"518.8,180"Removed_Key"RenameFileX_1" KeepExtension="True" NewName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+strNewFileName]" />
+                      <AssignRemoved_Key"Assign strAttachmentFilepath"Removed_Key"518.8,114.4"Removed_Key"Assign_32">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strAttachmentFilepath]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[g_Config("AttachmentsFilepath").ToString+"\"+CurrentAttachment("Document_Reference").ToString + ".pdf"]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[g_Config("AttachmentsFilepath").ToString+"\"+strNewFileName]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"518.8571428571429,177.71428571428572"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;File renamed to: &quot; + strAttachmentFilepath]" />
-                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"518.8571428571429,86.28571428571429"Removed_Key"CommentOut_20">
+                      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"518.8,175.6"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;File renamed to: &quot; + strAttachmentFilepath]" />
+                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"518.8,56.8"Removed_Key"CommentOut_20">
                         <ui:CommentOut.Body>
                           <SequenceRemoved_Key"Ignored Activities"Removed_Key"468.57142857142856,285.14285714285717"Removed_Key"Sequence_88">
                             <sap:WorkflowViewStateService.ViewState>
@@ -340,7 +349,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <If Condition="[NOT(strAttachmentFilepath.ToLower.Contains(&quot;.pdf&quot;))]"Removed_Key"Not a PDF File?"Removed_Key"518.8571428571429,438.85714285714283"Removed_Key"If_13">
+                      <If Condition="[NOT(strAttachmentFilepath.ToLower.Contains(&quot;.pdf&quot;))]"Removed_Key"Not a PDF File?"Removed_Key"518.8,437.6"Removed_Key"If_13">
                         <If.Then>
                           <SequenceRemoved_Key"Then"Removed_Key"416,175.42857142857142"Removed_Key"Sequence_79">
                             <sap:WorkflowViewStateService.ViewState>
@@ -466,11 +475,11 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">535,895</av:Point>
-                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                      <av:Size x:Key="ShapeSize">110,70</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">590,965 590,1010</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Compare IPAFFS Information - Invoke Workflow File (Process\Process Subflows\Compare IPAFFS Information.xaml)"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\Compare IPAFFS Information.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"Compare IPAFFS Information - Invoke Workflow File (Process\Process Subflows\Compare IPAFFS Information.xaml)"Removed_Key"110,70"Removed_Key"InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\Compare IPAFFS Information.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_ApplicationRef">[strCHEDPPReference]</InArgument>
@@ -489,8 +498,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">560,1010</av:Point>
                           <av:Size x:Key="ShapeSize">60,60</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">560,1040 469.8,1040 469.8,1155</av:PointCollection>
-                          <av:PointCollection x:Key="FalseConnector">620,1040 650,1040 650,1309.8 644.6,1309.8</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">560,1040 470,1040 470,1155</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">620,1040 650,1040 650,1310 645,1310</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
@@ -498,11 +507,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">415,1155</av:Point>
-                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                              <av:Size x:Key="ShapeSize">110,70</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">470,1225 470,1310 535,1310</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <SequenceRemoved_Key"Pause Point #4"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_108">
+                          <SequenceRemoved_Key"Pause Point #4"Removed_Key"110,70"Removed_Key"Sequence_108">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="booDis" />
                               <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
@@ -592,14 +601,19 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">535,1275</av:Point>
-                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">590,1345 590,1395</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"CommentOut_29">
+                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_29">
                                 <ui:CommentOut.Body>
-                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_156">
-                                    <SequenceRemoved_Key"Orange - AD Declarations Analysis"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_155">
+                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"774,3876.8"Removed_Key"Sequence_156">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <SequenceRemoved_Key"Orange - AD Declarations Analysis"Removed_Key"740,3816.8"Removed_Key"Sequence_155">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="scg:List(x:String)" Name="listCerts" />
                                       </Sequence.Variables>
@@ -800,11 +814,11 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">535,1395</av:Point>
-                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
                                       <av:PointCollection x:Key="ConnectorLocation">590,1465 590,1515</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"CommentOut_28">
+                                  <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_28">
                                     <ui:CommentOut.Body>
                                       <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_154">
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"IPPAFS Data Submission"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Process\Process Subflows\blue part 2\IPAFFS Data Submission.xaml">
@@ -826,10 +840,10 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">535,1515</av:Point>
-                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"CommentOut_27">
+                                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_27">
                                         <ui:CommentOut.Body>
                                           <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,259.2"Removed_Key"Sequence_149">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -878,11 +892,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,275</av:Point>
-          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">590,345 590,395</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Navigate Dynamics &amp; Assign CHEDPP Record"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_116">
+      <SequenceRemoved_Key"Navigate Dynamics &amp; Assign CHEDPP Record"Removed_Key"110,70"Removed_Key"Sequence_116">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtWorkOrderTasks" />
         </Sequence.Variables>
@@ -1259,11 +1273,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">535,395</av:Point>
-              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">589.8571428571429,464.7142857142857 589.8571428571429,494.7142857142857 590,494.7142857142857 590,510</av:PointCollection>
+              <av:Size x:Key="ShapeSize">110,70</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_19">
+          <SequenceRemoved_Key"Extract IPAFFs Info"Removed_Key"110,70"Removed_Key"Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2068,11 +2082,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,155</av:Point>
-          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">590,225 590,275</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <SequenceRemoved_Key"Cleardown Folders &amp; Initialise Variables"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"Sequence_58">
+      <SequenceRemoved_Key"Cleardown Folders &amp; Initialise Variables"Removed_Key"110,70"Removed_Key"Sequence_58">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
