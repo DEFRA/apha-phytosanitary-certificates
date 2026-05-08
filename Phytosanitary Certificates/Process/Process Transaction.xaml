@@ -150,7 +150,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"892.8000000000001,472.8400000000001"Removed_Key"Flowchart_1">
+  <FlowchartRemoved_Key"Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. "Removed_Key"Process Transaction"Removed_Key"902.8000000000001,402.84000000000003"Removed_Key"Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -280,7 +280,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row - Extract Data &amp; Validate QR Code"Removed_Key"586.8,2833.2"Removed_Key"ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]"Removed_Key"For Each Certificate Row - Extract Data &amp; Validate QR Code"Removed_Key"110,70"Removed_Key"ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
@@ -605,15 +605,10 @@
                                   <av:PointCollection x:Key="ConnectorLocation">590,1345 590,1395</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_29">
+                              <ui:CommentOutRemoved_Key"ORange"Removed_Key"110,70"Removed_Key"CommentOut_30">
                                 <ui:CommentOut.Body>
-                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"774,3876.8"Removed_Key"Sequence_156">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <SequenceRemoved_Key"Orange - AD Declarations Analysis"Removed_Key"740,3816.8"Removed_Key"Sequence_155">
+                                  <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_158">
+                                    <SequenceRemoved_Key"Orange - AD Declarations Analysis"Removed_Key"110,70"Removed_Key"Sequence_157">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="scg:List(x:String)" Name="listCerts" />
                                       </Sequence.Variables>
@@ -647,13 +642,13 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:AddDataColumn>
-                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each CertNo"Removed_Key"706,3162.4"Removed_Key"ForEach`1_2" Values="[listCerts]">
+                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each CertNo"Removed_Key"706,3027.2"Removed_Key"ForEach`1_2" Values="[listCerts]">
                                         <ui:ForEach.Body>
                                           <ActivityAction x:TypeArguments="x:String">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="x:String" Name="CertNo" />
                                             </ActivityAction.Argument>
-                                            <SequenceRemoved_Key"Body"Removed_Key"672,3024"Removed_Key"Sequence_131">
+                                            <SequenceRemoved_Key"Body"Removed_Key"672,2888.8"Removed_Key"Sequence_131">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="sd1:DataTable" Name="dtOrangeCommidtyLines" />
                                                 <Variable x:TypeArguments="x:String" Name="strSection11" />
@@ -681,7 +676,7 @@
                                                   <InArgument x:TypeArguments="scg:List(x:String)">[System.IO.Directory.GetFiles(GlobalVariablesNamespace.GlobalVariables.g_Config("AttachmentsFilepath").ToString(), "*"+CertNo+".pdf").ToList()]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Switch x:TypeArguments="x:Int32"Removed_Key"Switch - double check pdf file count" Expression="[listFiles.Count]"Removed_Key"638,332.8"Removed_Key"Switch`1_1">
+                                              <Switch x:TypeArguments="x:Int32"Removed_Key"Switch - double check pdf file count" Expression="[listFiles.Count]"Removed_Key"638,197.6"Removed_Key"Switch`1_1">
                                                 <Switch.Default>
                                                   <Throw Exception="[new Exception(&quot;managed to retrieve two similar filpaths&quot; + string.join(&quot;,&quot;,listFiles))]"Removed_Key"334,91.2"Removed_Key"Throw_13" />
                                                 </Switch.Default>
@@ -818,10 +813,15 @@
                                       <av:PointCollection x:Key="ConnectorLocation">590,1465 590,1515</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_28">
+                                  <ui:CommentOutRemoved_Key"blue part 2"Removed_Key"110,70"Removed_Key"CommentOut_28">
                                     <ui:CommentOut.Body>
-                                      <SequenceRemoved_Key"Ignored Activities"Removed_Key"Sequence_154">
-                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"IPPAFS Data Submission"Removed_Key"109.71428571428571,69.71428571428571"Removed_Key"InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Process\Process Subflows\blue part 2\IPAFFS Data Submission.xaml">
+                                      <SequenceRemoved_Key"Ignored Activities - blue part 2"Removed_Key"416,259.2"Removed_Key"Sequence_154">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"IPPAFS Data Submission"Removed_Key"382,199.2"Removed_Key"InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Process\Process Subflows\blue part 2\IPAFFS Data Submission.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_dtAD_Compliant">[dtAD_Compliant]</InArgument>
                                             <InOutArgument x:TypeArguments="sd1:DataTable" x:Key="io_dtOnHoldReasons">[dtOnHoldReasons]</InOutArgument>
@@ -843,7 +843,7 @@
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:CommentOutRemoved_Key"Comment Out"Removed_Key"110,70"Removed_Key"CommentOut_27">
+                                      <ui:CommentOutRemoved_Key"blue part 2"Removed_Key"110,70"Removed_Key"CommentOut_27">
                                         <ui:CommentOut.Body>
                                           <SequenceRemoved_Key"Ignored Activities"Removed_Key"416,259.2"Removed_Key"Sequence_149">
                                             <sap:WorkflowViewStateService.ViewState>
