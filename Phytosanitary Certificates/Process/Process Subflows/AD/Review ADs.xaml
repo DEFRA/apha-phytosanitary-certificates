@@ -302,18 +302,19 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"110,70"Removed_Key"ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]"Removed_Key"For Each commodity Row in Data Table - main CommodityLines datatable"Removed_Key"740,8892.8"Removed_Key"ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,7973.2"Removed_Key"Sequence_1">
+            <SequenceRemoved_Key"Body - Commodity"Removed_Key"706,8726.4"Removed_Key"Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
                 <Variable x:TypeArguments="sd:DataTable" Name="dtMiniPopUp" />
                 <Variable x:TypeArguments="x:String" Name="strCountry" />
+                <Variable x:TypeArguments="x:String" Name="strLogMessage" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -486,7 +487,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,3559.6"Removed_Key"Sequence_87">
+              <SequenceRemoved_Key"collect and build regulationd related to plant"Removed_Key"Build regulation Table"Removed_Key"672,3735.2"Removed_Key"Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
@@ -551,7 +552,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
                 <ui:BuildDataTable DataTable="[dtRegulations]"Removed_Key"Build Reg Data Table"Removed_Key"638,92"Removed_Key"BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Colour&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phytosanitary_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Breakdown&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <If Condition="[booFound]"Removed_Key"If - Regulation not found"Removed_Key"638,2255.6"Removed_Key"If_22">
+                <If Condition="[booFound]"Removed_Key"If - Regulation not found"Removed_Key"638,2431.2"Removed_Key"If_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -559,19 +560,19 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <SequenceRemoved_Key"Then"Removed_Key"604,1865.2"Removed_Key"Sequence_94">
+                    <SequenceRemoved_Key"Then"Removed_Key"604,2040.8"Removed_Key"Sequence_94">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}"Removed_Key"For Each currentRegulation"Removed_Key"570,1805.2"Removed_Key"ForEach`1_9" Values="[jsonRegulationResponse(&quot;searchterms&quot;)(intRegIndex)(&quot;regulations&quot;)]">
+                      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}"Removed_Key"For Each currentRegulation"Removed_Key"570,1980.8"Removed_Key"ForEach`1_9" Values="[jsonRegulationResponse(&quot;searchterms&quot;)(intRegIndex)(&quot;regulations&quot;)]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="njl:JToken">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="njl:JToken" Name="currentRegulation" />
                             </ActivityAction.Argument>
-                            <SequenceRemoved_Key"Body"Removed_Key"536,1666.8"Removed_Key"Sequence_97">
+                            <SequenceRemoved_Key"Body"Removed_Key"536,1842.4"Removed_Key"Sequence_97">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="njl:JObject" Name="jsonT_Reg" />
                                 <Variable x:TypeArguments="s:String[]" Name="arrPartItem" />
@@ -654,6 +655,7 @@
                                   <InArgument x:TypeArguments="njl:JObject">[jsonRegulationResponse("regulations").OfType(Of Newtonsoft.Json.Linq.JObject)().FirstOrDefault(Function(r) If(r("reference") IsNot Nothing, r("reference").ToString() = currentRegulation.ToString, False))]</InArgument>
                                 </Assign.Value>
                               </Assign>
+                              <ui:LogMessageRemoved_Key"Log Message"Removed_Key"502,175.6"Removed_Key"LogMessage_4" Level="Info" Message="[&quot;ORANGE: jsonT_Reg: &quot; + jsonT_Reg.ToString]" />
                               <AssignRemoved_Key"Assign - split"Removed_Key"502,114.4"Removed_Key"Assign_126">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:String[]">[arrPartItem]</OutArgument>
@@ -714,6 +716,10 @@
                   </If.Else>
                 </If>
               </Sequence>
+              <ui:OutputDataTable DataTable="[dtMiniPopUp]"Removed_Key"Output Data Table as Text"Removed_Key"672,113.2"Removed_Key"OutputDataTable_1" Text="[strLogMessage]" />
+              <ui:LogMessageRemoved_Key"Log Message"Removed_Key"672,175.6"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;ORANGE: dtMiniPopUp contents - &quot; + strLogMessage]" />
+              <ui:OutputDataTable DataTable="[dtRegulations]"Removed_Key"Output Data Table as Text"Removed_Key"672,113.2"Removed_Key"OutputDataTable_2" Text="[strLogMessage]" />
+              <ui:LogMessageRemoved_Key"Log Message"Removed_Key"672,175.6"Removed_Key"LogMessage_3" Level="Info" Message="[&quot;ORANGE: dtRegulations contents - &quot; + strLogMessage]" />
               <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]"Removed_Key"For Each Row in Data Table - Regulation Table"Removed_Key"672,906.4"Removed_Key"ForEachRow_3">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
@@ -1921,7 +1927,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MergeDataTable>
-              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"668,924.8"Removed_Key"If_2">
+              <If Condition="[listHold.Count = 0 AndAlso string.IsNullOrWhiteSpace(io_dtCommodityLines(intCommodityIndex)(&quot;Status Notes&quot;).tostring)]"Removed_Key"If - Hold string blank?"Removed_Key"672,924.8"Removed_Key"If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2221,19 +2227,19 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"604,1141.2"Removed_Key"ForEachRow_11">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]"Removed_Key"For Each Row in Data Table"Removed_Key"604,1082.4"Removed_Key"ForEachRow_11">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
                   </ActivityAction.Argument>
-                  <SequenceRemoved_Key"Body"Removed_Key"570,942.8"Removed_Key"Sequence_101">
+                  <SequenceRemoved_Key"Body"Removed_Key"570,884"Removed_Key"Sequence_101">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <SequenceRemoved_Key"format row values"Removed_Key"536,882.8"Removed_Key"Sequence_102">
+                    <SequenceRemoved_Key"format row values"Removed_Key"536,824"Removed_Key"Sequence_102">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2248,7 +2254,7 @@
                           <InArgument x:TypeArguments="x:Object">[regex.Replace(Commodity("Country").tostring,"\(|\)","").Trim]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[Commodity(&quot;Country&quot;).tostring.Contains(&quot;-&quot;)]"Removed_Key"If - seperate country and additional info if present"Removed_Key"502,420.4"Removed_Key"If_25">
+                      <If Condition="[Commodity(&quot;Country&quot;).tostring.Contains(&quot;-&quot;)]"Removed_Key"If - seperate country and additional info if present"Removed_Key"502,361.6"Removed_Key"If_25">
                         <If.Then>
                           <SequenceRemoved_Key"Then"Removed_Key"468,165.6"Removed_Key"Sequence_106">
                             <sap:WorkflowViewStateService.ViewState>
@@ -2267,7 +2273,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"416,83.6"Removed_Key"Sequence_103">
+                          <SequenceRemoved_Key"Else"Removed_Key"416,24.8"Removed_Key"Sequence_103">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2309,13 +2315,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"DataVerse - Invoke Workflow File (Process\Process Subflows\AD\DataVerse.xaml)"Removed_Key"604,208"Removed_Key"InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\DataVerse.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}"Removed_Key"DataVerse - Invoke Workflow File (Process\Process Subflows\AD\DataVerse.xaml)"Removed_Key"604,208"Removed_Key"InvokeWorkflowFile_6" Level="Info" LogEntry="[UiPath.Core.Activities.LogEntryType.WithArguments]" LogExit="[UiPath.Core.Activities.LogExitType.WithArguments]" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\DataVerse.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
                 <OutArgument x:TypeArguments="njl:JObject" x:Key="out_jsonRegulationResponse">[jsonRegulationResponse]</OutArgument>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, sma:PSCredential)" x:Key="in_Credentials">[g_Credentials]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
+            <ui:LogMessageRemoved_Key"Log Message"Removed_Key"604,175.6"Removed_Key"LogMessage_1" Message="[&quot;Orange: dataverse API Complete&quot;]" />
             <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CITES" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD cites"Removed_Key"604,222"Removed_Key"AddDataColumn`1_1" />
             <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Invasive Species" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"604,222"Removed_Key"AddDataColumn`1_2" />
             <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AD Numbers" DataTable="[io_dtCommodityLines]" DefaultValue="[&quot;False&quot;]"Removed_Key"Add Data Column - ADD invasive"Removed_Key"604,213.2"Removed_Key"AddDataColumn`1_3" />
