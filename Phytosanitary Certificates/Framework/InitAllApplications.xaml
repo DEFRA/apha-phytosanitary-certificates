@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}"Removed_Key"834,698"Removed_Key"Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,698" sap2010:WorkflowViewState.IdRef="Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -114,28 +114,28 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Open applications used in the process and do necessary initialization procedures (e.g., login)."Removed_Key"Initialize All Applications"Removed_Key"2142,1170.04"Removed_Key"Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="2142,1170.04" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessageRemoved_Key"Log message (Initialize applications)"Removed_Key"484,175"Removed_Key"LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <SequenceRemoved_Key"484,693"Removed_Key"Sequence_10">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <Sequence sap:VirtualizedContainerService.HintSize="484,693" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessageRemoved_Key"Log Message"Removed_Key"450,175"Removed_Key"LogMessage_2" Level="Info" Message="[&quot;Opening Dynamics...&quot;]" />
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never"Removed_Key"Open Dynamics Browser"Removed_Key"450,435"Removed_Key"NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[g_DynamicsElement]" ScopeGuid="c0576932-4584-4a84-993f-25ddc6aecaf1" Version="V2">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Opening Dynamics...&quot;]" />
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Dynamics Browser" sap:VirtualizedContainerService.HintSize="450,435" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[g_DynamicsElement]" ScopeGuid="c0576932-4584-4a84-993f-25ddc6aecaf1" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"416,194"Removed_Key"Sequence_14">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="booLandingPage" />
               </Sequence.Variables>
@@ -144,7 +144,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}"Removed_Key"Check for Landing Page" FoundElement="[booLandingPage]"Removed_Key"382,132"Removed_Key"WaitUiElementAppear_1">
+              <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Check for Landing Page" FoundElement="[booLandingPage]" sap:VirtualizedContainerService.HintSize="382,132" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                 <ui:WaitUiElementAppear.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0efcc09f-2a5f-4828-be62-6a374479da20" InformativeScreenshot="2e5227fe727537344053bd7e92c8d005" Selector="&lt;webctrl tag='LI' aria-label='Import Notifications' aria-role='treeitem' /&gt;">
                     <ui:Target.TimeoutMS>
