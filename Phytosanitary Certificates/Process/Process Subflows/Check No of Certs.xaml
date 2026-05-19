@@ -133,7 +133,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Check_No_of_Certs"Removed_Key"2348,8677"Removed_Key"Sequence_1">
+  <Sequence DisplayName="Check_No_of_Certs" sap:VirtualizedContainerService.HintSize="2348,8677" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intTotalPages" />
     </Sequence.Variables>
@@ -142,7 +142,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"Check No of Certs"Removed_Key"706,8654"Removed_Key"Sequence_2">
+    <Sequence DisplayName="Check No of Certs" sap:VirtualizedContainerService.HintSize="706,8654" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strPdfPath" />
         <Variable x:TypeArguments="x:String" Name="strPageText" />
@@ -155,16 +155,16 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RetryScopeRemoved_Key"Retry - Get PDF Page Count"Removed_Key"672,375"Removed_Key"RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+      <ui:RetryScope DisplayName="Retry - Get PDF Page Count" sap:VirtualizedContainerService.HintSize="672,375" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
         <ui:RetryScope.ActivityBody>
           <ActivityAction>
-            <SequenceRemoved_Key"Action"Removed_Key"416,166"Removed_Key"Sequence_39">
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Sequence_39">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <upap:GetPDFPageCountRemoved_Key"Get PDF Page Count" FileName="[in_PhytoCertFilepath]"Removed_Key"382,106"Removed_Key"GetPDFPageCount_1" PageCount="[intTotalPages]" />
+              <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="[in_PhytoCertFilepath]" sap:VirtualizedContainerService.HintSize="382,106" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intTotalPages]" />
             </Sequence>
           </ActivityAction>
         </ui:RetryScope.ActivityBody>
@@ -172,7 +172,7 @@
           <ActivityFunc x:TypeArguments="x:Boolean" />
         </ui:RetryScope.Condition>
       </ui:RetryScope>
-      <AssignRemoved_Key"Initialise Dictionary"Removed_Key"672,115"Removed_Key"Assign_5">
+      <Assign DisplayName="Initialise Dictionary" sap:VirtualizedContainerService.HintSize="672,115" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[out_dictCertPageRanges]</OutArgument>
         </Assign.To>
@@ -180,7 +180,7 @@
           <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))">[New Dictionary(Of String, List(Of Int32))()]</InArgument>
         </Assign.Value>
       </Assign>
-      <SequenceRemoved_Key"Extract Cert Numbers from IPAFFs"Removed_Key"672,1456"Removed_Key"Sequence_19">
+      <Sequence DisplayName="Extract Cert Numbers from IPAFFs" sap:VirtualizedContainerService.HintSize="672,1456" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieIPAFFSPhytoCertNos" />
         </Sequence.Variables>
@@ -189,16 +189,16 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Matches FirstMatch="{x:Null}"Removed_Key"Find IPAFFs Cert Numbers"Removed_Key"581,92"Removed_Key"Matches_5" Input="[in_IPAFFSCertificateReference]" IsBuilderTabModified="False" Pattern="[0-9]{9}" RegexOption="IgnoreCase, Compiled" Result="[ieIPAFFSPhytoCertNos]" />
-        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]"Removed_Key"No IPAFFS Phyto Numbers?"Removed_Key"581,793"Removed_Key"If_5">
+        <ui:Matches FirstMatch="{x:Null}" DisplayName="Find IPAFFs Cert Numbers" sap:VirtualizedContainerService.HintSize="581,92" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[in_IPAFFSCertificateReference]" IsBuilderTabModified="False" Pattern="[0-9]{9}" RegexOption="IgnoreCase, Compiled" Result="[ieIPAFFSPhytoCertNos]" />
+        <If Condition="[ieIPAFFSPhytoCertNos.Count = 0]" DisplayName="No IPAFFS Phyto Numbers?" sap:VirtualizedContainerService.HintSize="581,793" sap2010:WorkflowViewState.IdRef="If_5">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_24">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,597" sap2010:WorkflowViewState.IdRef="Sequence_24">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_35">
+              <Sequence DisplayName="Add On Hold Reason to Table" sap:VirtualizedContainerService.HintSize="513,537" sap2010:WorkflowViewState.IdRef="Sequence_35">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                   <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
@@ -210,10 +210,10 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_1">
+                <ui:MultipleAssign DisplayName="Assign On Hold Reason" sap:VirtualizedContainerService.HintSize="479,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                      <ui:AssignOperationRemoved_Key"AssignOperation_1">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
                         </ui:AssignOperation.To>
@@ -221,7 +221,7 @@
                           <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_2">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
                         </ui:AssignOperation.To>
@@ -229,7 +229,7 @@
                           <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_3">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
                         </ui:AssignOperation.To>
@@ -239,7 +239,7 @@
                           </InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_4">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
                         </ui:AssignOperation.To>
@@ -250,12 +250,12 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_1" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
               </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,25"Removed_Key"Sequence_25">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_25">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -265,7 +265,7 @@
             </Sequence>
           </If.Else>
         </If>
-        <AssignRemoved_Key"Initialise List"Removed_Key"581,115"Removed_Key"Assign_16">
+        <Assign DisplayName="Initialise List" sap:VirtualizedContainerService.HintSize="581,115" sap2010:WorkflowViewState.IdRef="Assign_16">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listIPAFFSPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -273,19 +273,19 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"581,364"Removed_Key"ForEach`1_5" Values="[ieIPAFFSPhytoCertNos]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each Cert Number" sap:VirtualizedContainerService.HintSize="581,364" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[ieIPAFFSPhytoCertNos]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="currentMatch" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Body"Removed_Key"416,226"Removed_Key"Sequence_20">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listIPAFFSPhytoCertNos]"Removed_Key"Append Items to Collection"Removed_Key"382,166"Removed_Key"AppendItemToCollection`1_1">
+                <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listIPAFFSPhytoCertNos]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
                   <uasc:AppendItemToCollection.Items>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                       <InArgument x:TypeArguments="x:String">[currentMatch.Value]</InArgument>
@@ -297,7 +297,7 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <SequenceRemoved_Key"Extract Cert Numbers from PDF"Removed_Key"672,2121"Removed_Key"Sequence_14">
+      <Sequence DisplayName="Extract Cert Numbers from PDF" sap:VirtualizedContainerService.HintSize="672,2121" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strFullPDFText" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="iePDFPhytoCertNos" />
@@ -307,20 +307,20 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ReadPDFTextRemoved_Key"Read PDF Text" FileName="[in_PhytoCertFilepath]"Removed_Key"581,115"Removed_Key"ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
-        <If Condition="[strFullPDFText.Replace(&quot; &quot;,&quot;&quot;).Length = 0]"Removed_Key"PDF Contains Content?"Removed_Key"581,435"Removed_Key"If_7">
+        <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertFilepath]" sap:VirtualizedContainerService.HintSize="581,115" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" PreserveFormatting="True" Range="All" Text="[strFullPDFText]" />
+        <If Condition="[strFullPDFText.Replace(&quot; &quot;,&quot;&quot;).Length = 0]" DisplayName="PDF Contains Content?" sap:VirtualizedContainerService.HintSize="581,435" sap2010:WorkflowViewState.IdRef="If_7">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"416,174"Removed_Key"Sequence_33">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_33">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ThrowRemoved_Key"Throw BRE" Exception="[New BusinessRuleException(&quot;Robot cannot read any content in Phytosanitary Certificate for reference: '&quot;+in_IPAFFSCertificateReference+&quot;'. It's possible this is a scanned document. The application must be processed manually: &quot;+g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString)]"Removed_Key"382,114"Removed_Key"Throw_1" />
+              <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Robot cannot read any content in Phytosanitary Certificate for reference: '&quot;+in_IPAFFSCertificateReference+&quot;'. It's possible this is a scanned document. The application must be processed manually: &quot;+g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </If.Then>
           <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_34">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_34">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -329,16 +329,16 @@
             </Sequence>
           </If.Else>
         </If>
-        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)"Removed_Key"Find PDF Cert Numbers"Removed_Key"581,92"Removed_Key"Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;No\\.\\s*EC\\s*NL\\s*\/\\s*(PCNU\\s*\\d+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" RegexOption="IgnoreCase, Compiled" Result="[iePDFPhytoCertNos]" />
-        <If Condition="[iePDFPhytoCertNos.Count = 0]"Removed_Key"No PDF Phyto Numbers?"Removed_Key"581,793"Removed_Key"If_4">
+        <ui:Matches FirstMatch="{x:Null}" BuilderPattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" DisplayName="Find PDF Cert Numbers" sap:VirtualizedContainerService.HintSize="581,92" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[strFullPDFText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;No\\.\\s*EC\\s*NL\\s*\/\\s*(PCNU\\s*\\d+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="No\.\s*EC\s*NL\s*/\s*(PCNU\s*\d+)" RegexOption="IgnoreCase, Compiled" Result="[iePDFPhytoCertNos]" />
+        <If Condition="[iePDFPhytoCertNos.Count = 0]" DisplayName="No PDF Phyto Numbers?" sap:VirtualizedContainerService.HintSize="581,793" sap2010:WorkflowViewState.IdRef="If_4">
           <If.Then>
-            <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_22">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,597" sap2010:WorkflowViewState.IdRef="Sequence_22">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_36">
+              <Sequence DisplayName="Add On Hold Reason to Table" sap:VirtualizedContainerService.HintSize="513,537" sap2010:WorkflowViewState.IdRef="Sequence_36">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                   <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
@@ -350,10 +350,10 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_2">
+                <ui:MultipleAssign DisplayName="Assign On Hold Reason" sap:VirtualizedContainerService.HintSize="479,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                      <ui:AssignOperationRemoved_Key"AssignOperation_5">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
                         </ui:AssignOperation.To>
@@ -361,7 +361,7 @@
                           <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_6">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
                         </ui:AssignOperation.To>
@@ -369,7 +369,7 @@
                           <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_7">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
                         </ui:AssignOperation.To>
@@ -379,7 +379,7 @@
                           </InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
-                      <ui:AssignOperationRemoved_Key"AssignOperation_8">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
                         </ui:AssignOperation.To>
@@ -390,12 +390,12 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_2" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
               </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
-            <SequenceRemoved_Key"Else"Removed_Key"416,25"Removed_Key"Sequence_23">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -405,7 +405,7 @@
             </Sequence>
           </If.Else>
         </If>
-        <AssignRemoved_Key"Initialise List"Removed_Key"581,115"Removed_Key"Assign_19">
+        <Assign DisplayName="Initialise List" sap:VirtualizedContainerService.HintSize="581,115" sap2010:WorkflowViewState.IdRef="Assign_19">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listPDFPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -413,19 +413,19 @@
             <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}"Removed_Key"For Each Cert Number"Removed_Key"581,373"Removed_Key"ForEach`1_6" Values="[iePDFPhytoCertNos]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each Cert Number" sap:VirtualizedContainerService.HintSize="581,373" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[iePDFPhytoCertNos]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="currentMatch" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Body"Removed_Key"416,226"Removed_Key"Sequence_26">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listPDFPhytoCertNos]"Removed_Key"Append Items to Collection"Removed_Key"382,166"Removed_Key"AppendItemToCollection`1_2">
+                <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[listPDFPhytoCertNos]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
                   <uasc:AppendItemToCollection.Items>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                       <InArgument x:TypeArguments="x:String">[currentMatch.Groups(1).ToString]</InArgument>
@@ -436,7 +436,7 @@
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
-        <AssignRemoved_Key"Remove Duplicate Values"Removed_Key"581,106"Removed_Key"Assign_20">
+        <Assign DisplayName="Remove Duplicate Values" sap:VirtualizedContainerService.HintSize="581,106" sap2010:WorkflowViewState.IdRef="Assign_20">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listPDFPhytoCertNos]</OutArgument>
           </Assign.To>
@@ -445,25 +445,25 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each PDF Cert Number"Removed_Key"672,1508"Removed_Key"ForEach`1_4" Values="[listPDFPhytoCertNos]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each PDF Cert Number" sap:VirtualizedContainerService.HintSize="672,1508" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listPDFPhytoCertNos]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="CertificateNumber" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Body - For Each PDF Cert Number"Removed_Key"638,1361"Removed_Key"Sequence_12">
+            <Sequence DisplayName="Body - For Each PDF Cert Number" sap:VirtualizedContainerService.HintSize="638,1361" sap2010:WorkflowViewState.IdRef="Sequence_12">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}"Removed_Key"For Each i in intTotalPages - Loop Around All PDF Pages"Removed_Key"604,1301"Removed_Key"ForEach`1_1" Values="[Enumerable.Range(1, intTotalPages)]">
+              <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each i in intTotalPages - Loop Around All PDF Pages" sap:VirtualizedContainerService.HintSize="604,1301" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, intTotalPages)]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Int32">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
                     </ActivityAction.Argument>
-                    <SequenceRemoved_Key"Body - For Each i in intTotalPages"Removed_Key"570,1163"Removed_Key"Sequence_5">
+                    <Sequence DisplayName="Body - For Each i in intTotalPages" sap:VirtualizedContainerService.HintSize="570,1163" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strPhytoCert" />
                         <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="iePageMatches" />
@@ -474,23 +474,23 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ReadPDFTextRemoved_Key"Read PDF Page Text" FileName="[in_PhytoCertFilepath]"Removed_Key"536,115"Removed_Key"ReadPDFText_1" PreserveFormatting="True" Range="[i.ToString]" Text="[strPageText]" />
-                      <ui:Matches FirstMatch="{x:Null}"Removed_Key"Check extracted page text for the current Certificate Number" BuilderPattern="PCNU 323826750"Removed_Key"Find Phyto Cert Number in extracted text"Removed_Key"536,136"Removed_Key"Matches_3" Input="[strPageText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;PCNU 323826750&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[CertificateNumber]" RegexOption="IgnoreCase, Compiled" Result="[iePageMatches]">
+                      <ui:ReadPDFText DisplayName="Read PDF Page Text" FileName="[in_PhytoCertFilepath]" sap:VirtualizedContainerService.HintSize="536,115" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" PreserveFormatting="True" Range="[i.ToString]" Text="[strPageText]" />
+                      <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="Check extracted page text for the current Certificate Number" BuilderPattern="PCNU 323826750" DisplayName="Find Phyto Cert Number in extracted text" sap:VirtualizedContainerService.HintSize="536,136" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[strPageText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;PCNU 323826750&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[CertificateNumber]" RegexOption="IgnoreCase, Compiled" Result="[iePageMatches]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:Matches>
-                      <If Condition="[iePageMatches.Count &lt;&gt; 0]"Removed_Key"Certificate Number Found?"Removed_Key"536,852"Removed_Key"If_1">
+                      <If Condition="[iePageMatches.Count &lt;&gt; 0]" DisplayName="Certificate Number Found?" sap:VirtualizedContainerService.HintSize="536,852" sap2010:WorkflowViewState.IdRef="If_1">
                         <If.Then>
-                          <SequenceRemoved_Key"Then"Removed_Key"502,600"Removed_Key"Sequence_7">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502,600" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <AssignRemoved_Key"Assign strTidyCertificateNumber"Removed_Key"468,115"Removed_Key"Assign_21">
+                            <Assign DisplayName="Assign strTidyCertificateNumber" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_21">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[strTidyCertificateNumber]</OutArgument>
                               </Assign.To>
@@ -498,9 +498,9 @@
                                 <InArgument x:TypeArguments="x:String">[iePageMatches(0).Value.Replace("PCNU ","")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[out_dictCertPageRanges.ContainsKey(strTidyCertificateNumber)]"Removed_Key"If dictIdentifiers contains cert number"Removed_Key"468,425"Removed_Key"If_2">
+                            <If Condition="[out_dictCertPageRanges.ContainsKey(strTidyCertificateNumber)]" DisplayName="If dictIdentifiers contains cert number" sap:VirtualizedContainerService.HintSize="468,425" sap2010:WorkflowViewState.IdRef="If_2">
                               <If.Then>
-                                <InvokeMethodRemoved_Key"Add page to dict"Removed_Key"238.5,136"Removed_Key"InvokeMethod_3" MethodName="Add">
+                                <InvokeMethod DisplayName="Add page to dict" sap:VirtualizedContainerService.HintSize="238.5,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Add">
                                   <InvokeMethod.TargetObject>
                                     <InArgument x:TypeArguments="scg:List(x:Int32)">[out_dictCertPageRanges(strTidyCertificateNumber)]</InArgument>
                                   </InvokeMethod.TargetObject>
@@ -508,7 +508,7 @@
                                 </InvokeMethod>
                               </If.Then>
                               <If.Else>
-                                <AssignRemoved_Key"Assign new dictIdentifiers"Removed_Key"434,83"Removed_Key"Assign_12">
+                                <Assign DisplayName="Assign new dictIdentifiers" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_12">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="scg:List(x:Int32)">[out_dictCertPageRanges(strTidyCertificateNumber)]</OutArgument>
                                   </Assign.To>
@@ -521,7 +521,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_8">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -544,7 +544,7 @@
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
-      <SequenceRemoved_Key"We need to check if declared IPAFFs certificate numbers and the certificate numbers present in the PDF match.&#xA;&#xA;We must check if there are extra certificate numbers either -&#xA;&#xA;A) Declared in IPAFFS and not present in the PDF.&#xA;or&#xA;B) Not declared in IPAFFS, but are present in the PDF.&#xA;&#xA;The two lists should match exactly, so if we compare them and remove any matches then this should leave two empty lists. If any values are left on either side of the comparison, these are extra certificate numbers."Removed_Key"Check for Excess Certificate Numbers"Removed_Key"672,1289"Removed_Key"Sequence_29">
+      <Sequence sap2010:Annotation.AnnotationText="We need to check if declared IPAFFs certificate numbers and the certificate numbers present in the PDF match.&#xA;&#xA;We must check if there are extra certificate numbers either -&#xA;&#xA;A) Declared in IPAFFS and not present in the PDF.&#xA;or&#xA;B) Not declared in IPAFFS, but are present in the PDF.&#xA;&#xA;The two lists should match exactly, so if we compare them and remove any matches then this should leave two empty lists. If any values are left on either side of the comparison, these are extra certificate numbers." DisplayName="Check for Excess Certificate Numbers" sap:VirtualizedContainerService.HintSize="672,1289" sap2010:WorkflowViewState.IdRef="Sequence_29">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listPhytoCertNosComparison" />
         </Sequence.Variables>
@@ -554,7 +554,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <AssignRemoved_Key"We cannot delete the item from a List whilst looping around that same List so we must first take a duplicate of the IPAFFS Certificate Number list."Removed_Key"Assign Comparison List"Removed_Key"502,175"Removed_Key"Assign_23">
+        <Assign sap2010:Annotation.AnnotationText="We cannot delete the item from a List whilst looping around that same List so we must first take a duplicate of the IPAFFS Certificate Number list." DisplayName="Assign Comparison List" sap:VirtualizedContainerService.HintSize="502,175" sap2010:WorkflowViewState.IdRef="Assign_23">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:List(x:String)">[listPhytoCertNosComparison]</OutArgument>
           </Assign.To>
@@ -567,13 +567,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}"Removed_Key"For Each PDF Certificate Number"Removed_Key"502,818"Removed_Key"ForEach`1_7" Values="[listPhytoCertNosComparison]">
+        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each PDF Certificate Number" sap:VirtualizedContainerService.HintSize="502,818" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[listPhytoCertNosComparison]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:String">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:String" Name="CertificateNumber" />
               </ActivityAction.Argument>
-              <SequenceRemoved_Key"Body"Removed_Key"468,680"Removed_Key"Sequence_30">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,680" sap2010:WorkflowViewState.IdRef="Sequence_30">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strCertificateNumber" />
                 </Sequence.Variables>
@@ -582,7 +582,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <AssignRemoved_Key"The Filter Collection activity doesn't seem to be able to grab the CertificateNumber variable straight from the For Each, so have to assign it to a temporary variable instead. "Removed_Key"Assign strCertificateNumber"Removed_Key"434,175"Removed_Key"Assign_24">
+                <Assign sap2010:Annotation.AnnotationText="The Filter Collection activity doesn't seem to be able to grab the CertificateNumber variable straight from the For Each, so have to assign it to a temporary variable instead. " DisplayName="Assign strCertificateNumber" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="Assign_24">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strCertificateNumber]</OutArgument>
                   </Assign.To>
@@ -595,7 +595,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <uasc:FilterCollection x:TypeArguments="x:String" Collection="[listPDFPhytoCertNos]"Removed_Key"Filter Collection - PDF Numbers" FilterAction="RemoveMatchingElements"Removed_Key"434,227"Removed_Key"FilterCollection`1_3">
+                <uasc:FilterCollection x:TypeArguments="x:String" Collection="[listPDFPhytoCertNos]" DisplayName="Filter Collection - PDF Numbers" FilterAction="RemoveMatchingElements" sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="FilterCollection`1_3">
                   <uasc:FilterCollection.Filter>
                     <uascf:CollectionFilterSettings LogicalOperator="And">
                       <uascf:CollectionFilterSettings.Filters>
@@ -610,7 +610,7 @@
                     </uascf:CollectionFilterSettings>
                   </uasc:FilterCollection.Filter>
                 </uasc:FilterCollection>
-                <uasc:FilterCollection x:TypeArguments="x:String" Collection="[listIPAFFSPhytoCertNos]"Removed_Key"Filter Collection - IPAFFS Numbers" FilterAction="RemoveMatchingElements"Removed_Key"434,218"Removed_Key"FilterCollection`1_4">
+                <uasc:FilterCollection x:TypeArguments="x:String" Collection="[listIPAFFSPhytoCertNos]" DisplayName="Filter Collection - IPAFFS Numbers" FilterAction="RemoveMatchingElements" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="FilterCollection`1_4">
                   <uasc:FilterCollection.Filter>
                     <uascf:CollectionFilterSettings LogicalOperator="And">
                       <uascf:CollectionFilterSettings.Filters>
@@ -626,15 +626,15 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <If Condition="[listIPAFFSPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining IPAFFS Numbers?"Removed_Key"672,858"Removed_Key"If_3">
+      <If Condition="[listIPAFFSPhytoCertNos.Count &gt; 0]" DisplayName="Any Remaining IPAFFS Numbers?" sap:VirtualizedContainerService.HintSize="672,858" sap2010:WorkflowViewState.IdRef="If_3">
         <If.Then>
-          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_15">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,597" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_37">
+            <Sequence DisplayName="Add On Hold Reason to Table" sap:VirtualizedContainerService.HintSize="513,537" sap2010:WorkflowViewState.IdRef="Sequence_37">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                 <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
@@ -646,10 +646,10 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_3">
+              <ui:MultipleAssign DisplayName="Assign On Hold Reason" sap:VirtualizedContainerService.HintSize="479,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                    <ui:AssignOperationRemoved_Key"AssignOperation_9">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
                       </ui:AssignOperation.To>
@@ -657,7 +657,7 @@
                         <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_10">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
                       </ui:AssignOperation.To>
@@ -665,7 +665,7 @@
                         <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_11">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
                       </ui:AssignOperation.To>
@@ -675,7 +675,7 @@
                         </InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_12">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
                       </ui:AssignOperation.To>
@@ -686,12 +686,12 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_3" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
             </Sequence>
           </Sequence>
         </If.Then>
         <If.Else>
-          <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_16">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -700,15 +700,15 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[listPDFPhytoCertNos.Count &gt; 0]"Removed_Key"Any Remaining PDF Numbers?"Removed_Key"672,849"Removed_Key"If_6">
+      <If Condition="[listPDFPhytoCertNos.Count &gt; 0]" DisplayName="Any Remaining PDF Numbers?" sap:VirtualizedContainerService.HintSize="672,849" sap2010:WorkflowViewState.IdRef="If_6">
         <If.Then>
-          <SequenceRemoved_Key"Then"Removed_Key"547,597"Removed_Key"Sequence_31">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,597" sap2010:WorkflowViewState.IdRef="Sequence_31">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <SequenceRemoved_Key"Add On Hold Reason to Table"Removed_Key"513,537"Removed_Key"Sequence_38">
+            <Sequence DisplayName="Add On Hold Reason to Table" sap:VirtualizedContainerService.HintSize="513,537" sap2010:WorkflowViewState.IdRef="Sequence_38">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                 <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
@@ -720,10 +720,10 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssignRemoved_Key"Assign On Hold Reason"Removed_Key"479,242"Removed_Key"MultipleAssign_4">
+              <ui:MultipleAssign DisplayName="Assign On Hold Reason" sap:VirtualizedContainerService.HintSize="479,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                    <ui:AssignOperationRemoved_Key"AssignOperation_13">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
                       </ui:AssignOperation.To>
@@ -731,7 +731,7 @@
                         <InArgument x:TypeArguments="x:String">[in_strCHEDPPReference]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_14">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
                       </ui:AssignOperation.To>
@@ -739,7 +739,7 @@
                         <InArgument x:TypeArguments="x:String">[in_IPAFFSCertificateReference]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_15">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
                       </ui:AssignOperation.To>
@@ -749,7 +749,7 @@
                         </InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperationRemoved_Key"AssignOperation_16">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
                       </ui:AssignOperation.To>
@@ -760,12 +760,12 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479,212"Removed_Key"AddDataRow_4" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text}]" DataTable="[io_dtOnHoldReasons]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
             </Sequence>
           </Sequence>
         </If.Then>
         <If.Else>
-          <SequenceRemoved_Key"Else"Removed_Key"416,90"Removed_Key"Sequence_32">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_32">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

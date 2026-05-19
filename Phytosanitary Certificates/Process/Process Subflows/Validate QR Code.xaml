@@ -164,7 +164,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Validate_QR_Code"Removed_Key"1350.857142857143,1894.2857142857142"Removed_Key"Sequence_1">
+  <Sequence DisplayName="Validate_QR_Code" sap:VirtualizedContainerService.HintSize="1350.857142857143,1894.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="imgQRPage" />
       <Variable x:TypeArguments="x:String" Name="strDecodedQRCode" />
@@ -174,7 +174,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <SequenceRemoved_Key"650.8571428571429,1871.4285714285713"Removed_Key"Sequence_10">
+    <Sequence sap:VirtualizedContainerService.HintSize="650.8571428571429,1871.4285714285713" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strResponse" />
         <Variable x:TypeArguments="x:String" Name="decodedURL" />
@@ -186,7 +186,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <AssignRemoved_Key"616.5714285714286,117.14285714285714"Removed_Key"Assign_4">
+      <Assign sap:VirtualizedContainerService.HintSize="616.5714285714286,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strImageSaveLocation]</OutArgument>
         </Assign.To>
@@ -194,20 +194,20 @@
           <InArgument x:TypeArguments="x:String">[in_PhytoCertLocation.Replace(".pdf",".jpg")]</InArgument>
         </Assign.Value>
       </Assign>
-      <upap:ExportPDFPageAsImageRemoved_Key"Export PDF Page As Image" FileName="[in_PhytoCertLocation]"Removed_Key"616.5714285714286,171.42857142857142"Removed_Key"ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="[strImageSaveLocation]" PageNumber="[in_intQRPageNumber]" />
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim reader As New ZXing.Windows.Compatibility.BarcodeReader()&#xA; &#xA;' Optional: better QR detection&#xA;reader.Options.TryHarder = True&#xA;reader.Options.PossibleFormats = New List(Of ZXing.BarcodeFormat) From {ZXing.BarcodeFormat.QR_CODE}&#xA; &#xA;Using bmp As New System.Drawing.Bitmap(imagePath)&#xA;    Dim result = reader.Decode(bmp)&#xA;    qrText = If(result IsNot Nothing, result. Text, &quot;&quot;)&#xA;End Using"Removed_Key"Invoke Code"Removed_Key"616.5714285714286,197.14285714285714"Removed_Key"InvokeCode_1">
+      <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[in_PhytoCertLocation]" sap:VirtualizedContainerService.HintSize="616.5714285714286,171.42857142857142" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_1" ImageDpi="270" OutputFileName="[strImageSaveLocation]" PageNumber="[in_intQRPageNumber]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim reader As New ZXing.Windows.Compatibility.BarcodeReader()&#xA; &#xA;' Optional: better QR detection&#xA;reader.Options.TryHarder = True&#xA;reader.Options.PossibleFormats = New List(Of ZXing.BarcodeFormat) From {ZXing.BarcodeFormat.QR_CODE}&#xA; &#xA;Using bmp As New System.Drawing.Bitmap(imagePath)&#xA;    Dim result = reader.Decode(bmp)&#xA;    qrText = If(result IsNot Nothing, result. Text, &quot;&quot;)&#xA;End Using" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="616.5714285714286,197.14285714285714" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
         <ui:InvokeCode.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="imagePath">[strImageSaveLocation]</InArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="qrText">[strResponse]</OutArgument>
         </ui:InvokeCode.Arguments>
       </ui:InvokeCode>
-      <uix:NApplicationCard AttachMode="ByInstance"Removed_Key"Use Browser Edge"Removed_Key"616.5714285714286,1302.857142857143"Removed_Key"NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge" sap:VirtualizedContainerService.HintSize="616.5714285714286,1302.857142857143" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="acea61c5-962f-4319-aa27-068c4965e9d3" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <SequenceRemoved_Key"Do"Removed_Key"582.2857142857143,1060"Removed_Key"Sequence_11">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.2857142857143,1060" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strWebsiteText" />
               </Sequence.Variables>
@@ -216,7 +216,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetTextRemoved_Key"Get Text 'Please enter'"Removed_Key"548,191.42857142857142"Removed_Key"NGetText_1" ScopeIdentifier="acea61c5-962f-4319-aa27-068c4965e9d3" TextString="[strWebsiteText]" Version="V3">
+              <uix:NGetText DisplayName="Get Text 'Please enter'" sap:VirtualizedContainerService.HintSize="548,191.42857142857142" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="acea61c5-962f-4319-aa27-068c4965e9d3" TextString="[strWebsiteText]" Version="V3">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="https://checkecert.nl/cov/en?cc=341308740&amp;vc=6379554496345957" DesignTimeRectangle="1149, 751, 1442, 196" DesignTimeScaleFactor="1.75" FriendlyName="'The combination'" FullSelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='show-download-wrapper' tag='DIV' type='' class='mt-4 mb-5' aaname='' /&gt;" Guid="29d8c2a6-b79a-4f45-9b53-87184fee18df" InformativeScreenshot="cd80e7f7d229a9a99a20328586764136.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Check certificate | NVWA' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -227,9 +227,9 @@
                   </uix:TargetAnchorable>
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]"Removed_Key"548,806.2857142857143"Removed_Key"If_1">
+              <If Condition="[strWebsiteText.Contains(&quot;The combination of certificate and verification number is valid&quot;)]" sap:VirtualizedContainerService.HintSize="548,806.2857142857143" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <SequenceRemoved_Key"Then"Removed_Key"513.7142857142857,90.85714285714286"Removed_Key"Sequence_12">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513.7142857142857,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,7 +238,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <SequenceRemoved_Key"Add on Hold Reason"Removed_Key"513.7142857142857,549.7142857142857"Removed_Key"Sequence_15">
+                  <Sequence DisplayName="Add on Hold Reason" sap:VirtualizedContainerService.HintSize="513.7142857142857,549.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="Application_Reference" />
                       <Variable x:TypeArguments="x:String" Name="Certificate_Number" />
@@ -252,10 +252,10 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssignRemoved_Key"Assign On Hold Reasons"Removed_Key"479.42857142857144,273.7142857142857"Removed_Key"MultipleAssign_1">
+                    <ui:MultipleAssign DisplayName="Assign On Hold Reasons" sap:VirtualizedContainerService.HintSize="479.42857142857144,273.7142857142857" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                          <ui:AssignOperationRemoved_Key"AssignOperation_1">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[Application_Reference]</OutArgument>
                             </ui:AssignOperation.To>
@@ -263,7 +263,7 @@
                               <InArgument x:TypeArguments="x:String">[in_ApplicationRef]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
-                          <ui:AssignOperationRemoved_Key"AssignOperation_2">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[Certificate_Number]</OutArgument>
                             </ui:AssignOperation.To>
@@ -271,7 +271,7 @@
                               <InArgument x:TypeArguments="x:String">[in_PhytoCertNumber]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
-                          <ui:AssignOperationRemoved_Key"AssignOperation_3">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[Commodity_Line_Reference]</OutArgument>
                             </ui:AssignOperation.To>
@@ -281,7 +281,7 @@
                               </InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
-                          <ui:AssignOperationRemoved_Key"AssignOperation_4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[On_Hold_Text]</OutArgument>
                             </ui:AssignOperation.To>
@@ -289,7 +289,7 @@
                               <InArgument x:TypeArguments="x:String">["Scanned QR code did not confirm validity of phyto " + in_PhytoCertNumber]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
-                          <ui:AssignOperationRemoved_Key"AssignOperation_5">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                             <ui:AssignOperation.To>
                               <OutArgument x:TypeArguments="x:String">[IPAFFS_Reason]</OutArgument>
                             </ui:AssignOperation.To>
@@ -300,7 +300,7 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text,IPAFFS_Reason}]" DataTable="[io_dtOnHoldReasons]"Removed_Key"Add Data Row"Removed_Key"479.42857142857144,216"Removed_Key"AddDataRow_1" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Application_Reference, Certificate_Number, Commodity_Line_Reference, On_Hold_Text,IPAFFS_Reason}]" DataTable="[io_dtOnHoldReasons]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479.42857142857144,216" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   </Sequence>
                 </If.Else>
               </If>
