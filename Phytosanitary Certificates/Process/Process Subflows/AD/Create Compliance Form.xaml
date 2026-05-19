@@ -123,7 +123,7 @@
       <AssemblyReference>System.Web.HttpUtility</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_Compliance_Form" sap:VirtualizedContainerService.HintSize="1259.6000000000001,5394.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_Compliance_Form" sap:VirtualizedContainerService.HintSize="885.6,5090.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strHTML" />
       <Variable x:TypeArguments="x:String" Name="strProductCount" />
@@ -138,77 +138,6 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="672,218.4" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_15">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Sequence - Create TEST data" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Delete this test data when integrated with Ali's code&quot;]" />
-            <ui:BuildDataTable DataTable="[io_dtCommodityLines]" DisplayName="Build Data Table - Commodity Lines" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Hold_x0020_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ID&gt;0001&lt;/ID&gt;&#xA;    &lt;Product&gt;Camellia Japonica&lt;/Product&gt;&#xA;    &lt;Country&gt;SPAIN&lt;/Country&gt;&#xA;    &lt;Outcome&gt;On Hold&lt;/Outcome&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ID&gt;0002&lt;/ID&gt;&#xA;    &lt;Product&gt;Camellia Japonica&lt;/Product&gt;&#xA;    &lt;Country&gt;SPAIN&lt;/Country&gt;&#xA;    &lt;Outcome&gt;Compliant&lt;/Outcome&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ID&gt;0003&lt;/ID&gt;&#xA;    &lt;Product&gt;Cornus Alba&lt;/Product&gt;&#xA;    &lt;Country&gt;BELGIUM&lt;/Country&gt;&#xA;    &lt;Outcome&gt;On Hold&lt;/Outcome&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber - Add 100 test rows" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(1, 100)]">
-                    <ui:ForEach.Body>
-                      <ActivityAction x:TypeArguments="x:Int32">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,273.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentNumber.ToString,&quot;Camellia Japonica&quot;,&quot;Spain&quot;,&quot;Compliant&quot;}]" DataTable="[io_dtCommodityLines]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="382,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                        </Sequence>
-                      </ActivityAction>
-                    </ui:ForEach.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:ForEach>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Test data below needs changing out to the real data structure/format&quot;]" />
-            <ui:BuildDataTable DataTable="[dtAdditionalDeclarations]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;1&lt;/ID&gt;&#xA;    &lt;AD&gt;Annex 7 Part A Item 6Ai: The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;2&lt;/ID&gt;&#xA;    &lt;AD&gt;Annex 7 Part A Item 8A d: The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:BuildDataTable DataTable="[dtAdditionalDeclarationsSearchTool]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,83.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;1&lt;/ID&gt;&#xA;    &lt;AD&gt;The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product&gt;0001 Camellia Japonica&lt;/Product&gt;&#xA;    &lt;ID&gt;2&lt;/ID&gt;&#xA;    &lt;AD&gt;The consignment complies with Annex 7 to Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica.&lt;/AD&gt;&#xA;    &lt;Compliant&gt;true&lt;/Compliant&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
     <ui:MultipleAssign DisplayName="Assign counts of commodity lines" sap:VirtualizedContainerService.HintSize="672,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -322,13 +251,13 @@
 				vbTab &amp; "&lt;/div&gt;" &amp; vbCRLF]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="672,3287.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="672,3202.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body - Create Accordion and add content" sap:VirtualizedContainerService.HintSize="638,3089.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Body - Create Accordion and add content" sap:VirtualizedContainerService.HintSize="638,3004" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strComplianceText" />
               <Variable x:TypeArguments="x:String" Name="strCompliantButtonActive" />
@@ -544,48 +473,6 @@ vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf]</InAr
                 </Assign.Value>
               </Assign>
             </Sequence>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="604,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,342.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Hard coded text - replace this&quot;]" />
-                  <Assign DisplayName="Add Accordion Content" sap:VirtualizedContainerService.HintSize="434,106.8" sap2010:WorkflowViewState.IdRef="Assign_18">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[strHTML]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[strHTML &amp; vbTab &amp; vbTab &amp; "&lt;div class=""accordion-content""&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-red""&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi." &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-green""&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica." &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;div&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-red""&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 6ai: The plants originate in Spain as an area established by the national plant protection organisation in accordance with ISPM4 as an area that is free from Thrips palmi." &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;p class=""highlight-green""&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "The consignment complies With Annex 7 To Great Britain's Phytosanitary Regulation (2019/2072), part A item 8A d: have been produced following an effective systems approach to ensure freedom of Popillia japonica." &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/p&gt;" &amp; vbCrLf &amp; _
-						vbTab &amp; vbTab &amp; vbTab &amp; "&lt;/div&gt;" &amp; vbCrLf]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
             <Assign sap:VirtualizedContainerService.HintSize="604,114.4" sap2010:WorkflowViewState.IdRef="Assign_36">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strNotes]</OutArgument>

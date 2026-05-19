@@ -124,7 +124,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Regulation_Search" sap:VirtualizedContainerService.HintSize="758,6904.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Regulation_Search" sap:VirtualizedContainerService.HintSize="885.6,6790.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSpeciesPart" />
     </Sequence.Variables>
@@ -133,7 +133,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="638,6881.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="638,6767.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtSheet" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtHost" />
@@ -193,7 +193,7 @@
               <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Reading &quot; &amp; currentStorageFileInfo.FileFullPath &amp; &quot; &quot; &amp; Now]" />
               <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[strDeleteMe]" sap:VirtualizedContainerService.HintSize="434,118.4" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
               <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]" DisplayName="Download Storage File" sap:VirtualizedContainerService.HintSize="434,167.6" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="[currentStorageFileInfo.FileFullPath]" StorageBucketName="Additional Declarations" />
-              <ui:ReadCsvFile DataTable="[dtSheet]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+              <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dtSheet]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Read CSV" FilePath="[strDeleteMe + &quot;\&quot;+ currentStorageFileInfo.FileFullPath]" sap:VirtualizedContainerService.HintSize="434,190.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
               <Assign DisplayName="Assign file name without extension" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_54">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strFileWithoutExtension]</OutArgument>
@@ -1984,7 +1984,7 @@
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Query all relevant regulations for this genus, country of origin and commodity type, find the intersection (where the regulation appears in all 3) and save that to dtMatchedItems (which overwrites the previous dtMatchedItems as it is no longer relevant). Remove the category column (not required for the output) and removes duplicate rows to give only the regulations required" DisplayName="Intersection" sap:VirtualizedContainerService.HintSize="604,1318" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <Sequence sap2010:Annotation.AnnotationText="Query all relevant regulations for this genus, country of origin and commodity type, find the intersection (where the regulation appears in all 3) and save that to dtMatchedItems (which overwrites the previous dtMatchedItems as it is no longer relevant). Remove the category column (not required for the output) and removes duplicate rows to give only the regulations required" DisplayName="Intersection" sap:VirtualizedContainerService.HintSize="604,1204.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="listGenus" />
           <Variable x:TypeArguments="scg:List(x:String)" Name="listOrigin" />
@@ -2056,32 +2056,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;When using commodities, enable the activity below &amp; review&quot;]" />
-        <ui:CommentOut DisplayName="Comment Out - If not using commodity" sap:VirtualizedContainerService.HintSize="434,85.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-          <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_54">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_46">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[listIntersection]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[listGenus.Intersect(listOrigin).ToList()]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </Sequence>
-          </ui:CommentOut.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:CommentOut>
-        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove the category column, not relevant for output" ColumnName="ItemCategory" DataTable="[out_dtMatchedItems]" DisplayName="Remove Item Category Data Column" sap:VirtualizedContainerService.HintSize="434,146.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove the category column, not relevant for output" ColumnName="ItemCategory" DataTable="[out_dtMatchedItems]" DisplayName="Remove Item Category Data Column" sap:VirtualizedContainerService.HintSize="434,118" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

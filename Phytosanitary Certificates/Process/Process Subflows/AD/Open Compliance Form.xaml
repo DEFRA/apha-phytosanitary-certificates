@@ -144,42 +144,42 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Open_Compliance_Form" sap:VirtualizedContainerService.HintSize="795.2,4395.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Open_Compliance_Form" sap:VirtualizedContainerService.HintSize="885.6,4338.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="795.2,4372" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="795.2,4315.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="ui:UiElement" Name="browComplianceForm" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="757.6,4115.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="757.6,4058.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="723.6,4055.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OutUiElement="[browComplianceForm]" ScopeGuid="204a60f3-6909-4c60-bbb4-07b0be9621ec" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="723.6,3998.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OutUiElement="[browComplianceForm]" ScopeGuid="204a60f3-6909-4c60-bbb4-07b0be9621ec" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="689.6,3814.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="689.6,3757.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:TriggerScope DisplayName="Trigger Scope" sap:VirtualizedContainerService.HintSize="655.6,3752.8" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
+                  <ui:TriggerScope DisplayName="Trigger Scope" sap:VirtualizedContainerService.HintSize="655.6,3696" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
                     <ui:TriggerScope.Action>
                       <ActivityAction x:TypeArguments="uuat:MonitorClickEventArgs">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="uuat:MonitorClickEventArgs" Name="args" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="604,3287.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence sap:VirtualizedContainerService.HintSize="604,3230.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strButtonStatesOutcomes" />
                             <Variable x:TypeArguments="njl:JObject" Name="jsonButtonStates" />
@@ -381,172 +381,6 @@
                             </ui:ForEach.Body>
                           </ui:ForEach>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="570,177.2" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;End of new method of reading button outcomes&quot;]" />
-                          <ui:CommentOut DisplayName="Comment Out - Read all controls individually - Poor performance (0.5 seconds per control group)" sap:VirtualizedContainerService.HintSize="570,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1318,1976" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1284,1916" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                                  <ui:ForEachRow.Body>
-                                    <ActivityAction x:TypeArguments="sd:DataRow">
-                                      <ActivityAction.Argument>
-                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCommodityRow" />
-                                      </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1250,1726.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                                        <Sequence.Variables>
-                                          <Variable x:TypeArguments="x:String" Name="strOriginalOutcome" />
-                                          <Variable x:TypeArguments="x:String" Name="strNewOutcome" />
-                                          <Variable x:TypeArguments="x:String" Name="strCompliantOutcome" />
-                                          <Variable x:TypeArguments="x:String" Name="strOnHoldOutcome" />
-                                          <Variable x:TypeArguments="x:String" Name="strComments" />
-                                        </Sequence.Variables>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Parallel sap:VirtualizedContainerService.HintSize="1216,288" sap2010:WorkflowViewState.IdRef="Parallel_1">
-                                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="class" DisplayName="Get Attribute Compliant" sap:VirtualizedContainerService.HintSize="374,209.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strCompliantOutcome]" Version="V3">
-                                            <uix:NGetAttributeGeneric.Target>
-                                              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="[&quot;&lt;webctrl parentid='outcome&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='BUTTON' aaname='Compliant' /&gt;&quot;]" FuzzySelectorArgument="[&quot;&lt;webctrl parentid='outcome&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='BUTTON' aaname='Compliant' type='' class='btn-outcome' check:text='Compliant' /&gt;&quot;]" Guid="f69666c3-8bec-44ca-b629-a145aeee23d4" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Phytosanitary Compliance Dashboard' /&gt;" SearchSteps="Selector" WaitForReadyArgument="None" />
-                                            </uix:NGetAttributeGeneric.Target>
-                                          </uix:NGetAttributeGeneric>
-                                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="class" DisplayName="Get Attribute On Hold" sap:VirtualizedContainerService.HintSize="374,209.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[strOnHoldOutcome]" Version="V3">
-                                            <uix:NGetAttributeGeneric.Target>
-                                              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="[&quot;&lt;webctrl aaname='On Hold' parentid='outcome&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='BUTTON' /&gt;&quot;]" FuzzySelectorArgument="[&quot;&lt;webctrl aaname='On Hold' parentid='outcome&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='BUTTON' type='' class='btn-outcome active' check:innerText='On Hold' /&gt;&quot;]" Guid="9ca35987-f9f8-4b62-b251-ceed73662905" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Phytosanitary Compliance Dashboard' /&gt;" SearchSteps="Selector" WaitForReadyArgument="None" />
-                                            </uix:NGetAttributeGeneric.Target>
-                                          </uix:NGetAttributeGeneric>
-                                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute Comments" sap:VirtualizedContainerService.HintSize="374,209.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[strComments]" Version="V3">
-                                            <uix:NGetAttributeGeneric.Target>
-                                              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="[&quot;&lt;webctrl id='comments&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='INPUT' /&gt;&quot;]" FuzzySelectorArgument="[&quot;&lt;webctrl id='comments&quot; &amp; CurrentCommodityRow(&quot;ID&quot;).ToString &amp; &quot;' tag='INPUT' type='text' class='' aaname='Comments' /&gt;&quot;]" Guid="e4cbb557-e94a-4afc-8a8f-162026125087" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Phytosanitary Compliance Dashboard' /&gt;" SearchSteps="Selector" WaitForReadyArgument="None" />
-                                            </uix:NGetAttributeGeneric.Target>
-                                          </uix:NGetAttributeGeneric>
-                                        </Parallel>
-                                        <Assign DisplayName="Assign original status of commodity line" sap:VirtualizedContainerService.HintSize="1216,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strOriginalOutcome]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[CurrentCommodityRow("Outcome").ToString]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <If Condition="[strCompliantOutcome.contains(&quot;active&quot;)]" DisplayName="If Compliant button is active" sap:VirtualizedContainerService.HintSize="1216,845.6" sap2010:WorkflowViewState.IdRef="If_1">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,280" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="Assign new status" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[strNewOutcome]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">COMPLIANT</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <Assign DisplayName="Assign status as Compliant" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:Object">[CurrentCommodityRow("Outcome")]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[strNewOutcome]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,394.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="Assign new status" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[strNewOutcome]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">ON HOLD</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <Assign DisplayName="Assign status as On Hold" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:Object">[CurrentCommodityRow("Outcome")]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:Object">[strNewOutcome]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <Assign DisplayName="Assign comments to notes" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:Object">[CurrentCommodityRow("Status Notes")]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:Object">[CurrentCommodityRow("Status Notes").ToString + vbcr + strComments]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                            </Sequence>
-                                          </If.Else>
-                                        </If>
-                                        <If Condition="[strOriginalOutcome.ToUpper &lt;&gt; strNewOutcome.ToUpper]" DisplayName="If user has changed the status of the text comparison module" sap:VirtualizedContainerService.HintSize="1216,418.4" sap2010:WorkflowViewState.IdRef="If_2">
-                                          <If.Then>
-                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="Assign status notes" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:Object">[CurrentCommodityRow("Outcome Notes")]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:Object">[strOriginalOutcome]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,90.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Sequence>
-                                          </If.Else>
-                                        </If>
-                                      </Sequence>
-                                    </ActivityAction>
-                                  </ui:ForEachRow.Body>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:ForEachRow>
-                              </Sequence>
-                            </ui:CommentOut.Body>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:CommentOut>
                           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="570,123.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;End &quot; &amp; Now.ToString(&quot;yyyy-MM-dd hh:mm:ss.fff&quot;)]" />
                           <ui:Break DisplayName="Break - Exit Trigger Scope" sap:VirtualizedContainerService.HintSize="570,49.6" sap2010:WorkflowViewState.IdRef="Break_1" />
                         </Sequence>
