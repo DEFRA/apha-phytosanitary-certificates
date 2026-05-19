@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NetworkConnectivityTool" VisualBasic.Settings="{x:Null}"Removed_Key"1872,2039.6"Removed_Key"NetworkConnectivityTool_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NetworkConnectivityTool" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1872,2039.6" sap2010:WorkflowViewState.IdRef="NetworkConnectivityTool_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -79,7 +79,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <SequenceRemoved_Key"Network Connectivity Tool"Removed_Key"547.6,1974.4"Removed_Key"Sequence_2">
+  <Sequence DisplayName="Network Connectivity Tool" sap:VirtualizedContainerService.HintSize="547.6,1974.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strZscalerStatus" />
       <Variable x:TypeArguments="x:Boolean" Name="boolNetworkOnline" />
@@ -92,7 +92,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <AssignRemoved_Key"Check if Network is Connected"Removed_Key"485.6,82.4"Removed_Key"Assign_1">
+    <Assign DisplayName="Check if Network is Connected" sap:VirtualizedContainerService.HintSize="485.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[boolNetworkOnline]</OutArgument>
       </Assign.To>
@@ -100,12 +100,12 @@
         <InArgument x:TypeArguments="x:Boolean">[system.net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[boolNetworkOnline=FALSE]"Removed_Key"If network online is 'False'"Removed_Key"485.6,274.4"Removed_Key"If_1">
+    <If Condition="[boolNetworkOnline=FALSE]" DisplayName="If network online is 'False'" sap:VirtualizedContainerService.HintSize="485.6,274.4" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <ThrowRemoved_Key"Throw BRE - No Internet Connection" Exception="[new BusinessRuleException(&quot;No internet connection.&quot;)]"Removed_Key"334,91.2"Removed_Key"Throw_1" />
+        <Throw DisplayName="Throw BRE - No Internet Connection" Exception="[new BusinessRuleException(&quot;No internet connection.&quot;)]" sap:VirtualizedContainerService.HintSize="334,91.2" sap2010:WorkflowViewState.IdRef="Throw_1" />
       </If.Then>
       <If.Else>
-        <SequenceRemoved_Key"Sequence_3">
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -114,9 +114,9 @@
         </Sequence>
       </If.Else>
     </If>
-    <TryCatchRemoved_Key"Try Catch"Removed_Key"485.6,304.4"Removed_Key"TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="485.6,304.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml"Removed_Key"Ping Google - Check Internet Access" EnableSSLVerification="False" EndPoint="https://www.google.co.uk"Removed_Key"204,71.2"Removed_Key"HttpClient_1" Method="GET" Result="[strResponseContent]" StatusCode="[intResponseStatus]" TimeoutMS="5000">
+        <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Ping Google - Check Internet Access" EnableSSLVerification="False" EndPoint="https://www.google.co.uk" sap:VirtualizedContainerService.HintSize="204,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strResponseContent]" StatusCode="[intResponseStatus]" TimeoutMS="5000">
           <ui:HttpClient.Attachments>
             <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
           </ui:HttpClient.Attachments>
@@ -135,7 +135,7 @@
         </ui:HttpClient>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception"Removed_Key"403.6,22.8"Removed_Key"Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.6,22.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -146,21 +146,21 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ThrowRemoved_Key"Throw BRE - No Internet Access" Exception="[new BusinessRuleException(&quot;No internet access. (Connected, no resposne to ping test)&quot;)]"Removed_Key"334,91.2"Removed_Key"Throw_2" />
+            <Throw DisplayName="Throw BRE - No Internet Access" Exception="[new BusinessRuleException(&quot;No internet access. (Connected, no resposne to ping test)&quot;)]" sap:VirtualizedContainerService.HintSize="334,91.2" sap2010:WorkflowViewState.IdRef="Throw_2" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:BlockUserInput BlockType="All"Removed_Key"Block User Input"Removed_Key"485.6,767.6"Removed_Key"BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True" TimeoutMS="30000">
+    <ui:BlockUserInput BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="485.6,767.6" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True" TimeoutMS="30000">
       <ui:BlockUserInput.Body>
-        <SequenceRemoved_Key"Do"Removed_Key"450,639.6"Removed_Key"Sequence_4">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,639.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:StartProcess WorkingDirectory="{x:Null}" Arguments=" -shortcut"Removed_Key"Start Process - Zscaler" FileName="C:\Program Files (x86)\Zscaler\ZSATray\ZSATray.exe"Removed_Key"388,88"Removed_Key"StartProcess_1" />
-          <ui:GetFullText IgnoreHidden="{x:Null}"Removed_Key"Get Full Text - Service Status"Removed_Key"388,106.8"Removed_Key"GetFullText_1">
+          <ui:StartProcess WorkingDirectory="{x:Null}" Arguments=" -shortcut" DisplayName="Start Process - Zscaler" FileName="C:\Program Files (x86)\Zscaler\ZSATray\ZSATray.exe" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text - Service Status" sap:VirtualizedContainerService.HintSize="388,106.8" sap2010:WorkflowViewState.IdRef="GetFullText_1">
             <ui:GetFullText.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ac24db7-89ac-4051-a8fa-61016f72587b" InformativeScreenshot="2310f86911aec6ffa9405b1ebee52e83" Selector="&lt;wnd app='zsatray.exe' cls='HwndWrapper*' title='Zscaler Client Connector' /&gt;&lt;ctrl automationid='ZSAMFPrivateAccessTab' /&gt;&lt;ctrl automationid='ZSAMFSecureAccessTunnelStatusText' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -175,7 +175,7 @@
               <OutArgument x:TypeArguments="x:String">[strServiceStatus]</OutArgument>
             </ui:GetFullText.Text>
           </ui:GetFullText>
-          <ui:GetValue ContinueOnError="{x:Null}"Removed_Key"Get Text - Authentication Status"Removed_Key"388,106.8"Removed_Key"GetValue_1">
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Authentication Status" sap:VirtualizedContainerService.HintSize="388,106.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
             <ui:GetValue.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff136ef5-470d-4efe-afe4-d32f6a93dfce" InformativeScreenshot="2c822994e5239fd8532ac6c631b75f36" Selector="&lt;wnd app='zsatray.exe' cls='HwndWrapper*' title='Zscaler Client Connector' /&gt;&lt;ctrl automationid='ZSAMFPrivateAccessTab' /&gt;&lt;ctrl automationid='ZSAMFSecureAccessAuthStatusText' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -190,7 +190,7 @@
               <OutArgument x:TypeArguments="x:String">[strZscalerStatus]</OutArgument>
             </ui:GetValue.Value>
           </ui:GetValue>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE"Removed_Key"Click 'Close'"Removed_Key"388,106.8"Removed_Key"Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="388,106.8" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -215,12 +215,12 @@
         </Sequence>
       </ui:BlockUserInput.Body>
     </ui:BlockUserInput>
-    <If Condition="[(not strZscalerStatus=&quot;Authenticated&quot;) and (not strServiceStatus.Trim=&quot;Disabled&quot;)]"Removed_Key"If Zscaler status is not 'Authenticated'"Removed_Key"485.6,274.4"Removed_Key"If_2">
+    <If Condition="[(not strZscalerStatus=&quot;Authenticated&quot;) and (not strServiceStatus.Trim=&quot;Disabled&quot;)]" DisplayName="If Zscaler status is not 'Authenticated'" sap:VirtualizedContainerService.HintSize="485.6,274.4" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <ThrowRemoved_Key"Throw BRE - No Internet Connection" Exception="[new BusinessRuleException(&quot;Zcaler is not authenticated.&quot;)]"Removed_Key"334,91.2"Removed_Key"Throw_3" />
+        <Throw DisplayName="Throw BRE - No Internet Connection" Exception="[new BusinessRuleException(&quot;Zcaler is not authenticated.&quot;)]" sap:VirtualizedContainerService.HintSize="334,91.2" sap2010:WorkflowViewState.IdRef="Throw_3" />
       </If.Then>
       <If.Else>
-        <SequenceRemoved_Key"Sequence_5">
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
