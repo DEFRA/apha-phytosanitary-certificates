@@ -150,7 +150,7 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dataverse" sap:VirtualizedContainerService.HintSize="885.6,982.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dataverse" sap:VirtualizedContainerService.HintSize="801.6,982.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="jsonBody" />
       <Variable x:TypeArguments="x:String" Name="strResponse" />
@@ -171,7 +171,7 @@
     </Assign>
     <TryCatch DisplayName="Try Catch - build API body" sap:VirtualizedContainerService.HintSize="468,430" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jrrRows As New JArray()&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In io_dtCommodityLines.Rows&#xD;&#xA;&#xD;&#xA;    Dim jsonRow As New JObject From {&#xD;&#xA;        {&quot;eppo&quot;, row(&quot;EPPO&quot;).ToString()},&#xD;&#xA;        {&quot;origin&quot;, row(&quot;Country&quot;).ToString()},&#xD;&#xA;        {&quot;commodity_group&quot;, row(&quot;Commodity Group&quot;).ToString()}&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    jrrRows.Add(jsonRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;jsonbody(&quot;inputs&quot;) = jrrRows&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jrrRows As New JArray()&#xA;&#xA;For Each row As DataRow In io_dtCommodityLines.Rows&#xA;&#xA;    Dim jsonRow As New JObject From {&#xA;        {&quot;eppo&quot;, row(&quot;EPPO&quot;).ToString()},&#xA;        {&quot;origin&quot;, row(&quot;Country&quot;).ToString()},&#xA;        {&quot;commodity_group&quot;, row(&quot;Commodity Group&quot;).ToString()}&#xA;    }&#xA;&#xA;    jrrRows.Add(jsonRow)&#xA;Next&#xA;&#xA;jsonbody(&quot;inputs&quot;) = jrrRows&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
           <ui:InvokeCode.Arguments>
             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
             <InOutArgument x:TypeArguments="njl:JObject" x:Key="jsonBody">[jsonBody]</InOutArgument>
@@ -212,7 +212,7 @@
           <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential("",g_Credentials("AD Text API Key").Password).Password]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[jsonBody.ToString]" BodyFormat="application/json" DisplayName="Private: HTTP Request" EnableSSLVerification="True" EndPoint="https://4cabdb5c2afbe0cabe23471efe2a66.a3.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/1ce99a9a8ed24e41a4dbf43c8825df68/triggers/manual/paths/invoke?api-version=1&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=0ZIkzcVAqdRYXEH0gAArqu9tJRVPdffjUsqqAajbh7k" sap:VirtualizedContainerService.HintSize="434,94.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="600000">
+      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[jsonBody.ToString]" BodyFormat="application/json" DisplayName="Private: HTTP Request" EnableSSLVerification="True" EndPoint="https://4cabdb5c2afbe0cabe23471efe2a66.a3.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b2e3e853d073412d81d81da36a2c77fa/triggers/manual/paths/invoke?api-version=1&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=fH9cymvISOHNWG7otnzeMoTBM6RtIZfy4gBKa6fZHFk" sap:VirtualizedContainerService.HintSize="434,94.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="600000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
