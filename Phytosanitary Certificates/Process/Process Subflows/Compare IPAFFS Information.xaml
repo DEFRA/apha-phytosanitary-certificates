@@ -2427,7 +2427,7 @@ ToList()]</InArgument>
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[Row(&quot;Commodity&quot;).ToString.ToLower.Contains(&quot;hybrid&quot;) AndAlso &#xD;&#xA; Not Row(&quot;Commodity&quot;).ToString.ToLower.Contains(&quot;hybrida&quot;)]" DisplayName="check whether the commodity is hybrid" sap:VirtualizedContainerService.HintSize="571.4285714285714,813.7142857142857" sap2010:WorkflowViewState.IdRef="If_112">
+                        <If Condition="[Row(&quot;Commodity&quot;).ToString.ToLower.Contains(&quot;hybrid&quot;) AndAlso &#xA; Not Row(&quot;Commodity&quot;).ToString.ToLower.Contains(&quot;hybrida&quot;)]" DisplayName="check whether the commodity is hybrid" sap:VirtualizedContainerService.HintSize="571.4285714285714,813.7142857142857" sap2010:WorkflowViewState.IdRef="If_112">
                           <If.Then>
                             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="537.1428571428571,168" sap2010:WorkflowViewState.IdRef="Sequence_501">
                               <sap:WorkflowViewStateService.ViewState>
@@ -2980,7 +2980,7 @@ ToList()]</InArgument>
                                                 <av:Size x:Key="AnnotationSize">340,90</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_429">
+                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="640,5085.714285714285" sap2010:WorkflowViewState.IdRef="Sequence_429">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="listSuggestions" />
                                                 <Variable x:TypeArguments="x:String" Name="strFormOutput" />
@@ -3036,7 +3036,7 @@ ToList()]</InArgument>
                                                           <InArgument x:TypeArguments="x:String">[ipRow("Eppo").ToString.Trim()]</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <If Condition="[Not String.IsNullOrWhiteSpace(ipCommodity) AndAlso &#xD;&#xA;    (ipCommodity.ToLower().StartsWith(row(&quot;Commodity&quot;).ToString.Trim().ToLower().Split(&quot; &quot;c)(0)) OrElse &#xD;&#xA;     row(&quot;Commodity&quot;).ToString.Trim().ToLower().StartsWith(ipCommodity.ToLower().Split(&quot; &quot;c)(0)) )]" sap:VirtualizedContainerService.HintSize="450.2857142857143,483.42857142857144" sap2010:WorkflowViewState.IdRef="If_104">
+                                                      <If Condition="[Not String.IsNullOrWhiteSpace(ipCommodity) AndAlso &#xA;    (ipCommodity.ToLower().StartsWith(row(&quot;Commodity&quot;).ToString.Trim().ToLower().Split(&quot; &quot;c)(0)) OrElse &#xA;     row(&quot;Commodity&quot;).ToString.Trim().ToLower().StartsWith(ipCommodity.ToLower().Split(&quot; &quot;c)(0)) )]" sap:VirtualizedContainerService.HintSize="450.2857142857143,483.42857142857144" sap2010:WorkflowViewState.IdRef="If_104">
                                                         <If.Then>
                                                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,229.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_457">
                                                             <sap:WorkflowViewStateService.ViewState>
@@ -3097,7 +3097,7 @@ ToList()]</InArgument>
                                                   <InArgument x:TypeArguments="scg:List(x:String)" x:Key="selectedMatch_dropdown">[listSuggestions]</InArgument>
                                                 </ufa:FormActivity.FormFieldsCollection>
                                               </ufa:FormActivity>
-                                              <If Condition="[boolDis OrElse strSelectedButton = &quot;no&quot;]" DisplayName="Handle Stop Button" sap:VirtualizedContainerService.HintSize="605.7142857142857,3271.4285714285716" sap2010:WorkflowViewState.IdRef="If_105">
+                                              <If Condition="[boolDis OrElse strSelectedButton = &quot;no&quot;]" DisplayName="Handle Stop Button" sap:VirtualizedContainerService.HintSize="605.7142857142857,3544.5714285714284" sap2010:WorkflowViewState.IdRef="If_105">
                                                 <If.Then>
                                                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="571.4285714285714,663.4285714285714" sap2010:WorkflowViewState.IdRef="Sequence_459">
                                                     <sap:WorkflowViewStateService.ViewState>
@@ -3191,7 +3191,7 @@ ToList()]</InArgument>
                                                   </Sequence>
                                                 </If.Then>
                                                 <If.Else>
-                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="571.4285714285714,2444.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_460">
+                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="571.4285714285714,2717.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_460">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3208,15 +3208,15 @@ ToList()]</InArgument>
                                                       </ui:InvokeCode.Arguments>
                                                     </ui:InvokeCode>
                                                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="537.1428571428571,124.57142857142857" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[finalEPPO]" />
-                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="537.1428571428571,219.42857142857142" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="537.1428571428571,248.57142857142858" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                                                       <ui:CommentOut.Body>
-                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_513">
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,137.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_513">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Find and update matching row(s) in IPAFFS table" sap:VirtualizedContainerService.HintSize="381.7142857142857,48" sap2010:WorkflowViewState.IdRef="ForEachRow_58">
+                                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Find and update matching row(s) in IPAFFS table" sap:VirtualizedContainerService.HintSize="381.7142857142857,77.14285714285714" sap2010:WorkflowViewState.IdRef="ForEachRow_58">
                                                             <ui:ForEachRow.Body>
                                                               <ActivityAction x:TypeArguments="sd:DataRow">
                                                                 <ActivityAction.Argument>
@@ -3269,7 +3269,7 @@ ToList()]</InArgument>
                                                         </Sequence>
                                                       </ui:CommentOut.Body>
                                                     </ui:CommentOut>
-                                                    <Sequence DisplayName="Update &quot;New EPPO&quot; Column" sap:VirtualizedContainerService.HintSize="537.1428571428571,1594.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_510">
+                                                    <Sequence DisplayName="Update &quot;New EPPO&quot; Column" sap:VirtualizedContainerService.HintSize="537.1428571428571,1838.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_510">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                                                       </Sequence.Variables>
@@ -3292,7 +3292,27 @@ ToList()]</InArgument>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </Assign>
-                                                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Find Matching Row in IPAFFs Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,336" sap2010:WorkflowViewState.IdRef="LookupDataTable_25" LookupColumnName="EPPO" LookupValue="[row(&quot;New EPPO&quot;).ToString]" RowIndex="[rowIndex]" />
+                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="502.85714285714283,580" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+                                                        <TryCatch.Try>
+                                                          <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Find Matching Row in IPAFFs Table" sap:VirtualizedContainerService.HintSize="400,304" sap2010:WorkflowViewState.IdRef="LookupDataTable_25" LookupColumnName="EPPO" LookupValue="[row(&quot;New EPPO&quot;).ToString]" RowIndex="[rowIndex]" />
+                                                        </TryCatch.Try>
+                                                        <TryCatch.Catches>
+                                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,376" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ActivityAction x:TypeArguments="s:Exception">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                              </ActivityAction.Argument>
+                                                              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Find Matching Row in IPAFFs Table" sap:VirtualizedContainerService.HintSize="394.2857142857143,304" sap2010:WorkflowViewState.IdRef="LookupDataTable_26" LookupColumnName="EPPO" LookupValue="[row(&quot;EPPO&quot;).ToString]" RowIndex="[rowIndex]" />
+                                                            </ActivityAction>
+                                                          </Catch>
+                                                        </TryCatch.Catches>
+                                                      </TryCatch>
                                                       <Assign DisplayName="Assign New EPPO Value for IPAFFs Row" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_381">
                                                         <Assign.To>
                                                           <OutArgument x:TypeArguments="x:Object">[dtDistinctIPAFFSEPPO.Rows(rowIndex)("New EPPO")]</OutArgument>
