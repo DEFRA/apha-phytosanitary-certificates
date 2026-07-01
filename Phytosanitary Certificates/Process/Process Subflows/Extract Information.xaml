@@ -65,6 +65,12 @@
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>DRACOE_PopUps_64</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -148,9 +154,12 @@
       <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="1114.857142857143,5839.428571428572" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="1450.2857142857142,6101.714285714285" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -170,7 +179,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="684.5714285714286,5816.571428571428" sap2010:WorkflowViewState.IdRef="Sequence_146">
+    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="684.5714285714286,6078.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_146">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -331,7 +340,8 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="650.2857142857143,2345.1428571428573" sap2010:WorkflowViewState.IdRef="Sequence_187">
+      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\ - Additional Declarations.txt&quot;]" sap:VirtualizedContainerService.HintSize="650.2857142857143,169.71428571428572" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[out_strAdditionalDeclarions]" />
+      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="650.2857142857143,2437.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_187">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieGenusText" />
@@ -423,7 +433,7 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strGenusText, "(?sm)^.*?(?=^[ \t]*\d{4}\\b)", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Sequence DisplayName="Get Commodity Group from main header" sap:VirtualizedContainerService.HintSize="616,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_200">
+        <Sequence DisplayName="Get Commodity Group from main header" sap:VirtualizedContainerService.HintSize="616,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_200">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -499,13 +509,13 @@
         </Assign>
         <ui:BuildDataTable DataTable="[out_dtCommodityLines]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="616,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_10" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         <ui:Matches FirstMatch="{x:Null}" BuilderPattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="616,92" sap2010:WorkflowViewState.IdRef="Matches_23" Input="[strGenusText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?m)^\\s*\\d{4}.*(?:\\r?\\n\\s{2,}.*){0,2}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?m)^\s*\d{4}.*(?:\r?\n\s{2,}.*){0,2}" RegexOption="IgnoreCase, Compiled" Result="[ieMatches]" />
-        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="616,596" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[ieMatches]">
+        <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="[index]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="616,642.2857142857143" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[ieMatches]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="str:Match">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="484.57142857142856,456.57142857142856" sap2010:WorkflowViewState.IdRef="Sequence_188">
+              <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="484.57142857142856,502.85714285714283" sap2010:WorkflowViewState.IdRef="Sequence_188">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="rowText" />
                   <Variable x:TypeArguments="x:String" Name="entry" />
@@ -540,7 +550,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) Or &#xA;entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;) Or &#xA;System.Text.RegularExpressions.Regex.Matches(entry, &quot;\S+&quot;).Count &lt;= 2 Or&#xA;entry.Contains(&quot;_&quot;) Or&#xA;entry.Contains(&quot;consignee&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,279.42857142857144" sap2010:WorkflowViewState.IdRef="If_25">
+                <If Condition="[entry.Contains(&quot;No. EC NL&quot;) Or &#xA;entry.Contains(&quot;Distinguishing marks; numbers and description of package&quot;) Or &#xA;System.Text.RegularExpressions.Regex.Matches(entry, &quot;\S+&quot;).Count &lt;= 2 Or&#xA;entry.Contains(&quot;_&quot;) Or&#xA;entry.Contains(&quot;consignee&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,325.7142857142857" sap2010:WorkflowViewState.IdRef="If_25">
                   <If.Then>
                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_201">
                       <sap:WorkflowViewStateService.ViewState>
@@ -551,7 +561,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="708.5714285714286,10914.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_214">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,71.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_214">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
