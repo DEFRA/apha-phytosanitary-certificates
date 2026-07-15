@@ -166,7 +166,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1291.4285714285713,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -190,7 +190,7 @@
           <av:PointCollection x:Key="ConnectorLocation">700,205 700,255</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="668.5714285714286,1071.4285714285713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,7 +207,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
               </ActivityAction.Argument2>
-              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_6">
+              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="600,625.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_6">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCondensed" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateCommodityLines" />
@@ -1073,7 +1073,7 @@ ToList()]</InArgument>
                                                                                 <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <av:Point x:Key="ShapeLocation">375,365</av:Point>
+                                                                                      <av:Point x:Key="ShapeLocation">105,365</av:Point>
                                                                                       <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
@@ -1211,15 +1211,18 @@ ToList()]</InArgument>
                                                                                         </Assign>
                                                                                       </Sequence>
                                                                                       <FlowStep.Next>
-                                                                                        <FlowDecision x:Name="__ReferenceID1" Condition="[isCommodityMatch]" DisplayName="Is there a matching commodity Group" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_48" True="{x:Reference __ReferenceID0}">
+                                                                                        <FlowDecision x:Name="__ReferenceID1" Condition="[isCommodityMatch]" DisplayName="Is there a matching commodity Group" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_48">
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                               <av:Point x:Key="ShapeLocation">270,370</av:Point>
                                                                                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                                              <av:PointCollection x:Key="TrueConnector">330,400 360,400 360,399.85714285714283 375,399.85714285714283</av:PointCollection>
+                                                                                              <av:PointCollection x:Key="FalseConnector">270,400 240,400 240,399.85714285714283 214.71428571428572,399.85714285714283</av:PointCollection>
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
+                                                                                          <FlowDecision.False>
+                                                                                            <x:Reference>__ReferenceID0</x:Reference>
+                                                                                          </FlowDecision.False>
                                                                                         </FlowDecision>
                                                                                       </FlowStep.Next>
                                                                                     </FlowStep>
@@ -2302,7 +2305,7 @@ ToList()]</InArgument>
               <av:PointCollection x:Key="ConnectorLocation">700,325 700,385</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_7">
             <Flowchart.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtCertCondensed" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctCertEPPO" />
@@ -2850,13 +2853,13 @@ ToList()]</InArgument>
                               <av:PointCollection x:Key="ConnectorLocation">789.8571428571429,564.7142857142857 789.8571428571429,615</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="634.2857142857143,815.4285714285714" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                 </ActivityAction.Argument>
-                                <Flowchart sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_19">
+                                <Flowchart sap:VirtualizedContainerService.HintSize="600,625.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_19">
                                   <Flowchart.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredIPAFFsCommodityLines" />
                                     <Variable x:TypeArguments="x:String" Name="foundCertEPPO" />
@@ -2886,7 +2889,7 @@ ToList()]</InArgument>
                                         <av:Size x:Key="AnnotationSize">150,130</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence sap2010:Annotation.AnnotationText="Where we don't retrieve any full matches, we must do a partial match check. We use the first three non-numerical characters of the EPPO code to perform this search." DisplayName="Search on 3 Characters" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_432">
+                                    <Sequence sap2010:Annotation.AnnotationText="Where we don't retrieve any full matches, we must do a partial match check. We use the first three non-numerical characters of the EPPO code to perform this search." DisplayName="Search on 3 Characters" sap:VirtualizedContainerService.HintSize="537.1428571428571,1214.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_432">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="phytoCode" />
                                         <Variable x:TypeArguments="x:Int32" Name="startIndex" />
@@ -2932,14 +2935,34 @@ ToList()]</InArgument>
                                           </Sequence>
                                         </ui:InterruptibleWhile.Body>
                                       </ui:InterruptibleWhile>
-                                      <Assign DisplayName="Assign first 3 letters to phytoCode" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_321">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">[phytoCode]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String">[phytoCode.Substring(startIndex, 3)]</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
+                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="502.85714285714283,368.57142857142856" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                        <TryCatch.Try>
+                                          <Assign DisplayName="Assign first 3 letters to phytoCode" sap:VirtualizedContainerService.HintSize="434.2857142857143,85.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_321">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[phytoCode]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[phytoCode.Substring(startIndex, 3)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </TryCatch.Try>
+                                        <TryCatch.Catches>
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,164.57142857142858" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ActivityAction x:TypeArguments="s:Exception">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                              </ActivityAction.Argument>
+                                              <Throw Exception="[New Exception(&quot;Eppo Code missing for &quot; &amp; row(&quot;Commodity&quot;).ToString &amp; &quot;. Please refer to automation.&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_17" />
+                                            </ActivityAction>
+                                          </Catch>
+                                        </TryCatch.Catches>
+                                      </TryCatch>
                                       <ui:FilterDataTable DataTable="[dtDistinctIPAFFSEPPO]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="502.85714285714283,188.57142857142858" sap2010:WorkflowViewState.IdRef="FilterDataTable_19" OutputDataTable="[dtFilteredMatches]" SelectColumnsMode="Remove">
                                         <ui:FilterDataTable.Filters>
                                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -2981,7 +3004,7 @@ ToList()]</InArgument>
                                                 <av:Size x:Key="AnnotationSize">340,90</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="678.8571428571429,5646.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_429">
+                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_429">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="listSuggestions" />
                                                 <Variable x:TypeArguments="x:String" Name="strFormOutput" />
