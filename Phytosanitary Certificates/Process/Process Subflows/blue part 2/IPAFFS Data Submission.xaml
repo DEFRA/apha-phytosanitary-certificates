@@ -143,7 +143,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="IPAFFS Data Submission" sap:VirtualizedContainerService.HintSize="881.7142857142857,3378.285714285714" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IPAFFS Data Submission" sap:VirtualizedContainerService.HintSize="881.7142857142857,4659.428571428572" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -155,8 +155,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="621.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Navigating to document checks&quot;]" />
-    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="621.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="621.7142857142857,86.28571428571429" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Navigating to document checks&quot;]" />
+    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="621.7142857142857,86.28571428571429" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -312,7 +312,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Flowchart sap:VirtualizedContainerService.HintSize="621.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="621.7142857142857,74.28571428571429" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1340,7 +1340,7 @@ CopyToDataTable()]</InArgument>
       <x:Reference>__ReferenceID8</x:Reference>
       <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart>
-    <Sequence sap2010:Annotation.AnnotationText="add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xA;&#xA;This will allow me to sort the search results to get the highest priority" DisplayName="Apply priority hold levels to dt compliant" sap:VirtualizedContainerService.HintSize="621.7142857142857,754.8571428571429" sap2010:WorkflowViewState.IdRef="Sequence_95">
+    <Sequence sap2010:Annotation.AnnotationText="add priority column&#xA;add priority number from dtCHED_Cert_Hold&#xA;&#xA;The reason for this is because the same plant may be present on a variety of certificates and i need to get the highest priority reason when im checking if a plant is compliant or not.&#xA;&#xA;This will allow me to sort the search results to get the highest priority" DisplayName="Apply priority hold levels to dt compliant" sap:VirtualizedContainerService.HintSize="621.7142857142857,842.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_95">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strCHED_Cert_Hold" />
       </Sequence.Variables>
@@ -1351,27 +1351,27 @@ CopyToDataTable()]</InArgument>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="502.85714285714283,57.142857142857146" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]">
+      <ui:RemoveDuplicateRows DataTable="[in_dtAD_Compliant]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="502.85714285714283,86.28571428571429" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_8" OutputDataTable="[in_dtAD_Compliant]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:RemoveDuplicateRows>
-      <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Priority order" DataTable="[in_dtAD_Compliant]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="502.85714285714283,57.142857142857146" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" MaxLength="3">
+      <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Priority order" DataTable="[in_dtAD_Compliant]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="502.85714285714283,86.28571428571429" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" MaxLength="3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtAD_Compliant]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,416.57142857142856" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtAD_Compliant]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,445.7142857142857" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468.57142857142856,225.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_96">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468.57142857142856,254.28571428571428" sap2010:WorkflowViewState.IdRef="Sequence_96">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataRow" Name="rowCertMatch" />
               </Sequence.Variables>
@@ -1394,7 +1394,7 @@ CopyToDataTable()]</InArgument>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <If Condition="[rowCertMatch isNot Nothing]" DisplayName="If - cert level hold found" sap:VirtualizedContainerService.HintSize="434.2857142857143,48" sap2010:WorkflowViewState.IdRef="If_23">
+              <If Condition="[rowCertMatch isNot Nothing]" DisplayName="If - cert level hold found" sap:VirtualizedContainerService.HintSize="434.2857142857143,77.14285714285714" sap2010:WorkflowViewState.IdRef="If_23">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -1473,13 +1473,13 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="621.7142857142857,2086.8571428571427" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="621.7142857142857,3132.5714285714284" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Navigate to document checks screen" DisplayName="Do - website data entry" sap:VirtualizedContainerService.HintSize="587.4285714285714,1946.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_77">
+          <Sequence sap2010:Annotation.AnnotationText="Navigate to document checks screen" DisplayName="Do - website data entry" sap:VirtualizedContainerService.HintSize="587.4285714285714,2960.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_77">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtWebsite" />
             </Sequence.Variables>
@@ -1490,16 +1490,16 @@ CopyToDataTable()]</InArgument>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="553.1428571428571,1853.7142857142858" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="553.1428571428571,2867.4285714285716" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.8571428571429,1712" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.8571428571429,2725.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_70">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Activate DelayBefore="0" DelayMS="0" sap:VirtualizedContainerService.HintSize="484.57142857142856,57.142857142857146" sap2010:WorkflowViewState.IdRef="Activate_2">
+                  <ui:Activate DelayBefore="0" DelayMS="0" sap:VirtualizedContainerService.HintSize="484.57142857142856,86.28571428571429" sap2010:WorkflowViewState.IdRef="Activate_2">
                     <ui:Activate.Target>
                       <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[g_IPAFFSElement]" Id="b2fa3461-2c21-4613-a004-5c036a974588" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -1508,7 +1508,7 @@ CopyToDataTable()]</InArgument>
                       </ui:Target>
                     </ui:Activate.Target>
                   </ui:Activate>
-                  <Sequence sap2010:Annotation.AnnotationText="Grab Datatable&#xA;&#xA;add column IPAFFS_Reason&#xA;&#xA;match on Commodity - fill in IPAFFS_Reason" DisplayName="Get website Datatable" sap:VirtualizedContainerService.HintSize="484.57142857142856,154.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                  <Sequence sap2010:Annotation.AnnotationText="Grab Datatable&#xA;&#xA;add column IPAFFS_Reason&#xA;&#xA;match on Commodity - fill in IPAFFS_Reason" DisplayName="Get website Datatable" sap:VirtualizedContainerService.HintSize="484.57142857142856,201.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_47">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1676,7 +1676,7 @@ CopyToDataTable()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NApplicationCard>
                   </Sequence>
-                  <Sequence sap2010:Annotation.AnnotationText="Cycle through blank IPAFFS_Reason from dtwebsite&#xA;&#xA;get Cert number from dtAD_Compliant&#xA;add them to a new column of dtwebsite - for refencing&#xA;&#xA;get list of unique values of certs - ignore blank cert columns&#xA;&#xA;cycle through list unique certs used as a filter&#xA;&#xA;get highest priority cert level row if it exists&#xA;compare against CHED row if it exists - GET CHED ROW OUTSIDE&#xA;&#xA;3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows&#xA;&#xA;Fill in highest priority IPAFFS_Reason if found otherwise Compliant&#xA;" DisplayName="Check Blanks for CHED and Certififcate Level Holds" sap:VirtualizedContainerService.HintSize="484.57142857142856,1134.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                  <Sequence sap2010:Annotation.AnnotationText="Cycle through blank IPAFFS_Reason from dtwebsite&#xA;&#xA;get Cert number from dtAD_Compliant&#xA;add them to a new column of dtwebsite - for refencing&#xA;&#xA;get list of unique values of certs - ignore blank cert columns&#xA;&#xA;cycle through list unique certs used as a filter&#xA;&#xA;get highest priority cert level row if it exists&#xA;compare against CHED row if it exists - GET CHED ROW OUTSIDE&#xA;&#xA;3 outcomes&#xA;rows not found - compliant&#xA;1 row found - then no comparison needed&#xA;2 rows found compare the two rows&#xA;&#xA;Fill in highest priority IPAFFS_Reason if found otherwise Compliant&#xA;" DisplayName="Check Blanks for CHED and Certififcate Level Holds" sap:VirtualizedContainerService.HintSize="484.57142857142856,1758.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_48">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strRoute" />
                       <Variable x:TypeArguments="sd:DataRow" Name="rowCert" />
@@ -1689,14 +1689,14 @@ CopyToDataTable()]</InArgument>
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Cert" DataTable="[dtWebsite]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="450.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10" MaxLength="-1">
+                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="Cert" DataTable="[dtWebsite]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="450.2857142857143,86.28571428571429" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10" MaxLength="-1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:AddDataColumn>
-                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow - cycle through empty IPAFFS_Reason" sap:VirtualizedContainerService.HintSize="450.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
+                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow - cycle through empty IPAFFS_Reason" sap:VirtualizedContainerService.HintSize="450.2857142857143,86.28571428571429" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -1779,7 +1779,7 @@ FirstOrDefault()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
-                    <Assign DisplayName="Assign - Get Unique List of Certs" sap:VirtualizedContainerService.HintSize="450.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="Assign_40">
+                    <Assign DisplayName="Assign - Get Unique List of Certs" sap:VirtualizedContainerService.HintSize="450.2857142857143,86.28571428571429" sap2010:WorkflowViewState.IdRef="Assign_40">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:List(x:String)">[listCerts]</OutArgument>
                       </Assign.To>
@@ -1797,13 +1797,13 @@ ToList()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This section figures out of the cert holds a certificate level hold and compares it to the CHED lvel hold priority. if neither are present then it is compliant" DisplayName="For Each Cert" sap:VirtualizedContainerService.HintSize="450.2857142857143,172" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[listCerts]">
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This section figures out of the cert holds a certificate level hold and compares it to the CHED lvel hold priority. if neither are present then it is compliant" DisplayName="For Each Cert" sap:VirtualizedContainerService.HintSize="450.2857142857143,283.42857142857144" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[listCerts]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="Cert" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="599.6,1344.4" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,71.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_57">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1914,8 +1914,39 @@ ToList()]</InArgument>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="WHAT IF IPAFFS_Reason INCLUDES A PLANT NOT IN ANY CERTIFIFCATE&#xA;This scenario should not happen - adding this here as a just in case" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="450.2857142857143,425.7142857142857" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[dtWebsite.AsEnumerable.Where(function (r) string.IsNullOrWhiteSpace(r(&quot;IPAFFS_Reason&quot;).ToString))]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,230.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="381.7142857142857,170.85714285714286" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;MISSING BP2: &quot; + currentDataRow(2).ToString]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
@@ -1951,25 +1982,25 @@ ToList()]</InArgument>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <Sequence sap2010:Annotation.AnnotationText="as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xA;&#xA;1 - get unique list of ippafs reasons&#xA;&#xA;2 - iterate through it&#xA;2a - filter datatble on unique hold reasons&#xA;2b - check relevant boxes&#xA;2c - fill in hold/compliant reason&#xA;2d - display popup" DisplayName="Check all boxes and fill in hold/compliant reason" sap:VirtualizedContainerService.HintSize="484.57142857142856,257.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                  <Sequence sap2010:Annotation.AnnotationText="as the Record and select more causes permanent change. the robot cannot click it. a pop will prompt the user to review and click that button for us. the robot will then repeat for the remaining hold/compliant reasons&#xA;&#xA;1 - get unique list of ippafs reasons&#xA;&#xA;2 - iterate through it&#xA;2a - filter datatble on unique hold reasons&#xA;2b - check relevant boxes&#xA;2c - fill in hold/compliant reason&#xA;2d - display popup" DisplayName="Check all boxes and fill in hold/compliant reason" sap:VirtualizedContainerService.HintSize="484.57142857142856,542.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_73">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:List(x:Object)" Name="listReasons" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="722,123.2" sap2010:WorkflowViewState.IdRef="ReportStatus_4" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Entering Data into IPAFFS&quot;]">
+                    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="416,86.28571428571429" sap2010:WorkflowViewState.IdRef="ReportStatus_4" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Entering Data into IPAFFS&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ReportStatus>
-                    <Assign DisplayName="Assign - Get untique list of IPAFFS_Reason" sap:VirtualizedContainerService.HintSize="722,115.6" sap2010:WorkflowViewState.IdRef="Assign_50">
+                    <Assign DisplayName="Assign - Get untique list of IPAFFS_Reason" sap:VirtualizedContainerService.HintSize="416,86.28571428571429" sap2010:WorkflowViewState.IdRef="Assign_50">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:List(x:Object)">[listReasons]</OutArgument>
                       </Assign.To>
@@ -1985,20 +2016,20 @@ ToList()]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - iterate through each reason" sap:VirtualizedContainerService.HintSize="722,3880" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[listReasons]">
+                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - iterate through each reason" sap:VirtualizedContainerService.HintSize="416,77.14285714285714" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[listReasons]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="IPAFFS_Reason" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body - check mark the relavent boxes" sap:VirtualizedContainerService.HintSize="688,3741.6" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                          <Sequence DisplayName="Body - check mark the relavent boxes" sap:VirtualizedContainerService.HintSize="484.57142857142856,390.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_74">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[listReasons.count = 1]" DisplayName="If - check all? or check them individually" sap:VirtualizedContainerService.HintSize="654,1958" sap2010:WorkflowViewState.IdRef="If_20">
+                            <If Condition="[listReasons.count = 1]" DisplayName="If - check all? or check them individually" sap:VirtualizedContainerService.HintSize="450.2857142857143,86.28571428571429" sap2010:WorkflowViewState.IdRef="If_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -2174,7 +2205,7 @@ ToList()]</InArgument>
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <If sap2010:Annotation.AnnotationText="This section will fill in the hold reason or mark it compliant" Condition="[IPAFFS_Reason.ToString = &quot;Compliant&quot;]" DisplayName="If - Compliant or hold" sap:VirtualizedContainerService.HintSize="654,874.8" sap2010:WorkflowViewState.IdRef="If_22">
+                            <If sap2010:Annotation.AnnotationText="This section will fill in the hold reason or mark it compliant" Condition="[IPAFFS_Reason.ToString = &quot;Compliant&quot;]" DisplayName="If - Compliant or hold" sap:VirtualizedContainerService.HintSize="450.2857142857143,149.71428571428572" sap2010:WorkflowViewState.IdRef="If_22">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -2293,7 +2324,7 @@ ToList()]</InArgument>
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <Sequence DisplayName="Record and Select more" sap:VirtualizedContainerService.HintSize="654,848.8" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                            <Sequence DisplayName="Record and Select more" sap:VirtualizedContainerService.HintSize="450.2857142857143,94.28571428571429" sap2010:WorkflowViewState.IdRef="Sequence_85">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2324,14 +2355,14 @@ ToList()]</InArgument>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <uix:NCheckState DisplayName="Check App State - look for Next button" sap:VirtualizedContainerService.HintSize="484.57142857142856,48" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Timeout="1" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State - look for Next button" sap:VirtualizedContainerService.HintSize="484.57142857142856,77.14285714285714" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Timeout="1" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="468,359.2" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450.2857142857143,71.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_71">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2364,7 +2395,7 @@ ToList()]</InArgument>
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="468,169.2" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450.2857142857143,71.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_72">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2392,7 +2423,7 @@ ToList()]</InArgument>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
@@ -2425,7 +2456,7 @@ ToList()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Sequence DisplayName="Record and Finish" sap:VirtualizedContainerService.HintSize="621.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_86">
+    <Sequence DisplayName="Record and Finish" sap:VirtualizedContainerService.HintSize="621.7142857142857,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_86">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2450,14 +2481,14 @@ ToList()]</InArgument>
         </InvokeMethod.TargetObject>
       </InvokeMethod>
     </Sequence>
-    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="621.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="ReportStatus_5" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Closing IPAFFS&quot;]">
+    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="621.7142857142857,86.28571428571429" sap2010:WorkflowViewState.IdRef="ReportStatus_5" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Closing IPAFFS&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReportStatus>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Close IPAFFS" sap:VirtualizedContainerService.HintSize="621.7142857142857,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Close IPAFFS" sap:VirtualizedContainerService.HintSize="621.7142857142857,77.14285714285714" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
