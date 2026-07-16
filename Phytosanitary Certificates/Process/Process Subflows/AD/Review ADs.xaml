@@ -274,7 +274,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="902.8000000000001,402.84000000000003" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="898.8571428571429,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -286,7 +286,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Size x:Key="ShapeSize">50,50</av:Size>
+        <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
         <av:Point x:Key="ShapeLocation">345,35</av:Point>
         <av:PointCollection x:Key="ConnectorLocation">370,85 370,155</av:PointCollection>
       </scg:Dictionary>
@@ -298,11 +298,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">315,365</av:Point>
-          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="740,8892.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -2003,10 +2003,10 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">315,495</av:Point>
               <av:PointCollection x:Key="ConnectorLocation">370,565 370,605</av:PointCollection>
-              <av:Size x:Key="ShapeSize">110,70</av:Size>
+              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign pdf filepath" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_116">
+          <Assign DisplayName="Assign pdf filepath" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_116">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strPDF_Filepath]</OutArgument>
             </Assign.To>
@@ -2024,11 +2024,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">315,605</av:Point>
-                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">370,675 370,705</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Create Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Create Compliance Form.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Create Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Create Compliance Form.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_strPhytoFilepath">[strPDF_Filepath]</InArgument>
@@ -2045,10 +2045,10 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">315,705</av:Point>
-                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Open Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Open Compliance Form.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Open Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Open Compliance Form.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_strComplianceFormFilePath">[Directory.GetCurrentDirectory +"\Assets\Compliance form\Index.html"]</InArgument>
                       <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
@@ -2071,16 +2071,16 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">315,155</av:Point>
           <av:PointCollection x:Key="ConnectorLocation">370,225 370,265</av:PointCollection>
-          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="prepare variables" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence DisplayName="prepare variables" sap:VirtualizedContainerService.HintSize="468.57142857142856,1298.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove text such as&#xA;, nursery: Woudenberg van tuinplanten Zevenhuizen NL755920902,&#xA;&#xA;and trims the text" DisplayName="Replace Matching Patterns - remove nursery info" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?s), nursery:.*?," RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove text such as&#xA;, nursery: Woudenberg van tuinplanten Zevenhuizen NL755920902,&#xA;&#xA;and trims the text" DisplayName="Replace Matching Patterns - remove nursery info" sap:VirtualizedContainerService.HintSize="434.2857142857143,189.71428571428572" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?s), nursery:.*?," RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -2093,7 +2093,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;11 Additional declaration" DisplayName="Replace Matching Patterns - remove starting tags" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*11\s*Additional declaration\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;11 Additional declaration" DisplayName="Replace Matching Patterns - remove starting tags" sap:VirtualizedContainerService.HintSize="434.2857142857143,138.28571428571428" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*11\s*Additional declaration\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -2105,7 +2105,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;(number of pages:\d+)" DisplayName="Replace Matching Patterns - remove page number" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Replace_5" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*See annex \(number of pages:\d+\)\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove strarting tag if any&#xA;(number of pages:\d+)" DisplayName="Replace Matching Patterns - remove page number" sap:VirtualizedContainerService.HintSize="434.2857142857143,138.28571428571428" sap2010:WorkflowViewState.IdRef="Replace_5" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="\s*See annex \(number of pages:\d+\)\s*" RegexOption="Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -2117,7 +2117,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <ui:Replace sap2010:Annotation.AnnotationText="remove &lt; TEXT END &gt; tags" DisplayName="Replace Matching Patterns - end tags" sap:VirtualizedContainerService.HintSize="434,123.2" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="[-\s]+&lt; TEXT END &gt;[-\s]+" RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove &lt; TEXT END &gt; tags" DisplayName="Replace Matching Patterns - end tags" sap:VirtualizedContainerService.HintSize="434.2857142857143,122.85714285714286" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="[-\s]+&lt; TEXT END &gt;[-\s]+" RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
           <ui:Replace.Replacement>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -2129,7 +2129,19 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <Assign sap2010:Annotation.AnnotationText="any consigment text before plant/ID bold text applies to all plants" DisplayName="Assign - does apply all AD exist?" sap:VirtualizedContainerService.HintSize="434,145.6" sap2010:WorkflowViewState.IdRef="Assign_23">
+        <ui:Replace sap2010:Annotation.AnnotationText="remove - ---" DisplayName="Replace Matching Patterns -  ---" sap:VirtualizedContainerService.HintSize="434.2857142857143,122.85714285714286" sap2010:WorkflowViewState.IdRef="Replace_6" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(-\s*)+" RegexOption="IgnoreCase, Multiline, Compiled" Result="[in_strSec11AD]">
+          <ui:Replace.Replacement>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ui:Replace.Replacement>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:Replace>
+        <Assign sap2010:Annotation.AnnotationText="any consigment text before plant/ID bold text applies to all plants" DisplayName="Assign - does apply all AD exist?" sap:VirtualizedContainerService.HintSize="434.2857142857143,148" sap2010:WorkflowViewState.IdRef="Assign_23">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strAD_AllApplied]</OutArgument>
           </Assign.To>
@@ -2142,14 +2154,14 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <ui:Replace sap2010:Annotation.AnnotationText="format strAD_AllApplied" DisplayName="Replace Matching Patterns - remove space" sap:VirtualizedContainerService.HintSize="434,123.2" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[strAD_AllApplied]" IsBuilderTabModified="False" Pattern="\s+" RegexOption="IgnoreCase, Compiled" Replacement=" " Result="[strAD_AllApplied]">
+        <ui:Replace sap2010:Annotation.AnnotationText="format strAD_AllApplied" DisplayName="Replace Matching Patterns - remove space" sap:VirtualizedContainerService.HintSize="434.2857142857143,122.85714285714286" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[strAD_AllApplied]" IsBuilderTabModified="False" Pattern="\s+" RegexOption="IgnoreCase, Compiled" Replacement=" " Result="[strAD_AllApplied]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Replace>
-        <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="This Extracts the plant ID codes and the AD consigment text.&#xA;this will ignore the consigment text that applies to all plants" DisplayName="Extract Section 11" sap:VirtualizedContainerService.HintSize="434,169.6" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?is)(?'Plant'\(\d{4}\).*?)(?'AD'The consignment.*?)(?=\s{3,}([\w\.]+\s)+\(\d{4}\)|\Z)" RegexOption="IgnoreCase, Compiled" Result="[listExtractedAD]">
+        <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="This Extracts the plant ID codes and the AD consigment text.&#xA;this will ignore the consigment text that applies to all plants" DisplayName="Extract Section 11" sap:VirtualizedContainerService.HintSize="434.2857142857143,172.57142857142858" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[in_strSec11AD]" IsBuilderTabModified="False" Pattern="(?is)(?'Plant'\(\d{4}\).*?)(?'AD'The consignment.*?)(?=\s{3,}([\w\.]+\s)+\(\d{4}\)|\Z)" RegexOption="IgnoreCase, Compiled" Result="[listExtractedAD]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2157,7 +2169,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:Matches>
-        <ui:BuildDataTable DataTable="[dtPopUp]" DisplayName="Build Data Table - initialise dtPopUp" sap:VirtualizedContainerService.HintSize="434,83.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;5&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;2&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:BuildDataTable DataTable="[dtPopUp]" DisplayName="Build Data Table - initialise dtPopUp" sap:VirtualizedContainerService.HintSize="434.2857142857143,82.85714285714286" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;5&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;2&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID43" sap2010:WorkflowViewState.IdRef="FlowStep_1">
@@ -2165,10 +2177,10 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">315,265</av:Point>
               <av:PointCollection x:Key="ConnectorLocation">370,335 370,365</av:PointCollection>
-              <av:Size x:Key="ShapeSize">110,70</av:Size>
+              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="DataVerse" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_90">
+          <Sequence DisplayName="DataVerse" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_90">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intRow" />
               <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
@@ -2289,10 +2301,10 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">515,135</av:Point>
-          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Test Data" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <Sequence DisplayName="Test Data" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_28">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
