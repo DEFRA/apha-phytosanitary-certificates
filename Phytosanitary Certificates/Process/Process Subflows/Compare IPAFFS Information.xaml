@@ -166,7 +166,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="898.8571428571429,640.5714285714286" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -180,9 +180,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID76</x:Reference>
+      <x:Reference>__ReferenceID77</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID76" sap2010:WorkflowViewState.IdRef="FlowStep_20">
+    <FlowStep x:Name="__ReferenceID77" sap2010:WorkflowViewState.IdRef="FlowStep_20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">645,135</av:Point>
@@ -2305,7 +2305,7 @@ ToList()]</InArgument>
               <av:PointCollection x:Key="ConnectorLocation">700,325 700,385</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="1174.857142857143,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_7">
             <Flowchart.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtCertCondensed" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctCertEPPO" />
@@ -2853,13 +2853,13 @@ ToList()]</InArgument>
                               <av:PointCollection x:Key="ConnectorLocation">789.8571428571429,564.7142857142857 789.8571428571429,615</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="634.2857142857143,815.4285714285714" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                 </ActivityAction.Argument>
-                                <Flowchart sap:VirtualizedContainerService.HintSize="600,625.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_19">
+                                <Flowchart sap:VirtualizedContainerService.HintSize="898.8571428571429,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_19">
                                   <Flowchart.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredIPAFFsCommodityLines" />
                                     <Variable x:TypeArguments="x:String" Name="foundCertEPPO" />
@@ -2889,7 +2889,7 @@ ToList()]</InArgument>
                                         <av:Size x:Key="AnnotationSize">150,130</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence sap2010:Annotation.AnnotationText="Where we don't retrieve any full matches, we must do a partial match check. We use the first three non-numerical characters of the EPPO code to perform this search." DisplayName="Search on 3 Characters" sap:VirtualizedContainerService.HintSize="537.1428571428571,1214.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_432">
+                                    <Sequence sap2010:Annotation.AnnotationText="Where we don't retrieve any full matches, we must do a partial match check. We use the first three non-numerical characters of the EPPO code to perform this search." DisplayName="Search on 3 Characters" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_432">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="phytoCode" />
                                         <Variable x:TypeArguments="x:Int32" Name="startIndex" />
@@ -5388,7 +5388,7 @@ ToList()]</InArgument>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap2010:Annotation.AnnotationText="i am assuming this will return all commodities reviewed including duplicates&#xA;this is used in set transactions" DisplayName="Assign - get total commodities" sap:VirtualizedContainerService.HintSize="434,175.6" sap2010:WorkflowViewState.IdRef="Assign_279">
+                <Assign sap2010:Annotation.AnnotationText="i am assuming this will return all commodities reviewed including duplicates&#xA;this is used in set transactions" DisplayName="Assign - get total commodities" sap:VirtualizedContainerService.HintSize="434.2857142857143,180.57142857142858" sap2010:WorkflowViewState.IdRef="Assign_279">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Object">[g_Config("Total_Commodities")]</OutArgument>
                   </Assign.To>
@@ -5401,7 +5401,7 @@ ToList()]</InArgument>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign sap2010:Annotation.AnnotationText="for the custom report" DisplayName="Assign - get total commodities" sap:VirtualizedContainerService.HintSize="434,145.6" sap2010:WorkflowViewState.IdRef="Assign_386">
+                <Assign sap2010:Annotation.AnnotationText="for the custom report" DisplayName="Assign - get total commodities" sap:VirtualizedContainerService.HintSize="434.2857142857143,148" sap2010:WorkflowViewState.IdRef="Assign_386">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Object">[g_Config("Total_IPAFFS_Commodities")]</OutArgument>
                   </Assign.To>
@@ -5414,7 +5414,7 @@ ToList()]</InArgument>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign sap2010:Annotation.AnnotationText="im assuming there will be no blank values in the Certificate_Number Column&#xA;this is used to fill in a field in ms dynamics" DisplayName="Assign - get number of certificates" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="Assign_280">
+                <Assign sap2010:Annotation.AnnotationText="im assuming there will be no blank values in the Certificate_Number Column&#xA;this is used to fill in a field in ms dynamics" DisplayName="Assign - get number of certificates" sap:VirtualizedContainerService.HintSize="434.2857142857143,172" sap2010:WorkflowViewState.IdRef="Assign_280">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Object">[g_Config("Total_Certificates")]</OutArgument>
                   </Assign.To>
@@ -5432,38 +5432,56 @@ Count()]</InArgument>
                 </Assign>
               </Sequence>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID75" sap2010:WorkflowViewState.IdRef="FlowStep_22">
+                <FlowStep x:Name="__ReferenceID76" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">645,505</av:Point>
                       <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">699.8571428571429,574.7142857142857 699.8571428571429,625</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Outout Datatables to Excel for Ali" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_426">
+                  <Sequence sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_518">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,743.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ResizeWindow="None" WorkbookPath="[System.IO.Path.Combine(GlobalVariablesNamespace.GlobalVariables.g_Config(&quot;AttachmentsFilepath&quot;).ToString, &quot;outputs.xlsx&quot;)]">
-                      <ueab:ExcelApplicationCard.Body>
-                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,442.4" sap2010:WorkflowViewState.IdRef="Sequence_427">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Commodities&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,195.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dtCombinedCommodities]" />
-                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;on hold&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,186.8" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[io_dtOnHoldReasons]" />
-                          </Sequence>
-                        </ActivityAction>
-                      </ueab:ExcelApplicationCard.Body>
-                    </ueab:ExcelApplicationCard>
                   </Sequence>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID75" sap2010:WorkflowViewState.IdRef="FlowStep_22">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">645,625</av:Point>
+                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Outout Datatables to Excel for Ali" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_426">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502.85714285714283,754.8571428571429" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ResizeWindow="None" WorkbookPath="[System.IO.Path.Combine(GlobalVariablesNamespace.GlobalVariables.g_Config(&quot;AttachmentsFilepath&quot;).ToString, &quot;outputs.xlsx&quot;)]">
+                          <ueab:ExcelApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468.57142857142856,447.42857142857144" sap2010:WorkflowViewState.IdRef="Sequence_427">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Commodities&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434.2857142857143,198.28571428571428" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dtCombinedCommodities]" />
+                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;on hold&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434.2857142857143,189.14285714285714" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[io_dtOnHoldReasons]" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ueab:ExcelApplicationCard.Body>
+                        </ueab:ExcelApplicationCard>
+                      </Sequence>
+                    </FlowStep>
+                  </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
@@ -5474,5 +5492,6 @@ Count()]</InArgument>
     <x:Reference>__ReferenceID73</x:Reference>
     <x:Reference>__ReferenceID74</x:Reference>
     <x:Reference>__ReferenceID75</x:Reference>
+    <x:Reference>__ReferenceID76</x:Reference>
   </Flowchart>
 </Activity>
