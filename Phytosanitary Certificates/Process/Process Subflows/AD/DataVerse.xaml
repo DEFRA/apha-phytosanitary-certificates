@@ -150,7 +150,7 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dataverse" sap:VirtualizedContainerService.HintSize="801.6,982.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dataverse" sap:VirtualizedContainerService.HintSize="880.8,982.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="jsonBody" />
       <Variable x:TypeArguments="x:String" Name="strResponse" />
@@ -212,7 +212,7 @@
           <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential("",g_Credentials("AD Text API Key").Password).Password]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[jsonBody.ToString]" BodyFormat="application/json" DisplayName="Private: HTTP Request" EnableSSLVerification="True" EndPoint="https://4cabdb5c2afbe0cabe23471efe2a66.a3.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b2e3e853d073412d81d81da36a2c77fa/triggers/manual/paths/invoke?api-version=1&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=fH9cymvISOHNWG7otnzeMoTBM6RtIZfy4gBKa6fZHFk" sap:VirtualizedContainerService.HintSize="434,94.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="600000">
+      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[jsonBody.ToString]" BodyFormat="application/json" DisplayName="Private: HTTP Request" EnableSSLVerification="True" EndPoint="[g_Config(&quot;AD_API_URL&quot;).ToString()]" sap:VirtualizedContainerService.HintSize="434,94.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[strResponse]" TimeoutMS="600000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
