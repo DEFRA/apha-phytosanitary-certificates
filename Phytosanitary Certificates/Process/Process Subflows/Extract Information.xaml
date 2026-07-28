@@ -159,7 +159,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="1157.7142857142858,6773.714285714285" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="881.7142857142857,4558.285714285715" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -179,7 +179,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="684.5714285714286,6750.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_146">
+    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="684.5714285714286,4535.428571428572" sap2010:WorkflowViewState.IdRef="Sequence_146">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,10 +187,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertLocation]" sap:VirtualizedContainerService.HintSize="650.2857142857143,116" sap2010:WorkflowViewState.IdRef="ReadPDFText_10" PreserveFormatting="True" Range="[in_pageRange]" Text="[strExtractedPDF]" />
-      <Sequence DisplayName="Check whether cert is re-forwarded" sap:VirtualizedContainerService.HintSize="650.2857142857143,521.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_185">
+      <Sequence DisplayName="Check whether cert is re-forwarded" sap:VirtualizedContainerService.HintSize="650.2857142857143,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_185">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -216,7 +216,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Get Additional Declarations " sap:VirtualizedContainerService.HintSize="650.2857142857143,2313.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_228">
+      <Sequence DisplayName="Get Additional Declarations " sap:VirtualizedContainerService.HintSize="650.2857142857143,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_228">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strAddDecFirst" />
           <Variable x:TypeArguments="x:String" Name="strAddDecSec" />
@@ -227,7 +227,7 @@
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -550,7 +550,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
       <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\ - Additional Declarations.txt&quot;]" sap:VirtualizedContainerService.HintSize="650.2857142857143,169.71428571428572" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[out_strAdditionalDeclarions]" />
-      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="650.2857142857143,2345.1428571428573" sap2010:WorkflowViewState.IdRef="Sequence_187">
+      <Sequence DisplayName="Get Genus Information" sap:VirtualizedContainerService.HintSize="650.2857142857143,2897.1428571428573" sap2010:WorkflowViewState.IdRef="Sequence_187">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieMatches" />
           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ieGenusText" />
@@ -642,14 +642,14 @@
             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strGenusText, "(?sm)^.*?(?=^[ \t]*\d{4}\\b)", "")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Sequence DisplayName="Get Commodity Group from main header" sap:VirtualizedContainerService.HintSize="616,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_200">
+        <Sequence DisplayName="Get Commodity Group from main header" sap:VirtualizedContainerService.HintSize="616,609.1428571428571" sap2010:WorkflowViewState.IdRef="Sequence_200">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Get Full Commodity Group Text" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_657">
+          <Assign DisplayName="Get Full Commodity Group Text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_657">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
             </Assign.To>
@@ -660,23 +660,48 @@
 ).Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Remove Front Text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_658">
+          <Assign DisplayName="Extract between Brackets" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_773">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String" xml:space="preserve">[strCommodityFullText.Replace("No.    Product (","").Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strCommodityFullText, "(?&lt;=No\.\s+Product\s*\().*?(?=\))").Value.Trim()]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Remove Brackets" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_659">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[strCommodityFullText.Replace(")","")]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <Assign DisplayName="Remove end text" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_660">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468.57142857142856,285.14285714285717" sap2010:WorkflowViewState.IdRef="Sequence_234">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Remove Front Text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_658">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[strCommodityFullText.Replace("No.    Product (","").Trim]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Remove Brackets" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_659">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[strCommodityFullText.Replace(")","")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Assign DisplayName="Remove end text" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_660">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
             </Assign.To>
@@ -684,7 +709,7 @@
               <InArgument x:TypeArguments="x:String">[strCommodityFullText.Replace("Packages","").Trim]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Remove pieces if it exists" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_739">
+          <Assign DisplayName="Remove pieces if it exists" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_739">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strCommodityFullText]</OutArgument>
             </Assign.To>
@@ -770,7 +795,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="553.1428571428571,588" sap2010:WorkflowViewState.IdRef="Sequence_214">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.142857142857142" sap2010:WorkflowViewState.IdRef="Sequence_214">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1614,7 +1639,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Sequence DisplayName="Get Phyto Cert Number" sap:VirtualizedContainerService.HintSize="650.2857142857143,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_191">
+      <Sequence DisplayName="Get Phyto Cert Number" sap:VirtualizedContainerService.HintSize="650.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_191">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1646,7 +1671,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Get ExporterAddress" sap:VirtualizedContainerService.HintSize="650.2857142857143,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_192">
+      <Sequence DisplayName="Get ExporterAddress" sap:VirtualizedContainerService.HintSize="650.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_192">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1710,7 +1735,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence DisplayName="Get strConsignee" sap:VirtualizedContainerService.HintSize="650.2857142857143,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_193">
+      <Sequence DisplayName="Get strConsignee" sap:VirtualizedContainerService.HintSize="650.2857142857143,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_193">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
