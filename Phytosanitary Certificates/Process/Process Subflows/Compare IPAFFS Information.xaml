@@ -166,7 +166,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="898.8571428571429,640.5714285714286" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -985,7 +985,7 @@ ToList()]</InArgument>
                                                                           <av:PointCollection x:Key="ConnectorLocation">829.8571428571429,2364.714285714286 829.8571428571429,2415</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <Sequence DisplayName="Compare Comodity Codes" sap:VirtualizedContainerService.HintSize="668.5714285714286,2314.285714285714" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                                      <Sequence DisplayName="Compare Comodity Codes" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                                                         <Sequence.Variables>
                                                                           <Variable x:TypeArguments="sd:DataTable" Name="dtTranslation" />
                                                                           <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictCommodityMapping" />
@@ -2615,7 +2615,7 @@ ToList()]</InArgument>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:CommentOut DisplayName="Comment Out - old jsonArray Code" sap:VirtualizedContainerService.HintSize="573.7142857142857,396.57142857142856" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                    <ui:CommentOut DisplayName="Comment Out - old jsonArray Code" sap:VirtualizedContainerService.HintSize="573.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468.57142857142856,285.14285714285717" sap2010:WorkflowViewState.IdRef="Sequence_498">
                           <sap:WorkflowViewStateService.ViewState>
@@ -2643,7 +2643,7 @@ ToList()]</InArgument>
                       </ui:CommentOut.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -4747,7 +4747,7 @@ ToList()]</InArgument>
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign DisplayName="Create Clone DT" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_301">
+                                        <Assign DisplayName="Create Clone DT" sap:VirtualizedContainerService.HintSize="537.1428571428571,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_301">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="sd:DataTable">[dtCertCondensed]</OutArgument>
                                           </Assign.To>
@@ -4755,7 +4755,7 @@ ToList()]</InArgument>
                                             <InArgument x:TypeArguments="sd:DataTable">[dtCombinedCommodities.Clone()]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Assign DisplayName="Assign groupedRows" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                        <Assign DisplayName="Assign groupedRows" sap:VirtualizedContainerService.HintSize="537.1428571428571,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_25">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="sc:IEnumerable">[groupedRows]</OutArgument>
                                           </Assign.To>
@@ -4769,7 +4769,7 @@ ToList()]</InArgument>
               Select grp]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:ForEach x:TypeArguments="scg:IEnumerable(sd:DataRow)" CurrentIndex="{x:Null}" DisplayName="For Each grp" sap:VirtualizedContainerService.HintSize="502.85714285714283,541.7142857142857" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[groupedRows]">
+                                        <ui:ForEach x:TypeArguments="scg:IEnumerable(sd:DataRow)" CurrentIndex="{x:Null}" DisplayName="For Each grp" sap:VirtualizedContainerService.HintSize="537.1428571428571,541.7142857142857" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[groupedRows]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="scg:IEnumerable(sd:DataRow)">
                                               <ActivityAction.Argument>
@@ -4803,7 +4803,7 @@ ToList()]</InArgument>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:ForEach>
-                                        <ui:FilterDataTable sap2010:Annotation.AnnotationText="For AD checks, we need to remove any line that does not have a populated Commodity Group. These cannot be checked as we would not know which ADs are relevant." DataTable="[dtCertCondensed]" DisplayName="Remove Rows without Commodity Group" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="502.85714285714283,278.2857142857143" sap2010:WorkflowViewState.IdRef="FilterDataTable_17" OutputDataTable="[dtCertCondensed]" SelectColumnsMode="Remove">
+                                        <ui:FilterDataTable sap2010:Annotation.AnnotationText="For AD checks, we need to remove any line that does not have a populated Commodity Group. These cannot be checked as we would not know which ADs are relevant." DataTable="[dtCertCondensed]" DisplayName="Remove Rows without Commodity Group" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="537.1428571428571,278.2857142857143" sap2010:WorkflowViewState.IdRef="FilterDataTable_17" OutputDataTable="[dtCertCondensed]" SelectColumnsMode="Remove">
                                           <ui:FilterDataTable.Filters>
                                             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                               <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -4824,7 +4824,45 @@ ToList()]</InArgument>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:FilterDataTable>
-                                        <Assign DisplayName="Store Output for AD" sap:VirtualizedContainerService.HintSize="502.85714285714283,108" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                        <Sequence DisplayName="Add IPAFFS Name Column" sap:VirtualizedContainerService.HintSize="537.1428571428571,677.1428571428571" sap2010:WorkflowViewState.IdRef="Sequence_519">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Genus_Species" DataTable="[dtCertCondensed]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="502.85714285714283,225.14285714285714" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
+                                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertCondensed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,360" sap2010:WorkflowViewState.IdRef="ForEachRow_61">
+                                            <ui:ForEachRow.Body>
+                                              <ActivityAction x:TypeArguments="sd:DataRow">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468.57142857142856,168.57142857142858" sap2010:WorkflowViewState.IdRef="Sequence_520">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434.2857142857143,108.57142857142857" sap2010:WorkflowViewState.IdRef="Assign_388">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Genus_Species")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Object" xml:space="preserve">[If(CurrentRow("EPPO") IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(CurrentRow("EPPO").ToString),
+    dtIPAFFSCommodityLines.AsEnumerable().
+        Where(Function(dr) dr("EPPO") IsNot Nothing AndAlso 
+              dr("EPPO").ToString.Trim.Equals(CurrentRow("EPPO").ToString.Trim, StringComparison.OrdinalIgnoreCase)).
+        Select(Function(dr) dr("Genus_Species").ToString).
+        FirstOrDefault(),
+    Nothing)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ui:ForEachRow.Body>
+                                          </ui:ForEachRow>
+                                        </Sequence>
+                                        <Assign DisplayName="Store Output for AD" sap:VirtualizedContainerService.HintSize="537.1428571428571,108" sap2010:WorkflowViewState.IdRef="Assign_26">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="sd:DataTable">[out_dtCommodityLines]</OutArgument>
                                           </Assign.To>
@@ -5440,12 +5478,44 @@ Count()]</InArgument>
                       <av:PointCollection x:Key="ConnectorLocation">699.8571428571429,574.7142857142857 699.8571428571429,625</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_518">
+                  <Sequence DisplayName="Update Onhold Spreadsheet" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_518">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtOnHoldReasons]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,476.57142857142856" sap2010:WorkflowViewState.IdRef="ForEachRow_62">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468.57142857142856,285.14285714285717" sap2010:WorkflowViewState.IdRef="Sequence_521">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_389">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[CurrentRow("Genus_Species")]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[out_dtCommodityLines.AsEnumerable().Where(Function(dr) dr("Commodity").ToString.Trim.Equals(CurrentRow("Commodity_Name").ToString.Trim, StringComparison.OrdinalIgnoreCase) OrElse dr("Genus_Species").ToString.Trim.Equals(CurrentRow("Commodity_Name").ToString.Trim, StringComparison.OrdinalIgnoreCase)).Select(Function(dr) dr("Genus_Species").ToString).FirstOrDefault()]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_390">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[CurrentRow("EPPO_Code")]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[out_dtCommodityLines.AsEnumerable().Where(Function(dr) dr("Commodity").ToString.Trim.Equals(CurrentRow("Commodity_Name").ToString.Trim, StringComparison.OrdinalIgnoreCase) OrElse dr("Genus_Species").ToString.Trim.Equals(CurrentRow("Commodity_Name").ToString.Trim, StringComparison.OrdinalIgnoreCase)).Select(Function(dr) dr("EPPO").ToString).FirstOrDefault()]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
                   </Sequence>
                   <FlowStep.Next>
                     <FlowStep x:Name="__ReferenceID75" sap2010:WorkflowViewState.IdRef="FlowStep_22">
@@ -5455,7 +5525,7 @@ Count()]</InArgument>
                           <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Outout Datatables to Excel for Ali" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_426">
+                      <Sequence DisplayName="Outout Datatables to Excel for Ali" sap:VirtualizedContainerService.HintSize="537.1428571428571,814.8571428571429" sap2010:WorkflowViewState.IdRef="Sequence_426">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5473,7 +5543,7 @@ Count()]</InArgument>
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Commodities&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434.2857142857143,198.28571428571428" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dtCombinedCommodities]" />
+                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Commodities&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434.2857142857143,198.28571428571428" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[out_dtCommodityLines]" />
                                 <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;on hold&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434.2857142857143,189.14285714285714" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[io_dtOnHoldReasons]" />
                               </Sequence>
                             </ActivityAction>
