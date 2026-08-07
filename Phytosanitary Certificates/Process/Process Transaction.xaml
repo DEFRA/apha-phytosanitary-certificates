@@ -573,7 +573,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">590,1345 590,1375</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Orange - AD Declarations Analysis" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                              <Sequence DisplayName="Orange - AD Declarations Analysis" sap:VirtualizedContainerService.HintSize="742.8571428571429,3945.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_159">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="scg:List(x:String)" Name="listCerts" />
                                 </Sequence.Variables>
@@ -601,7 +601,7 @@
                    ToList()]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:BuildDataTable sap2010:Annotation.AnnotationText="Once we have evaluated all the priorities and we scan the ippafs website. any plants that are missing need to be checked to make sure they dont have any certificate level holds on them. This datatable will collect Compliant plants and their associated certificates to cross reference later" DataTable="[dtAD_Compliant]" DisplayName="Build Data Table - Comliant dt" sap:VirtualizedContainerService.HintSize="708.5714285714286,206.85714285714286" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Genus_Species&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+                                <ui:BuildDataTable sap2010:Annotation.AnnotationText="Once we have evaluated all the priorities and we scan the ippafs website. any plants that are missing need to be checked to make sure they dont have any certificate level holds on them. This datatable will collect Compliant plants and their associated certificates to cross reference later" DataTable="[dtAD_Compliant]" DisplayName="Build Data Table - Comliant dt" sap:VirtualizedContainerService.HintSize="708.5714285714286,206.85714285714286" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus_Species&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -615,13 +615,13 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:AddDataColumn>
-                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each CertNo" sap:VirtualizedContainerService.HintSize="708.5714285714286,3070.8571428571427" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[listCerts]">
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each CertNo" sap:VirtualizedContainerService.HintSize="708.5714285714286,3188" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[listCerts]">
                                   <ui:ForEach.Body>
                                     <ActivityAction x:TypeArguments="x:String">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:String" Name="CertNo" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="674.2857142857143,2931.4285714285716" sap2010:WorkflowViewState.IdRef="Sequence_131">
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="674.2857142857143,3048.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_131">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="sd1:DataTable" Name="dtOrangeCommidtyLines" />
                                           <Variable x:TypeArguments="x:String" Name="strSection11" />
@@ -680,36 +680,45 @@
                                             </ActivityAction>
                                           </ueab:ExcelApplicationCard.Body>
                                         </ueab:ExcelApplicationCard>
-                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="combine io_dtCommodityLines with dtOnHoldTable&#xA;all new on hold reasons will be appended onto the OnHoldTable" DataTable="[dtOrangeCommidtyLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="640,1544.5714285714287" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="combine io_dtCommodityLines with dtOnHoldTable&#xA;all new on hold reasons will be appended onto the OnHoldTable" DataTable="[dtOrangeCommidtyLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="640,1661.7142857142858" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                                           <ui:ForEachRow.Body>
                                             <ActivityAction x:TypeArguments="sd1:DataRow">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="605.7142857142857,1306.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_137">
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="605.7142857142857,1424" sap2010:WorkflowViewState.IdRef="Sequence_137">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[CurrentRow(&quot;Outcome&quot;).tostring = &quot;ON HOLD&quot;]" DisplayName="If - cycle through only ONHOLD entries" sap:VirtualizedContainerService.HintSize="571.4285714285714,1246.857142857143" sap2010:WorkflowViewState.IdRef="If_21">
+                                                <If Condition="[CurrentRow(&quot;Outcome&quot;).tostring = &quot;ON HOLD&quot;]" DisplayName="If - cycle through only ONHOLD entries" sap:VirtualizedContainerService.HintSize="571.4285714285714,1364" sap2010:WorkflowViewState.IdRef="If_21">
                                                   <If.Then>
-                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="537.1428571428571,807.4285714285714" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="537.1428571428571,924.5714285714286" sap2010:WorkflowViewState.IdRef="Sequence_134">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="sd1:DataRow" Name="filteredRow" />
                                                         <Variable x:TypeArguments="s:String[]" Name="arrOrangeReasons" />
+                                                        <Variable x:TypeArguments="x:String" Name="strStatusNotes" />
                                                       </Sequence.Variables>
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[strStatusNotes]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[Regex.Replace(CurrentRow("Status Notes").ToString,"ON HOLD$","")]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
                                                       <Assign DisplayName="Assign - split on |" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_27">
                                                         <Assign.To>
                                                           <OutArgument x:TypeArguments="s:String[]">[arrOrangeReasons]</OutArgument>
                                                         </Assign.To>
                                                         <Assign.Value>
-                                                          <InArgument x:TypeArguments="s:String[]">[CurrentRow("AD Comments").ToString.Split("|"c)]</InArgument>
+                                                          <InArgument x:TypeArguments="s:String[]">[strStatusNotes.Split("|"c)]</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
                                                       <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each AdHold - add Orange worstream onhold reasons" sap:VirtualizedContainerService.HintSize="502.85714285714283,630.2857142857143" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrOrangeReasons]">
@@ -740,7 +749,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </Assign>
-                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;Application_Reference&quot;), &#xD;&#xA;CurrentRow(&quot;Certificate_Number&quot;), &#xD;&#xA;CInt(CurrentRow(&quot;ID&quot;)).ToString, &#xD;&#xA;AdHold, &#xD;&#xA;strIPPAFS,&#xD;&#xA;CurrentRow(&quot;Commodity&quot;),&#xD;&#xA;CurrentRow(&quot;AD Numbers&quot;),&#xD;&#xA;CurrentRow(&quot;Genus_Species&quot;)}]" DataTable="[dtOnHoldReasons]" DisplayName="Add Data Row - add orange entry" sap:VirtualizedContainerService.HintSize="434.2857142857143,216" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;Application_Reference&quot;), &#xA;CurrentRow(&quot;Certificate_Number&quot;), &#xA;CInt(CurrentRow(&quot;ID&quot;)).ToString, &#xA;AdHold, &#xA;strIPPAFS,&#xA;CurrentRow(&quot;Commodity&quot;),&#xA;CurrentRow(&quot;AD Numbers&quot;),&#xA;CurrentRow(&quot;Genus_Species&quot;)}]" DataTable="[dtOnHoldReasons]" DisplayName="Add Data Row - add orange entry" sap:VirtualizedContainerService.HintSize="434.2857142857143,216" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                                             </Sequence>
                                                           </ActivityAction>
                                                         </ui:ForEach.Body>
@@ -2144,7 +2153,7 @@
           <av:PointCollection x:Key="ConnectorLocation">590,225 590,275</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Cleardown Folders &amp; Initialise Variables" sap:VirtualizedContainerService.HintSize="484.57142857142856,1247.4285714285713" sap2010:WorkflowViewState.IdRef="Sequence_58">
+      <Sequence DisplayName="Cleardown Folders &amp; Initialise Variables" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_58">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2179,7 +2188,7 @@
             </ActivityAction>
           </ui:ForEachFileX.Body>
         </ui:ForEachFileX>
-        <ui:BuildDataTable DataTable="[dtOnHoldReasons]" DisplayName="Initialise On Hold Table" sap:VirtualizedContainerService.HintSize="450.2857142857143,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Application_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Commodity_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Commodity_Line_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;On_Hold_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;IPAFFS_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Genus_Species&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;EPPO_Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:BuildDataTable DataTable="[dtOnHoldReasons]" DisplayName="Initialise On Hold Table" sap:VirtualizedContainerService.HintSize="450.2857142857143,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Application_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_Line_Reference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;On_Hold_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IPAFFS_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Genus_Species&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EPPO_Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         <Assign sap2010:Annotation.AnnotationText="Dynamic Selector requires we store this value in a variable rather than in the g_TransactionItem Dictionary." DisplayName="Assign strCHEDPPReference" sap:VirtualizedContainerService.HintSize="450.2857142857143,163.42857142857142" sap2010:WorkflowViewState.IdRef="Assign_22">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[strCHEDPPReference]</OutArgument>
