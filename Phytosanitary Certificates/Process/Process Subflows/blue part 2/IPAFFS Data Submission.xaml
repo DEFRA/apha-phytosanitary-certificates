@@ -143,7 +143,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="IPAFFS Data Submission" sap:VirtualizedContainerService.HintSize="1356,11139.42857142857" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IPAFFS Data Submission" sap:VirtualizedContainerService.HintSize="1129.2,11138.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFS" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
@@ -155,8 +155,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="1129.142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Navigating to document checks&quot;]" />
-    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="1129.142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
+    <ui:ReportStatus DisplayName="Report Status" sap:VirtualizedContainerService.HintSize="1129.2,56.8" sap2010:WorkflowViewState.IdRef="ReportStatus_1" StatusText="[now.ToString(&quot;HH:mm:ss&quot;) + &quot; - Navigating to document checks&quot;]" />
+    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Edge: Overview - Import and export applications - GOV.UK" sap:VirtualizedContainerService.HintSize="1129.2,56.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InUiElement="[g_IPAFFSElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_IPAFFSElement]" ScopeGuid="523b1717-b87f-45fd-9fd8-cdf098bec4d9" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -312,13 +312,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Flowchart sap:VirtualizedContainerService.HintSize="1129.142857142857,657.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="1129.2,656.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">275,35</av:Point>
-          <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
+          <av:Size x:Key="ShapeSize">50,50</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,85 300,125</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -340,10 +340,10 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">135,335</av:Point>
-                <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                <av:Size x:Key="ShapeSize">110,70</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Compliant variables" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_89">
+            <Sequence DisplayName="Compliant variables" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_89">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -364,11 +364,11 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">355,315</av:Point>
-                <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                <av:Size x:Key="ShapeSize">110,70</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">410,385 410,435</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="order the certifficate numbers first&#xA;then order the commodity line reference numbers after that&#xA;This is to make it easier to review the data from a human POV" DisplayName="Assign - order table" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign sap2010:Annotation.AnnotationText="order the certifficate numbers first&#xA;then order the commodity line reference numbers after that&#xA;This is to make it easier to review the data from a human POV" DisplayName="Assign - order table" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[io_dtOnHoldReasons]</OutArgument>
               </Assign.To>
@@ -391,18 +391,31 @@ CopyToDataTable()]</InArgument>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">355,435</av:Point>
-                    <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                    <av:Size x:Key="ShapeSize">110,70</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">410,505 410,545</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Pop Up - display total hold reasons spreadsheet" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                <Sequence DisplayName="Pop Up - display total hold reasons spreadsheet" sap:VirtualizedContainerService.HintSize="552,1633.2" sap2010:WorkflowViewState.IdRef="Sequence_68">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WriteCsvFile AddHeaders="True" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma" DisplayName="Write CSV - create Spreadsheet" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]" sap:VirtualizedContainerService.HintSize="518,56.8" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="518,113.2" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[g_Config(&quot;TempFiles&quot;).ToString]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CreateDirectory>
+                  <ui:WriteCsvFile AddHeaders="True" DataTable="[io_dtOnHoldReasons]" Delimitator="Comma" DisplayName="Write CSV - create Spreadsheet" FilePath="[g_Config(&quot;TempFiles&quot;).ToString + &quot;\spreadsheetpopup.csv&quot;]" sap:VirtualizedContainerService.HintSize="518,190.8" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WriteCsvFile>
                   <ueab:ExcelProcessScopeX LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayAlerts="False" DisplayName="Excel Process Scope" ExistingProcessAction="None" FileConflictResolution="PromptUser" sap:VirtualizedContainerService.HintSize="518,1221.2" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" LaunchMethod="Application" ShowExcelWindow="True">
                     <ueab:ExcelProcessScopeX.Body>
                       <ActivityAction x:TypeArguments="ui:IExcelProcess">
@@ -489,11 +502,11 @@ CopyToDataTable()]</InArgument>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">355,545</av:Point>
-                        <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                        <av:Size x:Key="ShapeSize">110,70</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">410,615 410,655</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Filter Data" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                    <Sequence DisplayName="Filter Data" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_69">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -609,11 +622,11 @@ CopyToDataTable()]</InArgument>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">355,655</av:Point>
-                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                            <av:Size x:Key="ShapeSize">110,70</av:Size>
                             <av:PointCollection x:Key="ConnectorLocation">410,725 410,775</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="filling in Hold level and priority level" DataTable="[dtIPAFFS]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="filling in Hold level and priority level" DataTable="[dtIPAFFS]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -765,11 +778,11 @@ CopyToDataTable()]</InArgument>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">355,775</av:Point>
-                                <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                <av:Size x:Key="ShapeSize">110,70</av:Size>
                                 <av:PointCollection x:Key="ConnectorLocation">410,845 410,895</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Filter data 2" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                            <Sequence DisplayName="Filter data 2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_90">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -798,7 +811,7 @@ CopyToDataTable()]</InArgument>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">355,895</av:Point>
-                                    <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                    <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
                                     <av:PointCollection x:Key="ConnectorLocation">410,965 410,1015</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -959,7 +972,7 @@ CopyToDataTable()]</InArgument>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">355,1015</av:Point>
-                                        <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                        <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
                                         <av:PointCollection x:Key="ConnectorLocation">410,1085 410,1135</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -1257,7 +1270,7 @@ CopyToDataTable()]</InArgument>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">355,1135</av:Point>
-                                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                            <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <Sequence DisplayName="filter data 3" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_91">
@@ -1320,11 +1333,11 @@ CopyToDataTable()]</InArgument>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">245,125</av:Point>
-            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+            <av:Size x:Key="ShapeSize">110,70</av:Size>
             <av:PointCollection x:Key="ConnectorLocation">300,195 300,240</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BuildDataTable sap2010:Annotation.AnnotationText="This table will help analyse at a later stage what plants that do not have a commodity level hold against them if they can be marked as Compliant or not" DataTable="[dtCHED_Cert_Hold]" DisplayName="Build Data Table - ched cert hold table" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Hold_x0020_level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Priority_x0020_order&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cert&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IPAFFS_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <ui:BuildDataTable sap2010:Annotation.AnnotationText="This table will help analyse at a later stage what plants that do not have a commodity level hold against them if they can be marked as Compliant or not" DataTable="[dtCHED_Cert_Hold]" DisplayName="Build Data Table - ched cert hold table" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Hold_x0020_level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Priority_x0020_order&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cert&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IPAFFS_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
