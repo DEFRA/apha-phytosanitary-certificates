@@ -274,7 +274,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="898.8571428571429,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -302,13 +302,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="742.8571428571429,8964.57142857143" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="706,8726.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="708.5714285714286,8796" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -322,7 +322,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign - init List" sap:VirtualizedContainerService.HintSize="672,114.4" sap2010:WorkflowViewState.IdRef="Assign_130">
+              <Assign DisplayName="Assign - init List" sap:VirtualizedContainerService.HintSize="674.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_130">
                 <Assign.To>
                   <OutArgument x:TypeArguments="scg:List(x:String)">[listHold]</OutArgument>
                 </Assign.To>
@@ -330,7 +330,7 @@
                   <InArgument x:TypeArguments="scg:List(x:String)">[new list (of String)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign - grab country" sap:VirtualizedContainerService.HintSize="672,114.4" sap2010:WorkflowViewState.IdRef="Assign_136">
+              <Assign DisplayName="Assign - grab country" sap:VirtualizedContainerService.HintSize="674.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_136">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strCountry]</OutArgument>
                 </Assign.To>
@@ -338,7 +338,7 @@
                   <InArgument x:TypeArguments="x:String">[Commodity("Country").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Sequence DisplayName="Initialise &amp; populate mini pop up table" sap:VirtualizedContainerService.HintSize="672,2081.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence DisplayName="Initialise &amp; populate mini pop up table" sap:VirtualizedContainerService.HintSize="674.2857142857143,2106.285714285714" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strRegexPattern" />
                   <Variable x:TypeArguments="x:Int32" Name="intIndexPosition" />
@@ -351,8 +351,8 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BuildDataTable DataTable="[dtMiniPopUp]" DisplayName="Build Data Table - initialise dtMiniPopUp" sap:VirtualizedContainerService.HintSize="502,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;5&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;2&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <Assign DisplayName="Assign - create regex pattern" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_28">
+                <ui:BuildDataTable DataTable="[dtMiniPopUp]" DisplayName="Build Data Table - initialise dtMiniPopUp" sap:VirtualizedContainerService.HintSize="502.85714285714283,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;5&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AD_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Compliant&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Annex&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;2&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <Assign DisplayName="Assign - create regex pattern" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_28">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strRegexPattern]</OutArgument>
                   </Assign.To>
@@ -360,7 +360,7 @@
                     <InArgument x:TypeArguments="x:String">["\("+ Commodity("ID").ToString.Trim + "\)"]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap2010:Annotation.AnnotationText="look for (ID) and get position of relevant consigment text." DisplayName="Assign - Get index position" sap:VirtualizedContainerService.HintSize="502,145.6" sap2010:WorkflowViewState.IdRef="Assign_29">
+                <Assign sap2010:Annotation.AnnotationText="look for (ID) and get position of relevant consigment text." DisplayName="Assign - Get index position" sap:VirtualizedContainerService.HintSize="502.85714285714283,148" sap2010:WorkflowViewState.IdRef="Assign_29">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[intIndexPosition]</OutArgument>
                   </Assign.To>
@@ -373,7 +373,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <If Condition="[intIndexPosition = -1]" DisplayName="If - Get applicable AD text for commodity" sap:VirtualizedContainerService.HintSize="502,502.4" sap2010:WorkflowViewState.IdRef="If_7">
+                <If Condition="[intIndexPosition = -1]" DisplayName="If - Get applicable AD text for commodity" sap:VirtualizedContainerService.HintSize="502.85714285714283,508.57142857142856" sap2010:WorkflowViewState.IdRef="If_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -381,13 +381,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_27">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - add AD text" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_35">
+                      <Assign DisplayName="Assign - add AD text" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_35">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strAD_CommodityText]</OutArgument>
                         </Assign.To>
@@ -398,7 +398,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_24">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strCleanAD" />
                       </Sequence.Variables>
@@ -407,7 +407,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - combine AD text" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_36">
+                      <Assign DisplayName="Assign - combine AD text" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_36">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strAD_CommodityText]</OutArgument>
                         </Assign.To>
@@ -418,15 +418,15 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[strAD_CommodityText.ToLower.Contains(&quot;artificially propagated&quot;)]" DisplayName="If - check for artificially proagated text in AD Text" sap:VirtualizedContainerService.HintSize="502,427.2" sap2010:WorkflowViewState.IdRef="If_20">
+                <If Condition="[strAD_CommodityText.ToLower.Contains(&quot;artificially propagated&quot;)]" DisplayName="If - check for artificially proagated text in AD Text" sap:VirtualizedContainerService.HintSize="502.85714285714283,431.42857142857144" sap2010:WorkflowViewState.IdRef="If_20">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_88">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - add cites details" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_127">
+                      <Assign DisplayName="Assign - add cites details" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_127">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("CITES")]</OutArgument>
                         </Assign.To>
@@ -437,7 +437,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_89">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,20 +446,20 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="This will split the Ad text to individual part/item text aka consigment text" DisplayName="Find Matching Patterns - split AD text" sap:VirtualizedContainerService.HintSize="502,136.8" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[strAD_CommodityText]" IsBuilderTabModified="False" Pattern="(?is)The consignment.*?(?=The consignment|\Z)" RegexOption="IgnoreCase, Compiled" Result="[listSplitAD_Text]">
+                <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="This will split the Ad text to individual part/item text aka consigment text" DisplayName="Find Matching Patterns - split AD text" sap:VirtualizedContainerService.HintSize="502.85714285714283,138.28571428571428" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[strAD_CommodityText]" IsBuilderTabModified="False" Pattern="(?is)The consignment.*?(?=The consignment|\Z)" RegexOption="IgnoreCase, Compiled" Result="[listSplitAD_Text]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:Matches>
-                <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="builds a portion of the mini popup table that will be evaluated and merged into main popup table" DisplayName="For Each consigment text" sap:VirtualizedContainerService.HintSize="502,570.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listSplitAD_Text]">
+                <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="builds a portion of the mini popup table that will be evaluated and merged into main popup table" DisplayName="For Each consigment text" sap:VirtualizedContainerService.HintSize="502.85714285714283,578.8571428571429" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listSplitAD_Text]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="str:Match">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="str:Match" Name="consigmentMatch" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,387.6" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468.57142857142856,393.14285714285717" sap2010:WorkflowViewState.IdRef="Sequence_23">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="str:Match" Name="rgxPart_Item" />
                         </Sequence.Variables>
@@ -468,7 +468,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Assign - get part item and annex" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_38">
+                        <Assign DisplayName="Assign - get part item and annex" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_38">
                           <Assign.To>
                             <OutArgument x:TypeArguments="str:Match">[rgxPart_Item]</OutArgument>
                           </Assign.To>
@@ -476,7 +476,7 @@
                             <InArgument x:TypeArguments="str:Match">[Regex.Match(consigmentMatch.Value,"(?i)(?:Annex )(?'annex'\d+)(?:.*part\s)(?'part'.)(?:\sitem\s)(?'item'.*?):")]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Commodity(&quot;ID&quot;), rgxPart_Item.Groups(&quot;part&quot;).Value, rgxPart_Item.Groups(&quot;item&quot;).Value, consigmentMatch.Value, FALSE, rgxPart_Item.Groups(&quot;annex&quot;).Value}]" DataTable="[dtMiniPopUp]" DisplayName="Add Data Row - add part item row" sap:VirtualizedContainerService.HintSize="434,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Commodity(&quot;ID&quot;), rgxPart_Item.Groups(&quot;part&quot;).Value, rgxPart_Item.Groups(&quot;item&quot;).Value, consigmentMatch.Value, FALSE, rgxPart_Item.Groups(&quot;annex&quot;).Value}]" DataTable="[dtMiniPopUp]" DisplayName="Add Data Row - add part item row" sap:VirtualizedContainerService.HintSize="434.2857142857143,216" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
@@ -487,7 +487,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
-              <Sequence sap2010:Annotation.AnnotationText="collect and build regulationd related to plant" DisplayName="Build regulation Table" sap:VirtualizedContainerService.HintSize="672,3735.2" sap2010:WorkflowViewState.IdRef="Sequence_87">
+              <Sequence sap2010:Annotation.AnnotationText="collect and build regulationd related to plant" DisplayName="Build regulation Table" sap:VirtualizedContainerService.HintSize="674.2857142857143,3765.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="intRegIndex" />
                   <Variable x:TypeArguments="x:Boolean" Name="booFound" />
@@ -499,27 +499,27 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]" DisplayName="For Each - find regulation index" sap:VirtualizedContainerService.HintSize="638,616.8" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
+                <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[intRegIndex]" DisplayName="For Each - find regulation index" sap:VirtualizedContainerService.HintSize="640,622.2857142857143" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[jsonRegulationResponse(&quot;searchterms&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="njl:JObject">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="njl:JObject" Name="currentJObject" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,469.6" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="537.1428571428571,473.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_91">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;EPPO&quot;).tostring AndAlso &#xA;currentJObject(&quot;original_origin&quot;).ToString.ToLower.Contains(Commodity(&quot;Country&quot;).tostring.ToLower) AndAlso &#xA;currentJObject(&quot;commodity_group&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]" DisplayName="If -find match" sap:VirtualizedContainerService.HintSize="502,409.6" sap2010:WorkflowViewState.IdRef="If_21">
+                        <If Condition="[currentJObject(&quot;eppo&quot;).ToString = Commodity(&quot;EPPO&quot;).tostring AndAlso &#xA;currentJObject(&quot;original_origin&quot;).ToString.ToLower.Contains(Commodity(&quot;Country&quot;).tostring.ToLower) AndAlso &#xA;currentJObject(&quot;commodity_group&quot;).ToString = Commodity(&quot;Commodity Group&quot;).tostring]" DisplayName="If -find match" sap:VirtualizedContainerService.HintSize="502.85714285714283,413.7142857142857" sap2010:WorkflowViewState.IdRef="If_21">
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,222.4" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,225.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_92">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Assign - mark match found" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_121">
+                              <Assign DisplayName="Assign - mark match found" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_121">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[booFound]</OutArgument>
                                 </Assign.To>
@@ -527,11 +527,11 @@
                                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_3" />
+                              <ui:Break sap:VirtualizedContainerService.HintSize="434.2857142857143,48" sap2010:WorkflowViewState.IdRef="Break_3" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,25.142857142857142" sap2010:WorkflowViewState.IdRef="Sequence_93">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -551,8 +551,8 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:BuildDataTable DataTable="[dtRegulations]" DisplayName="Build Reg Data Table" sap:VirtualizedContainerService.HintSize="638,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Colour&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phytosanitary_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Breakdown&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <If Condition="[booFound]" DisplayName="If - Regulation not found" sap:VirtualizedContainerService.HintSize="638,2431.2" sap2010:WorkflowViewState.IdRef="If_22">
+                <ui:BuildDataTable DataTable="[dtRegulations]" DisplayName="Build Reg Data Table" sap:VirtualizedContainerService.HintSize="640,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Part&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Colour&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phytosanitary_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Breakdown&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Statement_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <If Condition="[booFound]" DisplayName="If - Regulation not found" sap:VirtualizedContainerService.HintSize="640,2454.285714285714" sap2010:WorkflowViewState.IdRef="If_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -560,19 +560,19 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="604,2040.8" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="605.7142857142857,2061.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_94">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each currentRegulation" sap:VirtualizedContainerService.HintSize="570,1980.8" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[jsonRegulationResponse(&quot;searchterms&quot;)(intRegIndex)(&quot;regulations&quot;)]">
+                      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each currentRegulation" sap:VirtualizedContainerService.HintSize="571.4285714285714,2001.7142857142858" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[jsonRegulationResponse(&quot;searchterms&quot;)(intRegIndex)(&quot;regulations&quot;)]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="njl:JToken">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="njl:JToken" Name="currentRegulation" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,1842.4" sap2010:WorkflowViewState.IdRef="Sequence_97">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="537.1428571428571,1862.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_97">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="njl:JObject" Name="jsonT_Reg" />
                                 <Variable x:TypeArguments="s:String[]" Name="arrPartItem" />
@@ -583,7 +583,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[currentRegulation.ToString.ToLower.Trim = &quot;cites&quot;]" DisplayName="If - cites" sap:VirtualizedContainerService.HintSize="502,484" sap2010:WorkflowViewState.IdRef="If_26">
+                              <If Condition="[currentRegulation.ToString.ToLower.Trim = &quot;cites&quot;]" DisplayName="If - cites" sap:VirtualizedContainerService.HintSize="502.85714285714283,488.57142857142856" sap2010:WorkflowViewState.IdRef="If_26">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -591,13 +591,13 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,222.4" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,225.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Assign - set invasive species to true" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_138">
+                                    <Assign DisplayName="Assign - set invasive species to true" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_138">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("CITES")]</OutArgument>
                                       </Assign.To>
@@ -605,11 +605,11 @@
                                         <InArgument x:TypeArguments="x:Object">["True"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:Continue sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                    <ui:Continue sap:VirtualizedContainerService.HintSize="434.2857142857143,48" sap2010:WorkflowViewState.IdRef="Continue_2" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_108">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_108">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -618,15 +618,15 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <If Condition="[currentRegulation.ToString.ToLower.Trim = &quot;invasive&quot;]" DisplayName="If - invasive" sap:VirtualizedContainerService.HintSize="502,484" sap2010:WorkflowViewState.IdRef="If_27">
+                              <If Condition="[currentRegulation.ToString.ToLower.Trim = &quot;invasive&quot;]" DisplayName="If - invasive" sap:VirtualizedContainerService.HintSize="502.85714285714283,488.57142857142856" sap2010:WorkflowViewState.IdRef="If_27">
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,222.4" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,225.14285714285714" sap2010:WorkflowViewState.IdRef="Sequence_109">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Assign - set invasive species column to true" sap:VirtualizedContainerService.HintSize="434,114.4" sap2010:WorkflowViewState.IdRef="Assign_139">
+                                    <Assign DisplayName="Assign - set invasive species column to true" sap:VirtualizedContainerService.HintSize="434.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_139">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Object">[io_dtCommodityLines(intCommodityIndex)("Invasive Species")]</OutArgument>
                                       </Assign.To>
@@ -634,11 +634,11 @@
                                         <InArgument x:TypeArguments="x:Object">["True"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:Continue sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Continue_3" />
+                                    <ui:Continue sap:VirtualizedContainerService.HintSize="434.2857142857143,48" sap2010:WorkflowViewState.IdRef="Continue_3" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -647,7 +647,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Assign DisplayName="Assign - pull out relavent regulation object" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_125">
+                              <Assign DisplayName="Assign - pull out relavent regulation object" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_125">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="njl:JObject">[jsonT_Reg]</OutArgument>
                                 </Assign.To>
@@ -655,8 +655,8 @@
                                   <InArgument x:TypeArguments="njl:JObject">[jsonRegulationResponse("regulations").OfType(Of Newtonsoft.Json.Linq.JObject)().FirstOrDefault(Function(r) If(r("reference") IsNot Nothing, r("reference").ToString() = currentRegulation.ToString, False))]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;ORANGE: jsonT_Reg: &quot; + jsonT_Reg.ToString]" />
-                              <Assign DisplayName="Assign - split" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_126">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502.85714285714283,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;ORANGE: jsonT_Reg: &quot; + jsonT_Reg.ToString]" />
+                              <Assign DisplayName="Assign - split" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_126">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:String[]">[arrPartItem]</OutArgument>
                                 </Assign.To>
@@ -664,13 +664,13 @@
                                   <InArgument x:TypeArguments="s:String[]">[currentRegulation.tostring.split("-"c)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If jsonT_Reg.Value(Of Boolean)(&quot;prohibited&quot;) Then&#xA;    strColour = &quot;Red&quot;&#xA;&#xA;ElseIf Not jsonT_Reg.Value(Of Boolean)(&quot;statement_required&quot;) Then&#xA;    strColour = &quot;Green&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;host_conditional&quot;) Then&#xA;    strColour = &quot;Orange&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;origin_conditional&quot;) Then&#xA;    strColour = &quot;Yellow&quot;&#xA;&#xA;Else&#xA;    strColour = &quot;White&quot;&#xA;End If&#xA;" DisplayName="Determine color based on JSON data" sap:VirtualizedContainerService.HintSize="502,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If jsonT_Reg.Value(Of Boolean)(&quot;prohibited&quot;) Then&#xA;    strColour = &quot;Red&quot;&#xA;&#xA;ElseIf Not jsonT_Reg.Value(Of Boolean)(&quot;statement_required&quot;) Then&#xA;    strColour = &quot;Green&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;host_conditional&quot;) Then&#xA;    strColour = &quot;Orange&quot;&#xA;&#xA;ElseIf jsonT_Reg.Value(Of Boolean)(&quot;origin_conditional&quot;) Then&#xA;    strColour = &quot;Yellow&quot;&#xA;&#xA;Else&#xA;    strColour = &quot;White&quot;&#xA;End If&#xA;" DisplayName="Determine color based on JSON data" sap:VirtualizedContainerService.HintSize="502.85714285714283,197.14285714285714" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                                 <ui:InvokeCode.Arguments>
                                   <InArgument x:TypeArguments="njl:JObject" x:Key="jsonT_Reg">[jsonT_Reg]</InArgument>
                                   <OutArgument x:TypeArguments="x:String" x:Key="strColour">[strColour]</OutArgument>
                                 </ui:InvokeCode.Arguments>
                               </ui:InvokeCode>
-                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{arrPartItem(1), arrPartItem(2), strColour, jsonT_Reg(&quot;phyto_text&quot;), jsonT_Reg(&quot;statement_breakdown&quot;), jsonT_Reg(&quot;statement_text&quot;)}]" DataTable="[dtRegulations]" DisplayName="Add Data Row - add regulation row" sap:VirtualizedContainerService.HintSize="502,213.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{arrPartItem(1), arrPartItem(2), strColour, jsonT_Reg(&quot;phyto_text&quot;), jsonT_Reg(&quot;statement_breakdown&quot;), jsonT_Reg(&quot;statement_text&quot;)}]" DataTable="[dtRegulations]" DisplayName="Add Data Row - add regulation row" sap:VirtualizedContainerService.HintSize="502.85714285714283,216" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEach.Body>
@@ -678,17 +678,17 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,219.2" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="605.7142857142857,220" sap2010:WorkflowViewState.IdRef="Sequence_95">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List - Not Found" sap:VirtualizedContainerService.HintSize="382,159.2" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_4" ItemToAppend="Regulation Not Found" List="[listHold]" />
+                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List - Not Found" sap:VirtualizedContainerService.HintSize="381.7142857142857,160" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_4" ItemToAppend="Regulation Not Found" List="[listHold]" />
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[dtRegulations.RowCount = 0]" DisplayName="If - empty API response" sap:VirtualizedContainerService.HintSize="638,472" sap2010:WorkflowViewState.IdRef="If_23">
+                <If Condition="[dtRegulations.RowCount = 0]" DisplayName="If - empty API response" sap:VirtualizedContainerService.HintSize="640,474.2857142857143" sap2010:WorkflowViewState.IdRef="If_23">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -696,17 +696,17 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,219.2" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="Sequence_99">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List - Missing" sap:VirtualizedContainerService.HintSize="382,159.2" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5" ItemToAppend="Regulations missing" List="[listHold]" />
+                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List - Missing" sap:VirtualizedContainerService.HintSize="381.7142857142857,160" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5" ItemToAppend="Regulations missing" List="[listHold]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.4" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_100">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -716,23 +716,23 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <ui:OutputDataTable DataTable="[dtMiniPopUp]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="672,113.2" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strLogMessage]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="672,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORANGE: dtMiniPopUp contents - &quot; + strLogMessage]" />
-              <ui:OutputDataTable DataTable="[dtRegulations]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="672,113.2" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[strLogMessage]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="672,175.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;ORANGE: dtRegulations contents - &quot; + strLogMessage]" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]" DisplayName="For Each Row in Data Table - Regulation Table" sap:VirtualizedContainerService.HintSize="672,906.4" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+              <ui:OutputDataTable DataTable="[dtMiniPopUp]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="674.2857142857143,114.28571428571429" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strLogMessage]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="674.2857142857143,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ORANGE: dtMiniPopUp contents - &quot; + strLogMessage]" />
+              <ui:OutputDataTable DataTable="[dtRegulations]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="674.2857142857143,114.28571428571429" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[strLogMessage]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="674.2857142857143,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;ORANGE: dtRegulations contents - &quot; + strLogMessage]" />
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRegulations]" DisplayName="For Each Row in Data Table - Regulation Table" sap:VirtualizedContainerService.HintSize="674.2857142857143,908.5714285714286" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Regulation" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634,708" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634.2857142857143,708" sap2010:WorkflowViewState.IdRef="Sequence_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Flowchart DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="600,648" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+                      <Flowchart DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                         <Flowchart.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="booPartItemMatch" />
                           <Variable x:TypeArguments="x:Int32" Name="intMiniRowIndex" />
@@ -748,7 +748,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <av:Point x:Key="ShapeLocation">275,5</av:Point>
-                            <av:Size x:Key="ShapeSize">50,50</av:Size>
+                            <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
                             <av:PointCollection x:Key="ConnectorLocation">300,55 300,110</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -773,10 +773,10 @@
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">125,535</av:Point>
                                   <av:PointCollection x:Key="ConnectorLocation">180,605 180,640</av:PointCollection>
-                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Text matching Statement Header check" sap:VirtualizedContainerService.HintSize="536,664" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Text matching Statement Header check" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="strRgx" />
                                   <Variable x:TypeArguments="x:String" Name="strStatements" />
@@ -787,9 +787,9 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[regex.IsMatch(dtMiniPopUp(intMiniRowIndex)(&quot;Item&quot;).ToString,&quot;5b|1c|4(a|b)&quot;)]" DisplayName="If - Extract spread out items within phyto text" sap:VirtualizedContainerService.HintSize="502,498.4" sap2010:WorkflowViewState.IdRef="If_17">
+                                <If Condition="[regex.IsMatch(dtMiniPopUp(intMiniRowIndex)(&quot;Item&quot;).ToString,&quot;(5b|1c|4(a|b)):&quot;)]" DisplayName="If - Extract spread out items within phyto text" sap:VirtualizedContainerService.HintSize="502.85714285714283,569.7142857142857" sap2010:WorkflowViewState.IdRef="If_17">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,302.4" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,306.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_79">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="listSpreadItems" />
                                       </Sequence.Variables>
@@ -798,14 +798,14 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="looking for (i) (ii) ... (roman numerals) &#xA;(aa) (bb) (cc) within the consigment text" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[dtMiniPopUp(intMiniRowIndex)(&quot;AD Text&quot;).ToString]" IsBuilderTabModified="False" Pattern="\([ivabc]+\)" RegexOption="IgnoreCase, Compiled" Result="[listSpreadItems]">
+                                      <ui:Matches FirstMatch="{x:Null}" sap2010:Annotation.AnnotationText="looking for (i) (ii) ... (roman numerals) &#xA;(aa) (bb) (cc) within the consigment text" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434.2857142857143,138.28571428571428" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[dtMiniPopUp(intMiniRowIndex)(&quot;AD Text&quot;).ToString]" IsBuilderTabModified="False" Pattern="\([ivabc]+\)" RegexOption="IgnoreCase, Compiled" Result="[listSpreadItems]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:Matches>
-                                      <Assign DisplayName="Assign - add additional items" sap:VirtualizedContainerService.HintSize="434,105.6" sap2010:WorkflowViewState.IdRef="Assign_109">
+                                      <Assign DisplayName="Assign - add additional items" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_109">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Object">[dtMiniPopUp(intMiniRowIndex)("Item")]</OutArgument>
                                         </Assign.To>
@@ -816,17 +816,17 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468.57142857142856,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_80">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <Assign DisplayName="Assign - cross reference item/option" sap:VirtualizedContainerService.HintSize="502,105.6" sap2010:WorkflowViewState.IdRef="Assign_74">
+                                <Assign DisplayName="Assign - cross reference item/option" sap:VirtualizedContainerService.HintSize="502.85714285714283,108" sap2010:WorkflowViewState.IdRef="Assign_74">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[booPartItemMatch]</OutArgument>
                                   </Assign.To>
@@ -854,10 +854,10 @@
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">125,755</av:Point>
                                           <av:PointCollection x:Key="ConnectorLocation">180,825 180,870</av:PointCollection>
-                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Text matching Statement Text check" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                      <Sequence DisplayName="Text matching Statement Text check" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="strRgx" />
                                           <Variable x:TypeArguments="x:String" Name="strStatements" />
@@ -868,7 +868,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap2010:Annotation.AnnotationText="gets text ebtween matched header and end tag of ---" DisplayName="Assign - create regex to get statements headers" sap:VirtualizedContainerService.HintSize="570,145.6" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                        <Assign sap2010:Annotation.AnnotationText="gets text ebtween matched header and end tag of ---" DisplayName="Assign - create regex to get statements headers" sap:VirtualizedContainerService.HintSize="571.4285714285714,148" sap2010:WorkflowViewState.IdRef="Assign_67">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[strRgx]</OutArgument>
                                           </Assign.To>
@@ -881,7 +881,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </Assign>
-                                        <Assign DisplayName="Assign - extract statements headers" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                        <Assign DisplayName="Assign - extract statements headers" sap:VirtualizedContainerService.HintSize="571.4285714285714,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_68">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[strStatements]</OutArgument>
                                           </Assign.To>
@@ -889,7 +889,7 @@
                                             <InArgument x:TypeArguments="x:String">[regex.Match(Regulation("Statement Breakdown").tostring,strRgx).Groups("statements").Value]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Assign DisplayName="Assign - initalise list" sap:VirtualizedContainerService.HintSize="570,114.4" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                        <Assign DisplayName="Assign - initalise list" sap:VirtualizedContainerService.HintSize="571.4285714285714,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_69">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="scg:IList(x:String)">[listStatementTexts]</OutArgument>
                                           </Assign.To>
@@ -897,7 +897,7 @@
                                             <InArgument x:TypeArguments="scg:IList(x:String)">[new list (of string)]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Assign sap2010:Annotation.AnnotationText="Helps avoid null object errors" DisplayName="Assign - blank variable" sap:VirtualizedContainerService.HintSize="570,145.6" sap2010:WorkflowViewState.IdRef="Assign_80">
+                                        <Assign sap2010:Annotation.AnnotationText="Helps avoid null object errors" DisplayName="Assign - blank variable" sap:VirtualizedContainerService.HintSize="571.4285714285714,148" sap2010:WorkflowViewState.IdRef="Assign_80">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[strSpecial_Tag]</OutArgument>
                                           </Assign.To>
@@ -912,13 +912,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </Assign>
-                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each StatementSegment" sap:VirtualizedContainerService.HintSize="570,1101.2" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[strStatements.split({&quot;&amp;&quot;},nothing)]">
+                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each StatementSegment" sap:VirtualizedContainerService.HintSize="571.4285714285714,1106.857142857143" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[strStatements.split({&quot;&amp;&quot;},nothing)]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="x:String">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:String" Name="StatementSegment" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,954" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="537.1428571428571,958.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="str:Match" Name="rgxTextSegmentCheck" />
                                                 </Sequence.Variables>
@@ -927,7 +927,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[StatementSegment.Trim.ToUpper = &quot;ADV&quot;]" DisplayName="If - Advanced Check" sap:VirtualizedContainerService.HintSize="502,56.8" sap2010:WorkflowViewState.IdRef="If_16">
+                                                <If Condition="[StatementSegment.Trim.ToUpper = &quot;ADV&quot;]" DisplayName="If - Advanced Check" sap:VirtualizedContainerService.HintSize="502.85714285714283,57.142857142857146" sap2010:WorkflowViewState.IdRef="If_16">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -962,7 +962,7 @@
                                                     </Sequence>
                                                   </If.Else>
                                                 </If>
-                                                <Assign DisplayName="Assign look for pfpp pfa and treatments special header tags" sap:VirtualizedContainerService.HintSize="502,114.4" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                                <Assign DisplayName="Assign look for pfpp pfa and treatments special header tags" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_75">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="str:Match">[rgxTextSegmentCheck]</OutArgument>
                                                   </Assign.To>
@@ -970,9 +970,9 @@
                                                     <InArgument x:TypeArguments="str:Match">[regex.Match(StatementSegment,"(?i)PFA|PFPP|TRT|CFR")]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <If Condition="[rgxTextSegmentCheck.Success]" DisplayName="If - special tag?" sap:VirtualizedContainerService.HintSize="502,722.8" sap2010:WorkflowViewState.IdRef="If_12">
+                                                <If Condition="[rgxTextSegmentCheck.Success]" DisplayName="If - special tag?" sap:VirtualizedContainerService.HintSize="502.85714285714283,724" sap2010:WorkflowViewState.IdRef="If_12">
                                                   <If.Then>
-                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165.6" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,165.71428571428572" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1133,11 +1133,11 @@
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">385,865</av:Point>
-                                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                   <av:PointCollection x:Key="ConnectorLocation">440,935 440,965 180,965 180,1000</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 4" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8" ItemToAppend="AD statements incomplete" List="[listHold]">
+                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 4" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_8" ItemToAppend="AD statements incomplete" List="[listHold]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1160,11 +1160,11 @@
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">125,1135</av:Point>
-                                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">180,1205 180,1280</av:PointCollection>
+                                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">179.85714285714286,1204.7142857142858 179.85714285714286,1234.7142857142858 180,1234.7142857142858 180,1280</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence DisplayName="Advanced Declarations" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                                      <Sequence DisplayName="Advanced Declarations" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1222,7 +1222,7 @@
                                                               <av:Point x:Key="ShapeLocation">150,1280</av:Point>
                                                               <av:Size x:Key="ShapeSize">60,60</av:Size>
                                                               <av:PointCollection x:Key="TrueConnector">180,1340 180,1450</av:PointCollection>
-                                                              <av:PointCollection x:Key="FalseConnector">210,1310 385,1310</av:PointCollection>
+                                                              <av:PointCollection x:Key="FalseConnector">210,1310 240,1310 240,1309.857142857143 385,1309.857142857143</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <FlowDecision.True>
@@ -1232,7 +1232,7 @@
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   <av:Point x:Key="ShapeLocation">150,1450</av:Point>
                                                                   <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                  <av:PointCollection x:Key="TrueConnector">210,1480 385,1480</av:PointCollection>
+                                                                  <av:PointCollection x:Key="TrueConnector">210,1480 240,1480 240,1479.857142857143 385,1479.857142857143</av:PointCollection>
                                                                   <av:PointCollection x:Key="FalseConnector">180,1510 180,1600</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
@@ -1241,11 +1241,11 @@
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <av:Point x:Key="ShapeLocation">385,1445</av:Point>
-                                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                       <av:PointCollection x:Key="ConnectorLocation">815.4000000000001,1471.2408695652143 815.4000000000001,1501.2408695652143 555.4000000000001,1501.2408695652143 555.4000000000001,1536.2408695652143</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 8" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_14" ItemToAppend="AD requires PFPP or Treatment details to be checked." List="[listHold]">
+                                                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 8" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_14" ItemToAppend="AD requires PFPP or Treatment details to be checked." List="[listHold]">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1261,8 +1261,8 @@
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       <av:Point x:Key="ShapeLocation">150,1600</av:Point>
                                                                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                      <av:PointCollection x:Key="TrueConnector">210,1630 385,1630</av:PointCollection>
-                                                                      <av:PointCollection x:Key="FalseConnector">180,1660 180,1735</av:PointCollection>
+                                                                      <av:PointCollection x:Key="TrueConnector">210,1630 240,1630 240,1629.857142857143 385,1629.857142857143</av:PointCollection>
+                                                                      <av:PointCollection x:Key="FalseConnector">180,1660 180,1690 179.85714285714286,1690 179.85714285714286,1735</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <FlowDecision.True>
@@ -1270,10 +1270,10 @@
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">385,1595</av:Point>
-                                                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:Comment sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_26" Text="// Write your comments in the Text property">
+                                                                      <ui:Comment sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Comment_26" Text="// Write your comments in the Text property">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1287,11 +1287,11 @@
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">125,1735</av:Point>
-                                                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                          <av:PointCollection x:Key="ConnectorLocation">180,1805 180,1860</av:PointCollection>
+                                                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                                          <av:PointCollection x:Key="ConnectorLocation">179.85714285714286,1804.7142857142858 179.85714285714286,1834.7142857142858 180,1834.7142857142858 180,1860</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <Sequence DisplayName="ADV pfpp/pfa country check" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                                      <Sequence DisplayName="ADV pfpp/pfa country check" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                                                         <Sequence.Variables>
                                                                           <Variable x:TypeArguments="x:String" Name="strAdvDecCountry" />
                                                                         </Sequence.Variables>
@@ -1325,7 +1325,7 @@
                                                                               <av:Point x:Key="ShapeLocation">150,1860</av:Point>
                                                                               <av:Size x:Key="ShapeSize">60,60</av:Size>
                                                                               <av:PointCollection x:Key="TrueConnector">180,1920 180,1990</av:PointCollection>
-                                                                              <av:PointCollection x:Key="FalseConnector">210,1890 385,1890</av:PointCollection>
+                                                                              <av:PointCollection x:Key="FalseConnector">210,1890 240,1890 240,1889.857142857143 385,1889.857142857143</av:PointCollection>
                                                                               <x:String x:Key="FalseLabel">mismatch</x:String>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
@@ -1336,8 +1336,8 @@
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                   <av:Point x:Key="ShapeLocation">150,1990</av:Point>
                                                                                   <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                                  <av:PointCollection x:Key="TrueConnector">180,2050 180,2115</av:PointCollection>
-                                                                                  <av:PointCollection x:Key="FalseConnector">210,2020 385,2020</av:PointCollection>
+                                                                                  <av:PointCollection x:Key="TrueConnector">180,2050 180,2080 179.85714285714286,2080 179.85714285714286,2115</av:PointCollection>
+                                                                                  <av:PointCollection x:Key="FalseConnector">210,2020 240,2020 240,2019.857142857143 385,2019.857142857143</av:PointCollection>
                                                                                   <x:String x:Key="TrueLabel">PFA</x:String>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
@@ -1346,11 +1346,11 @@
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">125,2115</av:Point>
-                                                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                                      <av:PointCollection x:Key="ConnectorLocation">180,2185 180,2240</av:PointCollection>
+                                                                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                                                      <av:PointCollection x:Key="ConnectorLocation">179.85714285714286,2184.714285714286 179.85714285714286,2214.714285714286 180,2214.714285714286 180,2240</av:PointCollection>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                  <Sequence DisplayName="Evaluate country of origin" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                                                                  <Sequence DisplayName="Evaluate country of origin" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1372,7 +1372,7 @@
                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                           <av:Point x:Key="ShapeLocation">150,2240</av:Point>
                                                                                           <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                                          <av:PointCollection x:Key="FalseConnector">210,2270 385,2270</av:PointCollection>
+                                                                                          <av:PointCollection x:Key="FalseConnector">210,2270 240,2270 240,2269.8571428571427 385,2269.8571428571427</av:PointCollection>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                       <FlowDecision.False>
@@ -1380,11 +1380,11 @@
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                               <av:Point x:Key="ShapeLocation">385,2235</av:Point>
-                                                                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                                               <av:PointCollection x:Key="ConnectorLocation">935.0000000000002,1869.535652173929 935.0000000000002,1899.535652173929 675.0000000000002,1899.535652173929 675.0000000000002,1934.535652173929</av:PointCollection>
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 11" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_16" ItemToAppend="AD option likely not certified to be used." List="[listHold]">
+                                                                                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 11" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_16" ItemToAppend="AD option likely not certified to be used." List="[listHold]">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1402,10 +1402,10 @@
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">385,1985</av:Point>
-                                                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                  <ui:Comment DisplayName="Next Regulation" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_28" Text="// Write your comments in the Text property">
+                                                                                  <ui:Comment DisplayName="Next Regulation" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Comment_28" Text="// Write your comments in the Text property">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1421,11 +1421,11 @@
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <av:Point x:Key="ShapeLocation">385,1855</av:Point>
-                                                                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                                   <av:PointCollection x:Key="ConnectorLocation">888.8000000000002,1485.080869565214 888.8000000000002,1515.080869565214 628.8000000000002,1515.080869565214 628.8000000000002,1550.080869565214</av:PointCollection>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 10" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_15" ItemToAppend="AD requires PFA or PFPP detail to be checked." List="[listHold]">
+                                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 10" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_15" ItemToAppend="AD requires PFA or PFPP detail to be checked." List="[listHold]">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1447,11 +1447,11 @@
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">385,1275</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                   <av:PointCollection x:Key="ConnectorLocation">735.2,1452.157391304346 735.2,1482.157391304346 475.20000000000005,1482.157391304346 475.20000000000005,1517.157391304346</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 9" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_13" ItemToAppend="AD reference not found in the Advanced Declaration tool, AD option likely not certified to be used." List="[listHold]">
+                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 9" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_13" ItemToAppend="AD reference not found in the Advanced Declaration tool, AD option likely not certified to be used." List="[listHold]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1473,11 +1473,11 @@
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">765,745</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                   <av:PointCollection x:Key="ConnectorLocation">820,815 820,865</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 5" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_9" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
+                                                              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 5" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_9" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1504,11 +1504,11 @@
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <av:Point x:Key="ShapeLocation">1025,1225</av:Point>
-                                                                <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">1080,1295 1080,1360</av:PointCollection>
+                                                                <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+                                                                <av:PointCollection x:Key="ConnectorLocation">1079.857142857143,1294.7142857142858 1079.857142857143,1324.7142857142858 1080,1324.7142857142858 1080,1360</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Evaluate country of origin" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                                            <Sequence DisplayName="Evaluate country of origin" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_62">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1530,7 +1530,7 @@
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <av:Point x:Key="ShapeLocation">1050,1360</av:Point>
                                                                     <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                                                    <av:PointCollection x:Key="FalseConnector">1110,1390 1205,1390</av:PointCollection>
+                                                                    <av:PointCollection x:Key="FalseConnector">1110,1390 1140,1390 1140,1389.857142857143 1205,1389.857142857143</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <FlowDecision.False>
@@ -1538,11 +1538,11 @@
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <av:Point x:Key="ShapeLocation">1205,1355</av:Point>
-                                                                        <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                        <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                         <av:PointCollection x:Key="ConnectorLocation">1007.3222095671924,1366.6486956521708 1007.3222095671924,1416.6486956521708</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 7" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_11" ItemToAppend="PFA details not found, requires checking." List="[listHold]">
+                                                                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 7" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_11" ItemToAppend="PFA details not found, requires checking." List="[listHold]">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1558,11 +1558,11 @@
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <av:Point x:Key="ShapeLocation">875,1225</av:Point>
-                                                                <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                                <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                                 <av:PointCollection x:Key="ConnectorLocation">862.4146924829107,1349.7573913043461 862.4146924829107,1399.7573913043461</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 5" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_12" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
+                                                            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 5" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_12" ItemToAppend="PFPP details not found, requires checking." List="[listHold]">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1586,10 +1586,10 @@
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">765,1115</av:Point>
-                                                            <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:Comment DisplayName="Next Regulation" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_22" Text="// Write your comments in the Text property">
+                                                        <ui:Comment DisplayName="Next Regulation" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Comment_22" Text="// Write your comments in the Text property">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1602,11 +1602,11 @@
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">765,865</av:Point>
-                                                            <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                            <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                                             <av:PointCollection x:Key="ConnectorLocation">880.9075170842818,825.783478260865 880.9075170842818,875.783478260865</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 6" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_10" ItemToAppend="AD requires Treatment details to be checked." List="[listHold]">
+                                                        <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 6" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_10" ItemToAppend="AD requires Treatment details to be checked." List="[listHold]">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1632,10 +1632,10 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">385,635</av:Point>
-                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 3" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_7" ItemToAppend="AD reference not found" List="[listHold]">
+                                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 3" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_7" ItemToAppend="AD reference not found" List="[listHold]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1666,10 +1666,10 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">455,105</av:Point>
-                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 1 &amp; 2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_6" ItemToAppend="Likely to be prohibited item, full manual AD check. AD option incomplete, requires checking" List="[listHold]">
+                                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List OHR 1 &amp; 2" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_6" ItemToAppend="Likely to be prohibited item, full manual AD check. AD option incomplete, requires checking" List="[listHold]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1683,10 +1683,10 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">615,355</av:Point>
-                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Comment DisplayName="skip regulation" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_19" Text="// Write your comments in the Text property">
+                                  <ui:Comment DisplayName="skip regulation" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Comment_19" Text="// Write your comments in the Text property">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1705,10 +1705,10 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">35,235</av:Point>
-                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Comment DisplayName="Green" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_13" Text="// Write your comments in the Text property">
+                          <ui:Comment DisplayName="Green" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Comment_13" Text="// Write your comments in the Text property">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1721,10 +1721,10 @@
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">245,345</av:Point>
                               <av:PointCollection x:Key="ConnectorLocation">300,415 300,460</av:PointCollection>
-                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="orange white regulation check" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                          <Sequence DisplayName="orange white regulation check" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_35">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2074,7 +2074,7 @@
           <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="prepare variables" sap:VirtualizedContainerService.HintSize="468.57142857142856,1298.2857142857142" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence DisplayName="prepare variables" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
