@@ -160,7 +160,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="1233.7142857142858,7958.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="1130.2857142857142,7912.571428571428" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strCleanExtractedPDF" />
       <Variable x:TypeArguments="x:String" Name="strExtractedPDF" />
@@ -180,7 +180,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="880,7936" sap2010:WorkflowViewState.IdRef="Sequence_146">
+    <Sequence DisplayName="Extract Information" sap:VirtualizedContainerService.HintSize="880,7889.714285714285" sap2010:WorkflowViewState.IdRef="Sequence_146">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +188,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PhytoCertLocation]" sap:VirtualizedContainerService.HintSize="845.7142857142857,116" sap2010:WorkflowViewState.IdRef="ReadPDFText_10" PreserveFormatting="True" Range="[in_pageRange]" Text="[strExtractedPDF]" />
-      <Sequence DisplayName="Check whether cert is re-forwarded" sap:VirtualizedContainerService.HintSize="845.7142857142857,103.42857142857143" sap2010:WorkflowViewState.IdRef="Sequence_185">
+      <Sequence DisplayName="Check whether cert is re-forwarded" sap:VirtualizedContainerService.HintSize="845.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_185">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1261,7 +1261,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="571.4285714285714,4708" sap2010:WorkflowViewState.IdRef="Sequence_213">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="571.4285714285714,4959.428571428572" sap2010:WorkflowViewState.IdRef="Sequence_213">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1348,7 +1348,7 @@
                                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[entry.Replace("No.   Product (Plants for planting)                                 Packages" &amp; vbCrLf, "")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Sequence DisplayName="Extract Each needed part" sap:VirtualizedContainerService.HintSize="537.1428571428571,3260.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_190">
+                            <Sequence DisplayName="Extract Each needed part" sap:VirtualizedContainerService.HintSize="537.1428571428571,3512" sap2010:WorkflowViewState.IdRef="Sequence_190">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="lines" />
                               </Sequence.Variables>
@@ -1475,14 +1475,34 @@
 ).Value.Trim]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Remove Total" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_710">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[entry.Replace(Total,"")]</InArgument>
-                                </Assign.Value>
-                              </Assign>
+                              <TryCatch DisplayName="Try Catch - extration" sap:VirtualizedContainerService.HintSize="502.85714285714283,368.57142857142856" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                <TryCatch.Try>
+                                  <Assign DisplayName="Remove Total" sap:VirtualizedContainerService.HintSize="434.2857142857143,85.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_710">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[entry]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[entry.Replace(Total,"")]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,164.57142857142858" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Throw Exception="[new SystemException (&quot;Error with the Data extration - Please refer to DRACOE&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
                               <Assign DisplayName="Tidy Total" sap:VirtualizedContainerService.HintSize="502.85714285714283,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_711">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>

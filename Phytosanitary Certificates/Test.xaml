@@ -40,6 +40,13 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>DRACOE_PopUps_64</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -108,9 +115,14 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>DRACOE.PopUps.64</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="1233.7142857142858,913.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="1233.7142857142858,1933.142857142857" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCHED_Cert_Hold" />
       <Variable x:TypeArguments="sd:DataRow" Name="rowCertMatch" />
@@ -125,7 +137,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="505.14285714285717,86.28571428571429" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="576,86.28571428571429" sap2010:WorkflowViewState.IdRef="CommentOut_5">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468.57142857142856,552" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -171,7 +183,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="505.14285714285717,86.28571428571429" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="576,86.28571428571429" sap2010:WorkflowViewState.IdRef="CommentOut_6">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484.57142857142856,549.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
@@ -212,16 +224,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:BuildDataTable DataTable="[dtTestTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="505.14285714285717,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Commodity_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;On_Hold_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Test1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Test2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Commodity_Name&gt;Flower&lt;/Commodity_Name&gt;&#xD;&#xA;    &lt;On_Hold_Text&gt;Not a flower&lt;/On_Hold_Text&gt;&#xD;&#xA;    &lt;Test1&gt;231&lt;/Test1&gt;&#xD;&#xA;    &lt;Test2&gt;2312&lt;/Test2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Commodity_Name&gt;Plant&lt;/Commodity_Name&gt;&#xD;&#xA;    &lt;On_Hold_Text&gt;This was a flower&lt;/On_Hold_Text&gt;&#xD;&#xA;    &lt;Test1&gt;222&lt;/Test1&gt;&#xD;&#xA;    &lt;Test2&gt;1111&lt;/Test2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-    <Assign sap:VirtualizedContainerService.HintSize="505.14285714285717,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[strTestTable]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[strTestTable.Join(Environment.NewLine,dtTestTable.AsEnumerable().Select(Function(row) strTestTable.Join(",", row.ItemArray)))]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="505.14285714285717,393.7142857142857" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="576,393.7142857142857" sap2010:WorkflowViewState.IdRef="CommentOut_8">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468.57142857142856,282.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -241,6 +244,84 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="505.14285714285717,115.42857142857143" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[strTestTable]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Work Order: Work Order - Main Form: CHEDPP.GB.2026.1538105 - Dynamics 365" sap:VirtualizedContainerService.HintSize="576,1344" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="9d94d0ed-f8d8-485c-9e6e-2da15b43613f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="541.7142857142857,1101.142857142857" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Get owner of Document check" sap:VirtualizedContainerService.HintSize="484.57142857142856,1041.142857142857" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strScrape" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open &quot;Document Check&quot; Task" sap:VirtualizedContainerService.HintSize="450.2857142857143,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d94d0ed-f8d8-485c-9e6e-2da15b43613f" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="639, 1031, 211, 37" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Document Check'" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' tag='SPAN' aaname='Document Check' innertext='Document Check' type='' class='spanWrapper-247' check:text='Document Check' /&gt;" Guid="f3daf58f-08c6-44bb-a4ec-bade56cc5e6e" ImageBase64="" InformativeScreenshot="b2ad803b2ca5413e0e1d84e046bf48ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'A '" sap:VirtualizedContainerService.HintSize="450.2857142857143,138.85714285714286" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f2485b03-8907-4496-bc6d-585f417af6a4" InformativeScreenshot="16dc5da3d3ffed22873b509090fdb5bf" Selector="&lt;webctrl tag='UCI-HEADER-CONTROL-LIST' idx='2' /&gt;&lt;webctrl aria-label='CIT Imports' shadowhostid='' tag='A' aaname='CIT Imports' innertext='CIT Imports' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <uix:NGetText DisplayName="Get Text 'UCI-HEADER-CONTROL-LIST'" sap:VirtualizedContainerService.HintSize="450.2857142857143,191.42857142857142" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="9d94d0ed-f8d8-485c-9e6e-2da15b43613f" TextString="[strScrape]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=2d39dcea-7c90-f111-8076-7c1e52706c7c" DesignTimeRectangle="2555, 716, 687, 88" DesignTimeScaleFactor="1.75" FriendlyName="'UCI-HEADER-CONTROL-LIST'" FullSelectorArgument="&lt;webctrl parentid='id-3344' tag='UCI-HEADER-CONTROL-LIST' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='id-3344' tag='UCI-HEADER-CONTROL-LIST' type='' class='' aaname='' /&gt;" Guid="7dc4941a-07e9-4db2-86a5-b024505130a4" InformativeScreenshot="67faa43e1a70cfc7bbb67f19c6702a6a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1538105 - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <If Condition="[strScrape.ToLower.Contains(&quot;cit imports&quot;)]" DisplayName="Document Check Assigned to CIT Import?" sap:VirtualizedContainerService.HintSize="450.2857142857143,432" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,175.42857142857142" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Document Check not assigned to 'CIT Imports' for Work Order &quot;)]" sap:VirtualizedContainerService.HintSize="381.7142857142857,115.42857142857143" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-12, -12, 3864, 2340" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" InformativeScreenshot="c9b8b9ccb18d75f4c4f26727ea048d8b.jpg" Selector="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1538105 - Dynamics 365' /&gt;" Title="Work Order: Work Order - Main Form: CHEDPP.GB.2026.1538105 - Dynamics 365" Url="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=2d39dcea-7c90-f111-8076-7c1e52706c7c" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
