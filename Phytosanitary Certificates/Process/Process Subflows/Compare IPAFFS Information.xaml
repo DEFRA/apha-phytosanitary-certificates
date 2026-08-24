@@ -166,7 +166,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1250.857142857143,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1147.4285714285713,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -190,7 +190,7 @@
           <av:PointCollection x:Key="ConnectorLocation">700,205 700,255</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="668.5714285714286,1071.4285714285713" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,7 +207,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
               </ActivityAction.Argument2>
-              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="600,625.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_6">
+              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="1147.4285714285713,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_6">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCondensed" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateCommodityLines" />
@@ -2335,7 +2335,7 @@ ToList()]</InArgument>
                   <av:PointCollection x:Key="ConnectorLocation">790,205 790,255</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Add EPPO Codes to dtCertificateCommodityLines" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_64">
+              <Sequence DisplayName="Add EPPO Codes to dtCertificateCommodityLines" sap:VirtualizedContainerService.HintSize="674.2857142857143,2581.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_64">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:List(x:Object)" Name="commodityList" />
                   <Variable x:TypeArguments="x:String" Name="jsonString" />
@@ -2522,7 +2522,7 @@ ToList()]</InArgument>
                       <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential("",g_Credentials("EPPO Code API Secret").Password).Password]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458.2857142857143,357.7142857142857" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="1" RetryInterval="00:00:05">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458.2857142857143,357.7142857142857" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:08">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,154.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_489">
@@ -2557,7 +2557,7 @@ ToList()]</InArgument>
                   </ui:RetryScope>
                 </Sequence>
                 <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="640,92" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[jsonArray]" JsonString="[responseString]" />
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCombinedCommodities]" DisplayName="For Each Row in dtCertificateCommodityLines Add eppocode" sap:VirtualizedContainerService.HintSize="571.4285714285714,556.5714285714286" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCombinedCommodities]" DisplayName="For Each Row in dtCertificateCommodityLines Add eppocode" sap:VirtualizedContainerService.HintSize="640,556.5714285714286" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
@@ -2679,7 +2679,7 @@ ToList()]</InArgument>
                           <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential("",g_Credentials("EPPO Code API Secret").Password).Password]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458.2857142857143,357.7142857142857" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="1" RetryInterval="00:00:05">
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458.2857142857143,357.7142857142857" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="2" RetryInterval="00:00:08">
                         <ui:RetryScope.ActivityBody>
                           <ActivityAction>
                             <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,154.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_490">
@@ -2853,13 +2853,13 @@ ToList()]</InArgument>
                               <av:PointCollection x:Key="ConnectorLocation">789.8571428571429,564.7142857142857 789.8571428571429,615</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="634.2857142857143,815.4285714285714" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDistinctCertEPPO]" DisplayName="For Each Row in Cert Level DataTable" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_59">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                 </ActivityAction.Argument>
-                                <Flowchart sap:VirtualizedContainerService.HintSize="1250.857142857143,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_19">
+                                <Flowchart sap:VirtualizedContainerService.HintSize="600,625.1428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_19">
                                   <Flowchart.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredIPAFFsCommodityLines" />
                                     <Variable x:TypeArguments="x:String" Name="foundCertEPPO" />
@@ -3004,7 +3004,7 @@ ToList()]</InArgument>
                                                 <av:Size x:Key="AnnotationSize">340,90</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="678.8571428571429,5795.428571428572" sap2010:WorkflowViewState.IdRef="Sequence_429">
+                                            <Sequence sap2010:Annotation.AnnotationText="Pop up to get the user to either assign a new EPPO code Manually or to Cancel the process" DisplayName="Prepare suggestions based on Commodity Name" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_429">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="listSuggestions" />
                                                 <Variable x:TypeArguments="x:String" Name="strFormOutput" />
@@ -5091,7 +5091,7 @@ ToList()]</InArgument>
                                                       <av:Size x:Key="AnnotationSize">170,180</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We can look around just the Certificate commodity table for the quantity checks because by this point we have consolidated the Cert/IPAFFS commodities and removed any that don't match so the two tables should match exactly by now." DataTable="[dtCertCondensed]" DisplayName="For Each Commodity Line" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_50">
+                                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We can look around just the Certificate commodity table for the quantity checks because by this point we have consolidated the Cert/IPAFFS commodities and removed any that don't match so the two tables should match exactly by now." DataTable="[dtCertCondensed]" DisplayName="For Each Commodity Line" sap:VirtualizedContainerService.HintSize="634.2857142857143,878.8571428571429" sap2010:WorkflowViewState.IdRef="ForEachRow_50">
                                                     <ui:ForEachRow.Body>
                                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                                         <ActivityAction.Argument>

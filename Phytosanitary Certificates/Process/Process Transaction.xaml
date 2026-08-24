@@ -151,7 +151,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="898,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1250.857142857143,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -166,7 +166,7 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">565,55</av:Point>
-        <av:Size x:Key="ShapeSize">50,50</av:Size>
+        <av:Size x:Key="ShapeSize">50.285714285714285,50.285714285714285</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">590,105 590,155</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         <x:Double x:Key="Height">1336.6000000000001</x:Double>
@@ -181,8 +181,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">560,510</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
-          <av:PointCollection x:Key="TrueConnector">560,540 469.8,540 469.8,635</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">620,540 649.8,540 649.8,745 589.8,745 589.8,775</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">560,540 469.85714285714283,540 469.85714285714283,635</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">620,540 649.8571428571429,540 649.8571428571429,745 589.8571428571429,745 589.8571428571429,775</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -190,7 +190,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">415,635</av:Point>
-              <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">470,705 470,735 590,735 590,775</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -277,17 +277,17 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">535,775</av:Point>
-                  <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]" DisplayName="For Each Certificate Row - Extract Data &amp; Validate QR Code" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]" DisplayName="For Each Certificate Row - Extract Data &amp; Validate QR Code" sap:VirtualizedContainerService.HintSize="587.4285714285714,3197.1428571428573" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentAttachment" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.1428571428571,2748.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.1428571428571,3028.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_59">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" Name="dictCertPageRanges" />
                         <Variable x:TypeArguments="x:String" Name="strAttachmentFilepath" />
@@ -298,12 +298,36 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign new file name and remove special characters" sap:VirtualizedContainerService.HintSize="518.8571428571429,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_33">
+                      <ui:CommentOut DisplayName="Original" sap:VirtualizedContainerService.HintSize="518.8571428571429,279.42857142857144" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468.57142857142856,168" sap2010:WorkflowViewState.IdRef="Sequence_172">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign new file name and remove special characters" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_33">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strNewFileName]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars()))+".pdf"]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Assign DisplayName="Assign new file name and remove special characters" sap:VirtualizedContainerService.HintSize="518.8571428571429,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_42">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strNewFileName]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars()))+".pdf"]</InArgument>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
+String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars())),
+"\.pdf$",
+"",
+System.Text.RegularExpressions.RegexOptions.IgnoreCase
+) + ".pdf"]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Attempting to rename file from &quot; + g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+CurrentAttachment.Item(&quot;Attachments&quot;).ToString + &quot; to: &quot; + g_Config(&quot;AttachmentsFilepath&quot;).ToString+&quot;\&quot;+strNewFileName]" />
@@ -444,7 +468,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">535,895</av:Point>
-                      <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">589.8571428571429,964.7142857142857 589.8571428571429,994.7142857142857 590,994.7142857142857 590,1010</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -476,7 +500,7 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">415,1155</av:Point>
-                              <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">470,1225 470,1310 535,1310</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -570,7 +594,7 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">535,1275</av:Point>
-                                  <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                                  <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">590,1345 590,1375</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -750,7 +774,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </Assign>
-                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(&quot;Application_Reference&quot;), &#xA;CurrentRow(&quot;Certificate_Number&quot;), &#xA;CInt(CurrentRow(&quot;ID&quot;)).ToString, &#xA;AdHold, &#xA;strIPPAFS,&#xA;CurrentRow(&quot;Commodity&quot;),&#xA;CurrentRow(&quot;AD Numbers&quot;),&#xA;CurrentRow(&quot;Genus_Species&quot;)}]" DataTable="[dtOnHoldReasons]" DisplayName="Add Data Row - add orange entry" sap:VirtualizedContainerService.HintSize="434.2857142857143,216" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strCHEDPPReference, &#xA;CurrentRow(&quot;Certificate_Number&quot;), &#xA;CurrentRow(&quot;Commodity&quot;),&#xA;CInt(CurrentRow(&quot;ID&quot;)).ToString, &#xA;AdHold, &#xA;strIPPAFS,&#xA;CurrentRow(&quot;Genus_Species&quot;),&quot;&quot;,&#xA;CurrentRow(&quot;AD Numbers&quot;)}]" DataTable="[dtOnHoldReasons]" DisplayName="Add Data Row - add orange entry" sap:VirtualizedContainerService.HintSize="434.2857142857143,216" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                                             </Sequence>
                                                           </ActivityAction>
                                                         </ui:ForEach.Body>
@@ -790,7 +814,7 @@
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">535,1375</av:Point>
                                       <av:PointCollection x:Key="ConnectorLocation">590,1445 590,1475</av:PointCollection>
-                                      <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                                      <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Sequence DisplayName="bp2 Data" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_165">
@@ -839,7 +863,7 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">535,1475</av:Point>
-                                          <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                                          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                           <av:PointCollection x:Key="ConnectorLocation">590,1545 590,1585</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -859,7 +883,7 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">535,1585</av:Point>
-                                              <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                                              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MS Dynamics - Invoke Workflow File (Process\Process Subflows\blue part 2\MS Dynamics.xaml)" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Process\Process Subflows\blue part 2\MS Dynamics.xaml">
@@ -902,11 +926,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,275</av:Point>
-          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">590,345 590,395</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Navigate Dynamics &amp; Assign CHEDPP Record" sap:VirtualizedContainerService.HintSize="1092,9390.4" sap2010:WorkflowViewState.IdRef="Sequence_116">
+      <Sequence DisplayName="Navigate Dynamics &amp; Assign CHEDPP Record" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_116">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtWorkOrderTasks" />
           <Variable x:TypeArguments="x:Boolean" Name="booDocCheck" />
@@ -1419,11 +1443,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">535,395</av:Point>
-              <av:Size x:Key="ShapeSize">110,70</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">590,465 590,510</av:PointCollection>
+              <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">589.8571428571429,464.7142857142857 589.8571428571429,494.7142857142857 590,494.7142857142857 590,510</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Extract IPAFFs Info" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Extract IPAFFs Info" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2181,11 +2205,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">535,155</av:Point>
-          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">590,225 590,275</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Cleardown Folders &amp; Initialise Variables" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_58">
+      <Sequence DisplayName="Cleardown Folders &amp; Initialise Variables" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_58">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
