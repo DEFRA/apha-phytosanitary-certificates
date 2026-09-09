@@ -274,7 +274,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Data_validation" sap:VirtualizedContainerService.HintSize="1300,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCommodityIndex" />
       <Variable x:TypeArguments="x:String" Name="strAD_AllApplied" />
@@ -302,13 +302,13 @@
           <av:PointCollection x:Key="ConnectorLocation">370,435 370,495</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="742.8571428571429,8964.57142857143" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intCommodityIndex]" DataTable="[io_dtCommodityLines]" DisplayName="For Each commodity Row in Data Table - main CommodityLines datatable" sap:VirtualizedContainerService.HintSize="742.8571428571429,8968" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Commodity" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="708.5714285714286,8796" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Body - Commodity" sap:VirtualizedContainerService.HintSize="708.5714285714286,8799.42857142857" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtRegulations" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="listHold" />
@@ -732,7 +732,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Flowchart DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+                      <Flowchart DisplayName="Flowchart - for each regulation" sap:VirtualizedContainerService.HintSize="600,648" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                         <Flowchart.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="booPartItemMatch" />
                           <Variable x:TypeArguments="x:Int32" Name="intMiniRowIndex" />
@@ -776,7 +776,7 @@
                                   <av:Size x:Key="ShapeSize">109.71428571428571,69.71428571428571</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Text matching Statement Header check" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Text matching Statement Header check" sap:VirtualizedContainerService.HintSize="537.1428571428571,737.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="strRgx" />
                                   <Variable x:TypeArguments="x:String" Name="strStatements" />
@@ -787,7 +787,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[regex.IsMatch(dtMiniPopUp(intMiniRowIndex)(&quot;Item&quot;).ToString,&quot;(5b|1c|4(a|b)):&quot;)]" DisplayName="If - Extract spread out items within phyto text" sap:VirtualizedContainerService.HintSize="502.85714285714283,569.7142857142857" sap2010:WorkflowViewState.IdRef="If_17">
+                                <If Condition="[regex.IsMatch(dtMiniPopUp(intMiniRowIndex)(&quot;Item&quot;).ToString,&quot;\b(5b|1c|4(a|b)):&quot;)]" DisplayName="If - Extract spread out items within phyto text" sap:VirtualizedContainerService.HintSize="502.85714285714283,569.7142857142857" sap2010:WorkflowViewState.IdRef="If_17">
                                   <If.Then>
                                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468.57142857142856,306.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_79">
                                       <Sequence.Variables>
@@ -1872,7 +1872,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:MergeDataTable sap2010:Annotation.AnnotationText="collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]" DisplayName="Merge dtminipopup into dtpopup" sap:VirtualizedContainerService.HintSize="672,212.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
+              <ui:MergeDataTable sap2010:Annotation.AnnotationText="collect notes into main datatble - this will be pased into pop up module" Destination="[dtPopUp]" DisplayName="Merge dtminipopup into dtpopup" sap:VirtualizedContainerService.HintSize="674.2857142857143,216" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[dtMiniPopUp]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
