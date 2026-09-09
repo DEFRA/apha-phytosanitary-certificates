@@ -151,7 +151,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1250.857142857143,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1300,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
       <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtIPAFFSCommodityLines" />
@@ -281,13 +281,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">590,845 590,895</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]" DisplayName="For Each Certificate Row - Extract Data &amp; Validate QR Code" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateDetails]" DisplayName="For Each Certificate Row - Extract Data &amp; Validate QR Code" sap:VirtualizedContainerService.HintSize="587.4285714285714,3374.8571428571427" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd1:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentAttachment" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.1428571428571,3028.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.1428571428571,3206.285714285714" sap2010:WorkflowViewState.IdRef="Sequence_59">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:Int32))" Name="dictCertPageRanges" />
                         <Variable x:TypeArguments="x:String" Name="strAttachmentFilepath" />
@@ -317,16 +317,17 @@
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Attempting to locate = &quot; + CurrentAttachment(&quot;Document_Reference&quot;).ToString]" />
                       <Assign DisplayName="Assign new file name and remove special characters" sap:VirtualizedContainerService.HintSize="518.8571428571429,117.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_42">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strNewFileName]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(
-String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars())),
-"\.pdf$",
-"",
-System.Text.RegularExpressions.RegexOptions.IgnoreCase
+    String.Concat(CurrentAttachment("Document_Reference").ToString.Trim.Split(System.IO.Path.GetInvalidFileNameChars())),
+    "(\.pdf)+$",
+    "",
+    System.Text.RegularExpressions.RegexOptions.IgnoreCase
 ) + ".pdf"]</InArgument>
                         </Assign.Value>
                       </Assign>
@@ -598,7 +599,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                                   <av:PointCollection x:Key="ConnectorLocation">590,1345 590,1375</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Orange - AD Declarations Analysis" sap:VirtualizedContainerService.HintSize="742.8571428571429,3945.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                              <Sequence DisplayName="Orange - AD Declarations Analysis" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_159">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="scg:List(x:String)" Name="listCerts" />
                                 </Sequence.Variables>
@@ -930,10 +931,11 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
           <av:PointCollection x:Key="ConnectorLocation">590,345 590,395</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Navigate Dynamics &amp; Assign CHEDPP Record" sap:VirtualizedContainerService.HintSize="1094.857142857143,9462.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_116">
+      <Sequence DisplayName="Navigate Dynamics &amp; Assign CHEDPP Record" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_116">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd1:DataTable" Default="[New System.Data.DataTable]" Name="dtWorkOrderTasks" />
           <Variable x:TypeArguments="x:Boolean" Name="booDocCheck" />
+          <Variable x:TypeArguments="x:Boolean" Name="boolCheckAssigned" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -941,13 +943,13 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1060.5714285714287,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Navigate Dynamics &amp; Assign CHEDPP Record Started&quot;]" />
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="1060.5714285714287,7365.714285714285" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="1060.5714285714287,5822.857142857143" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1026.2857142857142,7225.714285714285" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1026.2857142857142,5650.857142857143" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -967,7 +969,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                     </uix:VerifyExecutionOptions>
                   </uix:NClick.VerifyOptions>
                 </uix:NClick>
-                <ui:RetryScope DisplayName="Retry Scope - Search for CHEDPP" sap:VirtualizedContainerService.HintSize="992,1200.5714285714287" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:00">
+                <ui:RetryScope DisplayName="Retry Scope - Search for CHEDPP" sap:VirtualizedContainerService.HintSize="992,57.142857142857146" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:00">
                   <ui:RetryScope.ActivityBody>
                     <ActivityAction>
                       <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="484.57142857142856,988.5714285714286" sap2010:WorkflowViewState.IdRef="Sequence_92">
@@ -977,6 +979,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Filter" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450.2857142857143,254.85714285714286" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Text="[g_TransactionItem(&quot;CHEDPP Reference&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
@@ -1018,7 +1021,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                   </ui:RetryScope.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -1221,14 +1224,14 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <Sequence DisplayName="Get owner of Document check" sap:VirtualizedContainerService.HintSize="992,856.5714285714286" sap2010:WorkflowViewState.IdRef="Sequence_173">
+                <Sequence DisplayName="Get owner of Document check" sap:VirtualizedContainerService.HintSize="992,57.142857142857146" sap2010:WorkflowViewState.IdRef="Sequence_173">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strScrape" />
                     <Variable x:TypeArguments="x:Boolean" Name="BoolCitImport" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -1249,7 +1252,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[BoolCitImport = True]" DisplayName="Document Check Assigned to CIT Import?" sap:VirtualizedContainerService.HintSize="450.2857142857143,432" sap2010:WorkflowViewState.IdRef="If_22">
+                  <If Condition="[BoolCitImport = True]" DisplayName="Document Check Assigned to CIT Import?" sap:VirtualizedContainerService.HintSize="450.2857142857143,429.7142857142857" sap2010:WorkflowViewState.IdRef="If_22">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_175">
                         <sap:WorkflowViewStateService.ViewState>
@@ -1271,37 +1274,17 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                     </If.Else>
                   </If>
                 </Sequence>
-                <If Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint1&quot;))]" DisplayName="Pause Point #1" sap:VirtualizedContainerService.HintSize="992,757.7142857142857" sap2010:WorkflowViewState.IdRef="If_10">
-                  <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,494.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_71">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Generic PopUp" sap:VirtualizedContainerService.HintSize="381.7142857142857,434.2857142857143" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Pause Point #1&lt;/h1&gt;&lt;p&gt;I am about to Assign the open 'Document Check' task to the currently signed in user. Please check I have opened the correct task, and when you are happy, click Continue.&lt;/p&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1" />
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_72">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Sequence>
-                  </If.Else>
-                </If>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="992,180" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Attempting to Assign&quot;]" />
-                <ui:CommentOut DisplayName="Original Attempt" sap:VirtualizedContainerService.HintSize="992,57.142857142857146" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut DisplayName="Original Attempt" sap:VirtualizedContainerService.HintSize="992,136.57142857142858" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,328.57142857142856" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,25.142857142857142" sap2010:WorkflowViewState.IdRef="Sequence_167">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="381.7142857142857,86.28571428571429" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="1" RetryInterval="00:00:05">
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458.2857142857143,534.2857142857143" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="1" RetryInterval="00:00:05">
                         <ui:RetryScope.ActivityBody>
                           <ActivityAction>
                             <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,242.28571428571428" sap2010:WorkflowViewState.IdRef="Sequence_166">
@@ -1323,12 +1306,12 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                         </ui:RetryScope.Condition>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RetryScope>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="381.7142857142857,182.28571428571428" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="458.2857142857143,182.28571428571428" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1903, 1431, 192, 64" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='Assign' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' check:text='Assign' /&gt;" Guid="d2d1e10e-c160-4588-b11c-7f97d6936842" InformativeScreenshot="f56d983473f597c5a33682a8fe842305.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                         </uix:NClick.Target>
@@ -1337,37 +1320,77 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                   </ui:CommentOut.Body>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="992,454.2857142857143" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="1" RetryInterval="00:00:05">
-                  <ui:RetryScope.ActivityBody>
-                    <ActivityAction>
-                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,242.28571428571428" sap2010:WorkflowViewState.IdRef="Sequence_142">
+                <Sequence DisplayName="Assign Worktask" sap:VirtualizedContainerService.HintSize="992,786.8571428571429" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select &quot;Assign&quot;" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_35" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1525, 642, 81, 42" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='Assign' /&gt;" Guid="a208ecde-9fef-4574-aeae-f37ecfa3738e" ImageBase64="" InformativeScreenshot="4b53c75bcfcac5428953537d02c43169.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_21" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=b3575ba1-4a5f-f111-a825-7c1e524fbc86" DesignTimeRectangle="1873, 1412, 168, 55" DesignTimeScaleFactor="1.75" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl parentid='dialogFooterContainer_1*' tag='BUTTON' type='button' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dialogFooterContainer_12' tag='BUTTON' type='button' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' aaname='Assign' check:innerText='Assign' /&gt;" Guid="65214e70-31ef-4e95-aa91-e222d9f28e79" ImageBase64="" InformativeScreenshot="4832cc236e740758367f3deb0d54578d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: * - Dynamics 365' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckElement DelayBefore="0" DisplayName="Check whether process is assigned" sap:VirtualizedContainerService.HintSize="416,184.57142857142858" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[boolCheckAssigned]" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=4ad87cf5-6794-f111-8075-70a8a55f5a9f" DesignTimeRectangle="761, 1140, 1086, 54" DesignTimeScaleFactor="1.75" ElementType="InputBox" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl aria-label='No. of Phytos Inspected' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='No. of Phytos Inspected' tag='INPUT' type='text' class='fui-Input__input r12stul0 ___1ukvzui f7nlbp4 f1l02sjl f1cmbuwj fly5x3f f1pivz5x' aaname='1' /&gt;" Guid="ecdfb48b-ed44-4461-af4f-11eee47378f3" InformativeScreenshot="db332beaacab0926ef9237e2800b5571.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1541400 - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                </Sequence>
+                <If Condition="[boolCheckAssigned = True]" sap:VirtualizedContainerService.HintSize="992,905.1428571428571" sap2010:WorkflowViewState.IdRef="If_23">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.57142857142856,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_178">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484.57142857142856,641.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_179">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Assign Worktask" sap:VirtualizedContainerService.HintSize="450.2857142857143,581.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_180">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="retrySuccessful" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select &quot;Assign&quot;" sap:VirtualizedContainerService.HintSize="381.7142857142857,182.28571428571428" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select &quot;Assign&quot;" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_36" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Timeout="30" Version="V3">
                           <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=b3575ba1-4a5f-f111-a825-7c1e524fbc86" DesignTimeRectangle="1374, 605, 71, 37" DesignTimeScaleFactor="1.75" ElementType="Text" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' parentid='msdyn_workorderservicetask|NoRelationship|Form|Mscrm.Form.msdyn_*' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' parentid='msdyn_workorderservicetask|NoRelationship|Form|Mscrm.Form.msdyn_*' tag='SPAN' type='' class='pa-fn pa-dh pa-lf pa-bc pa-k pa-bx pa-lk pa-cm ' check:innerText='Assign' /&gt;" Guid="b580aff2-2810-40bf-a8ce-6485af723f85" ImageBase64="" InformativeScreenshot="e2ec748d25f76a4a428037812650f4dc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1495872 - Dynamics 365' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                            <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=91d6f82d-ef99-f011-b4cc-6045bd939994" DesignTimeRectangle="1525, 642, 81, 42" DesignTimeScaleFactor="2" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Assign' tag='SPAN' innertext='Assign' visibleinnertext='Assign' type='' class='pa-fj pa-dd pa-lf pa-bc pa-k pa-by pa-lk pa-ci ' check:text='Assign' /&gt;" Guid="a208ecde-9fef-4574-aeae-f37ecfa3738e" ImageBase64="" InformativeScreenshot="4b53c75bcfcac5428953537d02c43169.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Dynamics 365' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="416,182.28571428571428" sap2010:WorkflowViewState.IdRef="NClick_37" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=b3575ba1-4a5f-f111-a825-7c1e524fbc86" DesignTimeRectangle="1873, 1412, 168, 55" DesignTimeScaleFactor="1.75" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl parentid='dialogFooterContainer_1*' tag='BUTTON' type='button' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dialogFooterContainer_12' tag='BUTTON' type='button' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' aaname='Assign' check:innerText='Assign' /&gt;" Guid="65214e70-31ef-4e95-aa91-e222d9f28e79" ImageBase64="" InformativeScreenshot="4832cc236e740758367f3deb0d54578d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: * - Dynamics 365' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
                       </Sequence>
-                    </ActivityAction>
-                  </ui:RetryScope.ActivityBody>
-                  <ui:RetryScope.Condition>
-                    <ActivityFunc x:TypeArguments="x:Boolean" />
-                  </ui:RetryScope.Condition>
-                </ui:RetryScope>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click &quot;Assign&quot; Button" sap:VirtualizedContainerService.HintSize="992,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V3">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="https://defra-trade-snd-plants.crm4.dynamics.com/main.aspx?appid=dea1ceed-1548-ee11-be6d-0022488031ab&amp;pagetype=entityrecord&amp;etn=msdyn_workorder&amp;id=b3575ba1-4a5f-f111-a825-7c1e524fbc86" DesignTimeRectangle="1873, 1412, 168, 55" DesignTimeScaleFactor="1.75" ElementType="Button" FriendlyName="'Assign'" FullSelectorArgument="&lt;webctrl parentid='dialogFooterContainer_12' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dialogFooterContainer_12' tag='BUTTON' type='button' class='fui-Button r1alrhcs ___1akj6hk ffp7eso f1p3nwhy f11589ue f1q5o8ev f1pdflbu f1phragk f15wkkf3 f1s2uweq fr80ssc f1ukrpxl fecsdlb f1rq72xc fnp9lpt f1h0usnq fs4ktlq f16h9ulv fx2bmrt f1d6v5y2 f1rirnrt f1uu00uk fkvaka8 f1ux7til f9a0qzu f1lkg8j3 fkc42ay fq7113v ff1wgvm fiob0tu f1j6scgf f1x4h75k f4xjyn1 fbgcvur f1ks1yx8 f1o6qegi fcnxywj fmxjhhp f9ddjv3 f17t0x8g f194v5ow f1qgg65p fk7jm04 fhgccpy f32wu9k fu5nqqq f13prjl2 f1czftr5 f1nl83rv f12k37oa fr96u23' aaname='Assign' check:innerText='Assign' /&gt;" Guid="65214e70-31ef-4e95-aa91-e222d9f28e79" ImageBase64="" InformativeScreenshot="4832cc236e740758367f3deb0d54578d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Work Order: Work Order - Main Form: CHEDPP.GB.2026.1495872 - Dynamics 365' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
-                  </uix:NClick.Target>
-                </uix:NClick>
+                    </Sequence>
+                  </If.Else>
+                </If>
                 <Assign DisplayName="Assign - take note of time" sap:VirtualizedContainerService.HintSize="992,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_29">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:DateTime">[dteTimeStamp]</OutArgument>
@@ -1389,23 +1412,31 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </uix:NApplicationCard>
-        <ui:RetryScope DisplayName="Retry Scope - Open IPAFFS" sap:VirtualizedContainerService.HintSize="1060.5714285714287,1629.7142857142858" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
+        <d:Generic_PopUp OUT_ProcessType="{x:Null}" OUT_strButtonSelected="{x:Null}" DisplayName="Generic PopUp" sap:VirtualizedContainerService.HintSize="1060.5714285714287,57.142857142857146" IN_CSS_filepath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\PausePoint.css&quot;]" IN_ErrorMessage="The stop button was pressed" IN_PopupMessage="&lt;h1&gt;Please Check Assign&lt;/h1&gt;&lt;p&gt;Please make sure that has been assigned and then assign this manually if required, and when you are happy, click Continue.&lt;/p&gt;" IN_PopupTitle="Department for Environment, Food and Rural Affairs" IN_WidthHeight="[{500,350}]" sap2010:WorkflowViewState.IdRef="Generic_PopUp_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </d:Generic_PopUp>
+        <ui:RetryScope DisplayName="Retry Scope - Open IPAFFS" sap:VirtualizedContainerService.HintSize="1060.5714285714287,1600.5714285714287" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="4" RetryInterval="00:00:00">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="529.1428571428571,1417.7142857142858" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="529.1428571428571,1388.5714285714287" sap2010:WorkflowViewState.IdRef="Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="494.85714285714283,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Attempting to Click IPAFFS Button&quot;]" />
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="494.85714285714283,577.7142857142857" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Dynamics" sap:VirtualizedContainerService.HintSize="494.85714285714283,548.5714285714286" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[g_DynamicsElement]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[g_DynamicsElement]" ScopeGuid="39915679-eb64-416e-b4b3-4a7df14f6502" Version="V2" WindowResize="Maximize">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,405.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,376.57142857142856" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="strCHEDPPReference" />
                         </Sequence.Variables>
@@ -1414,7 +1445,7 @@ System.Text.RegularExpressions.RegexOptions.IgnoreCase
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="381.7142857142857,86.28571428571429" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="381.7142857142857,57.142857142857146" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                           <ui:CommentOut.Body>
                             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,25.142857142857142" sap2010:WorkflowViewState.IdRef="Sequence_168">
                               <sap:WorkflowViewStateService.ViewState>
