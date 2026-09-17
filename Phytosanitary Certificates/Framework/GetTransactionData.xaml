@@ -164,7 +164,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="1373.142857142857,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="1300,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="strTenantID" />
       <Variable x:TypeArguments="ss:SecureString" Name="strClientID" />
@@ -198,7 +198,7 @@
           <av:PointCollection x:Key="ConnectorLocation">1160,385 1160,435</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Retrieve SPOL Worklist Entries" sap:VirtualizedContainerService.HintSize="537.1428571428571,2260.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Retrieve SPOL Worklist Entries" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -408,7 +408,7 @@
               <av:PointCollection x:Key="ConnectorLocation">1160,505 1160,555</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Assign Transaction Item" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence DisplayName="Assign Transaction Item" sap:VirtualizedContainerService.HintSize="648,3664.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="booDis" />
               <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
@@ -420,8 +420,8 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490.2857142857143,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Attempting to Assign Workitem&quot;]" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490.2857142857143,886.8571428571429" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="613.7142857142857,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Attempting to Assign Workitem&quot;]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="613.7142857142857,880" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
                 <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" IconPath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="df5dfef4-0aa4-4e3b-bfe0-aa2b77595120" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[booDis]" DisplayName="Priority Override Form" EnableAccessibility="False" FormFieldsOutputData="[strFormOutput]" FormHeight="750" FormSchema="%[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{data.PopupMessage}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Option:&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Default Prioritisation&quot;,&quot;value&quot;:&quot;defaultPrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Override Prioritisation&quot;,&quot;value&quot;:&quot;overridePrioritisation&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;PrioritisationOption&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;SPOL Data&quot;,&quot;key&quot;:&quot;spolData&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Records&quot;,&quot;uniqueOptions&quot;:true,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;chedppRecords&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Checklist Data:&quot;,&quot;Sortable&quot;:true,&quot;Filterable&quot;:true,&quot;Resizeable&quot;:true,&quot;Pagination&quot;:true,&quot;PageSizeComponent&quot;:50,&quot;key&quot;:&quot;checklistData&quot;,&quot;customConditional&quot;:&quot;show = data.PrioritisationOption === 'overridePrioritisation';&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;tree&quot;:true,&quot;disableAddingRemovingRows&quot;:false,&quot;type&quot;:&quot;datagrid2&quot;,&quot;components&quot;:[{&quot;label&quot;:&quot;CHEDPP Reference&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Submitted Date&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_2&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Ready for Inspection&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_3&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Origin Country&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_4&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Commodity Group&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_5&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Inspection Classification&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;field_6&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]}]},{&quot;label&quot;:&quot;Container&quot;,&quot;customClass&quot;:&quot;box_continue&quot;,&quot;key&quot;:&quot;container1&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Stop&quot;,&quot;theme&quot;:&quot;danger&quot;,&quot;leftIcon&quot;:&quot;fa fa-close&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;no&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false},{&quot;label&quot;:&quot;Continue&quot;,&quot;theme&quot;:&quot;success&quot;,&quot;leftIcon&quot;:&quot;fa fa-check&quot;,&quot;customClass&quot;:&quot;btn&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1642693326066&quot;,&quot;Name&quot;:&quot;Standard&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Calibri !important;\n                    }table, .btn, .form-control {\n                      font-size : 20px !important;\n                     }h1 {\n                      font-size : 42px !important;\n                    }h2 {\n                      font-size : 36px !important;\n                    }h3 {\n                      font-size : 30px !important;\n                    }h4 {\n                      font-size : 24px !important;\n                    }h5 {\n                      font-size : 20px !important;\n                    }h6 {\n                      font-size : 18px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 20px !important;\n      font-family : Calibri !important;\n      color : #000000 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #000000 !important\n                      }.btn-primary {\n                          background:  #ffffff !important;\n                          border-color:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-primary:hover {\n                          background:  #ffffff !important;\n                          color:  #000000 !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="Department for Environment, Food and Rural Affairs" FormWidth="1500" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="574.8571428571429,608" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" LocalCSSFilePath="[&quot;/file://&quot; + Directory.GetCurrentDirectory + &quot;\Assets\Generic\Prioritisation Form.css&quot;]" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[strButtonSelected]" StartAsMinimized="False">
                   <ufa:FormActivity.Body>
@@ -467,10 +467,10 @@
                 </ufa:FormActivity>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,682.8571428571429" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="579.4285714285714,24" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -478,7 +478,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to table tablename&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,610.8571428571429" sap2010:WorkflowViewState.IdRef="If_19">
+                    <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to table tablename&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,184" sap2010:WorkflowViewState.IdRef="If_19">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,294.85714285714283" sap2010:WorkflowViewState.IdRef="Sequence_54">
                           <sap:WorkflowViewStateService.ViewState>
@@ -505,7 +505,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[NOT(booDis = True OR strButtonSelected = &quot;no&quot;)]" DisplayName="Robot Dismissed?" sap:VirtualizedContainerService.HintSize="490.2857142857143,377.7142857142857" sap2010:WorkflowViewState.IdRef="If_11">
+            <If Condition="[NOT(booDis = True OR strButtonSelected = &quot;no&quot;)]" DisplayName="Robot Dismissed?" sap:VirtualizedContainerService.HintSize="613.7142857142857,377.7142857142857" sap2010:WorkflowViewState.IdRef="If_11">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90.85714285714286" sap2010:WorkflowViewState.IdRef="Sequence_39">
                   <sap:WorkflowViewStateService.ViewState>
@@ -519,7 +519,7 @@
                 <Throw DisplayName="Throw BRE" Exception="[New BusinessRuleException(&quot;Prioritisation form closed by user!&quot;)]" sap:VirtualizedContainerService.HintSize="416,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_2" />
               </If.Else>
             </If>
-            <Sequence DisplayName="Format Output" sap:VirtualizedContainerService.HintSize="490.2857142857143,712" sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <Sequence DisplayName="Format Output" sap:VirtualizedContainerService.HintSize="613.7142857142857,712" sap2010:WorkflowViewState.IdRef="Sequence_36">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -573,7 +573,7 @@
                 </If.Else>
               </If>
             </Sequence>
-            <Sequence DisplayName="Assign Transaction Data" sap:VirtualizedContainerService.HintSize="490.2857142857143,1037.142857142857" sap2010:WorkflowViewState.IdRef="Sequence_37">
+            <Sequence DisplayName="Assign Transaction Data" sap:VirtualizedContainerService.HintSize="613.7142857142857,1288.5714285714287" sap2010:WorkflowViewState.IdRef="Sequence_37">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -640,16 +640,36 @@
                   <InArgument x:TypeArguments="x:String">[dtListItems.Rows(0).Item("field_5").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign Inspection Classification" sap:VirtualizedContainerService.HintSize="434.2857142857143,108" sap2010:WorkflowViewState.IdRef="Assign_30">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[g_TransactionItem("Inspection Classification")]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[dtListItems.Rows(0).Item("field_6").ToString]</InArgument>
-                </Assign.Value>
-              </Assign>
+              <TryCatch DisplayName="Assign Inspection Classification" sap:VirtualizedContainerService.HintSize="434.2857142857143,359.42857142857144" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign Inspection Classification" sap:VirtualizedContainerService.HintSize="434.2857142857143,85.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_30">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[g_TransactionItem("Inspection Classification")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[dtListItems.Rows(0).Item("field_6").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,164.57142857142858" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Throw Exception="[New SystemException(&quot;Unable to Locate Inspection Classification. Please start process again&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
             </Sequence>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490.2857142857143,168.57142857142858" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[g_TransactionItem(&quot;CHEDPP Reference&quot;) + &quot; Assigned&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="613.7142857142857,168.57142857142858" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[g_TransactionItem(&quot;CHEDPP Reference&quot;) + &quot; Assigned&quot;]" />
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
