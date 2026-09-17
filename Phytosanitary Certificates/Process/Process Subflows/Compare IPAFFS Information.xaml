@@ -3,6 +3,7 @@
     <x:Property Name="io_dtOnHoldReasons" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_ApplicationRef" Type="InArgument(x:String)" />
     <x:Property Name="out_dtCommodityLines" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_BoolADCheckNeeded" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -166,7 +167,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="1147.4285714285713,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Compare_IPAFFS_Information__Flow_" sap:VirtualizedContainerService.HintSize="944,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCombinedCommodities" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtIPAFFSCommodityLines" />
@@ -190,15 +191,23 @@
           <av:PointCollection x:Key="ConnectorLocation">700,205 700,255</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="668.5714285714286,1071.4285714285713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Compare Cert &amp; IPFFS MetaData" sap:VirtualizedContainerService.HintSize="668.5714285714286,1188.5714285714287" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Assign out_BoolADCheckNeeded to True" sap:VirtualizedContainerService.HintSize="634.2857142857143,117.14285714285714" sap2010:WorkflowViewState.IdRef="Assign_394">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[out_BoolADCheckNeeded]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+          </Assign.Value>
+        </Assign>
         <ui:BuildDataTable DataTable="[dtCombinedCommodities]" DisplayName="Create Empty dtCombinedCommodities" sap:VirtualizedContainerService.HintSize="634.2857142857143,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Commodity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Additional_x0020_Info&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Packages&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Commodity_x0020_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Outcome&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Notes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EPPO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;EPPO_Group&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Certificate_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:ForEachFileX DisplayName="For Each Certificate Excel in Folder" Filter="*.xlsx" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="634.2857142857143,919.4285714285714" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+        <ui:ForEachFileX DisplayName="For Each Certificate Excel in Folder" Filter="*.xlsx" Folder="[g_Config(&quot;AttachmentsFilepath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="634.2857142857143,896.5714285714286" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
           <ui:ForEachFileX.Body>
             <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
               <ActivityAction.Argument1>
@@ -207,7 +216,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
               </ActivityAction.Argument2>
-              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="1147.4285714285713,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_6">
+              <Flowchart DisplayName="Compare IPAFFS Information" sap:VirtualizedContainerService.HintSize="944,1094.2857142857142" sap2010:WorkflowViewState.IdRef="Flowchart_6">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCondensed" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dtCertificateCommodityLines" />
@@ -299,7 +308,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">709.8571428571429,324.7142857142857 709.8571428571429,354.71428571428567 710,354.71428571428567 710,370</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Normalise Exporter Addresses" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Normalise Exporter Addresses" sap:VirtualizedContainerService.HintSize="513.7142857142857,1177.7142857142858" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="strNormA" />
                           <Variable x:TypeArguments="x:String" Name="strNormB" />
@@ -1633,13 +1642,13 @@ ToList()]</InArgument>
                                                               <av:PointCollection x:Key="ConnectorLocation">769.8571428571429,1914.7142857142858 769.8571428571429,1944.7142857142858 829.8571428571429,1944.7142857142858 829.8571428571429,1995</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Sequence DisplayName="Change each row to blank" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                                          <Sequence DisplayName="Change each row to blank" sap:VirtualizedContainerService.HintSize="537.1428571428571,536.5714285714286" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,359.42857142857144" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+                                                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCertificateCommodityLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="502.85714285714283,368.57142857142856" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
                                                               <ui:ForEachRow.Body>
                                                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                                                   <ActivityAction.Argument>
@@ -1663,6 +1672,14 @@ ToList()]</InArgument>
                                                                 </ActivityAction>
                                                               </ui:ForEachRow.Body>
                                                             </ui:ForEachRow>
+                                                            <Assign DisplayName="Assign out_BoolADCheckNeeded to False" sap:VirtualizedContainerService.HintSize="502.85714285714283,108" sap2010:WorkflowViewState.IdRef="Assign_393">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:Boolean">[out_BoolADCheckNeeded]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
                                                           </Sequence>
                                                           <FlowStep.Next>
                                                             <x:Reference>__ReferenceID5</x:Reference>
@@ -2305,7 +2322,7 @@ ToList()]</InArgument>
               <av:PointCollection x:Key="ConnectorLocation">700,325 700,385</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="1250.857142857143,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+          <Flowchart DisplayName="Summarise commodity quantity data for all certificates" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Flowchart_7">
             <Flowchart.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtCertCondensed" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtDistinctCertEPPO" />
