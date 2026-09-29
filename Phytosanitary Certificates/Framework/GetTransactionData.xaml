@@ -164,7 +164,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="1300,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="GetTransactionData" sap:VirtualizedContainerService.HintSize="1174.2857142857142,1067.4285714285713" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="strTenantID" />
       <Variable x:TypeArguments="ss:SecureString" Name="strClientID" />
@@ -257,10 +257,10 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
-        <If Condition="[dteTimeStamp &lt; now]" DisplayName="If - get token if needed" sap:VirtualizedContainerService.HintSize="502.85714285714283,57.142857142857146" sap2010:WorkflowViewState.IdRef="If_18">
+        <If Condition="[dteTimeStamp &lt; now]" DisplayName="If - get token if needed" sap:VirtualizedContainerService.HintSize="502.85714285714283,1446.857142857143" sap2010:WorkflowViewState.IdRef="If_18">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -408,7 +408,7 @@
               <av:PointCollection x:Key="ConnectorLocation">1160,505 1160,555</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Assign Transaction Item" sap:VirtualizedContainerService.HintSize="648,3664.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence DisplayName="Assign Transaction Item" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="booDis" />
               <Variable x:TypeArguments="x:String" Name="strButtonSelected" />
@@ -478,7 +478,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to table tablename&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,184" sap2010:WorkflowViewState.IdRef="If_19">
+                    <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to table tablename&quot;)]" sap:VirtualizedContainerService.HintSize="450.2857142857143,154.28571428571428" sap2010:WorkflowViewState.IdRef="If_19">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,294.85714285714283" sap2010:WorkflowViewState.IdRef="Sequence_54">
                           <sap:WorkflowViewStateService.ViewState>
@@ -603,7 +603,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <Throw Exception="[New SystemException(&quot;Unable to Locate CHEDD number. Please start process again&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                      <Throw DisplayName="Throw BE - Unable to find CHEDPP" Exception="[New SystemException(&quot;Unable to Locate CHEDD number. Please start process again&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_7" />
                     </ActivityAction>
                   </Catch>
                 </TryCatch.Catches>
@@ -663,7 +663,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <Throw Exception="[New SystemException(&quot;Unable to Locate Inspection Classification. Please start process again&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                      <Throw DisplayName="Throw BE - unable to find Inspection Classification" Exception="[New SystemException(&quot;Unable to Locate Inspection Classification. Please start process again&quot;)]" sap:VirtualizedContainerService.HintSize="394.2857142857143,92.57142857142857" sap2010:WorkflowViewState.IdRef="Throw_10" />
                     </ActivityAction>
                   </Catch>
                 </TryCatch.Catches>
