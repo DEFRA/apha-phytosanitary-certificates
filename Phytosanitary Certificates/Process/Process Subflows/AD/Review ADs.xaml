@@ -2003,10 +2003,10 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">315,495</av:Point>
               <av:PointCollection x:Key="ConnectorLocation">370,565 370,605</av:PointCollection>
-              <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+              <av:Size x:Key="ShapeSize">110,70</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign pdf filepath" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="Assign_116">
+          <Assign DisplayName="Assign pdf filepath" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_116">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strPDF_Filepath]</OutArgument>
             </Assign.To>
@@ -2024,11 +2024,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">315,605</av:Point>
-                  <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                  <av:Size x:Key="ShapeSize">110,70</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">370,675 370,705</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Create Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Create Compliance Form.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Create Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Create Compliance Form.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_strPhytoFilepath">[strPDF_Filepath]</InArgument>
@@ -2045,10 +2045,10 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">315,705</av:Point>
-                      <av:Size x:Key="ShapeSize">109.6,69.6</av:Size>
+                      <av:Size x:Key="ShapeSize">110,70</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Open Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="109.71428571428571,69.71428571428571" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Open Compliance Form.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open Compliance Form - Invoke Workflow File (Process\Process Subflows\AD\Open Compliance Form.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Process\Process Subflows\AD\Open Compliance Form.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_strComplianceFormFilePath">[Directory.GetCurrentDirectory +"\Assets\Compliance form\Index.html"]</InArgument>
                       <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtCommodityLines">[io_dtCommodityLines]</InOutArgument>
@@ -2252,7 +2252,7 @@
                           <OutArgument x:TypeArguments="x:Object">[Commodity("Country")]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Object">[System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Commodity("Country").tostring)]</InArgument>
+                          <InArgument x:TypeArguments="x:Object">[System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Commodity("Country").ToString().ToLower())]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <Assign sap2010:Annotation.AnnotationText="not required - but just in case data is sent incorrectly formatted&#xA;changes 1 to 0001" DisplayName="Assign - Pad left zeroes" sap:VirtualizedContainerService.HintSize="502,150.4" sap2010:WorkflowViewState.IdRef="Assign_135">
